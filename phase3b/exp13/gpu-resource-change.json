@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-22",
+  "authorization": "REDACTED",
+  "comfyui": {
+    "pid_before": 14920,
+    "verified_executable": "E:\\ComfyUI-NoctQ\\python_embeded\\python.exe",
+    "verified_command_contains": [
+      "ComfyUI\\main.py",
+      "--port 8189"
+    ],
+    "running_queue_before": 0,
+    "pending_queue_before": 0,
+    "stop_method": "guarded E:\\ComfyUI-NoctQ\\stop_noctq.ps1",
+    "stop_exit_code": 0,
+    "status_after_stop": "stopped"
+  },
+  "gpu_memory_mib": {
+    "before": 6203,
+    "after_comfyui_stop": 342,
+    "total": 8188,
+    "after_gpu_experiments": 350
+  },
+  "wsl_services": {
+    "gpu-router": "active",
+    "qwen3-embedding": "inactive",
+    "bench-vllm": "inactive"
+  },
+  "final_verification": {
+    "comfyui_8189_reachable": false
+  }
+}

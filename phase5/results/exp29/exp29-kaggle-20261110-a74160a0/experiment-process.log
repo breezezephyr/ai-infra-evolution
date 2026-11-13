@@ -1,0 +1,5 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1794278182.846614     155 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:04,  2.49s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:02,  2.52s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.70s/it]
+`generation_config` default values have been modified to match model-specific defaults: {'do_sample': True}. If this is not desired, please set these values explicitly.
+{"summary": "/kaggle/working/exp29-kaggle-20261110-a74160a0/summary.json", "technical_contract_pass": true, "dispatched_requests": 5, "planned_requests": 5}

@@ -1,0 +1,58 @@
+{
+  "run_id": "formal-14-1792665113908",
+  "fixture_id": "long",
+  "transport": "ws",
+  "scenario": "source_pause",
+  "produced_samples": 752640,
+  "fixture_samples": 752640,
+  "events": [
+    {
+      "event": "created",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109961410896416
+    },
+    {
+      "event": "start_received",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109961505126791
+    },
+    {
+      "event": "first_frame_sent",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109961505278250
+    },
+    {
+      "event": "source_pause_begin",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109962585427958,
+      "duration_ms": 200
+    },
+    {
+      "event": "source_pause_end",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109962794453375
+    },
+    {
+      "event": "source_exhausted",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109977366594625
+    },
+    {
+      "event": "all_samples_acknowledged",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109977493984458,
+      "samples": 752640
+    },
+    {
+      "event": "client_result_received",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109977503081291
+    },
+    {
+      "event": "socket_closed",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109977507454916,
+      "last_ack": 752640
+    }
+  ]
+}

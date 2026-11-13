@@ -1,0 +1,74 @@
+{
+  "id": "order-4--json_object--seed17",
+  "contract": "5808b650498d544000ae9a51330eaffd695f1d2e7d61af16f040568a7ce312da",
+  "arm": "json_object",
+  "case_id": "order-4",
+  "seed": 17,
+  "family": "ordered_selection",
+  "payload_sha256": "5cc74f4779ac2371a2329999809bc8a289fcc35f4eb2108679d4483eb3cc6ac9",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-d55b5062b00c4f19ba12c136672d064a",
+    "object": "chat.completion",
+    "created": 1792983668,
+    "model": "exp21-qwen3-0.6b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "{\"type\": \"object\", \"properties\": {\"stops\": [\"杭州\", \"南京\", \"苏州\"], \"count\": 0} }",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 165,
+      "total_tokens": 194,
+      "completion_tokens": 29,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "accepted": true,
+  "content": "{\"type\": \"object\", \"properties\": {\"stops\": [\"杭州\", \"南京\", \"苏州\"], \"count\": 0} }",
+  "finish_reason": "stop",
+  "evaluation": {
+    "json_valid": true,
+    "schema_valid": false,
+    "business_correct": false,
+    "complete": true,
+    "deliverable": false,
+    "value": {
+      "type": "object",
+      "properties": {
+        "stops": [
+          "杭州",
+          "南京",
+          "苏州"
+        ],
+        "count": 0
+      }
+    },
+    "schema_errors": [
+      {
+        "path": [],
+        "message": "'stops' is a required property"
+      },
+      {
+        "path": [],
+        "message": "'count' is a required property"
+      },
+      {
+        "path": [],
+        "message": "Additional properties are not allowed ('properties', 'type' were unexpected)"
+      }
+    ]
+  },
+  "client_elapsed_ms": 1259.609417,
+  "clock_domain": "client_process_monotonic_ns"
+}

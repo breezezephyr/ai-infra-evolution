@@ -1,0 +1,1364 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-26",
+  "cwd": ".",
+  "verdict": "formal_v1_numerically_verified_with_runner_findings",
+  "conclusion": "当前正式240条重放与99条窗口记录独立重算通过，合成工作点账本和五策略分母正确；运行器的失败留档、配对统计和独立校验仍有漏洞。候选规则及草稿成本只适用于教学假设，不能套到DSpark实际调度或成本。",
+  "scope": {
+    "read_allowlist": [
+      "phase5/exp23/设计.md",
+      "phase5/exp23/replay.py",
+      "phase5/exp23/window_toy.py",
+      "phase5/exp23/run.py",
+      "phase5/exp23/test_replay.py",
+      "phase5/exp23/test_window.py",
+      "phase5/results/exp23/formal-v1/plan.json",
+      "phase5/results/exp23/formal-v1/summary.json",
+      "phase5/results/exp23/formal-v1/replays.json",
+      "phase5/results/exp23/formal-v1/window-cases.json",
+      "24-Phase5·5-少跑几圈/正文.md",
+      "phase5/exp23/源码笔记.md"
+    ],
+    "only_written_file": "phase5/results/exp23/independent-review.json",
+    "execution": "CPU only; requested workspace interpreter; pytest bytecode/cache/config/conftest/plugin discovery disabled; runner fault outputs virtualized in memory.",
+    "no_gpu_upload_credentials": true,
+    "not_read": [
+      "DeepInfer source files",
+      "source-probes-v1 contents",
+      "formal-v1/provenance snapshots",
+      "formal-v1/replay-matrix.csv"
+    ],
+    "memory_not_used": true,
+    "tests": "本审查允许的两份测试文件共50项通过；主代理报告的54项不属于已独立确认的同一测试范围。六份允许源码当前hash仍与formal-v1 plan一致。",
+    "unverified_upstream": [
+      "未直接查看DSpark/DeepInfer源码；不独立背书其调度、environ、局部guard、官方_reference_visible或C++行为。"
+    ]
+  },
+  "review_axes": {
+    "frozen_inputs_and_ledger": {
+      "result": "pass_for_formal_v1",
+      "evidence": "独立从预定矩阵重建16条冻结轨迹、3种成本和5策略，并逐字段重算240条/6723轮。目标、每位置草稿对错、合成置信度在所有策略和成本之间共享；每个草稿是truth[i]或truth[i]+100000。",
+      "denominators": {
+        "fixed0": 48,
+        "fixed1": 48,
+        "fixed3": 48,
+        "fixed5": 48,
+        "candidate": 48
+      },
+      "cost_policy_denominators": {
+        "setup_heavy": {
+          "fixed0": 16,
+          "fixed1": 16,
+          "fixed3": 16,
+          "fixed5": 16,
+          "candidate": 16
+        },
+        "draft_expensive": {
+          "fixed0": 16,
+          "fixed1": 16,
+          "fixed3": 16,
+          "fixed5": 16,
+          "candidate": 16
+        },
+        "linear_verify": {
+          "fixed0": 16,
+          "fixed1": 16,
+          "fixed3": 16,
+          "fixed5": 16,
+          "candidate": 16
+        }
+      },
+      "semantics": "只提交首错前连续正确前缀和一个目标纠错；全接受时追加bonus，已到EOS不越界；零草稿直接提交一个目标token。被拒后缀含首错全部撤销；按min(本轮草稿数+1,剩余长度)收费，草稿逐次收费且不退款。",
+      "counts": {
+        "replay_rows": 240,
+        "unique_traces": 16,
+        "policy_denominators": {
+          "fixed0": 48,
+          "fixed1": 48,
+          "fixed3": 48,
+          "fixed5": 48,
+          "candidate": 48
+        },
+        "per_cost_policy_denominators": {
+          "setup_heavy": {
+            "fixed0": 16,
+            "fixed1": 16,
+            "fixed3": 16,
+            "fixed5": 16,
+            "candidate": 16
+          },
+          "draft_expensive": {
+            "fixed0": 16,
+            "fixed1": 16,
+            "fixed3": 16,
+            "fixed5": 16,
+            "candidate": 16
+          },
+          "linear_verify": {
+            "fixed0": 16,
+            "fixed1": 16,
+            "fixed3": 16,
+            "fixed5": 16,
+            "candidate": 16
+          }
+        },
+        "rounds": 6723,
+        "replay_rows_with_rejection": 108,
+        "rejected_rounds": 2607,
+        "discarded_draft_tokens": 7671,
+        "early_rejection_rounds": 1842,
+        "full_accepted_eos_without_bonus": 78,
+        "eos_by_route": {
+          "correction_tokens": 66,
+          "bonus_tokens": 33,
+          "target_direct_tokens": 63
+        },
+        "candidate_selected_lengths": {
+          "0": 672,
+          "1": 267,
+          "2": 6,
+          "3": 9,
+          "4": 24,
+          "5": 336
+        }
+      },
+      "withdrawal_cost_limit": "模型只通过已产生草稿与已安排验证位置计入拒绝浪费；没有单独的撤销/缓存维护/调度开销。不能将工作点账本称为真实撤销成本。",
+      "final_eos_route_counts": {
+        "accepted_draft": 78,
+        "correction": 66,
+        "bonus": 33,
+        "target_direct": 63,
+        "total": 240
+      },
+      "pairing": [
+        {
+          "cost": "setup_heavy",
+          "paired_traces": 16,
+          "candidate_lower_work": 8,
+          "equal_work": 4,
+          "candidate_higher_work": 4
+        },
+        {
+          "cost": "draft_expensive",
+          "paired_traces": 16,
+          "candidate_lower_work": 12,
+          "equal_work": 4,
+          "candidate_higher_work": 0
+        },
+        {
+          "cost": "linear_verify",
+          "paired_traces": 16,
+          "candidate_lower_work": 12,
+          "equal_work": 4,
+          "candidate_higher_work": 0
+        }
+      ],
+      "policy_costs": [
+        {
+          "cost": "setup_heavy",
+          "points": [
+            800,
+            100,
+            25
+          ],
+          "policies": {
+            "fixed0": {
+              "rows": 16,
+              "work_points": 612000
+            },
+            "fixed1": {
+              "rows": 16,
+              "work_points": 446725
+            },
+            "fixed3": {
+              "rows": 16,
+              "work_points": 453600
+            },
+            "fixed5": {
+              "rows": 16,
+              "work_points": 484075
+            },
+            "candidate": {
+              "rows": 16,
+              "work_points": 479350
+            }
+          }
+        },
+        {
+          "cost": "draft_expensive",
+          "points": [
+            200,
+            100,
+            300
+          ],
+          "policies": {
+            "fixed0": {
+              "rows": 16,
+              "work_points": 204000
+            },
+            "fixed1": {
+              "rows": 16,
+              "work_points": 304700
+            },
+            "fixed3": {
+              "rows": 16,
+              "work_points": 528000
+            },
+            "fixed5": {
+              "rows": 16,
+              "work_points": 716100
+            },
+            "candidate": {
+              "rows": 16,
+              "work_points": 407400
+            }
+          }
+        },
+        {
+          "cost": "linear_verify",
+          "points": [
+            0,
+            100,
+            25
+          ],
+          "policies": {
+            "fixed0": {
+              "rows": 16,
+              "work_points": 68000
+            },
+            "fixed1": {
+              "rows": 16,
+              "work_points": 97125
+            },
+            "fixed3": {
+              "rows": 16,
+              "work_points": 165600
+            },
+            "fixed5": {
+              "rows": 16,
+              "work_points": 223275
+            },
+            "candidate": {
+              "rows": 16,
+              "work_points": 128950
+            }
+          }
+        }
+      ],
+      "baseline_warning": "candidate_vs_fixed5只是指定配对比较，不能概括成候选优于全部5策略。setup_heavy候选有4/16条更高工作点；另外两种成本下fixed0的总工作点低于candidate。16条是预设教学轨迹，不是16个独立模型样本。"
+    },
+    "algorithm_and_cost_language": {
+      "result": "pass_for_artifact_scope_with_required_manuscript_caveat",
+      "candidate_rule": "在最多5个合成置信度的连续乘积不低于0.8时选择最长前缀；可能选择0。",
+      "already_explicit": [
+        "设计.md:7-13与plan.scope明确不是DSpark算法复现、模型推理或真实速度/质量测量。",
+        "plan.candidate_rule明确不是DeepInfer调度规则；成本单位为整数合成工作点。"
+      ],
+      "required_manuscript_caveat": "toy候选会改变实际生成的草稿长度，并按所选长度收取起草工作点。这是额外合成假设。按主代理提供的源码调查，DFlash每轮生成最大D，真实调度只选择本轮验证数量；不能据本toy推导DSpark实际起草成本、成本节约或加速比。",
+      "dspark_scheduling_from_user": "全批B预算优化，加上跨请求累计置信度的全局分配；不是这里的product>=0.8阈值。",
+      "independent_support_for_cost_caveat": [
+        "replay.py:50-53实际按select_length产生drafts并收费。",
+        "设计.md:11-13与plan.cost_unit声明的合成计费式在240条中逐轮成立。"
+      ],
+      "empirical_limit": "最终token序列相等来自给定oracle目标及强制连续前缀/纠错规则，不是语言模型质量实验。工作点不能写成速度、毫秒、GPU调用或加速比。",
+      "source_claim_status": "关于DFlash/DSpark真实实现的对照由主代理提供，本次只审其与教学代码的边界，不曾越过只读白名单。"
+    },
+    "window_counterexample": {
+      "result": "pass_for_declared_integer_sum_toy",
+      "counts": {
+        "planned": 99,
+        "conformant": 99,
+        "representation_equal": 99,
+        "full_equal": 54,
+        "single_window_covered_but_full_differs": 18
+      },
+      "independent_oracle": "对每个查询枚举L层、每层0..W-1的偏移路径，以路径重数加权原始token；完整图保留全部依赖，裁剪图只保留终点>=start的路径。偏移单调，终点保留等价于沿途均保留，独立验证mask与compact。",
+      "dependency_formula": "query=N-1-B；单窗覆盖K>=W+B；本玩具完整L层依赖覆盖K>=L*(W-1)+1+B（含历史边界截断）。",
+      "breakdown": [
+        {
+          "layers": 1,
+          "cases": 27,
+          "representation_equal": 27,
+          "full_equal": 18,
+          "single_window_covered_but_full_differs": 0
+        },
+        {
+          "layers": 2,
+          "cases": 36,
+          "representation_equal": 36,
+          "full_equal": 18,
+          "single_window_covered_but_full_differs": 9
+        },
+        {
+          "layers": 3,
+          "cases": 36,
+          "representation_equal": 36,
+          "full_equal": 18,
+          "single_window_covered_but_full_differs": 9
+        }
+      ],
+      "example": {
+        "window": 4,
+        "backtrack": 1,
+        "layers": 2,
+        "keep": 5,
+        "start": 59,
+        "query": 62,
+        "single_window_covered": true,
+        "dependency_covered": false,
+        "status": "compared",
+        "full": 960,
+        "mask": 610,
+        "compact": 610,
+        "full_equal": false,
+        "id": "b-048",
+        "representation_equal": true,
+        "conformant": true
+      },
+      "explanation": "例b-048: N64,W4,B1,L2,K5，start59/query62。直接窗口59..62已保留，但两层完整依赖56..62被裁掉56..58，因此mask=compact=610而full=960。99表示相等中仅54与完整历史相等；余45包括27条单窗未覆盖及18条单窗覆盖但多层依赖不足。",
+      "limit": "只证明这个分层整数求和依赖图的结论；不称attention、metadata、模型、SWA内核或DeepInfer数值/质量等价性。玩具依赖公式不能替代真实源码约束。"
+    },
+    "runner_and_integrity": {
+      "result": "findings",
+      "current_source_hashes": {
+        "replay.py": {
+          "actual": "c8ebf7054266f2a22c83433f45747b9bce64c3dd037a198eb250c31c99092221",
+          "match": true
+        },
+        "run.py": {
+          "actual": "23e201171c46ddb7197e2ab1ab305fce46013505a61b1386e1554314c1bcc162",
+          "match": true
+        },
+        "test_replay.py": {
+          "actual": "f861e6d5f93ac2e6d81966a19465abbfd9d9856f053b28032db8117d6874f33d",
+          "match": true
+        },
+        "test_window.py": {
+          "actual": "4d0e08e81b0b78ccfd24c7f1a94a8de43b0f487dc17cd675c9dc833e5e8530d7",
+          "match": true
+        },
+        "window_toy.py": {
+          "actual": "cfb8a31e3acae3a5acdcc275574027d999cac618daee5a8d35d98f075ddf896e",
+          "match": true
+        },
+        "设计.md": {
+          "actual": "d7eab229040bc059aa513d5f3e83e25da726c79b508ed379ee7e65f1e0d15075",
+          "match": true
+        }
+      },
+      "current_artifact_hashes": {
+        "plan.json": {
+          "actual": "de2324b5c873e1ecaab02b0aa528c2689fbb292ccce46d7fd55ea4ba99eb3620",
+          "match": true
+        },
+        "replays.json": {
+          "actual": "dc79195410a0c4700602bde19d779875288e903a48cc17a161f90e90bae1cacf",
+          "match": true
+        },
+        "window-cases.json": {
+          "actual": "5fac6ea411d2e97ff8f01912cdd2ca854a9e0c3d3efcd596e93b2440ad959e3b",
+          "match": true
+        }
+      },
+      "checked_artifact_hash_count": 3,
+      "not_checked_artifact_hashes": [
+        "replay-matrix.csv"
+      ],
+      "current_record_integrity": "本次独立重算已补足现有formal-v1的plan矩阵、策略、逐轮成本、prefix/repair/bonus/EOS和三份在范围内的artifact hash核对；未发现现有记录错标或少计。",
+      "existing_output_guard": "内存探针existing_output确认mkdir(exist_ok=False)拒绝已有输出目录且无写入。",
+      "snapshot_freeze_limit": "plan在首轮前保存且源码被复制，但运行的是预先导入的当前函数；hash为记录性信息，运行器没有独立读回计划、逐条验证规格或核对执行函数与快照。"
+    }
+  },
+  "significant_findings": [
+    {
+      "id": "IR-01",
+      "priority": "P2",
+      "title": "失败留档与配对统计不完整",
+      "locations": [
+        {
+          "path": "phase5/exp23/run.py",
+          "start_line": 79,
+          "end_line": 85
+        },
+        {
+          "path": "phase5/exp23/run.py",
+          "start_line": 97,
+          "end_line": 102
+        }
+      ],
+      "evidence": [
+        "注入一条fixed1异常：240行及summary仍保留，statuses=239 conformant+1 error，exit=1，证明A的普通错误行分母保留。",
+        "注入一条fixed5或candidate异常：240行replays与matrix已经生成，但配对统计直接读取缺失work_points，KeyError导致summary不生成。",
+        "注入首个window compare异常：循环未捕获错误且结果统一延后落盘，已完成240条A记录也未生成replays.json；B没有带error的99条结果或summary。",
+        "注入一条candidate failed行并给出无效低工作点：最终exit=1，但该失败行仍被算入lower_work，setup_heavy由8胜变成9胜，而没有单列无效配对。"
+      ],
+      "impact": "不能宣称任意失败/拒绝都会在两线汇总中保留分母且正确分类。当前正式记录无异常，因此这不是240/99数值错误。",
+      "recommendation": "每个预定A/B case都生成状态行并及时保留结果；配对统计先检查双方状态，使用planned/valid/failed-or-unavailable分母，失败行不归入lower/equal/higher；错误运行也应生成完整summary后非零退出。",
+      "probe_modes": [
+        "error_fixed1",
+        "error_fixed5",
+        "error_candidate",
+        "error_window",
+        "failed_candidate"
+      ]
+    },
+    {
+      "id": "IR-02",
+      "priority": "P2",
+      "title": "conformant检查不能独立保证基线和验证计费语义",
+      "locations": [
+        {
+          "path": "phase5/exp23/run.py",
+          "start_line": 69,
+          "end_line": 76
+        }
+      ],
+      "evidence": [
+        "fixed5被替换为fixed0并保留fixed5标签：48条误标仍被记为conformant，240 conformant/1200 checks/exit0。",
+        "把每轮verification_positions改为实际提交长度，并据此同步减少work_points：2541轮少计计划验证工作，仍240 conformant/1200 checks/exit0。",
+        "cost_ledger根据结果里自报verification_positions再求和，没有独立核对其必须等于min(草稿数+1,剩余长度)，也没逐轮验证草稿长度与计划策略、冻结输入匹配。"
+      ],
+      "impact": "declared_checks_passed=1200只说明这5类自检成立，不能单靠它证明五策略实现与预算规则。当前formal-v1经本次逐字段独立重算确实满足规则；原测试也提供部分保障。",
+      "recommendation": "独立从冻结plan验证每轮策略长度、草稿值/置信度、连续prefix、提交类别、验证位置和成本；额外校验结果policy/id等不得覆盖预定spec。",
+      "probe_modes": [
+        "fixed5_silently_executes_fixed0",
+        "early_rejection_verification_undercharged"
+      ]
+    },
+    {
+      "id": "IR-03",
+      "priority": "P2",
+      "title": "plan和hash只记录，未建立执行输入的读回校验",
+      "locations": [
+        {
+          "path": "phase5/exp23/run.py",
+          "start_line": 40,
+          "end_line": 69
+        },
+        {
+          "path": "phase5/exp23/run.py",
+          "start_line": 109,
+          "end_line": 110
+        }
+      ],
+      "evidence": [
+        "仅在虚拟write_text时将持久plan首条truth[0]由1000改为424242；运行器继续执行内存原目标1000，全部240行conformant且exit0。",
+        "summary中的plan hash与被改写plan字节仍相符，因此事后只核hash不能检出plan与执行记录的语义不一致。",
+        "源码快照hash没有与已导入执行函数作身份校验，保存快照也不等于从快照执行；本次未读取provenance文件，避免越过用户范围。"
+      ],
+      "impact": "冻结与可追溯链条不足以自行发现持久plan漂移或来源错配。本次当前六份源码hash及三份允许artifact hash都匹配，并且语义矩阵独立重建通过，未发现实际漂移。",
+      "recommendation": "保存后读回冻结计划作为唯一执行来源，校验唯一ID/完整笛卡尔积/输入规格；执行来源与快照明确绑定；summary对读回输入和实际输出做独立语义校验，并说明hash只支持一致性而非独立可信性。",
+      "probe_modes": [
+        "persisted_plan_changed"
+      ]
+    },
+    {
+      "id": "IR-04",
+      "priority": "P2",
+      "title": "正文K134通过的例子缺少实际B=6前提",
+      "locations": [
+        {
+          "path": "24-Phase5·5-少跑几圈/正文.md",
+          "start_line": 87,
+          "end_line": 99
+        },
+        {
+          "path": "phase5/exp23/源码笔记.md",
+          "start_line": 31,
+          "end_line": 36
+        }
+      ],
+      "evidence": [
+        "笔记明确B=max(raw_B,nextn+1)，并将K134通过限定在W128、nextn5、raw_B<=6。",
+        "正文只写B至少6后给出K134通过的表格，未明确本例raw_B/实际B。raw_B>6时，同样默认nextn5并不能使K134过下限。"
+      ],
+      "impact": "容易把条件边界理解成窗口128、默认草稿5时一律K134足够，弱化前文max约束。",
+      "recommendation": "在表格前补“以下取默认nextn=5、raw_B<=6，即实际B=6；只核对该局部下限”。例如raw_B=8时B=8，下限为136；本次没有新增运行真实源探针。"
+    }
+  ],
+  "source_probe_update_from_main_agent": {
+    "status": "user_provided_not_independently_read_or_executed",
+    "directory_label": "source-probes-v1",
+    "reported_results": {
+      "configuration_cases": 16,
+      "local_guard_pass": 7,
+      "local_guard_reject": 5,
+      "parse_reject": 4,
+      "official_shapes": 10,
+      "reference_visible_calls": 5216,
+      "pivot_cases": 3,
+      "cache_control_cases": 1,
+      "reported_total_pytest": 54
+    },
+    "reported_boundaries": [
+      "真实SWA B=max(raw_B,nextn+1)，默认nextn5=>B6。",
+      "W128时K133拒绝，K134刚过下限，140是推荐值而非最小值。",
+      "真实environ解析、AST原局部断言块与官方_reference_visible隔离探针；未运行官方L1或C++ metadata。"
+    ],
+    "required_wording": "只能称所列隔离探针/局部guard/参考函数检查通过；不能扩展为官方L1、C++metadata、kernel或模型测试通过。99玩具案例单独列示。",
+    "awaiting": "正文与源码笔记已按追加授权完成复核；source-probes-v1原始记录及DeepInfer源文件仍未获本次白名单读取。"
+  },
+  "verification": {
+    "unit_tests": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 phase5/.venv-exp19/bin/python -B -m pytest -c /dev/null --noconftest -p no:cacheprovider -q phase5/exp23/test_replay.py phase5/exp23/test_window.py",
+      "exit_code": 0,
+      "stdout": "..................................................                       [100%]\n50 passed in 0.24s\n"
+    },
+    "independent_recomputation": {
+      "command": "phase5/.venv-exp19/bin/python -B - <<'PY'\nimport collections, hashlib, itertools, json, math\nfrom pathlib import Path\n\nroot=Path('phase5/results/exp23/formal-v1')\nplan=json.loads((root/'plan.json').read_text())\nsummary=json.loads((root/'summary.json').read_text())\nrows=json.loads((root/'replays.json').read_text())\nwindows=json.loads((root/'window-cases.json').read_text())\npolicies=('fixed0','fixed1','fixed3','fixed5','candidate')\ncosts=[{'id':'setup_heavy','points':[800,100,25]},{'id':'draft_expensive','points':[200,100,300]},{'id':'linear_verify','points':[0,100,25]}]\ntraces=[]\nfor n in (24,61):\n for name in ('all_correct_high','all_wrong_low','all_wrong_high','all_correct_low','alternating_calibrated','block_rejections','anti_calibrated','sparse_rejection'):\n  correct=[]; confidence=[]\n  for i in range(n):\n   ok=(True if name.startswith('all_correct') else False if name.startswith('all_wrong') else i%2==0 if name in ('alternating_calibrated','anti_calibrated') else i%7<5 if name=='block_rejections' else i%11!=5)\n   p=(.99 if name.endswith('_high') else .1 if name.endswith('_low') else (.1 if ok else .99) if name=='anti_calibrated' else (.99 if ok else .1))\n   correct.append(ok); confidence.append(p)\n  traces.append(dict(id=f'{name}-n{n}',scenario=name,length=n,truth=list(range(1000,999+n))+[0],correct=correct,confidence=confidence))\nspecs=[dict(id=f\"a-{i:03d}-{c['id']}-{p}\",trace=t['id'],cost=c['id'],policy=p) for i,t in enumerate(traces) for c in costs for p in policies]\ncases=[dict(window=w,backtrack=b,layers=l,keep=k) for w in (2,4,8) for b in (0,1,3) for l in (1,2,3) for k in sorted({w+b-1,w+b,l*(w-1)+1+b,64})]\nassert plan['traces']==traces\nassert plan['costs']==costs\nassert plan['replays']==specs\nassert plan['window_cases']==cases\nassert plan['window_tokens']==list(range(1,65))\nassert len({r['id'] for r in rows})==len(rows)==240\nassert [{k:r[k] for k in ('id','trace','cost','policy')} for r in rows]==specs\n\ndef independent_replay(t,c,p):\n truth,ok,conf=t['truth'],t['correct'],t['confidence']; n=len(truth)\n pos=0; rounds=[]; committed=[]\n while pos<n:\n  m=(max([0]+[k for k in range(1,min(5,n-pos)+1) if math.prod(conf[pos:pos+k])>=.8]) if p=='candidate' else min(int(p[5:]),n-pos))\n  drafts=[truth[j]+(0 if ok[j] else 100000) for j in range(pos,pos+m)]\n  accepted=next((j for j in range(m) if drafts[j]!=truth[pos+j]),m)\n  correction=int(accepted<m)\n  bonus=int(m>0 and accepted==m and pos+m<n)\n  direct=int(m==0)\n  end=pos+accepted+correction+bonus+direct\n  vp=min(m+1,n-pos)\n  row=dict(cursor=pos,next_cursor=end,drafts=drafts,committed=truth[pos:end],accepted_draft_tokens=accepted,discarded_draft_tokens=m-accepted,correction_tokens=correction,bonus_tokens=bonus,target_direct_tokens=direct,verification_positions=vp,work_points=c[0]+c[1]*vp+c[2]*m,synthetic_confidence=conf[pos:pos+m])\n  rounds.append(row); committed+=truth[pos:end]; pos=end\n result=dict(policy=p,committed=committed,rounds=rounds)\n for key in ('accepted_draft_tokens','discarded_draft_tokens','verification_positions','work_points'):\n  result[key]=sum(x[key] for x in rounds)\n result['draft_tokens']=sum(len(x['drafts']) for x in rounds)\n result['rejected_rounds']=sum(x['correction_tokens'] for x in rounds)\n return result\n\nbytrace={t['id']:t for t in traces}; bycost={c['id']:c['points'] for c in costs}\nfor r in rows:\n t=bytrace[r['trace']]; expected=independent_replay(t,bycost[r['cost']],r['policy'])\n for k,v in expected.items(): assert r[k]==v,(r['id'],k)\n assert r['scenario']==t['scenario'] and r['length']==t['length']\n assert r['checks']==dict.fromkeys(('exact_committed_target','one_final_eos','draft_ledger','cost_ledger','progress'),True)\n assert r['status']=='conformant'\n assert r['committed'].count(0)==1 and r['committed'][-1]==0\n\ntokens=plan['window_tokens']\nfor i,(r,case) in enumerate(zip(windows,cases,strict=True)):\n w,b,l,k=(case[x] for x in ('window','backtrack','layers','keep'))\n start=max(0,len(tokens)-k); q=len(tokens)-1-b\n paths=collections.Counter(sum(offset) for offset in itertools.product(range(w),repeat=l))\n full=sum(weight*tokens[q-offset] for offset,weight in paths.items() if q-offset>=0)\n clipped=sum(weight*tokens[q-offset] for offset,weight in paths.items() if q-offset>=start)\n expected={**case,'start':start,'query':q,'single_window_covered':start<=max(0,q-w+1),'dependency_covered':start<=max(0,q-l*(w-1)),'status':'compared','full':full,'mask':clipped,'compact':clipped,'full_equal':full==clipped,'id':f'b-{i:03d}','representation_equal':True,'conformant':True}\n assert r==expected,(i,r,expected)\nb=dict(planned=len(cases),conformant=len(windows),representation_equal=sum(r['mask']==r['compact'] for r in windows),full_equal=sum(r['full']==r['mask']==r['compact'] for r in windows),single_window_covered_but_full_differs=sum(r['single_window_covered'] and r['full']!=r['mask'] for r in windows))\nassert b==summary['b_toy']\ngroups=[]\nfor cost in costs:\n wins=ties=losses=0\n for t in traces:\n  pair={r['policy']:r for r in rows if r['trace']==t['id'] and r['cost']==cost['id']}\n  assert set(pair)==set(policies)\n  a,bb=pair['candidate']['work_points'],pair['fixed5']['work_points']\n  wins+=a<bb; ties+=a==bb; losses+=a>bb\n groups.append(dict(cost=cost['id'],paired_traces=16,candidate_lower_work=wins,equal_work=ties,candidate_higher_work=losses))\nassert summary['a']==dict(planned=240,statuses={'conformant':240},declared_checks_passed=1200,candidate_vs_fixed5=groups)\nsource_hashes={}\nfor name,claimed in plan['source_sha256'].items():\n assert name in ('设计.md','replay.py','window_toy.py','run.py','test_replay.py','test_window.py')\n actual=hashlib.sha256((Path('phase5/exp23')/name).read_bytes()).hexdigest()\n source_hashes[name]={'actual':actual,'match':actual==claimed}\nassert len(source_hashes)==6 and all(v['match'] for v in source_hashes.values())\nartifact_hashes={}\nfor name in ('plan.json','replays.json','window-cases.json'):\n actual=hashlib.sha256((root/name).read_bytes()).hexdigest()\n artifact_hashes[name]={'actual':actual,'match':actual==summary['artifact_sha256'][name]}\nassert all(v['match'] for v in artifact_hashes.values())\nallrounds=[rr for r in rows for rr in r['rounds']]\nstatistics=dict(replay_rows=len(rows),unique_traces=len(traces),policy_denominators=dict(collections.Counter(r['policy'] for r in rows)),per_cost_policy_denominators={c['id']:{p:sum(r['cost']==c['id'] and r['policy']==p for r in rows) for p in policies} for c in costs},rounds=len(allrounds),replay_rows_with_rejection=sum(r['rejected_rounds']>0 for r in rows),rejected_rounds=sum(r['rejected_rounds'] for r in rows),discarded_draft_tokens=sum(r['discarded_draft_tokens'] for r in rows),early_rejection_rounds=sum(rr['correction_tokens'] and rr['accepted_draft_tokens']<len(rr['drafts'])-1 for rr in allrounds),full_accepted_eos_without_bonus=sum(rr['accepted_draft_tokens']==len(rr['drafts'])>0 and rr['committed'][-1]==0 and rr['bonus_tokens']==0 for rr in allrounds),eos_by_route={key:sum(rr[key] for rr in allrounds if rr['committed'][-1]==0) for key in ('correction_tokens','bonus_tokens','target_direct_tokens')},candidate_selected_lengths=dict(sorted(collections.Counter(len(rr['drafts']) for r in rows if r['policy']=='candidate' for rr in r['rounds']).items())))\ncost_table=[]\nfor c in costs:\n cost_table.append({'cost':c['id'],'points':c['points'],'policies':{p:{'rows':48//3,'work_points':sum(r['work_points'] for r in rows if r['cost']==c['id'] and r['policy']==p)} for p in policies}})\nprint(json.dumps({'passed':True,'replay':statistics,'pairing':groups,'policy_costs':cost_table,'windows':b,'window_counterexample':next(r for r in windows if r['window']==4 and r['backtrack']==1 and r['layers']==2 and r['keep']==5),'source_hashes':source_hashes,'artifact_hashes':artifact_hashes,'out_of_scope_hash':['replay-matrix.csv'],'limitations':['Current allowed artifacts and current six sources only; provenance snapshots and matrix CSV were not opened.','Candidate confidence product is synthetic and is not a DSpark algorithm; work points are not speed or latency.','Draft charge and scheduled verification charge are retained on rejection; no separate rollback penalty is modeled.']},ensure_ascii=False,indent=2))\n\nPY",
+      "exit_code": 0,
+      "result": {
+        "passed": true,
+        "replay": {
+          "replay_rows": 240,
+          "unique_traces": 16,
+          "policy_denominators": {
+            "fixed0": 48,
+            "fixed1": 48,
+            "fixed3": 48,
+            "fixed5": 48,
+            "candidate": 48
+          },
+          "per_cost_policy_denominators": {
+            "setup_heavy": {
+              "fixed0": 16,
+              "fixed1": 16,
+              "fixed3": 16,
+              "fixed5": 16,
+              "candidate": 16
+            },
+            "draft_expensive": {
+              "fixed0": 16,
+              "fixed1": 16,
+              "fixed3": 16,
+              "fixed5": 16,
+              "candidate": 16
+            },
+            "linear_verify": {
+              "fixed0": 16,
+              "fixed1": 16,
+              "fixed3": 16,
+              "fixed5": 16,
+              "candidate": 16
+            }
+          },
+          "rounds": 6723,
+          "replay_rows_with_rejection": 108,
+          "rejected_rounds": 2607,
+          "discarded_draft_tokens": 7671,
+          "early_rejection_rounds": 1842,
+          "full_accepted_eos_without_bonus": 78,
+          "eos_by_route": {
+            "correction_tokens": 66,
+            "bonus_tokens": 33,
+            "target_direct_tokens": 63
+          },
+          "candidate_selected_lengths": {
+            "0": 672,
+            "1": 267,
+            "2": 6,
+            "3": 9,
+            "4": 24,
+            "5": 336
+          }
+        },
+        "pairing": [
+          {
+            "cost": "setup_heavy",
+            "paired_traces": 16,
+            "candidate_lower_work": 8,
+            "equal_work": 4,
+            "candidate_higher_work": 4
+          },
+          {
+            "cost": "draft_expensive",
+            "paired_traces": 16,
+            "candidate_lower_work": 12,
+            "equal_work": 4,
+            "candidate_higher_work": 0
+          },
+          {
+            "cost": "linear_verify",
+            "paired_traces": 16,
+            "candidate_lower_work": 12,
+            "equal_work": 4,
+            "candidate_higher_work": 0
+          }
+        ],
+        "policy_costs": [
+          {
+            "cost": "setup_heavy",
+            "points": [
+              800,
+              100,
+              25
+            ],
+            "policies": {
+              "fixed0": {
+                "rows": 16,
+                "work_points": 612000
+              },
+              "fixed1": {
+                "rows": 16,
+                "work_points": 446725
+              },
+              "fixed3": {
+                "rows": 16,
+                "work_points": 453600
+              },
+              "fixed5": {
+                "rows": 16,
+                "work_points": 484075
+              },
+              "candidate": {
+                "rows": 16,
+                "work_points": 479350
+              }
+            }
+          },
+          {
+            "cost": "draft_expensive",
+            "points": [
+              200,
+              100,
+              300
+            ],
+            "policies": {
+              "fixed0": {
+                "rows": 16,
+                "work_points": 204000
+              },
+              "fixed1": {
+                "rows": 16,
+                "work_points": 304700
+              },
+              "fixed3": {
+                "rows": 16,
+                "work_points": 528000
+              },
+              "fixed5": {
+                "rows": 16,
+                "work_points": 716100
+              },
+              "candidate": {
+                "rows": 16,
+                "work_points": 407400
+              }
+            }
+          },
+          {
+            "cost": "linear_verify",
+            "points": [
+              0,
+              100,
+              25
+            ],
+            "policies": {
+              "fixed0": {
+                "rows": 16,
+                "work_points": 68000
+              },
+              "fixed1": {
+                "rows": 16,
+                "work_points": 97125
+              },
+              "fixed3": {
+                "rows": 16,
+                "work_points": 165600
+              },
+              "fixed5": {
+                "rows": 16,
+                "work_points": 223275
+              },
+              "candidate": {
+                "rows": 16,
+                "work_points": 128950
+              }
+            }
+          }
+        ],
+        "windows": {
+          "planned": 99,
+          "conformant": 99,
+          "representation_equal": 99,
+          "full_equal": 54,
+          "single_window_covered_but_full_differs": 18
+        },
+        "window_counterexample": {
+          "window": 4,
+          "backtrack": 1,
+          "layers": 2,
+          "keep": 5,
+          "start": 59,
+          "query": 62,
+          "single_window_covered": true,
+          "dependency_covered": false,
+          "status": "compared",
+          "full": 960,
+          "mask": 610,
+          "compact": 610,
+          "full_equal": false,
+          "id": "b-048",
+          "representation_equal": true,
+          "conformant": true
+        },
+        "source_hashes": {
+          "replay.py": {
+            "actual": "c8ebf7054266f2a22c83433f45747b9bce64c3dd037a198eb250c31c99092221",
+            "match": true
+          },
+          "run.py": {
+            "actual": "23e201171c46ddb7197e2ab1ab305fce46013505a61b1386e1554314c1bcc162",
+            "match": true
+          },
+          "test_replay.py": {
+            "actual": "f861e6d5f93ac2e6d81966a19465abbfd9d9856f053b28032db8117d6874f33d",
+            "match": true
+          },
+          "test_window.py": {
+            "actual": "4d0e08e81b0b78ccfd24c7f1a94a8de43b0f487dc17cd675c9dc833e5e8530d7",
+            "match": true
+          },
+          "window_toy.py": {
+            "actual": "cfb8a31e3acae3a5acdcc275574027d999cac618daee5a8d35d98f075ddf896e",
+            "match": true
+          },
+          "设计.md": {
+            "actual": "d7eab229040bc059aa513d5f3e83e25da726c79b508ed379ee7e65f1e0d15075",
+            "match": true
+          }
+        },
+        "artifact_hashes": {
+          "plan.json": {
+            "actual": "de2324b5c873e1ecaab02b0aa528c2689fbb292ccce46d7fd55ea4ba99eb3620",
+            "match": true
+          },
+          "replays.json": {
+            "actual": "dc79195410a0c4700602bde19d779875288e903a48cc17a161f90e90bae1cacf",
+            "match": true
+          },
+          "window-cases.json": {
+            "actual": "5fac6ea411d2e97ff8f01912cdd2ca854a9e0c3d3efcd596e93b2440ad959e3b",
+            "match": true
+          }
+        },
+        "out_of_scope_hash": [
+          "replay-matrix.csv"
+        ],
+        "limitations": [
+          "Current allowed artifacts and current six sources only; provenance snapshots and matrix CSV were not opened.",
+          "Candidate confidence product is synthetic and is not a DSpark algorithm; work points are not speed or latency.",
+          "Draft charge and scheduled verification charge are retained on rejection; no separate rollback penalty is modeled."
+        ]
+      }
+    },
+    "runner_probes": {
+      "command": "phase5/.venv-exp19/bin/python -B - <<'PY'\nimport contextlib, hashlib, io, json, sys, types\nfrom pathlib import Path\nfrom unittest.mock import patch\n\nsource=Path('phase5/exp23').resolve()\nnames=('设计.md','replay.py','window_toy.py','run.py','test_replay.py','test_window.py')\nsource_bytes={name:(source/name).read_bytes() for name in names}\nvirtual=Path('/__exp23_review_in_memory__/result')\n\ndef load_source(name):\n m=types.ModuleType('exp23_'+name.replace('.py',''))\n m.__file__=str(source/name)\n exec(compile(source_bytes[name],m.__file__,'exec'),m.__dict__)\n return m\n\ndef probe(mode):\n replay=load_source('replay.py'); toy=load_source('window_toy.py')\n with patch.dict(sys.modules,{'replay':replay,'window_toy':toy}):\n  runner=load_source('run.py')\n original=runner.run_trace; original_compare=runner.compare\n fs={}; dirs={str(virtual)} if mode=='existing_output' else set(); calls=0; injected=False\n class StoredText(io.StringIO):\n  def __init__(self,key):super().__init__();self.key=key\n  def close(self):\n   if not self.closed:fs[self.key]=self.getvalue().encode('utf-8')\n   super().close()\n def key(path):\n  p=str(path)\n  if not (p==str(virtual) or p.startswith(str(virtual)+'/')):raise AssertionError('non-virtual filesystem access forbidden: '+p)\n  return p\n def mkdir(path,mode=0o777,parents=False,exist_ok=False):\n  k=key(path)\n  if k in dirs and not exist_ok:raise FileExistsError(k)\n  dirs.add(k)\n def write_text(path,data,encoding=None,errors=None,newline=None):\n  k=key(path)\n  if mode=='persisted_plan_changed' and path.name=='plan.json':\n   altered=json.loads(data);altered['traces'][0]['truth'][0]=424242\n   data=json.dumps(altered,ensure_ascii=False,indent=2)+'\\n'\n  fs[k]=data.encode(encoding or 'utf-8');return len(data)\n def open_file(path,mode='r',*args,**kwargs):\n  k=key(path)\n  if mode=='w':return StoredText(k)\n  if mode=='rb':return io.BytesIO(fs[k])\n  if mode=='r':return io.StringIO(fs[k].decode())\n  raise AssertionError(mode)\n def iterdir(path):\n  prefix=key(path)+'/'\n  return iter(Path(k) for k in fs if k.startswith(prefix) and '/' not in k[len(prefix):])\n def copyfile(src,dst,*args,**kwargs):\n  assert src.parent==source and src.name in source_bytes\n  fs[key(dst)]=source_bytes[src.name];return dst\n def run_trace(truth,correct,confidence,policy,cost):\n  nonlocal injected\n  if mode in ('error_fixed1','error_fixed5','error_candidate') and not injected and policy==mode[6:]:\n   injected=True;raise RuntimeError('independent injected replay failure')\n  if mode=='fixed5_silently_executes_fixed0' and policy=='fixed5':\n   r=original(truth,correct,confidence,'fixed0',cost);r['policy']=policy;return r\n  r=original(truth,correct,confidence,policy,cost)\n  if mode=='failed_candidate' and policy=='candidate' and not injected:\n   injected=True;r['committed'][0]+=1;r['work_points']=0\n  if mode=='early_rejection_verification_undercharged':\n   for rr in r['rounds']:\n    rr['verification_positions']=len(rr['committed'])\n    rr['work_points']=cost[0]+cost[1]*rr['verification_positions']+cost[2]*len(rr['drafts'])\n   for field in ('verification_positions','work_points'):r[field]=sum(rr[field] for rr in r['rounds'])\n  return r\n def compare(*args,**kwargs):\n  nonlocal calls\n  calls+=1\n  if mode=='error_window' and calls==1:raise RuntimeError('independent injected window failure')\n  return original_compare(*args,**kwargs)\n runner.run_trace=run_trace;runner.compare=compare\n out=io.StringIO();exception=None;exit_code=0\n with patch.object(Path,'mkdir',mkdir),patch.object(Path,'write_text',write_text),patch.object(Path,'open',open_file),patch.object(Path,'iterdir',iterdir),patch.object(runner.shutil,'copyfile',copyfile),patch.object(sys,'argv',['run.py','--out',str(virtual)]),contextlib.redirect_stdout(out):\n  try:runner.main()\n  except SystemExit as e:exit_code=e.code\n  except Exception as e:exit_code=None;exception=type(e).__name__+': '+str(e)\n def get(name):\n  data=fs.get(str(virtual/name));return json.loads(data) if data is not None else None\n records=get('replays.json');summary=get('summary.json');plan=get('plan.json')\n result=dict(mode=mode,exit_code=exit_code,exception=exception,files=[Path(p).name for p in fs if Path(p).parent==virtual],replay_rows=len(records) if records is not None else None,replay_errors=sum(r['status']=='error' for r in records) if records is not None else None,summary_a=summary.get('a') if summary else None)\n if mode=='fixed5_silently_executes_fixed0':\n  bad=[r for r in records if r['policy']=='fixed5' and r['draft_tokens']==0]\n  result['mislabeled_fixed5_rows']=len(bad)\n  assert len(bad)==48 and summary['a']['statuses']=={'conformant':240} and exit_code==0\n if mode=='early_rejection_verification_undercharged':\n  bad=[rr for r in records for rr in r['rounds'] if rr['verification_positions']!=min(len(rr['drafts'])+1,len(r['committed'])-rr['cursor'])]\n  result['undercharged_rounds']=len(bad)\n  assert len(bad)>0 and summary['a']['statuses']=={'conformant':240} and exit_code==0\n if mode=='persisted_plan_changed':\n  result['persisted_first_truth']=plan['traces'][0]['truth'][0]\n  result['actual_first_committed']=records[0]['committed'][0]\n  result['summary_hash_matches_altered_plan']=summary['artifact_sha256']['plan.json']==hashlib.sha256(fs[str(virtual/'plan.json')]).hexdigest()\n  assert result['summary_hash_matches_altered_plan']\n  assert plan['traces'][0]['truth'][0]!=records[0]['committed'][0] and exit_code==0\n if mode in ('error_fixed5','error_candidate'):\n  assert len(records)==240 and result['replay_errors']==1 and exception==\"KeyError: 'work_points'\" and summary is None\n if mode=='error_fixed1':\n  assert len(records)==240 and result['replay_errors']==1 and summary['a']['planned']==240 and exit_code==1\n if mode=='error_window':\n  assert records is None and summary is None and exception.startswith('RuntimeError:')\n if mode=='failed_candidate':\n  assert exit_code==1 and summary['a']['statuses']=={'conformant':239,'failed':1}\n  result['failed_row_still_counted_in_work_comparison']=summary['a']['candidate_vs_fixed5'][0]['candidate_lower_work']==9\n  assert result['failed_row_still_counted_in_work_comparison']\n if mode=='existing_output':\n  assert exception.startswith('FileExistsError:') and fs=={}\n if mode=='control':\n  assert len(records)==240 and summary['a']['statuses']=={'conformant':240} and exit_code==0\n return result\n\nresults=[probe(mode) for mode in ('control','error_fixed1','error_fixed5','error_candidate','error_window','fixed5_silently_executes_fixed0','early_rejection_verification_undercharged','persisted_plan_changed','failed_candidate','existing_output')]\nprint(json.dumps({'all_probe_assertions_passed':True,'filesystem':'All runner outputs intercepted in memory; no files/directories created, copied or changed. Only six allowed source files were read.','probes':results},ensure_ascii=False,indent=2))\n\nPY",
+      "exit_code": 0,
+      "result": {
+        "all_probe_assertions_passed": true,
+        "filesystem": "All runner outputs intercepted in memory; no files/directories created, copied or changed. Only six allowed source files were read.",
+        "probes": [
+          {
+            "mode": "control",
+            "exit_code": 0,
+            "exception": null,
+            "files": [
+              "plan.json",
+              "replays.json",
+              "window-cases.json",
+              "replay-matrix.csv",
+              "summary.json"
+            ],
+            "replay_rows": 240,
+            "replay_errors": 0,
+            "summary_a": {
+              "planned": 240,
+              "statuses": {
+                "conformant": 240
+              },
+              "declared_checks_passed": 1200,
+              "candidate_vs_fixed5": [
+                {
+                  "cost": "setup_heavy",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 8,
+                  "equal_work": 4,
+                  "candidate_higher_work": 4
+                },
+                {
+                  "cost": "draft_expensive",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 12,
+                  "equal_work": 4,
+                  "candidate_higher_work": 0
+                },
+                {
+                  "cost": "linear_verify",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 12,
+                  "equal_work": 4,
+                  "candidate_higher_work": 0
+                }
+              ]
+            }
+          },
+          {
+            "mode": "error_fixed1",
+            "exit_code": 1,
+            "exception": null,
+            "files": [
+              "plan.json",
+              "replays.json",
+              "window-cases.json",
+              "replay-matrix.csv",
+              "summary.json"
+            ],
+            "replay_rows": 240,
+            "replay_errors": 1,
+            "summary_a": {
+              "planned": 240,
+              "statuses": {
+                "conformant": 239,
+                "error": 1
+              },
+              "declared_checks_passed": 1195,
+              "candidate_vs_fixed5": [
+                {
+                  "cost": "setup_heavy",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 8,
+                  "equal_work": 4,
+                  "candidate_higher_work": 4
+                },
+                {
+                  "cost": "draft_expensive",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 12,
+                  "equal_work": 4,
+                  "candidate_higher_work": 0
+                },
+                {
+                  "cost": "linear_verify",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 12,
+                  "equal_work": 4,
+                  "candidate_higher_work": 0
+                }
+              ]
+            }
+          },
+          {
+            "mode": "error_fixed5",
+            "exit_code": null,
+            "exception": "KeyError: 'work_points'",
+            "files": [
+              "plan.json",
+              "replays.json",
+              "window-cases.json",
+              "replay-matrix.csv"
+            ],
+            "replay_rows": 240,
+            "replay_errors": 1,
+            "summary_a": null
+          },
+          {
+            "mode": "error_candidate",
+            "exit_code": null,
+            "exception": "KeyError: 'work_points'",
+            "files": [
+              "plan.json",
+              "replays.json",
+              "window-cases.json",
+              "replay-matrix.csv"
+            ],
+            "replay_rows": 240,
+            "replay_errors": 1,
+            "summary_a": null
+          },
+          {
+            "mode": "error_window",
+            "exit_code": null,
+            "exception": "RuntimeError: independent injected window failure",
+            "files": [
+              "plan.json"
+            ],
+            "replay_rows": null,
+            "replay_errors": null,
+            "summary_a": null
+          },
+          {
+            "mode": "fixed5_silently_executes_fixed0",
+            "exit_code": 0,
+            "exception": null,
+            "files": [
+              "plan.json",
+              "replays.json",
+              "window-cases.json",
+              "replay-matrix.csv",
+              "summary.json"
+            ],
+            "replay_rows": 240,
+            "replay_errors": 0,
+            "summary_a": {
+              "planned": 240,
+              "statuses": {
+                "conformant": 240
+              },
+              "declared_checks_passed": 1200,
+              "candidate_vs_fixed5": [
+                {
+                  "cost": "setup_heavy",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 8,
+                  "equal_work": 4,
+                  "candidate_higher_work": 4
+                },
+                {
+                  "cost": "draft_expensive",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 0,
+                  "equal_work": 4,
+                  "candidate_higher_work": 12
+                },
+                {
+                  "cost": "linear_verify",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 0,
+                  "equal_work": 4,
+                  "candidate_higher_work": 12
+                }
+              ]
+            },
+            "mislabeled_fixed5_rows": 48
+          },
+          {
+            "mode": "early_rejection_verification_undercharged",
+            "exit_code": 0,
+            "exception": null,
+            "files": [
+              "plan.json",
+              "replays.json",
+              "window-cases.json",
+              "replay-matrix.csv",
+              "summary.json"
+            ],
+            "replay_rows": 240,
+            "replay_errors": 0,
+            "summary_a": {
+              "planned": 240,
+              "statuses": {
+                "conformant": 240
+              },
+              "declared_checks_passed": 1200,
+              "candidate_vs_fixed5": [
+                {
+                  "cost": "setup_heavy",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 8,
+                  "equal_work": 4,
+                  "candidate_higher_work": 4
+                },
+                {
+                  "cost": "draft_expensive",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 12,
+                  "equal_work": 4,
+                  "candidate_higher_work": 0
+                },
+                {
+                  "cost": "linear_verify",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 12,
+                  "equal_work": 4,
+                  "candidate_higher_work": 0
+                }
+              ]
+            },
+            "undercharged_rounds": 2541
+          },
+          {
+            "mode": "persisted_plan_changed",
+            "exit_code": 0,
+            "exception": null,
+            "files": [
+              "plan.json",
+              "replays.json",
+              "window-cases.json",
+              "replay-matrix.csv",
+              "summary.json"
+            ],
+            "replay_rows": 240,
+            "replay_errors": 0,
+            "summary_a": {
+              "planned": 240,
+              "statuses": {
+                "conformant": 240
+              },
+              "declared_checks_passed": 1200,
+              "candidate_vs_fixed5": [
+                {
+                  "cost": "setup_heavy",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 8,
+                  "equal_work": 4,
+                  "candidate_higher_work": 4
+                },
+                {
+                  "cost": "draft_expensive",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 12,
+                  "equal_work": 4,
+                  "candidate_higher_work": 0
+                },
+                {
+                  "cost": "linear_verify",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 12,
+                  "equal_work": 4,
+                  "candidate_higher_work": 0
+                }
+              ]
+            },
+            "persisted_first_truth": 424242,
+            "actual_first_committed": 1000,
+            "summary_hash_matches_altered_plan": true
+          },
+          {
+            "mode": "failed_candidate",
+            "exit_code": 1,
+            "exception": null,
+            "files": [
+              "plan.json",
+              "replays.json",
+              "window-cases.json",
+              "replay-matrix.csv",
+              "summary.json"
+            ],
+            "replay_rows": 240,
+            "replay_errors": 0,
+            "summary_a": {
+              "planned": 240,
+              "statuses": {
+                "conformant": 239,
+                "failed": 1
+              },
+              "declared_checks_passed": 1198,
+              "candidate_vs_fixed5": [
+                {
+                  "cost": "setup_heavy",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 9,
+                  "equal_work": 3,
+                  "candidate_higher_work": 4
+                },
+                {
+                  "cost": "draft_expensive",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 12,
+                  "equal_work": 4,
+                  "candidate_higher_work": 0
+                },
+                {
+                  "cost": "linear_verify",
+                  "paired_traces": 16,
+                  "candidate_lower_work": 12,
+                  "equal_work": 4,
+                  "candidate_higher_work": 0
+                }
+              ]
+            },
+            "failed_row_still_counted_in_work_comparison": true
+          },
+          {
+            "mode": "existing_output",
+            "exit_code": null,
+            "exception": "FileExistsError: /__exp23_review_in_memory__/result",
+            "files": [],
+            "replay_rows": null,
+            "replay_errors": null,
+            "summary_a": null
+          }
+        ]
+      }
+    },
+    "snapshot_recheck_after_main_reported_54_tests": {
+      "command": "phase5/.venv-exp19/bin/python -B - <<'PY'\nimport hashlib,json\nfrom pathlib import Path\np=Path('phase5/exp23');plan=json.loads(Path('phase5/results/exp23/formal-v1/plan.json').read_text())\nprint(json.dumps({name:{'current':hashlib.sha256((p/name).read_bytes()).hexdigest(),'plan':sha,'matches':hashlib.sha256((p/name).read_bytes()).hexdigest()==sha} for name,sha in plan['source_sha256'].items()},ensure_ascii=False))\nPY",
+      "exit_code": 0,
+      "result": {
+        "replay.py": {
+          "current": "c8ebf7054266f2a22c83433f45747b9bce64c3dd037a198eb250c31c99092221",
+          "plan": "c8ebf7054266f2a22c83433f45747b9bce64c3dd037a198eb250c31c99092221",
+          "matches": true
+        },
+        "run.py": {
+          "current": "23e201171c46ddb7197e2ab1ab305fce46013505a61b1386e1554314c1bcc162",
+          "plan": "23e201171c46ddb7197e2ab1ab305fce46013505a61b1386e1554314c1bcc162",
+          "matches": true
+        },
+        "test_replay.py": {
+          "current": "f861e6d5f93ac2e6d81966a19465abbfd9d9856f053b28032db8117d6874f33d",
+          "plan": "f861e6d5f93ac2e6d81966a19465abbfd9d9856f053b28032db8117d6874f33d",
+          "matches": true
+        },
+        "test_window.py": {
+          "current": "4d0e08e81b0b78ccfd24c7f1a94a8de43b0f487dc17cd675c9dc833e5e8530d7",
+          "plan": "4d0e08e81b0b78ccfd24c7f1a94a8de43b0f487dc17cd675c9dc833e5e8530d7",
+          "matches": true
+        },
+        "window_toy.py": {
+          "current": "cfb8a31e3acae3a5acdcc275574027d999cac618daee5a8d35d98f075ddf896e",
+          "plan": "cfb8a31e3acae3a5acdcc275574027d999cac618daee5a8d35d98f075ddf896e",
+          "matches": true
+        },
+        "设计.md": {
+          "current": "d7eab229040bc059aa513d5f3e83e25da726c79b508ed379ee7e65f1e0d15075",
+          "plan": "d7eab229040bc059aa513d5f3e83e25da726c79b508ed379ee7e65f1e0d15075",
+          "matches": true
+        }
+      }
+    },
+    "probe_interpretation": "故障/变异只作用于内存中的函数和虚拟文件，不是对当前正式记录已出错的指控。记录null exit_code表示探针捕获未处理异常，命令本身以0退出表示预期漏洞已成功重现。",
+    "manuscript": {
+      "command": "phase5/.venv-exp19/bin/python -B - <<'PY'\nimport hashlib,itertools,json,re\nfrom pathlib import Path\narticle_path=Path('24-Phase5·5-少跑几圈/正文.md')\nnotes_path=Path('phase5/exp23/源码笔记.md')\narticle=article_path.read_text(); notes=notes_path.read_text()\nrows=json.loads(Path('phase5/results/exp23/formal-v1/replays.json').read_text())\nplan=json.loads(Path('phase5/results/exp23/formal-v1/plan.json').read_text())\nexpected={'all_correct_high':(6100,6100),'all_wrong_high':(34850,34850),'all_wrong_low':(34850,21600),'all_correct_low':(6100,21600)}\nobserved={}\nfor scenario,costpair in expected.items():\n found={r['policy']:r for r in rows if r['scenario']==scenario and r['length']==24 and r['cost']=='setup_heavy'}\n observed[scenario]={'fixed5':found['fixed5']['work_points'],'candidate':found['candidate']['work_points'],'fixed0':found['fixed0']['work_points']}\n assert (observed[scenario]['fixed5'],observed[scenario]['candidate'])==costpair\n assert observed[scenario]['fixed0']==21600\ntokens=list(range(1,17));q=13;start=10\nvalues=[sum(tokens[q-sum(path)] for path in itertools.product(range(4),repeat=layers) if q-sum(path)>=lower) for layers,lower in ((2,0),(2,start),(1,0),(1,start))]\nassert values==[176,120,50,50]\nrefs=re.findall(r'https://github\\.com/deepseek-ai/DeepInfer/blob/([0-9a-f]+)/([^)\\s]+)',article)\nassert len(refs)==4 and all(commit==plan['commit_reading'] for commit,_ in refs)\nassert plan['commit_reading'] in notes and plan['commit_reading'][:7] in article\nresult={'passed':True,'table_rows':observed,'16_integer_example':{'N':16,'W':4,'B':2,'L':2,'K':6,'start':start,'query':q,'full':values[0],'mask_and_compact':values[1],'one_layer_full_and_clipped':values[2:]},'pinned_links':refs,'article_sha256':hashlib.sha256(article_path.read_bytes()).hexdigest(),'notes_sha256':hashlib.sha256(notes_path.read_bytes()).hexdigest(),'source_count_arithmetic':{'configuration_total':7+5+4},'source_validation_limit':'Only article, notes and allowed formal artifacts read. URL revision consistency is verified; remote source content and source-probes-v1 raw results are not independently verified.','boundary_findings':[{'path':str(article_path),'line':56,'issue':'累计合成置信度 omits product; say 合成置信度乘积.'},{'path':str(article_path),'line':89,'issue':'K134 passes at W128 only when actual B=6; state raw_B<=6 alongside default nextn5.'},{'path':str(article_path),'line':73,'issue':'撤销工作 is not independently costed; draft discard counts and scheduled verification/drafting work are measured synthetic quantities.'}]}\nprint(json.dumps(result,ensure_ascii=False,indent=2))\n\nPY",
+      "exit_code": 0,
+      "result": {
+        "passed": true,
+        "table_rows": {
+          "all_correct_high": {
+            "fixed5": 6100,
+            "candidate": 6100,
+            "fixed0": 21600
+          },
+          "all_wrong_high": {
+            "fixed5": 34850,
+            "candidate": 34850,
+            "fixed0": 21600
+          },
+          "all_wrong_low": {
+            "fixed5": 34850,
+            "candidate": 21600,
+            "fixed0": 21600
+          },
+          "all_correct_low": {
+            "fixed5": 6100,
+            "candidate": 21600,
+            "fixed0": 21600
+          }
+        },
+        "16_integer_example": {
+          "N": 16,
+          "W": 4,
+          "B": 2,
+          "L": 2,
+          "K": 6,
+          "start": 10,
+          "query": 13,
+          "full": 176,
+          "mask_and_compact": 120,
+          "one_layer_full_and_clipped": [
+            50,
+            50
+          ]
+        },
+        "pinned_links": [
+          [
+            "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+            "csrc/engine/mtp_varlen.hpp"
+          ],
+          [
+            "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+            "deepinfer/worker/model_runner.py"
+          ],
+          [
+            "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+            "examples/yoco/yoco_equiv.py"
+          ],
+          [
+            "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+            "doc/inference_deployment_qa.md"
+          ]
+        ],
+        "article_sha256": "56eb03790dd31bca1dfd6a27f7d2952ce7e9c83e83632fead761627f645ab5f5",
+        "notes_sha256": "7dd0fabb7a1fce4a59ed13666ff666601a22691da5a1dacae66a9734a1218613",
+        "source_count_arithmetic": {
+          "configuration_total": 16
+        },
+        "source_validation_limit": "Only article, notes and allowed formal artifacts read. URL revision consistency is verified; remote source content and source-probes-v1 raw results are not independently verified.",
+        "boundary_findings": [
+          {
+            "path": "24-Phase5·5-少跑几圈/正文.md",
+            "line": 56,
+            "issue": "累计合成置信度 omits product; say 合成置信度乘积."
+          },
+          {
+            "path": "24-Phase5·5-少跑几圈/正文.md",
+            "line": 89,
+            "issue": "K134 passes at W128 only when actual B=6; state raw_B<=6 alongside default nextn5."
+          },
+          {
+            "path": "24-Phase5·5-少跑几圈/正文.md",
+            "line": 73,
+            "issue": "撤销工作 is not independently costed; draft discard counts and scheduled verification/drafting work are measured synthetic quantities."
+          }
+        ]
+      }
+    }
+  },
+  "manuscript_review": {
+    "status": "numbers_and_major_scope_boundaries_pass_with_one_configuration_precondition_to_clarify",
+    "files": {
+      "24-Phase5·5-少跑几圈/正文.md": "56eb03790dd31bca1dfd6a27f7d2952ce7e9c83e83632fead761627f645ab5f5",
+      "phase5/exp23/源码笔记.md": "7dd0fabb7a1fce4a59ed13666ff666601a22691da5a1dacae66a9734a1218613"
+    },
+    "numerical_checks": {
+      "passed": true,
+      "table_rows": {
+        "all_correct_high": {
+          "fixed5": 6100,
+          "candidate": 6100,
+          "fixed0": 21600
+        },
+        "all_wrong_high": {
+          "fixed5": 34850,
+          "candidate": 34850,
+          "fixed0": 21600
+        },
+        "all_wrong_low": {
+          "fixed5": 34850,
+          "candidate": 21600,
+          "fixed0": 21600
+        },
+        "all_correct_low": {
+          "fixed5": 6100,
+          "candidate": 21600,
+          "fixed0": 21600
+        }
+      },
+      "16_integer_example": {
+        "N": 16,
+        "W": 4,
+        "B": 2,
+        "L": 2,
+        "K": 6,
+        "start": 10,
+        "query": 13,
+        "full": 176,
+        "mask_and_compact": 120,
+        "one_layer_full_and_clipped": [
+          50,
+          50
+        ]
+      },
+      "pinned_links": [
+        [
+          "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+          "csrc/engine/mtp_varlen.hpp"
+        ],
+        [
+          "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+          "deepinfer/worker/model_runner.py"
+        ],
+        [
+          "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+          "examples/yoco/yoco_equiv.py"
+        ],
+        [
+          "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+          "doc/inference_deployment_qa.md"
+        ]
+      ],
+      "article_sha256": "56eb03790dd31bca1dfd6a27f7d2952ce7e9c83e83632fead761627f645ab5f5",
+      "notes_sha256": "7dd0fabb7a1fce4a59ed13666ff666601a22691da5a1dacae66a9734a1218613",
+      "source_count_arithmetic": {
+        "configuration_total": 16
+      },
+      "source_validation_limit": "Only article, notes and allowed formal artifacts read. URL revision consistency is verified; remote source content and source-probes-v1 raw results are not independently verified.",
+      "boundary_findings": [
+        {
+          "path": "24-Phase5·5-少跑几圈/正文.md",
+          "line": 56,
+          "issue": "累计合成置信度 omits product; say 合成置信度乘积."
+        },
+        {
+          "path": "24-Phase5·5-少跑几圈/正文.md",
+          "line": 89,
+          "issue": "K134 passes at W128 only when actual B=6; state raw_B<=6 alongside default nextn5."
+        },
+        {
+          "path": "24-Phase5·5-少跑几圈/正文.md",
+          "line": 73,
+          "issue": "撤销工作 is not independently costed; draft discard counts and scheduled verification/drafting work are measured synthetic quantities."
+        }
+      ]
+    },
+    "verified_wording": [
+      {
+        "path": "24-Phase5·5-少跑几圈/正文.md",
+        "lines": [
+          56,
+          77
+        ],
+        "assessment": "阈值不称源码策略；真实最大D起草与toy按所选长度计费差别已明确，不给DSpark加速比。"
+      },
+      {
+        "path": "24-Phase5·5-少跑几圈/正文.md",
+        "lines": [
+          58,
+          75,
+          119
+        ],
+        "assessment": "240为预设教学重放，8/4/4不作一般胜率；99/54/18是整数求和反例，不作模型质量分数。"
+      },
+      {
+        "path": "24-Phase5·5-少跑几圈/正文.md",
+        "lines": [
+          99,
+          105
+        ],
+        "assessment": "配置局部下限通过不等于服务可用；明确没有运行完整C++ metadata或官方L1。"
+      },
+      {
+        "path": "phase5/exp23/源码笔记.md",
+        "lines": [
+          25,
+          27,
+          56,
+          58,
+          62,
+          64
+        ],
+        "assessment": "源码阅读、隔离探针、教学成本与整数求和边界分开；5216被明确称为参考行检查而不是模型请求或C++比较。"
+      }
+    ],
+    "provenance_check": "正文4条源码链接全部固定同一plan.commit_reading版本；与笔记、用户提供的源码调查结果内部一致。未实际打开远端链接或source-probes-v1，不能把内部一致性称为独立源证据核验。",
+    "requested_edits": "只提出发现，未改正文或笔记。主要应补实际B=6前提；其余两项属于措辞精度。",
+    "source_claims_not_independently_reproduced": [
+      "19/26源码清单及其URL/SHA256",
+      "16配置原始判定与实际environ/AST提取执行",
+      "10形状/5216次_reference_visible、3pivot、1缓存控制",
+      "真实DFlash/全批预算调度/SWA C++条件"
+    ]
+  },
+  "editorial_suggestions": [
+    {
+      "id": "ES-01",
+      "priority": "P3",
+      "path": "24-Phase5·5-少跑几圈/正文.md",
+      "line": 56,
+      "issue": "累计合成置信度未明确是乘积。",
+      "replacement": "在上限5内，选择合成置信度连乘积不低于0.8的最长前缀。",
+      "support": "replay.select_length、plan.candidate_rule及源码笔记:25均为乘积。"
+    },
+    {
+      "id": "ES-02",
+      "priority": "P3",
+      "path": "24-Phase5·5-少跑几圈/正文.md",
+      "line": 73,
+      "issue": "增加了撤销和验证工作可能被读成已单独计量撤销开销；本toy没有单列撤销费用。",
+      "replacement": "增加了被撤销的草稿数和计划验证工作点。",
+      "support": "只计每轮base、计划验证位置及已起草token；不能把撤销token计数直接叫实际撤销成本。"
+    }
+  ],
+  "report_revision": 2
+}

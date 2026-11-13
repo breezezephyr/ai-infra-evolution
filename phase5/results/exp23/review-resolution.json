@@ -1,0 +1,32 @@
+{
+  "v1_v2_same_frozen_scientific_inputs": true,
+  "v1_v2_same_240_outputs_rounds_costs": true,
+  "controls": [
+    {
+      "control": "fixed5 replaced by fixed0",
+      "failed_rows": 48,
+      "all_pairs_unavailable": true
+    },
+    {
+      "control": "one fixed5 exception",
+      "planned_a": 240,
+      "errors_a": 1,
+      "planned_b": 99,
+      "unavailable_pairs": 1
+    },
+    {
+      "control": "one window exception",
+      "planned_a": 240,
+      "planned_b": 99,
+      "errors_b": 1
+    }
+  ],
+  "unit_tests": 62,
+  "raw_v1_unchanged_sha256": {
+    "plan.json": "de2324b5c873e1ecaab02b0aa528c2689fbb292ccce46d7fd55ea4ba99eb3620",
+    "replays.json": "dc79195410a0c4700602bde19d779875288e903a48cc17a161f90e90bae1cacf",
+    "window-cases.json": "5fac6ea411d2e97ff8f01912cdd2ca854a9e0c3d3efcd596e93b2440ad959e3b"
+  },
+  "resolution": "IR-01/02/03 fixed by full case capture, independent round audit, explicit valid/unavailable pairing, persisted plan readback, actual snapshot execution and hash recheck; IR-04 manuscript B premise fixed; synthetic recomputation, not new samples",
+  "reviewer_rereview_after_fix": false
+}

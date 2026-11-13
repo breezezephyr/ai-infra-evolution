@@ -1,0 +1,278 @@
+{
+  "scope": "read_only_existing_notes_fixed_sources_and_counterexample",
+  "candidate_count": 1,
+  "files": [
+    {
+      "path": "phase5/exp19/源码笔记.md",
+      "sha256": "e2afc6bb448e400f10255f03b3c5e0ff707499d44aca4092599aea8431dd086d",
+      "finding": "已有真实wheel转换／编码；formal-v2保留满上下文默认额度返回1的反例。",
+      "selected_lines": [
+        {
+          "line": 19,
+          "text": "  → resolve_max_tokens(实际输入token数, 调用方传入的上下文上限)"
+        },
+        {
+          "line": 35,
+          "text": "| resolved max_tokens | 编码后输入长度、传入上下文参数、函数结果或错误 | 显式上限、默认预算、余量与边界分开记录 |"
+        },
+        {
+          "line": 42,
+          "text": "- 输出上界检查与编码后上下文检查属于不同阶段。`resolve_max_tokens`的上下文值由调用方传入；其结果不是模型容量实测。"
+        }
+      ]
+    },
+    {
+      "path": "phase5/exp20/源码笔记.md",
+      "sha256": "28018299461e10116560186dc48202effc2e305965fc301e9164571e6a1fa93e",
+      "finding": "真实parser与合成后端输出；不把EOF／工具参数或计量观察变成性能或后端缺陷。",
+      "selected_lines": [
+        {
+          "line": 12,
+          "text": "下面是一条完整的 **模型原始文本**；不是协议 JSON 或 SSE 帧。先用关闭 thinking、启用工具解析的请求，最好声明同名函数及 `location: string` 参数，再依次输入 Ready、Text、后端 Finish(Stop)。"
+        },
+        {
+          "line": 18,
+          "text": "源码预期工具名为 `get_current_weather`，参数 JSON 语义为 `{\"location\":\"Tokyo\"}`。Chat/Responses 的 arguments 是字符串，格式可能含空格；Messages 累积后是 input 对象。名称和参数都完整时，后端 Stop 对应 Chat `tool_calls`、Messages `tool_use`、Responses `completed`。"
+        },
+        {
+          "line": 33,
+          "text": "| `InferenceChunk.ready` | 后端提供 prompt token 数、缓存命中数、可选 fingerprint | 不从请求文字自动统计 prompt usage |"
+        },
+        {
+          "line": 34,
+          "text": "| `InferenceChunk.text(str, token_count=0)` | 接受有效 Unicode 字符串；整段为一个 `ChunkKind::Text`，标记按拼写识别 | 没有特殊 token 身份；附 tokenizer 也不会自动补算 completion 总数 |"
+        },
+        {
+          "line": 37,
+          "text": "| 内部 `OutputParser.finish(self)` | 把未匹配完的标记按当前阶段的 unmatched action 处理 | 不补齐工具标签、引号或 JSON，也不自行声明后端 Stop |"
+        }
+      ]
+    },
+    {
+      "path": "phase5/exp21/源码笔记.md",
+      "sha256": "fbf374bb78cbc371f38eafeed0cfbb7a8dba7f974031ced71460b27b8254011c",
+      "finding": "约束声明转换与采样执行分离；parser透传合成反例不直接证明库bug。",
+      "selected_lines": [
+        {
+          "line": 17,
+          "text": "| 后端传输、xgrammar 编译、采样、通用 schema 实例校验 | 未执行 | 没有成功率或性能结论 |"
+        },
+        {
+          "line": 57,
+          "text": "| 三协议无工具、无格式 | `OutputConstraint=None` | 不设置 so_args；未传输 | 未执行 | 未执行 |"
+        },
+        {
+          "line": 58,
+          "text": "| Chat response_format / Responses text.format 的 json_object，提示含 json | `kind=json, schema=\"\"`，表示任意 JSON 值的 sentinel；parser 开 json 模式 | **拒绝直接透传空 schema**；接入前决定任意 JSON 与 object 的语义、显式构造合法 grammar/schema | 未执行 | 未执行；数组反例证明 object 类型仍须独立检查 |"
+        },
+        {
+          "line": 59,
+          "text": "| Chat/Responses 合法非 strict json_schema | `kind=json`；schema 为原值 compact JSON；转换实际构建离线 schema validator 检查 schema | 候选 `so_args={schema_type:\"json\",schema:<string>}`；编译及 dialect 未验证 | 未执行 | 未执行 |"
+        },
+        {
+          "line": 60,
+          "text": "| Chat/Responses strict json_schema | prompt 保留原 schema；constraint 使用规范化 schema，补全部 required、additionalProperties=false | 同上；DeepInfer compiler 强制 strict_mode=True 不是 recipe strict 的等价证明 | 未执行 | 未执行 |"
+        }
+      ]
+    },
+    {
+      "path": "phase5/exp22/源码笔记.md",
+      "sha256": "eb05b316ffb2c741b2378b54850c227fe8bb5d0898b513996eaf181a69c88c4c",
+      "finding": "固定DeepInfer调度循环笔记；未加载完整DeepInfer引擎，不能据此提出运行时性能缺陷。",
+      "selected_lines": [
+        {
+          "line": 3,
+          "text": "2026-10-26；DeepInfer固定`9bd9cf243fc53ef9afbf8f04d391d989117d6ab9`。本地副本在`../vendor/exp22-source/DeepInfer`，11份固定commit原始文件及SHA256见其`manifest.json`；不是完整Git checkout。DeepInfer未安装/未执行，以下是源码可见行为；RTX4060实验运行独立vLLM/Qwen后端。"
+        },
+        {
+          "line": 33,
+          "text": "这是调用关系示意，没有用本次小卡实验测DeepInfer的设备时间。源码仍有显式同步：seqlens修正需等待D2H事件，`_post_process_step`需`sample_end_evt.synchronize()`，最后flush也可引起CPU/GPU同步。`model_runner.py:308–367`在forward/sample launch内使用`forbid_cuda_sync()`，只说明这些局部区域避免同步，不能推出整个循环无同步或调度耗时为零。"
+        },
+        {
+          "line": 42,
+          "text": "本轮没有构造或运行DeepInfer引擎，不捏造其运行时有效值。实际执行的vLLM配置由插桩`engine_request.effective_config`记录：V0、eager、max_num_seqs4、max_num_batched_tokens4096、chunked_prefill=False。prefix_caching字段原值None，当前V0 scheduler的`if not self.cache_config.enable_prefix_caching`分支将其视为不启用；不把None改写为声称来自配置的False。"
+        },
+        {
+          "line": 46,
+          "text": "[官方固定版README](https://github.com/deepseek-ai/DeepInfer/blob/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/README.md)说明batch-invariant为NVIDIA路径，通过`DEEPINFER_BATCH_INVARIANT=1`启用；确定性采样还需`DEEPINFER_ENABLE_MTP_VARLEN=0`与固定`seq_seed`。这里不能写成关闭所有MTP，条件针对可变长度开关。"
+        },
+        {
+          "line": 50,
+          "text": "这个测试对数值/概率的batch invariance有价值，不能转述成两次自由随机生成天然相同。exp22的Qwen实验没有teacher forcing，以temperature0贪心自由生成实际token序列；固定seed17只是冻结设置之一。该实验不验证DeepInfer功能，也不证明随机采样、其他硬件/精度/版本的确定性。"
+        }
+      ]
+    },
+    {
+      "path": "phase5/exp23/源码笔记.md",
+      "sha256": "7dd0fabb7a1fce4a59ed13666ff666601a22691da5a1dacae66a9734a1218613",
+      "finding": "DSpark教学重放和AST隔离探针已标边界；不外推引擎行为或性能。",
+      "selected_lines": [
+        {
+          "line": 3,
+          "text": "2026-10-26，固定DeepInfer `9bd9cf243fc53ef9afbf8f04d391d989117d6ab9`。阅读副本在`../vendor/exp23-source/DeepInfer`；DSpark清单19文件，SWA清单26文件，各有固定URL/SHA256，重合文件不能重复算独立输入。它们不是完整Git checkout。本轮没有加载DeepInfer引擎、模型权重或GPU。"
+        },
+        {
+          "line": 23,
+          "text": "## A教学重放额外假设"
+        },
+        {
+          "line": 27,
+          "text": "教学模型还允许策略改变实际起草数量，草稿工作按选定长度计费。真实DFlash会生成最大D，再决定验证其中多少；真实模型起草成本、验证kernel曲线、缓存和ZOS不能用这张成本表替代。工作点是声明的算账假设，不是实测时间；目标token相等是这个oracle状态机的不变量，不是模型输出质量结论。"
+        },
+        {
+          "line": 48,
+          "text": "## 实际执行的官方源函数隔离探针"
+        },
+        {
+          "line": 53,
+          "text": "2. AST原样提取`ModelRunner.load_model`里的mode断言块，注入self.window_size和真实源解析器的envs；不调用load_model或get_model。显式正常assert编译模式。"
+        }
+      ]
+    },
+    {
+      "path": "phase5/exp24/源码笔记.md",
+      "sha256": "7bdb16ebc873bc87d42f9e1b42528bfb55c9e0c93c1aae49d409261ef31bcd91",
+      "finding": "主要为Mooncake存储，已有DeepInfer缓存片段仍为阅读证据；与本次单一recipe边界候选分开。",
+      "selected_lines": [
+        {
+          "line": 3,
+          "text": "2026-10-26。本文只记录源码阅读与归档，不运行服务、模型、安装或实验。Mooncake 固定提交为 `c67a88f381f69e869045f353539e90c76e738830`；归档最初引用的 7 个文件及本次 memcpy 分支核对直接引用的 6 个文件，共 13 个，完整 URL、字节数、行数和 SHA256 见 [source-manifest.json](phase5/vendor/exp24-source/Mooncake/source-manifest.json)，不是完整 Git checkout。下文 M0–M12 均指该提交；D0–D1 指已有 exp23 DeepInfer 固定副本。"
+        },
+        {
+          "line": 7,
+          "text": "固定源码根清单声明 `mooncake-transfer-engine==0.3.12.post1`、Python ≥3.10，基础 Python 依赖为 `aiohttp/msgpack/requests`（[M0:13–27][M0]）。主任务提供的在线预检是已安装 `mooncake-transfer-engine-non-cuda==0.3.13.post1`；本归档任务没有检查该环境，**不能把 wheel 版本当成这个 Git 提交，也不能把以下源码分支直接写成 wheel 的实测行为**。正式包身份、数据和文章由主任务维护。"
+        },
+        {
+          "line": 9,
+          "text": "已浏览核实的发布文档：[快速入门][quick]、[支持的协议][protocols]、[Python Store API][api]。它们是会变动的发布页，不是固定提交证明。non-CUDA 文档列出的 Ubuntu 库为 `libcurl4 libibverbs1 rdma-core librdmacm1 libnuma1 liburing2`；[PyPI 0.3.13.post1][wheel] 的 wheel 为 CPython 3.10–3.13、Linux x86-64/ARM64、glibc ≥2.28。TCP 无需 RDMA 硬件，不等于预编译扩展无需 RDMA 动态库。"
+        },
+        {
+          "line": 13,
+          "text": "主服务示例（只列命令，本文未执行）："
+        },
+        {
+          "line": 23,
+          "text": "| 交接 | 固定源码路径 | 能证明什么 |"
+        }
+      ]
+    },
+    {
+      "path": "phase5/exp19/fixture-notes.md",
+      "sha256": "de455b535b89fa34ae3480fd9a2cced23eb2d090c64a52a2214548c059b9ff86",
+      "selected_lines": [
+        {
+          "line": 15,
+          "text": "## 三协议字段与最小输入差异"
+        },
+        {
+          "line": 77,
+          "text": "- `resolve_default_thinking_65536 / resolve_default_non_thinking_8192 / resolve_default_max_effort_131072`：先真实编码得 P=len(token_ids)，调用 resolve_max_tokens(P, P+262144)，分别应得 65536 / 8192 / 131072；同时调用 resolve_max_tokens(P, P+7)，应截为 7。"
+        },
+        {
+          "line": 78,
+          "text": "- `resolve_explicit_max_tokens`：真实编码得 P，以转换后 M=inference_options.max_tokens 调 resolve_max_tokens(P, P+M)，必须返回 M。Messages 上界案例的 M 是截断后的 393216。"
+        },
+        {
+          "line": 79,
+          "text": "- `resolve_context_prompt_overflow`：真实编码得 P，调用 resolve_max_tokens(P, P-1)，必须抛 ConversionError，status_code=400，正文包含 `maximum context length`；P 必须大于 0。"
+        },
+        {
+          "line": 80,
+          "text": "- `resolve_context_requested_output_overflow`：显式 M=64 的 limit_stop 族，真实编码得 P，调用 resolve_max_tokens(P, P+M-1)，必须抛同类上下文错误；conversion 仍为 ok。"
+        },
+        {
+          "line": 81,
+          "text": "- `resolve_context_at_limit_returns_one`：无显式 max_tokens 的 text_default 族，调用 resolve_max_tokens(P, P)，固定源码返回 1；如实保留这个边界行为，不能改成自行推断的错误。"
+        },
+        {
+          "line": 83,
+          "text": "- `literal_control_token_counts`：使用匹配 v41 tokenizer 确认 Tokenizer.encode(`<｜User｜>`) 是单一 ID；匹配 encoding.encode(conversation) 中该 ID 恰 1 次，仅对应模板 User 边界。"
+        },
+        {
+          "line": 86,
+          "text": "检查阶段的失败/缺测必须单列。匹配 tokenizer 未就绪时，先保留 conversion/render 结果，把 encode、计数和上下文检查标记未执行，不能假报通过或把失败丢出分母。上下文参数是本地 API 边界探针，不宣称测得模型真实服务上下文容量。"
+        }
+      ]
+    },
+    {
+      "path": "phase5/results/exp19-结论.md",
+      "sha256": "faaabe17a0eb443f0b896716603ace1e4bea6963db0e328322b2e90cb90a86f1",
+      "selected_lines": [
+        {
+          "line": 28,
+          "text": "5. **转换上界与上下文余量分阶段检查。** 对输入14、显式输出64，`resolve_max_tokens(14,78)`返回64，传入77则拒绝。未显式填写额度时，在人为充足的上下文参数下，非thinking/普通thinking/max effort默认分别8192/65536/131072，仅余7时都降到7。这不是模型容量测量。"
+        },
+        {
+          "line": 29,
+          "text": "6. **保留边界反例。** 未显式额度且输入长度恰等于传入上下文上限时，本版helper返回1；不能据此证明后端满上下文仍可生成。调用方仍须核对真实后端限制。"
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/minimal/source-metadata.json",
+      "sha256": "3ced6a5008918fa6fc185a967800a775a7670b707a34d86380912d174c1adefd",
+      "selected_lines": [
+        {
+          "line": 80,
+          "text": "      \"test_resolve_max_tokens_reports_the_context_length_error\","
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/minimal/deepseek-recipe/src/request/mod.rs",
+      "sha256": "c2d996aca81b6956b9e997c24fd4239a1191248d4e5399dfa069ee41f19fc2b9",
+      "selected_lines": [
+        {
+          "line": 24,
+          "text": "/// [`ConversationRequest::resolve_max_tokens`] supplies the default"
+        },
+        {
+          "line": 30,
+          "text": "    /// [`ConversionOptions::resolve_max_tokens_upper_bound`]. `None` when the"
+        },
+        {
+          "line": 31,
+          "text": "    /// request sets none; [`ConversationRequest::resolve_max_tokens`] supplies"
+        },
+        {
+          "line": 142,
+          "text": "/// [`Self::resolve_max_tokens`], and constructs the inference request."
+        },
+        {
+          "line": 156,
+          "text": "/// [`ConversationRequest::resolve_max_tokens`] supplies when the request sets"
+        },
+        {
+          "line": 160,
+          "text": "/// [`ConversationRequest::resolve_max_tokens`] supplies when the request sets"
+        },
+        {
+          "line": 164,
+          "text": "/// which [`ConversationRequest::resolve_max_tokens`] supplies when the request"
+        },
+        {
+          "line": 207,
+          "text": "    pub fn resolve_max_tokens("
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/minimal/deepseek-recipe-python/tests/test_bindings.py",
+      "sha256": "d852276ec3a11917f8cf2fbee95662dc3445d042096ed89a8a6a113b12b0f087",
+      "selected_lines": [
+        {
+          "line": 377,
+          "text": "def test_resolve_max_tokens_reports_the_context_length_error():"
+        },
+        {
+          "line": 379,
+          "text": "    assert thinking.resolve_max_tokens(10, 131072) == 65536"
+        },
+        {
+          "line": 381,
+          "text": "        thinking.resolve_max_tokens(131073, 131072)"
+        }
+      ]
+    }
+  ]
+}

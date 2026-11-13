@@ -1,0 +1,28 @@
+{
+  "ack_source": "python_synthetic_control_only",
+  "audio_played": false,
+  "browser_playback_latency": null,
+  "base_url": "http://127.0.0.1:18146",
+  "checks": [
+    {
+      "scenario": "startup",
+      "assertion": "dedicated port initially closed",
+      "passed": true
+    }
+  ],
+  "audio": {
+    "sample_rate": 48000,
+    "total_samples": 149760,
+    "pcm_sha256": "609cc64ebfb196f74bdc390257c9b3cf9db1f3513b94a473555f26724211223c"
+  },
+  "owned_server_pid": 59703,
+  "error": "server exited 2; see server-stdout.log",
+  "traceback": "Traceback (most recent call last):\n  File \"phase4/exp15/run_sessions.py\", line 316, in run\n    raise RuntimeError(f\"server exited {process.returncode}; see server-stdout.log\")\nRuntimeError: server exited 2; see server-stdout.log\n",
+  "cleanup": {
+    "owned_server_exit_code": 2,
+    "port": 18146,
+    "port_closed": true,
+    "monotonic_ns": 108221877334333
+  },
+  "passed": false
+}

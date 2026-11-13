@@ -1,0 +1,4382 @@
+{
+  "schema_version": 1,
+  "experiment": "exp21 / P5·3",
+  "status": "source_and_identity_handoff_complete",
+  "generated_at": "2026-10-26T03:01:58.913Z",
+  "scope": {
+    "remote_read_only": true,
+    "services_started_or_stopped": 0,
+    "http_inference_requests_sent_by_this_agent": 0,
+    "remote_files_written": [],
+    "new_local_files": [
+      "phase5/exp21/backend-source-notes.md",
+      "phase5/exp21/backend-source-notes.json"
+    ],
+    "no_other_projects_scanned": true,
+    "diagnostics": "Installed Python imports, argparse-only parsing, CPU schema compile and native string matcher; process-local CUDA_VISIBLE_DEVICES empty; all diagnostic cuda_initialized values false. No model load or GPU kernel executed.",
+    "formal_runner_and_cases": "Owned by main agent; neither written nor changed here."
+  },
+  "urgent_correction": {
+    "earlier_cli_candidate_invalid": true,
+    "reason": "Internal backend options string was incorrectly assumed to be accepted by the CLI. Installed argparse choices reject xgrammar:no-fallback.",
+    "server_cli_backend": "--guided-decoding-backend xgrammar",
+    "disable_fallback_wire_field": {
+      "guided_decoding_backend": "xgrammar:no-fallback"
+    },
+    "openai_sdk": "extra_body={\"guided_decoding_backend\":\"xgrammar:no-fallback\"}",
+    "independently_verified": "Actual installed EngineArgs argparse, ChatCompletionRequest.model_validate, to_sampling_params, maybe_backend_fallback executed on CPU; no HTTP.",
+    "no_separate_cli_disable_fallback_flag_found": "EngineArgs parser actions and installed OpenAI CLI source inspected; request-level field is the verified mechanism.",
+    "supersedes": "Any xgrammar:no-fallback CLI suggestion in remote-preflight.md/json is invalid. That report is not edited in this scoped follow-up."
+  },
+  "runtime_evidence_from_main_agent": {
+    "provenance": "Human user relaying main agent's measurements; not independently queried by this read-only source agent.",
+    "directory": "/opt/exp21-20261026-p5c",
+    "port": 8021,
+    "version": "vLLM 0.8.5 V0 + Qwen3-0.6B",
+    "controls_reported": {
+      "prompt_only": "FREE",
+      "json_object": "{}",
+      "schema_control": "CONSTRAINED21 via API-only enum",
+      "invalid_schema_type_invented": "HTTP 400"
+    },
+    "no_fallback_reported": {
+      "wire_field": {
+        "guided_decoding_backend": "xgrammar:no-fallback"
+      },
+      "integer_minimum0_maximum100": "HTTP 200",
+      "array_maxItems": "HTTP 400 with xgrammar item-limits unsupported message",
+      "artifact": "bounds-probes.json (main agent reports saved; not read or hashed by this agent)"
+    },
+    "formal_plan_reported": {
+      "label": "gpu-formal-v1",
+      "tasks": 20,
+      "seeds": 2,
+      "groups": 3,
+      "planned_calls": 120,
+      "schema_group_expected_array_rejections": 10,
+      "schema_group_other_calls": 30,
+      "policy": "Keep full schemas and all 20 tasks; preserve expected 400 rows. Formal run has started according to user; no completion or outcome asserted."
+    }
+  },
+  "judgments": [
+    {
+      "keyword": "minimum + maximum on integer",
+      "status": "tested_subset_works",
+      "examples": "[2,4] and [0,100] ordinary integer encodings rejected below/above and accepted tested inclusive endpoints; nested object range also tested.",
+      "limits": "This is a probed subset, not full JSON Schema equivalence. integer minimum=1.5 is valid JSON Schema but native converter throws 'minimum must be an integer'; numeric encoding 2.0 is rejected by integer grammar."
+    },
+    {
+      "keyword": "minimum alone on integer",
+      "status": "counterexample__not_reliable",
+      "evidence": "minimum=2 compiled grammar root ::= (([2-9]) | ([1-9] [0-9]*)); accepts 1, independently invalid. Reproduced via Grammar.from_json_schema and GrammarCompiler.compile_json_schema.",
+      "recommendation": "Keep declared schema; independent schema validator must identify actual violations. Do not label precheck acceptance as support."
+    },
+    {
+      "keyword": "maximum alone on integer",
+      "status": "tested_subset_works",
+      "evidence": "maximum=4 accepted 3/4 and rejected 5. No general guarantee for all bounds."
+    },
+    {
+      "keyword": "minimum + maximum on number",
+      "status": "counterexamples__not_reliable",
+      "evidence": "[1.25,2.75] accepts 1.25/1.5/2.0/2.75, rejects 2 despite valid JSON/schema, accepts 1a25 and 2x75 despite invalid JSON. Native compiled grammar contains wildcard between endpoint integer and fractional digits.",
+      "recommendation": "Do not declare full number-range or even valid-JSON guarantee for schemas that exercise this faulty path. Keep JSON parsing separate from schema validity."
+    },
+    {
+      "keyword": "minItems / maxItems",
+      "status": "unsupported_in_vllm_xgrammar_path",
+      "evidence": "Installed recursive vLLM precheck true for each keyword, including nested arrays. Actual maybe_backend_fallback raises ValueError with request xgrammar:no-fallback; ordinary xgrammar changes backend to outlines. Direct native xgrammar compilation alone ignores bounds and admits invalid-length arrays; it must not bypass the vLLM guard.",
+      "runtime_crosscheck": "Main agent reports maxItems HTTP 400 on 8021 with request-level no-fallback."
+    },
+    {
+      "keyword": "required / additionalProperties:false / enum",
+      "status": "tested_basic_subset_works",
+      "evidence": "Object required x and no-extra-property probes reject {} and extra y; enum strings a/b accept a,b and reject c."
+    }
+  ],
+  "unsupported_keyword_policy": {
+    "evidence": "Installed vllm/model_executor/guided_decoding/utils.py:6-48; V0 fallback_or_error in __init__.py:26-34.",
+    "by_type": {
+      "integer_or_number": [
+        "multipleOf"
+      ],
+      "array": [
+        "uniqueItems",
+        "contains",
+        "minContains",
+        "maxContains",
+        "minItems",
+        "maxItems"
+      ],
+      "string": [
+        "minLength",
+        "maxLength",
+        "format"
+      ],
+      "object": [
+        "minProperties",
+        "maxProperties",
+        "propertyNames",
+        "patternProperties"
+      ]
+    },
+    "scope": "This exact code recursively checks dictionaries/lists and conditions on explicit type. It is the vLLM precheck policy, not an exhaustive xgrammar compiler feature list.",
+    "preserve_schema": true,
+    "preserve_unsupported_rows": true
+  },
+  "call_chain": [
+    {
+      "step": 1,
+      "source": "vllm/entrypoints/openai/serving_chat.py:221-224; protocol.py:495-518,547",
+      "behavior": "ChatCompletionRequest.to_sampling_params: json_object -> guided_json_object True; json_schema.schema -> guided_json; GuidedDecodingParams.from_optional carries request guided_decoding_backend into SamplingParams.guided_decoding. strict is declared metadata; this mapping does not branch on it."
+    },
+    {
+      "step": 2,
+      "source": "vllm/engine/multiprocessing/client.py:609-638; async_llm_engine.py:538-578",
+      "behavior": "V0 frontend builds guided logits processor. Request backend wins over server default through guided_decoding.backend or default_guided_backend; construction appends processor to logits_processors and clears guided_decoding. Processors are separately cloudpickled for engine transport."
+    },
+    {
+      "step": 3,
+      "source": "vllm/model_executor/guided_decoding/__init__.py:23-96,111-129; sampling_params.py:72-99",
+      "behavior": "Parse backend_name before ':' and backend_options after ':'; no_fallback finds the option. maybe_backend_fallback checks keyword limitations; no-fallback raises instead of changing to outlines. Actual functions were CPU-executed."
+    },
+    {
+      "step": 4,
+      "source": "vllm/model_executor/guided_decoding/xgrammar_decoding.py:37-47,158-211",
+      "behavior": "Factory -> GrammarConfig.from_guided_params -> xgr.Grammar.from_json_schema validation; native RuntimeError is translated to ValueError. Return XGrammarLogitsProcessor."
+    },
+    {
+      "step": 5,
+      "source": "vllm/engine/multiprocessing/engine.py:254-262; xgrammar_decoding.py:122-143,293-345",
+      "behavior": "Engine restores processors; worker _ensure_ctx lazily gets compiler for tokenizer identity and calls GrammarCompiler.compile_json_schema. Compiled ctx is lazy, so accepted request/body capture alone does not prove first sampling mask happened."
+    },
+    {
+      "step": 6,
+      "source": "vllm/worker/model_runner.py:1810-1820; model_executor/models/qwen3.py:303-310; model_executor/layers/logits_processor.py:80-85,141-196",
+      "behavior": "Qwen3.compute_logits invokes shared LogitsProcessor; per-sequence sampling_params.logits_processors are invoked on output tokens and logits rows."
+    },
+    {
+      "step": 7,
+      "source": "vllm/model_executor/guided_decoding/xgrammar_decoding.py:347-401; xgrammar/matcher.py:211-260",
+      "behavior": "On first call initialize compiled ctx, matcher and CPU bitmask. Later accept previous sampled token; fill_next_token_bitmask; copy mask to scores.device; apply_token_bitmask_inplace. If reasoning parser is enabled and reasoning has not ended, this processor explicitly returns unmodified scores."
+    },
+    {
+      "step": 8,
+      "source": "xgrammar/matcher.py:56-152; xgrammar/kernels/apply_token_bitmask_inplace_triton.py:72-77; vllm/model_executor/layers/sampler.py:269-294",
+      "behavior": "Mask sets disallowed logits to -inf; CUDA path dispatches Triton. Sampler then applies temperature/filtering, softmax/log_softmax and selects next token. CUDA mask execution is source-traced only, not executed by this diagnostic."
+    }
+  ],
+  "model_and_binary_identity": {
+    "observed_at_start": "2026-10-26T02:49:51.809596+00:00",
+    "model_path": "/opt/models/Qwen3-0.6B",
+    "files": [
+      {
+        "path": "/opt/models/Qwen3-0.6B/config.json",
+        "resolved_path": "/opt/models/Qwen3-0.6B/config.json",
+        "bytes": 726,
+        "mtime_ns": 1790162152319357000,
+        "sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+        "stable_size_mtime_during_read": true
+      },
+      {
+        "path": "/opt/models/Qwen3-0.6B/configuration.json",
+        "resolved_path": "/opt/models/Qwen3-0.6B/configuration.json",
+        "bytes": 73,
+        "mtime_ns": 1790162152461220600,
+        "sha256": "f888421726665e8a84b738eed42a64875aed79de8be7daade851ac8bf4c0cef9",
+        "stable_size_mtime_during_read": true
+      },
+      {
+        "path": "/opt/models/Qwen3-0.6B/generation_config.json",
+        "resolved_path": "/opt/models/Qwen3-0.6B/generation_config.json",
+        "bytes": 239,
+        "mtime_ns": 1790162152491086600,
+        "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+        "stable_size_mtime_during_read": true
+      },
+      {
+        "path": "/opt/models/Qwen3-0.6B/tokenizer_config.json",
+        "resolved_path": "/opt/models/Qwen3-0.6B/tokenizer_config.json",
+        "bytes": 9732,
+        "mtime_ns": 1790162152707615000,
+        "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "stable_size_mtime_during_read": true
+      },
+      {
+        "path": "/opt/models/Qwen3-0.6B/tokenizer.json",
+        "resolved_path": "/opt/models/Qwen3-0.6B/tokenizer.json",
+        "bytes": 11422654,
+        "mtime_ns": 1790162153846256000,
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "stable_size_mtime_during_read": true
+      },
+      {
+        "path": "/opt/models/Qwen3-0.6B/vocab.json",
+        "resolved_path": "/opt/models/Qwen3-0.6B/vocab.json",
+        "bytes": 2776833,
+        "mtime_ns": 1790162154025452300,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "stable_size_mtime_during_read": true
+      },
+      {
+        "path": "/opt/models/Qwen3-0.6B/merges.txt",
+        "resolved_path": "/opt/models/Qwen3-0.6B/merges.txt",
+        "bytes": 1671853,
+        "mtime_ns": 1790162153230270000,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "stable_size_mtime_during_read": true
+      },
+      {
+        "path": "/opt/models/Qwen3-0.6B/model.safetensors",
+        "resolved_path": "/opt/models/Qwen3-0.6B/model.safetensors",
+        "bytes": 1503300328,
+        "mtime_ns": 1790162231604249300,
+        "sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+        "stable_size_mtime_during_read": true
+      },
+      {
+        "path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar/xgrammar_bindings.cpython-312-x86_64-linux-gnu.so",
+        "resolved_path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar/xgrammar_bindings.cpython-312-x86_64-linux-gnu.so",
+        "bytes": 17258920,
+        "mtime_ns": 1789869267315107600,
+        "sha256": "550ef2c43eff7030f0e9ea19d805bc35a9ba11bbb25e7ec9900bc360c89c072f",
+        "stable_size_mtime_during_read": true
+      },
+      {
+        "path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar/version.py",
+        "resolved_path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar/version.py",
+        "bytes": 4296,
+        "mtime_ns": 1789869267315107600,
+        "sha256": "ed5b6076117b08487258114749a4e5fcb5e63458564ef952bb75387f6db633fd",
+        "stable_size_mtime_during_read": true
+      },
+      {
+        "path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar-0.1.18.dist-info/METADATA",
+        "resolved_path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar-0.1.18.dist-info/METADATA",
+        "bytes": 3584,
+        "mtime_ns": 1789869267271249200,
+        "sha256": "8249eeda2d2f0fc83b31a0be8124f039d0f125cca33c344554a8de9758b352ad",
+        "stable_size_mtime_during_read": true
+      },
+      {
+        "path": "/root/vllm-env/lib/python3.12/site-packages/vllm-0.8.5.dist-info/METADATA",
+        "resolved_path": "/root/vllm-env/lib/python3.12/site-packages/vllm-0.8.5.dist-info/METADATA",
+        "bytes": 14841,
+        "mtime_ns": 1789869270414452700,
+        "sha256": "4af38f74d5c9fc342dde53067b2c161180a7dd0519e03a36848619606d3f8816",
+        "stable_size_mtime_during_read": true
+      }
+    ],
+    "model_config": {
+      "architectures": [
+        "Qwen3ForCausalLM"
+      ],
+      "attention_bias": false,
+      "attention_dropout": 0,
+      "bos_token_id": 151643,
+      "eos_token_id": 151645,
+      "head_dim": 128,
+      "hidden_act": "silu",
+      "hidden_size": 1024,
+      "initializer_range": 0.02,
+      "intermediate_size": 3072,
+      "max_position_embeddings": 40960,
+      "max_window_layers": 28,
+      "model_type": "qwen3",
+      "num_attention_heads": 16,
+      "num_hidden_layers": 28,
+      "num_key_value_heads": 8,
+      "rms_norm_eps": 1e-06,
+      "rope_scaling": null,
+      "rope_theta": 1000000,
+      "sliding_window": null,
+      "tie_word_embeddings": true,
+      "torch_dtype": "bfloat16",
+      "transformers_version": "4.51.0",
+      "use_cache": true,
+      "use_sliding_window": false,
+      "vocab_size": 151936
+    },
+    "generation_config": {
+      "bos_token_id": 151643,
+      "do_sample": true,
+      "eos_token_id": [
+        151645,
+        151643
+      ],
+      "pad_token_id": 151643,
+      "temperature": 0.6,
+      "top_k": 20,
+      "top_p": 0.95,
+      "transformers_version": "4.51.0"
+    },
+    "chat_template": {
+      "source": "/opt/models/Qwen3-0.6B/tokenizer_config.json:chat_template",
+      "text": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {{- messages[0].content + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0].content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" and message.content is string and not(message.content.startswith('<tool_response>') and message.content.endswith('</tool_response>')) %}\n        {%- set ns.multi_step_tool = false %}\n        {%- set ns.last_query_index = index %}\n    {%- endif %}\n{%- endfor %}\n{%- for message in messages %}\n    {%- if message.content is string %}\n        {%- set content = message.content %}\n    {%- else %}\n        {%- set content = '' %}\n    {%- endif %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {%- if loop.last or (not loop.last and reasoning_content) %}\n                {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content.strip('\\n') + '\\n</think>\\n\\n' + content.lstrip('\\n') }}\n            {%- else %}\n                {{- '<|im_start|>' + message.role + '\\n' + content }}\n            {%- endif %}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- endif %}\n{%- endif %}",
+      "sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "bytes_utf8": 4168
+    },
+    "tokenizer_metadata": {
+      "tokenizer_class": "Qwen2Tokenizer",
+      "model_max_length": 131072,
+      "bos_token": null,
+      "eos_token": "<|im_end|>",
+      "pad_token": "<|endoftext|>",
+      "add_bos_token": false,
+      "add_eos_token": null
+    },
+    "package_metadata": {
+      "vllm": {
+        "metadata_path": "/root/vllm-env/lib/python3.12/site-packages/vllm-0.8.5.dist-info/METADATA",
+        "header_lines": [
+          "Name: vllm",
+          "Version: 0.8.5",
+          "Project-URL: Homepage, https://github.com/vllm-project/vllm",
+          "Project-URL: Documentation, https://vllm.readthedocs.io/en/latest/",
+          "Project-URL: Slack, http://slack.vllm.ai/",
+          "Requires-Dist: xgrammar==0.1.18; platform_machine == \"x86_64\" or platform_machine == \"aarch64\""
+        ]
+      },
+      "xgrammar": {
+        "metadata_path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar-0.1.18.dist-info/METADATA",
+        "header_lines": [
+          "Name: xgrammar",
+          "Version: 0.1.18",
+          "Project-URL: Homepage, https://xgrammar.mlc.ai/",
+          "Project-URL: GitHub, https://github.com/mlc-ai/xgrammar"
+        ]
+      }
+    },
+    "observed_at_end": "2026-10-26T02:49:53.513361+00:00"
+  },
+  "installed_source": [
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/entrypoints/openai/protocol.py",
+      "sha256": "41035c9a6fb42af1e78049511008f29ff0009bf97ca94284fe774d78a9929937",
+      "bytes": 66479,
+      "snippets": [
+        {
+          "start_line": 134,
+          "end_line": 161,
+          "text": "class JsonSchemaResponseFormat(OpenAIBaseModel):\n    name: str\n    description: Optional[str] = None\n    # schema is the field in openai but that causes conflicts with pydantic so\n    # instead use json_schema with an alias\n    json_schema: Optional[dict[str, Any]] = Field(default=None, alias='schema')\n    strict: Optional[bool] = None\n\n\nclass StructuralTag(OpenAIBaseModel):\n    begin: str\n    # schema is the field, but that causes conflicts with pydantic so\n    # instead use structural_tag_schema with an alias\n    structural_tag_schema: Optional[dict[str, Any]] = Field(default=None,\n                                                            alias=\"schema\")\n    end: str\n\n\nclass StructuralTagResponseFormat(OpenAIBaseModel):\n    type: Literal[\"structural_tag\"]\n    structures: list[StructuralTag]\n    triggers: list[str]\n\n\nclass ResponseFormat(OpenAIBaseModel):\n    # type must be \"json_schema\", \"json_object\", or \"text\"\n    type: Literal[\"text\", \"json_object\", \"json_schema\"]\n    json_schema: Optional[JsonSchemaResponseFormat] = None"
+        },
+        {
+          "start_line": 495,
+          "end_line": 548,
+          "text": "        guided_json_object = None\n        if self.response_format is not None:\n            if self.response_format.type == \"json_object\":\n                guided_json_object = True\n            elif self.response_format.type == \"json_schema\":\n                json_schema = self.response_format.json_schema\n                assert json_schema is not None\n                self.guided_json = json_schema.json_schema\n            elif self.response_format.type == \"structural_tag\":\n                structural_tag = self.response_format\n                assert structural_tag is not None and isinstance(\n                    structural_tag, StructuralTagResponseFormat)\n                s_tag_obj = structural_tag.model_dump(by_alias=True)\n                self.structural_tag = json.dumps(s_tag_obj)\n\n        guided_decoding = GuidedDecodingParams.from_optional(\n            json=self._get_guided_json_from_tool() or self.guided_json,\n            regex=self.guided_regex,\n            choice=self.guided_choice,\n            grammar=self.guided_grammar,\n            json_object=guided_json_object,\n            backend=self.guided_decoding_backend,\n            whitespace_pattern=self.guided_whitespace_pattern,\n            structural_tag=self.structural_tag,\n        )\n\n        return SamplingParams.from_optional(\n            n=self.n,\n            best_of=self.best_of,\n            presence_penalty=self.presence_penalty,\n            frequency_penalty=self.frequency_penalty,\n            repetition_penalty=repetition_penalty,\n            temperature=temperature,\n            top_p=top_p,\n            top_k=top_k,\n            min_p=min_p,\n            seed=self.seed,\n            stop=self.stop,\n            stop_token_ids=self.stop_token_ids,\n            logprobs=self.top_logprobs if self.logprobs else None,\n            prompt_logprobs=prompt_logprobs,\n            ignore_eos=self.ignore_eos,\n            max_tokens=max_tokens,\n            min_tokens=self.min_tokens,\n            skip_special_tokens=self.skip_special_tokens,\n            spaces_between_special_tokens=self.spaces_between_special_tokens,\n            logits_processors=get_logits_processors(self.logits_processors,\n                                                    logits_processor_pattern),\n            include_stop_str_in_output=self.include_stop_str_in_output,\n            truncate_prompt_tokens=self.truncate_prompt_tokens,\n            output_kind=RequestOutputKind.DELTA if self.stream \\\n                else RequestOutputKind.FINAL_ONLY,\n            guided_decoding=guided_decoding,\n            logit_bias=self.logit_bias)"
+        }
+      ],
+      "selected_lines": [
+        {
+          "line": 364,
+          "text": "        description=("
+        },
+        {
+          "line": 365,
+          "text": "            \"If specified, the output will follow the structural tag schema.\"),"
+        },
+        {
+          "line": 366,
+          "text": "    )"
+        },
+        {
+          "line": 367,
+          "text": "    guided_decoding_backend: Optional[str] = Field("
+        },
+        {
+          "line": 368,
+          "text": "        default=None,"
+        },
+        {
+          "line": 369,
+          "text": "        description=("
+        },
+        {
+          "line": 370,
+          "text": "            \"If specified, will override the default guided decoding backend \""
+        },
+        {
+          "line": 371,
+          "text": "            \"of the server for this specific request. If set, must be either \""
+        },
+        {
+          "line": 372,
+          "text": "            \"'outlines' / 'lm-format-enforcer'\"),"
+        },
+        {
+          "line": 373,
+          "text": "    )"
+        },
+        {
+          "line": 374,
+          "text": "    guided_whitespace_pattern: Optional[str] = Field("
+        },
+        {
+          "line": 375,
+          "text": "        default=None,"
+        },
+        {
+          "line": 800,
+          "text": "        description=("
+        },
+        {
+          "line": 801,
+          "text": "            \"If specified, the output will follow the context free grammar.\"),"
+        },
+        {
+          "line": 802,
+          "text": "    )"
+        },
+        {
+          "line": 803,
+          "text": "    guided_decoding_backend: Optional[str] = Field("
+        },
+        {
+          "line": 804,
+          "text": "        default=None,"
+        },
+        {
+          "line": 805,
+          "text": "        description=("
+        },
+        {
+          "line": 806,
+          "text": "            \"If specified, will override the default guided decoding backend \""
+        },
+        {
+          "line": 807,
+          "text": "            \"of the server for this specific request. If set, must be one of \""
+        },
+        {
+          "line": 808,
+          "text": "            \"'outlines' / 'lm-format-enforcer'\"),"
+        },
+        {
+          "line": 809,
+          "text": "    )"
+        },
+        {
+          "line": 810,
+          "text": "    guided_whitespace_pattern: Optional[str] = Field("
+        },
+        {
+          "line": 811,
+          "text": "        default=None,"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/sampling_params.py",
+      "sha256": "c8fef374c69c75c01f77ff35913a255ae92231bf5363a41a692fced66f10b308",
+      "bytes": 26489,
+      "snippets": [
+        {
+          "start_line": 31,
+          "end_line": 110,
+          "text": "class GuidedDecodingParams:\n    \"\"\"One of these fields will be used to build a logit processor.\"\"\"\n    json: Optional[Union[str, dict]] = None\n    regex: Optional[str] = None\n    choice: Optional[list[str]] = None\n    grammar: Optional[str] = None\n    json_object: Optional[bool] = None\n    \"\"\"These are other options that can be set\"\"\"\n    backend: Optional[str] = None\n    whitespace_pattern: Optional[str] = None\n    structural_tag: Optional[str] = None\n\n    @staticmethod\n    def from_optional(\n        json: Optional[Union[dict, BaseModel, str]] = None,\n        regex: Optional[str] = None,\n        choice: Optional[list[str]] = None,\n        grammar: Optional[str] = None,\n        json_object: Optional[bool] = None,\n        backend: Optional[str] = None,\n        whitespace_pattern: Optional[str] = None,\n        structural_tag: Optional[str] = None,\n    ) -> Optional[\"GuidedDecodingParams\"]:\n        if all(arg is None for arg in (json, regex, choice, grammar,\n                                       json_object, structural_tag)):\n            return None\n        # Extract json schemas from pydantic models\n        if isinstance(json, (BaseModel, type(BaseModel))):\n            json = json.model_json_schema()\n        return GuidedDecodingParams(\n            json=json,\n            regex=regex,\n            choice=choice,\n            grammar=grammar,\n            json_object=json_object,\n            backend=backend,\n            whitespace_pattern=whitespace_pattern,\n            structural_tag=structural_tag,\n        )\n\n    @property\n    def backend_name(self) -> str:\n        \"\"\"Return the backend name without any options.\n        \n        For example if the backend is \"xgrammar:no-fallback\", returns \"xgrammar\"\n        \"\"\"\n        return (self.backend or \"\").split(\":\")[0]\n\n    def backend_options(self) -> list[str]:\n        \"\"\"Return the backend options as a list of strings.\"\"\"\n        if not self.backend or \":\" not in self.backend:\n            return []\n        return self.backend.split(\":\")[1].split(\",\")\n\n    def add_option(self, opt_name: str) -> None:\n        \"\"\"Adds an option to the backend options.\"\"\"\n        if not self.backend:\n            self.backend = f\":{opt_name}\"\n        elif \":\" not in self.backend:\n            self.backend += f\":{opt_name}\"\n        else:\n            options = set(self.backend_options())\n            options.add(opt_name)\n            self.backend = f\"{self.backend_name}:{','.join(sorted(options))}\"\n\n    def no_fallback(self) -> bool:\n        \"\"\"Returns True if the \"no-fallback\" option is supplied for the guided\n        decoding backend\"\"\"\n        return \"no-fallback\" in self.backend_options()\n\n    def __post_init__(self):\n        \"\"\"Validate that some fields are mutually exclusive.\"\"\"\n        guide_count = sum([\n            self.json is not None, self.regex is not None, self.choice\n            is not None, self.grammar is not None, self.json_object is not None\n        ])\n        if guide_count > 1:\n            raise ValueError(\n                \"You can only use one kind of guided decoding but multiple are \"\n                f\"specified: {self.__dict__}\")"
+        }
+      ],
+      "selected_lines": [
+        {
+          "line": 72,
+          "text": "    def backend_name(self) -> str:"
+        },
+        {
+          "line": 73,
+          "text": "        \"\"\"Return the backend name without any options."
+        },
+        {
+          "line": 74,
+          "text": "        "
+        },
+        {
+          "line": 75,
+          "text": "        For example if the backend is \"xgrammar:no-fallback\", returns \"xgrammar\""
+        },
+        {
+          "line": 76,
+          "text": "        \"\"\""
+        },
+        {
+          "line": 77,
+          "text": "        return (self.backend or \"\").split(\":\")[0]"
+        },
+        {
+          "line": 78,
+          "text": ""
+        },
+        {
+          "line": 79,
+          "text": "    def backend_options(self) -> list[str]:"
+        },
+        {
+          "line": 80,
+          "text": "        \"\"\"Return the backend options as a list of strings.\"\"\""
+        },
+        {
+          "line": 81,
+          "text": "        if not self.backend or \":\" not in self.backend:"
+        },
+        {
+          "line": 82,
+          "text": "            return []"
+        },
+        {
+          "line": 83,
+          "text": "        return self.backend.split(\":\")[1].split(\",\")"
+        },
+        {
+          "line": 94,
+          "text": "            self.backend = f\"{self.backend_name}:{','.join(sorted(options))}\""
+        },
+        {
+          "line": 95,
+          "text": ""
+        },
+        {
+          "line": 96,
+          "text": "    def no_fallback(self) -> bool:"
+        },
+        {
+          "line": 97,
+          "text": "        \"\"\"Returns True if the \"no-fallback\" option is supplied for the guided"
+        },
+        {
+          "line": 98,
+          "text": "        decoding backend\"\"\""
+        },
+        {
+          "line": 99,
+          "text": "        return \"no-fallback\" in self.backend_options()"
+        },
+        {
+          "line": 100,
+          "text": ""
+        },
+        {
+          "line": 101,
+          "text": "    def __post_init__(self):"
+        },
+        {
+          "line": 102,
+          "text": "        \"\"\"Validate that some fields are mutually exclusive.\"\"\""
+        },
+        {
+          "line": 103,
+          "text": "        guide_count = sum(["
+        },
+        {
+          "line": 104,
+          "text": "            self.json is not None, self.regex is not None, self.choice"
+        },
+        {
+          "line": 105,
+          "text": "            is not None, self.grammar is not None, self.json_object is not None"
+        },
+        {
+          "line": 106,
+          "text": "        ])"
+        },
+        {
+          "line": 107,
+          "text": "        if guide_count > 1:"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/model_executor/guided_decoding/__init__.py",
+      "sha256": "4e9149a04578b6250e247deaddf2dc479a370509d4b4f11f30b33290c28a89d9",
+      "bytes": 8329,
+      "snippets": [
+        {
+          "start_line": 23,
+          "end_line": 129,
+          "text": "def maybe_backend_fallback(\n        guided_params: GuidedDecodingParams) -> GuidedDecodingParams:\n\n    def fallback_or_error(guided_params: GuidedDecodingParams, message: str,\n                          fallback: str) -> None:\n        \"\"\"Change the backend to the specified fallback with a warning log,\n        or raise a ValueError if the `no-fallback` option is specified.\"\"\"\n        if guided_params.no_fallback():\n            raise ValueError(message)\n\n        logger.warning(\"%s Falling back to use %s instead.\", message, fallback)\n        guided_params.backend = fallback\n\n    # `auto` was added for V1 to explicitly declare a mode that has fallbacks\n    # in place. If that is specified with V0, treat it as `xgrammar`, as we have\n    # fallbacks enabled for that and it is the V0 default.\n    if guided_params.backend == \"auto\":\n        guided_params.backend = \"xgrammar\"\n\n    # lm-format-enforce doesn't support grammar, fallback to xgrammar\n    if guided_params.backend_name == \"lm-format-enforcer\":\n        if guided_params.grammar is not None:\n            fallback_or_error(\n                guided_params,\n                \"lm-format-enforcer does not support grammar guided decoding.\",\n                \"xgrammar\")\n\n        # lm-format-enforcer doesn't support some JSON schema features\n        elif (guided_params.json is not None\n              and has_lmf_unsupported_json_features(guided_params.json)):\n            fallback_or_error(\n                guided_params,\n                \"lm-format-enforcer does not support advanced JSON schema \"\n                \"features like patterns or numeric ranges.\", \"outlines\")\n\n    if guided_params.backend_name == \"xgrammar\":\n        from vllm.model_executor.guided_decoding.xgrammar_decoding import (\n            xgr_installed)\n\n        # xgrammar doesn't support some JSON schema features\n        if (guided_params.json is not None and\n                has_xgrammar_unsupported_json_features(guided_params.json)):\n            fallback_or_error(\n                guided_params,\n                \"xgrammar does not support advanced JSON schema features like \"\n                \"string length, item limits, or property bounds.\", \"outlines\")\n\n        # xgrammar only supports GBNF grammars, so we must convert Lark.\n        # We must check if the grammar is likely Lark and if that\n        # grammar is convertible to GBNF\n        elif (guided_params.grammar is not None\n              and grammar_is_likely_lark(guided_params.grammar)):\n            try:\n                convert_lark_to_gbnf(guided_params.grammar)\n            except Exception:\n                fallback_or_error(\n                    guided_params,\n                    \"xgrammar does not support Lark grammars and the \"\n                    \"grammar failed to convert to GBNF.\", \"outlines\")\n\n        # If the xgrammar module cannot be imported successfully,\n        # we should still allow users to use guided decoding with a fallback.\n        elif not xgr_installed:\n            fallback_or_error(\n                guided_params,\n                \"xgrammar module cannot be imported successfully.\", \"outlines\")\n\n    if (guided_params.backend_name == \"outlines\"\n            and guided_params.json_object is not None):\n        # outlines doesn't support json_object, fallback to guidance\n        fallback_or_error(guided_params,\n                          \"outlines does not support json_object.\", \"guidance\")\n\n    return guided_params\n\n\nasync def get_guided_decoding_logits_processor(\n        guided_params: GuidedDecodingParams,\n        tokenizer: PreTrainedTokenizer,\n        model_config: ModelConfig,\n        reasoning_backend: str | None = None) -> LogitsProcessor | None:\n\n    reasoner = None\n    if reasoning_backend is not None:\n        reasoner_class = ReasoningParserManager.get_reasoning_parser(\n            reasoning_backend)\n        reasoner = reasoner_class(tokenizer)\n\n    guided_params = maybe_backend_fallback(guided_params)\n\n    # CFG grammar not supported by LMFE, so we use outlines instead\n    if guided_params.backend_name == 'outlines':\n        # NOTE: lazy import outlines to avoid https://github.com/vllm-project/vllm/issues/4193\n        from vllm.model_executor.guided_decoding.outlines_decoding import (  # noqa\n            get_outlines_guided_decoding_logits_processor)\n        return await get_outlines_guided_decoding_logits_processor(\n            guided_params, tokenizer, reasoner)\n    if guided_params.backend == 'lm-format-enforcer':\n        from vllm.model_executor.guided_decoding.lm_format_enforcer_decoding import (  # noqa\n            get_local_lm_format_enforcer_guided_decoding_logits_processor)\n        return get_local_lm_format_enforcer_guided_decoding_logits_processor(\n            guided_params, tokenizer)\n    if guided_params.backend_name == 'xgrammar':\n        from vllm.model_executor.guided_decoding.xgrammar_decoding import (  # noqa\n            get_local_xgrammar_guided_decoding_logits_processor)\n        return get_local_xgrammar_guided_decoding_logits_processor(\n            guided_params, tokenizer, model_config, reasoner)"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/model_executor/guided_decoding/utils.py",
+      "sha256": "6a5cd732b103eaf708930821f9bc96aad8423fd942e9da8503196e4bfcb3aa16",
+      "bytes": 7888,
+      "snippets": [
+        {
+          "start_line": 6,
+          "end_line": 48,
+          "text": "def has_xgrammar_unsupported_json_features(schema: dict) -> bool:\n    \"\"\"Check if JSON schema contains features unsupported by xgrammar.\"\"\"\n\n    def check_object(obj: dict) -> bool:\n        if not isinstance(obj, dict):\n            return False\n\n        # Check for numeric ranges\n        if obj.get(\"type\") in (\"integer\", \"number\") and (\"multipleOf\" in obj):\n            return True\n\n        # Check for array unsupported keywords\n        if obj.get(\"type\") == \"array\" and any(key in obj for key in [\n                \"uniqueItems\", \"contains\", \"minContains\", \"maxContains\",\n                \"minItems\", \"maxItems\"\n        ]):\n            return True\n\n        # Unsupported keywords for strings\n        if obj.get(\"type\") == \"string\" and any(\n                key in obj for key in [\"minLength\", \"maxLength\", \"format\"]):\n            return True\n\n        # Unsupported keywords for objects\n        if obj.get(\"type\") == \"object\" and any(key in obj for key in [\n                \"minProperties\", \"maxProperties\", \"propertyNames\",\n                \"patternProperties\"\n        ]):\n            return True\n\n        # Recursively check all nested objects and arrays\n        for value in obj.values():\n            if isinstance(value, dict):\n                if check_object(value):\n                    return True\n            elif isinstance(value, list):\n                for item in value:\n                    if isinstance(item, dict) and check_object(item):\n                        return True\n\n        return False\n\n    return check_object(schema)"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/model_executor/guided_decoding/xgrammar_decoding.py",
+      "sha256": "c65607b1a9211d7559a90dd0ad606d54ae00718565bd26b148642aa38d032642",
+      "bytes": 16738,
+      "snippets": [
+        {
+          "start_line": 158,
+          "end_line": 211,
+          "text": "    @classmethod\n    def from_guided_params(cls,\n                           guided_params: GuidedDecodingParams,\n                           model_config: ModelConfig,\n                           tokenizer: PreTrainedTokenizer,\n                           max_threads: int = 8) -> GrammarConfig:\n\n        tokenizer_hash = hash(tokenizer)\n        tokenizer_data = TokenizerDataCache.get_tokenizer_data(\n            tokenizer,\n            tokenizer_hash=tokenizer_hash,\n            vocab_size=model_config.hf_text_config.vocab_size,\n        )\n\n        if guided_params.json:\n            if not isinstance(guided_params.json, str):\n                json_str = json.dumps(guided_params.json)\n            else:\n                json_str = guided_params.json\n\n            any_whitespace = 'disable-any-whitespace' not in \\\n                    guided_params.backend_options()\n\n            # Check and log if model with xgrammar and whitespace have history\n            # of runaway generation of whitespaces.\n            # References:\n            # https://github.com/vllm-project/vllm/pull/12744\n            # https://github.com/mlc-ai/xgrammar/issues/212\n            model_with_warn = None\n\n            if 'Mistral' in model_config.model:\n                model_with_warn = 'Mistral'\n            elif 'Qwen' in model_config.model:\n                model_with_warn = 'Qwen'\n\n            if model_with_warn is not None and any_whitespace:\n                msg = (f\"{model_with_warn} \"\n                       f\"model detected, consider set \"\n                       f\"`guided_backend=xgrammar:disable-any-whitespace` \"\n                       f\"to prevent runaway generation of whitespaces.\")\n                logger.info_once(msg)\n            # Validate the schema and raise ValueError here if it is invalid.\n            # This is to avoid exceptions in model execution, which will crash\n            # the engine worker process.\n            try:\n                xgr.Grammar.from_json_schema(json_str,\n                                             any_whitespace=any_whitespace)\n            except RuntimeError as err:\n                raise ValueError(str(err)) from err\n\n            return cls(json_str=json_str,\n                       tokenizer_hash=tokenizer_hash,\n                       max_threads=max_threads,\n                       tokenizer_data=tokenizer_data,"
+        },
+        {
+          "start_line": 290,
+          "end_line": 410,
+          "text": "        )\n\n\n@dataclass\nclass XGrammarLogitsProcessor:\n    \"\"\"Wrapper class to support pickle protocol\"\"\"\n    config: GrammarConfig\n    reasoner: ReasoningParser | None = None\n\n    ctx: xgr.CompiledGrammar | None = None\n    tokenizer_info: xgr.TokenizerInfo = None  # type: ignore[assignment]\n    token_bitmask: torch.Tensor = None  # type: ignore[assignment]\n    matchers: list[xgr.GrammarMatcher] = field(default_factory=list)\n    batch_size: int = field(default=1)\n    prefilled: bool = field(default=False)\n\n    def __post_init__(self):\n        self.tokenizer_info = self.config.tokenizer_info(\n            self.config.tokenizer_data)\n\n    def __getstate__(self) -> dict[str, Any]:\n        return {'config': self.config, 'reasoner': self.reasoner}\n\n    def __setstate__(self, state: dict[str, Any]):\n        self.config = state['config']\n        self.reasoner = state['reasoner']\n\n        self.tokenizer_info = GrammarConfig.tokenizer_info(\n            self.config.tokenizer_data)\n        self.ctx = None\n        self.matchers = []\n        self.batch_size = 1\n        self.token_bitmask = None  # type: ignore[assignment]\n        self.prefilled = False\n\n    def _ensure_ctx(self):\n        \"\"\"Lazily initialize the processor in the worker process\"\"\"\n        if self.ctx is None:\n            compiler = GrammarCompilerCache.get_compiler(self.config)\n            if self.config.json_str is not None:\n                any_whitespace = self.config.any_whitespace\n                self.ctx = compiler\\\n                    .compile_json_schema(self.config.json_str,\n                                         any_whitespace=any_whitespace)\n            elif self.config.grammar_str is not None:\n                self.ctx = compiler.compile_grammar(self.config.grammar_str)\n            elif self.config.json_object:\n                any_whitespace = self.config.any_whitespace\n                self.ctx = compiler\\\n                    .compile_json_schema('{\"type\": \"object\"}',\n                                         any_whitespace=any_whitespace)\n            elif self.config.regex_str:\n                self.ctx = compiler.compile_regex(self.config.regex_str)\n            else:\n                raise ValueError(\n                    \"Invalid configuration for xgrammar logits processor\")\n\n    def __call__(self, input_ids: list[int],\n                 scores: torch.Tensor) -> torch.Tensor:\n\n        # Skip the structured logits processing if reasoning is not finished.\n        # reasoner is not None only when `--enable-reasoning` is set.\n        if self.reasoner is not None and \\\n        not self.reasoner.is_reasoning_end(\n                input_ids):\n            return scores\n\n        if self.ctx is None:\n            self._ensure_ctx()\n\n        if len(self.matchers) == 0:\n            self.matchers = [\n                xgr.GrammarMatcher(self.ctx) for _ in range(self.batch_size)\n            ]\n            self.token_bitmask = xgr.allocate_token_bitmask(\n                self.batch_size, self.tokenizer_info.vocab_size)\n\n        if not self.prefilled:\n            # Have not sampled a token yet\n            self.prefilled = True\n        else:\n            for i, matcher in enumerate(self.matchers):\n                if not matcher.is_terminated():\n                    sampled_token = input_ids[-1]\n                    assert self.matchers[i].accept_token(sampled_token)\n\n        for i, matcher in enumerate(self.matchers):\n            if not matcher.is_terminated():\n                # @ubospica: ideally, fill_next_token_bitmask should be\n                # parallelized with model decoding\n                # See https://github.com/vllm-project/vllm/pull/10785/files#r1864278303\n                matcher.fill_next_token_bitmask(self.token_bitmask, i)\n\n        # token_bitmask is a CPU tensor for use with accept_token and\n        # fill_next_token_bitmask so we move it to the device of scores\n        device_type = scores.device.type\n        dtype = scores.dtype\n        if device_type != \"cuda\":\n            # xgrammar on cpu only supports float32 scores\n            # see: https://github.com/mlc-ai/xgrammar/blob/c1b64920cad24f44f235778c1c00bb52d57da01a/python/xgrammar/kernels/apply_token_bitmask_inplace_cpu.py#L22\n            scores = scores.to(\"cpu\").float().unsqueeze(0)\n\n        # Note: In this method, if the tensors have different dimensions\n        # on CPU device fails, but on GPU it runs without error. Hence the\n        # unsqueeze above for scores, to match the token bitmask shape\n        xgr.apply_token_bitmask_inplace(\n            scores, self.token_bitmask.to(scores.device, non_blocking=True))\n        if device_type != \"cuda\":\n            scores = scores.to(dtype).to(device_type).squeeze()\n\n        return scores\n\n    def clone(self) -> XGrammarLogitsProcessor:\n        \"\"\"Create a new instance with shared compiled grammar\n          but separate state\"\"\"\n        new_processor = XGrammarLogitsProcessor(self.config, self.reasoner)\n\n        # Share the compiled grammar context (immutable after compilation)\n        new_processor.ctx = self.ctx\n\n        # Create fresh matchers for the new sequence"
+        },
+        {
+          "start_line": 37,
+          "end_line": 47,
+          "text": "def get_local_xgrammar_guided_decoding_logits_processor(\n        guided_params: GuidedDecodingParams,\n        tokenizer: PreTrainedTokenizer,\n        model_config: ModelConfig,\n        reasoner: ReasoningParser | None,\n        max_threads: int = 8):\n    config = GrammarConfig.from_guided_params(guided_params=guided_params,\n                                              model_config=model_config,\n                                              tokenizer=tokenizer,\n                                              max_threads=max_threads)\n    return XGrammarLogitsProcessor(config, reasoner)"
+        },
+        {
+          "start_line": 122,
+          "end_line": 143,
+          "text": "    def get_compiler(cls, config: GrammarConfig) -> xgr.GrammarCompiler:\n        cache_key = str(config.tokenizer_hash)\n\n        if cache_key not in cls._cache:\n            config_data = config.tokenizer_data\n\n            # In TokenizerDataCache.get_tokenizer_data, a serializable\n            # tokenizer_data is created and cached. This data is used to build\n            # a tokenizer_info and create an xgrammar compiler.\n            tokenizer_info = xgr.TokenizerInfo.from_vocab_and_metadata(\n                encoded_vocab=config_data.encoded_vocab,\n                metadata=config_data.metadata,\n            )\n            cache_size = vllm.envs.VLLM_XGRAMMAR_CACHE_MB * 1024 * 1024\n            cls._cache[cache_key] = xgr.GrammarCompiler(\n                tokenizer_info,\n                max_threads=config.max_threads,\n                cache_enabled=True,\n                cache_limit_bytes=cache_size,\n            )\n\n        return cls._cache[cache_key]"
+        }
+      ],
+      "selected_lines": []
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/engine/async_llm_engine.py",
+      "sha256": "3558f4d4d6d8c7228ded61172665f372206170c666bce3f41f3677e74b2093ca",
+      "bytes": 51183,
+      "snippets": [
+        {
+          "start_line": 535,
+          "end_line": 580,
+          "text": "        raise NotImplementedError\n\n\nasync def build_guided_decoding_logits_processor_async(\n        sampling_params: SamplingParams, tokenizer: AnyTokenizer,\n        default_guided_backend: str, reasoning_backend: Optional[str],\n        model_config: ModelConfig) -> SamplingParams:\n    \"\"\"Constructs logits processors based on the guided_decoding,\n    logits_bias, and allowed_token_ids fields in sampling_params. Deletes\n    those fields and adds the constructed logits processors to the\n    logits_processors field. Modifies sampling params in-place and returns\n    the modified sampling params.\"\"\"\n    if sampling_params.guided_decoding is None:\n        return sampling_params\n\n    # Defensively copy sampling params since guided decoding logits\n    # processors can have different state for each request\n    sampling_params = copy.copy(sampling_params)\n    guided_decoding = sampling_params.guided_decoding\n\n    logger.debug(\n        \"Building guided decoding logits processor. \"\n        \"guided_decoding: %s%s\", guided_decoding,\n        f\", reasoning_backend: {reasoning_backend}\"\n        if reasoning_backend is not None else \"\")\n\n    guided_decoding.backend = guided_decoding.backend or default_guided_backend\n\n    processor = await get_guided_decoding_logits_processor(\n        guided_params=guided_decoding,\n        tokenizer=tokenizer,\n        reasoning_backend=reasoning_backend,\n        model_config=model_config)\n\n    if processor:\n        if sampling_params.logits_processors is None:\n            sampling_params.logits_processors = []\n        sampling_params.logits_processors.append(processor)\n\n    # Unset guided decoding params after constructing the lp from them\n    sampling_params.guided_decoding = None\n\n    return sampling_params\n\n\nclass AsyncLLMEngine(EngineClient):"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/engine/multiprocessing/client.py",
+      "sha256": "1c019f096171bac01b7d5bd024edca9aeccc54fd332bd2e4ddd5508f73b51527",
+      "bytes": 30282,
+      "snippets": [
+        {
+          "start_line": 600,
+          "end_line": 644,
+          "text": "\n        # If already dead, error out.\n        if self._errored_with is not None:\n            raise ENGINE_DEAD_ERROR(self._errored_with)\n\n        # Ensure the request id is unique among running requests\n        if request_id in self.output_queues:\n            raise ValueError(f\"Request {request_id} already exists\")\n\n        # Constructing guided decoding logits processors is expensive, so we do\n        # it here to avoid contending with cpu resources and the GIL on the\n        # backend process.\n        if isinstance(params, SamplingParams) and \\\n            params.guided_decoding is not None:\n            params = await \\\n                build_guided_decoding_logits_processor_async(\n                    sampling_params=params,\n                    tokenizer=await self.get_tokenizer(lora_request),\n                    default_guided_backend=(self.decoding_config.guided_decoding_backend\n                        if self.decoding_config\n                        else DecodingConfig.guided_decoding_backend),\n                    model_config=self.model_config,\n                    reasoning_backend=self.decoding_config.reasoning_backend,\n                )\n\n        # 1) Create output queue for this requests.\n        queue: asyncio.Queue[Union[RequestOutput,\n                                   BaseException]] = asyncio.Queue()\n        self.output_queues[request_id] = queue\n\n        try:\n            # 2) Detach logits processors so that they can be pickled\n            # separately (may require cloudpickle which is slower)\n            if isinstance(params, SamplingParams) and params.logits_processors:\n                # Defensive shallow copy\n                params = copy.copy(params)\n                logits_processors = params.logits_processors\n                params.logits_processors = None\n                lp_bytes = cloudpickle.dumps(logits_processors)\n            else:\n                lp_bytes = None\n\n            request_bytes = pickle.dumps(\n                RPCProcessRequest(\n                    prompt=prompt,"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/engine/llm_engine.py",
+      "sha256": "8518fa99df7f8fd6785968c16bb30f74af90e96c4553a6fc92efc3d50b8797ea",
+      "bytes": 94629,
+      "snippets": [
+        {
+          "start_line": 2072,
+          "end_line": 2110,
+          "text": "    def _build_logits_processors(\n            self, sampling_params: SamplingParams,\n            lora_request: Optional[LoRARequest]) -> SamplingParams:\n        \"\"\"Constructs logits processors based on the guided_decoding,\n        logits_bias, and allowed_token_ids fields in sampling_params. Deletes\n        those fields and adds the constructed logits processors to the\n        logits_processors field. Returns the modified sampling params.\"\"\"\n\n        logits_processors = []\n\n        if sampling_params.guided_decoding is not None:\n            # Defensively copy sampling params since guided decoding logits\n            # processors can have different state for each request\n            sampling_params = copy.copy(sampling_params)\n            guided_decoding = sampling_params.guided_decoding\n\n            logger.debug(\n                \"Building guided decoding logits processor in \"\n                \"LLMEngine. Params: %s\", guided_decoding)\n\n            tokenizer = self.get_tokenizer(lora_request=lora_request)\n            guided_decoding.backend = guided_decoding.backend or \\\n                self.decoding_config.guided_decoding_backend\n\n            if self.decoding_config.reasoning_backend is not None:\n                logger.debug(\"Building with reasoning backend %s\",\n                             self.decoding_config.reasoning_backend)\n\n            processor = get_local_guided_decoding_logits_processor(\n                guided_params=guided_decoding,\n                tokenizer=tokenizer,\n                model_config=self.model_config,\n                reasoning_backend=self.decoding_config.reasoning_backend,\n            )\n            if processor:\n                logits_processors.append(processor)\n\n            # Unset so this doesn't get passed down to the model\n            sampling_params.guided_decoding = None"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar/grammar.py",
+      "sha256": "560c8d9c064584b1c77a33b65bd3a05ad9fb38de65ee28ada41571c9eb2d2f76",
+      "bytes": 13072,
+      "snippets": [
+        {
+          "start_line": 113,
+          "end_line": 181,
+          "text": "    def from_json_schema(\n        schema: Union[str, Type[BaseModel], Dict[str, Any]],\n        *,\n        any_whitespace: bool = True,\n        indent: Optional[int] = None,\n        separators: Optional[Tuple[str, str]] = None,\n        strict_mode: bool = True,\n        print_converted_ebnf: bool = False,\n    ) -> \"Grammar\":\n        \"\"\"Construct a grammar from JSON schema. Pydantic model or JSON schema string can be\n        used to specify the schema.\n\n        It allows any whitespace by default. If user want to specify the format of the JSON,\n        set `any_whitespace` to False and use the `indent` and `separators` parameters. The\n        meaning and the default values of the parameters follows the convention in json.dumps().\n\n        It internally converts the JSON schema to a EBNF grammar.\n\n        Parameters\n        ----------\n        schema : Union[str, Type[BaseModel], Dict[str, Any]]\n            The schema string or Pydantic model or JSON schema dict.\n\n        any_whitespace : bool, default: True\n            Whether to use any whitespace. If True, the generated grammar will ignore the\n            indent and separators parameters, and allow any whitespace.\n\n        indent : Optional[int], default: None\n            The number of spaces for indentation. If None, the output will be in one line.\n\n            Note that specifying the indentation means forcing the LLM to generate JSON strings\n            strictly formatted. However, some models may tend to generate JSON strings that\n            are not strictly formatted. In this case, forcing the LLM to generate strictly\n            formatted JSON strings may degrade the generation quality. See\n            <https://github.com/sgl-project/sglang/issues/2216#issuecomment-2516192009> for more\n            details.\n\n        separators : Optional[Tuple[str, str]], default: None\n            Two separators used in the schema: comma and colon. Examples: (\",\", \":\"), (\", \", \": \").\n            If None, the default separators will be used: (\",\", \": \") when the indent is not None,\n            and (\", \", \": \") otherwise.\n\n        strict_mode : bool, default: True\n            Whether to use strict mode. In strict mode, the generated grammar will not allow\n            properties and items that is not specified in the schema. This is equivalent to\n            setting unevaluatedProperties and unevaluatedItems to false.\n\n            This helps LLM to generate accurate output in the grammar-guided generation with JSON\n            schema.\n\n        print_converted_ebnf : bool, default: False\n            If True, the converted EBNF string will be printed. For debugging purposes.\n\n        Returns\n        -------\n        grammar : Grammar\n            The constructed grammar.\n\n        Raises\n        ------\n        RuntimeError\n            When converting the json schema fails, with details about the parsing error.\n        \"\"\"\n        schema_str = _convert_schema_to_str(schema)\n        return Grammar._create_from_handle(\n            _core.Grammar.from_json_schema(\n                schema_str, any_whitespace, indent, separators, strict_mode, print_converted_ebnf\n            )\n        )"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar/compiler.py",
+      "sha256": "5026fd16897f3410854c35e18a673e2773f65fc92090dacd5957e50682f54ea0",
+      "bytes": 7728,
+      "snippets": [
+        {
+          "start_line": 35,
+          "end_line": 130,
+          "text": "    def memory_size_bytes(self) -> int:\n        \"\"\"The approximate memory usage of the compiled grammar in bytes.\"\"\"\n        return self._handle.memory_size_bytes\n\n\nclass GrammarCompiler(XGRObject):\n    \"\"\"The compiler for grammars. It is associated with a certain tokenizer info, and compiles\n    grammars into CompiledGrammar with the tokenizer info. It allows parallel compilation with\n    multiple threads, and has a cache to store the compilation result, avoiding compiling the\n    same grammar multiple times.\n\n    Parameters\n    ----------\n    tokenizer_info : TokenizerInfo\n        The tokenizer info.\n\n    max_threads : int, default: 8\n        The maximum number of threads used to compile the grammar.\n\n    cache_enabled : bool, default: True\n        Whether to enable the cache.\n\n    cache_limit_bytes : int, default: -1\n        The maximum memory usage for the cache in the specified unit.\n        Note that the actual memory usage may slightly exceed this value.\n    \"\"\"\n\n    def __init__(\n        self,\n        tokenizer_info: TokenizerInfo,\n        *,\n        max_threads: int = 8,\n        cache_enabled: bool = True,\n        cache_limit_bytes: int = -1,\n    ):\n        if not isinstance(tokenizer_info, TokenizerInfo):\n            raise ValueError(\n                \"Please convert the tokenizer to TokenizerInfo before passing it \"\n                \"to GrammarCompiler.\"\n            )\n\n        self._init_handle(\n            _core.GrammarCompiler(\n                tokenizer_info._handle, max_threads, cache_enabled, cache_limit_bytes\n            )\n        )\n\n    def compile_json_schema(\n        self,\n        schema: Union[str, Type[BaseModel], Dict[str, Any]],\n        *,\n        any_whitespace: bool = True,\n        indent: Optional[int] = None,\n        separators: Optional[Tuple[str, str]] = None,\n        strict_mode: bool = True,\n    ) -> CompiledGrammar:\n        \"\"\"Get CompiledGrammar from the specified JSON schema and format. The indent\n        and separators parameters follow the same convention as in json.dumps().\n\n        Parameters\n        ----------\n        schema : Union[str, Type[BaseModel], Dict[str, Any]]\n            The schema string or Pydantic model or JSON schema dict.\n\n        indent : Optional[int], default: None\n            The number of spaces for indentation. If None, the output will be in one line.\n\n        separators : Optional[Tuple[str, str]], default: None\n            Two separators used in the schema: comma and colon. Examples: (\",\", \":\"), (\", \", \": \").\n            If None, the default separators will be used: (\",\", \": \") when the indent is not None,\n            and (\", \", \": \") otherwise.\n\n        strict_mode : bool, default: True\n            Whether to use strict mode. In strict mode, the generated grammar will not allow\n            properties and items that is not specified in the schema. This is equivalent to\n            setting unevaluatedProperties and unevaluatedItems to false.\n\n            This helps LLM to generate accurate output in the grammar-guided generation with JSON\n            schema.\n\n        Returns\n        -------\n        compiled_grammar : CompiledGrammar\n            The compiled grammar.\n        \"\"\"\n        schema_str = _convert_schema_to_str(schema)\n        return CompiledGrammar._create_from_handle(\n            self._handle.compile_json_schema(\n                schema_str, any_whitespace, indent, separators, strict_mode\n            )\n        )\n\n    def compile_builtin_json_grammar(self) -> CompiledGrammar:\n        \"\"\"Get CompiledGrammar from the standard JSON.\n\n        Returns"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar/testing.py",
+      "sha256": "6ce62f55809f5416c06165a671cf52245f33832ed48842fbd81ee3b9a0f18432",
+      "bytes": 10867,
+      "snippets": [
+        {
+          "start_line": 16,
+          "end_line": 55,
+          "text": "def _json_schema_to_ebnf(\n    schema: Union[str, Type[BaseModel], Dict[str, Any]],\n    *,\n    any_whitespace: bool = True,\n    indent: Optional[int] = None,\n    separators: Optional[Tuple[str, str]] = None,\n    strict_mode: bool = True,\n) -> str:\n    \"\"\"Convert JSON schema string to BNF grammar string. For test purposes.\n\n    Parameters\n    ----------\n    schema : Union[str, Type[BaseModel], Dict[str, Any]]\n        The schema string or Pydantic model or JSON schema dict.\n\n    indent : Optional[int], default: None\n        The number of spaces for indentation. If None, the output will be in one line.\n\n    separators : Optional[Tuple[str, str]], default: None\n        Two separators used in the schema: comma and colon. Examples: (\",\", \":\"), (\", \", \": \").\n        If None, the default separators will be used: (\",\", \": \") when the indent is not None,\n        and (\", \", \": \") otherwise.\n\n    strict_mode : bool, default: True\n        Whether to use strict mode. In strict mode, the generated grammar will not allow\n        properties and items that is not specified in the schema. This is equivalent to\n        setting unevaluatedProperties and unevaluatedItems to false.\n\n        This helps LLM to generate accurate output in the grammar-guided generation with JSON\n        schema.\n\n    Returns\n    -------\n    bnf_string : str\n        The BNF grammar string.\n    \"\"\"\n    schema_str = _convert_schema_to_str(schema)\n    return _core.testing._json_schema_to_ebnf(\n        schema_str, any_whitespace, indent, separators, strict_mode\n    )"
+        },
+        {
+          "start_line": 104,
+          "end_line": 146,
+          "text": "def _is_grammar_accept_string(\n    grammar: Union[Grammar, str],\n    input_str: str,\n    *,\n    debug_print: bool = False,\n    print_time: bool = False,\n) -> bool:\n    \"\"\"Check if a grammar accepts a string. For test purposes.\n\n    Parameters\n    ----------\n    grammar : Union[Grammar, str]\n        The grammar to check. Can be either a Grammar object or a BNF grammar string.\n    input_str : str\n        The input string to check.\n    debug_print : bool, default: False\n        Whether to print debug information during matching.\n    print_time : bool, default: False\n        Whether to print timing information.\n\n    Returns\n    -------\n    bool\n        True if the grammar accepts the string, False otherwise.\n    \"\"\"\n\n    if isinstance(grammar, str):\n        grammar = Grammar.from_ebnf(grammar)\n    grammar_compiler = GrammarCompiler(TokenizerInfo([]), cache_enabled=False)\n    compiled_grammar = grammar_compiler.compile_grammar(grammar)\n    matcher = GrammarMatcher(compiled_grammar, terminate_without_stop_token=True)\n\n    if print_time:\n        start = time.monotonic_ns()\n    accepted = matcher._debug_accept_string(input_str, debug_print=debug_print)\n\n    if print_time:\n        end = time.monotonic_ns()\n        print(f\"Accepting {input_str}, result: {accepted}, time: {(end - start) / 1e3} us\")\n\n    if not accepted:\n        return False\n    return matcher.is_terminated()"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar/matcher.py",
+      "sha256": "1eb5435bf203225d8e4d5f0ded32840f4133f6e7389532047ecee37c1c4fe118",
+      "bytes": 13017,
+      "snippets": [
+        {
+          "start_line": 56,
+          "end_line": 155,
+          "text": "def apply_token_bitmask_inplace(\n    logits: torch.Tensor,\n    bitmask: torch.Tensor,\n    *,\n    vocab_size: Optional[int] = None,\n    indices: Optional[List[int]] = None,\n) -> None:\n    \"\"\"Apply the bitmask to the logits in-place. The bitmask is a 01 bitwise compressed tensor,\n    where 0 means the token is masked and 1 means the token is not masked. It can be generated by\n    allocate_token_bitmask and filled by fill_next_token_bitmask. After applying the bitmask, the\n    masked logits will be set to -inf.\n\n    The shape of logits and bitmask should be (batch_size, vocab_size) and\n    (batch_size, bitmask_size) respectively. bitmask_size = ceil(vocab_size / 32). The operation is:\n\n    .. code:: python\n\n        for i in range(batch_size):\n            for j in range(vocab_size):\n                if get_bitmask_value(bitmask, i, j) == 0:\n                    logits[i, j] = -inf\n\n    get_bitmask_value(bitmask, i, j) gets the j-th bit of the i-th row of the bitmask.\n\n    ## Padding\n\n    This method allows additional padding on the vocabulary dimension of logits or bitmask. If\n    padding exists, provide the real vocab size to the vocab_size parameter, and the operation\n    will be applied to logits[..., :vocab_size] and bitmask[..., :ceil(vocab_size / 32)].\n\n    If vocab_size is not provided, the vocab size will be detected as min(logits.shape[-1],\n    bitmask.shape[-1] * 32).\n\n    ## Indices\n\n    Indices can be used to specify which logits in the batch to apply the bitmask to. It is\n    especially useful when there are structured requests and unstructured requests mixed in the\n    same batch by skipping masking the logits in the unstructured requests. When specified, the\n    operation will be\n\n    .. code:: python\n\n        for batch_id in indices:\n            for j in range(vocab_size):\n                if get_bitmask_value(bitmask, batch_id, j) == 0:\n                    logits[batch_id, j] = -inf\n\n    When indices is specified, the batch sizes of logits and bitmask do not need to be the same.\n    As long as the indices are valid, the operation will be performed.\n\n    ## Device\n\n    The logits and bitmask should be on the same device. If both them are on GPU, we launch a GPU\n    kernel to apply bitmask. If both them are on CPU, we use a CPU implementation. The GPU kernel\n    is optimized and should be preferred.\n\n    In practice, the bitmask is allocated on CPU, and the logits is usually on GPU, so users should\n    manually copy the bitmask to GPU before calling this function.\n\n    Parameters\n    ----------\n    logits : torch.Tensor\n        The tensor to apply the bitmask to.\n\n    bitmask : torch.Tensor\n        The bitmask to apply.\n\n    vocab_size : Optional[int], default: None\n        The size of the vocabulary. If not provided, the vocab size will be detected as\n        min(logits.shape[-1], bitmask.shape[-1] * 32).\n\n    indices : Optional[List[int]], default: None\n        A list of indices to specify which logits in the batch to apply the bitmask to. Should be\n        unique. If None, apply the bitmask to all logits in the batch.\n    \"\"\"\n    if bitmask.device != logits.device:\n        raise ValueError(\n            \"logits and bitmask should be on the same device. \"\n            + f\"But got logits.device: {logits.device}, bitmask.device: {bitmask.device}\"\n        )\n\n    # dispatch to different implementations based on the device\n    if logits.device.type == \"cpu\":\n        from .kernels.apply_token_bitmask_inplace_cpu import apply_token_bitmask_inplace_cpu\n\n        apply_token_bitmask_inplace_cpu(logits, bitmask, vocab_size, indices)\n\n    elif logits.device.type == \"cuda\":\n        from .kernels.apply_token_bitmask_inplace_triton import apply_token_bitmask_inplace_triton\n\n        apply_token_bitmask_inplace_triton(logits, bitmask, vocab_size, indices)\n    else:\n        from .kernels.apply_token_bitmask_inplace_torch_compile import (\n            apply_token_bitmask_inplace_torch_compile,\n        )\n\n        apply_token_bitmask_inplace_torch_compile(logits, bitmask, vocab_size, indices)\n\n\nclass GrammarMatcher(XGRObject):"
+        },
+        {
+          "start_line": 195,
+          "end_line": 265,
+          "text": "    ) -> None:\n        if not isinstance(compiled_grammar, CompiledGrammar):\n            raise ValueError(\"The grammar should be compiled before passing it to GrammarMatcher.\")\n\n        if isinstance(override_stop_tokens, int):\n            override_stop_tokens = [override_stop_tokens]\n\n        self._init_handle(\n            _core.GrammarMatcher(\n                compiled_grammar._handle,\n                override_stop_tokens,\n                terminate_without_stop_token,\n                max_rollback_tokens,\n            )\n        )\n\n    def accept_token(self, token_id: int, *, debug_print: bool = False) -> bool:\n        \"\"\"Accept one token and update the state of the matcher.\n\n        Parameters\n        ----------\n        token_id : int\n            The id of the token to accept.\n\n        debug_print : bool, default: False\n            Whether to print information about the internal state of the matcher. Helpful\n            for debugging.\n\n        Returns\n        -------\n        accepted : bool\n            Whether the token is accepted.\n        \"\"\"\n        return self._handle.accept_token(token_id, debug_print)\n\n    def fill_next_token_bitmask(\n        self, bitmask: torch.Tensor, index: int = 0, *, debug_print: bool = False\n    ) -> bool:\n        \"\"\"Fill the bitmask for the next token prediction. The input bitmask can be generated\n        by allocate_token_bitmask, and must be on CPU. bitmask[index] will be filled with the\n        next token bitmask.\n\n        This method does not change the matcher state.\n\n        Parameters\n        ----------\n        bitmask : torch.Tensor\n            The bitmask for the next token prediction.\n\n        index : int, default: 0\n            The batch id of the bitmask.\n\n        debug_print : bool, default: False\n            Whether to print information about generated bitmask. Helpful for debugging.\n\n        Returns\n        -------\n        need_apply : bool\n            Whether the bitmask need to be applied (not all-true). An optimization: if False,\n            this means the bitmask is already all-true, so no need to apply it.\n        \"\"\"\n        if bitmask.device.type != \"cpu\":\n            raise ValueError(\"bitmask should be on CPU.\")\n        if bitmask.dtype != bitmask_dtype:\n            raise ValueError(f\"bitmask should be of type {bitmask_dtype}.\")\n        return self._handle.fill_next_token_bitmask(\n            bitmask.data_ptr(), list(bitmask.shape), index, debug_print\n        )\n\n    def find_jump_forward_string(self) -> str:\n        \"\"\"Find the jump-forward string for jump-forward decoding. This is the longest string that"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/entrypoints/openai/serving_chat.py",
+      "sha256": "6e8b5e6029eaca133df7446e1bc832f92ec8c90f4c631351d03dcd2b13b821aa",
+      "bytes": 56951,
+      "selected_lines": [
+        {
+          "line": 216,
+          "text": "                    engine_prompt[\"prompt_token_ids\"])"
+        },
+        {
+          "line": 217,
+          "text": "                if request.use_beam_search:"
+        },
+        {
+          "line": 218,
+          "text": "                    sampling_params = request.to_beam_search_params("
+        },
+        {
+          "line": 219,
+          "text": "                        default_max_tokens, self.default_sampling_params)"
+        },
+        {
+          "line": 220,
+          "text": "                else:"
+        },
+        {
+          "line": 221,
+          "text": "                    sampling_params = request.to_sampling_params("
+        },
+        {
+          "line": 222,
+          "text": "                        default_max_tokens,"
+        },
+        {
+          "line": 223,
+          "text": "                        self.model_config.logits_processor_pattern,"
+        },
+        {
+          "line": 224,
+          "text": "                        self.default_sampling_params)"
+        },
+        {
+          "line": 225,
+          "text": ""
+        },
+        {
+          "line": 226,
+          "text": "                self._log_inputs(request_id,"
+        },
+        {
+          "line": 227,
+          "text": "                                 request_prompts[i],"
+        },
+        {
+          "line": 228,
+          "text": "                                 params=sampling_params,"
+        },
+        {
+          "line": 229,
+          "text": "                                 lora_request=lora_request,"
+        },
+        {
+          "line": 230,
+          "text": "                                 prompt_adapter_request=prompt_adapter_request)"
+        },
+        {
+          "line": 231,
+          "text": ""
+        },
+        {
+          "line": 232,
+          "text": "                trace_headers = (None if raw_request is None else await"
+        },
+        {
+          "line": 233,
+          "text": "                                 self._get_trace_headers(raw_request.headers))"
+        },
+        {
+          "line": 234,
+          "text": ""
+        },
+        {
+          "line": 235,
+          "text": "                if isinstance(sampling_params, BeamSearchParams):"
+        },
+        {
+          "line": 236,
+          "text": "                    generator = self.engine_client.beam_search("
+        },
+        {
+          "line": 237,
+          "text": "                        prompt=engine_prompt,"
+        },
+        {
+          "line": 238,
+          "text": "                        request_id=request_id,"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/model_executor/layers/logits_processor.py",
+      "sha256": "e1c9a6fbf3c43db5abc1d7e1f4c0b9303c1d5e46e6986ad0a06c1fb6dc5dbc2a",
+      "bytes": 7757,
+      "selected_lines": [
+        {
+          "line": 13,
+          "text": "from vllm.model_executor.layers.vocab_parallel_embedding import ("
+        },
+        {
+          "line": 14,
+          "text": "    VocabParallelEmbedding)"
+        },
+        {
+          "line": 15,
+          "text": "from vllm.model_executor.sampling_metadata import SamplingMetadata"
+        },
+        {
+          "line": 16,
+          "text": "from vllm.platforms import current_platform"
+        },
+        {
+          "line": 17,
+          "text": ""
+        },
+        {
+          "line": 18,
+          "text": "_logits_processor_threadpool: Optional[ThreadPoolExecutor] = None"
+        },
+        {
+          "line": 19,
+          "text": "if envs.VLLM_LOGITS_PROCESSOR_THREADS is not None:"
+        },
+        {
+          "line": 20,
+          "text": "    _logits_processor_threadpool = ThreadPoolExecutor("
+        },
+        {
+          "line": 21,
+          "text": "        envs.VLLM_LOGITS_PROCESSOR_THREADS)"
+        },
+        {
+          "line": 22,
+          "text": ""
+        },
+        {
+          "line": 23,
+          "text": ""
+        },
+        {
+          "line": 24,
+          "text": "class LogitsProcessor(nn.Module):"
+        },
+        {
+          "line": 25,
+          "text": "    \"\"\"Process logits and apply logits processors from sampling metadata."
+        },
+        {
+          "line": 26,
+          "text": ""
+        },
+        {
+          "line": 27,
+          "text": "    This layer does the following:"
+        },
+        {
+          "line": 28,
+          "text": "    1. Gather logits from model hidden_states."
+        },
+        {
+          "line": 29,
+          "text": "    2. Scale logits if needed."
+        },
+        {
+          "line": 30,
+          "text": "    3. Apply logits processors (if any)."
+        },
+        {
+          "line": 31,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 32,
+          "text": ""
+        },
+        {
+          "line": 33,
+          "text": "    def __init__(self,"
+        },
+        {
+          "line": 34,
+          "text": "                 vocab_size: int,"
+        },
+        {
+          "line": 35,
+          "text": "                 org_vocab_size: Optional[int] = None,"
+        },
+        {
+          "line": 36,
+          "text": "                 scale: float = 1.0,"
+        },
+        {
+          "line": 37,
+          "text": "                 logits_as_input: bool = False,"
+        },
+        {
+          "line": 50,
+          "text": "        # Soft cap the logits. Used in Gemma 2."
+        },
+        {
+          "line": 51,
+          "text": "        self.soft_cap = soft_cap"
+        },
+        {
+          "line": 52,
+          "text": "        # Whether to use gather or all-gather to gather the logits."
+        },
+        {
+          "line": 53,
+          "text": "        self.use_all_gather = current_platform.use_all_gather()"
+        },
+        {
+          "line": 54,
+          "text": ""
+        },
+        {
+          "line": 55,
+          "text": "    def forward("
+        },
+        {
+          "line": 56,
+          "text": "        self,"
+        },
+        {
+          "line": 57,
+          "text": "        lm_head: VocabParallelEmbedding,"
+        },
+        {
+          "line": 58,
+          "text": "        hidden_states: torch.Tensor,"
+        },
+        {
+          "line": 59,
+          "text": "        sampling_metadata: Optional[SamplingMetadata] = None,"
+        },
+        {
+          "line": 60,
+          "text": "        embedding_bias: Optional[torch.Tensor] = None,"
+        },
+        {
+          "line": 61,
+          "text": "    ) -> Optional[torch.Tensor]:"
+        },
+        {
+          "line": 62,
+          "text": "        if self.logits_as_input:"
+        },
+        {
+          "line": 63,
+          "text": "            logits = hidden_states"
+        },
+        {
+          "line": 64,
+          "text": "        else:"
+        },
+        {
+          "line": 65,
+          "text": "            if sampling_metadata is not None:"
+        },
+        {
+          "line": 66,
+          "text": "                hidden_states = _prune_hidden_states(hidden_states,"
+        },
+        {
+          "line": 67,
+          "text": "                                                     sampling_metadata)"
+        },
+        {
+          "line": 68,
+          "text": ""
+        },
+        {
+          "line": 69,
+          "text": "            # Get the logits for the next tokens."
+        },
+        {
+          "line": 70,
+          "text": "            logits = self._get_logits(hidden_states, lm_head, embedding_bias)"
+        },
+        {
+          "line": 71,
+          "text": "        if logits is not None:"
+        },
+        {
+          "line": 72,
+          "text": "            if self.soft_cap is not None:"
+        },
+        {
+          "line": 78,
+          "text": "                logits *= self.scale"
+        },
+        {
+          "line": 79,
+          "text": ""
+        },
+        {
+          "line": 80,
+          "text": "            # Apply logits processors (if any)."
+        },
+        {
+          "line": 81,
+          "text": "            if sampling_metadata is not None and \\"
+        },
+        {
+          "line": 82,
+          "text": "                sampling_metadata.seq_groups is not None:"
+        },
+        {
+          "line": 83,
+          "text": "                logits = _apply_logits_processors(logits, sampling_metadata)"
+        },
+        {
+          "line": 84,
+          "text": ""
+        },
+        {
+          "line": 85,
+          "text": "        return logits"
+        },
+        {
+          "line": 86,
+          "text": ""
+        },
+        {
+          "line": 87,
+          "text": "    def _gather_logits(self, logits: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 88,
+          "text": "        \"\"\"gather/all-gather the logits tensor across model parallel group.\"\"\""
+        },
+        {
+          "line": 89,
+          "text": "        if self.use_all_gather:"
+        },
+        {
+          "line": 90,
+          "text": "            # Gather is not supported for some devices such as TPUs."
+        },
+        {
+          "line": 91,
+          "text": "            # Use all-gather instead."
+        },
+        {
+          "line": 92,
+          "text": "            # NOTE(woosuk): Here, the outputs of every device should not be None"
+        },
+        {
+          "line": 93,
+          "text": "            # because XLA requires strict SPMD among all devices. Every device"
+        },
+        {
+          "line": 94,
+          "text": "            # should execute the same operations after gathering the logits."
+        },
+        {
+          "line": 95,
+          "text": "            logits = tensor_model_parallel_all_gather(logits)"
+        },
+        {
+          "line": 96,
+          "text": "        else:"
+        },
+        {
+          "line": 97,
+          "text": "            # None may be returned for rank > 0"
+        },
+        {
+          "line": 98,
+          "text": "            logits = tensor_model_parallel_gather(logits)"
+        },
+        {
+          "line": 99,
+          "text": "        return logits"
+        },
+        {
+          "line": 100,
+          "text": ""
+        },
+        {
+          "line": 136,
+          "text": "            0, sampling_metadata.selected_token_indices)"
+        },
+        {
+          "line": 137,
+          "text": "    else:"
+        },
+        {
+          "line": 138,
+          "text": "        return hidden_states"
+        },
+        {
+          "line": 139,
+          "text": ""
+        },
+        {
+          "line": 140,
+          "text": ""
+        },
+        {
+          "line": 141,
+          "text": "def _apply_logits_processors("
+        },
+        {
+          "line": 142,
+          "text": "    logits: torch.Tensor,"
+        },
+        {
+          "line": 143,
+          "text": "    sampling_metadata: SamplingMetadata,"
+        },
+        {
+          "line": 144,
+          "text": ") -> torch.Tensor:"
+        },
+        {
+          "line": 145,
+          "text": "    found_logits_processors = False"
+        },
+        {
+          "line": 146,
+          "text": "    logits_processed = 0"
+        },
+        {
+          "line": 147,
+          "text": "    logits_row_ids_and_logits_row_futures = []"
+        },
+        {
+          "line": 148,
+          "text": "    for seq_group in sampling_metadata.seq_groups:"
+        },
+        {
+          "line": 149,
+          "text": "        seq_ids = seq_group.seq_ids"
+        },
+        {
+          "line": 150,
+          "text": "        sampling_params = seq_group.sampling_params"
+        },
+        {
+          "line": 151,
+          "text": "        logits_processors = sampling_params.logits_processors"
+        },
+        {
+          "line": 152,
+          "text": "        if logits_processors:"
+        },
+        {
+          "line": 153,
+          "text": "            found_logits_processors = True"
+        },
+        {
+          "line": 154,
+          "text": ""
+        },
+        {
+          "line": 155,
+          "text": "            for seq_id, logits_row_idx in zip(seq_ids,"
+        },
+        {
+          "line": 156,
+          "text": "                                              seq_group.sample_indices):"
+        },
+        {
+          "line": 157,
+          "text": "                logits_row = logits[logits_row_idx]"
+        },
+        {
+          "line": 158,
+          "text": "                past_tokens_ids = seq_group.seq_data[seq_id].output_token_ids"
+        },
+        {
+          "line": 159,
+          "text": "                prompt_tokens_ids = seq_group.seq_data[seq_id].prompt_token_ids"
+        },
+        {
+          "line": 160,
+          "text": ""
+        },
+        {
+          "line": 161,
+          "text": "                if _logits_processor_threadpool is not None:"
+        },
+        {
+          "line": 162,
+          "text": "                    logits_row_ids_and_logits_row_futures.append("
+        },
+        {
+          "line": 163,
+          "text": "                        (logits_row_idx,"
+        },
+        {
+          "line": 164,
+          "text": "                         _logits_processor_threadpool.submit("
+        },
+        {
+          "line": 165,
+          "text": "                             _apply_logits_processors_single_seq, logits_row,"
+        },
+        {
+          "line": 166,
+          "text": "                             logits_processors, past_tokens_ids,"
+        },
+        {
+          "line": 167,
+          "text": "                             prompt_tokens_ids)))"
+        },
+        {
+          "line": 168,
+          "text": "                else:"
+        },
+        {
+          "line": 169,
+          "text": "                    logits[logits_row_idx] = \\"
+        },
+        {
+          "line": 170,
+          "text": "                        _apply_logits_processors_single_seq("
+        },
+        {
+          "line": 171,
+          "text": "                            logits_row, logits_processors, past_tokens_ids,"
+        },
+        {
+          "line": 172,
+          "text": "                            prompt_tokens_ids)"
+        },
+        {
+          "line": 173,
+          "text": ""
+        },
+        {
+          "line": 174,
+          "text": "        logits_processed += len(seq_group.sample_indices) + len("
+        },
+        {
+          "line": 175,
+          "text": "            seq_group.prompt_logprob_indices)"
+        },
+        {
+          "line": 176,
+          "text": ""
+        },
+        {
+          "line": 177,
+          "text": "    for logits_row_idx, future in logits_row_ids_and_logits_row_futures:"
+        },
+        {
+          "line": 178,
+          "text": "        logits[logits_row_idx] = future.result()"
+        },
+        {
+          "line": 179,
+          "text": ""
+        },
+        {
+          "line": 180,
+          "text": "    if found_logits_processors:"
+        },
+        {
+          "line": 181,
+          "text": "        # verifies that no rows in logits were missed unexpectedly"
+        },
+        {
+          "line": 182,
+          "text": "        assert logits_processed == logits.shape[0]"
+        },
+        {
+          "line": 183,
+          "text": "    return logits"
+        },
+        {
+          "line": 184,
+          "text": ""
+        },
+        {
+          "line": 185,
+          "text": ""
+        },
+        {
+          "line": 186,
+          "text": "def _apply_logits_processors_single_seq(logits_row, logits_processors,"
+        },
+        {
+          "line": 187,
+          "text": "                                        past_tokens_ids,"
+        },
+        {
+          "line": 188,
+          "text": "                                        prompt_tokens_ids) -> torch.Tensor:"
+        },
+        {
+          "line": 189,
+          "text": "    for logits_processor in logits_processors:"
+        },
+        {
+          "line": 190,
+          "text": "        parameters = inspect.signature(logits_processor).parameters"
+        },
+        {
+          "line": 191,
+          "text": "        if len(parameters) == 3:"
+        },
+        {
+          "line": 192,
+          "text": "            logits_row = logits_processor(prompt_tokens_ids, past_tokens_ids,"
+        },
+        {
+          "line": 193,
+          "text": "                                          logits_row)"
+        },
+        {
+          "line": 194,
+          "text": "        else:"
+        },
+        {
+          "line": 195,
+          "text": "            logits_row = logits_processor(past_tokens_ids, logits_row)"
+        },
+        {
+          "line": 196,
+          "text": "    return logits_row"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/model_executor/layers/sampler.py",
+      "sha256": "68ea3e67a341f4510cece3274c57ba35638453cfd9fad267b5d55798acdd1cba",
+      "bytes": 50453,
+      "selected_lines": [
+        {
+          "line": 73,
+          "text": "# Union of non-deferred (single-step scheduling)"
+        },
+        {
+          "line": 74,
+          "text": "# vs deferred (multi-step scheduling)"
+        },
+        {
+          "line": 75,
+          "text": "# sample result types"
+        },
+        {
+          "line": 76,
+          "text": "MaybeDeferredSampleResultType = Union[SampleResultType, SampleResultArgsType]"
+        },
+        {
+          "line": 77,
+          "text": ""
+        },
+        {
+          "line": 78,
+          "text": "# Abbreviation of the _sample() return type"
+        },
+        {
+          "line": 79,
+          "text": "SampleReturnType = Tuple[MaybeDeferredSampleResultType, Optional[torch.Tensor]]"
+        },
+        {
+          "line": 80,
+          "text": ""
+        },
+        {
+          "line": 81,
+          "text": ""
+        },
+        {
+          "line": 82,
+          "text": "class SamplerOutput("
+        },
+        {
+          "line": 83,
+          "text": "        msgspec.Struct,"
+        },
+        {
+          "line": 84,
+          "text": "        omit_defaults=True,  # type: ignore[call-arg]"
+        },
+        {
+          "line": 85,
+          "text": "        array_like=True):  # type: ignore[call-arg]"
+        },
+        {
+          "line": 86,
+          "text": "    \"\"\"For each sequence group, we generate a list of SequenceOutput object,"
+        },
+        {
+          "line": 87,
+          "text": "    each of which contains one possible candidate for the next token."
+        },
+        {
+          "line": 88,
+          "text": ""
+        },
+        {
+          "line": 89,
+          "text": "    This data structure implements methods, so it can be used like a list, but"
+        },
+        {
+          "line": 90,
+          "text": "    also has optional fields for device tensors."
+        },
+        {
+          "line": 91,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 92,
+          "text": ""
+        },
+        {
+          "line": 93,
+          "text": "    outputs: List[CompletionSequenceGroupOutput]"
+        },
+        {
+          "line": 94,
+          "text": ""
+        },
+        {
+          "line": 95,
+          "text": "    # On-device tensor containing probabilities of each token."
+        },
+        {
+          "line": 211,
+          "text": "        self._sampling_tensors = sampling_tensors"
+        },
+        {
+          "line": 212,
+          "text": "        self._do_penalties = do_penalties"
+        },
+        {
+          "line": 213,
+          "text": "        self._do_top_p_top_k = do_top_p_top_k"
+        },
+        {
+          "line": 214,
+          "text": "        self._do_min_p = do_min_p"
+        },
+        {
+          "line": 215,
+          "text": ""
+        },
+        {
+          "line": 216,
+          "text": "    def forward("
+        },
+        {
+          "line": 217,
+          "text": "        self,"
+        },
+        {
+          "line": 218,
+          "text": "        logits: torch.Tensor,"
+        },
+        {
+          "line": 219,
+          "text": "        sampling_metadata: SamplingMetadata,"
+        },
+        {
+          "line": 220,
+          "text": "    ) -> Optional[SamplerOutput]:"
+        },
+        {
+          "line": 221,
+          "text": "        \"\"\""
+        },
+        {
+          "line": 222,
+          "text": "        Single-step scheduling:"
+        },
+        {
+          "line": 223,
+          "text": "        * Perform GPU-side sampling computation & compute"
+        },
+        {
+          "line": 224,
+          "text": "          GPU-side logprobs tensor"
+        },
+        {
+          "line": 225,
+          "text": "        * Pythonize sampling result & logprobs tensor"
+        },
+        {
+          "line": 226,
+          "text": ""
+        },
+        {
+          "line": 227,
+          "text": "        Multi-step scheduling:"
+        },
+        {
+          "line": 228,
+          "text": "        * Perform GPU-side sampling computation & compute"
+        },
+        {
+          "line": 229,
+          "text": "          GPU-side logprobs tensor"
+        },
+        {
+          "line": 230,
+          "text": "        * Defer Pythonization of sampling result & logprobs"
+        },
+        {
+          "line": 231,
+          "text": "          tensor"
+        },
+        {
+          "line": 232,
+          "text": "        * Encapsulate arguments required for deferred Pythonization"
+        },
+        {
+          "line": 233,
+          "text": "          in the :class:`SamplerOutput` structure"
+        },
+        {
+          "line": 269,
+          "text": "        # Use in-place division to avoid creating a new tensor."
+        },
+        {
+          "line": 270,
+          "text": "        logits = logits.to(torch.float)"
+        },
+        {
+          "line": 271,
+          "text": "        logits.div_(sampling_tensors.temperatures.unsqueeze(dim=1))"
+        },
+        {
+          "line": 272,
+          "text": ""
+        },
+        {
+          "line": 273,
+          "text": "        if do_top_p_top_k and flashinfer_top_k_top_p_sampling is None:"
+        },
+        {
+          "line": 274,
+          "text": "            logits = _apply_top_k_top_p(logits, sampling_tensors.top_ps,"
+        },
+        {
+          "line": 275,
+          "text": "                                        sampling_tensors.top_ks)"
+        },
+        {
+          "line": 276,
+          "text": ""
+        },
+        {
+          "line": 277,
+          "text": "        if do_min_p:"
+        },
+        {
+          "line": 278,
+          "text": "            logits = _apply_min_p(logits, sampling_tensors.min_ps)"
+        },
+        {
+          "line": 279,
+          "text": ""
+        },
+        {
+          "line": 280,
+          "text": "        # We use float32 for probabilities and log probabilities."
+        },
+        {
+          "line": 281,
+          "text": "        # Compute the probabilities."
+        },
+        {
+          "line": 282,
+          "text": "        probs = torch.softmax(logits, dim=-1, dtype=torch.float)"
+        },
+        {
+          "line": 283,
+          "text": "        # Compute the log probabilities."
+        },
+        {
+          "line": 284,
+          "text": "        logprobs = torch.log_softmax(logits, dim=-1, dtype=torch.float)"
+        },
+        {
+          "line": 285,
+          "text": ""
+        },
+        {
+          "line": 286,
+          "text": "        # Sample the next tokens."
+        },
+        {
+          "line": 287,
+          "text": "        maybe_deferred_sample_results, maybe_sampled_tokens_tensor = _sample("
+        },
+        {
+          "line": 288,
+          "text": "            probs,"
+        },
+        {
+          "line": 289,
+          "text": "            logprobs,"
+        },
+        {
+          "line": 290,
+          "text": "            sampling_metadata,"
+        },
+        {
+          "line": 291,
+          "text": "            sampling_tensors,"
+        },
+        {
+          "line": 292,
+          "text": "            include_gpu_probs_tensor=self.include_gpu_probs_tensor,"
+        },
+        {
+          "line": 293,
+          "text": "            modify_greedy_probs=self._should_modify_greedy_probs_inplace,"
+        },
+        {
+          "line": 294,
+          "text": "        )"
+        },
+        {
+          "line": 295,
+          "text": ""
+        },
+        {
+          "line": 296,
+          "text": "        if self.include_gpu_probs_tensor:"
+        },
+        {
+          "line": 297,
+          "text": "            # Since we will defer sampler result Pythonization,"
+        },
+        {
+          "line": 298,
+          "text": "            # preserve GPU-side tensors in support of later"
+        },
+        {
+          "line": 299,
+          "text": "            # deferred pythonization of logprobs"
+        },
+        {
+          "line": 300,
+          "text": "            assert maybe_sampled_tokens_tensor is not None"
+        },
+        {
+          "line": 301,
+          "text": "            on_device_tensors = (probs, logprobs, maybe_sampled_tokens_tensor)"
+        },
+        {
+          "line": 302,
+          "text": "        else:"
+        },
+        {
+          "line": 303,
+          "text": "            # Since Pythonization has already happened, don't preserve"
+        },
+        {
+          "line": 304,
+          "text": "            # GPU-side tensors."
+        },
+        {
+          "line": 382,
+          "text": "    # verifies that no rows in logits were missed unexpectedly"
+        },
+        {
+          "line": 383,
+          "text": "    assert logits_applied == logits.shape[0]"
+        },
+        {
+          "line": 384,
+          "text": "    return logits"
+        },
+        {
+          "line": 385,
+          "text": ""
+        },
+        {
+          "line": 386,
+          "text": ""
+        },
+        {
+          "line": 387,
+          "text": "def _apply_top_k_top_p("
+        },
+        {
+          "line": 388,
+          "text": "    logits: torch.Tensor,"
+        },
+        {
+          "line": 389,
+          "text": "    p: torch.Tensor,"
+        },
+        {
+          "line": 390,
+          "text": "    k: torch.Tensor,"
+        },
+        {
+          "line": 391,
+          "text": ") -> torch.Tensor:"
+        },
+        {
+          "line": 392,
+          "text": "    logits_sort, logits_idx = logits.sort(dim=-1, descending=False)"
+        },
+        {
+          "line": 393,
+          "text": ""
+        },
+        {
+          "line": 394,
+          "text": "    # Apply top-k."
+        },
+        {
+          "line": 395,
+          "text": "    top_k_mask = logits_sort.size(1) - k.to(torch.long)"
+        },
+        {
+          "line": 396,
+          "text": "    # Get all the top_k values."
+        },
+        {
+          "line": 397,
+          "text": "    top_k_mask = logits_sort.gather(1, top_k_mask.unsqueeze(dim=1))"
+        },
+        {
+          "line": 398,
+          "text": "    top_k_mask = logits_sort < top_k_mask"
+        },
+        {
+          "line": 399,
+          "text": "    logits_sort.masked_fill_(top_k_mask, -float(\"inf\"))"
+        },
+        {
+          "line": 400,
+          "text": ""
+        },
+        {
+          "line": 401,
+          "text": "    # Apply top-p."
+        },
+        {
+          "line": 402,
+          "text": "    probs_sort = logits_sort.softmax(dim=-1)"
+        },
+        {
+          "line": 403,
+          "text": "    probs_sum = probs_sort.cumsum(dim=-1)"
+        },
+        {
+          "line": 404,
+          "text": "    top_p_mask = probs_sum <= 1 - p.unsqueeze(dim=1)"
+        },
+        {
+          "line": 419,
+          "text": ") -> torch.Tensor:"
+        },
+        {
+          "line": 420,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 421,
+          "text": "    Adapted from"
+        },
+        {
+          "line": 422,
+          "text": "    https://github.com/oobabooga/text-generation-webui/blob/3146124ec01f02c8fb1650a6517cf1b60b537aaf/modules/sampler_hijack.py#L16C17-L16C17"
+        },
+        {
+          "line": 423,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 424,
+          "text": "    probs = torch.softmax(logits, dim=-1)"
+        },
+        {
+          "line": 425,
+          "text": "    top_probs, _ = probs.max(dim=-1, keepdim=True)"
+        },
+        {
+          "line": 426,
+          "text": "    scaled_min_p = min_p.unsqueeze_(dim=1) * top_probs"
+        },
+        {
+          "line": 427,
+          "text": "    tokens_to_remove = probs < scaled_min_p"
+        },
+        {
+          "line": 428,
+          "text": "    logits = logits.masked_fill_(tokens_to_remove, -float(\"inf\"))"
+        },
+        {
+          "line": 429,
+          "text": ""
+        },
+        {
+          "line": 430,
+          "text": "    return logits"
+        },
+        {
+          "line": 431,
+          "text": ""
+        },
+        {
+          "line": 432,
+          "text": ""
+        },
+        {
+          "line": 433,
+          "text": "def _greedy_sample("
+        },
+        {
+          "line": 434,
+          "text": "    selected_seq_groups: List[SequenceGroupToSample],"
+        },
+        {
+          "line": 435,
+          "text": "    samples: torch.Tensor,"
+        },
+        {
+          "line": 436,
+          "text": ") -> SampleResultType:"
+        },
+        {
+          "line": 437,
+          "text": "    \"\"\"Run greedy sampling on a given samples."
+        },
+        {
+          "line": 438,
+          "text": ""
+        },
+        {
+          "line": 439,
+          "text": "    Args:"
+        },
+        {
+          "line": 440,
+          "text": "        selected_seq_groups: A list of sequence groups batched."
+        },
+        {
+          "line": 441,
+          "text": "        samples: (num_selected_samples,) A tensor of samples. The length of"
+        },
+        {
+          "line": 442,
+          "text": "            samples could be smaller than selected_seq_groups if"
+        },
+        {
+          "line": 443,
+          "text": "            seq_group.do_sample is False."
+        },
+        {
+          "line": 444,
+          "text": "    Returns:"
+        },
+        {
+          "line": 445,
+          "text": "        Tuple of (next_token_ids, parent_ids). The length of returned list is"
+        },
+        {
+          "line": 446,
+          "text": "        same as the length of selected_seq_groups. If the corresponding"
+        },
+        {
+          "line": 447,
+          "text": "        seq_group has do_sample=False, tuple contains ([], [])"
+        },
+        {
+          "line": 448,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 449,
+          "text": "    samples_lst = samples.tolist()"
+        },
+        {
+          "line": 450,
+          "text": "    sample_idx = 0"
+        },
+        {
+          "line": 463,
+          "text": "        results.append((next_token_ids, parent_ids))"
+        },
+        {
+          "line": 464,
+          "text": "        sample_idx += num_parent_seqs"
+        },
+        {
+          "line": 465,
+          "text": "    return results"
+        },
+        {
+          "line": 466,
+          "text": ""
+        },
+        {
+          "line": 467,
+          "text": ""
+        },
+        {
+          "line": 468,
+          "text": "def _random_sample("
+        },
+        {
+          "line": 469,
+          "text": "    selected_seq_groups: List[SequenceGroupToSample],"
+        },
+        {
+          "line": 470,
+          "text": "    random_samples: torch.Tensor,"
+        },
+        {
+          "line": 471,
+          "text": ") -> SampleResultType:"
+        },
+        {
+          "line": 472,
+          "text": "    \"\"\"Run random sampling on a given samples."
+        },
+        {
+          "line": 473,
+          "text": ""
+        },
+        {
+          "line": 474,
+          "text": "    Args:"
+        },
+        {
+          "line": 475,
+          "text": "        selected_seq_groups: A list of sequence groups batched."
+        },
+        {
+          "line": 476,
+          "text": "        random_samples: (num_selected_samples,) A tensor of samples. The"
+        },
+        {
+          "line": 477,
+          "text": "            length of samples could be smaller than selected_seq_groups if"
+        },
+        {
+          "line": 478,
+          "text": "            seq_group.do_sample is False."
+        },
+        {
+          "line": 479,
+          "text": "    Returns:"
+        },
+        {
+          "line": 480,
+          "text": "        Tuple of (next_token_ids, parent_ids). The length of returned list is"
+        },
+        {
+          "line": 481,
+          "text": "        same as the length of selected_seq_groups. If the corresponding"
+        },
+        {
+          "line": 482,
+          "text": "        seq_group has do_sample=False, tuple contains ([], [])"
+        },
+        {
+          "line": 483,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 484,
+          "text": "    # Find the maximum n value of the prompt phase requests."
+        },
+        {
+          "line": 485,
+          "text": "    random_samples = random_samples.cpu()"
+        },
+        {
+          "line": 609,
+          "text": "    for sampling_type in SamplingType:"
+        },
+        {
+          "line": 610,
+          "text": "        if sampling_type not in sample_metadata:"
+        },
+        {
+          "line": 611,
+          "text": "            continue"
+        },
+        {
+          "line": 612,
+          "text": "        (seq_group_id, seq_groups) = sample_metadata[sampling_type]"
+        },
+        {
+          "line": 613,
+          "text": "        if sampling_type == SamplingType.GREEDY:"
+        },
+        {
+          "line": 614,
+          "text": "            sample_results = _greedy_sample(seq_groups, greedy_samples)"
+        },
+        {
+          "line": 615,
+          "text": "        elif sampling_type in (SamplingType.RANDOM, SamplingType.RANDOM_SEED):"
+        },
+        {
+          "line": 616,
+          "text": "            sample_results = _random_sample(seq_groups,"
+        },
+        {
+          "line": 617,
+          "text": "                                            multinomial_samples[sampling_type])"
+        },
+        {
+          "line": 618,
+          "text": "        sample_results_dict.update(zip(seq_group_id, sample_results))"
+        },
+        {
+          "line": 619,
+          "text": ""
+        },
+        {
+          "line": 620,
+          "text": "    return ["
+        },
+        {
+          "line": 621,
+          "text": "        sample_results_dict.get(i, ([], []))"
+        },
+        {
+          "line": 622,
+          "text": "        for i in range(len(sampling_metadata.seq_groups))"
+        },
+        {
+          "line": 623,
+          "text": "    ]"
+        },
+        {
+          "line": 624,
+          "text": ""
+        },
+        {
+          "line": 625,
+          "text": ""
+        },
+        {
+          "line": 626,
+          "text": "def _sample_with_torch("
+        },
+        {
+          "line": 627,
+          "text": "    probs: torch.Tensor,"
+        },
+        {
+          "line": 628,
+          "text": "    logprobs: torch.Tensor,"
+        },
+        {
+          "line": 629,
+          "text": "    sampling_metadata: SamplingMetadata,"
+        },
+        {
+          "line": 630,
+          "text": "    sampling_tensors: SamplingTensors,"
+        },
+        {
+          "line": 631,
+          "text": "    include_gpu_probs_tensor: bool,"
+        },
+        {
+          "line": 632,
+          "text": "    modify_greedy_probs: bool,"
+        },
+        {
+          "line": 633,
+          "text": ") -> SampleReturnType:"
+        },
+        {
+          "line": 634,
+          "text": "    '''Torch-oriented _sample() implementation."
+        },
+        {
+          "line": 635,
+          "text": ""
+        },
+        {
+          "line": 636,
+          "text": "    Single-step scheduling:"
+        },
+        {
+          "line": 637,
+          "text": "    * Perform GPU-side sampling computation"
+        },
+        {
+          "line": 638,
+          "text": "    * Immediately Pythonize sampling result"
+        },
+        {
+          "line": 639,
+          "text": ""
+        },
+        {
+          "line": 640,
+          "text": "    Multi-step scheduling:"
+        },
+        {
+          "line": 641,
+          "text": "    * Perform GPU-side sampling computation"
+        },
+        {
+          "line": 642,
+          "text": "    * Defer Pythonization & preserve GPU-side"
+        },
+        {
+          "line": 643,
+          "text": "      tensors required for Pythonization"
+        },
+        {
+          "line": 644,
+          "text": "    '''"
+        },
+        {
+          "line": 645,
+          "text": ""
+        },
+        {
+          "line": 646,
+          "text": "    categorized_seq_group_ids: Dict[SamplingType, List[int]] = {"
+        },
+        {
+          "line": 647,
+          "text": "        t: []"
+        },
+        {
+          "line": 648,
+          "text": "        for t in SamplingType"
+        },
+        {
+          "line": 649,
+          "text": "    }"
+        },
+        {
+          "line": 650,
+          "text": "    categorized_sample_indices = sampling_metadata.categorized_sample_indices"
+        },
+        {
+          "line": 651,
+          "text": "    for i, seq_group in enumerate(sampling_metadata.seq_groups):"
+        },
+        {
+          "line": 750,
+          "text": "            maybe_deferred_args,"
+        },
+        {
+          "line": 751,
+          "text": "            sampled_token_ids_tensor,"
+        },
+        {
+          "line": 752,
+          "text": "        )"
+        },
+        {
+          "line": 753,
+          "text": ""
+        },
+        {
+          "line": 754,
+          "text": ""
+        },
+        {
+          "line": 755,
+          "text": "def _sample("
+        },
+        {
+          "line": 756,
+          "text": "    probs: torch.Tensor,"
+        },
+        {
+          "line": 757,
+          "text": "    logprobs: torch.Tensor,"
+        },
+        {
+          "line": 758,
+          "text": "    sampling_metadata: SamplingMetadata,"
+        },
+        {
+          "line": 759,
+          "text": "    sampling_tensors: SamplingTensors,"
+        },
+        {
+          "line": 760,
+          "text": "    include_gpu_probs_tensor: bool,"
+        },
+        {
+          "line": 761,
+          "text": "    modify_greedy_probs: bool,"
+        },
+        {
+          "line": 762,
+          "text": ") -> SampleReturnType:"
+        },
+        {
+          "line": 763,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 764,
+          "text": "    Args:"
+        },
+        {
+          "line": 765,
+          "text": "        probs: (num_query_tokens_in_batch, num_vocab)"
+        },
+        {
+          "line": 766,
+          "text": "        logprobs: (num_query_tokens_in_batch, num_vocab)"
+        },
+        {
+          "line": 767,
+          "text": "        sampling_metadata: The metadata for a batch for sampling."
+        },
+        {
+          "line": 768,
+          "text": "        sampling_tensors: Tensors that include sampling related metadata."
+        },
+        {
+          "line": 769,
+          "text": ""
+        },
+        {
+          "line": 770,
+          "text": "    Returns:"
+        },
+        {
+          "line": 771,
+          "text": "        (next_token_ids, parent_seq_ids) for each seq group in a batch."
+        },
+        {
+          "line": 772,
+          "text": "            If sampling is skipped, it returns ([], [])"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/engine/multiprocessing/engine.py",
+      "sha256": "8aee3351f48faa53be68be22492b0e64c729035a49c17c9be478a45b3e61fcbf",
+      "snippets": [
+        {
+          "start_line": 250,
+          "end_line": 270,
+          "text": "        \"\"\"Handle new input from the socket\"\"\"\n        try:\n            while self.input_socket.poll(timeout=0) != 0:\n                frames = self.input_socket.recv_multipart(copy=False)\n                request = pickle.loads(frames[0].buffer)\n\n                if isinstance(request, RPCProcessRequest):\n                    if len(frames) > 1:\n                        # Use cloudpickle for logits processors\n                        assert isinstance(request.params, SamplingParams)\n                        lprocs = cloudpickle.loads(frames[1].buffer)\n                        request.params.logits_processors = lprocs\n                    self._handle_process_request(request)\n                elif isinstance(request, RPCAbortRequest):\n                    self._handle_abort_request(request)\n                elif isinstance(request, RPCUProfileRequest):\n                    if request == RPCUProfileRequest.START_PROFILE:\n                        self.start_profile()\n                    else:\n                        self.stop_profile()\n                elif isinstance(request, RPCLoadAdapterRequest):"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/model_executor/models/qwen3.py",
+      "sha256": "ea3e92488559751220ac88f0c589453691df3dbd76a259d276fd63296ea0c9a4",
+      "selected_lines": [
+        {
+          "line": 303,
+          "text": "    def compute_logits("
+        },
+        {
+          "line": 304,
+          "text": "        self,"
+        },
+        {
+          "line": 305,
+          "text": "        hidden_states: torch.Tensor,"
+        },
+        {
+          "line": 306,
+          "text": "        sampling_metadata: SamplingMetadata,"
+        },
+        {
+          "line": 307,
+          "text": "    ) -> Optional[torch.Tensor]:"
+        },
+        {
+          "line": 308,
+          "text": "        logits = self.logits_processor(self.lm_head, hidden_states,"
+        },
+        {
+          "line": 309,
+          "text": "                                       sampling_metadata)"
+        },
+        {
+          "line": 310,
+          "text": "        return logits"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/model_executor/models/qwen2.py",
+      "sha256": "42a74d98915c2ccaf079757d714ee5fcd81d102aaef4f059bd87a365b3ba973f",
+      "selected_lines": [
+        {
+          "line": 470,
+          "text": "    def compute_logits("
+        },
+        {
+          "line": 471,
+          "text": "        self,"
+        },
+        {
+          "line": 472,
+          "text": "        hidden_states: torch.Tensor,"
+        },
+        {
+          "line": 473,
+          "text": "        sampling_metadata: SamplingMetadata,"
+        },
+        {
+          "line": 474,
+          "text": "    ) -> Optional[torch.Tensor]:"
+        },
+        {
+          "line": 475,
+          "text": "        logits = self.logits_processor(self.lm_head, hidden_states,"
+        },
+        {
+          "line": 476,
+          "text": "                                       sampling_metadata)"
+        },
+        {
+          "line": 477,
+          "text": "        return logits"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/worker/model_runner.py",
+      "sha256": "4471a48fba8505e88f23dfc01d746b0b0239c867921c5ffc3115a7ccf4ad2b4c",
+      "selected_lines": [
+        {
+          "line": 1806,
+          "text": "                hidden_or_intermediate_states.tensors[\"model_forward_time\"] = ("
+        },
+        {
+          "line": 1807,
+          "text": "                    torch.tensor(model_forward_time + orig_model_forward_time))"
+        },
+        {
+          "line": 1808,
+          "text": "            return hidden_or_intermediate_states"
+        },
+        {
+          "line": 1809,
+          "text": ""
+        },
+        {
+          "line": 1810,
+          "text": "        logits = self.model.compute_logits(hidden_or_intermediate_states,"
+        },
+        {
+          "line": 1811,
+          "text": "                                           model_input.sampling_metadata)"
+        },
+        {
+          "line": 1812,
+          "text": ""
+        },
+        {
+          "line": 1813,
+          "text": "        if not self.is_driver_worker:"
+        },
+        {
+          "line": 1814,
+          "text": "            return []"
+        },
+        {
+          "line": 1815,
+          "text": ""
+        },
+        {
+          "line": 1816,
+          "text": "        if model_input.async_callback is not None:"
+        },
+        {
+          "line": 1817,
+          "text": "            model_input.async_callback()"
+        },
+        {
+          "line": 1818,
+          "text": ""
+        },
+        {
+          "line": 1819,
+          "text": "        # Sample the next token."
+        },
+        {
+          "line": 1820,
+          "text": "        output: SamplerOutput = self.sampler("
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/xgrammar/kernels/apply_token_bitmask_inplace_triton.py",
+      "sha256": "6b8493cc97fb08a2d96b2aaccff1eaca8fb396a5e4764d859aea9ce81662ef70",
+      "selected_lines": [
+        {
+          "line": 8,
+          "text": "except ImportError as err:"
+        },
+        {
+          "line": 9,
+          "text": "    raise ImportError(\"Triton is not installed\") from err"
+        },
+        {
+          "line": 10,
+          "text": ""
+        },
+        {
+          "line": 11,
+          "text": ""
+        },
+        {
+          "line": 12,
+          "text": "@triton.jit"
+        },
+        {
+          "line": 13,
+          "text": "def apply_token_bitmask_inplace_kernel("
+        },
+        {
+          "line": 14,
+          "text": "    logits_ptr,"
+        },
+        {
+          "line": 15,
+          "text": "    bitmask_ptr,"
+        },
+        {
+          "line": 16,
+          "text": "    indices_ptr,"
+        },
+        {
+          "line": 17,
+          "text": "    num_rows,"
+        },
+        {
+          "line": 18,
+          "text": "    vocab_size,"
+        },
+        {
+          "line": 19,
+          "text": "    logits_strides,"
+        },
+        {
+          "line": 20,
+          "text": "    bitmask_strides,"
+        },
+        {
+          "line": 21,
+          "text": "    NUM_SMS: tl.constexpr,"
+        },
+        {
+          "line": 22,
+          "text": "    BLOCK_SIZE: tl.constexpr,"
+        },
+        {
+          "line": 23,
+          "text": "):"
+        },
+        {
+          "line": 24,
+          "text": "    \"\"\"Apply a bitmask to logits in-place using Triton. The bitmask is a 01 bitwise compressed tensor,"
+        },
+        {
+          "line": 25,
+          "text": "    where 0 means the token is masked and 1 means the token is not masked. After applying the bitmask,"
+        },
+        {
+          "line": 26,
+          "text": "    the masked logits will be set to -inf."
+        },
+        {
+          "line": 27,
+          "text": ""
+        },
+        {
+          "line": 28,
+          "text": "    Parameters"
+        },
+        {
+          "line": 29,
+          "text": "    ----------"
+        },
+        {
+          "line": 30,
+          "text": "    logits_ptr : tl.tensor"
+        },
+        {
+          "line": 31,
+          "text": "        Pointer to the logits tensor to apply the bitmask to."
+        },
+        {
+          "line": 32,
+          "text": ""
+        },
+        {
+          "line": 33,
+          "text": "    bitmask_ptr : tl.tensor"
+        },
+        {
+          "line": 34,
+          "text": "        Pointer to the bitmask tensor to apply."
+        },
+        {
+          "line": 35,
+          "text": ""
+        },
+        {
+          "line": 36,
+          "text": "    indices_ptr : Optional[tl.tensor]"
+        },
+        {
+          "line": 72,
+          "text": "        bitmask = ((packed_bitmask[:, None] >> (tl.arange(0, 32)[None, :])) & 1) == 0"
+        },
+        {
+          "line": 73,
+          "text": "        bitmask = bitmask.reshape(BLOCK_SIZE)"
+        },
+        {
+          "line": 74,
+          "text": ""
+        },
+        {
+          "line": 75,
+          "text": "        tl.store("
+        },
+        {
+          "line": 76,
+          "text": "            logits_ptr + batch_id * logits_strides + offsets, -float(\"inf\"), vocab_mask & bitmask"
+        },
+        {
+          "line": 77,
+          "text": "        )"
+        },
+        {
+          "line": 78,
+          "text": ""
+        },
+        {
+          "line": 79,
+          "text": ""
+        },
+        {
+          "line": 80,
+          "text": "def apply_token_bitmask_inplace_triton("
+        },
+        {
+          "line": 81,
+          "text": "    logits: torch.Tensor,"
+        },
+        {
+          "line": 82,
+          "text": "    bitmask: torch.Tensor,"
+        },
+        {
+          "line": 83,
+          "text": "    vocab_size: Optional[int] = None,"
+        },
+        {
+          "line": 84,
+          "text": "    indices: Optional[List[int]] = None,"
+        },
+        {
+          "line": 85,
+          "text": "):"
+        },
+        {
+          "line": 86,
+          "text": "    NUM_SMS = torch.cuda.get_device_properties(\"cuda\").multi_processor_count"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/config.py",
+      "sha256": "016f1281a0519c636bace104012ff8d1c199db89aba190d6d9cd810d67c91a48",
+      "selected_lines": [
+        {
+          "line": 3133,
+          "text": "    return served_model_name"
+        },
+        {
+          "line": 3134,
+          "text": ""
+        },
+        {
+          "line": 3135,
+          "text": ""
+        },
+        {
+          "line": 3136,
+          "text": "GuidedDecodingBackendV0 = Literal[\"auto\", \"outlines\", \"lm-format-enforcer\","
+        },
+        {
+          "line": 3137,
+          "text": "                                  \"xgrammar\", \"guidance\"]"
+        },
+        {
+          "line": 3138,
+          "text": "GuidedDecodingBackendV1 = Literal[\"auto\", \"xgrammar\", \"guidance\"]"
+        },
+        {
+          "line": 3139,
+          "text": ""
+        },
+        {
+          "line": 3140,
+          "text": ""
+        },
+        {
+          "line": 3141,
+          "text": "@config"
+        },
+        {
+          "line": 3142,
+          "text": "@dataclass"
+        },
+        {
+          "line": 3143,
+          "text": "class DecodingConfig:"
+        },
+        {
+          "line": 3144,
+          "text": "    \"\"\"Dataclass which contains the decoding strategy of the engine.\"\"\""
+        },
+        {
+          "line": 3145,
+          "text": ""
+        },
+        {
+          "line": 3146,
+          "text": "    guided_decoding_backend: Union["
+        },
+        {
+          "line": 3147,
+          "text": "        GuidedDecodingBackendV0,"
+        },
+        {
+          "line": 3148,
+          "text": "        GuidedDecodingBackendV1] = \"auto\" if envs.VLLM_USE_V1 else \"xgrammar\""
+        },
+        {
+          "line": 3149,
+          "text": "    \"\"\"Which engine will be used for guided decoding (JSON schema / regex etc)"
+        },
+        {
+          "line": 3150,
+          "text": "    by default. With \"auto\", we will make opinionated choices based on request"
+        },
+        {
+          "line": 3151,
+          "text": "    contents and what the backend libraries currently support, so the behavior"
+        },
+        {
+          "line": 3152,
+          "text": "    is subject to change in each release.\"\"\""
+        },
+        {
+          "line": 3153,
+          "text": ""
+        },
+        {
+          "line": 3154,
+          "text": "    reasoning_backend: Optional[str] = None"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/engine/arg_utils.py",
+      "sha256": "65dfb922f57b5b242ac226024ae6a8041cc141b5b003831ea0d372d37d9e1caa",
+      "selected_lines": [
+        {
+          "line": 308,
+          "text": "        bool] = SchedulerConfig.enable_chunked_prefill"
+        },
+        {
+          "line": 309,
+          "text": "    disable_chunked_mm_input: bool = SchedulerConfig.disable_chunked_mm_input"
+        },
+        {
+          "line": 310,
+          "text": ""
+        },
+        {
+          "line": 311,
+          "text": "    guided_decoding_backend: str = DecodingConfig.guided_decoding_backend"
+        },
+        {
+          "line": 312,
+          "text": "    logits_processor_pattern: Optional[str] = None"
+        },
+        {
+          "line": 313,
+          "text": ""
+        },
+        {
+          "line": 314,
+          "text": "    speculative_config: Optional[Dict[str, Any]] = None"
+        },
+        {
+          "line": 315,
+          "text": ""
+        },
+        {
+          "line": 316,
+          "text": "    qlora_adapter_name_or_path: Optional[str] = None"
+        },
+        {
+          "line": 317,
+          "text": "    show_hidden_metrics_for_version: Optional[str] = None"
+        },
+        {
+          "line": 318,
+          "text": "    otlp_traces_endpoint: Optional[str] = None"
+        },
+        {
+          "line": 319,
+          "text": "    collect_detailed_traces: Optional[str] = None"
+        },
+        {
+          "line": 490,
+          "text": "            description=DecodingConfig.__doc__,"
+        },
+        {
+          "line": 491,
+          "text": "        )"
+        },
+        {
+          "line": 492,
+          "text": "        guided_decoding_group.add_argument("
+        },
+        {
+          "line": 493,
+          "text": "            '--guided-decoding-backend',"
+        },
+        {
+          "line": 494,
+          "text": "            **guided_decoding_kwargs[\"guided_decoding_backend\"])"
+        },
+        {
+          "line": 495,
+          "text": "        guided_decoding_group.add_argument("
+        },
+        {
+          "line": 496,
+          "text": "            \"--reasoning-parser\","
+        },
+        {
+          "line": 497,
+          "text": "            # This choices is a special case because it's not static"
+        },
+        {
+          "line": 498,
+          "text": "            choices=list(ReasoningParserManager.reasoning_parsers),"
+        },
+        {
+          "line": 499,
+          "text": "            **guided_decoding_kwargs[\"reasoning_backend\"])"
+        },
+        {
+          "line": 500,
+          "text": ""
+        },
+        {
+          "line": 501,
+          "text": "        parser.add_argument("
+        },
+        {
+          "line": 1339,
+          "text": "            not in get_args(GuidedDecodingBackendV1):"
+        },
+        {
+          "line": 1340,
+          "text": "            _raise_or_fallback("
+        },
+        {
+          "line": 1341,
+          "text": "                feature_name="
+        },
+        {
+          "line": 1342,
+          "text": "                f\"--guided-decoding-backend={self.guided_decoding_backend}\","
+        },
+        {
+          "line": 1343,
+          "text": "                recommend_to_remove=False)"
+        },
+        {
+          "line": 1344,
+          "text": "            return False"
+        },
+        {
+          "line": 1345,
+          "text": ""
+        },
+        {
+          "line": 1346,
+          "text": "        # Need at least Ampere for now (FA support required)."
+        },
+        {
+          "line": 1347,
+          "text": "        # Skip this check if we are running on a non-GPU platform,"
+        },
+        {
+          "line": 1348,
+          "text": "        # or if the device capability is not available"
+        },
+        {
+          "line": 1349,
+          "text": "        # (e.g. in a Ray actor without GPUs)."
+        },
+        {
+          "line": 1350,
+          "text": "        from vllm.platforms import current_platform"
+        }
+      ]
+    },
+    {
+      "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/entrypoints/openai/cli_args.py",
+      "sha256": "2de2c8c51a3b13e3676c83e7af44429095f79a0122f672c6fde685bf9442c7f5",
+      "selected_lines": []
+    }
+  ],
+  "cpu_evidence": {
+    "grammar_and_matcher_probes": {
+      "exit_code": 0,
+      "elapsed_s": 7.17,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)\n",
+      "snapshot": {
+        "observed_at": "2026-10-26T02:50:56.219126+00:00",
+        "evidence_level": "installed xgrammar native CPU grammar compile + full-string matcher; V0 precheck exact installed utility via runpy; no HTTP, model load or GPU execution",
+        "xgrammar_version": "0.1.18",
+        "torch_version": "2.6.0+cu124",
+        "cuda_initialized": false,
+        "records": [
+          {
+            "name": "integer_minimum",
+            "schema": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "schema_sha256": "1d832c2ad3d4a13c8c81b81d895fff58d3b645e82f3802a21d6b1c5c1915c41a",
+            "vllm_unsupported_precheck": false,
+            "selected_v0_xgrammar_no_fallback_policy": "continue_to_xgrammar_validation",
+            "samples": [
+              {
+                "text": "1",
+                "accepted": true
+              },
+              {
+                "text": "2",
+                "accepted": true
+              },
+              {
+                "text": "3",
+                "accepted": true
+              }
+            ],
+            "compiler_result": "grammar_created",
+            "grammar_sha256": "2df817dfef412ec2eb34daee441692b0fd9ba725b9e6676c224e3085832ea923",
+            "grammar_text": "root ::= (([2-9]) | ([1-9] [0-9]*))\n"
+          },
+          {
+            "name": "integer_maximum",
+            "schema": {
+              "type": "integer",
+              "maximum": 4
+            },
+            "schema_sha256": "0c2aa1e26d51e5e24fc06063941ae541f9650a503e674ed1d6e873a74df74f82",
+            "vllm_unsupported_precheck": false,
+            "selected_v0_xgrammar_no_fallback_policy": "continue_to_xgrammar_validation",
+            "samples": [
+              {
+                "text": "3",
+                "accepted": true
+              },
+              {
+                "text": "4",
+                "accepted": true
+              },
+              {
+                "text": "5",
+                "accepted": false
+              }
+            ],
+            "compiler_result": "grammar_created",
+            "grammar_sha256": "9affbd4adb4720caa8a73e37038a172e92c197e177e48a3416332d89f74e44b1",
+            "grammar_text": "root ::= ((\"-\" [1-9] [0-9]*) | (\"0\") | ([1-4]))\n"
+          },
+          {
+            "name": "integer_inclusive_range",
+            "schema": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 4
+            },
+            "schema_sha256": "758e10bcd9bf936c23f1da1767a9d20fb5a047e8538c10aa43169de4f7c8bd9b",
+            "vllm_unsupported_precheck": false,
+            "selected_v0_xgrammar_no_fallback_policy": "continue_to_xgrammar_validation",
+            "samples": [
+              {
+                "text": "1",
+                "accepted": false
+              },
+              {
+                "text": "2",
+                "accepted": true
+              },
+              {
+                "text": "3",
+                "accepted": true
+              },
+              {
+                "text": "4",
+                "accepted": true
+              },
+              {
+                "text": "5",
+                "accepted": false
+              },
+              {
+                "text": "2.0",
+                "accepted": false
+              }
+            ],
+            "compiler_result": "grammar_created",
+            "grammar_sha256": "d3618367b7d90a1f56fff3c9181f25c89e92f7e7d00f7f4e81ea525373edb33a",
+            "grammar_text": "root ::= (([2-4]))\n"
+          },
+          {
+            "name": "integer_fractional_bound",
+            "schema": {
+              "type": "integer",
+              "minimum": 1.5,
+              "maximum": 4
+            },
+            "schema_sha256": "0a65226657b6d77a6dda8bb8bf6adb7c2d8a920f04da5d782c14c06a45613081",
+            "vllm_unsupported_precheck": false,
+            "selected_v0_xgrammar_no_fallback_policy": "continue_to_xgrammar_validation",
+            "samples": [],
+            "compiler_result": "error",
+            "error": "RuntimeError: [10:50:56] /project/cpp/json_schema_converter.cc:1569: Check failed: (start_double == static_cast<int>(start_double)) is false: minimum must be an integer\n"
+          },
+          {
+            "name": "number_inclusive_range",
+            "schema": {
+              "type": "number",
+              "minimum": 1.25,
+              "maximum": 2.75
+            },
+            "schema_sha256": "e9497ed5cbf58e4cc0c7eb48d135427d131ba2513e48e8035b7c33690dc4a110",
+            "vllm_unsupported_precheck": false,
+            "selected_v0_xgrammar_no_fallback_policy": "continue_to_xgrammar_validation",
+            "samples": [
+              {
+                "text": "1",
+                "accepted": false
+              },
+              {
+                "text": "1.24",
+                "accepted": false
+              },
+              {
+                "text": "1.25",
+                "accepted": true
+              },
+              {
+                "text": "1.5",
+                "accepted": true
+              },
+              {
+                "text": "2",
+                "accepted": false
+              },
+              {
+                "text": "2.75",
+                "accepted": true
+              },
+              {
+                "text": "2.76",
+                "accepted": false
+              },
+              {
+                "text": "3",
+                "accepted": false
+              },
+              {
+                "text": "1.5e0",
+                "accepted": false
+              }
+            ],
+            "compiler_result": "grammar_created",
+            "grammar_sha256": "b000f46948ca215d543c2642e5f4d6a63d9db61d85ca79b2fe0d2b4a61dee53c",
+            "grammar_text": "root ::= ((\"1\" [\\0-\\U0010ffff] \"25\") | (\"2\" [\\0-\\U0010ffff] \"75\") | (\"1.3\" root_1) | (\"1.4\" root_6) | (\"1.5\" root_11) | (\"1.6\" root_16) | (\"1.7\" root_21) | (\"1.8\" root_26) | (\"1.9\" root_31) | (\"1.26\" root_36) | (\"1.27\" root_40) | (\"1.28\" root_44) | (\"1.29\" root_48) | (\"2.0\" root_52) | (\"2.1\" root_57) | (\"2.2\" root_62) | (\"2.3\" root_67) | (\"2.4\" root_72) | (\"2.5\" root_77) | (\"2.6\" root_82) | (\"2.70\" root_87) | (\"2.71\" root_91) | (\"2.72\" root_95) | (\"2.73\" root_99) | (\"2.74\" root_103))\nroot_1 ::= (\"\" | ([0-9] root_2))\nroot_2 ::= (\"\" | ([0-9] root_3))\nroot_3 ::= (\"\" | ([0-9] root_4))\nroot_4 ::= (\"\" | ([0-9] root_5))\nroot_5 ::= (\"\" | ([0-9]))\nroot_6 ::= (\"\" | ([0-9] root_7))\nroot_7 ::= (\"\" | ([0-9] root_8))\nroot_8 ::= (\"\" | ([0-9] root_9))\nroot_9 ::= (\"\" | ([0-9] root_10))\nroot_10 ::= (\"\" | ([0-9]))\nroot_11 ::= (\"\" | ([0-9] root_12))\nroot_12 ::= (\"\" | ([0-9] root_13))\nroot_13 ::= (\"\" | ([0-9] root_14))\nroot_14 ::= (\"\" | ([0-9] root_15))\nroot_15 ::= (\"\" | ([0-9]))\nroot_16 ::= (\"\" | ([0-9] root_17))\nroot_17 ::= (\"\" | ([0-9] root_18))\nroot_18 ::= (\"\" | ([0-9] root_19))\nroot_19 ::= (\"\" | ([0-9] root_20))\nroot_20 ::= (\"\" | ([0-9]))\nroot_21 ::= (\"\" | ([0-9] root_22))\nroot_22 ::= (\"\" | ([0-9] root_23))\nroot_23 ::= (\"\" | ([0-9] root_24))\nroot_24 ::= (\"\" | ([0-9] root_25))\nroot_25 ::= (\"\" | ([0-9]))\nroot_26 ::= (\"\" | ([0-9] root_27))\nroot_27 ::= (\"\" | ([0-9] root_28))\nroot_28 ::= (\"\" | ([0-9] root_29))\nroot_29 ::= (\"\" | ([0-9] root_30))\nroot_30 ::= (\"\" | ([0-9]))\nroot_31 ::= (\"\" | ([0-9] root_32))\nroot_32 ::= (\"\" | ([0-9] root_33))\nroot_33 ::= (\"\" | ([0-9] root_34))\nroot_34 ::= (\"\" | ([0-9] root_35))\nroot_35 ::= (\"\" | ([0-9]))\nroot_36 ::= (\"\" | ([0-9] root_37))\nroot_37 ::= (\"\" | ([0-9] root_38))\nroot_38 ::= (\"\" | ([0-9] root_39))\nroot_39 ::= (\"\" | ([0-9]))\nroot_40 ::= (\"\" | ([0-9] root_41))\nroot_41 ::= (\"\" | ([0-9] root_42))\nroot_42 ::= (\"\" | ([0-9] root_43))\nroot_43 ::= (\"\" | ([0-9]))\nroot_44 ::= (\"\" | ([0-9] root_45))\nroot_45 ::= (\"\" | ([0-9] root_46))\nroot_46 ::= (\"\" | ([0-9] root_47))\nroot_47 ::= (\"\" | ([0-9]))\nroot_48 ::= (\"\" | ([0-9] root_49))\nroot_49 ::= (\"\" | ([0-9] root_50))\nroot_50 ::= (\"\" | ([0-9] root_51))\nroot_51 ::= (\"\" | ([0-9]))\nroot_52 ::= (\"\" | ([0-9] root_53))\nroot_53 ::= (\"\" | ([0-9] root_54))\nroot_54 ::= (\"\" | ([0-9] root_55))\nroot_55 ::= (\"\" | ([0-9] root_56))\nroot_56 ::= (\"\" | ([0-9]))\nroot_57 ::= (\"\" | ([0-9] root_58))\nroot_58 ::= (\"\" | ([0-9] root_59))\nroot_59 ::= (\"\" | ([0-9] root_60))\nroot_60 ::= (\"\" | ([0-9] root_61))\nroot_61 ::= (\"\" | ([0-9]))\nroot_62 ::= (\"\" | ([0-9] root_63))\nroot_63 ::= (\"\" | ([0-9] root_64))\nroot_64 ::= (\"\" | ([0-9] root_65))\nroot_65 ::= (\"\" | ([0-9] root_66))\nroot_66 ::= (\"\" | ([0-9]))\nroot_67 ::= (\"\" | ([0-9] root_68))\nroot_68 ::= (\"\" | ([0-9] root_69))\nroot_69 ::= (\"\" | ([0-9] root_70))\nroot_70 ::= (\"\" | ([0-9] root_71))\nroot_71 ::= (\"\" | ([0-9]))\nroot_72 ::= (\"\" | ([0-9] root_73))\nroot_73 ::= (\"\" | ([0-9] root_74))\nroot_74 ::= (\"\" | ([0-9] root_75))\nroot_75 ::= (\"\" | ([0-9] root_76))\nroot_76 ::= (\"\" | ([0-9]))\nroot_77 ::= (\"\" | ([0-9] root_78))\nroot_78 ::= (\"\" | ([0-9] root_79))\nroot_79 ::= (\"\" | ([0-9] root_80))\nroot_80 ::= (\"\" | ([0-9] root_81))\nroot_81 ::= (\"\" | ([0-9]))\nroot_82 ::= (\"\" | ([0-9] root_83))\nroot_83 ::= (\"\" | ([0-9] root_84))\nroot_84 ::= (\"\" | ([0-9] root_85))\nroot_85 ::= (\"\" | ([0-9] root_86))\nroot_86 ::= (\"\" | ([0-9]))\nroot_87 ::= (\"\" | ([0-9] root_88))\nroot_88 ::= (\"\" | ([0-9] root_89))\nroot_89 ::= (\"\" | ([0-9] root_90))\nroot_90 ::= (\"\" | ([0-9]))\nroot_91 ::= (\"\" | ([0-9] root_92))\nroot_92 ::= (\"\" | ([0-9] root_93))\nroot_93 ::= (\"\" | ([0-9] root_94))\nroot_94 ::= (\"\" | ([0-9]))\nroot_95 ::= (\"\" | ([0-9] root_96))\nroot_96 ::= (\"\" | ([0-9] root_97))\nroot_97 ::= (\"\" | ([0-9] root_98))\nroot_98 ::= (\"\" | ([0-9]))\nroot_99 ::= (\"\" | ([0-9] root_100))\nroot_100 ::= (\"\" | ([0-9] root_101))\nroot_101 ::= (\"\" | ([0-9] root_102))\nroot_102 ::= (\"\" | ([0-9]))\nroot_103 ::= (\"\" | ([0-9] root_104))\nroot_104 ::= (\"\" | ([0-9] root_105))\nroot_105 ::= (\"\" | ([0-9] root_106))\nroot_106 ::= (\"\" | ([0-9]))\n"
+          },
+          {
+            "name": "array_minItems",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 2
+            },
+            "schema_sha256": "ba8030c9f8e7ff65966bf28f64f2eb3e6e6b8c55e8d74dd90a6f9f55adb57512",
+            "vllm_unsupported_precheck": true,
+            "selected_v0_xgrammar_no_fallback_policy": "reject_before_compiler",
+            "samples": [
+              {
+                "text": "[]",
+                "accepted": true
+              },
+              {
+                "text": "[1]",
+                "accepted": true
+              },
+              {
+                "text": "[1,2]",
+                "accepted": true
+              },
+              {
+                "text": "[1,2,3]",
+                "accepted": true
+              }
+            ],
+            "compiler_result": "grammar_created",
+            "grammar_sha256": "76023980a52580e5d6e760552bb8aab3932993a6b6aedc5a628914c70d189a25",
+            "grammar_text": "basic_integer ::= ((\"0\") | (basic_integer_1 [1-9] [0-9]*))\nroot ::= ((\"[\" [ \\n\\t]* basic_integer root_1 [ \\n\\t]* \"]\") | (\"[\" [ \\n\\t]* \"]\"))\nbasic_integer_1 ::= (\"\" | (\"-\")) (=([1-9] [0-9]*))\nroot_1 ::= (\"\" | ([ \\n\\t]* \",\" [ \\n\\t]* basic_integer root_1)) (=([ \\n\\t]* \"]\"))\n"
+          },
+          {
+            "name": "array_maxItems",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 3
+            },
+            "schema_sha256": "5e8a2fff3bf92060ddb295df5b8bc174b81247b86839bfed2fe07cb30768247a",
+            "vllm_unsupported_precheck": true,
+            "selected_v0_xgrammar_no_fallback_policy": "reject_before_compiler",
+            "samples": [
+              {
+                "text": "[]",
+                "accepted": true
+              },
+              {
+                "text": "[1,2,3]",
+                "accepted": true
+              },
+              {
+                "text": "[1,2,3,4]",
+                "accepted": true
+              }
+            ],
+            "compiler_result": "grammar_created",
+            "grammar_sha256": "76023980a52580e5d6e760552bb8aab3932993a6b6aedc5a628914c70d189a25",
+            "grammar_text": "basic_integer ::= ((\"0\") | (basic_integer_1 [1-9] [0-9]*))\nroot ::= ((\"[\" [ \\n\\t]* basic_integer root_1 [ \\n\\t]* \"]\") | (\"[\" [ \\n\\t]* \"]\"))\nbasic_integer_1 ::= (\"\" | (\"-\")) (=([1-9] [0-9]*))\nroot_1 ::= (\"\" | ([ \\n\\t]* \",\" [ \\n\\t]* basic_integer root_1)) (=([ \\n\\t]* \"]\"))\n"
+          },
+          {
+            "name": "nested_array_bounds",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  },
+                  "minItems": 2,
+                  "maxItems": 3
+                }
+              },
+              "required": [
+                "x"
+              ],
+              "additionalProperties": false
+            },
+            "schema_sha256": "a8a6f512cd53086c798ccd4b55e284b83b3afb9dc870d093696b36b603c5e206",
+            "vllm_unsupported_precheck": true,
+            "selected_v0_xgrammar_no_fallback_policy": "reject_before_compiler",
+            "samples": [
+              {
+                "text": "{\"x\":[]}",
+                "accepted": true
+              },
+              {
+                "text": "{\"x\":[1]}",
+                "accepted": true
+              },
+              {
+                "text": "{\"x\":[1,2]}",
+                "accepted": true
+              },
+              {
+                "text": "{\"x\":[1,2,3,4]}",
+                "accepted": true
+              }
+            ],
+            "compiler_result": "grammar_created",
+            "grammar_sha256": "5acd993413476b950ce5ec5822a534eba14b5dfdf3fedc6925b04685367b3ef0",
+            "grammar_text": "basic_integer ::= ((\"0\") | (basic_integer_1 [1-9] [0-9]*))\nroot_prop_0 ::= ((\"[\" [ \\n\\t]* basic_integer root_prop_0_1 [ \\n\\t]* \"]\") | (\"[\" [ \\n\\t]* \"]\")) (=([ \\n\\t]* \"}\"))\nroot ::= ((\"{\" [ \\n\\t]* \"\\\"x\\\"\" [ \\n\\t]* \":\" [ \\n\\t]* root_prop_0 [ \\n\\t]* \"}\"))\nbasic_integer_1 ::= (\"\" | (\"-\")) (=([1-9] [0-9]*))\nroot_prop_0_1 ::= (\"\" | ([ \\n\\t]* \",\" [ \\n\\t]* basic_integer root_prop_0_1)) (=([ \\n\\t]* \"]\"))\n"
+          },
+          {
+            "name": "object_integer_range",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "integer",
+                  "minimum": 2,
+                  "maximum": 4
+                }
+              },
+              "required": [
+                "x"
+              ],
+              "additionalProperties": false
+            },
+            "schema_sha256": "2611a88778d4dae3c543fdf5430d42777ec62de191e6d43dcf1d09e98fe5490a",
+            "vllm_unsupported_precheck": false,
+            "selected_v0_xgrammar_no_fallback_policy": "continue_to_xgrammar_validation",
+            "samples": [
+              {
+                "text": "{\"x\":1}",
+                "accepted": false
+              },
+              {
+                "text": "{\"x\":2}",
+                "accepted": true
+              },
+              {
+                "text": "{\"x\":4}",
+                "accepted": true
+              },
+              {
+                "text": "{\"x\":5}",
+                "accepted": false
+              },
+              {
+                "text": "{}",
+                "accepted": false
+              },
+              {
+                "text": "{\"x\":3,\"y\":0}",
+                "accepted": false
+              }
+            ],
+            "compiler_result": "grammar_created",
+            "grammar_sha256": "6dddcfa52cf0b946b0dddc49a857fb55142cc936b62812b3847bc5c8fd40aaa5",
+            "grammar_text": "root_prop_0 ::= (([2-4])) (=([ \\n\\t]* \"}\"))\nroot ::= ((\"{\" [ \\n\\t]* \"\\\"x\\\"\" [ \\n\\t]* \":\" [ \\n\\t]* root_prop_0 [ \\n\\t]* \"}\"))\n"
+          },
+          {
+            "name": "enum_string",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "a",
+                "b"
+              ]
+            },
+            "schema_sha256": "d5136283cfbc07995646b5a661bc0700f1e89fd77ce560e4239bac0b1a2e95c8",
+            "vllm_unsupported_precheck": false,
+            "selected_v0_xgrammar_no_fallback_policy": "continue_to_xgrammar_validation",
+            "samples": [
+              {
+                "text": "\"a\"",
+                "accepted": true
+              },
+              {
+                "text": "\"b\"",
+                "accepted": true
+              },
+              {
+                "text": "\"c\"",
+                "accepted": false
+              }
+            ],
+            "compiler_result": "grammar_created",
+            "grammar_sha256": "cb40cecb6aa491b2c21b83d5520c909c19c8d516d026714cc4cb7aa13d05d227",
+            "grammar_text": "root ::= ((\"\\\"a\\\"\") | (\"\\\"b\\\"\"))\n"
+          }
+        ]
+      }
+    },
+    "actual_request_conversion_fallback_and_cli": {
+      "exit_code": 0,
+      "elapsed_s": 8.77,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)\n",
+      "import_logs": "INFO 10-26 10:52:37 [__init__.py:239] Automatically detected platform cuda.\nWARNING 10-26 10:52:38 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.\nWARNING 10-26 10:52:38 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.\n",
+      "snapshot": {
+        "observed_at": "2026-10-26T02:52:34.475835+00:00",
+        "actual_vllm_import": "ok",
+        "requests": [
+          {
+            "schema_name": "integer_minimum",
+            "schema": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "request_backend": "xgrammar:no-fallback",
+            "request_validation": "accepted",
+            "guided_params_before": {
+              "json": {
+                "type": "integer",
+                "minimum": 2
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar:no-fallback",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            },
+            "fallback_result": "returned",
+            "guided_params_after": {
+              "json": {
+                "type": "integer",
+                "minimum": 2
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar:no-fallback",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            }
+          },
+          {
+            "schema_name": "integer_minimum",
+            "schema": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "request_backend": "xgrammar",
+            "request_validation": "accepted",
+            "guided_params_before": {
+              "json": {
+                "type": "integer",
+                "minimum": 2
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            },
+            "fallback_result": "returned",
+            "guided_params_after": {
+              "json": {
+                "type": "integer",
+                "minimum": 2
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            }
+          },
+          {
+            "schema_name": "integer_range",
+            "schema": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 4
+            },
+            "request_backend": "xgrammar:no-fallback",
+            "request_validation": "accepted",
+            "guided_params_before": {
+              "json": {
+                "type": "integer",
+                "minimum": 2,
+                "maximum": 4
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar:no-fallback",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            },
+            "fallback_result": "returned",
+            "guided_params_after": {
+              "json": {
+                "type": "integer",
+                "minimum": 2,
+                "maximum": 4
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar:no-fallback",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            }
+          },
+          {
+            "schema_name": "integer_range",
+            "schema": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 4
+            },
+            "request_backend": "xgrammar",
+            "request_validation": "accepted",
+            "guided_params_before": {
+              "json": {
+                "type": "integer",
+                "minimum": 2,
+                "maximum": 4
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            },
+            "fallback_result": "returned",
+            "guided_params_after": {
+              "json": {
+                "type": "integer",
+                "minimum": 2,
+                "maximum": 4
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            }
+          },
+          {
+            "schema_name": "number_range",
+            "schema": {
+              "type": "number",
+              "minimum": 1.25,
+              "maximum": 2.75
+            },
+            "request_backend": "xgrammar:no-fallback",
+            "request_validation": "accepted",
+            "guided_params_before": {
+              "json": {
+                "type": "number",
+                "minimum": 1.25,
+                "maximum": 2.75
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar:no-fallback",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            },
+            "fallback_result": "returned",
+            "guided_params_after": {
+              "json": {
+                "type": "number",
+                "minimum": 1.25,
+                "maximum": 2.75
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar:no-fallback",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            }
+          },
+          {
+            "schema_name": "number_range",
+            "schema": {
+              "type": "number",
+              "minimum": 1.25,
+              "maximum": 2.75
+            },
+            "request_backend": "xgrammar",
+            "request_validation": "accepted",
+            "guided_params_before": {
+              "json": {
+                "type": "number",
+                "minimum": 1.25,
+                "maximum": 2.75
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            },
+            "fallback_result": "returned",
+            "guided_params_after": {
+              "json": {
+                "type": "number",
+                "minimum": 1.25,
+                "maximum": 2.75
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            }
+          },
+          {
+            "schema_name": "array_min",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 2
+            },
+            "request_backend": "xgrammar:no-fallback",
+            "request_validation": "accepted",
+            "guided_params_before": {
+              "json": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "minItems": 2
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar:no-fallback",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            },
+            "fallback_result": "exception",
+            "error_type": "ValueError",
+            "error": "xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds."
+          },
+          {
+            "schema_name": "array_min",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 2
+            },
+            "request_backend": "xgrammar",
+            "request_validation": "accepted",
+            "guided_params_before": {
+              "json": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "minItems": 2
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            },
+            "fallback_result": "returned",
+            "guided_params_after": {
+              "json": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "minItems": 2
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "outlines",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            }
+          },
+          {
+            "schema_name": "array_max",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 3
+            },
+            "request_backend": "xgrammar:no-fallback",
+            "request_validation": "accepted",
+            "guided_params_before": {
+              "json": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "maxItems": 3
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar:no-fallback",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            },
+            "fallback_result": "exception",
+            "error_type": "ValueError",
+            "error": "xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds."
+          },
+          {
+            "schema_name": "array_max",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 3
+            },
+            "request_backend": "xgrammar",
+            "request_validation": "accepted",
+            "guided_params_before": {
+              "json": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "maxItems": 3
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "xgrammar",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            },
+            "fallback_result": "returned",
+            "guided_params_after": {
+              "json": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "maxItems": 3
+              },
+              "regex": null,
+              "choice": null,
+              "grammar": null,
+              "json_object": null,
+              "backend": "outlines",
+              "whitespace_pattern": null,
+              "structural_tag": null
+            }
+          }
+        ],
+        "cli_action": [
+          {
+            "option_strings": [
+              "--guided-decoding-backend"
+            ],
+            "choices": [
+              "auto",
+              "guidance",
+              "lm-format-enforcer",
+              "outlines",
+              "xgrammar"
+            ],
+            "default": "xgrammar",
+            "help": "Which engine will be used for guided decoding (JSON schema / regex etc)\nby default. With \"auto\", we will make opinionated choices based on request\ncontents and what the backend libraries currently support, so the behavior\nis subject to change in each release."
+          }
+        ],
+        "cli_parse_only": [
+          {
+            "backend": "xgrammar",
+            "accepted": true,
+            "value": "xgrammar"
+          },
+          {
+            "backend": "xgrammar:no-fallback",
+            "accepted": false,
+            "exit_code": 2,
+            "stderr_tail": "kahead-slots NUM_LOOKAHEAD_SLOTS]\n         [--scheduler-delay-factor SCHEDULER_DELAY_FACTOR]\n         [--preemption-mode {recompute,swap,None}]\n         [--num-scheduler-steps NUM_SCHEDULER_STEPS]\n         [--multi-step-stream-outputs | --no-multi-step-stream-outputs]\n         [--scheduling-policy {fcfs,priority}]\n         [--enable-chunked-prefill | --no-enable-chunked-prefill]\n         [--disable-chunked-mm-input | --no-disable-chunked-mm-input]\n         [--scheduler-cls SCHEDULER_CLS]\n         [--override-neuron-config OVERRIDE_NEURON_CONFIG]\n         [--override-pooler-config OVERRIDE_POOLER_CONFIG]\n         [--compilation-config COMPILATION_CONFIG]\n         [--kv-transfer-config KV_TRANSFER_CONFIG] [--worker-cls WORKER_CLS]\n         [--worker-extension-cls WORKER_EXTENSION_CLS]\n         [--generation-config GENERATION_CONFIG]\n         [--override-generation-config OVERRIDE_GENERATION_CONFIG]\n         [--enable-sleep-mode] [--additional-config ADDITIONAL_CONFIG]\n         [--enable-reasoning] [--disable-cascade-attn]\n-: error: argument --guided-decoding-backend: invalid choice: 'xgrammar:no-fallback' (choose from 'auto', 'guidance', 'lm-format-enforcer', 'outlines', 'xgrammar')\n"
+          }
+        ],
+        "option_source_matches": [
+          {
+            "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/config.py",
+            "sha256": "016f1281a0519c636bace104012ff8d1c199db89aba190d6d9cd810d67c91a48",
+            "selected_lines": [
+              {
+                "line": 3133,
+                "text": "    return served_model_name"
+              },
+              {
+                "line": 3134,
+                "text": ""
+              },
+              {
+                "line": 3135,
+                "text": ""
+              },
+              {
+                "line": 3136,
+                "text": "GuidedDecodingBackendV0 = Literal[\"auto\", \"outlines\", \"lm-format-enforcer\","
+              },
+              {
+                "line": 3137,
+                "text": "                                  \"xgrammar\", \"guidance\"]"
+              },
+              {
+                "line": 3138,
+                "text": "GuidedDecodingBackendV1 = Literal[\"auto\", \"xgrammar\", \"guidance\"]"
+              },
+              {
+                "line": 3139,
+                "text": ""
+              },
+              {
+                "line": 3140,
+                "text": ""
+              },
+              {
+                "line": 3141,
+                "text": "@config"
+              },
+              {
+                "line": 3142,
+                "text": "@dataclass"
+              },
+              {
+                "line": 3143,
+                "text": "class DecodingConfig:"
+              },
+              {
+                "line": 3144,
+                "text": "    \"\"\"Dataclass which contains the decoding strategy of the engine.\"\"\""
+              },
+              {
+                "line": 3145,
+                "text": ""
+              },
+              {
+                "line": 3146,
+                "text": "    guided_decoding_backend: Union["
+              },
+              {
+                "line": 3147,
+                "text": "        GuidedDecodingBackendV0,"
+              },
+              {
+                "line": 3148,
+                "text": "        GuidedDecodingBackendV1] = \"auto\" if envs.VLLM_USE_V1 else \"xgrammar\""
+              },
+              {
+                "line": 3149,
+                "text": "    \"\"\"Which engine will be used for guided decoding (JSON schema / regex etc)"
+              },
+              {
+                "line": 3150,
+                "text": "    by default. With \"auto\", we will make opinionated choices based on request"
+              },
+              {
+                "line": 3151,
+                "text": "    contents and what the backend libraries currently support, so the behavior"
+              },
+              {
+                "line": 3152,
+                "text": "    is subject to change in each release.\"\"\""
+              },
+              {
+                "line": 3153,
+                "text": ""
+              },
+              {
+                "line": 3154,
+                "text": "    reasoning_backend: Optional[str] = None"
+              }
+            ]
+          },
+          {
+            "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/engine/arg_utils.py",
+            "sha256": "65dfb922f57b5b242ac226024ae6a8041cc141b5b003831ea0d372d37d9e1caa",
+            "selected_lines": [
+              {
+                "line": 308,
+                "text": "        bool] = SchedulerConfig.enable_chunked_prefill"
+              },
+              {
+                "line": 309,
+                "text": "    disable_chunked_mm_input: bool = SchedulerConfig.disable_chunked_mm_input"
+              },
+              {
+                "line": 310,
+                "text": ""
+              },
+              {
+                "line": 311,
+                "text": "    guided_decoding_backend: str = DecodingConfig.guided_decoding_backend"
+              },
+              {
+                "line": 312,
+                "text": "    logits_processor_pattern: Optional[str] = None"
+              },
+              {
+                "line": 313,
+                "text": ""
+              },
+              {
+                "line": 314,
+                "text": "    speculative_config: Optional[Dict[str, Any]] = None"
+              },
+              {
+                "line": 315,
+                "text": ""
+              },
+              {
+                "line": 316,
+                "text": "    qlora_adapter_name_or_path: Optional[str] = None"
+              },
+              {
+                "line": 317,
+                "text": "    show_hidden_metrics_for_version: Optional[str] = None"
+              },
+              {
+                "line": 318,
+                "text": "    otlp_traces_endpoint: Optional[str] = None"
+              },
+              {
+                "line": 319,
+                "text": "    collect_detailed_traces: Optional[str] = None"
+              },
+              {
+                "line": 490,
+                "text": "            description=DecodingConfig.__doc__,"
+              },
+              {
+                "line": 491,
+                "text": "        )"
+              },
+              {
+                "line": 492,
+                "text": "        guided_decoding_group.add_argument("
+              },
+              {
+                "line": 493,
+                "text": "            '--guided-decoding-backend',"
+              },
+              {
+                "line": 494,
+                "text": "            **guided_decoding_kwargs[\"guided_decoding_backend\"])"
+              },
+              {
+                "line": 495,
+                "text": "        guided_decoding_group.add_argument("
+              },
+              {
+                "line": 496,
+                "text": "            \"--reasoning-parser\","
+              },
+              {
+                "line": 497,
+                "text": "            # This choices is a special case because it's not static"
+              },
+              {
+                "line": 498,
+                "text": "            choices=list(ReasoningParserManager.reasoning_parsers),"
+              },
+              {
+                "line": 499,
+                "text": "            **guided_decoding_kwargs[\"reasoning_backend\"])"
+              },
+              {
+                "line": 500,
+                "text": ""
+              },
+              {
+                "line": 501,
+                "text": "        parser.add_argument("
+              },
+              {
+                "line": 1339,
+                "text": "            not in get_args(GuidedDecodingBackendV1):"
+              },
+              {
+                "line": 1340,
+                "text": "            _raise_or_fallback("
+              },
+              {
+                "line": 1341,
+                "text": "                feature_name="
+              },
+              {
+                "line": 1342,
+                "text": "                f\"--guided-decoding-backend={self.guided_decoding_backend}\","
+              },
+              {
+                "line": 1343,
+                "text": "                recommend_to_remove=False)"
+              },
+              {
+                "line": 1344,
+                "text": "            return False"
+              },
+              {
+                "line": 1345,
+                "text": ""
+              },
+              {
+                "line": 1346,
+                "text": "        # Need at least Ampere for now (FA support required)."
+              },
+              {
+                "line": 1347,
+                "text": "        # Skip this check if we are running on a non-GPU platform,"
+              },
+              {
+                "line": 1348,
+                "text": "        # or if the device capability is not available"
+              },
+              {
+                "line": 1349,
+                "text": "        # (e.g. in a Ray actor without GPUs)."
+              },
+              {
+                "line": 1350,
+                "text": "        from vllm.platforms import current_platform"
+              }
+            ]
+          },
+          {
+            "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/entrypoints/openai/cli_args.py",
+            "sha256": "2de2c8c51a3b13e3676c83e7af44429095f79a0122f672c6fde685bf9442c7f5",
+            "selected_lines": []
+          },
+          {
+            "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/entrypoints/openai/protocol.py",
+            "sha256": "41035c9a6fb42af1e78049511008f29ff0009bf97ca94284fe774d78a9929937",
+            "selected_lines": [
+              {
+                "line": 364,
+                "text": "        description=("
+              },
+              {
+                "line": 365,
+                "text": "            \"If specified, the output will follow the structural tag schema.\"),"
+              },
+              {
+                "line": 366,
+                "text": "    )"
+              },
+              {
+                "line": 367,
+                "text": "    guided_decoding_backend: Optional[str] = Field("
+              },
+              {
+                "line": 368,
+                "text": "        default=None,"
+              },
+              {
+                "line": 369,
+                "text": "        description=("
+              },
+              {
+                "line": 370,
+                "text": "            \"If specified, will override the default guided decoding backend \""
+              },
+              {
+                "line": 371,
+                "text": "            \"of the server for this specific request. If set, must be either \""
+              },
+              {
+                "line": 372,
+                "text": "            \"'outlines' / 'lm-format-enforcer'\"),"
+              },
+              {
+                "line": 373,
+                "text": "    )"
+              },
+              {
+                "line": 374,
+                "text": "    guided_whitespace_pattern: Optional[str] = Field("
+              },
+              {
+                "line": 375,
+                "text": "        default=None,"
+              },
+              {
+                "line": 800,
+                "text": "        description=("
+              },
+              {
+                "line": 801,
+                "text": "            \"If specified, the output will follow the context free grammar.\"),"
+              },
+              {
+                "line": 802,
+                "text": "    )"
+              },
+              {
+                "line": 803,
+                "text": "    guided_decoding_backend: Optional[str] = Field("
+              },
+              {
+                "line": 804,
+                "text": "        default=None,"
+              },
+              {
+                "line": 805,
+                "text": "        description=("
+              },
+              {
+                "line": 806,
+                "text": "            \"If specified, will override the default guided decoding backend \""
+              },
+              {
+                "line": 807,
+                "text": "            \"of the server for this specific request. If set, must be one of \""
+              },
+              {
+                "line": 808,
+                "text": "            \"'outlines' / 'lm-format-enforcer'\"),"
+              },
+              {
+                "line": 809,
+                "text": "    )"
+              },
+              {
+                "line": 810,
+                "text": "    guided_whitespace_pattern: Optional[str] = Field("
+              },
+              {
+                "line": 811,
+                "text": "        default=None,"
+              }
+            ]
+          },
+          {
+            "path": "/root/vllm-env/lib/python3.12/site-packages/vllm/sampling_params.py",
+            "sha256": "c8fef374c69c75c01f77ff35913a255ae92231bf5363a41a692fced66f10b308",
+            "selected_lines": [
+              {
+                "line": 72,
+                "text": "    def backend_name(self) -> str:"
+              },
+              {
+                "line": 73,
+                "text": "        \"\"\"Return the backend name without any options."
+              },
+              {
+                "line": 74,
+                "text": "        "
+              },
+              {
+                "line": 75,
+                "text": "        For example if the backend is \"xgrammar:no-fallback\", returns \"xgrammar\""
+              },
+              {
+                "line": 76,
+                "text": "        \"\"\""
+              },
+              {
+                "line": 77,
+                "text": "        return (self.backend or \"\").split(\":\")[0]"
+              },
+              {
+                "line": 78,
+                "text": ""
+              },
+              {
+                "line": 79,
+                "text": "    def backend_options(self) -> list[str]:"
+              },
+              {
+                "line": 80,
+                "text": "        \"\"\"Return the backend options as a list of strings.\"\"\""
+              },
+              {
+                "line": 81,
+                "text": "        if not self.backend or \":\" not in self.backend:"
+              },
+              {
+                "line": 82,
+                "text": "            return []"
+              },
+              {
+                "line": 83,
+                "text": "        return self.backend.split(\":\")[1].split(\",\")"
+              },
+              {
+                "line": 94,
+                "text": "            self.backend = f\"{self.backend_name}:{','.join(sorted(options))}\""
+              },
+              {
+                "line": 95,
+                "text": ""
+              },
+              {
+                "line": 96,
+                "text": "    def no_fallback(self) -> bool:"
+              },
+              {
+                "line": 97,
+                "text": "        \"\"\"Returns True if the \"no-fallback\" option is supplied for the guided"
+              },
+              {
+                "line": 98,
+                "text": "        decoding backend\"\"\""
+              },
+              {
+                "line": 99,
+                "text": "        return \"no-fallback\" in self.backend_options()"
+              },
+              {
+                "line": 100,
+                "text": ""
+              },
+              {
+                "line": 101,
+                "text": "    def __post_init__(self):"
+              },
+              {
+                "line": 102,
+                "text": "        \"\"\"Validate that some fields are mutually exclusive.\"\"\""
+              },
+              {
+                "line": 103,
+                "text": "        guide_count = sum(["
+              },
+              {
+                "line": 104,
+                "text": "            self.json is not None, self.regex is not None, self.choice"
+              },
+              {
+                "line": 105,
+                "text": "            is not None, self.grammar is not None, self.json_object is not None"
+              },
+              {
+                "line": 106,
+                "text": "        ])"
+              },
+              {
+                "line": 107,
+                "text": "        if guide_count > 1:"
+              }
+            ]
+          }
+        ],
+        "cuda_initialized": false
+      }
+    },
+    "direct_compiler_and_independent_jsonschema_reproduction": {
+      "exit_code": 0,
+      "elapsed_s": 4.37,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)\n",
+      "snapshot": {
+        "observed_at": "2026-10-26T02:53:55.449798+00:00",
+        "records": [
+          {
+            "name": "minimum_only_2",
+            "schema": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "api": "GrammarCompiler.compile_json_schema; GrammarMatcher full-string/native CPU",
+            "samples": [
+              {
+                "text": "-1",
+                "native_matcher_accepts": false,
+                "json_parses": true,
+                "independent_schema_valid": false,
+                "agrees": true
+              },
+              {
+                "text": "0",
+                "native_matcher_accepts": false,
+                "json_parses": true,
+                "independent_schema_valid": false,
+                "agrees": true
+              },
+              {
+                "text": "1",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": false,
+                "agrees": false
+              },
+              {
+                "text": "2",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": true,
+                "agrees": true
+              },
+              {
+                "text": "20",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": true,
+                "agrees": true
+              }
+            ]
+          },
+          {
+            "name": "integer_range_0_100",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "api": "GrammarCompiler.compile_json_schema; GrammarMatcher full-string/native CPU",
+            "samples": [
+              {
+                "text": "-1",
+                "native_matcher_accepts": false,
+                "json_parses": true,
+                "independent_schema_valid": false,
+                "agrees": true
+              },
+              {
+                "text": "0",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": true,
+                "agrees": true
+              },
+              {
+                "text": "50",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": true,
+                "agrees": true
+              },
+              {
+                "text": "100",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": true,
+                "agrees": true
+              },
+              {
+                "text": "101",
+                "native_matcher_accepts": false,
+                "json_parses": true,
+                "independent_schema_valid": false,
+                "agrees": true
+              }
+            ]
+          },
+          {
+            "name": "number_range",
+            "schema": {
+              "type": "number",
+              "minimum": 1.25,
+              "maximum": 2.75
+            },
+            "api": "GrammarCompiler.compile_json_schema; GrammarMatcher full-string/native CPU",
+            "samples": [
+              {
+                "text": "1.24",
+                "native_matcher_accepts": false,
+                "json_parses": true,
+                "independent_schema_valid": false,
+                "agrees": true
+              },
+              {
+                "text": "1.25",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": true,
+                "agrees": true
+              },
+              {
+                "text": "1.5",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": true,
+                "agrees": true
+              },
+              {
+                "text": "2",
+                "native_matcher_accepts": false,
+                "json_parses": true,
+                "independent_schema_valid": true,
+                "agrees": false
+              },
+              {
+                "text": "2.0",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": true,
+                "agrees": true
+              },
+              {
+                "text": "2.75",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": true,
+                "agrees": true
+              },
+              {
+                "text": "2.76",
+                "native_matcher_accepts": false,
+                "json_parses": true,
+                "independent_schema_valid": false,
+                "agrees": true
+              },
+              {
+                "text": "1a25",
+                "native_matcher_accepts": true,
+                "json_parses": false,
+                "independent_schema_valid": false,
+                "agrees": false
+              },
+              {
+                "text": "2x75",
+                "native_matcher_accepts": true,
+                "json_parses": false,
+                "independent_schema_valid": false,
+                "agrees": false
+              }
+            ]
+          },
+          {
+            "name": "array_minItems_direct",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 2
+            },
+            "api": "GrammarCompiler.compile_json_schema; GrammarMatcher full-string/native CPU",
+            "samples": [
+              {
+                "text": "[]",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": false,
+                "agrees": false
+              },
+              {
+                "text": "[1]",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": false,
+                "agrees": false
+              },
+              {
+                "text": "[1,2]",
+                "native_matcher_accepts": true,
+                "json_parses": true,
+                "independent_schema_valid": true,
+                "agrees": true
+              }
+            ]
+          }
+        ],
+        "cuda_initialized": false
+      }
+    }
+  },
+  "documentation_evidence": [
+    {
+      "id": "xgrammar_v0_1_18_cpp",
+      "url": "https://raw.githubusercontent.com/mlc-ai/xgrammar/v0.1.18/cpp/json_schema_converter.cc",
+      "http_status": 200,
+      "sha256": "f0f06abce1d8eb4bef669cb2848215647308bed584b4b14fe08cda2e360793ba",
+      "bytes": 83365,
+      "fetched_at": "2026-10-26T02:53:55.575674+00:00",
+      "symbol_line_numbers": [
+        {
+          "line": 1550,
+          "text": "std::string JSONSchemaConverter::VisitInteger("
+        },
+        {
+          "line": 1609,
+          "text": "std::string JSONSchemaConverter::VisitNumber("
+        },
+        {
+          "line": 1872,
+          "text": "std::string JSONSchemaConverter::VisitArray("
+        }
+      ],
+      "short_excerpt": [
+        {
+          "line": 1600,
+          "text": "range_regex = GenerateRangeRegex(start, end);"
+        },
+        {
+          "line": 1649,
+          "text": "range_regex = GenerateFloatRangeRegex(start, end);"
+        },
+        {
+          "line": 1886,
+          "text": "\"minItems\","
+        },
+        {
+          "line": 1887,
+          "text": "\"maxItems\","
+        }
+      ]
+    },
+    {
+      "id": "xgrammar_tag_ref",
+      "url": "https://api.github.com/repos/mlc-ai/xgrammar/git/ref/tags/v0.1.18",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "id": "vllm_v0_8_5_docs",
+      "url": "https://docs.vllm.ai/en/v0.8.5/features/structured_outputs.html",
+      "http_status": 200,
+      "sha256": "47906c1ab38868ccc0c9a821f07dcd97e0040313793dc8d014eab56533355351",
+      "bytes": 74671,
+      "fetched_at": "2026-10-26T02:53:54.497819+00:00",
+      "evidence_summary": "Versioned docs describe guided_json/regex/choice/grammar extra request parameters and configurable backends; request parsing and fallback behavior in this report are established from installed code and CPU execution."
+    }
+  ],
+  "documentation_limits": "Pinned upstream v0.1.18 source and vLLM v0.8.5 docs are supplementary evidence. Upstream source is fetched/hashed in local memory, not claimed to be installed C++ source or bit-identical to the .so build. Exact tag commit lookup was rate-limited (403). Decisions about bounds follow installed native CPU execution.",
+  "final_scope_limits": [
+    "No service-start/readiness claim made here; current 8021 outcomes are attributed to main-agent report.",
+    "Middleware bodyhash/settings establishes what HTTP received; installed source establishes intended execution path. Per-request actual processor/mask execution requires runtime evidence beyond HTTP body reception.",
+    "No formal-run results, failure totals, task modifications, installs, model downloads or cleanup actions are claimed."
+  ]
+}

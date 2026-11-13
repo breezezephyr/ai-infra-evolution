@@ -1,0 +1,24 @@
+{"client_request_id": "run-preflight-39ba4a28", "status": 404, "client_total_http_seconds": 0.00015104099293239415, "error_type": null}
+{"client_request_id": "tmpbwl7p0b4-probe", "status": null, "client_total_http_seconds": 0.00016874998982530087, "error_type": "ValueError"}
+{"client_request_id": "tmpsdloby_2-probe", "status": null, "client_total_http_seconds": 0.00015366700245067477, "error_type": "ValueError"}
+{"client_request_id": "tmp9jx116vz-probe", "status": 404, "client_total_http_seconds": 0.0016648329910822213, "error_type": null}
+test_corrupt_png_rejected (test_evidence.EvidenceChecks.test_corrupt_png_rejected) ... ok
+test_failed_health_cannot_submit_generation (test_evidence.EvidenceChecks.test_failed_health_cannot_submit_generation) ... ok
+test_http_redirects_disabled (test_evidence.EvidenceChecks.test_http_redirects_disabled) ... ok
+test_invalid_base64_rejected (test_evidence.EvidenceChecks.test_invalid_base64_rejected) ... ok
+test_json_escaped_credential_not_persisted (test_evidence.EvidenceChecks.test_json_escaped_credential_not_persisted) ... ok
+test_missing_elapsed_rejected (test_evidence.EvidenceChecks.test_missing_elapsed_rejected) ... ok
+test_previous_failure_summary_preserved_exactly (test_evidence.EvidenceChecks.test_previous_failure_summary_preserved_exactly) ... ok
+test_reflected_credential_not_persisted (test_evidence.EvidenceChecks.test_reflected_credential_not_persisted) ... ok
+test_reflected_header_credential_not_persisted (test_evidence.EvidenceChecks.test_reflected_header_credential_not_persisted) ... ok
+test_reserved_marker_not_counted_as_http_attempt (test_evidence.EvidenceChecks.test_reserved_marker_not_counted_as_http_attempt) ... ok
+test_submitted_generation_cannot_be_retried (test_evidence.EvidenceChecks.test_submitted_generation_cannot_be_retried) ... ok
+test_untrusted_origins_and_embedded_secrets_rejected (test_evidence.EvidenceChecks.test_untrusted_origins_and_embedded_secrets_rejected) ... ok
+test_valid_png_has_equal_readback (test_evidence.EvidenceChecks.test_valid_png_has_equal_readback) ... ok
+test_wrong_dimensions_rejected (test_evidence.EvidenceChecks.test_wrong_dimensions_rejected) ... ok
+test_wrong_seed_rejected (test_evidence.EvidenceChecks.test_wrong_seed_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.104s
+
+OK

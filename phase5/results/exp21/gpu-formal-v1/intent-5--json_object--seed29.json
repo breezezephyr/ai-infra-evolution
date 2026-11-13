@@ -1,0 +1,54 @@
+{
+  "id": "intent-5--json_object--seed29",
+  "contract": "1d4684abd3d6ab8d3235668002a5ef4b62a1e64222ef06321e393eda3413bb7d",
+  "arm": "json_object",
+  "case_id": "intent-5",
+  "seed": 29,
+  "family": "classify",
+  "payload_sha256": "bc23937dd2d236ad82b5011efe6d00ff6656f993c3c3f4ce75b294084cd43d73",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-1e9192d3f34f4f98bdfc93f8f70e8cc3",
+    "object": "chat.completion",
+    "created": 1792983696,
+    "model": "exp21-qwen3-0.6b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "{\"kind\": \"改签\", \"urgent\": true}",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 130,
+      "total_tokens": 143,
+      "completion_tokens": 13,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "accepted": true,
+  "content": "{\"kind\": \"改签\", \"urgent\": true}",
+  "finish_reason": "stop",
+  "evaluation": {
+    "json_valid": true,
+    "schema_valid": true,
+    "business_correct": false,
+    "complete": true,
+    "deliverable": false,
+    "value": {
+      "kind": "改签",
+      "urgent": true
+    },
+    "schema_errors": []
+  },
+  "client_elapsed_ms": 995.235083,
+  "clock_domain": "client_process_monotonic_ns"
+}

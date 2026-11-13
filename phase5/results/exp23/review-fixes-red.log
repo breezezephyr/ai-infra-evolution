@@ -1,0 +1,95 @@
+FFFFFFFF                                                                 [100%]
+=================================== FAILURES ===================================
+_____________ test_independent_check_rejects_mislabelled_baseline ______________
+
+    def test_independent_check_rejects_mislabelled_baseline():
+        spec,t,cost,r=sample()
+        r=replay.run_trace(t['truth'],t['correct'],t['confidence'],'fixed0',cost)
+>       assert not all(audit.validate_replay(spec,t,cost,r).values())
+                       ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'audit' has no attribute 'validate_replay'
+
+phase5/exp23/test_audit.py:19: AttributeError
+___ test_undercharging_early_rejection_is_detected_even_with_updated_totals ____
+
+    def test_undercharging_early_rejection_is_detected_even_with_updated_totals():
+        spec,t,cost,r=sample()
+        for row in r['rounds']:
+            row['verification_positions']=len(row['committed'])
+            row['work_points']=cost[0]+cost[1]*row['verification_positions']+cost[2]*len(row['drafts'])
+        r['verification_positions']=sum(x['verification_positions'] for x in r['rounds'])
+        r['work_points']=sum(x['work_points'] for x in r['rounds'])
+>       assert not all(audit.validate_replay(spec,t,cost,r).values())
+                       ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'audit' has no attribute 'validate_replay'
+
+phase5/exp23/test_audit.py:29: AttributeError
+__________________ test_exact_replay_passes_independent_audit __________________
+
+    def test_exact_replay_passes_independent_audit():
+>       assert all(audit.validate_replay(*sample()).values())
+                   ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'audit' has no attribute 'validate_replay'
+
+phase5/exp23/test_audit.py:33: AttributeError
+________________ test_failed_pair_is_not_counted_as_lower_work _________________
+
+    def test_failed_pair_is_not_counted_as_lower_work():
+        rows=[{'trace':'t','cost':'c','expected_policy':'fixed5','status':'conformant','work_points':20},
+              {'trace':'t','cost':'c','expected_policy':'candidate','status':'failed','work_points':0}]
+>       r=audit.pair_summary(rows,['t'],['c'])[0]
+          ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'audit' has no attribute 'pair_summary'
+
+phase5/exp23/test_audit.py:39: AttributeError
+______ test_duplicate_pair_is_unavailable_instead_of_using_the_first_row _______
+
+    def test_duplicate_pair_is_unavailable_instead_of_using_the_first_row():
+        rows=[{'trace':'t','cost':'c','expected_policy':'fixed5','status':'conformant','work_points':20}]*2
+>       assert audit.pair_summary(rows,['t'],['c'])[0]['unavailable_pairs']==1
+               ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'audit' has no attribute 'pair_summary'
+
+phase5/exp23/test_audit.py:46: AttributeError
+______________ test_saved_plan_drift_is_detected_before_execution ______________
+
+tmp_path = PosixPath('/private/tmp/pytest-of-researcher/pytest-0/test_saved_plan_drift_is_detec0')
+
+    def test_saved_plan_drift_is_detected_before_execution(tmp_path):
+        p=tmp_path/'plan.json';text=json.dumps({'truth':[1,0]});p.write_text(text.replace('1','2'))
+>       with pytest.raises(ValueError):audit.read_frozen(p,text)
+                                       ^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'audit' has no attribute 'read_frozen'
+
+phase5/exp23/test_audit.py:51: AttributeError
+__________ test_each_error_keeps_its_planned_slot_in_both_experiments __________
+
+    def test_each_error_keeps_its_planned_slot_in_both_experiments():
+        def bad(_):raise RuntimeError('controlled failure')
+>       rows=audit.capture_cases([{'id':str(i)} for i in range(3)],bad)
+             ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'audit' has no attribute 'capture_cases'
+
+phase5/exp23/test_audit.py:56: AttributeError
+________________ test_fake_equal_window_values_are_not_accepted ________________
+
+    def test_fake_equal_window_values_are_not_accepted():
+        spec={'window':4,'backtrack':2,'layers':2,'keep':6}
+        fake={**spec,'start':10,'query':13,'status':'compared','mask':0,'compact':0,'full':0,'full_equal':True,
+              'single_window_covered':True,'dependency_covered':False}
+>       assert not audit.validate_window(list(range(1,17)),spec,fake)
+                   ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'audit' has no attribute 'validate_window'
+
+phase5/exp23/test_audit.py:64: AttributeError
+- generated xml file: phase5/results/exp23/review-fixes-red.xml -
+=========================== short test summary info ============================
+FAILED phase5/exp23/test_audit.py::test_independent_check_rejects_mislabelled_baseline
+FAILED phase5/exp23/test_audit.py::test_undercharging_early_rejection_is_detected_even_with_updated_totals
+FAILED phase5/exp23/test_audit.py::test_exact_replay_passes_independent_audit
+FAILED phase5/exp23/test_audit.py::test_failed_pair_is_not_counted_as_lower_work
+FAILED phase5/exp23/test_audit.py::test_duplicate_pair_is_unavailable_instead_of_using_the_first_row
+FAILED phase5/exp23/test_audit.py::test_saved_plan_drift_is_detected_before_execution
+FAILED phase5/exp23/test_audit.py::test_each_error_keeps_its_planned_slot_in_both_experiments
+FAILED phase5/exp23/test_audit.py::test_fake_equal_window_values_are_not_accepted
+8 failed in 0.07s

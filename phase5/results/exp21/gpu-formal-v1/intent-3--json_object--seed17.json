@@ -1,0 +1,54 @@
+{
+  "id": "intent-3--json_object--seed17",
+  "contract": "8eafda2e0a77e00a8c882e08613a1691c91e4ac5c094e6d63b9792d5781cddf2",
+  "arm": "json_object",
+  "case_id": "intent-3",
+  "seed": 17,
+  "family": "classify",
+  "payload_sha256": "dec10efb895de17f6908a52c0587ca881f78fc161bb5c7f9816ba997ae41f394",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-455db96bb15f4f1f9045f0a1c5b33eae",
+    "object": "chat.completion",
+    "created": 1792983640,
+    "model": "exp21-qwen3-0.6b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "{\"kind\": \"退票\", \"urgent\": true}",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 133,
+      "total_tokens": 146,
+      "completion_tokens": 13,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "accepted": true,
+  "content": "{\"kind\": \"退票\", \"urgent\": true}",
+  "finish_reason": "stop",
+  "evaluation": {
+    "json_valid": true,
+    "schema_valid": true,
+    "business_correct": false,
+    "complete": true,
+    "deliverable": false,
+    "value": {
+      "kind": "退票",
+      "urgent": true
+    },
+    "schema_errors": []
+  },
+  "client_elapsed_ms": 694.244042,
+  "clock_domain": "client_process_monotonic_ns"
+}

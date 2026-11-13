@@ -1,0 +1,47 @@
+{
+  "name": "exp7-rr",
+  "prefix_groups": 8,
+  "prefix_len": 1536,
+  "zipf": 0.0,
+  "prom_start": 1790163680,
+  "prom_end": 1790163844,
+  "secs": 164.4,
+  "classes": {
+    "user": {
+      "k": 8,
+      "inp": 64,
+      "out": 64,
+      "prio": 100,
+      "think": 0.0,
+      "done": 678,
+      "err": 0,
+      "ttft_p50": 56.8,
+      "ttft_p90": 222.2,
+      "ttft_p99": 421.1,
+      "itl_p50": 23.5,
+      "itl_p99": 189.5,
+      "e2e_p50": 1763.2,
+      "out_tok_s": 264.0
+    }
+  },
+  "servers": {
+    "8004": {
+      "queries": 35324.0,
+      "hits": 24011.0,
+      "preempt": 0.0,
+      "prompt_tok": 567811.0,
+      "gen_tok": 21696.0,
+      "done": 339.0,
+      "hit_rate": 0.68
+    },
+    "8005": {
+      "queries": 35313.0,
+      "hits": 22684.0,
+      "preempt": 0.0,
+      "prompt_tok": 567835.0,
+      "gen_tok": 21696.0,
+      "done": 339.0,
+      "hit_rate": 0.642
+    }
+  }
+}

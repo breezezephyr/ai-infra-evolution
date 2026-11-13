@@ -1,0 +1,252 @@
+{
+  "fixture": {
+    "id": "thinking_answer",
+    "raw": "\n先想一下。</think>答案：42。",
+    "thinking": true,
+    "action": "Stop",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "答案：42。",
+        "reasoning": "先想一下。",
+        "tools": [],
+        "finish": "stop",
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "答案：42。",
+        "reasoning": "先想一下。",
+        "tools": [],
+        "finish": "completed",
+        "status": "completed",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "答案：42。",
+        "reasoning": "先想一下。",
+        "tools": [],
+        "finish": "end_turn",
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "backend_finish",
+    "expect_native_finished": true
+  },
+  "protocol": "chat",
+  "mode": "tokens",
+  "pattern": "whole",
+  "events": [
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745583,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":null,\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}"
+    },
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745583,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"content\":null,\"reasoning_content\":\"先想一下。\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}"
+    },
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745583,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"content\":\"答案：42。\",\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}"
+    },
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745583,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":13,\"completion_tokens\":10,\"total_tokens\":23,\"prompt_tokens_details\":{\"cached_tokens\":3},\"completion_tokens_details\":{\"reasoning_tokens\":4},\"prompt_cache_hit_tokens\":3,\"prompt_cache_miss_tokens\":10}}"
+    }
+  ],
+  "backend_finish_seen": true,
+  "native_finished": true,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "backend_finish",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "请继续报站"
+      }
+    ],
+    "max_tokens": 128,
+    "thinking": {
+      "type": "enabled"
+    },
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "ThinkingInitialStage.ReasoningStart"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "token IDs",
+    "processor_has_tokenizer": true
+  },
+  "input_units": [
+    201,
+    1735,
+    1134,
+    4915,
+    320,
+    128822,
+    7624,
+    768,
+    3180,
+    320
+  ],
+  "native_finished_after_data": false,
+  "response": {
+    "id": "exp20",
+    "object": "chat.completion",
+    "created": 0,
+    "model": "DeepSeek-V4.1-Flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "答案：42。",
+          "reasoning_content": "先想一下。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 13,
+      "completion_tokens": 10,
+      "total_tokens": 23,
+      "prompt_tokens_details": {
+        "cached_tokens": 3
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4
+      },
+      "prompt_cache_hit_tokens": 3,
+      "prompt_cache_miss_tokens": 10
+    },
+    "system_fingerprint": null
+  },
+  "semantic": {
+    "text": "答案：42。",
+    "reasoning": "先想一下。",
+    "tools": [],
+    "finish": "stop",
+    "status": null,
+    "stop_sequence": null
+  },
+  "id": "thinking_answer--chat--tokens--whole",
+  "contract": "bce09688dfb6dc17299a656f59b750d1bf2ee9902c6086c708ed39ea72a9e359",
+  "sse": {
+    "bytes": 1290,
+    "sha256": "8dd85bd917525215793b240a40f0bfc980cafedc83c3f95446e30f8d2dc71075",
+    "done_data": "[DONE]",
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 5
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 5
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 5
+      }
+    ],
+    "expected_events": 5,
+    "incomplete_eof_count": 4,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "backend_finish"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": true
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 5
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 5
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 5
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 4
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "thinking_answer--chat--tokens--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

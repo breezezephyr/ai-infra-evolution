@@ -1,0 +1,22 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ ReviewRegressions.test_gpu_attempts_require_backend_even_if_body_fields_are_erased _
+
+self = <test_analyze.ReviewRegressions testMethod=test_gpu_attempts_require_backend_even_if_body_fields_are_erased>
+
+    def test_gpu_attempts_require_backend_even_if_body_fields_are_erased(self):
+        rows=self.read('gateway.jsonl')
+        for r in rows:
+            for a in r['attempts']:
+                if a['mode']=='gpu':
+                    a.pop('backend_body',None);a.pop('backend_body_sha256',None)
+        self.write('gateway.jsonl',rows);self.write('backend.jsonl',[])
+        r=self.module.analyze(self.out)
+>       self.assertFalse(r['accepted']);self.assertIsNone(r['metrics'])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: True is not false
+
+phase5/exp26/test_analyze.py:421: AssertionError
+=========================== short test summary info ============================
+FAILED phase5/exp26/test_analyze.py::ReviewRegressions::test_gpu_attempts_require_backend_even_if_body_fields_are_erased
+1 failed, 26 deselected in 0.05s

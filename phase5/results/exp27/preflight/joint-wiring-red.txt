@@ -1,0 +1,109 @@
+.FFF.....                                                                [100%]
+=================================== FAILURES ===================================
+______________ test_fault_targets_start_with_empty_response_cache ______________
+
+    def test_fault_targets_start_with_empty_response_cache():
+     p=make_plan()
+     for name in ['break-after-commit','client-cancel','drain-running']:
+      step=next(s for s in p['steps'] if name in s['cases'])
+>     assert step.get('clear_cache')
+E     AssertionError: assert None
+E      +  where None = <built-in method get of dict object at 0x10b3f1080>('clear_cache')
+E      +    where <built-in method get of dict object at 0x10b3f1080> = {'cases': ['break-after-commit']}.get
+
+phase5/exp27/test_gateway.py:19: AssertionError
+_____________ test_lifecycle_native_headers_use_current_experiment _____________
+
+    def test_lifecycle_native_headers_use_current_experiment():
+     import httpx
+     from unittest.mock import patch
+     async def run():
+      captured=[]
+      def serve(req):
+       captured.append(req)
+       raw='data: '+json.dumps({'choices':[{'delta':{'content':'7'},'finish_reason':'stop'}]})+'\n\n'
+       raw+='data: '+json.dumps({'choices':[],'usage':{'prompt_tokens':3,'completion_tokens':2,'total_tokens':5}})+'\n\ndata: [DONE]\n\n'
+       return httpx.Response(200,content=raw)
+      p=make_plan();g=Gateway(p,encoder=lambda m:[1]);original=httpx.AsyncClient
+      with patch('lifecycle.httpx.AsyncClient',lambda **kw:original(**kw,transport=httpx.MockTransport(serve))):
+       await request(g,p['cases'][0])
+      assert captured[0].headers['X-Exp27-Request-ID']==p['cases'][0]['request_id']
+      assert captured[0].headers['X-Exp27-Attempt-ID'].endswith('/a1')
+>    asyncio.run(run())
+
+phase5/exp27/test_gateway.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+phase5/exp27/test_gateway.py:34: in run
+    assert captured[0].headers['X-Exp27-Request-ID']==p['cases'][0]['request_id']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Headers({'host': '127.0.0.1:8027', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'connection': 'keep-alive', 'u...': 'exp27-tenant-a-repeat0-direct', 'x-exp26-attempt-id': 'exp27-tenant-a-repeat0-direct/a1', 'content-length': '234'})
+key = 'X-Exp27-Request-ID'
+
+    def __getitem__(self, key: str) -> str:
+        """
+        Return a single header value.
+    
+        If there are multiple headers with the same key, then we concatenate
+        them with commas. See: https://tools.ietf.org/html/rfc7230#section-3.2.2
+        """
+        normalized_key = key.lower().encode(self.encoding)
+    
+        items = [
+            header_value.decode(self.encoding)
+            for _, header_key, header_value in self._list
+            if header_key == normalized_key
+        ]
+    
+        if items:
+            return ", ".join(items)
+    
+>       raise KeyError(key)
+E       KeyError: 'X-Exp27-Request-ID'
+
+phase5/.venv-exp25/lib/python3.12/site-packages/httpx/_models.py:302: KeyError
+_____________________ test_request_end_contains_last_event _____________________
+
+    def test_request_end_contains_last_event():
+     async def run():
+      p=make_plan();g=Gateway(p,encoder=lambda m:[1],native_source=Fixture())
+      r,_=await request(g,p['cases'][1])
+      assert all(r['started_ns']<=e['ns']<=r['ended_ns'] for e in r['events'])
+>    asyncio.run(run())
+
+phase5/exp27/test_gateway.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def run():
+     p=make_plan();g=Gateway(p,encoder=lambda m:[1],native_source=Fixture())
+     r,_=await request(g,p['cases'][1])
+>    assert all(r['started_ns']<=e['ns']<=r['ended_ns'] for e in r['events'])
+E    assert False
+E     +  where False = all(<generator object test_request_end_contains_last_event.<locals>.run.<locals>.<genexpr> at 0x10b3efe60>)
+
+phase5/exp27/test_gateway.py:42: AssertionError
+=========================== short test summary info ============================
+FAILED phase5/exp27/test_gateway.py::test_fault_targets_start_with_empty_response_cache
+FAILED phase5/exp27/test_gateway.py::test_lifecycle_native_headers_use_current_experiment
+FAILED phase5/exp27/test_gateway.py::test_request_end_contains_last_event - a...
+3 failed, 6 passed in 0.12s

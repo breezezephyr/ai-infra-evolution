@@ -1,0 +1,1433 @@
+{
+  "schema_version": 1,
+  "description": "Fixed upstream source slices; no wheel, weights or packaged vendor bytes. Default CLI is offline dry-run.",
+  "metadata": [
+    "tools/upstream-metadata/exp20-source/sources.json",
+    "tools/upstream-metadata/exp21-source/sources.json",
+    "tools/upstream-metadata/exp21-source/tree-verification.json",
+    "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+    "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+    "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+    "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+    "tools/upstream-metadata/minimal/source-metadata.json",
+    "tools/upstream-metadata/minimal/tokenizer-provenance.json"
+  ],
+  "excluded_artifacts": [
+    {
+      "kind": "native wheel",
+      "distribution": "deepseek-recipe",
+      "version": "0.2.0",
+      "build_commit": null,
+      "reason": "native build commit unknown; stub identity does not establish binary provenance"
+    },
+    {
+      "kind": "audio bytes",
+      "count": 445,
+      "reason": "macOS/Kokoro voice output redistribution terms unconfirmed; omit 435 WAV and 10 phase4/results/exp15 PCM; retain input text, hashes, metrics and source records only",
+      "formats": {
+        "WAV": 435,
+        "PCM": 10
+      }
+    },
+    {
+      "kind": "weights",
+      "reason": "not packaged and not restored by this manifest"
+    }
+  ],
+  "unrestorable_metadata_records": [
+    {
+      "metadata": "tools/upstream-metadata/exp21-source/sources.json",
+      "record": 7,
+      "upstream_path": "deepseek-recipe-core/src/constraint.rs",
+      "reason": "no_verified_sha256_or_url"
+    },
+    {
+      "metadata": "tools/upstream-metadata/exp21-source/sources.json",
+      "record": 8,
+      "upstream_path": "examples/server-py/server.py",
+      "reason": "no_verified_sha256_or_url"
+    },
+    {
+      "metadata": "tools/upstream-metadata/exp21-source/sources.json",
+      "record": 16,
+      "upstream_path": "deepseek-recipe/src/protocol/tools.rs",
+      "reason": "no_verified_sha256_or_url"
+    }
+  ],
+  "files": [
+    {
+      "path": "phase5/vendor/exp20-source/LICENSE",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/LICENSE",
+      "sha256": "ebb4f09972aee8608be255debaf78451a68e95c290f55c240dec2ecfa16ea6be",
+      "bytes": 1065,
+      "license_evidence": "tools/upstream-metadata/license-verification.json"
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe-python/src/response.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-python/src/response.rs",
+      "sha256": "ab4bba07e6372e713194c5f00501728fef449b24ed3796463d19725e317ae6dc",
+      "bytes": 17966,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 5
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/anthropic/messages/response/chunk_generator.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/anthropic/messages/response/chunk_generator.rs",
+      "sha256": "82f5f28088cbdd911e3df92e05be999fc6382d8ca49b9255b4e9daa713b18094",
+      "bytes": 7611,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 9
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/anthropic/messages/response/schema.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/anthropic/messages/response/schema.rs",
+      "sha256": "095216a701eca19b11139bf1cc25a3d60c5338f31d1292b75dea8dadafe68e24",
+      "bytes": 8581,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 16
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/openai/chat_completion/response/chunk_generator.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/chat_completion/response/chunk_generator.rs",
+      "sha256": "996a5613aa858a30b0527a0f3ef46ae6ca3108ed626655156600e10915627bba",
+      "bytes": 10370,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 7
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/openai/chat_completion/response/schema.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/chat_completion/response/schema.rs",
+      "sha256": "590d034db959facd31c28db13c95201e5bf93ebfa0c8ee8ed0c3390ee992b9df",
+      "bytes": 11371,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 15
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/openai/responses/response/accumulator.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/responses/response/accumulator.rs",
+      "sha256": "78c6d10ee389f49ca9d3fc9abe7d418183fa6ef56dc3e7c2d0ba603c548f7668",
+      "bytes": 8381,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 10
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/openai/responses/response/chunk_generator.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/responses/response/chunk_generator.rs",
+      "sha256": "74b2c09afb6ce53cbb713f051e9a62d278bec82d599a48ece17ea46dd795eb9a",
+      "bytes": 21714,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 8
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/openai/responses/response/schema.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/responses/response/schema.rs",
+      "sha256": "dbbc4b7bd2c1481a9d9dd15a984d68151f64eb352d7752e0b5ab1772a7f4964d",
+      "bytes": 16397,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 17
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/response.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/response.rs",
+      "sha256": "26a4639a915497a5cbb75e6361c550ba737cd94c69c5b1dc98481ac4bc143309",
+      "bytes": 2148,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 6
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/stream/decoder.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/stream/decoder.rs",
+      "sha256": "2237f08024225c3afa79042e9fcd1f3fc838d3e433027d4f193f20e5f1f9d084",
+      "bytes": 8791,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 2
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/stream/inference.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/stream/inference.rs",
+      "sha256": "1088a96d606e6090e0aedf08419c587536deb84d4afadf063b753f13436f203d",
+      "bytes": 3538,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 1
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/stream/output_parser.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/stream/output_parser.rs",
+      "sha256": "38aeb5e0cd475c39b2269e71adc037167e713cf98ba551d7210365ceb6eccbc7",
+      "bytes": 30794,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 3
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/deepseek-recipe/src/stream/processor.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/stream/processor.rs",
+      "sha256": "40eb9f349666af775e8649ab340ba32ae76f8c5e251b8a05a38fe854afc35bc4",
+      "bytes": 45272,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 4
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp20-source/docs/streaming.zh.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/docs/streaming.zh.md",
+      "sha256": "56b00ff9c1311254bd4785b5a68ee8a134e6393c85a5e6d58995b7b7fe527b0b",
+      "bytes": 3601,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 0
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/LICENSE",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "license_evidence": "tools/upstream-metadata/license-verification.json"
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/README.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/README.md",
+      "sha256": "b55624158ada4dc21b882d24ded06bf82f65350b44d170877b68395712cd670d",
+      "bytes": 4660,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 20
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/engine/llm_engine.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/engine/llm_engine.py",
+      "sha256": "a636d60ca5711f6b7c21e68370c3bd9c2de6fc3f4439a7429ca4f572f0edeebe",
+      "bytes": 45489,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 12
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/entrypoints/llm.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/entrypoints/llm.py",
+      "sha256": "069a5333d9f47047ccc87584792627dfa6eee9cf93bdc046107cbd0218a6bada",
+      "bytes": 8807,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 11
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/sampling_params.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/sampling_params.py",
+      "sha256": "f800034efdebe1b21620660a51fa9122d3d7f138d8e60cd738f33d643c3116f8",
+      "bytes": 5142,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 13
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/structure_output/compiler.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/structure_output/compiler.py",
+      "sha256": "05ae22caf6faddff075102f33e6e77aff32391c9f60f2f99047dfc68f104bbe8",
+      "bytes": 2820,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 9
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/structure_output/matcher.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/structure_output/matcher.py",
+      "sha256": "83b69010567a4306d6d435c88d019a302e7ee2d89af01eb037a59e40c0e67ce1",
+      "bytes": 12520,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 18
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/structure_output/so_matcher_builder.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/structure_output/so_matcher_builder.py",
+      "sha256": "1f26aea5205c2f6953ba7ca21079c84b888115ed44c158a120536a17517f1ee0",
+      "bytes": 5274,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 17
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/examples/_structured_output.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/examples/_structured_output.py",
+      "sha256": "cade14c5f7eaf981d4129e983a4451fd3200ebaef375555017cae85e0e3bd948",
+      "bytes": 2834,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 10
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/LICENSE",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/LICENSE",
+      "sha256": "ebb4f09972aee8608be255debaf78451a68e95c290f55c240dec2ecfa16ea6be",
+      "bytes": 1065,
+      "license_evidence": "tools/upstream-metadata/license-verification.json"
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe-python/python/deepseek_recipe/_native.pyi",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-python/python/deepseek_recipe/_native.pyi",
+      "sha256": "e24cb343288b736a0cfadbada954fa0272f4393ae27222adee8ed080aa2b0e92",
+      "bytes": 40062,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 22
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/anthropic/messages/request/convert.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/anthropic/messages/request/convert.rs",
+      "sha256": "7e3e440804acde6be1b34c293ec4797bc797a1e8f7db80f02aeae65184b24967",
+      "bytes": 36298,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 5
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/anthropic/messages/request/schema.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/anthropic/messages/request/schema.rs",
+      "sha256": "699565374ab5d2292f2978eb5014eb4c91532728e4614af5ae869cd96954c4e0",
+      "bytes": 8266,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 4
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/client_tools.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/client_tools.rs",
+      "sha256": "6ac02a44eb42a2eb2a64d79eed22b9ea39396f868045bbe4636785d75ba7db73",
+      "bytes": 6365,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 19
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/json_schema.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/json_schema.rs",
+      "sha256": "b6a01d0d9a0fec45c9b79445b90f042c95e8c6eec5b8d51ed36307bd2a357451",
+      "bytes": 13938,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 15
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/openai/chat_completion/request/convert.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/chat_completion/request/convert.rs",
+      "sha256": "2661a956939446d3e8aa3423c56fcef7b3fd892f9470477ba979570744adbaa5",
+      "bytes": 25895,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 1
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/openai/chat_completion/request/schema.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/chat_completion/request/schema.rs",
+      "sha256": "7934daf74887afd067461a8a9f1efdef5f39fee717728a21fba02e470254222f",
+      "bytes": 8181,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 0
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/openai/responses/request/convert.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/responses/request/convert.rs",
+      "sha256": "a6a5834f4fde9ad71a58a89e63f3df208ead50de45b8918b3ceb5f500e4b4bc2",
+      "bytes": 39468,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 3
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/openai/responses/request/schema.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/responses/request/schema.rs",
+      "sha256": "1999d12454c8dcc19ec7384cf629ecd88720a46661ca9457760fadb19dc419fa",
+      "bytes": 12432,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 2
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/output_constraint.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/output_constraint.rs",
+      "sha256": "3ac2d0bf86e3f099255b3d09e24ba4b2516e7e8c00e338e9a3bc4b13ffcaf4db",
+      "bytes": 2589,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 14
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/validation.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/validation.rs",
+      "sha256": "2d39eee7110bf6051dc5ebc75a639bedd72e804b2db3b0bbfa8799ee4be095fd",
+      "bytes": 12017,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 6
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/request/mod.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/request/mod.rs",
+      "sha256": "c2d996aca81b6956b9e997c24fd4239a1191248d4e5399dfa069ee41f19fc2b9",
+      "bytes": 11979,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp21-source/sources.json",
+          "record": 21
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/LICENSE",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "license_evidence": "tools/upstream-metadata/license-verification.json"
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/README.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/README.md",
+      "sha256": "b55624158ada4dc21b882d24ded06bf82f65350b44d170877b68395712cd670d",
+      "bytes": 4660,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+          "record": 0
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/csrc/engine/scheduler.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/scheduler.hpp",
+      "sha256": "c14de4d5341170227b82ddf2d146d9c6a337937885a6886237aab5a7238da5db",
+      "bytes": 66347,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+          "record": 3
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/engine/arg_utils.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/engine/arg_utils.py",
+      "sha256": "c28c478bd376165c073c6e0722bed8468599a2fd766ffc7aafcd4ef270af52c5",
+      "bytes": 4001,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+          "record": 6
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/engine/engine_type.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/engine/engine_type.py",
+      "sha256": "9933d83f500e3cc14c5fef0dd2fbe5c5170dbbf24df217376b0a55c4fb4ab48c",
+      "bytes": 450,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+          "record": 7
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/engine/llm_engine.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/engine/llm_engine.py",
+      "sha256": "a636d60ca5711f6b7c21e68370c3bd9c2de6fc3f4439a7429ca4f572f0edeebe",
+      "bytes": 45489,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+          "record": 2
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/entrypoints/llm.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/entrypoints/llm.py",
+      "sha256": "069a5333d9f47047ccc87584792627dfa6eee9cf93bdc046107cbd0218a6bada",
+      "bytes": 8807,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+          "record": 1
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/environ.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/environ.py",
+      "sha256": "fe2c531989c419f0b51b169a07f5ed826dcec7f95c0c5bc3a351805923c4f218",
+      "bytes": 8738,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+          "record": 8
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/model_executor/layers/sampler.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/sampler.py",
+      "sha256": "81205a12e860041ffa904321b852db2d048bc038bb07d494dbb78b44b522d9a9",
+      "bytes": 30729,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+          "record": 10
+        },
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 3
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/worker/model_runner.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/worker/model_runner.py",
+      "sha256": "9e2e18d136c9e0c9f23905ff994e9d23afaa94aa7a133d425e7fc1fc069033ef",
+      "bytes": 29533,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+          "record": 5
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/worker/worker.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/worker/worker.py",
+      "sha256": "ad32e595d9ab289dff1a7709136431ac60dae709e9e5123ae42eb0ebf7c30cbb",
+      "bytes": 11604,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+          "record": 4
+        },
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 4
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/tests/models/test_batch_invariant.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/tests/models/test_batch_invariant.py",
+      "sha256": "10ceb7fec656188623de450fab4dfffed98bc2ffe9510f8f545dff6f0b5dd887",
+      "bytes": 3993,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+          "record": 9
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/LICENSE",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "license_evidence": "tools/upstream-metadata/license-verification.json"
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/README.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/README.md",
+      "sha256": "b55624158ada4dc21b882d24ded06bf82f65350b44d170877b68395712cd670d",
+      "bytes": 4660,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 0
+        },
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 0
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/csrc/engine/input_metadata/prepare_tensor_input.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/input_metadata/prepare_tensor_input.hpp",
+      "sha256": "ceceefb7639b90e10379c2cc15cd5e00f8efc84fe238058c5b19498bb2d6caa8",
+      "bytes": 2629,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 1
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/csrc/engine/input_metadata/prepare_tensor_input_v4.cpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/input_metadata/prepare_tensor_input_v4.cpp",
+      "sha256": "93a6b1dd533db116d2f7540c78d6bb5419bdb8c1d2063b031ab8b1a8cc138fe2",
+      "bytes": 32119,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 2
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/csrc/engine/mtp_varlen.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/mtp_varlen.hpp",
+      "sha256": "164f45db4cccd6d6909dd2846e7dfffb57754b108af679443bf4bd71ec33785a",
+      "bytes": 12151,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 7
+        },
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 3
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/csrc/engine/prepare_sample.cpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/prepare_sample.cpp",
+      "sha256": "277a53eeed3295dd7b4467272ed4fc44bd2220586f2fd771cbbfca3edffda523",
+      "bytes": 15967,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 4
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/csrc/engine/pybind_scheduler.cpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/pybind_scheduler.cpp",
+      "sha256": "a81d71dbfe5a0d7ad5c0c79c104abd65ada2ab57b8073f339e0c13a5cb74a438",
+      "bytes": 9517,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 5
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/csrc/engine/pybind_sequence.cpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/pybind_sequence.cpp",
+      "sha256": "872775774022bb27fd4b1fade37ec9f6fe9ec4c3051844206e3ec36c8103a9ce",
+      "bytes": 11935,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 6
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/csrc/engine/scheduler.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/scheduler.hpp",
+      "sha256": "c14de4d5341170227b82ddf2d146d9c6a337937885a6886237aab5a7238da5db",
+      "bytes": 66347,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 2
+        },
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 7
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/csrc/engine/sequence.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/sequence.hpp",
+      "sha256": "67ef6ea70ee31a519fd632ee2d7be4710a6d796f786cf336dd3d3f06f7fbe16b",
+      "bytes": 17396,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 8
+        },
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 8
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/_C/engine.pyi",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/_C/engine.pyi",
+      "sha256": "fbcb1e99b66b14cf4cbb1a92291bd1fca1aae38ddb9077b0db4e5cd55ae05ffe",
+      "bytes": 30725,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 9
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/__init__.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/__init__.py",
+      "sha256": "049d7fa1492d4b0c3f6947b7150946ec92a57e74b4ae25415392de7aed5ec7a4",
+      "bytes": 2369,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 10
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/engine/llm_engine.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/engine/llm_engine.py",
+      "sha256": "a636d60ca5711f6b7c21e68370c3bd9c2de6fc3f4439a7429ca4f572f0edeebe",
+      "bytes": 45489,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 5
+        },
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 11
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/entrypoints/llm.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/entrypoints/llm.py",
+      "sha256": "069a5333d9f47047ccc87584792627dfa6eee9cf93bdc046107cbd0218a6bada",
+      "bytes": 8807,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 12
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/environ.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/environ.py",
+      "sha256": "fe2c531989c419f0b51b169a07f5ed826dcec7f95c0c5bc3a351805923c4f218",
+      "bytes": 8738,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 1
+        },
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 13
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/input_metadata/yoco.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/input_metadata/yoco.py",
+      "sha256": "882a33de3da0fba81644adde9e9e1a90ec3d3ff34a8f3ad4dda18faafebd6460",
+      "bytes": 10478,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 14
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/mtp_info_pool.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/mtp_info_pool.py",
+      "sha256": "f0ae9ad98d03e2bc6d3f4406cd757e7ce82010ec6fdc0f545d9d86776e31ee72",
+      "bytes": 3288,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 13
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/sampler_utils.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/sampler_utils.py",
+      "sha256": "35bdfd873865375cbf834258543e54ea7a1dbb860767412b8b8e44bea1b296b9",
+      "bytes": 7895,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 9
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/common.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/common.py",
+      "sha256": "d5cbc52dda0bd611d5ea417d2e8bb1ec70c70f5932edaeb809eb7cfa6a669a1b",
+      "bytes": 2254,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 16
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/compute_seqlens_k_zos.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/compute_seqlens_k_zos.py",
+      "sha256": "83d5decd78b992d697074f38f1005db007c0e75332a7ab2a90620922844406f4",
+      "bytes": 4043,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 12
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/fused_sample.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/fused_sample.py",
+      "sha256": "f43ac934284d15f708a0aa07aaa8fff7daa257984e311ca554bd9dbea89e5e1d",
+      "bytes": 38007,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 15
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/ops.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/ops.py",
+      "sha256": "9b443cb87be447a15853781f76b9d54c224cf60fbafcf577b71f4ba14da989cd",
+      "bytes": 1278,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 18
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/random_sampling.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/random_sampling.py",
+      "sha256": "59d8d5befc1a98ec28ca824117ff1ffa7829740fb327240c1ec9a0c77731f9c2",
+      "bytes": 13300,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 17
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/sampler.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/sampler.py",
+      "sha256": "cef9d2dda13f24fed56ca9bef45fdffa883edc63208d54e1b83ead9358271304",
+      "bytes": 48850,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 10
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/schedule_mtp_varlen.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/schedule_mtp_varlen.py",
+      "sha256": "0c6e5eb4faa087b96e0558ea4791e1b4ead1939a6cc8b086de86ca2f68bd4e88",
+      "bytes": 7003,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 11
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/model_metadata_utils.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/model_metadata_utils.py",
+      "sha256": "1ef7803d2b0083d025de676c841db9a317235b881fb9ebf6781ec76d49d7b22c",
+      "bytes": 9821,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 15
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/models/deepseek.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/models/deepseek.py",
+      "sha256": "881fe2839b34d191ffd50ca6d5b7b57443b43ed8d811e204e4d48164f31f613a",
+      "bytes": 24852,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 16
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/models/mtp/dflash.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/models/mtp/dflash.py",
+      "sha256": "12ebfb9c793062844d40e0fab17164d5365d965c318f8b9f0f4adf51b3afb684",
+      "bytes": 17894,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 14
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/models/v4_modules/yoco.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/models/v4_modules/yoco.py",
+      "sha256": "7dc8ad7b6ca4902bcef67b1cbc4804592995c5b6af9ebaa00b59cc338c1aa6ec",
+      "bytes": 6540,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 17
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/sequence.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/sequence.py",
+      "sha256": "ba8973ff5dbb681a1af0533b8ca1ade85a10204c891cc944a795e72dc89419f9",
+      "bytes": 11248,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 18
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/worker/cache_engine.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/worker/cache_engine.py",
+      "sha256": "ca3d80120fe6bc50971b180278dd575d585e1a6c7a3c2174a8a6fd6213454161",
+      "bytes": 49243,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 19
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/worker/model_runner.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/worker/model_runner.py",
+      "sha256": "9e2e18d136c9e0c9f23905ff994e9d23afaa94aa7a133d425e7fc1fc069033ef",
+      "bytes": 29533,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+          "record": 6
+        },
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 20
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/doc/inference_deployment_qa.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/doc/inference_deployment_qa.md",
+      "sha256": "55d428d9958aa35ac863d7f5a2eb21528e683226784b1ac334e8068e21f2326f",
+      "bytes": 28865,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 21
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/examples/yoco/README.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/examples/yoco/README.md",
+      "sha256": "ac84c1fdf99a75ef04db3184b8c81d0774f377152abf9ce32a40145e2f4c8d79",
+      "bytes": 2267,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 22
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/examples/yoco/run_yoco_equiv_l2.sh",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/examples/yoco/run_yoco_equiv_l2.sh",
+      "sha256": "217004ee05e91ef59284b4cafc84f7978ddcc1b675007fa966527fa4fea6b6cc",
+      "bytes": 421,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 23
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/examples/yoco/yoco_equiv.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/examples/yoco/yoco_equiv.py",
+      "sha256": "4abe933e510b7797ada8835d57d7504dcc049834c990429316e34e937f6c0032",
+      "bytes": 51830,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 24
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/tests/engine/test_sequence.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/tests/engine/test_sequence.py",
+      "sha256": "387e70015fbedd6a791064dd134d8cc338c3b6fc2f35089431f07495e99b22e1",
+      "bytes": 5573,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+          "record": 25
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/LICENSE-APACHE",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/LICENSE-APACHE",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "bytes": 11357,
+      "license_evidence": "tools/upstream-metadata/license-verification.json"
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-common/include/bool_parser.h",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-common/include/bool_parser.h",
+      "sha256": "1ed688c5d26fa9c99db6f236ea767f6e1afba9e197973016d248a86435b14009",
+      "bytes": 1418,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 9
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-integration/store/store_py.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-integration/store/store_py.cpp",
+      "sha256": "f7800bbd8aad6f50b38e83bc06bfb08774ecde2dd1b333c1032d0be99bc60d7c",
+      "bytes": 155770,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 1
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/include/types.h",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/include/types.h",
+      "sha256": "27835d66552eec4ab3772e69dbef729282d772f429922f128baf5f545f34bdca",
+      "bytes": 22152,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 2
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/client_service.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/client_service.cpp",
+      "sha256": "c8a99a4633ef4ae2aa2509e1e3be9d4933837988cb1cdc13624410ab7b7a1251",
+      "bytes": 226432,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 4
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/config/transfer_submitter_config.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/config/transfer_submitter_config.cpp",
+      "sha256": "60b4629d3c52b9e453e0a0a10b48942cd5b52ade0ce9b0519f21ff37c4d05fc4",
+      "bytes": 1115,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 8
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/master.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/master.cpp",
+      "sha256": "9cd76b98227abef90c1783a7da31d2f647b5a98949c9800499752104fec18b9a",
+      "bytes": 82540,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 3
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/master_service.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/master_service.cpp",
+      "sha256": "88c19cca1f3cf6427d69f21c291f3b8ebf7b3afebc4d94f11aef38e2c0099c0c",
+      "bytes": 567699,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 6
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/real_client.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/real_client.cpp",
+      "sha256": "613fd165773933e57eb03ced5cb89096a3fad92f3b5e7eb5de0ab34223a872fe",
+      "bytes": 388841,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 5
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/transfer_task.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/transfer_task.cpp",
+      "sha256": "19fe2c291312dc680a8fca66d8a3dc000a6ab0e383b40ccd46163d717e88640e",
+      "bytes": 81879,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 7
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-transfer-engine/include/transfer_engine_impl.h",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-transfer-engine/include/transfer_engine_impl.h",
+      "sha256": "1a081a02836fa0eca378d13c7d3f19ef1c0ce3677659e822b961c689d604e031",
+      "bytes": 20288,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 11
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-transfer-engine/src/multi_transport.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-transfer-engine/src/multi_transport.cpp",
+      "sha256": "2ed389cd5ac91c68553006f14098e4820c9dd5cf16e17b7502254040e2fda4ec",
+      "bytes": 38505,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 12
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/mooncake-transfer-engine/src/transfer_engine.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-transfer-engine/src/transfer_engine.cpp",
+      "sha256": "6749aaf3f513fb8a1b25172f7620859825c0e5d8311306932f7bc07a4290f84d",
+      "bytes": 69094,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 10
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/pyproject.toml",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/pyproject.toml",
+      "sha256": "f3b4c06e171a63d60a29dbe5560d7cc608fc3619ae136f0b6582dab04d92d038",
+      "bytes": 3571,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+          "record": 0
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/minimal/LICENSE",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/LICENSE",
+      "sha256": "ebb4f09972aee8608be255debaf78451a68e95c290f55c240dec2ecfa16ea6be",
+      "bytes": 1065,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/minimal/source-metadata.json",
+          "record": 5
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/minimal/README.zh.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/README.zh.md",
+      "sha256": "62c22884aaa0446109a73d6b92e3d9c59e81399e8a57902f6ef49fc0dba5bedb",
+      "bytes": 6660,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 11
+        },
+        {
+          "path": "tools/upstream-metadata/minimal/source-metadata.json",
+          "record": 3
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/minimal/deepseek-recipe-python/python/deepseek_recipe/_native.pyi",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-python/python/deepseek_recipe/_native.pyi",
+      "sha256": "e24cb343288b736a0cfadbada954fa0272f4393ae27222adee8ed080aa2b0e92",
+      "bytes": 40062,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 13
+        },
+        {
+          "path": "tools/upstream-metadata/minimal/source-metadata.json",
+          "record": 1
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/minimal/deepseek-recipe-python/tests/test_bindings.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-python/tests/test_bindings.py",
+      "sha256": "d852276ec3a11917f8cf2fbee95662dc3445d042096ed89a8a6a113b12b0f087",
+      "bytes": 41826,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 12
+        },
+        {
+          "path": "tools/upstream-metadata/minimal/source-metadata.json",
+          "record": 0
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/minimal/deepseek-recipe/src/request/mod.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/request/mod.rs",
+      "sha256": "c2d996aca81b6956b9e997c24fd4239a1191248d4e5399dfa069ee41f19fc2b9",
+      "bytes": 11979,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/minimal/source-metadata.json",
+          "record": 2
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/minimal/docs/tokenizer.zh.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/docs/tokenizer.zh.md",
+      "sha256": "807c746fbba4c72ed2c4aa178639cd4ba74c4839102f6f60c6fa4cf1d79ffb82",
+      "bytes": 9742,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/exp20-source/sources.json",
+          "record": 14
+        },
+        {
+          "path": "tools/upstream-metadata/minimal/source-metadata.json",
+          "record": 4
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/minimal/static/tokenizers/v4/tokenizer.json",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/static/tokenizers/v4/tokenizer.json",
+      "sha256": "97d2f31b020d18b5aee5c9b3d5b4efb10ea210f3fe3f7dffe3f1cd90542d6b19",
+      "bytes": 6367146,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/minimal/tokenizer-provenance.json",
+          "record": 0
+        }
+      ]
+    },
+    {
+      "path": "phase5/vendor/minimal/static/tokenizers/v41/tokenizer.json",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/static/tokenizers/v41/tokenizer.json",
+      "sha256": "81f64d1248a68ce3663e07ab3ee48b851e5df0e32d27cb98e4c9a268151e8d99",
+      "bytes": 6367247,
+      "metadata": [
+        {
+          "path": "tools/upstream-metadata/minimal/tokenizer-provenance.json",
+          "record": 1
+        }
+      ]
+    }
+  ],
+  "local_metadata": [
+    {
+      "path": "phase5/vendor/exp20-source/sources.json",
+      "source": "tools/upstream-metadata/exp20-source/sources.json",
+      "sha256": "478d974baff8bdc05f4096b39d465a16bf80fbf59d7462d6599ac85ef7810456",
+      "bytes": 14847
+    },
+    {
+      "path": "phase5/vendor/exp21-source/sources.json",
+      "source": "tools/upstream-metadata/exp21-source/sources.json",
+      "sha256": "2b95f46bf9f2989b13af1ed25a0ca3f4940dd7faf00c2f955f8e8b9064f7126b",
+      "bytes": 17501
+    },
+    {
+      "path": "phase5/vendor/exp21-source/tree-verification.json",
+      "source": "tools/upstream-metadata/exp21-source/tree-verification.json",
+      "sha256": "6db7968a56c533448350a632ff9c68f2e3c5dd109c7d27df44d5c72f44da9177",
+      "bytes": 651
+    },
+    {
+      "path": "phase5/vendor/exp22-source/DeepInfer/manifest.json",
+      "source": "tools/upstream-metadata/exp22-source/DeepInfer/manifest.json",
+      "sha256": "078d63f62b21804960884d1a365c40dacd7bad3fc19da4ba69a3e98db9951bb9",
+      "bytes": 3510
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/dspark-source-manifest.json",
+      "source": "tools/upstream-metadata/exp23-source/DeepInfer/dspark-source-manifest.json",
+      "sha256": "09e7b766e28a2d2201866997f950a1ebc3dc87cbb72d0c6175156cce3e7ee618",
+      "bytes": 10919
+    },
+    {
+      "path": "phase5/vendor/exp23-source/DeepInfer/swa-source-manifest.json",
+      "source": "tools/upstream-metadata/exp23-source/DeepInfer/swa-source-manifest.json",
+      "sha256": "de89407b89d27e72fc96e5d465da04c4b5691104558596da8cb42fb3181e45ae",
+      "bytes": 9754
+    },
+    {
+      "path": "phase5/vendor/exp24-source/Mooncake/source-manifest.json",
+      "source": "tools/upstream-metadata/exp24-source/Mooncake/source-manifest.json",
+      "sha256": "73ff881b47f6c9cb703d80b0d2950f6c5d683b4a26812558e02624166eb9a26c",
+      "bytes": 11501
+    },
+    {
+      "path": "phase5/vendor/minimal/source-metadata.json",
+      "source": "tools/upstream-metadata/minimal/source-metadata.json",
+      "sha256": "0dfc628ea6a70b2701df2c5b5c4f53c9326cd997cbaeb98c57c3173b4228c64b",
+      "bytes": 4469
+    },
+    {
+      "path": "phase5/vendor/minimal/tokenizer-provenance.json",
+      "source": "tools/upstream-metadata/minimal/tokenizer-provenance.json",
+      "sha256": "8dd361d125a111b6099b500dc852651bc81e5d31fc55cfa4136d3f02f3e3d02b",
+      "bytes": 959
+    }
+  ]
+}

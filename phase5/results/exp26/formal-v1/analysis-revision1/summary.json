@@ -1,0 +1,529 @@
+{
+  "schema": 1,
+  "experiment": "exp26",
+  "accepted": true,
+  "planned": 17,
+  "auditor_sha256": "b968e6ac0006db6452dc6962092ce038d74b6611a1acdd66ef0c2338821cb8e8",
+  "frozen_source_sha256": {
+    "analyze.py": "6a2a26f2a247a9bbe63cffb6fd287eb67c8d1af61afc5184a31834ddd59f2c1f",
+    "run.py": "18fe956ead9c28013bd2165967f0ce79aaec94ac0d34ad8bf852714d524a907a",
+    "serve_gateway.py": "fd1f884275bc8798d5201e80d29f2bd456388163519d8e7afd20c7f4b4af523d",
+    "gateway.py": "af50a1fca7e6adefb0802995c9552e0a57a18db58b4d83fd77e5e530140b719a",
+    "backend_audit.py": "c7bcfd1daf58299ee58ee5577fc1417268f7ed7b552d96cd26ad7862facace9f",
+    "manage_backend.py": "06242855cf3922572e9d3bdad7e0a14c7f2a22db8f2db07658d9083e84af2560"
+  },
+  "planned_modes": {
+    "controlled": 12,
+    "gpu": 5
+  },
+  "planned_attempts": 19,
+  "errors": [],
+  "metrics": {
+    "gpu": {
+      "attempts": 6,
+      "known_usage_attempts": 2,
+      "unknown_usage_attempts": 4,
+      "known_prompt_tokens": 54,
+      "known_completion_tokens": 194,
+      "known_total_tokens": 248
+    },
+    "controlled": {
+      "attempts": 13,
+      "known_usage_attempts": 4,
+      "unknown_usage_attempts": 9,
+      "known_prompt_tokens": 12,
+      "known_completion_tokens": 16,
+      "known_total_tokens": 28
+    },
+    "matched_requests": 17
+  },
+  "attempt_ledger": [
+    {
+      "case_id": "unconnected-retry",
+      "request_id": "exp26-unconnected-retry",
+      "attempt_id": "exp26-unconnected-retry/a1",
+      "mode": "controlled",
+      "outcome": "connect_refused",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-unconnected-retry/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false
+    },
+    {
+      "case_id": "unconnected-retry",
+      "request_id": "exp26-unconnected-retry",
+      "attempt_id": "exp26-unconnected-retry/a2",
+      "mode": "controlled",
+      "outcome": "completed",
+      "usage": {
+        "prompt_tokens": 3,
+        "completion_tokens": 4,
+        "total_tokens": 7
+      },
+      "usage_source": "synthetic_fixture",
+      "settlement": {
+        "attempt_id": "exp26-unconnected-retry/a2",
+        "usage": {
+          "prompt_tokens": 3,
+          "completion_tokens": 4,
+          "total_tokens": 7
+        },
+        "source": "synthetic_fixture"
+      },
+      "native_usage": null,
+      "usage_known": true
+    },
+    {
+      "case_id": "pre-timeout-retry",
+      "request_id": "exp26-pre-timeout-retry",
+      "attempt_id": "exp26-pre-timeout-retry/a1",
+      "mode": "controlled",
+      "outcome": "first_content_timeout",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-pre-timeout-retry/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false
+    },
+    {
+      "case_id": "pre-timeout-retry",
+      "request_id": "exp26-pre-timeout-retry",
+      "attempt_id": "exp26-pre-timeout-retry/a2",
+      "mode": "controlled",
+      "outcome": "completed",
+      "usage": {
+        "prompt_tokens": 3,
+        "completion_tokens": 4,
+        "total_tokens": 7
+      },
+      "usage_source": "synthetic_fixture",
+      "settlement": {
+        "attempt_id": "exp26-pre-timeout-retry/a2",
+        "usage": {
+          "prompt_tokens": 3,
+          "completion_tokens": 4,
+          "total_tokens": 7
+        },
+        "source": "synthetic_fixture"
+      },
+      "native_usage": null,
+      "usage_known": true
+    },
+    {
+      "case_id": "post-break",
+      "request_id": "exp26-post-break",
+      "attempt_id": "exp26-post-break/a1",
+      "mode": "controlled",
+      "outcome": "injected_stream_break",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-post-break/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false
+    },
+    {
+      "case_id": "review-reject",
+      "request_id": "exp26-review-reject",
+      "attempt_id": "exp26-review-reject/a1",
+      "mode": "controlled",
+      "outcome": "review_rejected",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-review-reject/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false
+    },
+    {
+      "case_id": "review-unavailable",
+      "request_id": "exp26-review-unavailable",
+      "attempt_id": "exp26-review-unavailable/a1",
+      "mode": "controlled",
+      "outcome": "review_unavailable",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-review-unavailable/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false
+    },
+    {
+      "case_id": "cancel-late",
+      "request_id": "exp26-cancel-late",
+      "attempt_id": "exp26-cancel-late/a1",
+      "mode": "controlled",
+      "outcome": "cancelled",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-cancel-late/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false
+    },
+    {
+      "case_id": "stale-generation",
+      "request_id": "exp26-stale-generation",
+      "attempt_id": "exp26-stale-generation/a1",
+      "mode": "controlled",
+      "outcome": "superseded",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-stale-generation/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false
+    },
+    {
+      "case_id": "drain-graceful",
+      "request_id": "exp26-drain-graceful",
+      "attempt_id": "exp26-drain-graceful/a1",
+      "mode": "controlled",
+      "outcome": "completed",
+      "usage": {
+        "prompt_tokens": 3,
+        "completion_tokens": 4,
+        "total_tokens": 7
+      },
+      "usage_source": "synthetic_fixture",
+      "settlement": {
+        "attempt_id": "exp26-drain-graceful/a1",
+        "usage": {
+          "prompt_tokens": 3,
+          "completion_tokens": 4,
+          "total_tokens": 7
+        },
+        "source": "synthetic_fixture"
+      },
+      "native_usage": null,
+      "usage_known": true
+    },
+    {
+      "case_id": "drain-timeout",
+      "request_id": "exp26-drain-timeout",
+      "attempt_id": "exp26-drain-timeout/a1",
+      "mode": "controlled",
+      "outcome": "drain_timeout",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-drain-timeout/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false
+    },
+    {
+      "case_id": "no-key",
+      "request_id": "exp26-no-key",
+      "attempt_id": "exp26-no-key/a1",
+      "mode": "controlled",
+      "outcome": "connect_refused",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-no-key/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false
+    },
+    {
+      "case_id": "duplicate-settlement",
+      "request_id": "exp26-duplicate-settlement",
+      "attempt_id": "exp26-duplicate-settlement/a1",
+      "mode": "controlled",
+      "outcome": "completed",
+      "usage": {
+        "prompt_tokens": 3,
+        "completion_tokens": 4,
+        "total_tokens": 7
+      },
+      "usage_source": "synthetic_fixture",
+      "settlement": {
+        "attempt_id": "exp26-duplicate-settlement/a1",
+        "usage": {
+          "prompt_tokens": 3,
+          "completion_tokens": 4,
+          "total_tokens": 7
+        },
+        "source": "synthetic_fixture"
+      },
+      "native_usage": null,
+      "usage_known": true
+    },
+    {
+      "case_id": "gpu-normal",
+      "request_id": "exp26-gpu-normal",
+      "attempt_id": "exp26-gpu-normal/a1",
+      "mode": "gpu",
+      "outcome": "completed",
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "settlement": {
+        "attempt_id": "exp26-gpu-normal/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_known": true,
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "gpu-pre-retry",
+      "request_id": "exp26-gpu-pre-retry",
+      "attempt_id": "exp26-gpu-pre-retry/a1",
+      "mode": "gpu",
+      "outcome": "first_content_timeout",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-gpu-pre-retry/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false,
+      "backend_http_usage": null
+    },
+    {
+      "case_id": "gpu-pre-retry",
+      "request_id": "exp26-gpu-pre-retry",
+      "attempt_id": "exp26-gpu-pre-retry/a2",
+      "mode": "gpu",
+      "outcome": "completed",
+      "usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 229,
+        "completion_tokens": 192
+      },
+      "usage_source": "native_stream_usage",
+      "settlement": {
+        "attempt_id": "exp26-gpu-pre-retry/a2",
+        "usage": {
+          "prompt_tokens": 37,
+          "total_tokens": 229,
+          "completion_tokens": 192
+        },
+        "source": "native_stream_usage"
+      },
+      "native_usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 229,
+        "completion_tokens": 192
+      },
+      "usage_known": true,
+      "backend_http_usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 229,
+        "completion_tokens": 192
+      }
+    },
+    {
+      "case_id": "gpu-post-break",
+      "request_id": "exp26-gpu-post-break",
+      "attempt_id": "exp26-gpu-post-break/a1",
+      "mode": "gpu",
+      "outcome": "injected_stream_break",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-gpu-post-break/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false,
+      "backend_http_usage": null
+    },
+    {
+      "case_id": "gpu-disconnect",
+      "request_id": "exp26-gpu-disconnect",
+      "attempt_id": "exp26-gpu-disconnect/a1",
+      "mode": "gpu",
+      "outcome": "client_disconnected",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-gpu-disconnect/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false,
+      "backend_http_usage": null
+    },
+    {
+      "case_id": "gpu-drain-timeout",
+      "request_id": "exp26-gpu-drain-timeout",
+      "attempt_id": "exp26-gpu-drain-timeout/a1",
+      "mode": "gpu",
+      "outcome": "drain_timeout",
+      "usage": null,
+      "usage_source": "unknown",
+      "settlement": {
+        "attempt_id": "exp26-gpu-drain-timeout/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "native_usage": null,
+      "usage_known": false,
+      "backend_http_usage": null
+    }
+  ],
+  "backend": {
+    "http_rows": 6,
+    "http_evidence": "checked",
+    "engine_abort_evidence": "checked_cpu_hooks",
+    "non_http_rows": 3099,
+    "scope": "HTTP transport evidence does not establish engine abort or GPU kernel stop",
+    "engine_attempts": [
+      {
+        "attempt_id": "exp26-gpu-normal/a1",
+        "engine_request_ids": [
+          "chatcmpl-bd4715dab0434fd0bf7740332ec5314e"
+        ],
+        "http_id": "d23189a0181341c8b822d2e446b6c7bc",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp26-gpu-pre-retry/a1",
+        "engine_request_ids": [
+          "chatcmpl-20df5b7b13154c09a339d5f864c19891"
+        ],
+        "http_id": "252f5c31a2674da0b07cfaae8e8c97a4",
+        "engine_finished": false,
+        "abort_called": true,
+        "abort_returned": true,
+        "abort_done_observed": true,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp26-gpu-pre-retry/a2",
+        "engine_request_ids": [
+          "chatcmpl-da71032b3c9e4564bd40b30173ea593b"
+        ],
+        "http_id": "3e7886417bce4b3da1250fed958c063f",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp26-gpu-post-break/a1",
+        "engine_request_ids": [
+          "chatcmpl-7d6f9216bcd041e68563331e9f066454"
+        ],
+        "http_id": "eb334113cd714efb840a75513999c4ed",
+        "engine_finished": false,
+        "abort_called": true,
+        "abort_returned": true,
+        "abort_done_observed": true,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp26-gpu-disconnect/a1",
+        "engine_request_ids": [
+          "chatcmpl-d95f440beb204359ba67ad38e72d2b92"
+        ],
+        "http_id": "dab27795999f44b38a61e621c26a65a1",
+        "engine_finished": false,
+        "abort_called": true,
+        "abort_returned": true,
+        "abort_done_observed": true,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp26-gpu-drain-timeout/a1",
+        "engine_request_ids": [
+          "chatcmpl-d2bf3e631d7d441e8dc137275e26cad8"
+        ],
+        "http_id": "e18ffec5fb6b48a3a525f1ecaad20cf2",
+        "engine_finished": false,
+        "abort_called": true,
+        "abort_returned": true,
+        "abort_done_observed": true,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      }
+    ],
+    "native_retry_order": [
+      {
+        "previous_attempt_id": "exp26-gpu-pre-retry/a1",
+        "attempt_id": "exp26-gpu-pre-retry/a2",
+        "previous_engine_quiescent_before_next": true,
+        "evidence": "same backend monotonic clock; CPU scheduler/tracker only"
+      }
+    ],
+    "gpu_kernel_stopped": "unknown"
+  },
+  "observed": {
+    "gateway_rows": 17,
+    "client_rows": 17,
+    "backend_rows": 3105,
+    "terminal_counts": {
+      "completed": 6,
+      "backend_error": 3,
+      "review_rejected": 1,
+      "review_unavailable": 1,
+      "cancelled": 1,
+      "superseded": 1,
+      "drain_timeout": 2,
+      "draining": 1,
+      "client_disconnected": 1
+    }
+  },
+  "scope": "Controlled faults; same physical GPU; native known-token subtotal is not complete cost or currency billing"
+}

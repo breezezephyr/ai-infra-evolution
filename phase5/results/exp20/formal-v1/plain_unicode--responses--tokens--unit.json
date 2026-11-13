@@ -1,0 +1,326 @@
+{
+  "fixture": {
+    "id": "plain_unicode",
+    "raw": "你好🦀，车到站。",
+    "thinking": false,
+    "action": "Stop",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "你好🦀，车到站。",
+        "reasoning": "",
+        "tools": [],
+        "finish": "stop",
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "你好🦀，车到站。",
+        "reasoning": "",
+        "tools": [],
+        "finish": "completed",
+        "status": "completed",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "你好🦀，车到站。",
+        "reasoning": "",
+        "tools": [],
+        "finish": "end_turn",
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "backend_finish",
+    "expect_native_finished": true
+  },
+  "protocol": "responses",
+  "mode": "tokens",
+  "pattern": "unit",
+  "events": [
+    {
+      "event": "response.created",
+      "data": "{\"type\":\"response.created\",\"response\":{\"id\":\"exp20\",\"object\":\"response\",\"created_at\":1792745845,\"status\":\"in_progress\",\"background\":false,\"completed_at\":null,\"content_filters\":null,\"error\":null,\"frequency_penalty\":0.0,\"incomplete_details\":null,\"instructions\":null,\"max_output_tokens\":null,\"max_tool_calls\":null,\"model\":\"DeepSeek-V4.1-Flash\",\"moderation\":null,\"output\":[],\"parallel_tool_calls\":true,\"presence_penalty\":0.0,\"previous_response_id\":null,\"prompt_cache_key\":null,\"prompt_cache_retention\":null,\"reasoning\":{\"effort\":\"none\",\"summary\":null},\"safety_identifier\":null,\"service_tier\":\"default\",\"store\":false,\"temperature\":1.0,\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":null},\"tool_choice\":\"auto\",\"tools\":[],\"top_logprobs\":0,\"top_p\":1.0,\"truncation\":\"disabled\",\"usage\":null,\"user\":null,\"metadata\":{}},\"sequence_number\":0}"
+    },
+    {
+      "event": "response.in_progress",
+      "data": "{\"type\":\"response.in_progress\",\"response\":{\"id\":\"exp20\",\"object\":\"response\",\"created_at\":1792745845,\"status\":\"in_progress\",\"background\":false,\"completed_at\":null,\"content_filters\":null,\"error\":null,\"frequency_penalty\":0.0,\"incomplete_details\":null,\"instructions\":null,\"max_output_tokens\":null,\"max_tool_calls\":null,\"model\":\"DeepSeek-V4.1-Flash\",\"moderation\":null,\"output\":[],\"parallel_tool_calls\":true,\"presence_penalty\":0.0,\"previous_response_id\":null,\"prompt_cache_key\":null,\"prompt_cache_retention\":null,\"reasoning\":{\"effort\":\"none\",\"summary\":null},\"safety_identifier\":null,\"service_tier\":\"default\",\"store\":false,\"temperature\":1.0,\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":null},\"tool_choice\":\"auto\",\"tools\":[],\"top_logprobs\":0,\"top_p\":1.0,\"truncation\":\"disabled\",\"usage\":null,\"user\":null,\"metadata\":{}},\"sequence_number\":1}"
+    },
+    {
+      "event": "response.output_item.added",
+      "data": "{\"type\":\"response.output_item.added\",\"item\":{\"type\":\"message\",\"id\":\"msg_exp20_0\",\"status\":\"in_progress\",\"role\":\"assistant\",\"phase\":\"final_answer\",\"content\":[]},\"output_index\":0,\"sequence_number\":2}"
+    },
+    {
+      "event": "response.content_part.added",
+      "data": "{\"type\":\"response.content_part.added\",\"content_index\":0,\"item_id\":\"msg_exp20_0\",\"output_index\":0,\"part\":{\"type\":\"output_text\",\"annotations\":[],\"logprobs\":[],\"text\":\"\"},\"sequence_number\":3}"
+    },
+    {
+      "event": "response.output_text.delta",
+      "data": "{\"type\":\"response.output_text.delta\",\"content_index\":0,\"delta\":\"你好\",\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":4}"
+    },
+    {
+      "event": "response.output_text.delta",
+      "data": "{\"type\":\"response.output_text.delta\",\"content_index\":0,\"delta\":\"🦀\",\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":5}"
+    },
+    {
+      "event": "response.output_text.delta",
+      "data": "{\"type\":\"response.output_text.delta\",\"content_index\":0,\"delta\":\"，\",\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":6}"
+    },
+    {
+      "event": "response.output_text.delta",
+      "data": "{\"type\":\"response.output_text.delta\",\"content_index\":0,\"delta\":\"车\",\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":7}"
+    },
+    {
+      "event": "response.output_text.delta",
+      "data": "{\"type\":\"response.output_text.delta\",\"content_index\":0,\"delta\":\"到\",\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":8}"
+    },
+    {
+      "event": "response.output_text.delta",
+      "data": "{\"type\":\"response.output_text.delta\",\"content_index\":0,\"delta\":\"站\",\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":9}"
+    },
+    {
+      "event": "response.output_text.delta",
+      "data": "{\"type\":\"response.output_text.delta\",\"content_index\":0,\"delta\":\"。\",\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":10}"
+    },
+    {
+      "event": "response.output_text.done",
+      "data": "{\"type\":\"response.output_text.done\",\"content_index\":0,\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":11,\"text\":\"你好🦀，车到站。\"}"
+    },
+    {
+      "event": "response.content_part.done",
+      "data": "{\"type\":\"response.content_part.done\",\"content_index\":0,\"item_id\":\"msg_exp20_0\",\"output_index\":0,\"part\":{\"type\":\"output_text\",\"annotations\":[],\"logprobs\":[],\"text\":\"你好🦀，车到站。\"},\"sequence_number\":12}"
+    },
+    {
+      "event": "response.output_item.done",
+      "data": "{\"type\":\"response.output_item.done\",\"item\":{\"type\":\"message\",\"id\":\"msg_exp20_0\",\"status\":\"completed\",\"role\":\"assistant\",\"phase\":\"final_answer\",\"content\":[{\"type\":\"output_text\",\"annotations\":[],\"logprobs\":[],\"text\":\"你好🦀，车到站。\"}]},\"output_index\":0,\"sequence_number\":13}"
+    },
+    {
+      "event": "response.completed",
+      "data": "{\"type\":\"response.completed\",\"response\":{\"id\":\"exp20\",\"object\":\"response\",\"created_at\":1792745845,\"status\":\"completed\",\"background\":false,\"completed_at\":1792745845,\"content_filters\":null,\"error\":null,\"frequency_penalty\":0.0,\"incomplete_details\":null,\"instructions\":null,\"max_output_tokens\":null,\"max_tool_calls\":null,\"model\":\"DeepSeek-V4.1-Flash\",\"moderation\":null,\"output\":[{\"type\":\"message\",\"id\":\"msg_exp20_0\",\"status\":\"completed\",\"role\":\"assistant\",\"phase\":\"final_answer\",\"content\":[{\"type\":\"output_text\",\"annotations\":[],\"logprobs\":[],\"text\":\"你好🦀，车到站。\"}]}],\"parallel_tool_calls\":true,\"presence_penalty\":0.0,\"previous_response_id\":null,\"prompt_cache_key\":null,\"prompt_cache_retention\":null,\"reasoning\":{\"effort\":\"none\",\"summary\":null},\"safety_identifier\":null,\"service_tier\":\"default\",\"store\":false,\"temperature\":1.0,\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":null},\"tool_choice\":\"auto\",\"tools\":[],\"top_logprobs\":0,\"top_p\":1.0,\"truncation\":\"disabled\",\"usage\":{\"input_tokens\":13,\"input_tokens_details\":{\"cached_tokens\":3},\"output_tokens\":9,\"output_tokens_details\":{\"reasoning_tokens\":0},\"total_tokens\":22},\"user\":null,\"metadata\":{}},\"sequence_number\":14}"
+    }
+  ],
+  "backend_finish_seen": true,
+  "native_finished": true,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "backend_finish",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "input": "请继续报站",
+    "reasoning": {
+      "effort": "none"
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "None"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "token IDs",
+    "processor_has_tokenizer": true
+  },
+  "input_units": [
+    30594,
+    3574,
+    102,
+    225,
+    303,
+    1777,
+    621,
+    3067,
+    320
+  ],
+  "native_finished_after_data": false,
+  "backend_finish_reason": "Stop",
+  "response": {
+    "id": "exp20",
+    "object": "response",
+    "created_at": 1792745845,
+    "status": "completed",
+    "background": false,
+    "completed_at": 1792745845,
+    "content_filters": null,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "model": "DeepSeek-V4.1-Flash",
+    "moderation": null,
+    "output": [
+      {
+        "type": "message",
+        "id": "msg_exp20_0",
+        "status": "completed",
+        "role": "assistant",
+        "phase": "final_answer",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "你好🦀，车到站。"
+          }
+        ]
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": null,
+    "reasoning": {
+      "effort": "none",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": null
+    },
+    "tool_choice": "auto",
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 1.0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 13,
+      "input_tokens_details": {
+        "cached_tokens": 3
+      },
+      "output_tokens": 9,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 22
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "semantic": {
+    "text": "你好🦀，车到站。",
+    "reasoning": "",
+    "tools": [],
+    "finish": "completed",
+    "status": "completed",
+    "stop_sequence": null
+  },
+  "id": "plain_unicode--responses--tokens--unit",
+  "contract": "8f35e5228ada3130e641b8fdc65439117fbeda08be9cd4b3dd6d263a38ca98c0",
+  "sse": {
+    "bytes": 5495,
+    "sha256": "0e1bfefb7e661999430002c8b33d3efa35f6312b001fb14a7fb7da1cc64ed30d",
+    "done_data": null,
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 15
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 15
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 15
+      }
+    ],
+    "expected_events": 15,
+    "incomplete_eof_count": 14,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "你好🦀，车到站。",
+          "reasoning": "",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "你好🦀，车到站。",
+          "reasoning": "",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "backend_finish"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": true
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 15
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 15
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 15
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 14
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "plain_unicode--responses--tokens--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

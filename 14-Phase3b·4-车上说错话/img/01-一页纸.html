@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;background:#f8f5ee;color:#1c1a17;font-family:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:72px 76px;display:flex;flex-direction:column}
+.eyebrow{display:flex;align-items:center;gap:14px;color:#8a8378;font-size:26px;letter-spacing:.04em;font-family:Menlo,"SF Mono",monospace}
+.eyebrow::before{content:"";width:34px;height:5px;background:#c4763a;border-radius:3px}
+h1{font-size:74px;line-height:1.18;font-weight:800;letter-spacing:-.01em;margin-top:34px}
+.sub{color:#6f695f;font-size:32px;margin-top:22px;line-height:1.5}
+.callout{background:#fbf1e6;border:2px solid #f0dcc4;border-radius:18px;padding:32px 36px;font-size:32px;line-height:1.6;margin-top:40px;color:#2a2620}
+.callout b{color:#1c1a17}
+.note{color:#9a9386;font-size:24px;margin-top:28px;padding-top:0;line-height:1.5}
+.orange{color:#c4763a}.green{color:#4f7a52}.gray{color:#9a9386}
+.strike{text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:#a84d3a;color:#9a9386}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.box{background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:30px 32px}
+.box h3{font-size:34px;font-weight:800}
+.box .cap{font-size:24px;color:#6f695f;line-height:1.5;margin-top:10px}
+.box .big{font-size:64px;font-weight:800;line-height:1.1;margin-top:8px;letter-spacing:-.02em}
+.one{display:grid;grid-template-columns:170px 1fr;gap:0;margin-top:40px;background:#fff;border:2px solid #e6e0d4;border-radius:22px;overflow:hidden}
+.one>div{padding:26px 30px;border-bottom:2px solid #eee8dc;font-size:29px;line-height:1.55}
+.one>.h{background:#f3eee3;font-weight:800;color:#6f695f;font-size:27px}
+.one>div:nth-last-child(-n+2){border-bottom:0}
+html,body{height:1940px}</style></head><body>
+<div class="eyebrow">进化之路 · P3b·4</div>
+<h1>车上说错话：<br>流式审核</h1>
+<div class="sub">一页纸 · GPU 快了，判没判对仍要另外验证</div>
+<div class="one">
+ <div class="h">老做法</div><div>整段审完再返回<br>看 HTTP 200，就记一次成功</div>
+ <div class="h">哪里失效</div><div>字已经显示，判定还没回来<br>判错了，即便同步等待，也会照样放行</div>
+ <div class="h">新方案</div><div><b>同步：</b>等成句 + 等审核，再成批放行<br><b>异步：</b>先发，命中后停后续；绑定文本偏移<br>生成和审核共卡，单跑耗时不能直接照搬<br><span class="strike">审核更快就等于更准</span></div>
+ <div class="h">怎么验</div><div>审核器：误拦 / 漏判，分开报<br>真实GPU路径：首段 / 已漏出的字 / 拦截偏移<br>停止原因与线程状态，对照实际生成文本</div>
+</div>
+<div class="grid3">
+ <div class="box"><h3>GPU 嵌入</h3><div class="big green">22 ms</div><div class="cap">独立审核 p50<br>CPU 对照 73ms</div></div>
+ <div class="box"><h3>异步嵌入</h3><div class="big">17+2</div><div class="cap">标记句 + 后文<br>已下发字数中位数</div></div>
+ <div class="box"><h3>分类漏判</h3><div class="big">全放行</div><div class="cap">同步和异步<br>都没有命中</div></div>
+</div>
+<div class="callout"><b>来不及，和判错，是两种失败。</b><br>同卡真实生成＋真实审核，同步嵌入三次拦中标记句；分类器漏判时，同步等待也救不了。</div>
+<div class="note">exp13 GPU补跑 · RTX 4060 Laptop 8GB · BF16<br>30条真实HTTP请求；无已知判定或延迟回放<br>仅小样本；CPU及受控回放结果分别保留</div>
+</body></html>

@@ -1,0 +1,8 @@
+# exp7 两实例共用参数：改这里，然后 systemctl restart bench-pair@8004 bench-pair@8005
+GPU_UTIL=0.45
+MAX_MODEL_LEN=8192
+MAX_NUM_SEQS=32
+MAX_BATCHED_TOKENS=2048
+EXTRA_ARGS=
+# 两个实例同一个 util 即可（WSL 下第二个实例不把第一个的显存算进自己的峰值，实测两边 KV 各 9,952 token）；
+# /etc/default/bench-pair-<port> 可按实例覆盖

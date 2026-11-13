@@ -1,0 +1,72 @@
+{
+  "id": "order-2--json_object--seed29",
+  "contract": "29027f3887771c8f5c81466a726a7fe854757270d75a24a00927fca16393293d",
+  "arm": "json_object",
+  "case_id": "order-2",
+  "seed": 29,
+  "family": "ordered_selection",
+  "payload_sha256": "a65d65ed0dd7cd12fd04acde509c21d765126a1505f3c2df18c3387899f8aa19",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-14d44123c46e4f5da265d599f151d8d0",
+    "object": "chat.completion",
+    "created": 1792983713,
+    "model": "exp21-qwen3-0.6b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "{\"type\": \"object\", \"properties\": {\"stops\": [\"苏州\"], \"count\": 1}}",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 165,
+      "total_tokens": 187,
+      "completion_tokens": 22,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "accepted": true,
+  "content": "{\"type\": \"object\", \"properties\": {\"stops\": [\"苏州\"], \"count\": 1}}",
+  "finish_reason": "stop",
+  "evaluation": {
+    "json_valid": true,
+    "schema_valid": false,
+    "business_correct": false,
+    "complete": true,
+    "deliverable": false,
+    "value": {
+      "type": "object",
+      "properties": {
+        "stops": [
+          "苏州"
+        ],
+        "count": 1
+      }
+    },
+    "schema_errors": [
+      {
+        "path": [],
+        "message": "'stops' is a required property"
+      },
+      {
+        "path": [],
+        "message": "'count' is a required property"
+      },
+      {
+        "path": [],
+        "message": "Additional properties are not allowed ('properties', 'type' were unexpected)"
+      }
+    ]
+  },
+  "client_elapsed_ms": 1014.480625,
+  "clock_domain": "client_process_monotonic_ns"
+}

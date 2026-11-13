@@ -1,0 +1,229 @@
+{
+  "id": "limit-stop-responses",
+  "protocol": "responses",
+  "family": "limit_stop",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "input": "只输出 LIMIT_STOP_OK_19。",
+    "reasoning": {
+      "effort": "none"
+    },
+    "max_output_tokens": 64,
+    "stop": [
+      "END_19",
+      "完成"
+    ]
+  },
+  "options": {},
+  "input_sha256": "219abcf710a737095691d0da8e7995b3bff4e415303d1145969025818167730d",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "unknown",
+      "evidence": {
+        "status": "unknown",
+        "reason": "matching tokenizer unavailable"
+      }
+    },
+    {
+      "name": "unknown_stop_field_ignored",
+      "status": "pass",
+      "evidence": {
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "只输出 LIMIT_STOP_OK_19。"
+          ],
+          "assistant_reasoning_contents": [],
+          "tool_names": [],
+          "tool_parameter_schemas": [],
+          "tool_choice": "auto",
+          "max_tokens": 64,
+          "temperature": 1.0,
+          "top_p": 1.0,
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "parse_tool_calls": false,
+          "starts_in_tool_calls": false
+        },
+        "differences": {}
+      }
+    },
+    {
+      "name": "family_compare",
+      "status": "pass",
+      "evidence": {
+        "family": "limit_stop",
+        "n": 3,
+        "ids": [
+          "limit-stop-chat",
+          "limit-stop-responses",
+          "limit-stop-messages"
+        ],
+        "invariant_fields": [
+          "max_tokens",
+          "model_version",
+          "output_constraint_kind",
+          "reasoning_effort",
+          "temperature",
+          "thinking_mode",
+          "tool_choice",
+          "tool_names",
+          "top_p"
+        ],
+        "declared_protocol_differences": {
+          "stop_sequences": [
+            [
+              "END_19",
+              "完成"
+            ],
+            [],
+            [
+              "END_19",
+              "完成"
+            ]
+          ]
+        },
+        "passed": true,
+        "prompt_equality_required": false
+      }
+    },
+    {
+      "name": "resolve_explicit_max_tokens",
+      "status": "unknown",
+      "evidence": {
+        "reason": "prerequisite unavailable"
+      }
+    },
+    {
+      "name": "resolve_context_requested_output_overflow",
+      "status": "unknown",
+      "evidence": {
+        "reason": "prerequisite unavailable"
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "只输出 LIMIT_STOP_OK_19。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": false,
+      "reasoning_effort": null,
+      "tools": [],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": null
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": false,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [],
+      "thinking_initial_stage": "None"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": false,
+    "reasoning_effort": null,
+    "roles": [
+      "user"
+    ],
+    "message_contents": [
+      "只输出 LIMIT_STOP_OK_19。"
+    ],
+    "assistant_reasoning_contents": [],
+    "tool_names": [],
+    "tool_parameter_schemas": [],
+    "tool_choice": "auto",
+    "max_tokens": 64,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "output_constraint_kind": null,
+    "stop_sequences": [],
+    "parse_tool_calls": false,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜User｜>只输出 LIMIT_STOP_OK_19。<｜Assistant｜></think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        29
+      ],
+      [
+        50,
+        63
+      ],
+      [
+        63,
+        71
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "</think>"
+    ]
+  },
+  "encoding": {
+    "status": "unknown",
+    "reason": "matching tokenizer unavailable"
+  },
+  "elapsed_ms": 0.048458
+}

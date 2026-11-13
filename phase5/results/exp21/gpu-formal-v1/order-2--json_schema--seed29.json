@@ -1,0 +1,14 @@
+{
+  "id": "order-2--json_schema--seed29",
+  "contract": "e8f66b71d3b813038985252835b26761a4f0f3fe962afe6cb8cef0c30a8dfc73",
+  "arm": "json_schema",
+  "case_id": "order-2",
+  "seed": 29,
+  "family": "ordered_selection",
+  "payload_sha256": "3a40b1502332e9ba540e86edeb2ea4456a240438bd26fdf20c89394b2eede94b",
+  "accepted": false,
+  "http_status": 400,
+  "error_body": "{\"object\":\"error\",\"message\":\"xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds.\",\"type\":\"BadRequestError\",\"param\":null,\"code\":400}",
+  "client_elapsed_ms": 293.875833,
+  "clock_domain": "client_process_monotonic_ns"
+}

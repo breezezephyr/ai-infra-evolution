@@ -1,0 +1,110 @@
+"""Phase 4.3 one-page graphic, adapted from the Phase 4.2 HTML template.
+
+Only writes HTML, PNG and temporary browser profiles beside this script.
+All statements are supplied scope and experiment status; no benchmark data.
+"""
+import sys
+sys.dont_write_bytecode = True
+from render import render
+
+TITLE = '进化之路P4·3｜乘客插话：停的不只是 token'
+
+CSS = '''
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:2080px;background:#f8f5ee;color:#1c1a17;font-family:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:64px 76px 52px;display:flex;flex-direction:column}
+body>*{flex-shrink:0}
+.mono{font-family:Menlo,"SF Mono",monospace}
+.eyebrow{display:flex;align-items:center;gap:14px;color:#8a8378;font-size:24px;line-height:1.3;letter-spacing:.035em}
+.eyebrow::before{content:"";width:34px;height:5px;background:#E06C75;border-radius:3px}
+h1{font-size:58px;line-height:1.35;font-weight:800;letter-spacing:-.015em;margin-top:20px}
+.sub{font-size:27px;line-height:1.5;color:#6f695f;margin-top:10px}
+.planes{margin-top:26px;background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:24px 26px}
+.planes h2,.drain h2{font-size:29px;line-height:1.35;font-weight:800}
+.paths{display:grid;grid-template-columns:102px minmax(0,1fr);gap:10px 14px;margin-top:16px;align-items:baseline}
+.label{font-size:25px;line-height:1.5;font-weight:700;color:#9b4b54}
+.path{font-size:27px;line-height:1.5;letter-spacing:-.015em}
+.owner{margin-top:18px;border-top:2px solid #eee8dc;padding-top:16px}
+.owner h3{font-size:27px;line-height:1.45;font-weight:700}
+.owner p{font-size:25px;line-height:1.5;color:#6f695f;margin-top:6px}
+.four{display:grid;gap:12px;margin-top:22px}
+.info{display:grid;grid-template-columns:128px minmax(0,1fr);gap:20px;border:2px solid;border-radius:20px;padding:20px 26px;align-items:start}
+.info h2{font-size:27px;line-height:1.7;font-weight:800;white-space:nowrap}
+.info p{font-size:28px;line-height:1.55;letter-spacing:-.015em}
+.blue{background:#edf4fa;border-color:#cfdeeb}.blue h2{color:#4b7190}
+.orange{background:#fbf1e6;border-color:#f0dcc4}.orange h2{color:#b36c36}
+.green{background:#edf5ed;border-color:#d0e1cf}.green h2{color:#4f7a52}
+.white{background:#fff;border-color:#e6e0d4}.white h2{color:#6f695f}
+.drain{margin-top:24px;border:2px solid #e6e0d4;border-radius:22px;padding:22px 26px;background:#fff}
+.sequence{font-size:27px;line-height:1.6;letter-spacing:-.015em;margin-top:16px}
+.sequence strong{color:#4f7a52}
+.forced{margin-top:16px;padding-top:14px;border-top:2px solid #eee8dc;font-size:25px;line-height:1.5;color:#6f695f}
+.forced strong{color:#9b4b54}
+.boundary{margin-top:24px;border-top:3px solid #E06C75;padding-top:22px}
+.boundary strong{display:block;font-size:31px;line-height:1.5;font-weight:800;white-space:nowrap}
+.boundary p{font-size:24px;line-height:1.5;color:#6f695f;margin-top:10px}
+.footer{font-size:22px;line-height:1.5;color:#9a9386;margin-top:auto;padding-top:24px}
+.four{gap:16px;margin-top:28px}
+.failures{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.failure strong{font-size:28px;line-height:1.5;font-weight:700}
+.failure p{font-size:24px;line-height:1.5;color:#6f695f;margin-top:4px}
+.steps{display:grid;gap:12px;font-size:27px;line-height:1.5}
+.step{display:flex;gap:12px;align-items:baseline}
+.arrow{color:#4f7a52;flex-shrink:0}
+.step-note{font-size:24px;line-height:1.5;color:#6f695f;border-top:2px solid #d0e1cf;padding-top:14px;margin-top:16px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.check{padding-bottom:12px;border-bottom:2px solid #eee8dc}
+.check strong{font-size:27px;line-height:1.5;font-weight:700}
+.check p{font-size:23px;line-height:1.5;color:#6f695f;margin-top:4px}
+.takeaway{font-size:24px;line-height:1.5;color:#9b4b54;font-weight:700;margin-bottom:8px}
+'''
+
+BODY = '''
+<div class="eyebrow">进化之路 · <span class="mono">P4·3</span></div>
+<h1>乘客插话：<br>停的不只是 token</h1>
+<div class="sub">计算、网络、播放、历史，都要在旧轮次收口</div>
+
+<section class="four">
+  <div class="info blue"><h2>老做法</h2><p><span class="mono">cancel</span> 只停 LLM；<br>把“停止生成 token”当成打断结束。</p></div>
+  <div class="info orange"><h2>哪里失效</h2><div class="failures">
+    <div class="failure"><strong>TTS 还在算</strong><p>合成调用尚未返回。</p></div>
+    <div class="failure"><strong>网络旧帧</strong><p>旧轮次音频仍在路上。</p></div>
+    <div class="failure"><strong>播放缓冲</strong><p>已经入队的音频继续响。</p></div>
+    <div class="failure"><strong>历史超前</strong><p>未听完的回答已写入历史。</p></div>
+  </div></div>
+  <div class="info green"><h2>新方案</h2><div>
+    <div class="steps">
+      <div class="step"><span class="arrow">→</span><span>本地 <span class="mono">flush + generation fence</span></span></div>
+      <div class="step"><span class="arrow">→</span><span>上游 <span class="mono">stop</span></span></div>
+      <div class="step"><span class="arrow">→</span><span>真实 <span class="mono">workers joined</span></span></div>
+      <div class="step"><span class="arrow">→</span><span>按已播完整分段裁剪历史</span></div>
+      <div class="step"><span class="arrow">→</span><span>新 <span class="mono">generation</span></span></div>
+    </div>
+    <div class="step-note">先清本地未播队列，隔离旧轮次；<br>等待实际计算退出，再接下一轮。</div>
+  </div></div>
+  <div class="info white"><h2>怎么验</h2><div class="checks">
+    <div class="check"><strong>触发</strong><p>记录受控播放位置。</p></div>
+    <div class="check"><strong>清 queue</strong><p>记录未播队列清空。</p></div>
+    <div class="check"><strong>最后旧音频 render</strong><p>记录旧轮次末次渲染。</p></div>
+    <div class="check"><strong>模型返回</strong><p>记录实际调用返回。</p></div>
+    <div class="check"><strong>线程退出</strong><p>记录真实 worker 退出。</p></div>
+    <div class="check"><strong>迟到帧拒绝</strong><p>记录旧 generation 拒收。</p></div>
+  </div></div>
+</section>
+
+<section class="boundary">
+  <div class="takeaway">带走一条</div>
+  <strong>停得住、接得上，才算一次完整打断</strong>
+  <p>本轮边界：受控播放位置触发；WS / SSH 基线。<br>未验证麦克风 / VAD / AEC，未验证声学停止。</p>
+</section>
+<div class="footer">exp16 · 插话与取消<br>各时刻分别留证；浏览器 render 不等于声学停止</div>
+'''
+
+
+def build():
+    html = f'<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>{TITLE}</title><style>{CSS}</style></head><body>{BODY}</body></html>'
+    render('01-一页纸', html, 1080, 2080)
+
+
+if __name__ == '__main__':
+    build()

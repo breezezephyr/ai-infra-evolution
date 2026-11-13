@@ -1,0 +1,24 @@
+{
+  "case_id": "one-token",
+  "client_request_id": "exp29-kaggle-20261110-a74160a0:one-token",
+  "expected_status": 200,
+  "body": {
+    "model": "qwen3-4b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "请用一句简短的中文解释天空为什么通常是蓝色的。"
+      }
+    ],
+    "max_tokens": 1,
+    "stream": false,
+    "temperature": 0,
+    "seed": 29
+  },
+  "body_sha256": "76dd84d6db48bde753f232977018da34dead611f36b92801bd869d48d7c94dda",
+  "headers": {
+    "X-Client-Request-Id": "exp29-kaggle-20261110-a74160a0:one-token",
+    "Content-Type": "application/json",
+    "Accept-Encoding": "identity"
+  }
+}

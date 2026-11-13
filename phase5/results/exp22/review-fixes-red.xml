@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="11" skipped="0" tests="21" time="0.137" timestamp="2026-10-26T12:17:49.446371+08:00" hostname="lab-host.example.invalid"><testcase classname="phase5.exp22.test_measure" name="test_queue_rejects_overflow_and_releases_on_exception" time="0.000" /><testcase classname="phase5.exp22.test_measure" name="test_simultaneous_calls_respect_active_cap" time="0.061" /><testcase classname="phase5.exp22.test_measure" name="test_engine_durations_do_not_mix_client_and_backend_clocks" time="0.000" /><testcase classname="phase5.exp22.test_measure" name="test_missing_or_failed_output_is_not_counted_as_consistent" time="0.000" /><testcase classname="phase5.exp22.test_measure" name="test_empty_output_is_observed_but_not_silently_missing" time="0.000" /><testcase classname="phase5.exp22.test_measure" name="test_reconciliation_detects_incomplete_or_wrong_evidence[missing-engine_count]" time="0.000" /><testcase classname="phase5.exp22.test_measure" name="test_reconciliation_detects_incomplete_or_wrong_evidence[duplicate-engine_count]" time="0.000" /><testcase classname="phase5.exp22.test_measure" name="test_reconciliation_detects_incomplete_or_wrong_evidence[hash-body_sha256]" time="0.000" /><testcase classname="phase5.exp22.test_measure" name="test_reconciliation_detects_incomplete_or_wrong_evidence[status-http_status]" time="0.000" /><testcase classname="phase5.exp22.test_measure" name="test_reconciliation_accepts_exact_ids_and_hashes" time="0.000" /><testcase classname="phase5.exp22.test_measure" name="test_strict_gate_rejects_mutated_evidence[response_id]" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'validate_record'">mutation = 'response_id'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+&gt;       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_strict_gate_rejects_mutated_evidence[prompt_usage]" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'validate_record'">mutation = 'prompt_usage'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+&gt;       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_strict_gate_rejects_mutated_evidence[seed]" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'validate_record'">mutation = 'seed'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+&gt;       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_strict_gate_rejects_mutated_evidence[config]" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'validate_record'">mutation = 'config'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+&gt;       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_strict_gate_rejects_mutated_evidence[duplicate_request]" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'validate_record'">mutation = 'duplicate_request'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+&gt;       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_strict_gate_rejects_mutated_evidence[missing_finished]" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'validate_record'">mutation = 'missing_finished'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+&gt;       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_strict_gate_rejects_mutated_evidence[prompt_hash]" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'validate_record'">mutation = 'prompt_hash'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+&gt;       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_strict_gate_rejects_mutated_evidence[plan_body]" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'validate_record'">mutation = 'plan_body'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+&gt;       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_strict_gate_accepts_complete_evidence" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'validate_record'">def test_strict_gate_accepts_complete_evidence():
+&gt;       assert measure.validate_record(*strict_fixture())==[]
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:119: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_bad_baseline_cannot_be_replaced_by_first_surviving_output" time="0.000"><failure message="TypeError: compare_outputs() got an unexpected keyword argument 'verified_ids'">def test_bad_baseline_cannot_be_replaced_by_first_surviving_output():
+        rows=[{'id':'a','task':'x','status':200},{'id':'b','task':'x','status':200}]
+&gt;       r=measure.compare_outputs(rows,{'a':{'token_ids':[1]},'b':{'token_ids':[1]}},
+                                  verified_ids={'b'},baseline_ids={'x':'a'})
+E       TypeError: compare_outputs() got an unexpected keyword argument 'verified_ids'
+
+phase5/exp22/test_measure.py:124: TypeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_wall_clock_jump_is_flagged_without_modifying_token_evidence" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'clock_discontinuity'">def test_wall_clock_jump_is_flagged_without_modifying_token_evidence():
+&gt;       assert measure.clock_discontinuity({'arrival_time':1000,'finished_time':1004.3},0,2_000_000_000)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'clock_discontinuity'
+
+phase5/exp22/test_measure.py:131: AttributeError</failure></testcase></testsuite></testsuites>

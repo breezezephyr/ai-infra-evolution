@@ -1,0 +1,39 @@
+{
+  "clock_domain": "supervisor-127213",
+  "intervals": [
+    {
+      "component": "gateway",
+      "pid": 127352,
+      "started_ns": 730196000943075,
+      "ready_ns": 730197825534952,
+      "stop_requested_ns": 730203867656798,
+      "exited_ns": 730204037068106,
+      "returncode": -15
+    },
+    {
+      "component": "backend",
+      "pid": 127245,
+      "started_ns": 730185049478612,
+      "ready_ns": 730196000842251,
+      "stop_requested_ns": 730204037085536,
+      "exited_ns": 730204472523906,
+      "returncode": 0
+    }
+  ],
+  "cpu": {
+    "gateway": {
+      "user_seconds": 4.644094,
+      "system_seconds": 0.382248,
+      "maxrss_kib": 2209096
+    },
+    "backend": {
+      "user_seconds": 20.524179,
+      "system_seconds": 6.676465,
+      "maxrss_kib": 5895492
+    }
+  },
+  "kernel_seconds": null,
+  "paid_currency": null,
+  "exact_weight_residency": null,
+  "scope": "owned service process interval and ready-to-stop interval; not exact weight/kernel residency; CPU wait4 process-family accounting includes only reaped descendants"
+}

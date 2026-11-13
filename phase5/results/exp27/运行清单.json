@@ -1,0 +1,29 @@
+{
+  "runs": [
+    {
+      "run": "formal-v1",
+      "accepted": false,
+      "gateway_observed_requests": 39,
+      "gateway_observed_attempts": 25,
+      "gateway_known_usage_attempts": 24,
+      "gateway_known_token_subtotal": 740,
+      "unknown_usage_attempts": 1,
+      "source": "gateway only; backend observation headers invalid; not reconciled",
+      "cleanup": "formal-v1/cleanup.json"
+    },
+    {
+      "run": "formal-v2",
+      "accepted": true,
+      "gateway_observed_requests": 42,
+      "gateway_observed_attempts": 29,
+      "gateway_known_usage_attempts": 26,
+      "gateway_known_token_subtotal": 770,
+      "unknown_usage_attempts": 3,
+      "source": "independently reconciled",
+      "cleanup": "formal-v2/cleanup.json"
+    }
+  ],
+  "final_batch": "formal-v2",
+  "scope": "failed first run retained; not merged into final request/quality/SLO denominators; earlier unverified usage is not zero",
+  "entire_experiment_complete_cost": null
+}

@@ -1,0 +1,278 @@
+{
+  "schema": "exp18-idle-v1",
+  "scope": "one process, ASR and LLM only",
+  "clock": "server_monotonic",
+  "no_new_inference_requests_during_idle": true,
+  "device_globally_idle": null,
+  "acoustic_latency_ms": null,
+  "actual_billing": null,
+  "baseline": {
+    "started_ns": 462438719282726,
+    "ended_ns": 462438757608626,
+    "memory_mib": 342,
+    "utilization_percent": 0
+  },
+  "warmup_calls": [
+    {
+      "component": "asr",
+      "started_ns": 462445698918596,
+      "ended_ns": 462446071184870,
+      "text": "请解释一下什么事缓存。"
+    },
+    {
+      "component": "llm",
+      "started_ns": 462446071185952,
+      "ended_ns": 462446975843224,
+      "text": "缓存是一种存储数据的方法，用来快速访问数据，减少重复计算。",
+      "state": {
+        "thread_stopped": true,
+        "generated_tokens": 17,
+        "finish_reason": "stop"
+      }
+    }
+  ],
+  "models": {
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cudnn": 90100,
+    "asr": {
+      "device": "cuda",
+      "compute_type": "int8_float16"
+    },
+    "llm": {
+      "device": "cuda:0",
+      "dtype": "torch.bfloat16"
+    }
+  },
+  "model_load_wall_ms": 6940.219272,
+  "input_pcm_sha256": "3da129c8223978b81bfd51c81d83e8e9bff5f869f9506a341a004ded55cf456f",
+  "idle_start_ns": 462446975890675,
+  "idle_end_ns": 462457365376035,
+  "samples": [
+    {
+      "started_ns": 462446975893653,
+      "ended_ns": 462447002230530,
+      "memory_mib": 1933,
+      "utilization_percent": 40
+    },
+    {
+      "started_ns": 462447252431926,
+      "ended_ns": 462447281401431,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462447531455101,
+      "ended_ns": 462447555338533,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462447805574503,
+      "ended_ns": 462447833363829,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462448083595922,
+      "ended_ns": 462448110309355,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462448360395977,
+      "ended_ns": 462448384449638,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462448634681571,
+      "ended_ns": 462448661810415,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462448911975543,
+      "ended_ns": 462448936293606,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462449187048853,
+      "ended_ns": 462449212134199,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462449462454345,
+      "ended_ns": 462449491485025,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462449741599531,
+      "ended_ns": 462449767783789,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462450018071151,
+      "ended_ns": 462450047264601,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462450297362403,
+      "ended_ns": 462450318752722,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462450568832532,
+      "ended_ns": 462450590742315,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462450841079100,
+      "ended_ns": 462450867873976,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462451117987086,
+      "ended_ns": 462451143777098,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462451393881396,
+      "ended_ns": 462451419112591,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462451669295426,
+      "ended_ns": 462451693803927,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462451943916019,
+      "ended_ns": 462451968877779,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462452219160923,
+      "ended_ns": 462452246685907,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462452496796084,
+      "ended_ns": 462452519642906,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462452769759093,
+      "ended_ns": 462452794071064,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462453044219666,
+      "ended_ns": 462453069502841,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462453319614992,
+      "ended_ns": 462453342508575,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462453592720853,
+      "ended_ns": 462453616949548,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462453867059837,
+      "ended_ns": 462453892239703,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462454142354064,
+      "ended_ns": 462454165021239,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462454415188937,
+      "ended_ns": 462454442412973,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462454692638898,
+      "ended_ns": 462454716379427,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462454966492282,
+      "ended_ns": 462454989139039,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462455239245554,
+      "ended_ns": 462455266333301,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462455516564441,
+      "ended_ns": 462455543857177,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462455794380946,
+      "ended_ns": 462455821447808,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462456071523592,
+      "ended_ns": 462456094316744,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462456344479873,
+      "ended_ns": 462456370369266,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462456620520146,
+      "ended_ns": 462456646917385,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    },
+    {
+      "started_ns": 462456897820328,
+      "ended_ns": 462457365371723,
+      "memory_mib": 1933,
+      "utilization_percent": 0
+    }
+  ],
+  "idle_seconds": 10.38948536,
+  "source_sha256": "310c96dfb673c6dc76f18d8320b017f2d9c6faaeaca0c40bae2a047288327452"
+}

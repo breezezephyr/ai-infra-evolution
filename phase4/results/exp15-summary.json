@@ -1,0 +1,4084 @@
+{
+  "schema_version": "exp15.v2",
+  "generated_at": "2026-10-22T10:37:45.427658+00:00",
+  "config": {
+    "headlessChrome155": true,
+    "browser_version": "155.0.8059.85",
+    "headless": true,
+    "startedAt": "2026-10-22T10:29:47.582Z",
+    "endedAt": "2026-10-22T10:33:47.434Z",
+    "mode": "formal",
+    "fixtures": [
+      {
+        "id": "short",
+        "file": "short.wav",
+        "source": "phase4/results/exp14/live-final-v1/live-final-v1-pause_02-r0-A-69.wav",
+        "source_sha256": "0eda0f73385f7cc1fe0955fe134d992e5b00866122cff15f05d88197527f0c3d",
+        "source_rate": 24000,
+        "source_samples": 57600,
+        "source_seconds": 2.4,
+        "rate": 48000,
+        "samples": 149760,
+        "seconds": 3.12,
+        "pcm_sha256": "609cc64ebfb196f74bdc390257c9b3cf9db1f3513b94a473555f26724211223c",
+        "wav_sha256": "bfeaf719c18cb1bd2e7aff28c0fbeb01805f9b8b529fae53ba120f541f9863d6",
+        "prefix_seconds": 0.2,
+        "start_probe_hz": 1000,
+        "end_probe_hz": 2000,
+        "end_probe_duration_seconds": 0.1,
+        "tail_guard_seconds": 0.3
+      },
+      {
+        "id": "long",
+        "file": "long.wav",
+        "source": "phase4/results/exp14/live-final-v1/live-final-v1-long_01-r2-C-91.wav",
+        "source_sha256": "c4e7c414aae8299ba7536b6238f0a6439c935ce336802e9a4dbf6e61d94d0edc",
+        "source_rate": 24000,
+        "source_samples": 358800,
+        "source_seconds": 14.95,
+        "rate": 48000,
+        "samples": 752640,
+        "seconds": 15.68,
+        "pcm_sha256": "02e80c0df679e0ca66826f3ea60499c72c564e02de1770efe16cb29b0fd7605e",
+        "wav_sha256": "14ec6c74e448fd0dfba199630a0bdf0aa0ca37353188bb82f3457ea7c9e3ac70",
+        "prefix_seconds": 0.2,
+        "start_probe_hz": 1000,
+        "end_probe_hz": 2000,
+        "end_probe_duration_seconds": 0.1,
+        "tail_guard_seconds": 0.3
+      }
+    ],
+    "repeats_per_cell": 3,
+    "source_pause_ms": 200,
+    "new_gpu_inferences": 0,
+    "primary_input": "phase4/results/exp15/browser-formal-v2/records.json"
+  },
+  "metric_definitions": {
+    "start_to_first_render_ms": "performance(first non-silent AudioWorklet notification received on main thread) minus performance(media start). Includes message dispatch; boundary probe, not acoustic first sound or a full model turn.",
+    "connect_ms": "Signaling, connection establishment and player preparation, including 80ms warmup; not pure handshake latency.",
+    "excluded_primary_metrics": [
+      "connect_to_first_render_ms",
+      "audio_clock*"
+    ],
+    "source_pause": "Source supply pauses for 200ms after 50 × 20ms frames; no network packet loss injection.",
+    "ws_underrun_ms": "Worklet empty-queue samples after playback starts and before expected source consumption / 48 samples per ms.",
+    "rtc_delta": "Matched inbound-rtp end minus start counters. Missing field or missing start stream => null; never assume zero.",
+    "jitter_buffer_mean_delay_ms": "1000 × delta(jitterBufferDelay seconds) / delta(jitterBufferEmittedCount); missing or zero denominator => null.",
+    "packet_loss_fraction": "delta(packetsLost) / (delta(packetsReceived) + delta(packetsLost)); missing/zero denominator => null. Signed lost-counter corrections are retained.",
+    "rtc_end_snapshot": "Diagnostic cumulative end values, not an interval delta and not comparable to WS empty-queue duration.",
+    "rtc_complete": "End-probe detection plus >=250ms guard AND client receives DataChannel producer_done; no bit-exact source sample ACK.",
+    "probe_plausibility": "AudioContext frames used only for end-probe diagnostics. Expected offset = fixture samples/rate minus 300ms tail + optional 200ms pause; tolerance ±250ms. A plausibility screen, not proof against all false positives.",
+    "rtc_tail": "300ms canonical zero tail versus 250ms guard may finish roughly 50ms before canonical tail end; codec time scaling and block alignment also affect timing.",
+    "ws_complete": "received_samples == worklet consumed == fixture.samples; no acoustic loopback."
+  },
+  "formal": {
+    "n_expected": 24,
+    "n": 24,
+    "n_complete": 24,
+    "n_failed": 0,
+    "groups": [
+      {
+        "scenario": "baseline",
+        "transport": "ws",
+        "fixture_id": "short",
+        "n_expected": 3,
+        "n": 3,
+        "n_complete": 3,
+        "n_failed": 0,
+        "repeat_indices": [
+          0,
+          1,
+          2
+        ],
+        "failures": [],
+        "run_ids": [
+          "formal-0-1792664987590",
+          "formal-5-1792665031242",
+          "formal-8-1792665067296"
+        ],
+        "metrics": {
+          "start_to_first_render_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              47.70000000298023,
+              43.20000000298023,
+              70.90000000596046
+            ],
+            "p50": 47.70000000298023
+          },
+          "connect_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              150.3999999910593,
+              89.29999999701977,
+              95.29999999701977
+            ],
+            "p50": 95.29999999701977
+          },
+          "ws_underrun_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              98.66666666666667,
+              0,
+              0
+            ],
+            "p50": 0
+          }
+        },
+        "rtc_delta": null,
+        "rtc_end_snapshot": null
+      },
+      {
+        "scenario": "baseline",
+        "transport": "ws",
+        "fixture_id": "long",
+        "n_expected": 3,
+        "n": 3,
+        "n_complete": 3,
+        "n_failed": 0,
+        "repeat_indices": [
+          0,
+          1,
+          2
+        ],
+        "failures": [],
+        "run_ids": [
+          "formal-2-1792664995421",
+          "formal-7-1792665051100",
+          "formal-10-1792665074357"
+        ],
+        "metrics": {
+          "start_to_first_render_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              46.5,
+              46.69999998807907,
+              44.900000005960464
+            ],
+            "p50": 46.5
+          },
+          "connect_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              92.70000000298023,
+              311.5,
+              92.59999999403954
+            ],
+            "p50": 92.70000000298023
+          },
+          "ws_underrun_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "p50": 0
+          }
+        },
+        "rtc_delta": null,
+        "rtc_end_snapshot": null
+      },
+      {
+        "scenario": "baseline",
+        "transport": "rtc",
+        "fixture_id": "short",
+        "n_expected": 3,
+        "n": 3,
+        "n_complete": 3,
+        "n_failed": 0,
+        "repeat_indices": [
+          0,
+          1,
+          2
+        ],
+        "failures": [],
+        "run_ids": [
+          "formal-1-1792664991604",
+          "formal-4-1792665027606",
+          "formal-9-1792665070716"
+        ],
+        "metrics": {
+          "start_to_first_render_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              86.20000000298023,
+              30,
+              44
+            ],
+            "p50": 44
+          },
+          "connect_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              539.5,
+              264.40000000596046,
+              280.40000000596046
+            ],
+            "p50": 280.40000000596046
+          },
+          "ws_underrun_ms": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          }
+        },
+        "rtc_delta": {
+          "jitterBufferDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferEmittedCount": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferTargetDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferMinimumDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "concealedSamples": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "silentConcealedSamples": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "concealmentEvents": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsLost": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsDiscarded": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "bytesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "headerBytesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "totalSamplesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "insertedSamplesForDeceleration": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "removedSamplesForAcceleration": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitter_buffer_mean_delay_ms": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packet_loss_fraction": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packet_loss_denominator": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          }
+        },
+        "rtc_end_snapshot": {
+          "jitterBufferDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              7036.8,
+              12249.6,
+              10022.4
+            ],
+            "p50": 10022.4
+          },
+          "jitterBufferEmittedCount": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              148800,
+              148800,
+              148800
+            ],
+            "p50": 148800
+          },
+          "jitterBufferTargetDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              4588.8,
+              12307.2,
+              10982.4
+            ],
+            "p50": 10982.4
+          },
+          "jitterBufferMinimumDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              4588.8,
+              12307.2,
+              10982.4
+            ],
+            "p50": 10982.4
+          },
+          "concealedSamples": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              3840,
+              1311
+            ],
+            "p50": 1311
+          },
+          "silentConcealedSamples": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "p50": 0
+          },
+          "concealmentEvents": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              2,
+              1
+            ],
+            "p50": 1
+          },
+          "packetsReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              156,
+              161,
+              159
+            ],
+            "p50": 159
+          },
+          "packetsLost": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "p50": 0
+          },
+          "packetsDiscarded": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "p50": 0
+          },
+          "bytesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              25186,
+              25201,
+              25195
+            ],
+            "p50": 25195
+          },
+          "headerBytesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              3120,
+              3220,
+              3180
+            ],
+            "p50": 3180
+          },
+          "totalSamplesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              147360,
+              154080,
+              151200
+            ],
+            "p50": 151200
+          },
+          "insertedSamplesForDeceleration": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              480,
+              2268,
+              1200
+            ],
+            "p50": 1200
+          },
+          "removedSamplesForAcceleration": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              1900,
+              744,
+              0
+            ],
+            "p50": 744
+          }
+        }
+      },
+      {
+        "scenario": "baseline",
+        "transport": "rtc",
+        "fixture_id": "long",
+        "n_expected": 3,
+        "n": 3,
+        "n_complete": 3,
+        "n_failed": 0,
+        "repeat_indices": [
+          0,
+          1,
+          2
+        ],
+        "failures": [],
+        "run_ids": [
+          "formal-3-1792665011420",
+          "formal-6-1792665034658",
+          "formal-11-1792665090346"
+        ],
+        "metrics": {
+          "start_to_first_render_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              20.099999994039536,
+              35.5,
+              32
+            ],
+            "p50": 32
+          },
+          "connect_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              270,
+              334.20000000298023,
+              304.1000000089407
+            ],
+            "p50": 304.1000000089407
+          },
+          "ws_underrun_ms": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          }
+        },
+        "rtc_delta": {
+          "jitterBufferDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferEmittedCount": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferTargetDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferMinimumDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "concealedSamples": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "silentConcealedSamples": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "concealmentEvents": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsLost": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsDiscarded": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "bytesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "headerBytesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "totalSamplesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "insertedSamplesForDeceleration": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "removedSamplesForAcceleration": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitter_buffer_mean_delay_ms": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packet_loss_fraction": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packet_loss_denominator": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          }
+        },
+        "rtc_end_snapshot": {
+          "jitterBufferDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              87696,
+              84249.6,
+              23875.2
+            ],
+            "p50": 84249.6
+          },
+          "jitterBufferEmittedCount": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              751680,
+              751680,
+              751680
+            ],
+            "p50": 751680
+          },
+          "jitterBufferTargetDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              81696,
+              87648,
+              29683.2
+            ],
+            "p50": 81696
+          },
+          "jitterBufferMinimumDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              81696,
+              87648,
+              29683.2
+            ],
+            "p50": 81696
+          },
+          "concealedSamples": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              9598,
+              8059,
+              0
+            ],
+            "p50": 8059
+          },
+          "silentConcealedSamples": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              2520,
+              0,
+              0
+            ],
+            "p50": 0
+          },
+          "concealmentEvents": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              5,
+              5,
+              0
+            ],
+            "p50": 5
+          },
+          "packetsReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              786,
+              792,
+              785
+            ],
+            "p50": 786
+          },
+          "packetsLost": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "p50": 0
+          },
+          "packetsDiscarded": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "p50": 0
+          },
+          "bytesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              139899,
+              139917,
+              139896
+            ],
+            "p50": 139899
+          },
+          "headerBytesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              15720,
+              15840,
+              15700
+            ],
+            "p50": 15720
+          },
+          "totalSamplesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              754560,
+              760320,
+              752640
+            ],
+            "p50": 754560
+          },
+          "insertedSamplesForDeceleration": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              2132,
+              3022,
+              1902
+            ],
+            "p50": 2132
+          },
+          "removedSamplesForAcceleration": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              8331,
+              2014,
+              608
+            ],
+            "p50": 2014
+          }
+        }
+      },
+      {
+        "scenario": "source_pause",
+        "transport": "ws",
+        "fixture_id": "short",
+        "n_expected": 3,
+        "n": 3,
+        "n_complete": 3,
+        "n_failed": 0,
+        "repeat_indices": [
+          0,
+          1,
+          2
+        ],
+        "failures": [],
+        "run_ids": [
+          "formal-12-1792665106513",
+          "formal-17-1792665150505",
+          "formal-20-1792665186964"
+        ],
+        "metrics": {
+          "start_to_first_render_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              42.3999999910593,
+              47,
+              44
+            ],
+            "p50": 44
+          },
+          "connect_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              103.79999999701977,
+              98.3999999910593,
+              91.80000001192093
+            ],
+            "p50": 98.3999999910593
+          },
+          "ws_underrun_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              214.66666666666666,
+              166.66666666666666,
+              185.33333333333334
+            ],
+            "p50": 185.33333333333334
+          }
+        },
+        "rtc_delta": null,
+        "rtc_end_snapshot": null
+      },
+      {
+        "scenario": "source_pause",
+        "transport": "ws",
+        "fixture_id": "long",
+        "n_expected": 3,
+        "n": 3,
+        "n_complete": 3,
+        "n_failed": 0,
+        "repeat_indices": [
+          0,
+          1,
+          2
+        ],
+        "failures": [],
+        "run_ids": [
+          "formal-14-1792665113908",
+          "formal-19-1792665170552",
+          "formal-22-1792665194384"
+        ],
+        "metrics": {
+          "start_to_first_render_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              47.099999994039536,
+              46.5,
+              60.099999994039536
+            ],
+            "p50": 47.099999994039536
+          },
+          "connect_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              96.20000000298023,
+              93,
+              94.1000000089407
+            ],
+            "p50": 94.1000000089407
+          },
+          "ws_underrun_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              264,
+              225.33333333333334,
+              270.6666666666667
+            ],
+            "p50": 264
+          }
+        },
+        "rtc_delta": null,
+        "rtc_end_snapshot": null
+      },
+      {
+        "scenario": "source_pause",
+        "transport": "rtc",
+        "fixture_id": "short",
+        "n_expected": 3,
+        "n": 3,
+        "n_complete": 3,
+        "n_failed": 0,
+        "repeat_indices": [
+          0,
+          1,
+          2
+        ],
+        "failures": [],
+        "run_ids": [
+          "formal-13-1792665110149",
+          "formal-16-1792665146604",
+          "formal-21-1792665190547"
+        ],
+        "metrics": {
+          "start_to_first_render_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              30.400000005960464,
+              30.799999997019768,
+              23.700000002980232
+            ],
+            "p50": 30.400000005960464
+          },
+          "connect_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              281.79999999701977,
+              293.79999999701977,
+              279.6000000089407
+            ],
+            "p50": 281.79999999701977
+          },
+          "ws_underrun_ms": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          }
+        },
+        "rtc_delta": {
+          "jitterBufferDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferEmittedCount": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferTargetDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferMinimumDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "concealedSamples": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "silentConcealedSamples": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "concealmentEvents": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsLost": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsDiscarded": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "bytesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "headerBytesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "totalSamplesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "insertedSamplesForDeceleration": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "removedSamplesForAcceleration": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitter_buffer_mean_delay_ms": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packet_loss_fraction": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packet_loss_denominator": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          }
+        },
+        "rtc_end_snapshot": {
+          "jitterBufferDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              2486.4,
+              8592,
+              5817.6
+            ],
+            "p50": 5817.6
+          },
+          "jitterBufferEmittedCount": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              149760,
+              147840,
+              148800
+            ],
+            "p50": 148800
+          },
+          "jitterBufferTargetDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              20390.4,
+              23462.4,
+              21216
+            ],
+            "p50": 21216
+          },
+          "jitterBufferMinimumDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              20390.4,
+              23462.4,
+              21216
+            ],
+            "p50": 21216
+          },
+          "concealedSamples": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              8593,
+              16153,
+              13306
+            ],
+            "p50": 13306
+          },
+          "silentConcealedSamples": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              2396,
+              8396,
+              5156
+            ],
+            "p50": 5156
+          },
+          "concealmentEvents": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              1,
+              2,
+              3
+            ],
+            "p50": 2
+          },
+          "packetsReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              156,
+              163,
+              160
+            ],
+            "p50": 160
+          },
+          "packetsLost": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "p50": 0
+          },
+          "packetsDiscarded": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "p50": 0
+          },
+          "bytesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              25186,
+              25207,
+              25198
+            ],
+            "p50": 25198
+          },
+          "headerBytesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              3120,
+              3260,
+              3200
+            ],
+            "p50": 3200
+          },
+          "totalSamplesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              159360,
+              166080,
+              163200
+            ],
+            "p50": 163200
+          },
+          "insertedSamplesForDeceleration": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              2376,
+              2386,
+              1680
+            ],
+            "p50": 2376
+          },
+          "removedSamplesForAcceleration": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "p50": 0
+          }
+        }
+      },
+      {
+        "scenario": "source_pause",
+        "transport": "rtc",
+        "fixture_id": "long",
+        "n_expected": 3,
+        "n": 3,
+        "n_complete": 3,
+        "n_failed": 0,
+        "repeat_indices": [
+          0,
+          1,
+          2
+        ],
+        "failures": [],
+        "run_ids": [
+          "formal-15-1792665130139",
+          "formal-18-1792665154095",
+          "formal-23-1792665210663"
+        ],
+        "metrics": {
+          "start_to_first_render_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              20.099999994039536,
+              20.69999998807907,
+              24.900000005960464
+            ],
+            "p50": 20.69999998807907
+          },
+          "connect_ms": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              268.79999999701977,
+              277.80000001192093,
+              309.5
+            ],
+            "p50": 277.80000001192093
+          },
+          "ws_underrun_ms": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          }
+        },
+        "rtc_delta": {
+          "jitterBufferDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferEmittedCount": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferTargetDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitterBufferMinimumDelay": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "concealedSamples": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "silentConcealedSamples": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "concealmentEvents": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsLost": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packetsDiscarded": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "bytesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "headerBytesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "totalSamplesReceived": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "insertedSamplesForDeceleration": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "removedSamplesForAcceleration": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "jitter_buffer_mean_delay_ms": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packet_loss_fraction": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          },
+          "packet_loss_denominator": {
+            "n": 3,
+            "n_observed": 0,
+            "n_missing": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "p50": null
+          }
+        },
+        "rtc_end_snapshot": {
+          "jitterBufferDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              168892.8,
+              131529.6,
+              155404.8
+            ],
+            "p50": 155404.8
+          },
+          "jitterBufferEmittedCount": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              751680,
+              751680,
+              751680
+            ],
+            "p50": 751680
+          },
+          "jitterBufferTargetDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              164659.2,
+              145401.6,
+              160704
+            ],
+            "p50": 160704
+          },
+          "jitterBufferMinimumDelay": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              164659.2,
+              145401.6,
+              160704
+            ],
+            "p50": 160704
+          },
+          "concealedSamples": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              12814,
+              12379,
+              13659
+            ],
+            "p50": 12814
+          },
+          "silentConcealedSamples": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              1909,
+              0
+            ],
+            "p50": 0
+          },
+          "concealmentEvents": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              4,
+              3,
+              3
+            ],
+            "p50": 3
+          },
+          "packetsReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              793,
+              790,
+              792
+            ],
+            "p50": 792
+          },
+          "packetsLost": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "p50": 0
+          },
+          "packetsDiscarded": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "p50": 0
+          },
+          "bytesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              139920,
+              139911,
+              139917
+            ],
+            "p50": 139917
+          },
+          "headerBytesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              15860,
+              15800,
+              15840
+            ],
+            "p50": 15840
+          },
+          "totalSamplesReceived": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              762720,
+              768000,
+              769920
+            ],
+            "p50": 768000
+          },
+          "insertedSamplesForDeceleration": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              7597,
+              8254,
+              11431
+            ],
+            "p50": 8254
+          },
+          "removedSamplesForAcceleration": {
+            "n": 3,
+            "n_observed": 3,
+            "n_missing": 0,
+            "values": [
+              8968,
+              3523,
+              5966
+            ],
+            "p50": 5966
+          }
+        }
+      }
+    ],
+    "baseline_pooled_by_transport": {
+      "ws": {
+        "n": 6,
+        "n_fixtures": 2,
+        "repeats_per_fixture": 3,
+        "n_failed": 0,
+        "note": "Two fixed fixtures × three repeated runs; six observations, not six independent fixtures.",
+        "start_to_first_render_ms": {
+          "n": 6,
+          "n_observed": 6,
+          "n_missing": 0,
+          "values": [
+            47.70000000298023,
+            46.5,
+            43.20000000298023,
+            46.69999998807907,
+            70.90000000596046,
+            44.900000005960464
+          ],
+          "p50": 46.599999994039536
+        },
+        "connect_ms": {
+          "n": 6,
+          "n_observed": 6,
+          "n_missing": 0,
+          "values": [
+            150.3999999910593,
+            92.70000000298023,
+            89.29999999701977,
+            311.5,
+            95.29999999701977,
+            92.59999999403954
+          ],
+          "p50": 94.0
+        }
+      },
+      "rtc": {
+        "n": 6,
+        "n_fixtures": 2,
+        "repeats_per_fixture": 3,
+        "n_failed": 0,
+        "note": "Two fixed fixtures × three repeated runs; six observations, not six independent fixtures.",
+        "start_to_first_render_ms": {
+          "n": 6,
+          "n_observed": 6,
+          "n_missing": 0,
+          "values": [
+            86.20000000298023,
+            20.099999994039536,
+            30,
+            35.5,
+            44,
+            32
+          ],
+          "p50": 33.75
+        },
+        "connect_ms": {
+          "n": 6,
+          "n_observed": 6,
+          "n_missing": 0,
+          "values": [
+            539.5,
+            270,
+            264.40000000596046,
+            334.20000000298023,
+            280.40000000596046,
+            304.1000000089407
+          ],
+          "p50": 292.2500000074506
+        }
+      }
+    },
+    "records": [
+      {
+        "run_id": "formal-0-1792664987590",
+        "scenario": "baseline",
+        "transport": "ws",
+        "fixture_id": "short",
+        "repeat": 0,
+        "outcome": "complete",
+        "connect_ms": 150.3999999910593,
+        "start_to_first_render_ms": 47.70000000298023,
+        "ws_underrun_ms": 98.66666666666667,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 257.90000000596046,
+          "producer_done_to_client_finished_ms": 258.30000001192093,
+          "ws_received_samples": 149760,
+          "ws_consumed_samples": 149760,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 2919.9791666666665,
+          "expected_probe_elapsed_ms": 2820.0,
+          "probe_offset_ms": 99.97916666666652,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 298.6666666666667,
+          "worklet_finish_vs_canonical_end_ms": 98.64583333333348
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-1-1792664991604",
+        "scenario": "baseline",
+        "transport": "rtc",
+        "fixture_id": "short",
+        "repeat": 0,
+        "outcome": "complete",
+        "connect_ms": 539.5,
+        "start_to_first_render_ms": 86.20000000298023,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": -2.0999999940395355,
+          "producer_done_to_client_finished_ms": 0.5,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 2790.1666666666665,
+          "expected_probe_elapsed_ms": 2820.0,
+          "probe_offset_ms": -29.833333333333485,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": -76.5
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 7036.8,
+            "jitterBufferEmittedCount": 148800,
+            "jitterBufferTargetDelay": 4588.8,
+            "jitterBufferMinimumDelay": 4588.8,
+            "concealedSamples": 0,
+            "silentConcealedSamples": 0,
+            "concealmentEvents": 0,
+            "packetsReceived": 156,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 25186,
+            "headerBytesReceived": 3120,
+            "totalSamplesReceived": 147360,
+            "insertedSamplesForDeceleration": 480,
+            "removedSamplesForAcceleration": 1900
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPrYI/W6Tq_MJLh+ZId",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      },
+      {
+        "run_id": "formal-2-1792664995421",
+        "scenario": "baseline",
+        "transport": "ws",
+        "fixture_id": "long",
+        "repeat": 0,
+        "outcome": "complete",
+        "connect_ms": 92.70000000298023,
+        "start_to_first_render_ms": 46.5,
+        "ws_underrun_ms": 0,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 58.20000000298023,
+          "producer_done_to_client_finished_ms": 58.29999999701977,
+          "ws_received_samples": 752640,
+          "ws_consumed_samples": 752640,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15370.645833333334,
+          "expected_probe_elapsed_ms": 15380.0,
+          "probe_offset_ms": -9.35416666666606,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 309.3333333333333,
+          "worklet_finish_vs_canonical_end_ms": -0.020833333333939663
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-3-1792665011420",
+        "scenario": "baseline",
+        "transport": "rtc",
+        "fixture_id": "long",
+        "repeat": 0,
+        "outcome": "complete",
+        "connect_ms": 270,
+        "start_to_first_render_ms": 20.099999994039536,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 26.0,
+          "producer_done_to_client_finished_ms": 26.80000001192093,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15441.5,
+          "expected_probe_elapsed_ms": 15380.0,
+          "probe_offset_ms": 61.5,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": 14.83333333333394
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 87696,
+            "jitterBufferEmittedCount": 751680,
+            "jitterBufferTargetDelay": 81696,
+            "jitterBufferMinimumDelay": 81696,
+            "concealedSamples": 9598,
+            "silentConcealedSamples": 2520,
+            "concealmentEvents": 5,
+            "packetsReceived": 786,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 139899,
+            "headerBytesReceived": 15720,
+            "totalSamplesReceived": 754560,
+            "insertedSamplesForDeceleration": 2132,
+            "removedSamplesForAcceleration": 8331
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPFLDq4a0D_T+RY2yNh",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      },
+      {
+        "run_id": "formal-4-1792665027606",
+        "scenario": "baseline",
+        "transport": "rtc",
+        "fixture_id": "short",
+        "repeat": 1,
+        "outcome": "complete",
+        "connect_ms": 264.40000000596046,
+        "start_to_first_render_ms": 30,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 86.29999999701977,
+          "producer_done_to_client_finished_ms": 86.59999999403954,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 2930.1666666666665,
+          "expected_probe_elapsed_ms": 2820.0,
+          "probe_offset_ms": 110.16666666666652,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": 63.5
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 12249.6,
+            "jitterBufferEmittedCount": 148800,
+            "jitterBufferTargetDelay": 12307.2,
+            "jitterBufferMinimumDelay": 12307.2,
+            "concealedSamples": 3840,
+            "silentConcealedSamples": 0,
+            "concealmentEvents": 2,
+            "packetsReceived": 161,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 25201,
+            "headerBytesReceived": 3220,
+            "totalSamplesReceived": 154080,
+            "insertedSamplesForDeceleration": 2268,
+            "removedSamplesForAcceleration": 744
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPuuJEO6Re_qddkIR8b",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      },
+      {
+        "run_id": "formal-5-1792665031242",
+        "scenario": "baseline",
+        "transport": "ws",
+        "fixture_id": "short",
+        "repeat": 1,
+        "outcome": "complete",
+        "connect_ms": 89.29999999701977,
+        "start_to_first_render_ms": 43.20000000298023,
+        "ws_underrun_ms": 0,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 56.900000005960464,
+          "producer_done_to_client_finished_ms": 56.900000005960464,
+          "ws_received_samples": 149760,
+          "ws_consumed_samples": 149760,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 2821.3125,
+          "expected_probe_elapsed_ms": 2820.0,
+          "probe_offset_ms": 1.3125,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 298.6666666666667,
+          "worklet_finish_vs_canonical_end_ms": -0.020833333333484916
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-6-1792665034658",
+        "scenario": "baseline",
+        "transport": "rtc",
+        "fixture_id": "long",
+        "repeat": 1,
+        "outcome": "complete",
+        "connect_ms": 334.20000000298023,
+        "start_to_first_render_ms": 35.5,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 142.6000000089407,
+          "producer_done_to_client_finished_ms": 143.20000000298023,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15557.5,
+          "expected_probe_elapsed_ms": 15380.0,
+          "probe_offset_ms": 177.5,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": 130.83333333333394
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 84249.6,
+            "jitterBufferEmittedCount": 751680,
+            "jitterBufferTargetDelay": 87648,
+            "jitterBufferMinimumDelay": 87648,
+            "concealedSamples": 8059,
+            "silentConcealedSamples": 0,
+            "concealmentEvents": 5,
+            "packetsReceived": 792,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 139917,
+            "headerBytesReceived": 15840,
+            "totalSamplesReceived": 760320,
+            "insertedSamplesForDeceleration": 3022,
+            "removedSamplesForAcceleration": 2014
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPjbSp82yP_mcw0hGo5",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      },
+      {
+        "run_id": "formal-7-1792665051100",
+        "scenario": "baseline",
+        "transport": "ws",
+        "fixture_id": "long",
+        "repeat": 1,
+        "outcome": "complete",
+        "connect_ms": 311.5,
+        "start_to_first_render_ms": 46.69999998807907,
+        "ws_underrun_ms": 0,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 59.0,
+          "producer_done_to_client_finished_ms": 59.099999994039536,
+          "ws_received_samples": 752640,
+          "ws_consumed_samples": 752640,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15370.645833333334,
+          "expected_probe_elapsed_ms": 15380.0,
+          "probe_offset_ms": -9.35416666666606,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 309.3333333333333,
+          "worklet_finish_vs_canonical_end_ms": -0.020833333333939663
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-8-1792665067296",
+        "scenario": "baseline",
+        "transport": "ws",
+        "fixture_id": "short",
+        "repeat": 2,
+        "outcome": "complete",
+        "connect_ms": 95.29999999701977,
+        "start_to_first_render_ms": 70.90000000596046,
+        "ws_underrun_ms": 0,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 83.79999999701977,
+          "producer_done_to_client_finished_ms": 83.79999999701977,
+          "ws_received_samples": 149760,
+          "ws_consumed_samples": 149760,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 2821.3125,
+          "expected_probe_elapsed_ms": 2820.0,
+          "probe_offset_ms": 1.3125,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 298.6666666666667,
+          "worklet_finish_vs_canonical_end_ms": -0.020833333333484916
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-9-1792665070716",
+        "scenario": "baseline",
+        "transport": "rtc",
+        "fixture_id": "short",
+        "repeat": 2,
+        "outcome": "complete",
+        "connect_ms": 280.40000000596046,
+        "start_to_first_render_ms": 44,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 40.3999999910593,
+          "producer_done_to_client_finished_ms": 40.69999998807907,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 2872.1666666666665,
+          "expected_probe_elapsed_ms": 2820.0,
+          "probe_offset_ms": 52.166666666666515,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": 5.5
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 10022.4,
+            "jitterBufferEmittedCount": 148800,
+            "jitterBufferTargetDelay": 10982.4,
+            "jitterBufferMinimumDelay": 10982.4,
+            "concealedSamples": 1311,
+            "silentConcealedSamples": 0,
+            "concealmentEvents": 1,
+            "packetsReceived": 159,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 25195,
+            "headerBytesReceived": 3180,
+            "totalSamplesReceived": 151200,
+            "insertedSamplesForDeceleration": 1200,
+            "removedSamplesForAcceleration": 0
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPMgXhrZ34_v4xtMgKm",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      },
+      {
+        "run_id": "formal-10-1792665074357",
+        "scenario": "baseline",
+        "transport": "ws",
+        "fixture_id": "long",
+        "repeat": 2,
+        "outcome": "complete",
+        "connect_ms": 92.59999999403954,
+        "start_to_first_render_ms": 44.900000005960464,
+        "ws_underrun_ms": 0,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 57.79999999701977,
+          "producer_done_to_client_finished_ms": 58.1000000089407,
+          "ws_received_samples": 752640,
+          "ws_consumed_samples": 752640,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15370.645833333334,
+          "expected_probe_elapsed_ms": 15380.0,
+          "probe_offset_ms": -9.35416666666606,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 309.3333333333333,
+          "worklet_finish_vs_canonical_end_ms": -0.020833333333939663
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-11-1792665090346",
+        "scenario": "baseline",
+        "transport": "rtc",
+        "fixture_id": "long",
+        "repeat": 2,
+        "outcome": "complete",
+        "connect_ms": 304.1000000089407,
+        "start_to_first_render_ms": 32,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": -6.700000002980232,
+          "producer_done_to_client_finished_ms": 0.5,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15396.833333333334,
+          "expected_probe_elapsed_ms": 15380.0,
+          "probe_offset_ms": 16.83333333333394,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": -29.83333333333394
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 23875.2,
+            "jitterBufferEmittedCount": 751680,
+            "jitterBufferTargetDelay": 29683.2,
+            "jitterBufferMinimumDelay": 29683.2,
+            "concealedSamples": 0,
+            "silentConcealedSamples": 0,
+            "concealmentEvents": 0,
+            "packetsReceived": 785,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 139896,
+            "headerBytesReceived": 15700,
+            "totalSamplesReceived": 752640,
+            "insertedSamplesForDeceleration": 1902,
+            "removedSamplesForAcceleration": 608
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPooRueEBI_9s8TtJer",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      },
+      {
+        "run_id": "formal-12-1792665106513",
+        "scenario": "source_pause",
+        "transport": "ws",
+        "fixture_id": "short",
+        "repeat": 0,
+        "outcome": "complete",
+        "connect_ms": 103.79999999701977,
+        "start_to_first_render_ms": 42.3999999910593,
+        "ws_underrun_ms": 214.66666666666666,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 74.29999999701977,
+          "producer_done_to_client_finished_ms": 74.29999999701977,
+          "ws_received_samples": 149760,
+          "ws_consumed_samples": 149760,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 3034.6458333333335,
+          "expected_probe_elapsed_ms": 3020.0,
+          "probe_offset_ms": 14.645833333333485,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 301.3333333333333,
+          "worklet_finish_vs_canonical_end_ms": 15.979166666666515
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-13-1792665110149",
+        "scenario": "source_pause",
+        "transport": "rtc",
+        "fixture_id": "short",
+        "repeat": 0,
+        "outcome": "complete",
+        "connect_ms": 281.79999999701977,
+        "start_to_first_render_ms": 30.400000005960464,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": -3.5,
+          "producer_done_to_client_finished_ms": 0.7000000029802322,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 3039.5,
+          "expected_probe_elapsed_ms": 3020.0,
+          "probe_offset_ms": 19.5,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": -27.166666666666515
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 2486.4,
+            "jitterBufferEmittedCount": 149760,
+            "jitterBufferTargetDelay": 20390.4,
+            "jitterBufferMinimumDelay": 20390.4,
+            "concealedSamples": 8593,
+            "silentConcealedSamples": 2396,
+            "concealmentEvents": 1,
+            "packetsReceived": 156,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 25186,
+            "headerBytesReceived": 3120,
+            "totalSamplesReceived": 159360,
+            "insertedSamplesForDeceleration": 2376,
+            "removedSamplesForAcceleration": 0
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPuzxQKa7b_Qp+z8Slp",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      },
+      {
+        "run_id": "formal-14-1792665113908",
+        "scenario": "source_pause",
+        "transport": "ws",
+        "fixture_id": "long",
+        "repeat": 0,
+        "outcome": "complete",
+        "connect_ms": 96.20000000298023,
+        "start_to_first_render_ms": 47.099999994039536,
+        "ws_underrun_ms": 264,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 126.20000000298023,
+          "producer_done_to_client_finished_ms": 126.5,
+          "ws_received_samples": 752640,
+          "ws_consumed_samples": 752640,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15634.645833333334,
+          "expected_probe_elapsed_ms": 15580.0,
+          "probe_offset_ms": 54.64583333333394,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 309.3333333333333,
+          "worklet_finish_vs_canonical_end_ms": 63.97916666666606
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-15-1792665130139",
+        "scenario": "source_pause",
+        "transport": "rtc",
+        "fixture_id": "long",
+        "repeat": 0,
+        "outcome": "complete",
+        "connect_ms": 268.79999999701977,
+        "start_to_first_render_ms": 20.099999994039536,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 163.0,
+          "producer_done_to_client_finished_ms": 163.79999999701977,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15606.833333333334,
+          "expected_probe_elapsed_ms": 15580.0,
+          "probe_offset_ms": 26.83333333333394,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": -19.83333333333394
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 168892.8,
+            "jitterBufferEmittedCount": 751680,
+            "jitterBufferTargetDelay": 164659.2,
+            "jitterBufferMinimumDelay": 164659.2,
+            "concealedSamples": 12814,
+            "silentConcealedSamples": 0,
+            "concealmentEvents": 4,
+            "packetsReceived": 793,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 139920,
+            "headerBytesReceived": 15860,
+            "totalSamplesReceived": 762720,
+            "insertedSamplesForDeceleration": 7597,
+            "removedSamplesForAcceleration": 8968
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPA4Fi2Ff/_dl01Z3sn",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      },
+      {
+        "run_id": "formal-16-1792665146604",
+        "scenario": "source_pause",
+        "transport": "rtc",
+        "fixture_id": "short",
+        "repeat": 1,
+        "outcome": "complete",
+        "connect_ms": 293.79999999701977,
+        "start_to_first_render_ms": 30.799999997019768,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 136.40000000596046,
+          "producer_done_to_client_finished_ms": 137.40000000596046,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 3180.8333333333335,
+          "expected_probe_elapsed_ms": 3020.0,
+          "probe_offset_ms": 160.83333333333348,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": 114.16666666666652
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 8592,
+            "jitterBufferEmittedCount": 147840,
+            "jitterBufferTargetDelay": 23462.4,
+            "jitterBufferMinimumDelay": 23462.4,
+            "concealedSamples": 16153,
+            "silentConcealedSamples": 8396,
+            "concealmentEvents": 2,
+            "packetsReceived": 163,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 25207,
+            "headerBytesReceived": 3260,
+            "totalSamplesReceived": 166080,
+            "insertedSamplesForDeceleration": 2386,
+            "removedSamplesForAcceleration": 0
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPYTAvr04+_jDAvQLeV",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      },
+      {
+        "run_id": "formal-17-1792665150505",
+        "scenario": "source_pause",
+        "transport": "ws",
+        "fixture_id": "short",
+        "repeat": 1,
+        "outcome": "complete",
+        "connect_ms": 98.3999999910593,
+        "start_to_first_render_ms": 47,
+        "ws_underrun_ms": 166.66666666666666,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 31.0,
+          "producer_done_to_client_finished_ms": 31.0,
+          "ws_received_samples": 149760,
+          "ws_consumed_samples": 149760,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 2986.6458333333335,
+          "expected_probe_elapsed_ms": 3020.0,
+          "probe_offset_ms": -33.354166666666515,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 301.3333333333333,
+          "worklet_finish_vs_canonical_end_ms": -32.020833333333485
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-18-1792665154095",
+        "scenario": "source_pause",
+        "transport": "rtc",
+        "fixture_id": "long",
+        "repeat": 1,
+        "outcome": "complete",
+        "connect_ms": 277.80000001192093,
+        "start_to_first_render_ms": 20.69999998807907,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 115.8999999910593,
+          "producer_done_to_client_finished_ms": 116.5,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15726.833333333334,
+          "expected_probe_elapsed_ms": 15580.0,
+          "probe_offset_ms": 146.83333333333394,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": 100.16666666666606
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 131529.6,
+            "jitterBufferEmittedCount": 751680,
+            "jitterBufferTargetDelay": 145401.6,
+            "jitterBufferMinimumDelay": 145401.6,
+            "concealedSamples": 12379,
+            "silentConcealedSamples": 1909,
+            "concealmentEvents": 3,
+            "packetsReceived": 790,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 139911,
+            "headerBytesReceived": 15800,
+            "totalSamplesReceived": 768000,
+            "insertedSamplesForDeceleration": 8254,
+            "removedSamplesForAcceleration": 3523
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPEtR2FgtS_pipKLwD2",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      },
+      {
+        "run_id": "formal-19-1792665170552",
+        "scenario": "source_pause",
+        "transport": "ws",
+        "fixture_id": "long",
+        "repeat": 1,
+        "outcome": "complete",
+        "connect_ms": 93,
+        "start_to_first_render_ms": 46.5,
+        "ws_underrun_ms": 225.33333333333334,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 93.5,
+          "producer_done_to_client_finished_ms": 94.0,
+          "ws_received_samples": 752640,
+          "ws_consumed_samples": 752640,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15594.645833333334,
+          "expected_probe_elapsed_ms": 15580.0,
+          "probe_offset_ms": 14.64583333333394,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 312.0,
+          "worklet_finish_vs_canonical_end_ms": 26.64583333333394
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-20-1792665186964",
+        "scenario": "source_pause",
+        "transport": "ws",
+        "fixture_id": "short",
+        "repeat": 2,
+        "outcome": "complete",
+        "connect_ms": 91.80000001192093,
+        "start_to_first_render_ms": 44,
+        "ws_underrun_ms": 185.33333333333334,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 43.900000005960464,
+          "producer_done_to_client_finished_ms": 43.900000005960464,
+          "ws_received_samples": 149760,
+          "ws_consumed_samples": 149760,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 3005.3125,
+          "expected_probe_elapsed_ms": 3020.0,
+          "probe_offset_ms": -14.6875,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 301.3333333333333,
+          "worklet_finish_vs_canonical_end_ms": -13.354166666666515
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-21-1792665190547",
+        "scenario": "source_pause",
+        "transport": "rtc",
+        "fixture_id": "short",
+        "repeat": 2,
+        "outcome": "complete",
+        "connect_ms": 279.6000000089407,
+        "start_to_first_render_ms": 23.700000002980232,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 149760,
+          "produced_samples": 149760,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 68.6000000089407,
+          "producer_done_to_client_finished_ms": 69.30000001192093,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 3121.5,
+          "expected_probe_elapsed_ms": 3020.0,
+          "probe_offset_ms": 101.5,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": 54.833333333333485
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 5817.6,
+            "jitterBufferEmittedCount": 148800,
+            "jitterBufferTargetDelay": 21216,
+            "jitterBufferMinimumDelay": 21216,
+            "concealedSamples": 13306,
+            "silentConcealedSamples": 5156,
+            "concealmentEvents": 3,
+            "packetsReceived": 160,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 25198,
+            "headerBytesReceived": 3200,
+            "totalSamplesReceived": 163200,
+            "insertedSamplesForDeceleration": 1680,
+            "removedSamplesForAcceleration": 0
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPwPIrpjCb_Ub7LGv9U",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      },
+      {
+        "run_id": "formal-22-1792665194384",
+        "scenario": "source_pause",
+        "transport": "ws",
+        "fixture_id": "long",
+        "repeat": 2,
+        "outcome": "complete",
+        "connect_ms": 94.1000000089407,
+        "start_to_first_render_ms": 60.099999994039536,
+        "ws_underrun_ms": 270.6666666666667,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 134.30000001192093,
+          "producer_done_to_client_finished_ms": 134.40000000596046,
+          "ws_received_samples": 752640,
+          "ws_consumed_samples": 752640,
+          "ws_all_samples_consumed": true,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15639.979166666666,
+          "expected_probe_elapsed_ms": 15580.0,
+          "probe_offset_ms": 59.97916666666606,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 312.0,
+          "worklet_finish_vs_canonical_end_ms": 71.97916666666606
+        },
+        "rtc": null
+      },
+      {
+        "run_id": "formal-23-1792665210663",
+        "scenario": "source_pause",
+        "transport": "rtc",
+        "fixture_id": "long",
+        "repeat": 2,
+        "outcome": "complete",
+        "connect_ms": 309.5,
+        "start_to_first_render_ms": 24.900000005960464,
+        "ws_underrun_ms": null,
+        "integrity": {
+          "expected_source_samples": 752640,
+          "produced_samples": 752640,
+          "source_supply_complete": true,
+          "server_source_exhausted_event": true,
+          "producer_done_received": true,
+          "producer_done_before_client_finished": true,
+          "producer_done_to_worklet_finished_ms": 155.20000000298023,
+          "producer_done_to_client_finished_ms": 156.1000000089407,
+          "ws_received_samples": null,
+          "ws_consumed_samples": null,
+          "ws_all_samples_consumed": null,
+          "rtc_bit_exact_source_ack": null,
+          "probe_elapsed_from_first_render_ms": 15766.833333333334,
+          "expected_probe_elapsed_ms": 15580.0,
+          "probe_offset_ms": 186.83333333333394,
+          "probe_tolerance_ms": 250,
+          "probe_near_expected_end": true,
+          "worklet_guard_ms": 253.33333333333334,
+          "worklet_finish_vs_canonical_end_ms": 140.16666666666606
+        },
+        "rtc": {
+          "inbound_start_present": false,
+          "inbound_end_present": true,
+          "start": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null
+          },
+          "end": {
+            "jitterBufferDelay": 155404.8,
+            "jitterBufferEmittedCount": 751680,
+            "jitterBufferTargetDelay": 160704,
+            "jitterBufferMinimumDelay": 160704,
+            "concealedSamples": 13659,
+            "silentConcealedSamples": 0,
+            "concealmentEvents": 3,
+            "packetsReceived": 792,
+            "packetsLost": 0,
+            "packetsDiscarded": 0,
+            "bytesReceived": 139917,
+            "headerBytesReceived": 15840,
+            "totalSamplesReceived": 769920,
+            "insertedSamplesForDeceleration": 11431,
+            "removedSamplesForAcceleration": 5966
+          },
+          "delta": {
+            "jitterBufferDelay": null,
+            "jitterBufferEmittedCount": null,
+            "jitterBufferTargetDelay": null,
+            "jitterBufferMinimumDelay": null,
+            "concealedSamples": null,
+            "silentConcealedSamples": null,
+            "concealmentEvents": null,
+            "packetsReceived": null,
+            "packetsLost": null,
+            "packetsDiscarded": null,
+            "bytesReceived": null,
+            "headerBytesReceived": null,
+            "totalSamplesReceived": null,
+            "insertedSamplesForDeceleration": null,
+            "removedSamplesForAcceleration": null,
+            "jitter_buffer_mean_delay_ms": null,
+            "packet_loss_fraction": null,
+            "packet_loss_denominator": null
+          },
+          "path": {
+            "selection_basis": "transport.selectedCandidatePairId",
+            "candidate_pair_id": "CPSGRFOvT6_7JMV8quh",
+            "state": "succeeded",
+            "local_protocol": "udp",
+            "local_type": "host",
+            "remote_protocol": "udp",
+            "remote_type": "host",
+            "codec": {
+              "mimeType": "audio/opus",
+              "clockRate": 48000,
+              "channels": 2,
+              "payloadType": 111,
+              "sdpFmtpLine": "minptime=10;useinbandfec=1"
+            }
+          },
+          "issues": [
+            "missing_matched_inbound_rtp_start"
+          ]
+        }
+      }
+    ],
+    "rtc_paths": [
+      {
+        "n": 12,
+        "codec": {
+          "channels": 2,
+          "clockRate": 48000,
+          "mimeType": "audio/opus",
+          "payloadType": 111,
+          "sdpFmtpLine": "minptime=10;useinbandfec=1"
+        },
+        "local_protocol": "udp",
+        "local_type": "host",
+        "remote_protocol": "udp",
+        "remote_type": "host",
+        "selection_basis": "transport.selectedCandidatePairId",
+        "state": "succeeded"
+      }
+    ],
+    "integrity": {
+      "source_supply_complete_n": 24,
+      "ws_n": 12,
+      "ws_all_samples_consumed_n": 12,
+      "rtc_n": 12,
+      "rtc_producer_done_received_n": 12,
+      "rtc_probe_near_expected_end_n": 12,
+      "rtc_missing_inbound_start_n": 12,
+      "rtc_source_bit_exact_playback_proven": false
+    }
+  },
+  "sessions": {
+    "passed": true,
+    "n_checks": 56,
+    "n_failed": 0,
+    "scenario_checks": {
+      "startup": 5,
+      "sticky_multi_turn_and_wrong_owner": 13,
+      "drain_rejects_new_and_waits_for_ack": 13,
+      "disconnect_resume_epoch_and_stale_ack": 15,
+      "real_deadline_force_preserves_unplayed": 10
+    },
+    "ack_source": "python_synthetic_control_only",
+    "audio_played": false,
+    "browser_playback_latency": null,
+    "audio": {
+      "sample_rate": 48000,
+      "total_samples": 149760,
+      "pcm_sha256": "609cc64ebfb196f74bdc390257c9b3cf9db1f3513b94a473555f26724211223c"
+    },
+    "audit": {
+      "passed": true,
+      "assertions": 56,
+      "scenario_checks": {
+        "startup": 5,
+        "sticky_multi_turn_and_wrong_owner": 13,
+        "drain_rejects_new_and_waits_for_ack": 13,
+        "disconnect_resume_epoch_and_stale_ack": 15,
+        "real_deadline_force_preserves_unplayed": 10
+      },
+      "server_events": 711,
+      "client_events": 754,
+      "server_audio_frames": 639,
+      "client_validated_frames": 639,
+      "monotonic_event_order_valid": true,
+      "deadline_elapsed_ms": 201.264667,
+      "forced_played_samples": 24000,
+      "forced_unplayed_samples": 125760,
+      "cleanup": {
+        "host": "127.0.0.1",
+        "port": 18146,
+        "connect_ex": 61,
+        "port_closed": true,
+        "monotonic_ns": 108750931352166
+      },
+      "browser_audio_validated": false
+    },
+    "cleanup": {
+      "owned_server_exit_code": 0,
+      "port": 18146,
+      "port_closed": true,
+      "monotonic_ns": 108650907383000
+    },
+    "scope": "Python synthetic control and session state transitions; not real audio rendering."
+  },
+  "browser_drain": {
+    "n": 1,
+    "initial_buffer_ms": 600,
+    "initial_buffer_samples": 28800,
+    "rendered_samples": 149760,
+    "producer_done_observed_performance_ms": 3417.5999999940395,
+    "worklet_finished_notification_performance_ms": 4072.2999999970198,
+    "producer_to_finished_ms": 654.7000000029802,
+    "latest_report_unrendered_samples_at_producer_observation": 35456,
+    "latest_report_consumed_samples_at_producer_observation": 114304,
+    "unrendered_count_is_exact_instantaneous_queue": false,
+    "ack_source": "audio_worklet_consumed",
+    "worker_status": "drained",
+    "acoustic_loopback": false,
+    "scope": "Same-browser performance clock: producer_done observed → worklet finished notification; includes message dispatch."
+  },
+  "remote_connectivity": {
+    "scope": "Remote connectivity only: WS via SSH forwarding; not a fair speed comparison with local UDP.",
+    "mode": "connectivity",
+    "startedAt": "2026-10-22T10:21:56.225Z",
+    "endedAt": "2026-10-22T10:22:18.737Z",
+    "n": 2,
+    "n_complete": 1,
+    "n_failed": 1,
+    "records": [
+      {
+        "run_id": "connectivity-0-1792664516530",
+        "transport": "ws",
+        "outcome": "complete",
+        "error": null,
+        "connect_ms": 767.9000000059605,
+        "start_to_first_render_ms": 172.29999999701977,
+        "received_samples": 149760,
+        "rtc_events": null
+      },
+      {
+        "run_id": "connectivity-1-1792664521293",
+        "transport": "rtc",
+        "outcome": "error",
+        "error": "Error: RTC media/control connection timeout",
+        "connect_ms": null,
+        "start_to_first_render_ms": null,
+        "received_samples": null,
+        "rtc_events": [
+          {
+            "event": "icegatheringstatechange",
+            "at_ms": 5689.4000000059605,
+            "ice": "new",
+            "connection": "new",
+            "gathering": "gathering"
+          },
+          {
+            "event": "icegatheringstatechange",
+            "at_ms": 5818,
+            "ice": "new",
+            "connection": "new",
+            "gathering": "complete"
+          },
+          {
+            "event": "iceconnectionstatechange",
+            "at_ms": 6970.600000008941,
+            "ice": "checking",
+            "connection": "new",
+            "gathering": "complete"
+          },
+          {
+            "event": "connectionstatechange",
+            "at_ms": 6971.4000000059605,
+            "ice": "checking",
+            "connection": "connecting",
+            "gathering": "complete"
+          },
+          {
+            "event": "iceconnectionstatechange",
+            "at_ms": 22065.90000000596,
+            "ice": "disconnected",
+            "connection": "connecting",
+            "gathering": "complete"
+          },
+          {
+            "event": "connectionstatechange",
+            "at_ms": 22065.90000000596,
+            "ice": "disconnected",
+            "connection": "failed",
+            "gathering": "complete"
+          }
+        ]
+      }
+    ],
+    "included_in_formal_statistics": false
+  },
+  "exclusions": {
+    "pilot_and_failed_starts": "No globbing or directory merging; only the named v2 final input.",
+    "browser_formal_v1": "Diagnostic only: full RTC source supply but two source_pause/short client producer_done controls missing before close. Excluded from all final p50 values."
+  },
+  "data_issues": [
+    {
+      "code": "rtc_inbound_start_missing",
+      "n": 12,
+      "effect": "RTC interval counters and derived delay/loss ratios stay null. End snapshots are separately labeled diagnostics."
+    }
+  ],
+  "provenance": {
+    "formal_records": {
+      "path": "phase4/results/exp15/browser-formal-v2/records.json",
+      "sha256": "e652bde04cfe96c9ab24e03cae8f2cc97b202004225f8124f706426b49ece71c"
+    },
+    "session_checks": {
+      "path": "phase4/results/exp15/sessions/http-ws-final/summary.json",
+      "sha256": "cca6bd2d7316e0679acf7e7960bb9ec2c09c1d9fd25262fb379a068a7ce2e836"
+    },
+    "session_audit": {
+      "path": "phase4/results/exp15/sessions/evidence-audit.json",
+      "sha256": "87f19a7a26045aef768ac56ead93f0b955035468dbe32b17d1be75d820e7b0ef"
+    },
+    "browser_drain": {
+      "path": "phase4/results/exp15/sessions/browser-playback/record.json",
+      "sha256": "1e5a45d3e06bbd1cee807fc82958bb3d9d862e8bdac3288074920455532888de"
+    },
+    "browser_drain_verification": {
+      "path": "phase4/results/exp15/sessions/browser-playback/verification.json",
+      "sha256": "02ed4125828ce1c794c3a001b62a9302af5af8711780749d0067bba52b5ba33c"
+    },
+    "remote_connectivity": {
+      "path": "phase4/results/exp15/browser-remote-v2/records.json",
+      "sha256": "b1b7a9f790bc10cc95bcd4ecf62d34d9ef5e7964a3730f2b66671375203592bc"
+    },
+    "media_servers": [
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-0-1792664987590.json",
+        "sha256": "674a5c22bd02495117455e16bb4d7ee5730cbd49817362691a2600c90f83942f"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-1-1792664991604.json",
+        "sha256": "6c31cdb66c859835310296bc0b5fb869bd608c1f67bfefd7288eca232fffe23b"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-2-1792664995421.json",
+        "sha256": "d4eaedad61908a6b0a56cea10a13a677cf5ad30ce072edc6e7e4a8a68204c2fc"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-3-1792665011420.json",
+        "sha256": "c275972fce077f6367ee60401657c653d0e071206171bb3715f9fcde6e2007ad"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-4-1792665027606.json",
+        "sha256": "d0ef2e793b97911535a22a7bf3442ba692188a488313db5aa23506e955535451"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-5-1792665031242.json",
+        "sha256": "1c546594eb8767a7d0969d3ce9633a78db1f5ab4dce2a5cdcd53d7752c2c2188"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-6-1792665034658.json",
+        "sha256": "9cf44945044ea75bc5a426be2b2dc0651ec01a774e09629e77345bb58c014b5f"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-7-1792665051100.json",
+        "sha256": "58d7940a2576d4ef2db51737e6242e64a61cb92521373fe1f820d8a2b540e3d5"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-8-1792665067296.json",
+        "sha256": "1366f1456da717ee2e6c1b4d275cab835c36368757a8b28664fde122cf742216"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-9-1792665070716.json",
+        "sha256": "71996149b39bd2ec63d0291680d745859e41f075d8b73f61ad9197e50d2c5174"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-10-1792665074357.json",
+        "sha256": "373432ee1ca29bf10192ef0e3c0dce3d508d160b6a545bb007e1fe2b286f196b"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-11-1792665090346.json",
+        "sha256": "130161120a352393b644ed33f26164c50819b5943fa7326cb60ab1290f650631"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-12-1792665106513.json",
+        "sha256": "d109d64e63909a0f7c9d50080a12e314cb101bd8f4704effacd4d500b0b65634"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-13-1792665110149.json",
+        "sha256": "99e67dfc17d1f9eea44a5550b514089a359b24a3ff83a8a093fb6926cfb0007a"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-14-1792665113908.json",
+        "sha256": "357968ff17fcb1d0fbfa5f769f43a32b07f842f83073a434220b8d2749e5b37e"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-15-1792665130139.json",
+        "sha256": "e736e01acd3353b04dd25c40ed9a9f37c9a155f79fd69c4cbdd6e622aed05d2c"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-16-1792665146604.json",
+        "sha256": "c9efbf1755839a85b5bc0fd329cb3dd00d769e613e5e4586801357c485b2d231"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-17-1792665150505.json",
+        "sha256": "7d032325bd25418009412d816b9b1a7c562e19abc65578c62b2b5978cca59a2a"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-18-1792665154095.json",
+        "sha256": "1704a54d6c5884e3f74355cdc2c2aaf53ba193b93d6343b3b75bba46286c168d"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-19-1792665170552.json",
+        "sha256": "54b925c564f1dce686c093715d9e7c5dfd8c4e63292f3dccc9e20460e594c5e1"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-20-1792665186964.json",
+        "sha256": "4a4bbe34d6865e2b692a299ebaee9014cf008fdbeff8a5978864f6c3ca642594"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-21-1792665190547.json",
+        "sha256": "6d6ab4801bdc15ec2b4d82150adceb9c881b034bde089a3cccf126c16e09a1b0"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-22-1792665194384.json",
+        "sha256": "1e5e7d864f112aa358f464ed0a981db5ed8c2dd40754eccb8f6c75350b927452"
+      },
+      {
+        "path": "phase4/results/exp15/media-server-formal/server-formal-23-1792665210663.json",
+        "sha256": "334ab1f18a82a872040f30e13ae872f01f779765293f226f32552073993cd05d"
+      }
+    ]
+  }
+}

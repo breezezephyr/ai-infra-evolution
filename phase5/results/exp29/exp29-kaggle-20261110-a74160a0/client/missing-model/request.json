@@ -1,0 +1,24 @@
+{
+  "case_id": "missing-model",
+  "client_request_id": "exp29-kaggle-20261110-a74160a0:missing-model",
+  "expected_status": 404,
+  "body": {
+    "model": "qwen3-4b-nonexistent",
+    "messages": [
+      {
+        "role": "user",
+        "content": "请用一句简短的中文解释天空为什么通常是蓝色的。"
+      }
+    ],
+    "max_tokens": 32,
+    "stream": false,
+    "temperature": 0,
+    "seed": 29
+  },
+  "body_sha256": "405483f632a5d86132db76ed5a3750cf2b2d3a3c1afca9cb69c1062806496bfe",
+  "headers": {
+    "X-Client-Request-Id": "exp29-kaggle-20261110-a74160a0:missing-model",
+    "Content-Type": "application/json",
+    "Accept-Encoding": "identity"
+  }
+}

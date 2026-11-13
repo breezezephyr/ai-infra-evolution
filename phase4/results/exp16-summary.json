@@ -1,0 +1,822 @@
+{
+  "schema": "exp16.v1",
+  "date": "2026-10-22",
+  "browser_version": "155.0.8059.85",
+  "browser_runs": 18,
+  "probe_runs": 6,
+  "failed_browser_runs": 0,
+  "groups": [
+    {
+      "policy": "server_only",
+      "trigger_ms": 200.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 1920.0,
+        "minimum": 1920.0,
+        "maximum": 1940.0
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 43.112684,
+        "minimum": 23.330598,
+        "maximum": 116.750191
+      }
+    },
+    {
+      "policy": "server_only",
+      "trigger_ms": 1000.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 1940.0,
+        "minimum": 1920.0,
+        "maximum": 1980.0
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 18.323537,
+        "minimum": 16.865808,
+        "maximum": 230.926365
+      }
+    },
+    {
+      "policy": "server_only",
+      "trigger_ms": 4000.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 1890.0,
+        "minimum": 1890.0,
+        "maximum": 1910.0
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 11.21081,
+        "minimum": 9.347302,
+        "maximum": 16.688521
+      }
+    },
+    {
+      "policy": "full",
+      "trigger_ms": 200.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 2.6666666666666665,
+        "minimum": 2.6666666666666665,
+        "maximum": 2.6666666666666665
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 47.687254,
+        "minimum": 29.830023,
+        "maximum": 58.075269
+      }
+    },
+    {
+      "policy": "full",
+      "trigger_ms": 1000.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 2.6666666666666665,
+        "minimum": 2.6666666666666665,
+        "maximum": 2.6666666666666665
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 13.816655,
+        "minimum": 12.748821,
+        "maximum": 24.657805
+      }
+    },
+    {
+      "policy": "full",
+      "trigger_ms": 4000.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 18.171727,
+        "minimum": 12.129562,
+        "maximum": 18.199773
+      }
+    }
+  ],
+  "rows": [
+    {
+      "run_id": "exp16-formal-0-1792668660424",
+      "policy": "server_only",
+      "trigger_ms": 200.0,
+      "render_tail_ms": 1940.0,
+      "played_after_trigger_samples": 46560,
+      "stop_to_join_ms": 116.750191,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 66.475579,
+      "tts_discarded_after_stop_samples": 84600,
+      "sent": 51360,
+      "played": 51360,
+      "history_text": "",
+      "discarded_client_samples": 0,
+      "notification_flush_ms": null
+    },
+    {
+      "run_id": "exp16-formal-1-1792668668080",
+      "policy": "server_only",
+      "trigger_ms": 200.0,
+      "render_tail_ms": 1920.0,
+      "played_after_trigger_samples": 46080,
+      "stop_to_join_ms": 23.330598,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 21.037933,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 50880,
+      "played": 50880,
+      "history_text": "",
+      "discarded_client_samples": 0,
+      "notification_flush_ms": null
+    },
+    {
+      "run_id": "exp16-formal-2-1792668675316",
+      "policy": "server_only",
+      "trigger_ms": 200.0,
+      "render_tail_ms": 1920.0,
+      "played_after_trigger_samples": 46080,
+      "stop_to_join_ms": 43.112684,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 21.56843,
+      "tts_discarded_after_stop_samples": 84600,
+      "sent": 50880,
+      "played": 50880,
+      "history_text": "",
+      "discarded_client_samples": 0,
+      "notification_flush_ms": null
+    },
+    {
+      "run_id": "exp16-formal-3-1792668682526",
+      "policy": "server_only",
+      "trigger_ms": 1000.0,
+      "render_tail_ms": 1940.0,
+      "played_after_trigger_samples": 46560,
+      "stop_to_join_ms": 18.323537,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 15.816921,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 70560,
+      "played": 70560,
+      "history_text": "",
+      "discarded_client_samples": 0,
+      "notification_flush_ms": null
+    },
+    {
+      "run_id": "exp16-formal-4-1792668690708",
+      "policy": "server_only",
+      "trigger_ms": 1000.0,
+      "render_tail_ms": 1980.0,
+      "played_after_trigger_samples": 47520,
+      "stop_to_join_ms": 230.926365,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 228.213343,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 71520,
+      "played": 71520,
+      "history_text": "",
+      "discarded_client_samples": 0,
+      "notification_flush_ms": null
+    },
+    {
+      "run_id": "exp16-formal-5-1792668698491",
+      "policy": "server_only",
+      "trigger_ms": 1000.0,
+      "render_tail_ms": 1920.0,
+      "played_after_trigger_samples": 46080,
+      "stop_to_join_ms": 16.865808,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 1.320965,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 70080,
+      "played": 70080,
+      "history_text": "",
+      "discarded_client_samples": 0,
+      "notification_flush_ms": null
+    },
+    {
+      "run_id": "exp16-formal-6-1792668706487",
+      "policy": "server_only",
+      "trigger_ms": 4000.0,
+      "render_tail_ms": 1890.0,
+      "played_after_trigger_samples": 45360,
+      "stop_to_join_ms": 16.688521,
+      "llm_finish": "stop",
+      "llm_model_return_after_stop_ms": -2501.443166,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 141360,
+      "played": 141360,
+      "history_text": "出门前先查好路线，带上相",
+      "discarded_client_samples": 0,
+      "notification_flush_ms": null
+    },
+    {
+      "run_id": "exp16-formal-7-1792668717637",
+      "policy": "server_only",
+      "trigger_ms": 4000.0,
+      "render_tail_ms": 1910.0,
+      "played_after_trigger_samples": 45840,
+      "stop_to_join_ms": 9.347302,
+      "llm_finish": "stop",
+      "llm_model_return_after_stop_ms": -2251.510722,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 141840,
+      "played": 141840,
+      "history_text": "出门前先查好路线，带上相",
+      "discarded_client_samples": 0,
+      "notification_flush_ms": null
+    },
+    {
+      "run_id": "exp16-formal-8-1792668728627",
+      "policy": "server_only",
+      "trigger_ms": 4000.0,
+      "render_tail_ms": 1890.0,
+      "played_after_trigger_samples": 45360,
+      "stop_to_join_ms": 11.21081,
+      "llm_finish": "stop",
+      "llm_model_return_after_stop_ms": -2511.886735,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 141360,
+      "played": 141360,
+      "history_text": "出门前先查好路线，带上相",
+      "discarded_client_samples": 0,
+      "notification_flush_ms": null
+    },
+    {
+      "run_id": "exp16-formal-9-1792668739682",
+      "policy": "full",
+      "trigger_ms": 200.0,
+      "render_tail_ms": 2.6666666666666665,
+      "played_after_trigger_samples": 64,
+      "stop_to_join_ms": 47.687254,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 26.193719,
+      "tts_discarded_after_stop_samples": 84600,
+      "sent": 51840,
+      "played": 4864,
+      "history_text": "",
+      "discarded_client_samples": 46976,
+      "notification_flush_ms": 0.29999999701976776
+    },
+    {
+      "run_id": "exp16-formal-10-1792668744854",
+      "policy": "full",
+      "trigger_ms": 200.0,
+      "render_tail_ms": 2.6666666666666665,
+      "played_after_trigger_samples": 64,
+      "stop_to_join_ms": 29.830023,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 18.326011,
+      "tts_discarded_after_stop_samples": 84600,
+      "sent": 50880,
+      "played": 4864,
+      "history_text": "",
+      "discarded_client_samples": 46016,
+      "notification_flush_ms": 0.5
+    },
+    {
+      "run_id": "exp16-formal-11-1792668749941",
+      "policy": "full",
+      "trigger_ms": 200.0,
+      "render_tail_ms": 2.6666666666666665,
+      "played_after_trigger_samples": 64,
+      "stop_to_join_ms": 58.075269,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 40.382642,
+      "tts_discarded_after_stop_samples": 84600,
+      "sent": 52320,
+      "played": 4864,
+      "history_text": "",
+      "discarded_client_samples": 45056,
+      "notification_flush_ms": 0.20000000298023224
+    },
+    {
+      "run_id": "exp16-formal-12-1792668755147",
+      "policy": "full",
+      "trigger_ms": 1000.0,
+      "render_tail_ms": 2.6666666666666665,
+      "played_after_trigger_samples": 64,
+      "stop_to_join_ms": 24.657805,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 23.953156,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 70080,
+      "played": 24064,
+      "history_text": "",
+      "discarded_client_samples": 46016,
+      "notification_flush_ms": 0.5999999940395355
+    },
+    {
+      "run_id": "exp16-formal-13-1792668761005",
+      "policy": "full",
+      "trigger_ms": 1000.0,
+      "render_tail_ms": 2.6666666666666665,
+      "played_after_trigger_samples": 64,
+      "stop_to_join_ms": 13.816655,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 12.2955,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 70560,
+      "played": 24064,
+      "history_text": "",
+      "discarded_client_samples": 46496,
+      "notification_flush_ms": 0.5
+    },
+    {
+      "run_id": "exp16-formal-14-1792668766708",
+      "policy": "full",
+      "trigger_ms": 1000.0,
+      "render_tail_ms": 2.6666666666666665,
+      "played_after_trigger_samples": 64,
+      "stop_to_join_ms": 12.748821,
+      "llm_finish": "cancelled",
+      "llm_model_return_after_stop_ms": 2.550841,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 71520,
+      "played": 24064,
+      "history_text": "",
+      "discarded_client_samples": 45056,
+      "notification_flush_ms": 0.4000000059604645
+    },
+    {
+      "run_id": "exp16-formal-15-1792668772588",
+      "policy": "full",
+      "trigger_ms": 4000.0,
+      "render_tail_ms": 0.0,
+      "played_after_trigger_samples": 0,
+      "stop_to_join_ms": 18.199773,
+      "llm_finish": "stop",
+      "llm_model_return_after_stop_ms": -2531.034748,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 143280,
+      "played": 96000,
+      "history_text": "出门前先查好路线，带上相",
+      "discarded_client_samples": 44880,
+      "notification_flush_ms": 0.5
+    },
+    {
+      "run_id": "exp16-formal-16-1792668781704",
+      "policy": "full",
+      "trigger_ms": 4000.0,
+      "render_tail_ms": 0.0,
+      "played_after_trigger_samples": 0,
+      "stop_to_join_ms": 18.171727,
+      "llm_finish": "stop",
+      "llm_model_return_after_stop_ms": -2549.481341,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 142320,
+      "played": 96000,
+      "history_text": "出门前先查好路线，带上相",
+      "discarded_client_samples": 45840,
+      "notification_flush_ms": 0.7000000029802322
+    },
+    {
+      "run_id": "exp16-formal-17-1792668790840",
+      "policy": "full",
+      "trigger_ms": 4000.0,
+      "render_tail_ms": 0.0,
+      "played_after_trigger_samples": 0,
+      "stop_to_join_ms": 12.129562,
+      "llm_finish": "stop",
+      "llm_model_return_after_stop_ms": -2504.843464,
+      "tts_discarded_after_stop_samples": 0,
+      "sent": 141360,
+      "played": 96000,
+      "history_text": "出门前先查好路线，带上相",
+      "discarded_client_samples": 45360,
+      "notification_flush_ms": 0.5999999940395355
+    }
+  ],
+  "probe_groups": {
+    "llm": {
+      "n": 3,
+      "p50": 22.5856,
+      "minimum": 7.271989,
+      "maximum": 145.036533
+    },
+    "tts": {
+      "n": 3,
+      "p50": 59.424884,
+      "minimum": 49.609623,
+      "maximum": 65.926077
+    }
+  },
+  "probes": [
+    {
+      "run_id": "probes-formal-v1-llm-0",
+      "kind": "llm",
+      "stop_to_join_ms": 145.036533,
+      "model_return_after_stop_ms": 144.850093,
+      "generated_tokens": 2,
+      "tokens_since_last_pre_stop_check": 1,
+      "tts_computed_samples": 0,
+      "tts_discarded_samples": 0
+    },
+    {
+      "run_id": "probes-formal-v1-tts-0",
+      "kind": "tts",
+      "stop_to_join_ms": 65.926077,
+      "model_return_after_stop_ms": 18.725878,
+      "generated_tokens": 10,
+      "tokens_since_last_pre_stop_check": 1,
+      "tts_computed_samples": 92400,
+      "tts_discarded_samples": 92400
+    },
+    {
+      "run_id": "probes-formal-v1-llm-1",
+      "kind": "llm",
+      "stop_to_join_ms": 22.5856,
+      "model_return_after_stop_ms": 22.470799,
+      "generated_tokens": 2,
+      "tokens_since_last_pre_stop_check": 1,
+      "tts_computed_samples": 0,
+      "tts_discarded_samples": 0
+    },
+    {
+      "run_id": "probes-formal-v1-tts-1",
+      "kind": "tts",
+      "stop_to_join_ms": 59.424884,
+      "model_return_after_stop_ms": 13.247459,
+      "generated_tokens": 10,
+      "tokens_since_last_pre_stop_check": 1,
+      "tts_computed_samples": 92400,
+      "tts_discarded_samples": 92400
+    },
+    {
+      "run_id": "probes-formal-v1-llm-2",
+      "kind": "llm",
+      "stop_to_join_ms": 7.271989,
+      "model_return_after_stop_ms": 0.367331,
+      "generated_tokens": 1,
+      "tokens_since_last_pre_stop_check": 1,
+      "tts_computed_samples": 0,
+      "tts_discarded_samples": 0
+    },
+    {
+      "run_id": "probes-formal-v1-tts-2",
+      "kind": "tts",
+      "stop_to_join_ms": 49.609623,
+      "model_return_after_stop_ms": 16.175416,
+      "generated_tokens": 10,
+      "tokens_since_last_pre_stop_check": 1,
+      "tts_computed_samples": 92400,
+      "tts_discarded_samples": 92400
+    }
+  ],
+  "history_examples": [
+    {
+      "run_id": "exp16-formal-15-1792668772588",
+      "played": 96000,
+      "generated_text": "出门前先查好路线，带上相机记录风景，记得提前买好水和零食。出发前和家人聊聊天，感受城市生活。散步时注意安全，慢慢走，享受",
+      "retained_text": "出门前先查好路线，带上相",
+      "segments": [
+        {
+          "type": "segment",
+          "generation": 1,
+          "segment": 0,
+          "text": "出门前先查好路线，带上相",
+          "start": 0,
+          "end": 92400
+        },
+        {
+          "type": "segment",
+          "generation": 1,
+          "segment": 1,
+          "text": "机记录风景，记得提前买好",
+          "start": 92400,
+          "end": 177000
+        },
+        {
+          "type": "segment",
+          "generation": 1,
+          "segment": 2,
+          "text": "水和零食。",
+          "start": 177000,
+          "end": 225600
+        }
+      ],
+      "next_prompt_messages": [
+        {
+          "role": "system",
+          "content": "你是中文语音助手。直接用一句中文回答，不要解释、编号或思考过程。"
+        },
+        {
+          "role": "user",
+          "content": "请介绍如何安排一次周末城市散步，从出门准备一直说到回家，详细一些。"
+        },
+        {
+          "role": "assistant",
+          "content": "出门前先查好路线，带上相"
+        },
+        {
+          "role": "user",
+          "content": "刚才先放一边。现在只说一句：好的，我们换个话题。"
+        }
+      ]
+    },
+    {
+      "run_id": "exp16-formal-16-1792668781704",
+      "played": 96000,
+      "generated_text": "出门前先查好路线，带上相机记录风景，记得提前买好水和零食。出发前和家人聊聊天，感受城市生活。散步时注意安全，慢慢走，享受",
+      "retained_text": "出门前先查好路线，带上相",
+      "segments": [
+        {
+          "type": "segment",
+          "generation": 1,
+          "segment": 0,
+          "text": "出门前先查好路线，带上相",
+          "start": 0,
+          "end": 92400
+        },
+        {
+          "type": "segment",
+          "generation": 1,
+          "segment": 1,
+          "text": "机记录风景，记得提前买好",
+          "start": 92400,
+          "end": 177000
+        },
+        {
+          "type": "segment",
+          "generation": 1,
+          "segment": 2,
+          "text": "水和零食。",
+          "start": 177000,
+          "end": 225600
+        }
+      ],
+      "next_prompt_messages": [
+        {
+          "role": "system",
+          "content": "你是中文语音助手。直接用一句中文回答，不要解释、编号或思考过程。"
+        },
+        {
+          "role": "user",
+          "content": "请介绍如何安排一次周末城市散步，从出门准备一直说到回家，详细一些。"
+        },
+        {
+          "role": "assistant",
+          "content": "出门前先查好路线，带上相"
+        },
+        {
+          "role": "user",
+          "content": "刚才先放一边。现在只说一句：好的，我们换个话题。"
+        }
+      ]
+    },
+    {
+      "run_id": "exp16-formal-17-1792668790840",
+      "played": 96000,
+      "generated_text": "出门前先查好路线，带上相机记录风景，记得提前买好水和零食。出发前和家人聊聊天，感受城市生活。散步时注意安全，慢慢走，享受",
+      "retained_text": "出门前先查好路线，带上相",
+      "segments": [
+        {
+          "type": "segment",
+          "generation": 1,
+          "segment": 0,
+          "text": "出门前先查好路线，带上相",
+          "start": 0,
+          "end": 92400
+        },
+        {
+          "type": "segment",
+          "generation": 1,
+          "segment": 1,
+          "text": "机记录风景，记得提前买好",
+          "start": 92400,
+          "end": 177000
+        },
+        {
+          "type": "segment",
+          "generation": 1,
+          "segment": 2,
+          "text": "水和零食。",
+          "start": 177000,
+          "end": 225600
+        }
+      ],
+      "next_prompt_messages": [
+        {
+          "role": "system",
+          "content": "你是中文语音助手。直接用一句中文回答，不要解释、编号或思考过程。"
+        },
+        {
+          "role": "user",
+          "content": "请介绍如何安排一次周末城市散步，从出门准备一直说到回家，详细一些。"
+        },
+        {
+          "role": "assistant",
+          "content": "出门前先查好路线，带上相"
+        },
+        {
+          "role": "user",
+          "content": "刚才先放一边。现在只说一句：好的，我们换个话题。"
+        }
+      ]
+    }
+  ],
+  "full_history_nonempty": 3,
+  "full_stale_fence_rejections": 9,
+  "normal_audio_sends_after_stop": 0,
+  "next_generations_complete": 18,
+  "gpu_full_card_observed_peak_mib": 2347,
+  "gpu_resource_samples": 568,
+  "environment": {
+    "models": {
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "torch": "2.6.0+cu124",
+      "cuda": "12.4",
+      "cudnn": 90100,
+      "llm": {
+        "device": "cuda:0",
+        "dtype": "torch.bfloat16"
+      },
+      "tts": {
+        "device": "cuda:0",
+        "dtype": "torch.float32",
+        "voice": "zf_001",
+        "sample_rate": 24000
+      }
+    },
+    "packages": {
+      "torch": "2.6.0",
+      "transformers": "4.51.3",
+      "kokoro": "0.9.4",
+      "aiohttp": "3.14.3"
+    },
+    "source_sha256": {
+      "exp16/engine.py": "d6bcff2489e0569145dae0da8da45d6639782f1ddc6b780f7bdd7e88b1a08243",
+      "exp16/test_engine.py": "8336442d43ff3b56062e9d56920dea3d1e8a3aad5bb1d8251eba300af7bfe336",
+      "exp16/run_probes.py": "274c0a864fb59b52ff74bb0e742dc04662d927f5467e0b864d22da5145e74d6f",
+      "exp16/server.py": "1fb4a03b727e819ee1282f781b6803a029b5dd5a19d9f5b3b34b3c9886171d03",
+      "exp16/worklet.js": "c0b5b21cdf90ee279ee2e2e866835efdab5a5b7f1644e972919bf9f78c3e285a",
+      "exp16/client.js": "5ec291c5d221350a02ea98a699b6ecfdef2d308b94ae5f2142cf2942b3fa75a8",
+      "exp14/models.py": "cb662829bae6d45ea5bd902f9df362f3a97d90e57d10c2df0fc9c6b3337960c6",
+      "exp14/logic.py": "004cfc81290e60f3021922ba4de64e79ad3347abf4699cb72c02e73398ccc7ed"
+    },
+    "output_rate": 24000,
+    "asr_vad": "not run; playback-position control",
+    "initial_gpu": {
+      "monotonic_ns": 410511793388605,
+      "memory_mib": 1917,
+      "utilization_percent": 0
+    }
+  },
+  "checks": [
+    {
+      "run_id": "exp16-formal-0-1792668660424",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-1-1792668668080",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-2-1792668675316",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-3-1792668682526",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-4-1792668690708",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-5-1792668698491",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-6-1792668706487",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-7-1792668717637",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-8-1792668728627",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-9-1792668739682",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-10-1792668744854",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-11-1792668749941",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-12-1792668755147",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-13-1792668761005",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-14-1792668766708",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-15-1792668772588",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-16-1792668781704",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    },
+    {
+      "run_id": "exp16-formal-17-1792668790840",
+      "source_sha256_verified": true,
+      "no_ordinary_send_after_stop": true,
+      "workers_joined_before_next": true,
+      "history_used_by_next_model": true,
+      "next_samples_equal": true
+    }
+  ],
+  "acoustic_stop_ms": null,
+  "microphone_onset_ms": null,
+  "vad_detection_ms": null,
+  "scope": "actual CUDA LLM/TTS; synthetic playback-position interruption; SSH/WS; render is not acoustic output",
+  "token_check_note": "StoppingCriteria is checked after token publication; the token-count difference is not proof of GPU tokens generated after stop."
+}

@@ -1,0 +1,332 @@
+{
+  "schema_version": "exp25-independent-review-v1",
+  "reviewed_on": "2026-10-26",
+  "review_type": "one fresh whole-task independent review; no prior review report consulted",
+  "workspace": ".",
+  "verdict": "changes_requested",
+  "summary": "原正式运行与正文数值均核实；发现3项important、1项minor，均有本地可复现证据。原始formal-v1没有出现这些错误。23项现有测试通过，但尚未覆盖以下校验缺口。",
+  "issue_counts": {
+    "blocking": 0,
+    "important": 3,
+    "minor": 1
+  },
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "important",
+      "priority": "P1",
+      "title": "冲突的后端完成帧仍能生成可命中的完整响应缓存",
+      "locations": [
+        {
+          "path": "phase5/exp25/gateway.py",
+          "start_line": 75,
+          "end_line": 83
+        },
+        {
+          "path": "phase5/exp25/gateway.py",
+          "start_line": 181,
+          "end_line": 185
+        }
+      ],
+      "evidence": "用httpx.MockTransport返回单choice的content → finish=length → finish=stop → valid usage → [DONE]。两次相同请求都200，cache分支miss/hit，仅一次后端调用；attempt只留下最后的stop。analyze.sse对同一原始流报告incomplete_or_duplicate_terminal。",
+      "consumer_impact": "已经声明截断且终态矛盾的流会被当作已完成响应交付、写缓存并复用，破坏本轮明确的fail-closed完整缓存边界。",
+      "requested_fix": "HTTPBackend按支持的单choice合约校验完成状态：完成帧唯一，完成后不得再追加正文/完成帧；允许合法末尾usage帧。非法流不得交付或入缓存。为本次length→stop反例补回归测试。",
+      "historical_run_affected": false
+    },
+    {
+      "id": "R2",
+      "severity": "important",
+      "priority": "P1",
+      "title": "审核拒绝的生成证据可被整组抹掉，分析器仍发布成功用量",
+      "locations": [
+        {
+          "path": "phase5/exp25/analyze.py",
+          "start_line": 65,
+          "end_line": 70
+        },
+        {
+          "path": "phase5/exp25/analyze.py",
+          "start_line": 94,
+          "end_line": 104
+        }
+      ],
+      "evidence": "仅在内存副本中移除review-0/review-1的attempt、对应backend行，并将其generation_usage改为ZERO、usage_source改为no_generation_attempt。audit仍accepted=true、matched_requests=42，attempts降为10，known_total_tokens从642降为588。另移除已交付cache miss burst-0-0的生成证据也被接受（11 attempts/534 tokens）。",
+      "consumer_impact": "对账器无法保证“生成过但未交付的54 token不会被擦掉”，也允许没有生成来源的cache miss交付被结算为零。计划分母虽然保留，成功验收及合成租户用量仍可能错误。",
+      "requested_fix": "按缓存分支和终态校验attempt基数与事件关联：review_rejected和delivered cache miss必须有一个关联后端的真实attempt；cache hit及入口/准入拒绝才允许零attempt。缺失证据必须使验收失败并抑制成功总额，不得归零。补上述两条突变回归。",
+      "historical_run_affected": false
+    },
+    {
+      "id": "R3",
+      "severity": "important",
+      "priority": "P2",
+      "title": "客户端SSE的请求ID、结算字段和完成原因没有对齐账本",
+      "locations": [
+        {
+          "path": "phase5/exp25/analyze.py",
+          "start_line": 8,
+          "end_line": 22
+        },
+        {
+          "path": "phase5/exp25/analyze.py",
+          "start_line": 104,
+          "end_line": 116
+        }
+      ],
+      "evidence": "对正式客户端记录的内存副本分别做单项突变：a-repeat的gateway_usage.total_tokens从0改为999；a-repeat正文SSE中的所有id改成另一请求ID；burst-0-0的finish_reason由length改成stop。三次audit均仍accepted=true、matched_requests=42、known_total_tokens=642。",
+      "consumer_impact": "客户端实际看到错误用量、错误请求归属或把截断当正常完成时，三方对账仍宣告通过。当前只对正文hash/长度及少数计划指定的finish做了核对。",
+      "requested_fix": "保留并验证每个客户端SSE帧的id，唯一结算帧的gateway_usage/cache，以及finish与当前生成或缓存来源的完成原因；不只比较正文。对这三项具体突变补失败回归。",
+      "historical_run_affected": false
+    },
+    {
+      "id": "R4",
+      "severity": "minor",
+      "priority": "P2",
+      "title": "request_id索引覆盖重复值，未验证全局唯一",
+      "locations": [
+        {
+          "path": "phase5/exp25/analyze.py",
+          "start_line": 40,
+          "end_line": 41
+        },
+        {
+          "path": "phase5/exp25/analyze.py",
+          "start_line": 124,
+          "end_line": 125
+        }
+      ],
+      "evidence": "在内存副本中把length-1的gateway/client/attempt/backend关联request_id统一改成length-0的ID，并同步客户端SSE id；audit仍接受42/42、642 tokens。case_id与attempt_id有重复检查，request_id没有。",
+      "consumer_impact": "未来若记录器复用request_id，验收仍会接受含歧义的请求来源，且request_by_id会静默覆盖。当前正式42个request_id确实唯一，未影响已有结果。",
+      "requested_fix": "建立request_by_id前拒绝重复/缺失request_id，并将对应客户端和backend关联保留在失败分母中；补这一条重复ID突变回归。",
+      "historical_run_affected": false
+    }
+  ],
+  "verified": {
+    "formal": {
+      "planned": 42,
+      "clients": 42,
+      "gateway": 42,
+      "backend": 12,
+      "unique_request_ids": 42,
+      "unique_attempt_ids": 12,
+      "terminal_counts": {
+        "delivered": 17,
+        "authentication_rejected": 1,
+        "capability_rejected": 9,
+        "budget_rejected": 1,
+        "review_rejected": 2,
+        "admission_rejected": 12
+      },
+      "cache_counts": {
+        "miss": 24,
+        "hit": 7,
+        "not_checked": 11
+      },
+      "delivered_finishes": {
+        "stop": 11,
+        "length": 6
+      },
+      "tenant_tokens": {
+        "tenant-a": 407,
+        "tenant-b": 235
+      },
+      "total_tokens": 642,
+      "review_rejects": [
+        {
+          "case_id": "review-0",
+          "usage": {
+            "prompt_tokens": 24,
+            "total_tokens": 27,
+            "completion_tokens": 3
+          },
+          "delivered_model_bytes": 0
+        },
+        {
+          "case_id": "review-1",
+          "usage": {
+            "prompt_tokens": 24,
+            "total_tokens": 27,
+            "completion_tokens": 3
+          },
+          "delivered_model_bytes": 0
+        }
+      ],
+      "burst_groups": [
+        {
+          "delivered": 2,
+          "admission_rejected": 6
+        },
+        {
+          "delivered": 2,
+          "admission_rejected": 6
+        }
+      ],
+      "peak_attempt_intervals": 1,
+      "regenerated_summary_equal": true
+    },
+    "wire_and_provenance": "逐条独立核对全部12个attempt的request/attempt ID、规范化实际后端请求体及SHA256、原始SSE及SHA256、HTTP状态、生成文本、唯一完成帧、真实usage和原生输入token计数；12个native response ID各自一致且互异。额外核对17份客户端SSE的每帧id、gateway_usage/cache与完成帧，原件全部正确。",
+    "cache_and_gate": "代码及CPU测试确认auth/capability/实际token预算在查缓存之前；租户取实验Bearer映射；缓存key包括实际后端输入/设置、token hash、租户和模型/tokenizer/template/策略/路由身份；只有非空stop、有效usage且LAB_BLOCK规则允许时入缓存（R1为未覆盖的非法流反例）。7次命中均匹配同租户、同配置、已完成审核的原生成ID/attempt/usage，当前生成0且无attempt；整段门控先于客户端正文。",
+    "admission_and_failure_cleanup": "正式startup为1 active+1 queue，两轮各8条长请求有2交付/6准入拒绝，各另有1条warm hit交付；同一网关时钟的attempt调用区间峰值为1。现有CPU测试实际覆盖后端异常后名额释放、attempt ended_ns/terminal、缺usage为null且不缓存、length不缓存、规则拒绝不缓存、TTL/容量边界、缺失/重复/迟到DONE。这里未扩张到exp26取消传播。",
+    "source_identity": {
+      "archived_five_file_hashes_match_plan_and_startup": true,
+      "backend_audit_hash_matches_snapshot": true,
+      "full_backend_log_hash_and_exact_12_row_selection_match": true,
+      "archived_backend_started_pid": 124497,
+      "current_vs_formal_hash_equal": {
+        "analyze.py": true,
+        "run.py": false,
+        "serve_gateway.py": true,
+        "gateway.py": true,
+        "backend_audit.py": true
+      },
+      "postrun_runner_difference": "仅run.py第109行增加可选--backend-pid（缺省null），第115行将硬编码历史PID改为参数；归档runner中的124497与本次cleanup一致。其余4个正式运行文件当前与归档相同。不要求当前runner等于历史快照。",
+      "model_revision": null,
+      "model_identity": "原生Qwen3-0.6B/no-thinking；模型revision未知，四个实际观测文件SHA256已保留在model-identity.json，plan/startup/backend-snapshot之间一致。本次只核对保留的身份链，不访问远端重新hash模型文件。",
+      "model_files_recorded_sha256": {
+        "config.json": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "model.safetensors": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b"
+      }
+    },
+    "cleanup": "归档gateway-cleanup显示PID124988退出、8125关闭；最终cleanup显示backend PID124497不存在、8025/8125均关闭、GPU664MiB/0%、四模型文件不变。这是保留的运行后回读，不是本次重新查询远端。",
+    "legacy_diagnostics": {
+      "source_file_hashes_verified": 28,
+      "score_groups": 3,
+      "old_review_probes": 3,
+      "summary_recomputed_equal": true,
+      "interpretation": "独立CPU引用重放：三个旧分数组在0.88下仍错命中；三个旧审核probe的原始位置/决策/标签可回溯，marker均不拦截。没有新embedding/模型调用；分数组text/query_row_id继续为null，未补造逐句join。"
+    },
+    "article_and_build_text": "正文/发布说明/img/build.py中的计数及边界与原证据相符：17交付含6 length，2规则拒绝54token/0正文；完成响应缓存不是KV；LAB_BLOCK不是安全分类器；route2仍是同GPU；实际模型/template/policy身份变更仅CPU测试。未宣称完成exp26取消/重试/排空/HA。无需据本次审查更改历史数值。"
+  },
+  "validation": {
+    "existing_tests": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 phase5/.venv-exp25/bin/python -B -m pytest -q -p no:cacheprovider phase5/exp25",
+      "exit_code": 0,
+      "result": "23 passed in 0.42s",
+      "archived_tests_txt_matches": true
+    },
+    "additional_probes": "7个本地有界探针；仅MockTransport/ASGI fixture与内存数据突变。临时测试日志位于自动清理的TemporaryDirectory；未修改任何原始证据。",
+    "reproduction_results": {
+      "protocol": {
+        "native_backend_finish_frames": [
+          "length",
+          "stop"
+        ],
+        "first_status": 200,
+        "second_status": 200,
+        "cache_branches": [
+          "miss",
+          "hit"
+        ],
+        "backend_calls": 1,
+        "recorded_finish": "stop",
+        "independent_parser_errors": [
+          "incomplete_or_duplicate_terminal"
+        ]
+      },
+      "client_and_id_mutations": [
+        {
+          "mutation": "client_gateway_usage",
+          "accepted": true,
+          "matched_requests": 42,
+          "known_total_tokens": 642,
+          "global_issues": []
+        },
+        {
+          "mutation": "client_response_id",
+          "accepted": true,
+          "matched_requests": 42,
+          "known_total_tokens": 642,
+          "global_issues": []
+        },
+        {
+          "mutation": "client_finish",
+          "accepted": true,
+          "matched_requests": 42,
+          "known_total_tokens": 642,
+          "global_issues": []
+        },
+        {
+          "mutation": "duplicate_request_ids",
+          "accepted": true,
+          "matched_requests": 42,
+          "known_total_tokens": 642,
+          "global_issues": []
+        }
+      ],
+      "removed_attempt_mutations": [
+        {
+          "removed_generation_evidence_for": [
+            "review-0",
+            "review-1"
+          ],
+          "accepted": true,
+          "matched_requests": 42,
+          "attempts": 10,
+          "known_total_tokens": 588,
+          "global_issues": [],
+          "case_issues": {
+            "review-0": [],
+            "review-1": []
+          }
+        },
+        {
+          "removed_generation_evidence_for": [
+            "burst-0-0"
+          ],
+          "accepted": true,
+          "matched_requests": 42,
+          "attempts": 11,
+          "known_total_tokens": 534,
+          "global_issues": [],
+          "case_issues": {
+            "burst-0-0": []
+          }
+        }
+      ]
+    },
+    "summary_rebuilt_in_memory_equal": true
+  },
+  "declined_to_judge": [],
+  "scope_exclusions": "按委派范围未执行nativeStore/GPU/新模型调用或新广泛研究；exp26取消/重试/排空/HA及视觉/移动预览、总进度收尾由main处理，不作为本次拒评项。",
+  "write_scope": "Only phase5/results/exp25/independent-review.json. No source, article, archived evidence or tests.txt edits.",
+  "inspected_sha256": {
+    "26-Phase5·7-把站台接起来/img/build.py": "eac319ff772a65f249b5e28d83741a57c537d6f3782f1d726d9fb25ff1064b82",
+    "26-Phase5·7-把站台接起来/发布说明.md": "1143dc110e80003f8782a061b4b511dafbfb1c73b5afe2ea6c4b4db32249d529",
+    "26-Phase5·7-把站台接起来/正文.md": "10629a19ee984d10100a7aa20326c734cf3e9dd4947d17594224aa20a49b1605",
+    "phase5/exp25/README.md": "89315b8287c60b1578ec47a3f8df7a0946b744f78203fe415dd541558526a5e0",
+    "phase5/exp25/analyze.py": "6a5516d4f1547c00aead3d5a05c9acd9d7a25aeb27fb0bd069a855b4d9cbf0cc",
+    "phase5/exp25/backend_audit.py": "c0ac2d99b65119bfc4688b8f62f156c1d7e1cdef19d55930e3c1eea4ff8e796f",
+    "phase5/exp25/diagnostics.py": "e527ecf395ba87393a1b75d0879e1454c5f8586ef66085a4d60359eb4f0fcc2d",
+    "phase5/exp25/gateway.py": "0bc7066c47dc78d770d046b6f5cc4f3323ccd7f0b8507bee0177105f898e79d5",
+    "phase5/exp25/run.py": "90a5edd0c5cefc73291b3e8e6ebf6e0659399c8fcf203d57b12422dd5a2d83a7",
+    "phase5/exp25/serve_gateway.py": "d726ffdedbc0cf3f1189e255c4b06e493378260ba89c1c7d9947c60777479e3e",
+    "phase5/exp25/test_analyze.py": "73f70e637b7b2ec6183291343a1ab145568edefccb7e7e658d1e1c4c65f3ee98",
+    "phase5/exp25/test_backend_audit.py": "55d14eb9d8d2d53e67fe726ffd19e04766e759ecaea852946c7143cb41388f5d",
+    "phase5/exp25/test_diagnostics.py": "9241ab1af7dd6afa6f0d775249d785509982d784c4ab6f3622f03f1f79e38a21",
+    "phase5/exp25/test_gateway.py": "8d1ab139b492b18ecc13d747a4fe23bc91d10305372836f1ac421a21a4a04a13",
+    "phase5/exp25/test_http_backend.py": "2a1a1783bfe1eb53087d204d96aec94e29280dcce8194d9e0f40905de9e52ce0",
+    "phase5/exp25/设计.md": "aadb25853d420641fce95510a9526fe2c829ee7d0a1eb81082fc28773734f44b",
+    "phase5/exp25/进度.md": "ad35d09f64350322feb13c6048318d8debd30112595a79946f75c06139496836",
+    "phase5/results/exp25/backend.jsonl": "68fc672cc6dcb4cecbe7fa35ba873cd4eefe6e7be2f0408143cffdb3c8b8c924",
+    "phase5/results/exp25/cleanup.json": "68e1d5674a5697788b622b853dc904abb701e07827fe72c095bd692e0df317a1",
+    "phase5/results/exp25/formal-v1/backend-snapshot.json": "de3a71ba1bd8781c3f46a3dca55f68f4776183bb5fcb7fb73694a6452c514953",
+    "phase5/results/exp25/formal-v1/backend.jsonl": "cd2b0f20201867374bc9783cab694c79fea83a001e7986398856a802f1bc0dcc",
+    "phase5/results/exp25/formal-v1/clients.json": "db9ceb0c6f6ca19245a64d71dfed51aefd719c23b557741d2ff0c10ab03a44ad",
+    "phase5/results/exp25/formal-v1/code/analyze.py": "6a5516d4f1547c00aead3d5a05c9acd9d7a25aeb27fb0bd069a855b4d9cbf0cc",
+    "phase5/results/exp25/formal-v1/code/backend_audit.py": "c0ac2d99b65119bfc4688b8f62f156c1d7e1cdef19d55930e3c1eea4ff8e796f",
+    "phase5/results/exp25/formal-v1/code/gateway.py": "0bc7066c47dc78d770d046b6f5cc4f3323ccd7f0b8507bee0177105f898e79d5",
+    "phase5/results/exp25/formal-v1/code/run.py": "68203a1d875b7772669d30e8f1c05b96163ea6c948006e827031e9f904435f7b",
+    "phase5/results/exp25/formal-v1/code/serve_gateway.py": "d726ffdedbc0cf3f1189e255c4b06e493378260ba89c1c7d9947c60777479e3e",
+    "phase5/results/exp25/formal-v1/gateway-cleanup.json": "859ec33f28289ffb77016e0bda9064682679dbf29c0d68663e6da05216c99cf1",
+    "phase5/results/exp25/formal-v1/gateway-health-end.json": "4258a8a9e4aecefbf289b87d03e4ba6cd98f5c54e3ad8e3d6ff8d659477a6b1f",
+    "phase5/results/exp25/formal-v1/gateway-startup.json": "8bd991e677556a77ae258c9cccd616bfaecaf3ff2d91ce90a8f82455aca00166",
+    "phase5/results/exp25/formal-v1/gateway.jsonl": "962e7e858c266fe693a79f7134c21ef7c413a5172040eeeaebe5b1ab3f79b75e",
+    "phase5/results/exp25/formal-v1/plan.json": "e087d18f830506c3592f9c77066b0cc205bfd6371d70ae4cb908f386c057ef6e",
+    "phase5/results/exp25/formal-v1/summary.json": "fb4a02cbedfea7d06c969eca08823de8840837c56ee1c03171b02fd6dd69d48b",
+    "phase5/results/exp25/legacy-replay-v1/summary.json": "279d298467e31aaef85b36943049433156786226a25cea4ffb08fc4f494fa3af",
+    "phase5/results/exp25/model-identity.json": "b83382fb35da08288afaf1872e652904637154b0861e8aac656cec8beb9922be",
+    "phase5/results/exp25/preflight/legacy-diagnostics-input.json": "e6329fbeb7a065dbf27abd94cfbcd700239335d32bfb7614e43174c0aa82aa2e",
+    "phase5/results/exp25/tests.txt": "8eabe360a72bf88c528179ad899e20ab29f195536925b6f1cd491238936d1962"
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "run_id": "connectivity-1-1792664156172",
+  "transport": "rtc",
+  "fixture_id": "short",
+  "scenario": "baseline",
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/192.0.2.27 Safari/537.36",
+  "events": [
+    {
+      "event": "client_finished",
+      "performance_ms": 21481,
+      "context_time": 16.554666666666666
+    }
+  ],
+  "error": "Error: RTC media/control connection timeout",
+  "scope": "fixed audio replay with synthetic boundary probes; no inference; no acoustic loopback",
+  "connect_start_context": 0.112,
+  "rtc_events": [
+    {
+      "event": "icegatheringstatechange",
+      "at_ms": 5129.70000000298,
+      "ice": "new",
+      "connection": "new",
+      "gathering": "gathering"
+    },
+    {
+      "event": "icegatheringstatechange",
+      "at_ms": 5262,
+      "ice": "new",
+      "connection": "new",
+      "gathering": "complete"
+    },
+    {
+      "event": "iceconnectionstatechange",
+      "at_ms": 6475.70000000298,
+      "ice": "checking",
+      "connection": "new",
+      "gathering": "complete"
+    },
+    {
+      "event": "connectionstatechange",
+      "at_ms": 6476.899999991059,
+      "ice": "checking",
+      "connection": "connecting",
+      "gathering": "complete"
+    }
+  ],
+  "offer_sdp": "v=0\r\no=- 608528045348887372 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=candidate:936163412 1 udp 2113937151 internal-96feb9.example.invalid 62101 typ host generation 0 network-cost 999\r\na=ice-ufrag:lm6F\r\na=ice-pwd:nyn3Ga49xIKBD/IR7//k+NFc\r\na=ice-options:trickle\r\na=fingerprint:sha-256 95:9C:96:14:CD:9C:95:3B:0C:68:4B:A0:82:70:B5:EA:01:C3:BC:D4:1C:2E:14:89:53:D2:D0:15:3A:75:07:42\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=candidate:936163412 1 udp 2113937151 internal-96feb9.example.invalid 61111 typ host generation 0 network-cost 999\r\na=ice-ufrag:lm6F\r\na=ice-pwd:nyn3Ga49xIKBD/IR7//k+NFc\r\na=ice-options:trickle\r\na=fingerprint:sha-256 95:9C:96:14:CD:9C:95:3B:0C:68:4B:A0:82:70:B5:EA:01:C3:BC:D4:1C:2E:14:89:53:D2:D0:15:3A:75:07:42\r\na=setup:actpass\r\na=mid:1\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n",
+  "answer_sdp": "v=0\r\no=- 4001652957 4001652957 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=msid-semantic:WMS *\r\nm=audio 34363 UDP/TLS/RTP/SAVPF 111\r\nc=IN IP4 192.0.2.208\r\na=sendonly\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=mid:0\r\na=msid:64d497f4-0e24-4dab-9729-e4095731be96 e43299c7-a1f5-4a2b-b00e-e2a48016578d\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtcp-mux\r\na=ssrc:800915684 cname:d0fd7605-2cd3-4e30-ac5e-2c3ff3336102\r\na=rtpmap:111 opus/48000/2\r\na=candidate:04ca8b06d45d14b04e47bfd6f27e21ea 1 udp 2130706431 192.0.2.208 34363 typ host\r\na=candidate:0501bf3e6c798d5b2341dfee6a6b6bc3 1 udp 2130706431 192.0.2.94 58159 typ host\r\na=end-of-candidates\r\na=ice-ufrag:EkRZ\r\na=ice-pwd:zC9cY38d0p7jmqCvnhw232\r\na=fingerprint:sha-256 46:DC:04:E7:C5:15:39:6E:D1:96:0B:C5:17:20:96:D8:94:95:33:D5:71:8D:68:7E:EC:3F:FE:C5:E8:EB:8E:BF\r\na=fingerprint:sha-384 09:5D:F2:D6:66:B7:51:9B:DE:59:E8:79:1F:CD:21:C5:74:C4:90:29:03:81:C8:E7:D7:0F:A7:53:E5:A9:AB:30:DE:CA:D3:C9:05:6C:44:A0:9A:F9:94:AA:B4:B5:7A:3B\r\na=fingerprint:sha-512 28:A1:9C:74:11:3A:CC:43:FF:90:32:CC:92:C4:6C:D3:03:20:99:50:62:20:F1:C1:FD:AB:0C:29:D9:EA:4D:3C:85:D6:75:E8:BF:C4:40:5A:78:71:5A:99:F3:54:EF:D2:29:E2:31:65:A7:2E:CD:24:25:55:FB:37:47:50:02:6E\r\na=setup:active\r\nm=application 34363 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 192.0.2.208\r\na=mid:1\r\na=sctp-port:5000\r\na=max-message-size:65536\r\na=candidate:04ca8b06d45d14b04e47bfd6f27e21ea 1 udp 2130706431 192.0.2.208 34363 typ host\r\na=candidate:0501bf3e6c798d5b2341dfee6a6b6bc3 1 udp 2130706431 192.0.2.94 58159 typ host\r\na=end-of-candidates\r\na=ice-ufrag:EkRZ\r\na=ice-pwd:zC9cY38d0p7jmqCvnhw232\r\na=fingerprint:sha-256 46:DC:04:E7:C5:15:39:6E:D1:96:0B:C5:17:20:96:D8:94:95:33:D5:71:8D:68:7E:EC:3F:FE:C5:E8:EB:8E:BF\r\na=fingerprint:sha-384 09:5D:F2:D6:66:B7:51:9B:DE:59:E8:79:1F:CD:21:C5:74:C4:90:29:03:81:C8:E7:D7:0F:A7:53:E5:A9:AB:30:DE:CA:D3:C9:05:6C:44:A0:9A:F9:94:AA:B4:B5:7A:3B\r\na=fingerprint:sha-512 28:A1:9C:74:11:3A:CC:43:FF:90:32:CC:92:C4:6C:D3:03:20:99:50:62:20:F1:C1:FD:AB:0C:29:D9:EA:4D:3C:85:D6:75:E8:BF:C4:40:5A:78:71:5A:99:F3:54:EF:D2:29:E2:31:65:A7:2E:CD:24:25:55:FB:37:47:50:02:6E\r\na=setup:active\r\n",
+  "outcome": "error",
+  "rtc_stats_end": [
+    {
+      "id": "AP",
+      "timestamp": 1792664172756.641,
+      "type": "media-playout",
+      "kind": "audio",
+      "synthesizedSamplesDuration": 0,
+      "synthesizedSamplesEvents": 0,
+      "totalPlayoutDelay": 0,
+      "totalSamplesCount": 0,
+      "totalSamplesDuration": 0
+    },
+    {
+      "id": "CF95:9C:96:14:CD:9C:95:3B:0C:68:4B:A0:82:70:B5:EA:01:C3:BC:D4:1C:2E:14:89:53:D2:D0:15:3A:75:07:42",
+      "timestamp": 1792664172756.641,
+      "type": "certificate",
+      "base64Certificate": "MIIBFzCBvaADAgECAgkA3bAKViVor4gwCgYIKoZIzj0EAwIwETEPMA0GA1UEAwwGV2ViUlRDMB4XDTI2MTAyMTEwMTU1NloXDTI2MTEyMTEwMTU1NlowETEPMA0GA1UEAwwGV2ViUlRDMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEg3Egz7zu4Azf5NnDZ/zK0dzbaEFx1TMC5Q+ZMk2/VdO+k6YCuAaXsm673xSnTjbr/oYU0q21xul+7GZREWjffTAKBggqhkjOPQQDAgNJADBGAiEAtTEUiBFKPHeKwhmroxRyZ6pA2BzjqPpyITUHTXjQGicCIQDvm2BZSlN9gUzU/lPXyHzWUxXB+/7mrYx8xYcWZH22fg==",
+      "fingerprint": "95:9C:96:14:CD:9C:95:3B:0C:68:4B:A0:82:70:B5:EA:01:C3:BC:D4:1C:2E:14:89:53:D2:D0:15:3A:75:07:42",
+      "fingerprintAlgorithm": "sha-256"
+    },
+    {
+      "id": "CPt6c58Ch2_Sfmw9M8a",
+      "timestamp": 1792664172756.641,
+      "type": "candidate-pair",
+      "bytesDiscardedOnSend": 0,
+      "bytesReceived": 0,
+      "bytesSent": 0,
+      "consentRequestsSent": 0,
+      "localCandidateId": "It6c58Ch2",
+      "nominated": false,
+      "packetsDiscardedOnSend": 0,
+      "packetsReceived": 0,
+      "packetsSent": 0,
+      "priority": 9079290933605827000,
+      "remoteCandidateId": "ISfmw9M8a",
+      "requestsReceived": 0,
+      "requestsSent": 121,
+      "responsesReceived": 0,
+      "responsesSent": 0,
+      "state": "in-progress",
+      "totalRoundTripTime": 0,
+      "transportId": "T01",
+      "writable": false
+    },
+    {
+      "id": "D1",
+      "timestamp": 1792664172756.641,
+      "type": "data-channel",
+      "bytesReceived": 0,
+      "bytesSent": 0,
+      "label": "control",
+      "messagesReceived": 0,
+      "messagesSent": 0,
+      "protocol": "",
+      "state": "connecting"
+    },
+    {
+      "id": "IMyReccxd",
+      "timestamp": 1792664172756.641,
+      "type": "local-candidate",
+      "address": "",
+      "candidateType": "host",
+      "foundation": "2661580508",
+      "ip": "",
+      "isRemote": false,
+      "networkType": "unknown",
+      "port": 9,
+      "priority": 1509959935,
+      "protocol": "tcp",
+      "tcpType": "active",
+      "transportId": "T01",
+      "usernameFragment": "lm6F"
+    },
+    {
+      "id": "ISfmw9M8a",
+      "timestamp": 1792664172756.641,
+      "type": "remote-candidate",
+      "address": "192.0.2.94",
+      "candidateType": "host",
+      "foundation": "0501bf3e6c798d5b2341dfee6a6b6bc3",
+      "ip": "192.0.2.94",
+      "isRemote": true,
+      "port": 58159,
+      "priority": 2130706431,
+      "protocol": "udp",
+      "transportId": "T01",
+      "usernameFragment": "EkRZ"
+    },
+    {
+      "id": "IhMFodsKz",
+      "timestamp": 1792664172756.641,
+      "type": "local-candidate",
+      "address": "",
+      "candidateType": "host",
+      "foundation": "2609617447",
+      "ip": "",
+      "isRemote": false,
+      "networkType": "unknown",
+      "port": 9,
+      "priority": 1509957375,
+      "protocol": "tcp",
+      "tcpType": "active",
+      "transportId": "T01",
+      "usernameFragment": "lm6F"
+    },
+    {
+      "id": "It6c58Ch2",
+      "timestamp": 1792664172756.641,
+      "type": "local-candidate",
+      "address": "",
+      "candidateType": "host",
+      "foundation": "936163412",
+      "ip": "",
+      "isRemote": false,
+      "networkType": "unknown",
+      "port": 62101,
+      "priority": 2113937151,
+      "protocol": "udp",
+      "transportId": "T01",
+      "usernameFragment": "lm6F"
+    },
+    {
+      "id": "IzZUtQ9UG",
+      "timestamp": 1792664172756.641,
+      "type": "local-candidate",
+      "address": "",
+      "candidateType": "host",
+      "foundation": "1611573832",
+      "ip": "",
+      "isRemote": false,
+      "networkType": "unknown",
+      "port": 57754,
+      "priority": 2113939711,
+      "protocol": "udp",
+      "transportId": "T01",
+      "usernameFragment": "lm6F"
+    },
+    {
+      "id": "P",
+      "timestamp": 1792664172756.641,
+      "type": "peer-connection",
+      "dataChannelsClosed": 0,
+      "dataChannelsOpened": 0
+    },
+    {
+      "id": "T01",
+      "timestamp": 1792664172756.641,
+      "type": "transport",
+      "bytesReceived": 0,
+      "bytesSent": 0,
+      "dtlsRole": "server",
+      "dtlsState": "new",
+      "iceLocalUsernameFragment": "lm6F",
+      "iceRole": "controlling",
+      "iceState": "checking",
+      "localCertificateId": "CF95:9C:96:14:CD:9C:95:3B:0C:68:4B:A0:82:70:B5:EA:01:C3:BC:D4:1C:2E:14:89:53:D2:D0:15:3A:75:07:42",
+      "packetsReceived": 0,
+      "packetsSent": 0,
+      "selectedCandidatePairChanges": 0
+    }
+  ]
+}

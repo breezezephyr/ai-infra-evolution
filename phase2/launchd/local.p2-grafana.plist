@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>local.p2-grafana</string>
+  <key>ProgramArguments</key><array>
+    <string>/home/researcher/p2/grafana/bin/grafana</string><string>server</string>
+    <string>--homepath</string><string>/home/researcher/p2/grafana</string>
+  </array>
+  <key>EnvironmentVariables</key><dict>
+    <key>GF_SERVER_HTTP_PORT</key><string>3001</string>
+    <key>GF_SERVER_HTTP_ADDR</key><string>0.0.0.0</string>
+    <key>GF_PATHS_DATA</key><string>/home/researcher/p2/data/grafana</string>
+    <key>GF_PATHS_LOGS</key><string>/home/researcher/p2/data/grafana/log</string>
+    <key>GF_PATHS_PROVISIONING</key><string>/home/researcher/p2/provisioning</string>
+    <key>GF_SECURITY_ADMIN_PASSWORD</key><string>p2bus</string>
+    <key>GF_AUTH_ANONYMOUS_ENABLED</key><string>true</string>
+    <key>GF_AUTH_ANONYMOUS_ORG_ROLE</key><string>Viewer</string>
+    <key>GF_ANALYTICS_REPORTING_ENABLED</key><string>false</string>
+    <key>GF_NEWS_NEWS_FEED_ENABLED</key><string>false</string>
+  </dict>
+  <key>RunAtLoad</key><true/><key>KeepAlive</key><true/>
+  <key>StandardOutPath</key><string>/tmp/p2-grafana.log</string>
+  <key>StandardErrorPath</key><string>/tmp/p2-grafana.log</string>
+</dict></plist>

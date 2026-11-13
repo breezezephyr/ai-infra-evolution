@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="5" time="0.038" timestamp="2026-10-26T11:54:41.305327+08:00" hostname="lab-host.example.invalid"><testcase classname="phase5.exp22.test_measure" name="test_queue_rejects_overflow_and_releases_on_exception" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'Admission'">def test_queue_rejects_overflow_and_releases_on_exception():
+&gt;       gate = measure.Admission(active_limit=1, waiting_limit=1)
+               ^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'Admission'
+
+phase5/exp22/test_measure.py:9: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_simultaneous_calls_respect_active_cap" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'Admission'">def test_simultaneous_calls_respect_active_cap():
+&gt;       gate = measure.Admission(2, 10)
+               ^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'Admission'
+
+phase5/exp22/test_measure.py:28: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_engine_durations_do_not_mix_client_and_backend_clocks" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'engine_durations'">def test_engine_durations_do_not_mix_client_and_backend_clocks():
+&gt;       assert measure.engine_durations({'arrival_time':1000,'first_scheduled_time':1000.2,
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+            'first_token_time':1000.5,'finished_time':1001.5}) == pytest.approx(
+            {'queue_ms':200,'first_token_ms':500,'scheduled_to_finish_ms':1300,'total_ms':1500})
+E       AttributeError: module 'measure' has no attribute 'engine_durations'
+
+phase5/exp22/test_measure.py:44: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_missing_or_failed_output_is_not_counted_as_consistent" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'compare_outputs'">def test_missing_or_failed_output_is_not_counted_as_consistent():
+        rows=[{'id':'a','task':'x','status':200},{'id':'b','task':'x','status':429},
+              {'id':'c','task':'x','status':200},{'id':'d','task':'x','status':200}]
+        outputs={'a':{'token_ids':[1,2]},'d':{'token_ids':[1,3]}}
+&gt;       report=measure.compare_outputs(rows,outputs)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'compare_outputs'
+
+phase5/exp22/test_measure.py:53: AttributeError</failure></testcase><testcase classname="phase5.exp22.test_measure" name="test_empty_output_is_observed_but_not_silently_missing" time="0.000"><failure message="AttributeError: module 'measure' has no attribute 'compare_outputs'">def test_empty_output_is_observed_but_not_silently_missing():
+        rows=[{'id':'a','task':'x','status':200},{'id':'b','task':'x','status':200}]
+&gt;       assert measure.compare_outputs(rows,{'a':{'token_ids':[]},'b':{'token_ids':[]}})['equal']==1
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'compare_outputs'
+
+phase5/exp22/test_measure.py:60: AttributeError</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,18 @@
+{
+  "scope": "post-review fix pass; gateway changes verified by CPU only; final analyzer executed against unchanged original raw; no new GPU calls",
+  "source_sha256": {
+    "gateway.py": "9565f18df932966594610ab9a1e64c238f4d174c5edd30cbb76cde8d0a89bd6f",
+    "analyze.py": "039b308743e852bae23431c3f1d5f9e61ed25601e62f38f398c6880202f6d717",
+    "test_gateway.py": "59e5e4bf94a4e4d27b0bfce4209a5d4a34423ea8b34fa8d4e31cf6f8636d68d6",
+    "test_transport.py": "f45ef37563d13267236d0a4c4122dceeb9b8cba65745cdcb4eac015b33581c17",
+    "test_analyze.py": "4df008ef7b43cebd71aece2a4cf347ec9a75ab133c1e98cdffa819e027a63626",
+    "replay_native.py": "9a424bcb307ecde1a677990d86dc672e957d1f3933463f847ebaad04d11564d6"
+  },
+  "original_raw_sha256": {
+    "gateway.jsonl": "614a14eb2f43d56a008fd3d63f0bb9cdb914b96f585369719f7ca625a41b30e5",
+    "clients.json": "0a6ac2d652d3e77138184de6b2156c4878a21cea84451e96ccd4d99cfc9c53fe",
+    "backend.jsonl": "9f3309f7852e7bfecbbfd16666aa9f9ce3833d0dcfe3d689c237ef23a7f04859",
+    "plan.json": "139fe72e0cad28084da2b46706113e004d32e3925d971521d5b15ace1baa8db1"
+  },
+  "summary_sha256": "ace7b5b232417155caf8098a9d49e1e90c80a939b7bc5410e369e7c2e0daec9c"
+}

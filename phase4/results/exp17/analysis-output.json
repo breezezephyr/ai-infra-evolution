@@ -1,0 +1,148 @@
+{
+  "aggregates": {
+    "endpoint": {
+      "n": 12,
+      "latency_ms": {
+        "n": 12,
+        "p50": 404.998646,
+        "minimum": 266.138198,
+        "maximum": 538.09979
+      },
+      "asr_calls_total": 12,
+      "drafts_total": 12,
+      "wasted_tokens_total": 0,
+      "total_tokens": 291,
+      "reused_count": 0,
+      "actual_rejected_pieces": 0,
+      "running_invalidations": 0,
+      "completed_invalidations": 0
+    },
+    "eager": {
+      "n": 12,
+      "latency_ms": {
+        "n": 12,
+        "p50": 273.68849350000005,
+        "minimum": 146.056059,
+        "maximum": 455.215767
+      },
+      "asr_calls_total": 93,
+      "drafts_total": 78,
+      "wasted_tokens_total": 1079,
+      "total_tokens": 1367,
+      "reused_count": 12,
+      "actual_rejected_pieces": 0,
+      "running_invalidations": 1,
+      "completed_invalidations": 65
+    },
+    "stable2": {
+      "n": 12,
+      "latency_ms": {
+        "n": 12,
+        "p50": 199.95395150000002,
+        "minimum": 140.993575,
+        "maximum": 288.838408
+      },
+      "asr_calls_total": 93,
+      "drafts_total": 12,
+      "wasted_tokens_total": 0,
+      "total_tokens": 291,
+      "reused_count": 0,
+      "actual_rejected_pieces": 0,
+      "running_invalidations": 0,
+      "completed_invalidations": 0
+    }
+  },
+  "identical_final": {
+    "short_03": true,
+    "pause_02": true,
+    "pause_03": true,
+    "long_02": true
+  },
+  "gpu_peak": 2235,
+  "queue": [
+    {
+      "policy": "fifo",
+      "scenario": "fixed",
+      "completed": 130,
+      "dropped": 170,
+      "drop_counts": {
+        "drop_new": 170,
+        "drop_replaced": 0,
+        "drop_sampled": 0
+      },
+      "frame_age_p95_ms": 3066.6666666666665,
+      "drain_ms": 3000.0,
+      "highwater": 30
+    },
+    {
+      "policy": "latest",
+      "scenario": "fixed",
+      "completed": 101,
+      "dropped": 199,
+      "drop_counts": {
+        "drop_new": 0,
+        "drop_replaced": 199,
+        "drop_sampled": 0
+      },
+      "frame_age_p95_ms": 100.0,
+      "drain_ms": 100.0,
+      "highwater": 1
+    },
+    {
+      "policy": "sample_latest",
+      "scenario": "fixed",
+      "completed": 50,
+      "dropped": 250,
+      "drop_counts": {
+        "drop_new": 0,
+        "drop_replaced": 0,
+        "drop_sampled": 250
+      },
+      "frame_age_p95_ms": 100.0,
+      "drain_ms": 0.0,
+      "highwater": 1
+    },
+    {
+      "policy": "fifo",
+      "scenario": "burst",
+      "completed": 108,
+      "dropped": 192,
+      "drop_counts": {
+        "drop_new": 192,
+        "drop_replaced": 0,
+        "drop_sampled": 0
+      },
+      "frame_age_p95_ms": 4116.666666666667,
+      "drain_ms": 3650.0,
+      "highwater": 30
+    },
+    {
+      "policy": "latest",
+      "scenario": "burst",
+      "completed": 70,
+      "dropped": 230,
+      "drop_counts": {
+        "drop_new": 0,
+        "drop_replaced": 230,
+        "drop_sampled": 0
+      },
+      "frame_age_p95_ms": 266.6666666666667,
+      "drain_ms": 150.0,
+      "highwater": 1
+    },
+    {
+      "policy": "sample_latest",
+      "scenario": "burst",
+      "completed": 50,
+      "dropped": 250,
+      "drop_counts": {
+        "drop_new": 0,
+        "drop_replaced": 0,
+        "drop_sampled": 250
+      },
+      "frame_age_p95_ms": 250.0,
+      "drain_ms": 0.0,
+      "highwater": 1
+    }
+  ]
+}

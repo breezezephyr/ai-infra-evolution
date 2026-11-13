@@ -1,0 +1,79 @@
+{
+  "kind": "actual_cuda_component_smoke",
+  "component": "tts",
+  "models": {
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cudnn": 90100,
+    "tts": {
+      "device": "cuda:0",
+      "dtype": "torch.float32",
+      "voice": "zf_001",
+      "sample_rate": 24000
+    }
+  },
+  "before_mib": 342,
+  "loaded_mib": 779,
+  "observed_peak_mib": 1161,
+  "model_load_ms": 4983.28515101457,
+  "versions": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.3",
+    "kokoro": "0.9.4",
+    "misaki": "0.9.4",
+    "silero-vad": "6.2.3"
+  },
+  "records": [
+    {
+      "repeat": 0,
+      "warmup": true,
+      "tts": {
+        "first_pcm_ms": 1640.9169920370914,
+        "total_ms": 1664.3872510176152,
+        "samples": 100200,
+        "first_non_silent_sample": 6739,
+        "wav": "tts-0.wav",
+        "sha256": "352cb512a1cb993a3ac87cc97111e90d4ab9d70f317cd27122678fe3320ba91c"
+      }
+    },
+    {
+      "repeat": 1,
+      "warmup": false,
+      "tts": {
+        "first_pcm_ms": 61.473262030631304,
+        "total_ms": 84.78617999935523,
+        "samples": 100200,
+        "first_non_silent_sample": 6742,
+        "wav": "tts-1.wav",
+        "sha256": "a2b23cd10da780d8547011c4b839319d3b647e8fefded652431bce5b0306f445"
+      }
+    },
+    {
+      "repeat": 2,
+      "warmup": false,
+      "tts": {
+        "first_pcm_ms": 62.56661802763119,
+        "total_ms": 86.44569502212107,
+        "samples": 100200,
+        "first_non_silent_sample": 6739,
+        "wav": "tts-2.wav",
+        "sha256": "3358e76a73d3c742bf8512ed5414d33648d8dce9e44ec45c353bbcc24765d314"
+      }
+    },
+    {
+      "repeat": 3,
+      "warmup": false,
+      "tts": {
+        "first_pcm_ms": 57.19068000325933,
+        "total_ms": 79.99157503945753,
+        "samples": 100200,
+        "first_non_silent_sample": 6688,
+        "wav": "tts-3.wav",
+        "sha256": "63eb22e39361150bb7cb6e46c2cf2c3fb58b439539b8a26b5ec2a6c6296ca23a"
+      }
+    }
+  ]
+}

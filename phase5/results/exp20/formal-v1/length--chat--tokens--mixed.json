@@ -1,0 +1,241 @@
+{
+  "fixture": {
+    "id": "length",
+    "raw": "还没说完",
+    "thinking": false,
+    "action": "Length",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "还没说完",
+        "reasoning": "",
+        "tools": [],
+        "finish": "length",
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "还没说完",
+        "reasoning": "",
+        "tools": [],
+        "finish": "max_output_tokens",
+        "status": "incomplete",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "还没说完",
+        "reasoning": "",
+        "tools": [],
+        "finish": "max_tokens",
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "backend_finish",
+    "expect_native_finished": true
+  },
+  "protocol": "chat",
+  "mode": "tokens",
+  "pattern": "mixed",
+  "events": [
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745846,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}"
+    },
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745846,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"content\":\"还没\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}"
+    },
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745846,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"content\":\"说完\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}"
+    },
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745846,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\"},\"logprobs\":null,\"finish_reason\":\"length\"}],\"usage\":{\"prompt_tokens\":13,\"completion_tokens\":2,\"total_tokens\":15,\"prompt_tokens_details\":{\"cached_tokens\":3},\"prompt_cache_hit_tokens\":3,\"prompt_cache_miss_tokens\":10}}"
+    }
+  ],
+  "backend_finish_seen": true,
+  "native_finished": true,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "backend_finish",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "请继续报站"
+      }
+    ],
+    "max_tokens": 128,
+    "thinking": {
+      "type": "disabled"
+    },
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "None"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "token IDs",
+    "processor_has_tokenizer": true
+  },
+  "input_units": [
+    16471,
+    21403
+  ],
+  "native_finished_after_data": false,
+  "backend_finish_reason": "Length",
+  "response": {
+    "id": "exp20",
+    "object": "chat.completion",
+    "created": 0,
+    "model": "DeepSeek-V4.1-Flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "还没说完"
+        },
+        "logprobs": null,
+        "finish_reason": "length"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 13,
+      "completion_tokens": 2,
+      "total_tokens": 15,
+      "prompt_tokens_details": {
+        "cached_tokens": 3
+      },
+      "prompt_cache_hit_tokens": 3,
+      "prompt_cache_miss_tokens": 10
+    },
+    "system_fingerprint": null
+  },
+  "semantic": {
+    "text": "还没说完",
+    "reasoning": "",
+    "tools": [],
+    "finish": "length",
+    "status": null,
+    "stop_sequence": null
+  },
+  "id": "length--chat--tokens--mixed",
+  "contract": "50b498f7433a5f4e13c46e0b20cdff0a48d539f233e9c4d0abb2ad82f6d90db4",
+  "sse": {
+    "bytes": 1123,
+    "sha256": "99cf56b6d5a5f00ecb830785cdb81de9010d4732e294487dcbefd6ca7427d88c",
+    "done_data": "[DONE]",
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 5
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 5
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 5
+      }
+    ],
+    "expected_events": 5,
+    "incomplete_eof_count": 4,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "还没说完",
+          "reasoning": "",
+          "tools": [],
+          "finish": "length",
+          "status": null,
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "还没说完",
+          "reasoning": "",
+          "tools": [],
+          "finish": "length",
+          "status": null,
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "backend_finish"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": true
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 5
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 5
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 5
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 4
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "length--chat--tokens--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

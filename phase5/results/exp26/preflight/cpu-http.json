@@ -1,0 +1,154 @@
+{
+  "scope": "CPU real loopback HTTP preflight; controlled backend only; not formal/GPU model calls",
+  "source_sha256": "af50a1fca7e6adefb0802995c9552e0a57a18db58b4d83fd77e5e530140b719a",
+  "requests": [
+    {
+      "case_id": "unconnected-retry",
+      "terminal": "completed",
+      "status": 200,
+      "health": {
+        "active": 0,
+        "draining": false,
+        "settlements": 2,
+        "workers": 0
+      },
+      "raw": "data: {\"attempt_id\":\"exp26-unconnected-retry/a2\",\"content\":\"甲\",\"generation_id\":\"g0\",\"id\":\"exp26-unconnected-retry\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-unconnected-retry/a2\",\"content\":\"乙\",\"generation_id\":\"g0\",\"id\":\"exp26-unconnected-retry\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-unconnected-retry/a2\",\"content\":\"丙\",\"generation_id\":\"g0\",\"id\":\"exp26-unconnected-retry\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-unconnected-retry/a2\",\"content\":\"丁\",\"generation_id\":\"g0\",\"id\":\"exp26-unconnected-retry\",\"type\":\"content\"}\n\ndata: {\"attempt_ids\":[\"exp26-unconnected-retry/a1\",\"exp26-unconnected-retry/a2\"],\"finish\":\"stop\",\"generation_id\":\"g0\",\"id\":\"exp26-unconnected-retry\",\"settlements\":[{\"attempt_id\":\"exp26-unconnected-retry/a1\",\"source\":\"unknown\",\"usage\":null},{\"attempt_id\":\"exp26-unconnected-retry/a2\",\"source\":\"synthetic_fixture\",\"usage\":{\"completion_tokens\":4,\"prompt_tokens\":3,\"total_tokens\":7}}],\"terminal\":\"completed\",\"type\":\"terminal\"}\n\ndata: [DONE]\n\n"
+    },
+    {
+      "case_id": "pre-timeout-retry",
+      "terminal": "completed",
+      "status": 200,
+      "health": {
+        "active": 0,
+        "draining": false,
+        "settlements": 4,
+        "workers": 0
+      },
+      "raw": "data: {\"attempt_id\":\"exp26-pre-timeout-retry/a2\",\"content\":\"甲\",\"generation_id\":\"g0\",\"id\":\"exp26-pre-timeout-retry\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-pre-timeout-retry/a2\",\"content\":\"乙\",\"generation_id\":\"g0\",\"id\":\"exp26-pre-timeout-retry\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-pre-timeout-retry/a2\",\"content\":\"丙\",\"generation_id\":\"g0\",\"id\":\"exp26-pre-timeout-retry\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-pre-timeout-retry/a2\",\"content\":\"丁\",\"generation_id\":\"g0\",\"id\":\"exp26-pre-timeout-retry\",\"type\":\"content\"}\n\ndata: {\"attempt_ids\":[\"exp26-pre-timeout-retry/a1\",\"exp26-pre-timeout-retry/a2\"],\"finish\":\"stop\",\"generation_id\":\"g0\",\"id\":\"exp26-pre-timeout-retry\",\"settlements\":[{\"attempt_id\":\"exp26-pre-timeout-retry/a1\",\"source\":\"unknown\",\"usage\":null},{\"attempt_id\":\"exp26-pre-timeout-retry/a2\",\"source\":\"synthetic_fixture\",\"usage\":{\"completion_tokens\":4,\"prompt_tokens\":3,\"total_tokens\":7}}],\"terminal\":\"completed\",\"type\":\"terminal\"}\n\ndata: [DONE]\n\n"
+    },
+    {
+      "case_id": "post-break",
+      "terminal": "backend_error",
+      "status": 200,
+      "health": {
+        "active": 0,
+        "draining": false,
+        "settlements": 5,
+        "workers": 0
+      },
+      "raw": "data: {\"attempt_id\":\"exp26-post-break/a1\",\"content\":\"甲\",\"generation_id\":\"g0\",\"id\":\"exp26-post-break\",\"type\":\"content\"}\n\ndata: {\"attempt_ids\":[\"exp26-post-break/a1\"],\"finish\":null,\"generation_id\":\"g0\",\"id\":\"exp26-post-break\",\"settlements\":[{\"attempt_id\":\"exp26-post-break/a1\",\"source\":\"unknown\",\"usage\":null}],\"terminal\":\"backend_error\",\"type\":\"terminal\"}\n\ndata: [DONE]\n\n"
+    },
+    {
+      "case_id": "review-reject",
+      "terminal": "review_rejected",
+      "status": 200,
+      "health": {
+        "active": 0,
+        "draining": false,
+        "settlements": 6,
+        "workers": 0
+      },
+      "raw": "data: {\"attempt_ids\":[\"exp26-review-reject/a1\"],\"finish\":null,\"generation_id\":\"g0\",\"id\":\"exp26-review-reject\",\"settlements\":[{\"attempt_id\":\"exp26-review-reject/a1\",\"source\":\"unknown\",\"usage\":null}],\"terminal\":\"review_rejected\",\"type\":\"terminal\"}\n\ndata: [DONE]\n\n"
+    },
+    {
+      "case_id": "review-unavailable",
+      "terminal": "review_unavailable",
+      "status": 200,
+      "health": {
+        "active": 0,
+        "draining": false,
+        "settlements": 7,
+        "workers": 0
+      },
+      "raw": "data: {\"attempt_ids\":[\"exp26-review-unavailable/a1\"],\"finish\":null,\"generation_id\":\"g0\",\"id\":\"exp26-review-unavailable\",\"settlements\":[{\"attempt_id\":\"exp26-review-unavailable/a1\",\"source\":\"unknown\",\"usage\":null}],\"terminal\":\"review_unavailable\",\"type\":\"terminal\"}\n\ndata: [DONE]\n\n"
+    },
+    {
+      "case_id": "cancel-late",
+      "terminal": "cancelled",
+      "status": 200,
+      "health": {
+        "active": 0,
+        "draining": false,
+        "settlements": 8,
+        "workers": 0
+      },
+      "raw": "data: {\"attempt_id\":\"exp26-cancel-late/a1\",\"content\":\"甲\",\"generation_id\":\"g0\",\"id\":\"exp26-cancel-late\",\"type\":\"content\"}\n\ndata: {\"attempt_ids\":[\"exp26-cancel-late/a1\"],\"finish\":null,\"generation_id\":\"g0\",\"id\":\"exp26-cancel-late\",\"settlements\":[{\"attempt_id\":\"exp26-cancel-late/a1\",\"source\":\"unknown\",\"usage\":null}],\"terminal\":\"cancelled\",\"type\":\"terminal\"}\n\ndata: [DONE]\n\n"
+    },
+    {
+      "case_id": "stale-generation",
+      "terminal": "superseded",
+      "status": 200,
+      "health": {
+        "active": 0,
+        "draining": false,
+        "settlements": 9,
+        "workers": 0
+      },
+      "raw": "data: {\"attempt_id\":\"exp26-stale-generation/a1\",\"content\":\"甲\",\"generation_id\":\"g0\",\"id\":\"exp26-stale-generation\",\"type\":\"content\"}\n\ndata: {\"attempt_ids\":[\"exp26-stale-generation/a1\"],\"finish\":null,\"generation_id\":\"g0\",\"id\":\"exp26-stale-generation\",\"settlements\":[{\"attempt_id\":\"exp26-stale-generation/a1\",\"source\":\"unknown\",\"usage\":null}],\"terminal\":\"superseded\",\"type\":\"terminal\"}\n\ndata: [DONE]\n\n"
+    },
+    {
+      "case_id": "drain-graceful",
+      "terminal": "completed",
+      "status": 200,
+      "health": {
+        "active": 0,
+        "draining": true,
+        "settlements": 10,
+        "workers": 0
+      },
+      "raw": "data: {\"attempt_id\":\"exp26-drain-graceful/a1\",\"content\":\"甲\",\"generation_id\":\"g0\",\"id\":\"exp26-drain-graceful\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-drain-graceful/a1\",\"content\":\"乙\",\"generation_id\":\"g0\",\"id\":\"exp26-drain-graceful\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-drain-graceful/a1\",\"content\":\"丙\",\"generation_id\":\"g0\",\"id\":\"exp26-drain-graceful\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-drain-graceful/a1\",\"content\":\"丁\",\"generation_id\":\"g0\",\"id\":\"exp26-drain-graceful\",\"type\":\"content\"}\n\ndata: {\"attempt_ids\":[\"exp26-drain-graceful/a1\"],\"finish\":\"stop\",\"generation_id\":\"g0\",\"id\":\"exp26-drain-graceful\",\"settlements\":[{\"attempt_id\":\"exp26-drain-graceful/a1\",\"source\":\"synthetic_fixture\",\"usage\":{\"completion_tokens\":4,\"prompt_tokens\":3,\"total_tokens\":7}}],\"terminal\":\"completed\",\"type\":\"terminal\"}\n\ndata: [DONE]\n\n"
+    },
+    {
+      "case_id": "drain-timeout",
+      "terminal": "drain_timeout",
+      "status": 200,
+      "health": {
+        "active": 0,
+        "draining": true,
+        "settlements": 11,
+        "workers": 0
+      },
+      "raw": "data: {\"attempt_id\":\"exp26-drain-timeout/a1\",\"content\":\"甲\",\"generation_id\":\"g0\",\"id\":\"exp26-drain-timeout\",\"type\":\"content\"}\n\ndata: {\"attempt_ids\":[\"exp26-drain-timeout/a1\"],\"finish\":null,\"generation_id\":\"g0\",\"id\":\"exp26-drain-timeout\",\"settlements\":[{\"attempt_id\":\"exp26-drain-timeout/a1\",\"source\":\"unknown\",\"usage\":null}],\"terminal\":\"drain_timeout\",\"type\":\"terminal\"}\n\ndata: [DONE]\n\n"
+    },
+    {
+      "case_id": "drain-reject",
+      "terminal": "draining",
+      "status": 503,
+      "health": {
+        "active": 0,
+        "draining": true,
+        "settlements": 11,
+        "workers": 0
+      },
+      "raw": "{\"error\":\"draining\",\"request_id\":\"exp26-drain-reject\"}"
+    },
+    {
+      "case_id": "no-key",
+      "terminal": "backend_error",
+      "status": 200,
+      "health": {
+        "active": 0,
+        "draining": false,
+        "settlements": 12,
+        "workers": 0
+      },
+      "raw": "data: {\"attempt_ids\":[\"exp26-no-key/a1\"],\"finish\":null,\"generation_id\":\"g0\",\"id\":\"exp26-no-key\",\"settlements\":[{\"attempt_id\":\"exp26-no-key/a1\",\"source\":\"unknown\",\"usage\":null}],\"terminal\":\"backend_error\",\"type\":\"terminal\"}\n\ndata: [DONE]\n\n"
+    },
+    {
+      "case_id": "duplicate-settlement",
+      "terminal": "completed",
+      "status": 200,
+      "health": {
+        "active": 0,
+        "draining": false,
+        "settlements": 13,
+        "workers": 0
+      },
+      "raw": "data: {\"attempt_id\":\"exp26-duplicate-settlement/a1\",\"content\":\"甲\",\"generation_id\":\"g0\",\"id\":\"exp26-duplicate-settlement\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-duplicate-settlement/a1\",\"content\":\"乙\",\"generation_id\":\"g0\",\"id\":\"exp26-duplicate-settlement\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-duplicate-settlement/a1\",\"content\":\"丙\",\"generation_id\":\"g0\",\"id\":\"exp26-duplicate-settlement\",\"type\":\"content\"}\n\ndata: {\"attempt_id\":\"exp26-duplicate-settlement/a1\",\"content\":\"丁\",\"generation_id\":\"g0\",\"id\":\"exp26-duplicate-settlement\",\"type\":\"content\"}\n\ndata: {\"attempt_ids\":[\"exp26-duplicate-settlement/a1\"],\"finish\":\"stop\",\"generation_id\":\"g0\",\"id\":\"exp26-duplicate-settlement\",\"settlements\":[{\"attempt_id\":\"exp26-duplicate-settlement/a1\",\"source\":\"synthetic_fixture\",\"usage\":{\"completion_tokens\":4,\"prompt_tokens\":3,\"total_tokens\":7}}],\"terminal\":\"completed\",\"type\":\"terminal\"}\n\ndata: [DONE]\n\n"
+    }
+  ],
+  "cleanup": {
+    "exited": true,
+    "pid": 65746
+  }
+}

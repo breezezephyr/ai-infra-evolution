@@ -1,0 +1,97 @@
+[
+  {
+    "action": "master_started",
+    "parent_monotonic_ns": 719210578831472,
+    "pid": 123380,
+    "cmd": [
+      "/opt/exp24-20261026-p5f/venv/bin/mooncake_master",
+      "--rpc_address=127.0.0.1",
+      "--rpc_port=50240",
+      "--metrics_port=9024",
+      "--enable_ha=false",
+      "--enable_snapshot=false",
+      "--enable_snapshot_restore=false",
+      "--enable_offload=false"
+    ],
+    "generation": 1
+  },
+  {
+    "action": "client_started",
+    "parent_monotonic_ns": 719210579192684,
+    "client": "A",
+    "pid": 123423
+  },
+  {
+    "action": "client_started",
+    "parent_monotonic_ns": 719210610336828,
+    "client": "B",
+    "pid": 123470
+  },
+  {
+    "action": "stopped",
+    "parent_monotonic_ns": 719211590605387,
+    "label": "master",
+    "pid": 123380,
+    "returncode": 0
+  },
+  {
+    "action": "master_started",
+    "parent_monotonic_ns": 719211642691214,
+    "pid": 123516,
+    "cmd": [
+      "/opt/exp24-20261026-p5f/venv/bin/mooncake_master",
+      "--rpc_address=127.0.0.1",
+      "--rpc_port=50240",
+      "--metrics_port=9024",
+      "--enable_ha=false",
+      "--enable_snapshot=false",
+      "--enable_snapshot_restore=false",
+      "--enable_offload=false"
+    ],
+    "generation": 2
+  },
+  {
+    "action": "sleep",
+    "parent_monotonic_ns": 719211642856217,
+    "seconds": 3
+  },
+  {
+    "action": "sleep",
+    "parent_monotonic_ns": 719214646537076,
+    "seconds": 12
+  },
+  {
+    "action": "client_started",
+    "parent_monotonic_ns": 719226649023663,
+    "client": "C",
+    "pid": 123620
+  },
+  {
+    "action": "stopped",
+    "parent_monotonic_ns": 719231640074723,
+    "label": "master",
+    "pid": 123516,
+    "returncode": 0
+  },
+  {
+    "action": "stopped",
+    "parent_monotonic_ns": 719231641383337,
+    "label": "client-A",
+    "pid": 123423,
+    "returncode": 0
+  },
+  {
+    "action": "stopped",
+    "parent_monotonic_ns": 719231643895738,
+    "label": "client-B",
+    "pid": 123470,
+    "returncode": 0
+  },
+  {
+    "action": "stopped",
+    "parent_monotonic_ns": 719231644430534,
+    "label": "client-C",
+    "pid": 123620,
+    "returncode": 0
+  }
+]

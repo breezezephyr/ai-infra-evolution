@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="4" time="0.022" timestamp="2026-10-26T14:04:46.478837+08:00" hostname="lab-host.example.invalid"><testcase classname="phase5.exp23.test_source" name="test_source_boundary_uses_nextn_plus_one" time="0.000"><failure message="AttributeError: module 'source_probes' has no attribute 'probe_config'">def test_source_boundary_uses_nextn_plus_one():
+&gt;       r=source_probes.probe_config({'DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE':'compact','DEEPINFER_YOCO_PREFILL_KEEP_TOKENS':'133'},128)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'source_probes' has no attribute 'probe_config'
+
+phase5/exp23/test_source.py:6: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_source" name="test_zero_draft_still_has_one_backtracking_budget" time="0.000"><failure message="AttributeError: module 'source_probes' has no attribute 'probe_config'">def test_zero_draft_still_has_one_backtracking_budget():
+&gt;       r=source_probes.probe_config({'DEEPINFER_USE_NEXTN_DECODE':'0','DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE':'mask','DEEPINFER_YOCO_PREFILL_KEEP_TOKENS':'128'},128)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'source_probes' has no attribute 'probe_config'
+
+phase5/exp23/test_source.py:13: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_source" name="test_environment_probe_is_fresh_and_controlled" time="0.000"><failure message="AttributeError: module 'source_probes' has no attribute 'probe_config'">def test_environment_probe_is_fresh_and_controlled():
+&gt;       first=source_probes.probe_config({'DEEPINFER_MAX_BACKTRACKING_TOKENS':'20'},128)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'source_probes' has no attribute 'probe_config'
+
+phase5/exp23/test_source.py:18: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_source" name="test_invalid_mode_is_not_silently_turned_off" time="0.000"><failure message="AttributeError: module 'source_probes' has no attribute 'probe_config'">def test_invalid_mode_is_not_silently_turned_off():
+&gt;       assert source_probes.probe_config({'DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE':'invalid'},128)['status']=='parse_rejected'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'source_probes' has no attribute 'probe_config'
+
+phase5/exp23/test_source.py:24: AttributeError</failure></testcase></testsuite></testsuites>

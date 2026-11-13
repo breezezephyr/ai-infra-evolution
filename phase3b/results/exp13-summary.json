@@ -1,0 +1,540 @@
+{
+  "recorded_on": "2026-10-22",
+  "kind": "CPU_and_GPU_review_measurements_controlled_replay_and_live_same_card_GPU",
+  "device": "mixed_cpu_and_cuda",
+  "latency_scope": {
+    "embedding_ms": "tokenization + CPU forward + pooling; excludes model load",
+    "classifier_ms": "CPU generate including prompt prefill and output; excludes tokenization and model load"
+  },
+  "http_smoke": {
+    "client_disconnect_upstream_closed": true,
+    "upstream_chars_after_disconnect": 2
+  },
+  "threads": 4,
+  "reviewer_quality": [
+    {
+      "reviewer": "embedding@0.80",
+      "n_cases": 12,
+      "blocked_cases": 6,
+      "false_negatives": 3,
+      "false_positives": 2,
+      "invalid": 0,
+      "latency_n": 36,
+      "latency_p50_ms": 72.91908646584488,
+      "latency_p90_ms": 84.47415399132296
+    },
+    {
+      "reviewer": "embedding@0.90",
+      "n_cases": 12,
+      "blocked_cases": 6,
+      "false_negatives": 3,
+      "false_positives": 1,
+      "invalid": 0,
+      "latency_n": 36,
+      "latency_p50_ms": 72.91908646584488,
+      "latency_p90_ms": 84.47415399132296
+    },
+    {
+      "reviewer": "classifier",
+      "n_cases": 12,
+      "blocked_cases": 6,
+      "false_negatives": 4,
+      "false_positives": 0,
+      "invalid": 0,
+      "latency_n": 24,
+      "latency_p50_ms": 297.05130352522247,
+      "latency_p90_ms": 322.00137181789614
+    }
+  ],
+  "protocol": [
+    {
+      "mode": "pass",
+      "review_ms_replayed": 0,
+      "safe": true,
+      "n": 3,
+      "first_visible_p50_ms": 13.331064954400063,
+      "max_gap_p50_ms": 14.002865005750209,
+      "leaked_bad_chars_p50": 0.0,
+      "after_bad_chars_p50": 0.0,
+      "max_burst_chars": 1,
+      "finish_reasons": [
+        "stop"
+      ],
+      "source_closed": true
+    },
+    {
+      "mode": "sync",
+      "review_ms_replayed": 72.919,
+      "safe": true,
+      "n": 3,
+      "first_visible_p50_ms": 213.0320779979229,
+      "max_gap_p50_ms": 256.77616597386077,
+      "leaked_bad_chars_p50": 0.0,
+      "after_bad_chars_p50": 0.0,
+      "max_burst_chars": 20,
+      "finish_reasons": [
+        "stop"
+      ],
+      "source_closed": true
+    },
+    {
+      "mode": "async",
+      "review_ms_replayed": 72.919,
+      "safe": true,
+      "n": 3,
+      "first_visible_p50_ms": 13.15334701212123,
+      "max_gap_p50_ms": 13.80192895885557,
+      "leaked_bad_chars_p50": 0.0,
+      "after_bad_chars_p50": 0.0,
+      "max_burst_chars": 1,
+      "finish_reasons": [
+        "stop"
+      ],
+      "source_closed": true
+    },
+    {
+      "mode": "sync",
+      "review_ms_replayed": 297.051,
+      "safe": true,
+      "n": 3,
+      "first_visible_p50_ms": 436.91530800424516,
+      "max_gap_p50_ms": 299.6825249865651,
+      "leaked_bad_chars_p50": 0.0,
+      "after_bad_chars_p50": 0.0,
+      "max_burst_chars": 20,
+      "finish_reasons": [
+        "stop"
+      ],
+      "source_closed": true
+    },
+    {
+      "mode": "async",
+      "review_ms_replayed": 297.051,
+      "safe": true,
+      "n": 3,
+      "first_visible_p50_ms": 13.20244005182758,
+      "max_gap_p50_ms": 13.748184952419251,
+      "leaked_bad_chars_p50": 0.0,
+      "after_bad_chars_p50": 0.0,
+      "max_burst_chars": 1,
+      "finish_reasons": [
+        "stop"
+      ],
+      "source_closed": true
+    },
+    {
+      "mode": "pass",
+      "review_ms_replayed": 0,
+      "safe": false,
+      "n": 3,
+      "first_visible_p50_ms": 13.173146988265216,
+      "max_gap_p50_ms": 13.827685033902526,
+      "leaked_bad_chars_p50": 17.0,
+      "after_bad_chars_p50": 33.0,
+      "max_burst_chars": 1,
+      "finish_reasons": [
+        "stop"
+      ],
+      "source_closed": true
+    },
+    {
+      "mode": "sync",
+      "review_ms_replayed": 72.919,
+      "safe": false,
+      "n": 3,
+      "first_visible_p50_ms": 210.7898080139421,
+      "max_gap_p50_ms": 165.89184995973483,
+      "leaked_bad_chars_p50": 0.0,
+      "after_bad_chars_p50": 0.0,
+      "max_burst_chars": 13,
+      "finish_reasons": [
+        "content_filter"
+      ],
+      "source_closed": true
+    },
+    {
+      "mode": "async",
+      "review_ms_replayed": 72.919,
+      "safe": false,
+      "n": 3,
+      "first_visible_p50_ms": 13.279964041430503,
+      "max_gap_p50_ms": 14.097589999437332,
+      "leaked_bad_chars_p50": 17.0,
+      "after_bad_chars_p50": 5.0,
+      "max_burst_chars": 1,
+      "finish_reasons": [
+        "content_filter"
+      ],
+      "source_closed": true
+    },
+    {
+      "mode": "sync",
+      "review_ms_replayed": 297.051,
+      "safe": false,
+      "n": 3,
+      "first_visible_p50_ms": 437.30238103307784,
+      "max_gap_p50_ms": 299.12433499703184,
+      "leaked_bad_chars_p50": 0.0,
+      "after_bad_chars_p50": 0.0,
+      "max_burst_chars": 13,
+      "finish_reasons": [
+        "content_filter"
+      ],
+      "source_closed": true
+    },
+    {
+      "mode": "async",
+      "review_ms_replayed": 297.051,
+      "safe": false,
+      "n": 3,
+      "first_visible_p50_ms": 12.996999023016542,
+      "max_gap_p50_ms": 14.403818000573665,
+      "leaked_bad_chars_p50": 17.0,
+      "after_bad_chars_p50": 33.0,
+      "max_burst_chars": 1,
+      "finish_reasons": [
+        "content_filter"
+      ],
+      "source_closed": true
+    }
+  ],
+  "abuse_profiles": [
+    {
+      "key": "demo-scheduled-batch",
+      "label": "已授权定时批处理",
+      "synthetic": true,
+      "requests_60s": 120,
+      "interval_cv": 0.0,
+      "configured_input_tokens": 1024,
+      "configured_output_tokens": 256,
+      "reserved_token_total": 153600
+    },
+    {
+      "key": "demo-same-pattern-unknown",
+      "label": "用途未知；只凭节律不能判滥用",
+      "synthetic": true,
+      "requests_60s": 120,
+      "interval_cv": 0.0,
+      "configured_input_tokens": 1024,
+      "configured_output_tokens": 256,
+      "reserved_token_total": 153600
+    },
+    {
+      "key": "demo-long-context",
+      "label": "长上下文压力样例；是否违规取决于配额合同",
+      "synthetic": true,
+      "requests_60s": 20,
+      "interval_cv": 0.0,
+      "configured_input_tokens": 8192,
+      "configured_output_tokens": 64,
+      "reserved_token_total": 165120
+    }
+  ],
+  "inference": "live generator and reviewer share one GPU; no production abuse identified",
+  "sources": [
+    {
+      "path": "phase3b/exp13/cases.json",
+      "sha256": "58c9d0d023928c965d456459c89ac8e06495608f353101d779cd294ebe807e27"
+    },
+    {
+      "path": "phase3b/exp13/reviewers-cpu.json",
+      "sha256": "7c57b9da04d3094a29d68a62558a79e29faf2290b8527bce72b48a0ca1deda13"
+    },
+    {
+      "path": "phase3b/exp13/http-replay.json",
+      "sha256": "b6c6ddb32ef681c37a9bcd715470774e63156aa5b3553f9202b49552fc284cf9"
+    },
+    {
+      "path": "phase3b/exp13/reviewers-gpu.json",
+      "sha256": "68498b2a1b177e223d82199dfc82cdc385a947a50087e8bc01f8e090ccfc5822"
+    },
+    {
+      "path": "phase3b/exp13/gpu-live.json",
+      "sha256": "c893f5beddfdfcaf990bacf443940a666037280b6832dac8dccf54803de6340d"
+    }
+  ],
+  "gpu": {
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "dtype": "torch.bfloat16",
+    "quality": [
+      {
+        "reviewer": "embedding@0.80",
+        "n_cases": 12,
+        "blocked_cases": 6,
+        "false_negatives": 3,
+        "false_positives": 2,
+        "invalid": 0,
+        "latency_n": 36,
+        "latency_p50_ms": 22.081578499637544,
+        "latency_p90_ms": 37.15598146663979
+      },
+      {
+        "reviewer": "embedding@0.90",
+        "n_cases": 12,
+        "blocked_cases": 6,
+        "false_negatives": 3,
+        "false_positives": 1,
+        "invalid": 0,
+        "latency_n": 36,
+        "latency_p50_ms": 22.081578499637544,
+        "latency_p90_ms": 37.15598146663979
+      },
+      {
+        "reviewer": "classifier",
+        "n_cases": 12,
+        "blocked_cases": 6,
+        "false_negatives": 4,
+        "false_positives": 0,
+        "invalid": 0,
+        "latency_n": 24,
+        "latency_p50_ms": 47.50887647969648,
+        "latency_p90_ms": 50.56628658785485
+      }
+    ]
+  },
+  "live_gpu_protocol": [
+    {
+      "mode": "pass",
+      "reviewer": "none",
+      "safe": true,
+      "n": 3,
+      "first_visible_p50_ms": 29.21004395466298,
+      "max_gap_p50_ms": 57.96870600897819,
+      "client_terminal_p50_ms": 1167.535265965853,
+      "visible_chars_p50": 77.0,
+      "leaked_marked_chars_p50": null,
+      "after_marked_chars_p50": null,
+      "marked_sentence_observed": 0,
+      "correct_marked_window_block_count": 0,
+      "finish_reasons": [
+        "stop"
+      ],
+      "generated_tokens_p50": 46.0,
+      "generation_finish_reasons": [
+        "stop"
+      ],
+      "all_generator_threads_stopped": true,
+      "review_latency_p50_ms": null
+    },
+    {
+      "mode": "sync",
+      "reviewer": "embedding",
+      "safe": true,
+      "n": 3,
+      "first_visible_p50_ms": 254.20001201564446,
+      "max_gap_p50_ms": 365.44333602068946,
+      "client_terminal_p50_ms": 1401.9561460008845,
+      "visible_chars_p50": 77.0,
+      "leaked_marked_chars_p50": null,
+      "after_marked_chars_p50": null,
+      "marked_sentence_observed": 0,
+      "correct_marked_window_block_count": 0,
+      "finish_reasons": [
+        "stop"
+      ],
+      "generated_tokens_p50": 46.0,
+      "generation_finish_reasons": [
+        "stop"
+      ],
+      "all_generator_threads_stopped": true,
+      "review_latency_p50_ms": 80.62644797610119
+    },
+    {
+      "mode": "async",
+      "reviewer": "embedding",
+      "safe": true,
+      "n": 3,
+      "first_visible_p50_ms": 26.995194028131664,
+      "max_gap_p50_ms": 77.38082797732204,
+      "client_terminal_p50_ms": 1389.909319987055,
+      "visible_chars_p50": 77.0,
+      "leaked_marked_chars_p50": null,
+      "after_marked_chars_p50": null,
+      "marked_sentence_observed": 0,
+      "correct_marked_window_block_count": 0,
+      "finish_reasons": [
+        "stop"
+      ],
+      "generated_tokens_p50": 46.0,
+      "generation_finish_reasons": [
+        "stop"
+      ],
+      "all_generator_threads_stopped": true,
+      "review_latency_p50_ms": 74.54636201146059
+    },
+    {
+      "mode": "sync",
+      "reviewer": "classifier",
+      "safe": true,
+      "n": 3,
+      "first_visible_p50_ms": 340.5070129665546,
+      "max_gap_p50_ms": 450.99191000917926,
+      "client_terminal_p50_ms": 1709.4880240038037,
+      "visible_chars_p50": 77.0,
+      "leaked_marked_chars_p50": null,
+      "after_marked_chars_p50": null,
+      "marked_sentence_observed": 0,
+      "correct_marked_window_block_count": 0,
+      "finish_reasons": [
+        "stop"
+      ],
+      "generated_tokens_p50": 46.0,
+      "generation_finish_reasons": [
+        "stop"
+      ],
+      "all_generator_threads_stopped": true,
+      "review_latency_p50_ms": 156.2370475148782
+    },
+    {
+      "mode": "async",
+      "reviewer": "classifier",
+      "safe": true,
+      "n": 3,
+      "first_visible_p50_ms": 27.009740995708853,
+      "max_gap_p50_ms": 93.52808602852747,
+      "client_terminal_p50_ms": 1717.4492810154334,
+      "visible_chars_p50": 77.0,
+      "leaked_marked_chars_p50": null,
+      "after_marked_chars_p50": null,
+      "marked_sentence_observed": 0,
+      "correct_marked_window_block_count": 0,
+      "finish_reasons": [
+        "stop"
+      ],
+      "generated_tokens_p50": 46.0,
+      "generation_finish_reasons": [
+        "stop"
+      ],
+      "all_generator_threads_stopped": true,
+      "review_latency_p50_ms": 143.69183001690544
+    },
+    {
+      "mode": "pass",
+      "reviewer": "none",
+      "safe": false,
+      "n": 3,
+      "first_visible_p50_ms": 28.15089497016743,
+      "max_gap_p50_ms": 54.668062017299235,
+      "client_terminal_p50_ms": 1157.2444990160875,
+      "visible_chars_p50": 74.0,
+      "leaked_marked_chars_p50": 17.0,
+      "after_marked_chars_p50": 33.0,
+      "marked_sentence_observed": 3,
+      "correct_marked_window_block_count": 0,
+      "finish_reasons": [
+        "stop"
+      ],
+      "generated_tokens_p50": 45.0,
+      "generation_finish_reasons": [
+        "stop"
+      ],
+      "all_generator_threads_stopped": true,
+      "review_latency_p50_ms": null
+    },
+    {
+      "mode": "sync",
+      "reviewer": "embedding",
+      "safe": false,
+      "n": 3,
+      "first_visible_p50_ms": 256.0628450009972,
+      "max_gap_p50_ms": 248.42250003712252,
+      "client_terminal_p50_ms": 903.9473769953474,
+      "visible_chars_p50": 24.0,
+      "leaked_marked_chars_p50": 0.0,
+      "after_marked_chars_p50": 0.0,
+      "marked_sentence_observed": 3,
+      "correct_marked_window_block_count": 3,
+      "finish_reasons": [
+        "content_filter"
+      ],
+      "generated_tokens_p50": 28.0,
+      "generation_finish_reasons": [
+        "cancelled"
+      ],
+      "all_generator_threads_stopped": true,
+      "review_latency_p50_ms": 70.61309803975746
+    },
+    {
+      "mode": "async",
+      "reviewer": "embedding",
+      "safe": false,
+      "n": 3,
+      "first_visible_p50_ms": 29.806295002344996,
+      "max_gap_p50_ms": 75.56858396856114,
+      "client_terminal_p50_ms": 841.336743964348,
+      "visible_chars_p50": 43.0,
+      "leaked_marked_chars_p50": 17.0,
+      "after_marked_chars_p50": 2.0,
+      "marked_sentence_observed": 3,
+      "correct_marked_window_block_count": 3,
+      "finish_reasons": [
+        "content_filter"
+      ],
+      "generated_tokens_p50": 28.0,
+      "generation_finish_reasons": [
+        "cancelled"
+      ],
+      "all_generator_threads_stopped": true,
+      "review_latency_p50_ms": 68.03811498684809
+    },
+    {
+      "mode": "sync",
+      "reviewer": "classifier",
+      "safe": false,
+      "n": 3,
+      "first_visible_p50_ms": 331.7571999505162,
+      "max_gap_p50_ms": 421.9342879951,
+      "client_terminal_p50_ms": 1723.3712619636208,
+      "visible_chars_p50": 74.0,
+      "leaked_marked_chars_p50": 17.0,
+      "after_marked_chars_p50": 33.0,
+      "marked_sentence_observed": 3,
+      "correct_marked_window_block_count": 0,
+      "finish_reasons": [
+        "stop"
+      ],
+      "generated_tokens_p50": 45.0,
+      "generation_finish_reasons": [
+        "stop"
+      ],
+      "all_generator_threads_stopped": true,
+      "review_latency_p50_ms": 145.41808402282186
+    },
+    {
+      "mode": "async",
+      "reviewer": "classifier",
+      "safe": false,
+      "n": 3,
+      "first_visible_p50_ms": 28.367140039335936,
+      "max_gap_p50_ms": 84.3573150341399,
+      "client_terminal_p50_ms": 1668.0523930117488,
+      "visible_chars_p50": 74.0,
+      "leaked_marked_chars_p50": 17.0,
+      "after_marked_chars_p50": 33.0,
+      "marked_sentence_observed": 3,
+      "correct_marked_window_block_count": 0,
+      "finish_reasons": [
+        "stop"
+      ],
+      "generated_tokens_p50": 45.0,
+      "generation_finish_reasons": [
+        "stop"
+      ],
+      "all_generator_threads_stopped": true,
+      "review_latency_p50_ms": 142.48032003524713
+    }
+  ],
+  "primary_device": "cuda",
+  "live_gpu_model_config": {
+    "kind": "live_GPU_generation_and_actual_review_same_card",
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "dtype": "bfloat16",
+    "generator": "Qwen3-0.6B",
+    "reviewers": [
+      "Qwen3-Embedding-0.6B",
+      "Qwen3-0.6B"
+    ],
+    "max_new_tokens": 192,
+    "embedding_threshold": 0.8
+  }
+}

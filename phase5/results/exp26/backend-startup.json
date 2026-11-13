@@ -1,0 +1,47 @@
+{
+  "pid": 125928,
+  "command": [
+    "/root/vllm-env/bin/vllm",
+    "serve",
+    "/opt/models/Qwen3-0.6B",
+    "--served-model-name",
+    "exp26-qwen3-0.6b",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8026",
+    "--dtype",
+    "bfloat16",
+    "--max-model-len",
+    "2048",
+    "--max-num-seqs",
+    "4",
+    "--max-num-batched-tokens",
+    "4096",
+    "--gpu-memory-utilization",
+    "0.60",
+    "--enforce-eager",
+    "--disable-frontend-multiprocessing",
+    "--disable-log-requests",
+    "--generation-config",
+    "vllm",
+    "--middleware",
+    "backend_audit.AuditMiddleware"
+  ],
+  "gpu_before": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB, 664 MiB, 0 %",
+  "model_files_before": {
+    "model.safetensors": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "config.json": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd"
+  },
+  "source_sha256": {
+    "analyze.py": "6a2a26f2a247a9bbe63cffb6fd287eb67c8d1af61afc5184a31834ddd59f2c1f",
+    "run.py": "18fe956ead9c28013bd2165967f0ce79aaec94ac0d34ad8bf852714d524a907a",
+    "serve_gateway.py": "fd1f884275bc8798d5201e80d29f2bd456388163519d8e7afd20c7f4b4af523d",
+    "gateway.py": "af50a1fca7e6adefb0802995c9552e0a57a18db58b4d83fd77e5e530140b719a",
+    "backend_audit.py": "c7bcfd1daf58299ee58ee5577fc1417268f7ed7b552d96cd26ad7862facace9f",
+    "manage_backend.py": "06242855cf3922572e9d3bdad7e0a14c7f2a22db8f2db07658d9083e84af2560"
+  },
+  "utc": "2026-10-26T09:00:01.809440+00:00"
+}

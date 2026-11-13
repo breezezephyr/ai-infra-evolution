@@ -1,0 +1,2624 @@
+{
+  "schema": "exp17.v1",
+  "date": "2026-10-23",
+  "gpu_runs": 36,
+  "failed_gpu_runs": 0,
+  "warmup_runs": 4,
+  "groups": [
+    {
+      "case_id": "short_03",
+      "policy": "endpoint",
+      "latency_ms": {
+        "n": 3,
+        "p50": 278.020506,
+        "minimum": 266.138198,
+        "maximum": 291.787673
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 32.737568,
+        "minimum": 28.399851,
+        "maximum": 32.869521
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 245.26588,
+        "minimum": 237.725545,
+        "maximum": 258.89601
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 0.017058,
+        "minimum": 0.012802,
+        "maximum": 0.022142
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 1,
+        "minimum": 1,
+        "maximum": 1
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "reused_count": 0
+    },
+    {
+      "case_id": "short_03",
+      "policy": "eager",
+      "latency_ms": {
+        "n": 3,
+        "p50": 156.870406,
+        "minimum": 146.056059,
+        "maximum": 173.206998
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 0.021209,
+        "minimum": 0.021169,
+        "maximum": 0.023573
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 156.829776,
+        "minimum": 146.011829,
+        "maximum": 173.161182
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 0.022243,
+        "minimum": 0.019461,
+        "maximum": 0.023021
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 4,
+        "minimum": 4,
+        "maximum": 4
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 2.791044776119403,
+        "minimum": 2.791044776119403,
+        "maximum": 2.791044776119403
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 33,
+        "minimum": 33,
+        "maximum": 33
+      },
+      "reused_count": 3
+    },
+    {
+      "case_id": "short_03",
+      "policy": "stable2",
+      "latency_ms": {
+        "n": 3,
+        "p50": 154.143602,
+        "minimum": 140.993575,
+        "maximum": 154.695052
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 25.097203,
+        "minimum": 23.952698,
+        "maximum": 26.404756
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 128.278669,
+        "minimum": 115.865419,
+        "maximum": 130.127925
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 0.030953,
+        "minimum": 0.011627,
+        "maximum": 0.062979
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 4,
+        "minimum": 4,
+        "maximum": 4
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 2.791044776119403,
+        "minimum": 2.791044776119403,
+        "maximum": 2.791044776119403
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "reused_count": 0
+    },
+    {
+      "case_id": "pause_02",
+      "policy": "endpoint",
+      "latency_ms": {
+        "n": 3,
+        "p50": 385.836838,
+        "minimum": 375.31771,
+        "maximum": 426.108268
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 26.734774,
+        "minimum": 24.6631,
+        "maximum": 27.839116
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 361.144481,
+        "minimum": 348.521023,
+        "maximum": 398.209924
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 0.059228,
+        "minimum": 0.029257,
+        "maximum": 0.061913
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 1,
+        "minimum": 1,
+        "maximum": 1
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "reused_count": 0
+    },
+    {
+      "case_id": "pause_02",
+      "policy": "eager",
+      "latency_ms": {
+        "n": 3,
+        "p50": 270.859828,
+        "minimum": 270.7083,
+        "maximum": 290.266985
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 0.023904,
+        "minimum": 0.02113,
+        "maximum": 0.024285
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 270.819362,
+        "minimum": 270.664822,
+        "maximum": 290.220717
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 0.019574,
+        "minimum": 0.019336,
+        "maximum": 0.021983
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 7,
+        "minimum": 7,
+        "maximum": 7
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 4.146067415730337,
+        "minimum": 4.146067415730337,
+        "maximum": 4.146067415730337
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 53,
+        "minimum": 53,
+        "maximum": 53
+      },
+      "reused_count": 3
+    },
+    {
+      "case_id": "pause_02",
+      "policy": "stable2",
+      "latency_ms": {
+        "n": 3,
+        "p50": 181.312125,
+        "minimum": 171.674989,
+        "maximum": 200.329678
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 24.968632,
+        "minimum": 24.856093,
+        "maximum": 26.636652
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 156.424195,
+        "minimum": 145.025861,
+        "maximum": 175.302469
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 0.031837,
+        "minimum": 0.012476,
+        "maximum": 0.058577
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 7,
+        "minimum": 7,
+        "maximum": 7
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 4.146067415730337,
+        "minimum": 4.146067415730337,
+        "maximum": 4.146067415730337
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "reused_count": 0
+    },
+    {
+      "case_id": "pause_03",
+      "policy": "endpoint",
+      "latency_ms": {
+        "n": 3,
+        "p50": 418.25085,
+        "minimum": 391.746442,
+        "maximum": 538.09979
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 25.128971,
+        "minimum": 24.002593,
+        "maximum": 49.846275
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 393.085631,
+        "minimum": 367.716365,
+        "maximum": 488.191057
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 0.036248,
+        "minimum": 0.027484,
+        "maximum": 0.062458
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 1,
+        "minimum": 1,
+        "maximum": 1
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "reused_count": 0
+    },
+    {
+      "case_id": "pause_03",
+      "policy": "eager",
+      "latency_ms": {
+        "n": 3,
+        "p50": 275.506793,
+        "minimum": 271.870194,
+        "maximum": 400.112188
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 0.022722,
+        "minimum": 0.021418,
+        "maximum": 0.023405
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 275.457877,
+        "minimum": 271.827447,
+        "maximum": 400.07946
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 0.019342,
+        "minimum": 0.01131,
+        "maximum": 0.026194
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 9,
+        "minimum": 9,
+        "maximum": 9
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 5.324324324324325,
+        "minimum": 5.324324324324325,
+        "maximum": 5.324324324324325
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 110,
+        "minimum": 110,
+        "maximum": 110
+      },
+      "reused_count": 3
+    },
+    {
+      "case_id": "pause_03",
+      "policy": "stable2",
+      "latency_ms": {
+        "n": 3,
+        "p50": 212.304887,
+        "minimum": 199.578225,
+        "maximum": 220.521277
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 24.419408,
+        "minimum": 23.820778,
+        "maximum": 25.035933
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 187.847727,
+        "minimum": 174.515586,
+        "maximum": 196.689281
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 0.026706,
+        "minimum": 0.011218,
+        "maximum": 0.037752
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 9,
+        "minimum": 9,
+        "maximum": 9
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 5.324324324324325,
+        "minimum": 5.324324324324325,
+        "maximum": 5.324324324324325
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "reused_count": 0
+    },
+    {
+      "case_id": "long_02",
+      "policy": "endpoint",
+      "latency_ms": {
+        "n": 3,
+        "p50": 459.329346,
+        "minimum": 421.558315,
+        "maximum": 462.67556
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 24.056532,
+        "minimum": 24.035494,
+        "maximum": 24.853263
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 435.227285,
+        "minimum": 396.674424,
+        "maximum": 438.595273
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 0.044793,
+        "minimum": 0.030628,
+        "maximum": 0.045529
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 1,
+        "minimum": 1,
+        "maximum": 1
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "reused_count": 0
+    },
+    {
+      "case_id": "long_02",
+      "policy": "eager",
+      "latency_ms": {
+        "n": 3,
+        "p50": 424.92028,
+        "minimum": 395.69231,
+        "maximum": 455.215767
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 0.027316,
+        "minimum": 0.027005,
+        "maximum": 0.02762
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 198.197396,
+        "minimum": 187.938175,
+        "maximum": 256.575662
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 236.954485,
+        "minimum": 139.089332,
+        "maximum": 256.991366
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 11,
+        "minimum": 11,
+        "maximum": 11
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 6.405405405405405,
+        "minimum": 6.405405405405405,
+        "maximum": 6.405405405405405
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 164,
+        "minimum": 163,
+        "maximum": 164
+      },
+      "reused_count": 3
+    },
+    {
+      "case_id": "long_02",
+      "policy": "stable2",
+      "latency_ms": {
+        "n": 3,
+        "p50": 269.872601,
+        "minimum": 260.978977,
+        "maximum": 288.838408
+      },
+      "after_final_asr_ms": {
+        "n": 3,
+        "p50": 24.93663,
+        "minimum": 24.372699,
+        "maximum": 25.366173
+      },
+      "final_asr_wall_ms": {
+        "n": 3,
+        "p50": 184.743554,
+        "minimum": 180.718679,
+        "maximum": 199.871621
+      },
+      "final_asr_wait_ms": {
+        "n": 3,
+        "p50": 60.756348,
+        "minimum": 55.323668,
+        "maximum": 63.600614
+      },
+      "asr_calls": {
+        "n": 3,
+        "p50": 11,
+        "minimum": 11,
+        "maximum": 11
+      },
+      "asr_input_ratio": {
+        "n": 3,
+        "p50": 6.405405405405405,
+        "minimum": 6.405405405405405,
+        "maximum": 6.405405405405405
+      },
+      "wasted_tokens": {
+        "n": 3,
+        "p50": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "reused_count": 0
+    }
+  ],
+  "aggregates": {
+    "endpoint": {
+      "n": 12,
+      "latency_ms": {
+        "n": 12,
+        "p50": 404.998646,
+        "minimum": 266.138198,
+        "maximum": 538.09979
+      },
+      "asr_calls_total": 12,
+      "drafts_total": 12,
+      "wasted_tokens_total": 0,
+      "total_tokens": 291,
+      "reused_count": 0,
+      "actual_rejected_pieces": 0,
+      "running_invalidations": 0,
+      "completed_invalidations": 0
+    },
+    "eager": {
+      "n": 12,
+      "latency_ms": {
+        "n": 12,
+        "p50": 273.68849350000005,
+        "minimum": 146.056059,
+        "maximum": 455.215767
+      },
+      "asr_calls_total": 93,
+      "drafts_total": 78,
+      "wasted_tokens_total": 1079,
+      "total_tokens": 1367,
+      "reused_count": 12,
+      "actual_rejected_pieces": 0,
+      "running_invalidations": 1,
+      "completed_invalidations": 65
+    },
+    "stable2": {
+      "n": 12,
+      "latency_ms": {
+        "n": 12,
+        "p50": 199.95395150000002,
+        "minimum": 140.993575,
+        "maximum": 288.838408
+      },
+      "asr_calls_total": 93,
+      "drafts_total": 12,
+      "wasted_tokens_total": 0,
+      "total_tokens": 291,
+      "reused_count": 0,
+      "actual_rejected_pieces": 0,
+      "running_invalidations": 0,
+      "completed_invalidations": 0
+    }
+  },
+  "rows": [
+    {
+      "run_id": "formal-v1-short_03-endpoint-r0",
+      "case_id": "short_03",
+      "policy": "endpoint",
+      "repeat": 0,
+      "input_duration_ms": 2680.0,
+      "validated_after_file_end_ms": 278.020506,
+      "validated_after_final_asr_ms": 32.737568,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 245.26588,
+      "asr_final_wall_ms": 245.26588,
+      "final_asr_wait_after_input_end_ms": 0.017058,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 17,
+      "committed_tokens": 17,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "请解释一下什么事缓存。",
+      "final_cer": 0.1,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.481942
+    },
+    {
+      "run_id": "formal-v1-short_03-eager-r0",
+      "case_id": "short_03",
+      "policy": "eager",
+      "repeat": 0,
+      "input_duration_ms": 2680.0,
+      "validated_after_file_end_ms": 173.206998,
+      "validated_after_final_asr_ms": 0.023573,
+      "asr_calls": 4,
+      "asr_input_ratio": 2.791044776119403,
+      "asr_call_wall_ms": 486.308445,
+      "asr_final_wall_ms": 173.161182,
+      "final_asr_wait_after_input_end_ms": 0.022243,
+      "draft_count": 3,
+      "wasted_tokens": 33,
+      "total_tokens": 50,
+      "committed_tokens": 17,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 2,
+      "final_text": "请解释一下什么事缓存。",
+      "final_cer": 0.1,
+      "running_invalidations": 0,
+      "completed_invalidations": 2,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 2.039218
+    },
+    {
+      "run_id": "formal-v1-short_03-stable2-r0",
+      "case_id": "short_03",
+      "policy": "stable2",
+      "repeat": 0,
+      "input_duration_ms": 2680.0,
+      "validated_after_file_end_ms": 140.993575,
+      "validated_after_final_asr_ms": 25.097203,
+      "asr_calls": 4,
+      "asr_input_ratio": 2.791044776119403,
+      "asr_call_wall_ms": 436.086906,
+      "asr_final_wall_ms": 115.865419,
+      "final_asr_wait_after_input_end_ms": 0.030953,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 17,
+      "committed_tokens": 17,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 2,
+      "final_text": "请解释一下什么事缓存。",
+      "final_cer": 0.1,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 2.782635
+    },
+    {
+      "run_id": "formal-v1-pause_02-stable2-r0",
+      "case_id": "pause_02",
+      "policy": "stable2",
+      "repeat": 0,
+      "input_duration_ms": 5340.0,
+      "validated_after_file_end_ms": 171.674989,
+      "validated_after_final_asr_ms": 26.636652,
+      "asr_calls": 7,
+      "asr_input_ratio": 4.146067415730337,
+      "asr_call_wall_ms": 913.537362,
+      "asr_final_wall_ms": 145.025861,
+      "final_asr_wait_after_input_end_ms": 0.012476,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 29,
+      "committed_tokens": 29,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 2,
+      "normalized_text_changes": 5,
+      "final_text": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+      "final_cer": 0.0,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 4.066633
+    },
+    {
+      "run_id": "formal-v1-pause_02-eager-r0",
+      "case_id": "pause_02",
+      "policy": "eager",
+      "repeat": 0,
+      "input_duration_ms": 5340.0,
+      "validated_after_file_end_ms": 270.7083,
+      "validated_after_final_asr_ms": 0.023904,
+      "asr_calls": 7,
+      "asr_input_ratio": 4.146067415730337,
+      "asr_call_wall_ms": 958.746424,
+      "asr_final_wall_ms": 270.664822,
+      "final_asr_wait_after_input_end_ms": 0.019574,
+      "draft_count": 6,
+      "wasted_tokens": 53,
+      "total_tokens": 82,
+      "committed_tokens": 29,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 2,
+      "normalized_text_changes": 5,
+      "final_text": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+      "final_cer": 0.0,
+      "running_invalidations": 0,
+      "completed_invalidations": 5,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 4.960274
+    },
+    {
+      "run_id": "formal-v1-pause_02-endpoint-r0",
+      "case_id": "pause_02",
+      "policy": "endpoint",
+      "repeat": 0,
+      "input_duration_ms": 5340.0,
+      "validated_after_file_end_ms": 375.31771,
+      "validated_after_final_asr_ms": 26.734774,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 348.521023,
+      "asr_final_wall_ms": 348.521023,
+      "final_asr_wait_after_input_end_ms": 0.061913,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 29,
+      "committed_tokens": 29,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+      "final_cer": 0.0,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 3.027296
+    },
+    {
+      "run_id": "formal-v1-pause_03-endpoint-r0",
+      "case_id": "pause_03",
+      "policy": "endpoint",
+      "repeat": 0,
+      "input_duration_ms": 6660.0,
+      "validated_after_file_end_ms": 538.09979,
+      "validated_after_final_asr_ms": 49.846275,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 488.191057,
+      "asr_final_wall_ms": 488.191057,
+      "final_asr_wait_after_input_end_ms": 0.062458,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 18,
+      "committed_tokens": 18,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+      "final_cer": 0.037037037037037035,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.699819
+    },
+    {
+      "run_id": "formal-v1-pause_03-eager-r0",
+      "case_id": "pause_03",
+      "policy": "eager",
+      "repeat": 0,
+      "input_duration_ms": 6660.0,
+      "validated_after_file_end_ms": 271.870194,
+      "validated_after_final_asr_ms": 0.023405,
+      "asr_calls": 9,
+      "asr_input_ratio": 5.324324324324325,
+      "asr_call_wall_ms": 1597.172434,
+      "asr_final_wall_ms": 271.827447,
+      "final_asr_wait_after_input_end_ms": 0.019342,
+      "draft_count": 8,
+      "wasted_tokens": 110,
+      "total_tokens": 128,
+      "committed_tokens": 18,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 6,
+      "normalized_text_changes": 7,
+      "final_text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+      "final_cer": 0.037037037037037035,
+      "running_invalidations": 0,
+      "completed_invalidations": 7,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 3.878841
+    },
+    {
+      "run_id": "formal-v1-pause_03-stable2-r0",
+      "case_id": "pause_03",
+      "policy": "stable2",
+      "repeat": 0,
+      "input_duration_ms": 6660.0,
+      "validated_after_file_end_ms": 220.521277,
+      "validated_after_final_asr_ms": 23.820778,
+      "asr_calls": 9,
+      "asr_input_ratio": 5.324324324324325,
+      "asr_call_wall_ms": 1462.343503,
+      "asr_final_wall_ms": 196.689281,
+      "final_asr_wait_after_input_end_ms": 0.011218,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 18,
+      "committed_tokens": 18,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 6,
+      "normalized_text_changes": 7,
+      "final_text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+      "final_cer": 0.037037037037037035,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 2.963339
+    },
+    {
+      "run_id": "formal-v1-long_02-stable2-r0",
+      "case_id": "long_02",
+      "policy": "stable2",
+      "repeat": 0,
+      "input_duration_ms": 8140.0,
+      "validated_after_file_end_ms": 288.838408,
+      "validated_after_final_asr_ms": 25.366173,
+      "asr_calls": 11,
+      "asr_input_ratio": 6.405405405405405,
+      "asr_call_wall_ms": 1741.331655,
+      "asr_final_wall_ms": 199.871621,
+      "final_asr_wait_after_input_end_ms": 63.600614,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 33,
+      "committed_tokens": 33,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 8,
+      "final_text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明常見問題。",
+      "final_cer": 0.4857142857142857,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 4.027263
+    },
+    {
+      "run_id": "formal-v1-long_02-eager-r0",
+      "case_id": "long_02",
+      "policy": "eager",
+      "repeat": 0,
+      "input_duration_ms": 8140.0,
+      "validated_after_file_end_ms": 424.92028,
+      "validated_after_final_asr_ms": 0.02762,
+      "asr_calls": 11,
+      "asr_input_ratio": 6.405405405405405,
+      "asr_call_wall_ms": 1873.117884,
+      "asr_final_wall_ms": 187.938175,
+      "final_asr_wait_after_input_end_ms": 236.954485,
+      "draft_count": 9,
+      "wasted_tokens": 164,
+      "total_tokens": 196,
+      "committed_tokens": 32,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 8,
+      "final_text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明常見問題。",
+      "final_cer": 0.4857142857142857,
+      "running_invalidations": 0,
+      "completed_invalidations": 8,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 4.925215
+    },
+    {
+      "run_id": "formal-v1-long_02-endpoint-r0",
+      "case_id": "long_02",
+      "policy": "endpoint",
+      "repeat": 0,
+      "input_duration_ms": 8140.0,
+      "validated_after_file_end_ms": 421.558315,
+      "validated_after_final_asr_ms": 24.853263,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 396.674424,
+      "asr_final_wall_ms": 396.674424,
+      "final_asr_wait_after_input_end_ms": 0.030628,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 33,
+      "committed_tokens": 33,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明常見問題。",
+      "final_cer": 0.4857142857142857,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.647034
+    },
+    {
+      "run_id": "formal-v1-short_03-stable2-r1",
+      "case_id": "short_03",
+      "policy": "stable2",
+      "repeat": 1,
+      "input_duration_ms": 2680.0,
+      "validated_after_file_end_ms": 154.143602,
+      "validated_after_final_asr_ms": 23.952698,
+      "asr_calls": 4,
+      "asr_input_ratio": 2.791044776119403,
+      "asr_call_wall_ms": 455.892802,
+      "asr_final_wall_ms": 130.127925,
+      "final_asr_wait_after_input_end_ms": 0.062979,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 17,
+      "committed_tokens": 17,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 2,
+      "final_text": "请解释一下什么事缓存。",
+      "final_cer": 0.1,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 2.399614
+    },
+    {
+      "run_id": "formal-v1-short_03-eager-r1",
+      "case_id": "short_03",
+      "policy": "eager",
+      "repeat": 1,
+      "input_duration_ms": 2680.0,
+      "validated_after_file_end_ms": 146.056059,
+      "validated_after_final_asr_ms": 0.021209,
+      "asr_calls": 4,
+      "asr_input_ratio": 2.791044776119403,
+      "asr_call_wall_ms": 455.104772,
+      "asr_final_wall_ms": 146.011829,
+      "final_asr_wait_after_input_end_ms": 0.023021,
+      "draft_count": 3,
+      "wasted_tokens": 33,
+      "total_tokens": 50,
+      "committed_tokens": 17,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 2,
+      "final_text": "请解释一下什么事缓存。",
+      "final_cer": 0.1,
+      "running_invalidations": 0,
+      "completed_invalidations": 2,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 2.0719
+    },
+    {
+      "run_id": "formal-v1-short_03-endpoint-r1",
+      "case_id": "short_03",
+      "policy": "endpoint",
+      "repeat": 1,
+      "input_duration_ms": 2680.0,
+      "validated_after_file_end_ms": 291.787673,
+      "validated_after_final_asr_ms": 32.869521,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 258.89601,
+      "asr_final_wall_ms": 258.89601,
+      "final_asr_wait_after_input_end_ms": 0.022142,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 17,
+      "committed_tokens": 17,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "请解释一下什么事缓存。",
+      "final_cer": 0.1,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.773628
+    },
+    {
+      "run_id": "formal-v1-pause_02-endpoint-r1",
+      "case_id": "pause_02",
+      "policy": "endpoint",
+      "repeat": 1,
+      "input_duration_ms": 5340.0,
+      "validated_after_file_end_ms": 385.836838,
+      "validated_after_final_asr_ms": 24.6631,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 361.144481,
+      "asr_final_wall_ms": 361.144481,
+      "final_asr_wait_after_input_end_ms": 0.029257,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 29,
+      "committed_tokens": 29,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+      "final_cer": 0.0,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.666598
+    },
+    {
+      "run_id": "formal-v1-pause_02-eager-r1",
+      "case_id": "pause_02",
+      "policy": "eager",
+      "repeat": 1,
+      "input_duration_ms": 5340.0,
+      "validated_after_file_end_ms": 270.859828,
+      "validated_after_final_asr_ms": 0.02113,
+      "asr_calls": 7,
+      "asr_input_ratio": 4.146067415730337,
+      "asr_call_wall_ms": 967.574621,
+      "asr_final_wall_ms": 270.819362,
+      "final_asr_wait_after_input_end_ms": 0.019336,
+      "draft_count": 6,
+      "wasted_tokens": 53,
+      "total_tokens": 82,
+      "committed_tokens": 29,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 2,
+      "normalized_text_changes": 5,
+      "final_text": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+      "final_cer": 0.0,
+      "running_invalidations": 0,
+      "completed_invalidations": 5,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 4.74605
+    },
+    {
+      "run_id": "formal-v1-pause_02-stable2-r1",
+      "case_id": "pause_02",
+      "policy": "stable2",
+      "repeat": 1,
+      "input_duration_ms": 5340.0,
+      "validated_after_file_end_ms": 200.329678,
+      "validated_after_final_asr_ms": 24.968632,
+      "asr_calls": 7,
+      "asr_input_ratio": 4.146067415730337,
+      "asr_call_wall_ms": 925.401987,
+      "asr_final_wall_ms": 175.302469,
+      "final_asr_wait_after_input_end_ms": 0.058577,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 29,
+      "committed_tokens": 29,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 2,
+      "normalized_text_changes": 5,
+      "final_text": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+      "final_cer": 0.0,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 5.755681
+    },
+    {
+      "run_id": "formal-v1-pause_03-stable2-r1",
+      "case_id": "pause_03",
+      "policy": "stable2",
+      "repeat": 1,
+      "input_duration_ms": 6660.0,
+      "validated_after_file_end_ms": 212.304887,
+      "validated_after_final_asr_ms": 24.419408,
+      "asr_calls": 9,
+      "asr_input_ratio": 5.324324324324325,
+      "asr_call_wall_ms": 1424.63419,
+      "asr_final_wall_ms": 187.847727,
+      "final_asr_wait_after_input_end_ms": 0.037752,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 18,
+      "committed_tokens": 18,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 6,
+      "normalized_text_changes": 7,
+      "final_text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+      "final_cer": 0.037037037037037035,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 6.151102
+    },
+    {
+      "run_id": "formal-v1-pause_03-eager-r1",
+      "case_id": "pause_03",
+      "policy": "eager",
+      "repeat": 1,
+      "input_duration_ms": 6660.0,
+      "validated_after_file_end_ms": 275.506793,
+      "validated_after_final_asr_ms": 0.022722,
+      "asr_calls": 9,
+      "asr_input_ratio": 5.324324324324325,
+      "asr_call_wall_ms": 1480.104211,
+      "asr_final_wall_ms": 275.457877,
+      "final_asr_wait_after_input_end_ms": 0.026194,
+      "draft_count": 8,
+      "wasted_tokens": 110,
+      "total_tokens": 128,
+      "committed_tokens": 18,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 6,
+      "normalized_text_changes": 7,
+      "final_text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+      "final_cer": 0.037037037037037035,
+      "running_invalidations": 0,
+      "completed_invalidations": 7,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 4.233101
+    },
+    {
+      "run_id": "formal-v1-pause_03-endpoint-r1",
+      "case_id": "pause_03",
+      "policy": "endpoint",
+      "repeat": 1,
+      "input_duration_ms": 6660.0,
+      "validated_after_file_end_ms": 391.746442,
+      "validated_after_final_asr_ms": 24.002593,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 367.716365,
+      "asr_final_wall_ms": 367.716365,
+      "final_asr_wait_after_input_end_ms": 0.027484,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 18,
+      "committed_tokens": 18,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+      "final_cer": 0.037037037037037035,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.578681
+    },
+    {
+      "run_id": "formal-v1-long_02-endpoint-r1",
+      "case_id": "long_02",
+      "policy": "endpoint",
+      "repeat": 1,
+      "input_duration_ms": 8140.0,
+      "validated_after_file_end_ms": 459.329346,
+      "validated_after_final_asr_ms": 24.056532,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 435.227285,
+      "asr_final_wall_ms": 435.227285,
+      "final_asr_wait_after_input_end_ms": 0.045529,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 33,
+      "committed_tokens": 33,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明常見問題。",
+      "final_cer": 0.4857142857142857,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.840169
+    },
+    {
+      "run_id": "formal-v1-long_02-eager-r1",
+      "case_id": "long_02",
+      "policy": "eager",
+      "repeat": 1,
+      "input_duration_ms": 8140.0,
+      "validated_after_file_end_ms": 395.69231,
+      "validated_after_final_asr_ms": 0.027316,
+      "asr_calls": 11,
+      "asr_input_ratio": 6.405405405405405,
+      "asr_call_wall_ms": 1908.754155,
+      "asr_final_wall_ms": 256.575662,
+      "final_asr_wait_after_input_end_ms": 139.089332,
+      "draft_count": 9,
+      "wasted_tokens": 164,
+      "total_tokens": 196,
+      "committed_tokens": 32,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 8,
+      "final_text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明常見問題。",
+      "final_cer": 0.4857142857142857,
+      "running_invalidations": 0,
+      "completed_invalidations": 8,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 6.19042
+    },
+    {
+      "run_id": "formal-v1-long_02-stable2-r1",
+      "case_id": "long_02",
+      "policy": "stable2",
+      "repeat": 1,
+      "input_duration_ms": 8140.0,
+      "validated_after_file_end_ms": 260.978977,
+      "validated_after_final_asr_ms": 24.93663,
+      "asr_calls": 11,
+      "asr_input_ratio": 6.405405405405405,
+      "asr_call_wall_ms": 1729.059581,
+      "asr_final_wall_ms": 180.718679,
+      "final_asr_wait_after_input_end_ms": 55.323668,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 33,
+      "committed_tokens": 33,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 8,
+      "final_text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明常見問題。",
+      "final_cer": 0.4857142857142857,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 5.13049
+    },
+    {
+      "run_id": "formal-v1-short_03-endpoint-r2",
+      "case_id": "short_03",
+      "policy": "endpoint",
+      "repeat": 2,
+      "input_duration_ms": 2680.0,
+      "validated_after_file_end_ms": 266.138198,
+      "validated_after_final_asr_ms": 28.399851,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 237.725545,
+      "asr_final_wall_ms": 237.725545,
+      "final_asr_wait_after_input_end_ms": 0.012802,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 17,
+      "committed_tokens": 17,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "请解释一下什么事缓存。",
+      "final_cer": 0.1,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.384618
+    },
+    {
+      "run_id": "formal-v1-short_03-eager-r2",
+      "case_id": "short_03",
+      "policy": "eager",
+      "repeat": 2,
+      "input_duration_ms": 2680.0,
+      "validated_after_file_end_ms": 156.870406,
+      "validated_after_final_asr_ms": 0.021169,
+      "asr_calls": 4,
+      "asr_input_ratio": 2.791044776119403,
+      "asr_call_wall_ms": 482.138881,
+      "asr_final_wall_ms": 156.829776,
+      "final_asr_wait_after_input_end_ms": 0.019461,
+      "draft_count": 3,
+      "wasted_tokens": 33,
+      "total_tokens": 50,
+      "committed_tokens": 17,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 2,
+      "final_text": "请解释一下什么事缓存。",
+      "final_cer": 0.1,
+      "running_invalidations": 0,
+      "completed_invalidations": 2,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.807437
+    },
+    {
+      "run_id": "formal-v1-short_03-stable2-r2",
+      "case_id": "short_03",
+      "policy": "stable2",
+      "repeat": 2,
+      "input_duration_ms": 2680.0,
+      "validated_after_file_end_ms": 154.695052,
+      "validated_after_final_asr_ms": 26.404756,
+      "asr_calls": 4,
+      "asr_input_ratio": 2.791044776119403,
+      "asr_call_wall_ms": 444.376056,
+      "asr_final_wall_ms": 128.278669,
+      "final_asr_wait_after_input_end_ms": 0.011627,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 17,
+      "committed_tokens": 17,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 2,
+      "final_text": "请解释一下什么事缓存。",
+      "final_cer": 0.1,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.764965
+    },
+    {
+      "run_id": "formal-v1-pause_02-stable2-r2",
+      "case_id": "pause_02",
+      "policy": "stable2",
+      "repeat": 2,
+      "input_duration_ms": 5340.0,
+      "validated_after_file_end_ms": 181.312125,
+      "validated_after_final_asr_ms": 24.856093,
+      "asr_calls": 7,
+      "asr_input_ratio": 4.146067415730337,
+      "asr_call_wall_ms": 918.135454,
+      "asr_final_wall_ms": 156.424195,
+      "final_asr_wait_after_input_end_ms": 0.031837,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 29,
+      "committed_tokens": 29,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 2,
+      "normalized_text_changes": 5,
+      "final_text": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+      "final_cer": 0.0,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 5.233272
+    },
+    {
+      "run_id": "formal-v1-pause_02-eager-r2",
+      "case_id": "pause_02",
+      "policy": "eager",
+      "repeat": 2,
+      "input_duration_ms": 5340.0,
+      "validated_after_file_end_ms": 290.266985,
+      "validated_after_final_asr_ms": 0.024285,
+      "asr_calls": 7,
+      "asr_input_ratio": 4.146067415730337,
+      "asr_call_wall_ms": 996.155264,
+      "asr_final_wall_ms": 290.220717,
+      "final_asr_wait_after_input_end_ms": 0.021983,
+      "draft_count": 6,
+      "wasted_tokens": 53,
+      "total_tokens": 82,
+      "committed_tokens": 29,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 2,
+      "normalized_text_changes": 5,
+      "final_text": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+      "final_cer": 0.0,
+      "running_invalidations": 0,
+      "completed_invalidations": 5,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 4.492278
+    },
+    {
+      "run_id": "formal-v1-pause_02-endpoint-r2",
+      "case_id": "pause_02",
+      "policy": "endpoint",
+      "repeat": 2,
+      "input_duration_ms": 5340.0,
+      "validated_after_file_end_ms": 426.108268,
+      "validated_after_final_asr_ms": 27.839116,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 398.209924,
+      "asr_final_wall_ms": 398.209924,
+      "final_asr_wait_after_input_end_ms": 0.059228,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 29,
+      "committed_tokens": 29,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+      "final_cer": 0.0,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.427033
+    },
+    {
+      "run_id": "formal-v1-pause_03-endpoint-r2",
+      "case_id": "pause_03",
+      "policy": "endpoint",
+      "repeat": 2,
+      "input_duration_ms": 6660.0,
+      "validated_after_file_end_ms": 418.25085,
+      "validated_after_final_asr_ms": 25.128971,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 393.085631,
+      "asr_final_wall_ms": 393.085631,
+      "final_asr_wait_after_input_end_ms": 0.036248,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 18,
+      "committed_tokens": 18,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+      "final_cer": 0.037037037037037035,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.496127
+    },
+    {
+      "run_id": "formal-v1-pause_03-eager-r2",
+      "case_id": "pause_03",
+      "policy": "eager",
+      "repeat": 2,
+      "input_duration_ms": 6660.0,
+      "validated_after_file_end_ms": 400.112188,
+      "validated_after_final_asr_ms": 0.021418,
+      "asr_calls": 9,
+      "asr_input_ratio": 5.324324324324325,
+      "asr_call_wall_ms": 1646.363326,
+      "asr_final_wall_ms": 400.07946,
+      "final_asr_wait_after_input_end_ms": 0.01131,
+      "draft_count": 8,
+      "wasted_tokens": 110,
+      "total_tokens": 128,
+      "committed_tokens": 18,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 6,
+      "normalized_text_changes": 7,
+      "final_text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+      "final_cer": 0.037037037037037035,
+      "running_invalidations": 0,
+      "completed_invalidations": 7,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 4.133144
+    },
+    {
+      "run_id": "formal-v1-pause_03-stable2-r2",
+      "case_id": "pause_03",
+      "policy": "stable2",
+      "repeat": 2,
+      "input_duration_ms": 6660.0,
+      "validated_after_file_end_ms": 199.578225,
+      "validated_after_final_asr_ms": 25.035933,
+      "asr_calls": 9,
+      "asr_input_ratio": 5.324324324324325,
+      "asr_call_wall_ms": 1505.965267,
+      "asr_final_wall_ms": 174.515586,
+      "final_asr_wait_after_input_end_ms": 0.026706,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 18,
+      "committed_tokens": 18,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 6,
+      "normalized_text_changes": 7,
+      "final_text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+      "final_cer": 0.037037037037037035,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 4.156471
+    },
+    {
+      "run_id": "formal-v1-long_02-stable2-r2",
+      "case_id": "long_02",
+      "policy": "stable2",
+      "repeat": 2,
+      "input_duration_ms": 8140.0,
+      "validated_after_file_end_ms": 269.872601,
+      "validated_after_final_asr_ms": 24.372699,
+      "asr_calls": 11,
+      "asr_input_ratio": 6.405405405405405,
+      "asr_call_wall_ms": 1771.348254,
+      "asr_final_wall_ms": 184.743554,
+      "final_asr_wait_after_input_end_ms": 60.756348,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 33,
+      "committed_tokens": 33,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 8,
+      "final_text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明常見問題。",
+      "final_cer": 0.4857142857142857,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 4.04546
+    },
+    {
+      "run_id": "formal-v1-long_02-eager-r2",
+      "case_id": "long_02",
+      "policy": "eager",
+      "repeat": 2,
+      "input_duration_ms": 8140.0,
+      "validated_after_file_end_ms": 455.215767,
+      "validated_after_final_asr_ms": 0.027005,
+      "asr_calls": 11,
+      "asr_input_ratio": 6.405405405405405,
+      "asr_call_wall_ms": 2136.857266,
+      "asr_final_wall_ms": 198.197396,
+      "final_asr_wait_after_input_end_ms": 256.991366,
+      "draft_count": 9,
+      "wasted_tokens": 163,
+      "total_tokens": 195,
+      "committed_tokens": 32,
+      "reused_draft": true,
+      "selected_started_before_file_end": true,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 1,
+      "normalized_text_changes": 8,
+      "final_text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明常見問題。",
+      "final_cer": 0.4857142857142857,
+      "running_invalidations": 1,
+      "completed_invalidations": 7,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 3.7188
+    },
+    {
+      "run_id": "formal-v1-long_02-endpoint-r2",
+      "case_id": "long_02",
+      "policy": "endpoint",
+      "repeat": 2,
+      "input_duration_ms": 8140.0,
+      "validated_after_file_end_ms": 462.67556,
+      "validated_after_final_asr_ms": 24.035494,
+      "asr_calls": 1,
+      "asr_input_ratio": 1.0,
+      "asr_call_wall_ms": 438.595273,
+      "asr_final_wall_ms": 438.595273,
+      "final_asr_wait_after_input_end_ms": 0.044793,
+      "draft_count": 1,
+      "wasted_tokens": 0,
+      "total_tokens": 33,
+      "committed_tokens": 33,
+      "reused_draft": false,
+      "selected_started_before_file_end": false,
+      "actual_rejected_pieces": 0,
+      "normalized_text_retractions": 0,
+      "normalized_text_changes": 0,
+      "final_text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明常見問題。",
+      "final_cer": 0.4857142857142857,
+      "running_invalidations": 0,
+      "completed_invalidations": 0,
+      "asr_pending_replaced": 0,
+      "input_delivery_lateness_max_ms": 1.660644
+    }
+  ],
+  "transcript_examples": [
+    {
+      "run_id": "formal-v1-short_03-eager-r0",
+      "case_id": "short_03",
+      "observations": [
+        {
+          "offset": 12800,
+          "audio_ms": 800.0,
+          "text": "请解释一下",
+          "revision": 1,
+          "final": false
+        },
+        {
+          "offset": 25600,
+          "audio_ms": 1600.0,
+          "text": "请解释一下什么是缓子。",
+          "revision": 2,
+          "final": false
+        },
+        {
+          "offset": 38400,
+          "audio_ms": 2400.0,
+          "text": "请解释一下什么事缓存。",
+          "revision": 3,
+          "final": false
+        },
+        {
+          "offset": 42880,
+          "audio_ms": 2680.0,
+          "text": "请解释一下什么事缓存。",
+          "revision": 3,
+          "final": true
+        }
+      ],
+      "retractions": [
+        {
+          "offset": 38400,
+          "before": "请解释一下什么是缓子",
+          "after": "请解释一下什么事缓存",
+          "retracted_chars": 3
+        }
+      ],
+      "drafts": [
+        {
+          "id": 1,
+          "prompt": "请解释一下",
+          "finish": "stop",
+          "tokens": 8,
+          "adopted": false
+        },
+        {
+          "id": 2,
+          "prompt": "请解释一下什么是缓子。",
+          "finish": "stop",
+          "tokens": 25,
+          "adopted": false
+        },
+        {
+          "id": 3,
+          "prompt": "请解释一下什么事缓存。",
+          "finish": "stop",
+          "tokens": 17,
+          "adopted": true
+        }
+      ]
+    },
+    {
+      "run_id": "formal-v1-pause_02-eager-r0",
+      "case_id": "pause_02",
+      "observations": [
+        {
+          "offset": 12800,
+          "audio_ms": 800.0,
+          "text": "先别急着",
+          "revision": 1,
+          "final": false
+        },
+        {
+          "offset": 25600,
+          "audio_ms": 1600.0,
+          "text": "先别急着回答",
+          "revision": 2,
+          "final": false
+        },
+        {
+          "offset": 38400,
+          "audio_ms": 2400.0,
+          "text": "先别急着回答我还想知道",
+          "revision": 3,
+          "final": false
+        },
+        {
+          "offset": 51200,
+          "audio_ms": 3200.0,
+          "text": "先别急这回答。我还想知道这两种",
+          "revision": 4,
+          "final": false
+        },
+        {
+          "offset": 64000,
+          "audio_ms": 4000.0,
+          "text": "先别急着回答。我还想知道这两种方案各有什么。",
+          "revision": 5,
+          "final": false
+        },
+        {
+          "offset": 76800,
+          "audio_ms": 4800.0,
+          "text": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+          "revision": 6,
+          "final": false
+        },
+        {
+          "offset": 85440,
+          "audio_ms": 5340.0,
+          "text": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+          "revision": 6,
+          "final": true
+        }
+      ],
+      "retractions": [
+        {
+          "offset": 51200,
+          "before": "先别急着回答我还想知道",
+          "after": "先别急这回答我还想知道这两种",
+          "retracted_chars": 8
+        },
+        {
+          "offset": 64000,
+          "before": "先别急这回答我还想知道这两种",
+          "after": "先别急着回答我还想知道这两种方案各有什么",
+          "retracted_chars": 11
+        }
+      ],
+      "drafts": [
+        {
+          "id": 1,
+          "prompt": "先别急着",
+          "finish": "stop",
+          "tokens": 11,
+          "adopted": false
+        },
+        {
+          "id": 2,
+          "prompt": "先别急着回答",
+          "finish": "stop",
+          "tokens": 7,
+          "adopted": false
+        },
+        {
+          "id": 3,
+          "prompt": "先别急着回答我还想知道",
+          "finish": "stop",
+          "tokens": 12,
+          "adopted": false
+        },
+        {
+          "id": 4,
+          "prompt": "先别急这回答。我还想知道这两种",
+          "finish": "stop",
+          "tokens": 9,
+          "adopted": false
+        },
+        {
+          "id": 5,
+          "prompt": "先别急着回答。我还想知道这两种方案各有什么。",
+          "finish": "stop",
+          "tokens": 14,
+          "adopted": false
+        },
+        {
+          "id": 6,
+          "prompt": "先别急着回答。我还想知道这两种方案各有什么缺点。",
+          "finish": "stop",
+          "tokens": 29,
+          "adopted": true
+        }
+      ]
+    },
+    {
+      "run_id": "formal-v1-pause_03-eager-r0",
+      "case_id": "pause_03",
+      "observations": [
+        {
+          "offset": 12800,
+          "audio_ms": 800.0,
+          "text": "请先比较",
+          "revision": 1,
+          "final": false
+        },
+        {
+          "offset": 25600,
+          "audio_ms": 1600.0,
+          "text": "請先比較步行和其。",
+          "revision": 2,
+          "final": false
+        },
+        {
+          "offset": 38400,
+          "audio_ms": 2400.0,
+          "text": "請先比較步行和騎車",
+          "revision": 3,
+          "final": false
+        },
+        {
+          "offset": 51200,
+          "audio_ms": 3200.0,
+          "text": "請先比較不行和騎車,再考慮下雨的情形",
+          "revision": 4,
+          "final": false
+        },
+        {
+          "offset": 64000,
+          "audio_ms": 4000.0,
+          "text": "請先比較不行和騎車,再考慮下雨的情況。",
+          "revision": 5,
+          "final": false
+        },
+        {
+          "offset": 76800,
+          "audio_ms": 4800.0,
+          "text": "请先比较不行和骑车,再考虑下雨的情况。",
+          "revision": 6,
+          "final": false
+        },
+        {
+          "offset": 89600,
+          "audio_ms": 5600.0,
+          "text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行件。",
+          "revision": 7,
+          "final": false
+        },
+        {
+          "offset": 102400,
+          "audio_ms": 6400.0,
+          "text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+          "revision": 8,
+          "final": false
+        },
+        {
+          "offset": 106560,
+          "audio_ms": 6660.0,
+          "text": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+          "revision": 8,
+          "final": true
+        }
+      ],
+      "retractions": [
+        {
+          "offset": 25600,
+          "before": "请先比较",
+          "after": "請先比較步行和其",
+          "retracted_chars": 4
+        },
+        {
+          "offset": 38400,
+          "before": "請先比較步行和其",
+          "after": "請先比較步行和騎車",
+          "retracted_chars": 1
+        },
+        {
+          "offset": 51200,
+          "before": "請先比較步行和騎車",
+          "after": "請先比較不行和騎車再考慮下雨的情形",
+          "retracted_chars": 5
+        },
+        {
+          "offset": 64000,
+          "before": "請先比較不行和騎車再考慮下雨的情形",
+          "after": "請先比較不行和騎車再考慮下雨的情況",
+          "retracted_chars": 1
+        },
+        {
+          "offset": 76800,
+          "before": "請先比較不行和騎車再考慮下雨的情況",
+          "after": "请先比较不行和骑车再考虑下雨的情况",
+          "retracted_chars": 17
+        },
+        {
+          "offset": 102400,
+          "before": "请先比较不行和骑车再考虑下雨的情况最后给我一个出行件",
+          "after": "请先比较不行和骑车再考虑下雨的情况最后给我一个出行建议",
+          "retracted_chars": 1
+        }
+      ],
+      "drafts": [
+        {
+          "id": 1,
+          "prompt": "请先比较",
+          "finish": "stop",
+          "tokens": 9,
+          "adopted": false
+        },
+        {
+          "id": 2,
+          "prompt": "請先比較步行和其。",
+          "finish": "stop",
+          "tokens": 21,
+          "adopted": false
+        },
+        {
+          "id": 3,
+          "prompt": "請先比較步行和騎車",
+          "finish": "stop",
+          "tokens": 20,
+          "adopted": false
+        },
+        {
+          "id": 4,
+          "prompt": "請先比較不行和騎車,再考慮下雨的情形",
+          "finish": "stop",
+          "tokens": 15,
+          "adopted": false
+        },
+        {
+          "id": 5,
+          "prompt": "請先比較不行和騎車,再考慮下雨的情況。",
+          "finish": "stop",
+          "tokens": 13,
+          "adopted": false
+        },
+        {
+          "id": 6,
+          "prompt": "请先比较不行和骑车,再考虑下雨的情况。",
+          "finish": "stop",
+          "tokens": 13,
+          "adopted": false
+        },
+        {
+          "id": 7,
+          "prompt": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行件。",
+          "finish": "stop",
+          "tokens": 19,
+          "adopted": false
+        },
+        {
+          "id": 8,
+          "prompt": "请先比较不行和骑车,再考虑下雨的情况。最后给我一个出行建议。",
+          "finish": "stop",
+          "tokens": 18,
+          "adopted": true
+        }
+      ]
+    },
+    {
+      "run_id": "formal-v1-long_02-eager-r0",
+      "case_id": "long_02",
+      "observations": [
+        {
+          "offset": 12800,
+          "audio_ms": 800.0,
+          "text": "我只有一个小",
+          "revision": 1,
+          "final": false
+        },
+        {
+          "offset": 25600,
+          "audio_ms": 1600.0,
+          "text": "我只有一個小陽台",
+          "revision": 2,
+          "final": false
+        },
+        {
+          "offset": 38400,
+          "audio_ms": 2400.0,
+          "text": "我只有一個小陽台,請幫我設計",
+          "revision": 3,
+          "final": false
+        },
+        {
+          "offset": 51200,
+          "audio_ms": 3200.0,
+          "text": "我只有一個小陽台,請幫我設計從選菜",
+          "revision": 4,
+          "final": false
+        },
+        {
+          "offset": 64000,
+          "audio_ms": 4000.0,
+          "text": "我只有一個小陽台,請幫我設計從選菜,播種到",
+          "revision": 5,
+          "final": false
+        },
+        {
+          "offset": 76800,
+          "audio_ms": 4800.0,
+          "text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的",
+          "revision": 6,
+          "final": false
+        },
+        {
+          "offset": 89600,
+          "audio_ms": 5600.0,
+          "text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫。",
+          "revision": 7,
+          "final": false
+        },
+        {
+          "offset": 102400,
+          "audio_ms": 6400.0,
+          "text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明",
+          "revision": 8,
+          "final": false
+        },
+        {
+          "offset": 115200,
+          "audio_ms": 7200.0,
+          "text": "我只有一個小陽台,請幫我設計從選菜、播種到日常照料的種菜計畫,並說明常見問題。",
+          "revision": 9,
+          "final": false
+        },
+        {
+          "offset": 130240,
+          "audio_ms": 8140.0,
+          "text": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明常見問題。",
+          "revision": 9,
+          "final": true
+        }
+      ],
+      "retractions": [
+        {
+          "offset": 25600,
+          "before": "我只有一个小",
+          "after": "我只有一個小陽台",
+          "retracted_chars": 2
+        }
+      ],
+      "drafts": [
+        {
+          "id": 1,
+          "prompt": "我只有一个小",
+          "finish": "stop",
+          "tokens": 5,
+          "adopted": false
+        },
+        {
+          "id": 2,
+          "prompt": "我只有一個小陽台",
+          "finish": "stop",
+          "tokens": 8,
+          "adopted": false
+        },
+        {
+          "id": 3,
+          "prompt": "我只有一個小陽台,請幫我設計",
+          "finish": "stop",
+          "tokens": 28,
+          "adopted": false
+        },
+        {
+          "id": 4,
+          "prompt": "我只有一個小陽台,請幫我設計從選菜",
+          "finish": "stop",
+          "tokens": 23,
+          "adopted": false
+        },
+        {
+          "id": 5,
+          "prompt": "我只有一個小陽台,請幫我設計從選菜,播種到",
+          "finish": "stop",
+          "tokens": 21,
+          "adopted": false
+        },
+        {
+          "id": 6,
+          "prompt": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的",
+          "finish": "stop",
+          "tokens": 29,
+          "adopted": false
+        },
+        {
+          "id": 7,
+          "prompt": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫。",
+          "finish": "stop",
+          "tokens": 28,
+          "adopted": false
+        },
+        {
+          "id": 8,
+          "prompt": "我只有一個小陽台,請幫我設計從選菜,播種到日常照料的種菜計畫,並說明",
+          "finish": "stop",
+          "tokens": 22,
+          "adopted": false
+        },
+        {
+          "id": 9,
+          "prompt": "我只有一個小陽台,請幫我設計從選菜、播種到日常照料的種菜計畫,並說明常見問題。",
+          "finish": "stop",
+          "tokens": 32,
+          "adopted": true
+        }
+      ]
+    }
+  ],
+  "final_transcript_identical_by_case": {
+    "short_03": true,
+    "pause_02": true,
+    "pause_03": true,
+    "long_02": true
+  },
+  "input_delivery_lateness_max_ms": 6.19042,
+  "queue": [
+    {
+      "policy": "fifo",
+      "scenario": "fixed",
+      "completed": 130,
+      "dropped": 170,
+      "drop_counts": {
+        "drop_new": 170,
+        "drop_replaced": 0,
+        "drop_sampled": 0
+      },
+      "frame_age_p95_ms": 3066.6666666666665,
+      "drain_ms": 3000.0,
+      "highwater": 30
+    },
+    {
+      "policy": "latest",
+      "scenario": "fixed",
+      "completed": 101,
+      "dropped": 199,
+      "drop_counts": {
+        "drop_new": 0,
+        "drop_replaced": 199,
+        "drop_sampled": 0
+      },
+      "frame_age_p95_ms": 100.0,
+      "drain_ms": 100.0,
+      "highwater": 1
+    },
+    {
+      "policy": "sample_latest",
+      "scenario": "fixed",
+      "completed": 50,
+      "dropped": 250,
+      "drop_counts": {
+        "drop_new": 0,
+        "drop_replaced": 0,
+        "drop_sampled": 250
+      },
+      "frame_age_p95_ms": 100.0,
+      "drain_ms": 0.0,
+      "highwater": 1
+    },
+    {
+      "policy": "fifo",
+      "scenario": "burst",
+      "completed": 108,
+      "dropped": 192,
+      "drop_counts": {
+        "drop_new": 192,
+        "drop_replaced": 0,
+        "drop_sampled": 0
+      },
+      "frame_age_p95_ms": 4116.666666666667,
+      "drain_ms": 3650.0,
+      "highwater": 30
+    },
+    {
+      "policy": "latest",
+      "scenario": "burst",
+      "completed": 70,
+      "dropped": 230,
+      "drop_counts": {
+        "drop_new": 0,
+        "drop_replaced": 230,
+        "drop_sampled": 0
+      },
+      "frame_age_p95_ms": 266.6666666666667,
+      "drain_ms": 150.0,
+      "highwater": 1
+    },
+    {
+      "policy": "sample_latest",
+      "scenario": "burst",
+      "completed": 50,
+      "dropped": 250,
+      "drop_counts": {
+        "drop_new": 0,
+        "drop_replaced": 0,
+        "drop_sampled": 250
+      },
+      "frame_age_p95_ms": 250.0,
+      "drain_ms": 0.0,
+      "highwater": 1
+    }
+  ],
+  "queue_scope": "six deterministic virtual-clock runs; no video inference, not statistical repetitions",
+  "gpu_observed_full_card_peak_mib": 2235,
+  "gpu_resource_samples": 456,
+  "environment": {
+    "date": "2026-10-23",
+    "models": {
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "torch": "2.6.0+cu124",
+      "cuda": "12.4",
+      "cudnn": 90100,
+      "asr": {
+        "device": "cuda",
+        "compute_type": "int8_float16"
+      },
+      "llm": {
+        "device": "cuda:0",
+        "dtype": "torch.bfloat16"
+      }
+    },
+    "source_sha256": {
+      "exp17/run_gpu.py": "0bd5e77bfc920a301b2d2330394dc1245137c36fe5cfd463a042f66a86b0a082",
+      "exp17/revision.py": "45753d6dc8970abe40927182c147a34fa1812b32f9b56971232624b0e8e23e52",
+      "exp14/models.py": "cb662829bae6d45ea5bd902f9df362f3a97d90e57d10c2df0fc9c6b3337960c6",
+      "exp14/logic.py": "004cfc81290e60f3021922ba4de64e79ad3347abf4699cb72c02e73398ccc7ed"
+    },
+    "packages": {
+      "torch": "2.6.0",
+      "transformers": "4.51.3",
+      "faster-whisper": "1.2.1",
+      "ctranslate2": "4.8.3"
+    },
+    "config": {
+      "output": "/opt/p4/exp17/results/formal-v1",
+      "repeat": 3,
+      "cadence_ms": 800,
+      "warmup": 1,
+      "cases": [
+        "short_03",
+        "pause_02",
+        "pause_03",
+        "long_02"
+      ],
+      "policies": [
+        "endpoint",
+        "eager",
+        "stable2"
+      ]
+    },
+    "inputs": {
+      "short_03": {
+        "wav_sha256": "785752cd1c9e13505159fae7768db90eba2879840fc7a452874495c88d424091",
+        "pcm_sha256": "3da129c8223978b81bfd51c81d83e8e9bff5f869f9506a341a004ded55cf456f",
+        "samples": 42880
+      },
+      "pause_02": {
+        "wav_sha256": "30b7b2a7c694c721eb303577aaaab88f67b7c1bc6bf1d8f3e7d34a5b2c5aa462",
+        "pcm_sha256": "ae903df0325cd6e129cd34ca872ae92841c35be8ab0bde22a7ec68b2574486ee",
+        "samples": 85440
+      },
+      "pause_03": {
+        "wav_sha256": "55e8f29799374d224283626b6adade280097cc4bd75debf5f464b69abd64f77d",
+        "pcm_sha256": "caec0f71bd1175c70a5fd191949213027a5c5183152206a9b53ffa1df8f92008",
+        "samples": 106560
+      },
+      "long_02": {
+        "wav_sha256": "20733c802d33986fe5ec039a07087f94a93e724e87f2cc6af34ed255e591b1b3",
+        "pcm_sha256": "a99894551261d55faed3d69968c6f9d847ab1ca9d82e7a598919e1716a43d5ba",
+        "samples": 130240
+      }
+    },
+    "scope": "paced frozen audio, prefix re-recognition, gated LLM text; no TTS/microphone/VAD"
+  },
+  "checks": [
+    {
+      "run_id": "formal-v1-short_03-endpoint-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-short_03-eager-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-short_03-stable2-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_02-stable2-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_02-eager-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_02-endpoint-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_03-endpoint-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_03-eager-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_03-stable2-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-long_02-stable2-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-long_02-eager-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-long_02-endpoint-r0",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-short_03-stable2-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-short_03-eager-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-short_03-endpoint-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_02-endpoint-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_02-eager-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_02-stable2-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_03-stable2-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_03-eager-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_03-endpoint-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-long_02-endpoint-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-long_02-eager-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-long_02-stable2-r1",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-short_03-endpoint-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-short_03-eager-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-short_03-stable2-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_02-stable2-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_02-eager-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_02-endpoint-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_03-endpoint-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_03-eager-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-pause_03-stable2-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-long_02-stable2-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-long_02-eager-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    },
+    {
+      "run_id": "formal-v1-long_02-endpoint-r2",
+      "no_future_audio": true,
+      "no_text_before_final": true,
+      "committed_prompt_matches_final": true,
+      "only_selected_draft_published": true,
+      "workers_joined": true
+    }
+  ],
+  "acoustic_latency_ms": null,
+  "tts_audio": null,
+  "note": "Latency begins at frozen-file supply completion, retaining about 800ms tail silence. Repeated cumulative prefix ASR is not native streaming. CER is literal normalized character distance, without simplified/traditional conversion."
+}

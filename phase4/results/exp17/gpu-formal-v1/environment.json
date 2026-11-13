@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-23",
+  "models": {
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cudnn": 90100,
+    "asr": {
+      "device": "cuda",
+      "compute_type": "int8_float16"
+    },
+    "llm": {
+      "device": "cuda:0",
+      "dtype": "torch.bfloat16"
+    }
+  },
+  "source_sha256": {
+    "exp17/run_gpu.py": "0bd5e77bfc920a301b2d2330394dc1245137c36fe5cfd463a042f66a86b0a082",
+    "exp17/revision.py": "45753d6dc8970abe40927182c147a34fa1812b32f9b56971232624b0e8e23e52",
+    "exp14/models.py": "cb662829bae6d45ea5bd902f9df362f3a97d90e57d10c2df0fc9c6b3337960c6",
+    "exp14/logic.py": "004cfc81290e60f3021922ba4de64e79ad3347abf4699cb72c02e73398ccc7ed"
+  },
+  "packages": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.3"
+  },
+  "config": {
+    "output": "/opt/p4/exp17/results/formal-v1",
+    "repeat": 3,
+    "cadence_ms": 800,
+    "warmup": 1,
+    "cases": [
+      "short_03",
+      "pause_02",
+      "pause_03",
+      "long_02"
+    ],
+    "policies": [
+      "endpoint",
+      "eager",
+      "stable2"
+    ]
+  },
+  "inputs": {
+    "short_03": {
+      "wav_sha256": "785752cd1c9e13505159fae7768db90eba2879840fc7a452874495c88d424091",
+      "pcm_sha256": "3da129c8223978b81bfd51c81d83e8e9bff5f869f9506a341a004ded55cf456f",
+      "samples": 42880
+    },
+    "pause_02": {
+      "wav_sha256": "30b7b2a7c694c721eb303577aaaab88f67b7c1bc6bf1d8f3e7d34a5b2c5aa462",
+      "pcm_sha256": "ae903df0325cd6e129cd34ca872ae92841c35be8ab0bde22a7ec68b2574486ee",
+      "samples": 85440
+    },
+    "pause_03": {
+      "wav_sha256": "55e8f29799374d224283626b6adade280097cc4bd75debf5f464b69abd64f77d",
+      "pcm_sha256": "caec0f71bd1175c70a5fd191949213027a5c5183152206a9b53ffa1df8f92008",
+      "samples": 106560
+    },
+    "long_02": {
+      "wav_sha256": "20733c802d33986fe5ec039a07087f94a93e724e87f2cc6af34ed255e591b1b3",
+      "pcm_sha256": "a99894551261d55faed3d69968c6f9d847ab1ca9d82e7a598919e1716a43d5ba",
+      "samples": 130240
+    }
+  },
+  "scope": "paced frozen audio, prefix re-recognition, gated LLM text; no TTS/microphone/VAD"
+}

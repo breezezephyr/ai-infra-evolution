@@ -1,0 +1,40 @@
+{
+  "name": "exp6-prio",
+  "prom_start": 1790158376,
+  "prom_end": 1790158544,
+  "secs": 168.6,
+  "classes": {
+    "inter": {
+      "k": 1,
+      "inp": 256,
+      "out": 64,
+      "prio": 1,
+      "think": 0.5,
+      "done": 69,
+      "err": 0,
+      "ttft_p50": 70.1,
+      "ttft_p90": 796.5,
+      "ttft_p99": 6571.9,
+      "itl_p50": 20.4,
+      "itl_p99": 21.5,
+      "e2e_p50": 1364.0,
+      "out_tok_s": 26.2
+    },
+    "batch": {
+      "k": 7,
+      "inp": 2048,
+      "out": 256,
+      "prio": 100,
+      "think": 0.0,
+      "done": 100,
+      "err": 0,
+      "ttft_p50": 6778.8,
+      "ttft_p90": 7344.7,
+      "ttft_p99": 7632.3,
+      "itl_p50": 20.3,
+      "itl_p99": 23.6,
+      "e2e_p50": 12485.2,
+      "out_tok_s": 151.8
+    }
+  }
+}

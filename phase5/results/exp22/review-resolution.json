@@ -1,0 +1,50 @@
+{
+  "original_review": "independent-review.json",
+  "findings_addressed": [
+    "F1",
+    "F2"
+  ],
+  "verification": "21 regression tests RED/GREEN; actual data replay; mutated invalid baseline integration control",
+  "reviewer_rerun": false,
+  "raw_data_unchanged_sha256": {
+    "plan.json": "ad1bf302803e0667e7f9b4edc30257ccb9af5d331d1060b37bf33fc1de52b5fe",
+    "records.json": "ef56febb4120bdeb99b02e027071f6703cbf0bf5d7d531fa0959cfa6f9564c05",
+    "gateway.jsonl": "e648f5b7dc17df78402c482f6088c29d51c0eb26c80ed7139f55bf60ccc32c78"
+  },
+  "request_denominator": 144,
+  "evidence_verified": 144,
+  "legacy_wall_timing_eligible": 141,
+  "monotonic_observation_eligible": 144,
+  "token_comparisons": {
+    "planned": 144,
+    "http_accepted": 144,
+    "with_token_ids": 144,
+    "missing_token_ids": 0,
+    "compared_to_baseline": 136,
+    "equal": 88,
+    "different": 48,
+    "evidence_verified": 144,
+    "missing_baseline": 0
+  },
+  "timing_issues": [
+    {
+      "id": "exp22-formal-v1-b03-i5",
+      "issue": "wall_vs_monotonic_interval_discrepancy_gt100ms",
+      "raw_wall_total_ms": 2550.288677215576,
+      "observed_engine_span_ms": 254.05221
+    },
+    {
+      "id": "exp22-formal-v1-b10-i7",
+      "issue": "wall_vs_monotonic_interval_discrepancy_gt100ms",
+      "raw_wall_total_ms": 4339.154243469238,
+      "observed_engine_span_ms": 2059.046269
+    },
+    {
+      "id": "exp22-formal-v1-b15-i3",
+      "issue": "wall_vs_monotonic_interval_discrepancy_gt100ms",
+      "raw_wall_total_ms": 3991.119623184204,
+      "observed_engine_span_ms": 1633.645843
+    }
+  ],
+  "policy": "retain raw wall metrics; do not aggregate raw total/scheduled-to-finish durations; exact labels for monotonic audit observation spans; altered n disclosed for first-queue/first-token wall aggregates"
+}

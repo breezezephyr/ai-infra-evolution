@@ -1,0 +1,6050 @@
+[
+  {
+    "id": "exp22-formal-v1-b00-i0",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 218927120237458,
+    "started_ns": 218927120292500,
+    "finished_ns": 218929697117583,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b00-i0",
+      "object": "chat.completion",
+      "created": 1792987159,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 0,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b00-i1",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 218927120539958,
+    "started_ns": 218929697303750,
+    "finished_ns": 218932105703916,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b00-i1",
+      "object": "chat.completion",
+      "created": 1792987161,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续出行。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 0,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b00-i2",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 218927120550666,
+    "started_ns": 218932105796583,
+    "finished_ns": 218934357952833,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b00-i2",
+      "object": "chat.completion",
+      "created": 1792987163,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间信息。\n\n2. **出发站和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态正常，说明该班次已经",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 0,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b00-i3",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 218927120555333,
+    "started_ns": 218934358022375,
+    "finished_ns": 218935261484708,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b00-i3",
+      "object": "chat.completion",
+      "created": 1792987165,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 0,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b00-i4",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 218927120558541,
+    "started_ns": 218935261579958,
+    "finished_ns": 218937416990291,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b00-i4",
+      "object": "chat.completion",
+      "created": 1792987166,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度和密度，避免线路过长或过短。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段调整车辆数量，避免",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 0,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b00-i5",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 218927120564458,
+    "started_ns": 218937417043375,
+    "finished_ns": 218938462099375,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b00-i5",
+      "object": "chat.completion",
+      "created": 1792987168,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 0,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b00-i6",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 218927120567166,
+    "started_ns": 218938462152541,
+    "finished_ns": 218939600258916,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b00-i6",
+      "object": "chat.completion",
+      "created": 1792987169,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车行驶而设置的专用道路，以提高公交车的通行效率和安全性。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 43,
+        "completion_tokens": 23,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 0,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b00-i7",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 218927120569666,
+    "started_ns": 218939600304416,
+    "finished_ns": 218940591166125,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b00-i7",
+      "object": "chat.completion",
+      "created": 1792987170,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 0,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b01-i2",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 218940597915666,
+    "started_ns": 218940598100208,
+    "finished_ns": 218941083734000,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b01-i2",
+      "object": "chat.completion",
+      "created": 1792987171,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 1,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b01-i0",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 218940596535708,
+    "started_ns": 218940597138166,
+    "finished_ns": 218941289802791,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b01-i0",
+      "object": "chat.completion",
+      "created": 1792987171,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和安全性。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 38,
+        "completion_tokens": 18,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 1,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b01-i1",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 218940597457833,
+    "started_ns": 218940597671291,
+    "finished_ns": 218943257985666,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b01-i1",
+      "object": "chat.completion",
+      "created": 1792987171,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 1,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b01-i3",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 218940598337375,
+    "started_ns": 218940598453583,
+    "finished_ns": 218943756459083,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b01-i3",
+      "object": "chat.completion",
+      "created": 1792987172,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间点。\n\n2. **起点和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态（如“状态正常”），说明",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 1,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b01-i4",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 218940599473791,
+    "started_ns": 218941083766000,
+    "finished_ns": 218944280533583,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b01-i4",
+      "object": "chat.completion",
+      "created": 1792987174,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 1,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b01-i5",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 218940599493375,
+    "started_ns": 218941289835416,
+    "finished_ns": 218946285801583,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b01-i5",
+      "object": "chat.completion",
+      "created": 1792987174,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度和密度，避免线路过长或过短。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段调整车辆数量，确保",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 1,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b01-i6",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 218940599500541,
+    "started_ns": 218943258084625,
+    "finished_ns": 218946882769458,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b01-i6",
+      "object": "chat.completion",
+      "created": 1792987175,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续出行。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 1,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b01-i7",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 218940599506291,
+    "started_ns": 218943756529041,
+    "finished_ns": 218947394584916,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b01-i7",
+      "object": "chat.completion",
+      "created": 1792987176,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 1,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b02-i1",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 218947395877875,
+    "started_ns": 218947395920375,
+    "finished_ns": 218949548291083,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b02-i1",
+      "object": "chat.completion",
+      "created": 1792987177,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间点。\n\n2. **起点和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态（如“状态正常”），说明",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 2,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b02-i2",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 218947396012833,
+    "started_ns": 218947396044791,
+    "finished_ns": 218949549028250,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b02-i2",
+      "object": "chat.completion",
+      "created": 1792987177,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度、高峰时段和换乘需求，合理规划车辆数量和班次。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 2,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b02-i0",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 218947395704625,
+    "started_ns": 218947395770333,
+    "finished_ns": 218949549833041,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b02-i0",
+      "object": "chat.completion",
+      "created": 1792987177,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续乘车。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 2,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b02-i3",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 218947396139583,
+    "started_ns": 218947396188541,
+    "finished_ns": 218949551375375,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b02-i3",
+      "object": "chat.completion",
+      "created": 1792987177,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划发车，运行稳定，无异常情况。本次班次运行顺利，为后续运营提供了可靠基础。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 915,
+        "completion_tokens": 83,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 2,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b02-i5",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 218947396295125,
+    "started_ns": 218949549071958,
+    "finished_ns": 218950101586541,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b02-i5",
+      "object": "chat.completion",
+      "created": 1792987179,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 2,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b02-i6",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 218947396298708,
+    "started_ns": 218949549870333,
+    "finished_ns": 218950237303208,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b02-i6",
+      "object": "chat.completion",
+      "created": 1792987179,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 2,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b02-i4",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 218947396286541,
+    "started_ns": 218949548351250,
+    "finished_ns": 218950475537500,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b02-i4",
+      "object": "chat.completion",
+      "created": 1792987179,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 2,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b02-i7",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 218947396301750,
+    "started_ns": 218949551410708,
+    "finished_ns": 218950475748333,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b02-i7",
+      "object": "chat.completion",
+      "created": 1792987179,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和安全性。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 38,
+        "completion_tokens": 18,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 2,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b03-i0",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 218950477880833,
+    "started_ns": 218950477997750,
+    "finished_ns": 218951182065833,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b03-i0",
+      "object": "chat.completion",
+      "created": 1792987180,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车行驶而设置的专用道路，以提高公交车的通行效率和安全性。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 43,
+        "completion_tokens": 23,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 3,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b03-i1",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 218950478203208,
+    "started_ns": 218951182125291,
+    "finished_ns": 218953605954875,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b03-i1",
+      "object": "chat.completion",
+      "created": 1792987181,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续出行。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 3,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b03-i2",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 218950478223500,
+    "started_ns": 218953606011125,
+    "finished_ns": 218956249198833,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b03-i2",
+      "object": "chat.completion",
+      "created": 1792987183,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度和密度，避免线路过长或过短。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段调整车辆数量，避免",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 3,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b03-i3",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 218950478232750,
+    "started_ns": 218956249234041,
+    "finished_ns": 218958889449666,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b03-i3",
+      "object": "chat.completion",
+      "created": 1792987185,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间信息。\n\n2. **出发站和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态正常，说明该班次已经",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 3,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b03-i4",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 218950478239541,
+    "started_ns": 218958889663333,
+    "finished_ns": 218960030433833,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b03-i4",
+      "object": "chat.completion",
+      "created": 1792987188,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 3,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b03-i5",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 218950478245500,
+    "started_ns": 218960030499125,
+    "finished_ns": 218961029905750,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b03-i5",
+      "object": "chat.completion",
+      "created": 1792987189,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 3,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b03-i6",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 218950478251375,
+    "started_ns": 218961029966916,
+    "finished_ns": 218962311104958,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b03-i6",
+      "object": "chat.completion",
+      "created": 1792987192,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 3,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b03-i7",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 218950478257166,
+    "started_ns": 218962311283083,
+    "finished_ns": 218965448868250,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b03-i7",
+      "object": "chat.completion",
+      "created": 1792987194,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 3,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b04-i0",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 218965452599958,
+    "started_ns": 218965453863791,
+    "finished_ns": 218968409871333,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b04-i0",
+      "object": "chat.completion",
+      "created": 1792987197,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划发车，运行稳定，无异常情况。本次班次运行顺利，为后续运营提供了可靠基础。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 915,
+        "completion_tokens": 83,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 4,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b04-i1",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 218965454296875,
+    "started_ns": 218965454597500,
+    "finished_ns": 218968903832458,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b04-i1",
+      "object": "chat.completion",
+      "created": 1792987197,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间点。\n\n2. **起点和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态（如“状态正常”），说明",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 4,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b04-i2",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 218965455416416,
+    "started_ns": 218968409950708,
+    "finished_ns": 218969556431583,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b04-i2",
+      "object": "chat.completion",
+      "created": 1792987200,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 4,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b04-i3",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 218965455445166,
+    "started_ns": 218968903918416,
+    "finished_ns": 218970159605333,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b04-i3",
+      "object": "chat.completion",
+      "created": 1792987200,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 4,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b04-i5",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 218965455462500,
+    "started_ns": 218970159660750,
+    "finished_ns": 218971113143791,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b04-i5",
+      "object": "chat.completion",
+      "created": 1792987201,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 4,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b04-i6",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 218965455469083,
+    "started_ns": 218971113220750,
+    "finished_ns": 218972239557250,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b04-i6",
+      "object": "chat.completion",
+      "created": 1792987202,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和减少交通拥堵。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 40,
+        "completion_tokens": 20,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 4,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b04-i4",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 218965455454666,
+    "started_ns": 218969556541708,
+    "finished_ns": 218972633214750,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b04-i4",
+      "object": "chat.completion",
+      "created": 1792987201,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道两侧设有换乘指示牌，标明换乘站名；\n3. **换乘后**：换乘后可继续乘坐公交，无需换乘下一辆车。\n\n如有任何疑问，",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 4,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b04-i7",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 218965455475291,
+    "started_ns": 218972239646750,
+    "finished_ns": 218975235642500,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b04-i7",
+      "object": "chat.completion",
+      "created": 1792987203,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度和密度，避免线路过长或过短。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段调整车辆数量，避免",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 4,
+    "repeat": 0,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b05-i0",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 218975241187458,
+    "started_ns": 218975241416541,
+    "finished_ns": 218976485797916,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b05-i0",
+      "object": "chat.completion",
+      "created": 1792987206,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和减少交通拥堵。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 40,
+        "completion_tokens": 20,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 5,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b05-i2",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 218975242915541,
+    "started_ns": 218976486003416,
+    "finished_ns": 218977866693291,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b05-i2",
+      "object": "chat.completion",
+      "created": 1792987207,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 5,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b05-i1",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 218975242202791,
+    "started_ns": 218975242589416,
+    "finished_ns": 218978488421250,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b05-i1",
+      "object": "chat.completion",
+      "created": 1792987206,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 5,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b05-i3",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 218975242942666,
+    "started_ns": 218977866798541,
+    "finished_ns": 218978984729458,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b05-i3",
+      "object": "chat.completion",
+      "created": 1792987208,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 5,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b05-i4",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 218975242950250,
+    "started_ns": 218978488495791,
+    "finished_ns": 218980021623083,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b05-i4",
+      "object": "chat.completion",
+      "created": 1792987209,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 5,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b05-i5",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 218975242980708,
+    "started_ns": 218978984837708,
+    "finished_ns": 218982484899041,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b05-i5",
+      "object": "chat.completion",
+      "created": 1792987209,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道两侧设有换乘指示牌，您可直接通过指示牌进行换乘；\n3. **换乘终点站**：换乘后，您将到达换乘终点站（如B",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 5,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b05-i6",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 218975242990791,
+    "started_ns": 218980021747291,
+    "finished_ns": 218983149714958,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b05-i6",
+      "object": "chat.completion",
+      "created": 1792987210,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间点。\n\n2. **出发站和终点站**：班次从青山出发，终点站是河湾，这有助于乘客了解列车的起点和终点。\n\n3. **状态正常**：所有班次的状态都正常，",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 5,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b05-i7",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 218975242995458,
+    "started_ns": 218982484979375,
+    "finished_ns": 218985704424041,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b05-i7",
+      "object": "chat.completion",
+      "created": 1792987213,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度和密度，避免线路过长或过短。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段调整车辆数量，避免",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 5,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b06-i0",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 218985708358500,
+    "started_ns": 218985708643250,
+    "finished_ns": 218988352146625,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b06-i0",
+      "object": "chat.completion",
+      "created": 1792987216,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续出行。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 6,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b06-i1",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 218985709231250,
+    "started_ns": 218988352204666,
+    "finished_ns": 218990844187791,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b06-i1",
+      "object": "chat.completion",
+      "created": 1792987218,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间信息。\n\n2. **出发站和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态正常，说明该班次已经",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 6,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b06-i2",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 218985709261625,
+    "started_ns": 218990844246833,
+    "finished_ns": 218993139145666,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b06-i2",
+      "object": "chat.completion",
+      "created": 1792987220,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度和密度，避免线路过长或过短。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段调整车辆数量，避免",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 6,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b06-i3",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 218985709270166,
+    "started_ns": 218993139215291,
+    "finished_ns": 218994724188250,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b06-i3",
+      "object": "chat.completion",
+      "created": 1792987222,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车行驶而设置的专用道路，以提高公交车的通行效率和安全性。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 43,
+        "completion_tokens": 23,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 6,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b06-i4",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 218985709278166,
+    "started_ns": 218994724272666,
+    "finished_ns": 218997697349333,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b06-i4",
+      "object": "chat.completion",
+      "created": 1792987227,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 6,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b06-i5",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 218985709285791,
+    "started_ns": 218997697541583,
+    "finished_ns": 218998281550833,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b06-i5",
+      "object": "chat.completion",
+      "created": 1792987229,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 6,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b06-i6",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 218985709294125,
+    "started_ns": 218998281629416,
+    "finished_ns": 218998817620791,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b06-i6",
+      "object": "chat.completion",
+      "created": 1792987230,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 6,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b06-i7",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 218985709301833,
+    "started_ns": 218998817653833,
+    "finished_ns": 218999351312833,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b06-i7",
+      "object": "chat.completion",
+      "created": 1792987230,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 6,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b07-i1",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 218999368649833,
+    "started_ns": 218999372745541,
+    "finished_ns": 219001397965208,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b07-i1",
+      "object": "chat.completion",
+      "created": 1792987231,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划发车，运行稳定，无异常情况。本次班次运行顺利，为后续运营提供了可靠基础。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 915,
+        "completion_tokens": 83,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 7,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b07-i0",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 218999367053541,
+    "started_ns": 218999367677125,
+    "finished_ns": 219001482025750,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b07-i0",
+      "object": "chat.completion",
+      "created": 1792987231,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间点。\n\n2. **起点和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态（如“状态正常”），说明",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 7,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b07-i3",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 218999374079541,
+    "started_ns": 219001482073916,
+    "finished_ns": 219003469523166,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b07-i3",
+      "object": "chat.completion",
+      "created": 1792987234,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和减少交通拥堵。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 40,
+        "completion_tokens": 20,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 7,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b07-i2",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 218999374057125,
+    "started_ns": 219001398030166,
+    "finished_ns": 219004688797916,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b07-i2",
+      "object": "chat.completion",
+      "created": 1792987233,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道两侧设有换乘指示牌，您可直接通过指示牌进行换乘；\n3. **换乘终点站**：换乘后，您将到达换乘终点站（如B",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 7,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b07-i4",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 218999374083958,
+    "started_ns": 219003469567458,
+    "finished_ns": 219005736459291,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b07-i4",
+      "object": "chat.completion",
+      "created": 1792987235,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和合理运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路连通性。\n   - 分析线路的长度和密度，合理分配车辆数量。\n\n2. **车辆调度**  \n   - 根据乘客需求和车辆容量，合理安排车辆的发车时间和班次",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 7,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b07-i5",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 218999374087666,
+    "started_ns": 219004688871208,
+    "finished_ns": 219005737244416,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b07-i5",
+      "object": "chat.completion",
+      "created": 1792987236,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 7,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b07-i7",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 218999374093750,
+    "started_ns": 219005737305916,
+    "finished_ns": 219006709985916,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b07-i7",
+      "object": "chat.completion",
+      "created": 1792987237,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 7,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b07-i6",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 218999374091166,
+    "started_ns": 219005736538458,
+    "finished_ns": 219006811819666,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b07-i6",
+      "object": "chat.completion",
+      "created": 1792987237,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 7,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b08-i1",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 219006814273916,
+    "started_ns": 219006814343875,
+    "finished_ns": 219007705685833,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b08-i1",
+      "object": "chat.completion",
+      "created": 1792987238,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 8,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b08-i2",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 219006814479500,
+    "started_ns": 219006814548333,
+    "finished_ns": 219007939988875,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b08-i2",
+      "object": "chat.completion",
+      "created": 1792987238,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和减少交通拥堵。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 40,
+        "completion_tokens": 20,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 8,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b08-i3",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 219006814651875,
+    "started_ns": 219006814762541,
+    "finished_ns": 219009341092333,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b08-i3",
+      "object": "chat.completion",
+      "created": 1792987238,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了列车的连续性和高效性，为乘客提供了便捷的出行服务。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 923,
+        "completion_tokens": 91,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 8,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b08-i0",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 219006814051375,
+    "started_ns": 219006814140875,
+    "finished_ns": 219009422134416,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b08-i0",
+      "object": "chat.completion",
+      "created": 1792987238,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和合理运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路连通性。\n   - 分析线路的长度和密度，合理分配车辆数量。\n\n2. **车辆调度**  \n   - 根据乘客需求和车辆容量，合理安排车辆的发车时间和班次",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 8,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b08-i6",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 219006814834833,
+    "started_ns": 219009341142083,
+    "finished_ns": 219010504559500,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b08-i6",
+      "object": "chat.completion",
+      "created": 1792987240,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 8,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b08-i4",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 219006814824125,
+    "started_ns": 219007705740958,
+    "finished_ns": 219010504781500,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b08-i4",
+      "object": "chat.completion",
+      "created": 1792987239,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间点。\n\n2. **出发站和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态正常，说明该班次已经",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 8,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b08-i7",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 219006814838000,
+    "started_ns": 219009422173125,
+    "finished_ns": 219010504958958,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b08-i7",
+      "object": "chat.completion",
+      "created": 1792987240,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 8,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b08-i5",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 219006814831166,
+    "started_ns": 219007940038708,
+    "finished_ns": 219010505158458,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b08-i5",
+      "object": "chat.completion",
+      "created": 1792987239,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续乘车。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 8,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b09-i2",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 219010507275166,
+    "started_ns": 219010507296500,
+    "finished_ns": 219011531343041,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b09-i2",
+      "object": "chat.completion",
+      "created": 1792987241,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 9,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b09-i0",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 219010507059500,
+    "started_ns": 219010507104125,
+    "finished_ns": 219013065898750,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b09-i0",
+      "object": "chat.completion",
+      "created": 1792987241,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 9,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b09-i3",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 219010507342875,
+    "started_ns": 219010507363708,
+    "finished_ns": 219013067021583,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b09-i3",
+      "object": "chat.completion",
+      "created": 1792987242,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和减少交通拥堵。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 40,
+        "completion_tokens": 20,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 9,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b09-i1",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 219010507192166,
+    "started_ns": 219010507222708,
+    "finished_ns": 219014074435166,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b09-i1",
+      "object": "chat.completion",
+      "created": 1792987244,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 9,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b09-i5",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 219010507406875,
+    "started_ns": 219013065960291,
+    "finished_ns": 219014993231916,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b09-i5",
+      "object": "chat.completion",
+      "created": 1792987244,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 9,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b09-i4",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 219010507403291,
+    "started_ns": 219011531429833,
+    "finished_ns": 219015717575291,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b09-i4",
+      "object": "chat.completion",
+      "created": 1792987244,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间点。\n\n2. **起点和终点站**：班次的起点和终点站（青山、河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态（如“状态正常”），说明",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 9,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b09-i6",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 219010507409708,
+    "started_ns": 219013067073416,
+    "finished_ns": 219017565394291,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b09-i6",
+      "object": "chat.completion",
+      "created": 1792987245,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道两侧设有换乘指示牌，您可直接通过指示牌进行换乘；\n3. **换乘终点站**：换乘后，您将到达换乘终点站（如B",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 9,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b09-i7",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 219010507412166,
+    "started_ns": 219014074502166,
+    "finished_ns": 219018327106666,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b09-i7",
+      "object": "chat.completion",
+      "created": 1792987246,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和合理运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路连通性。\n   - 分析线路的长度和密度，合理分配车辆数量。\n\n2. **车辆调度**  \n   - 根据乘客需求和车辆容量，合理安排车辆的发车时间和班次",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 9,
+    "repeat": 1,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b10-i0",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 219018331774416,
+    "started_ns": 219018331894666,
+    "finished_ns": 219020921068541,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b10-i0",
+      "object": "chat.completion",
+      "created": 1792987248,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 10,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b10-i1",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 219018332156458,
+    "started_ns": 219020921103500,
+    "finished_ns": 219023420449750,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b10-i1",
+      "object": "chat.completion",
+      "created": 1792987250,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间信息。\n\n2. **出发站和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态正常，说明该班次已经",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 10,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b10-i2",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 219018332167083,
+    "started_ns": 219023420526416,
+    "finished_ns": 219024014844083,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b10-i2",
+      "object": "chat.completion",
+      "created": 1792987253,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 10,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b10-i3",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 219018332173250,
+    "started_ns": 219024014894291,
+    "finished_ns": 219024963825333,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b10-i3",
+      "object": "chat.completion",
+      "created": 1792987253,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车行驶而设置的专用道路，以提高公交车的通行效率和安全性。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 43,
+        "completion_tokens": 23,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 10,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b10-i4",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 219018332178833,
+    "started_ns": 219024963899458,
+    "finished_ns": 219025698214375,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b10-i4",
+      "object": "chat.completion",
+      "created": 1792987254,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 10,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b10-i5",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 219018332184250,
+    "started_ns": 219025698300583,
+    "finished_ns": 219028109692833,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b10-i5",
+      "object": "chat.completion",
+      "created": 1792987255,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续出行。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 10,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b10-i6",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 219018332189375,
+    "started_ns": 219028109807000,
+    "finished_ns": 219029078838625,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b10-i6",
+      "object": "chat.completion",
+      "created": 1792987257,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 10,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b10-i7",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 219018332194208,
+    "started_ns": 219029078932375,
+    "finished_ns": 219031457369375,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b10-i7",
+      "object": "chat.completion",
+      "created": 1792987258,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度和密度，避免线路过长或过短。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段调整车辆数量，避免",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 10,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b11-i0",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 219031461466708,
+    "started_ns": 219031461530041,
+    "finished_ns": 219032299185875,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b11-i0",
+      "object": "chat.completion",
+      "created": 1792987263,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 11,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b11-i1",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 219031461628500,
+    "started_ns": 219031461707166,
+    "finished_ns": 219032299499333,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b11-i1",
+      "object": "chat.completion",
+      "created": 1792987263,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 11,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b11-i2",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 219031461781916,
+    "started_ns": 219032299216958,
+    "finished_ns": 219034544206541,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b11-i2",
+      "object": "chat.completion",
+      "created": 1792987264,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划发车，运行稳定，无异常情况。本次班次运行顺利，为后续运营提供了可靠基础。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 915,
+        "completion_tokens": 83,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 11,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b11-i3",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 219031461793583,
+    "started_ns": 219032299517000,
+    "finished_ns": 219034544550750,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b11-i3",
+      "object": "chat.completion",
+      "created": 1792987264,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续出行。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 11,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b11-i5",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 219031461799708,
+    "started_ns": 219034544574750,
+    "finished_ns": 219035629589458,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b11-i5",
+      "object": "chat.completion",
+      "created": 1792987266,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 11,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b11-i6",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 219031461802541,
+    "started_ns": 219035629647791,
+    "finished_ns": 219036568162791,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b11-i6",
+      "object": "chat.completion",
+      "created": 1792987267,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和减少交通拥堵。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 40,
+        "completion_tokens": 20,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 11,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b11-i4",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 219031461797041,
+    "started_ns": 219034544239041,
+    "finished_ns": 219037213799458,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b11-i4",
+      "object": "chat.completion",
+      "created": 1792987266,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间点。\n\n2. **出发站和终点站**：班次从青山出发，终点站是河湾，这有助于乘客了解出行路线和目的地。\n\n3. **状态正常**：所有班次的状态都正常，说明",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 11,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b11-i7",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 219031461805083,
+    "started_ns": 219036568226541,
+    "finished_ns": 219039325025083,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b11-i7",
+      "object": "chat.completion",
+      "created": 1792987268,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度和密度，避免线路过长或过短。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段调整车辆数量，避免",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 11,
+    "repeat": 1,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b12-i0",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 219039328145333,
+    "started_ns": 219039328213458,
+    "finished_ns": 219040234310083,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b12-i0",
+      "object": "chat.completion",
+      "created": 1792987270,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和减少交通拥堵。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 40,
+        "completion_tokens": 20,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 12,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b12-i1",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 219039328329166,
+    "started_ns": 219039328386666,
+    "finished_ns": 219041689760708,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b12-i1",
+      "object": "chat.completion",
+      "created": 1792987270,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划发车，运行稳定，无异常情况。本次班次运行顺利，为后续运营提供了可靠基础。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 915,
+        "completion_tokens": 83,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 12,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b12-i3",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 219039328479666,
+    "started_ns": 219041689870708,
+    "finished_ns": 219042512462666,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b12-i3",
+      "object": "chat.completion",
+      "created": 1792987272,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 12,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b12-i2",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 219039328473041,
+    "started_ns": 219040234345791,
+    "finished_ns": 219042842740666,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b12-i2",
+      "object": "chat.completion",
+      "created": 1792987271,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和合理运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路连通性。\n   - 分析线路的长度和密度，合理分配车辆数量。\n\n2. **车辆调度**  \n   - 根据乘客需求和车辆容量，合理安排车辆的发车时间和班次",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 12,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b12-i4",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 219039328482875,
+    "started_ns": 219042512508291,
+    "finished_ns": 219044874508083,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b12-i4",
+      "object": "chat.completion",
+      "created": 1792987273,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间点。\n\n2. **出发站和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态正常，说明该班次已经",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 12,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b12-i5",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 219039328486000,
+    "started_ns": 219042842822625,
+    "finished_ns": 219045077358000,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b12-i5",
+      "object": "chat.completion",
+      "created": 1792987273,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续乘车。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 12,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b12-i6",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 219039328489208,
+    "started_ns": 219044874572500,
+    "finished_ns": 219045352958916,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b12-i6",
+      "object": "chat.completion",
+      "created": 1792987275,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 12,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b12-i7",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 219039328492291,
+    "started_ns": 219045077401750,
+    "finished_ns": 219045869859458,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b12-i7",
+      "object": "chat.completion",
+      "created": 1792987275,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 12,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b13-i1",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 219045878185375,
+    "started_ns": 219045878335291,
+    "finished_ns": 219046426395208,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b13-i1",
+      "object": "chat.completion",
+      "created": 1792987276,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 13,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b13-i3",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 219045880716916,
+    "started_ns": 219045880934166,
+    "finished_ns": 219046685200958,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b13-i3",
+      "object": "chat.completion",
+      "created": 1792987276,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 13,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b13-i5",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 219045882674458,
+    "started_ns": 219046685295916,
+    "finished_ns": 219047488643625,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b13-i5",
+      "object": "chat.completion",
+      "created": 1792987277,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 13,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b13-i0",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 219045877764041,
+    "started_ns": 219045877935333,
+    "finished_ns": 219048184196625,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b13-i0",
+      "object": "chat.completion",
+      "created": 1792987276,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度、高峰时段和换乘需求，合理规划车辆数量和班次。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 13,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b13-i2",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 219045878805500,
+    "started_ns": 219045879061791,
+    "finished_ns": 219048184394000,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b13-i2",
+      "object": "chat.completion",
+      "created": 1792987276,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续乘车。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 13,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b13-i6",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 219045882683375,
+    "started_ns": 219047488711541,
+    "finished_ns": 219048247724291,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b13-i6",
+      "object": "chat.completion",
+      "created": 1792987278,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和减少交通拥堵。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 40,
+        "completion_tokens": 20,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 13,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b13-i4",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 219045882576083,
+    "started_ns": 219046426497916,
+    "finished_ns": 219048597835250,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b13-i4",
+      "object": "chat.completion",
+      "created": 1792987277,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 13,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b13-i7",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 219045882691000,
+    "started_ns": 219048184229000,
+    "finished_ns": 219050571994833,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b13-i7",
+      "object": "chat.completion",
+      "created": 1792987278,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间信息。\n\n2. **出发站和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态正常，说明该班次已经",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 13,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b14-i0",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 219050581258416,
+    "started_ns": 219050581446500,
+    "finished_ns": 219051420378000,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b14-i0",
+      "object": "chat.completion",
+      "created": 1792987280,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车行驶而设置的专用道路，以提高公交车的通行效率和安全性。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 43,
+        "completion_tokens": 23,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 14,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b14-i1",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 219050581689708,
+    "started_ns": 219051420478416,
+    "finished_ns": 219053777615708,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b14-i1",
+      "object": "chat.completion",
+      "created": 1792987281,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度和密度，避免线路过长或过短。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段调整车辆数量，避免",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 14,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b14-i2",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 219050581703625,
+    "started_ns": 219053777742791,
+    "finished_ns": 219055882775000,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b14-i2",
+      "object": "chat.completion",
+      "created": 1792987283,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续出行。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 14,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b14-i3",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 219050581710750,
+    "started_ns": 219055882859541,
+    "finished_ns": 219056391248833,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b14-i3",
+      "object": "chat.completion",
+      "created": 1792987285,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 14,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b14-i4",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 219050581717000,
+    "started_ns": 219056391326666,
+    "finished_ns": 219057455001708,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b14-i4",
+      "object": "chat.completion",
+      "created": 1792987286,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 14,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b14-i5",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 219050581723208,
+    "started_ns": 219057455079916,
+    "finished_ns": 219058187827791,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b14-i5",
+      "object": "chat.completion",
+      "created": 1792987287,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 14,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b14-i6",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 219050581729500,
+    "started_ns": 219058187934500,
+    "finished_ns": 219060334100708,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b14-i6",
+      "object": "chat.completion",
+      "created": 1792987288,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 14,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b14-i7",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 219050581735958,
+    "started_ns": 219060334318250,
+    "finished_ns": 219062655797541,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b14-i7",
+      "object": "chat.completion",
+      "created": 1792987290,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间信息。\n\n2. **出发站和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态正常，说明该班次已经",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 14,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b15-i0",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 219062667119833,
+    "started_ns": 219062667396416,
+    "finished_ns": 219063219605708,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b15-i0",
+      "object": "chat.completion",
+      "created": 1792987292,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 15,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b15-i1",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 219062667666625,
+    "started_ns": 219063219722083,
+    "finished_ns": 219063892359083,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b15-i1",
+      "object": "chat.completion",
+      "created": 1792987292,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 15,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b15-i2",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 219062667685458,
+    "started_ns": 219063892437583,
+    "finished_ns": 219064799896041,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b15-i2",
+      "object": "chat.completion",
+      "created": 1792987293,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车行驶而设置的专用道路，以提高公交车的通行效率和安全性。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 43,
+        "completion_tokens": 23,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 15,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b15-i3",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 219062667693375,
+    "started_ns": 219064799944000,
+    "finished_ns": 219066900116875,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b15-i3",
+      "object": "chat.completion",
+      "created": 1792987294,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度和密度，避免线路过长或过短。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段调整车辆数量，避免",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 15,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b15-i4",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 219062667699958,
+    "started_ns": 219066900153000,
+    "finished_ns": 219069218988208,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b15-i4",
+      "object": "chat.completion",
+      "created": 1792987298,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续出行。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 15,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b15-i5",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 219062667705708,
+    "started_ns": 219069219089291,
+    "finished_ns": 219071677909166,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b15-i5",
+      "object": "chat.completion",
+      "created": 1792987301,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间信息。\n\n2. **出发站和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态正常，说明该班次已经",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 15,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b15-i6",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 219062667712041,
+    "started_ns": 219071677996166,
+    "finished_ns": 219072645720625,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b15-i6",
+      "object": "chat.completion",
+      "created": 1792987303,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 15,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b15-i7",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 219062667718625,
+    "started_ns": 219072645841166,
+    "finished_ns": 219074833201125,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b15-i7",
+      "object": "chat.completion",
+      "created": 1792987304,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 15,
+    "repeat": 2,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-formal-v1-b16-i3",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 219074843922708,
+    "started_ns": 219074844007833,
+    "finished_ns": 219075729670333,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b16-i3",
+      "object": "chat.completion",
+      "created": 1792987306,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 16,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b16-i2",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 219074843704833,
+    "started_ns": 219074843785708,
+    "finished_ns": 219076383177541,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b16-i2",
+      "object": "chat.completion",
+      "created": 1792987306,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 16,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b16-i1",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 219074843257000,
+    "started_ns": 219074843446375,
+    "finished_ns": 219076979611375,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b16-i1",
+      "object": "chat.completion",
+      "created": 1792987306,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划发车，运行稳定，无异常情况。本次班次运行顺利，为后续运营提供了可靠基础。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 915,
+        "completion_tokens": 83,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 16,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b16-i4",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 219074844147083,
+    "started_ns": 219075729776333,
+    "finished_ns": 219078636154583,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b16-i4",
+      "object": "chat.completion",
+      "created": 1792987307,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间信息。\n\n2. **起点和终点站**：班次的起点和终点站（青山、河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态（如“状态正常”），说明",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 16,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b16-i5",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 219074844160333,
+    "started_ns": 219076383302000,
+    "finished_ns": 219079578489375,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b16-i5",
+      "object": "chat.completion",
+      "created": 1792987309,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和安全性。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 38,
+        "completion_tokens": 18,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 16,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b16-i0",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 219074842722000,
+    "started_ns": 219074843008166,
+    "finished_ns": 219079579230000,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b16-i0",
+      "object": "chat.completion",
+      "created": 1792987308,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和合理运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路连通性。\n   - 分析线路的长度和密度，合理分配车辆数量。\n\n2. **车辆调度**  \n   - 根据乘客需求和车辆容量，合理安排车辆的发车时间和班次",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 16,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b16-i6",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 219074844168125,
+    "started_ns": 219076979674000,
+    "finished_ns": 219080523082416,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b16-i6",
+      "object": "chat.completion",
+      "created": 1792987310,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 16,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b16-i7",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 219074844174583,
+    "started_ns": 219078636252625,
+    "finished_ns": 219082085874583,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b16-i7",
+      "object": "chat.completion",
+      "created": 1792987310,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续乘车。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 16,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-formal-v1-b17-i1",
+    "task": "short-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "aaf7644cf9349198151726b225c3944b01d8e42c307b96ae91a2452a87c992ae",
+    "submitted_ns": 219082092694541,
+    "started_ns": 219082092795083,
+    "finished_ns": 219082855424166,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b17-i1",
+      "object": "chat.completion",
+      "created": 1792987312,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "17 + 26 = 43",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 27,
+        "total_tokens": 38,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 17,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b17-i0",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 219082092241625,
+    "started_ns": 219082092403875,
+    "finished_ns": 219083089357916,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b17-i0",
+      "object": "chat.completion",
+      "created": 1792987312,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用道路，以提高通行效率和安全性。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 38,
+        "completion_tokens": 18,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 17,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b17-i2",
+    "task": "long-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+    "submitted_ns": 219082093015208,
+    "started_ns": 219082855493666,
+    "finished_ns": 219085301894500,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b17-i2",
+      "object": "chat.completion",
+      "created": 1792987313,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间信息。\n\n2. **出发站和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态正常，说明该班次已经",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 835,
+        "total_tokens": 931,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 17,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b17-i3",
+    "task": "short-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+    "submitted_ns": 219082093025750,
+    "started_ns": 219083089453250,
+    "finished_ns": 219085502930708,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b17-i3",
+      "object": "chat.completion",
+      "created": 1792987313,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和合理运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路连通性。\n   - 分析线路的长度和密度，合理分配车辆数量。\n\n2. **车辆调度**  \n   - 根据乘客需求和车辆容量，合理安排车辆的发车时间和班次",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 121,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 17,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b17-i5",
+    "task": "long-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "78b53c56a230f6a789a6af6fce7652f80a0ef674aad79c2be1e0591670b37b0b",
+    "submitted_ns": 219082093037000,
+    "started_ns": 219085503045166,
+    "finished_ns": 219086262271166,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b17-i5",
+      "object": "chat.completion",
+      "created": 1792987315,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "共有30条班次记录。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 841,
+        "completion_tokens": 9,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 17,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b17-i4",
+    "task": "short-batch-b",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "0e7a28998b02cf55d2de6cf1b2c6038a774335cbf6bebd0391b8f78b29fc9b37",
+    "submitted_ns": 219082093031375,
+    "started_ns": 219085302032333,
+    "finished_ns": 219087811525375,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b17-i4",
+      "object": "chat.completion",
+      "created": 1792987315,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "欢迎乘坐XX公交线路！如果您需要换乘，请根据以下指引操作：\n\n1. **换乘起点站**：请在换乘起点站（如A站）下车，按指引进入换乘通道；\n2. **换乘通道**：换乘通道内设有专用通道，换乘时请勿拥挤，按指示使用；\n3. **换乘终点站**：换乘后，前往终点站（如B站）继续出行。\n\n",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 122,
+        "completion_tokens": 96,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 17,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b17-i6",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 219082093042541,
+    "started_ns": 219086262438291,
+    "finished_ns": 219088531724166,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b17-i6",
+      "object": "chat.completion",
+      "created": 1792987316,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划发车，运行稳定，无异常情况。本次班次运行顺利，为后续运营提供了可靠基础。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 915,
+        "completion_tokens": 83,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 17,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 2
+  },
+  {
+    "id": "exp22-formal-v1-b17-i7",
+    "task": "long-interactive-b",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "414763febb4390202d97b5b2764bf3f5692d8a63b433ecf11c18cfdc22857dcf",
+    "submitted_ns": 219082093047000,
+    "started_ns": 219087811648583,
+    "finished_ns": 219088887265333,
+    "response": {
+      "id": "chatcmpl-exp22-formal-v1-b17-i7",
+      "object": "chat.completion",
+      "created": 1792987317,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "班次07的计划发车时间是08:07。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 834,
+        "total_tokens": 851,
+        "completion_tokens": 17,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 17,
+    "repeat": 2,
+    "mode": "bounded",
+    "concurrency": 2
+  }
+]

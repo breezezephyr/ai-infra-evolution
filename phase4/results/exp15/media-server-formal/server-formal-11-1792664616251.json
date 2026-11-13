@@ -1,0 +1,77 @@
+{
+  "run_id": "formal-11-1792664616251",
+  "fixture_id": "long",
+  "transport": "rtc",
+  "scenario": "baseline",
+  "produced_samples": 752640,
+  "fixture_samples": 752640,
+  "events": [
+    {
+      "event": "created",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109463945975666
+    },
+    {
+      "event": "answer_ready",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109463957480250,
+      "sdp": "v=0\r\no=- 4001653416 4001653416 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=msid-semantic:WMS *\r\nm=audio 63752 UDP/TLS/RTP/SAVPF 111\r\nc=IN IP4 192.0.2.14\r\na=sendonly\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=mid:0\r\na=msid:000b8882-75c7-4814-8353-ad0c361ffc39 fb5e2c0a-e3a7-4283-86a7-82deac360a0e\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtcp-mux\r\na=ssrc:2317970523 cname:8ed17cf2-67f1-4fc6-9ea4-ecec9a40beb3\r\na=rtpmap:111 opus/48000/2\r\na=candidate:0a15b59c73f0b8cda773334a6d32bfa1 1 udp 2130706431 192.0.2.14 63752 typ host\r\na=end-of-candidates\r\na=ice-ufrag:xTqn\r\na=ice-pwd:VmIgXZ6H8QgtrruJgv2BJE\r\na=fingerprint:sha-256 E7:8A:68:B9:7D:94:0D:3D:43:A7:C4:B9:68:0A:31:CD:8B:89:AD:A7:C2:FD:D2:49:2C:8D:1E:B3:14:EC:10:CD\r\na=fingerprint:sha-384 60:89:EB:14:8D:56:20:93:F5:B2:26:B5:20:95:49:89:44:A5:67:81:6D:93:B6:1A:94:92:63:F3:FE:DE:FA:AE:6E:CB:D4:56:B2:27:B7:DD:76:73:4B:8F:83:87:3A:CF\r\na=fingerprint:sha-512 30:AB:E2:68:36:AA:8E:88:E7:08:12:46:55:05:31:38:36:7C:DF:5D:6A:CE:10:A4:15:E6:86:49:44:EB:88:06:ED:F0:8C:D6:36:EB:E1:0E:5F:EE:49:72:1B:3A:E4:D0:58:D8:DA:7C:3B:E3:46:C3:CF:9D:0E:2E:90:3D:D7:D9\r\na=setup:active\r\nm=application 63752 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 192.0.2.14\r\na=mid:1\r\na=sctp-port:5000\r\na=max-message-size:65536\r\na=candidate:0a15b59c73f0b8cda773334a6d32bfa1 1 udp 2130706431 192.0.2.14 63752 typ host\r\na=end-of-candidates\r\na=ice-ufrag:xTqn\r\na=ice-pwd:VmIgXZ6H8QgtrruJgv2BJE\r\na=fingerprint:sha-256 E7:8A:68:B9:7D:94:0D:3D:43:A7:C4:B9:68:0A:31:CD:8B:89:AD:A7:C2:FD:D2:49:2C:8D:1E:B3:14:EC:10:CD\r\na=fingerprint:sha-384 60:89:EB:14:8D:56:20:93:F5:B2:26:B5:20:95:49:89:44:A5:67:81:6D:93:B6:1A:94:92:63:F3:FE:DE:FA:AE:6E:CB:D4:56:B2:27:B7:DD:76:73:4B:8F:83:87:3A:CF\r\na=fingerprint:sha-512 30:AB:E2:68:36:AA:8E:88:E7:08:12:46:55:05:31:38:36:7C:DF:5D:6A:CE:10:A4:15:E6:86:49:44:EB:88:06:ED:F0:8C:D6:36:EB:E1:0E:5F:EE:49:72:1B:3A:E4:D0:58:D8:DA:7C:3B:E3:46:C3:CF:9D:0E:2E:90:3D:D7:D9\r\na=setup:active\r\n"
+    },
+    {
+      "event": "ice_state",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109463958545500,
+      "state": "checking"
+    },
+    {
+      "event": "connection_state",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109463958804458,
+      "state": "connecting"
+    },
+    {
+      "event": "ice_state",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109464001066333,
+      "state": "completed"
+    },
+    {
+      "event": "connection_state",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109464005344791,
+      "state": "connected"
+    },
+    {
+      "event": "start_received",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109464098716875
+    },
+    {
+      "event": "first_frame_supplied",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109464098899500
+    },
+    {
+      "event": "source_exhausted",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109479779562208
+    },
+    {
+      "event": "client_result_received",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109479861071541
+    },
+    {
+      "event": "ice_state",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109479871168208,
+      "state": "closed"
+    },
+    {
+      "event": "connection_state",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109479871280916,
+      "state": "closed"
+    }
+  ]
+}

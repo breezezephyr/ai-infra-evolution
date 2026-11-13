@@ -1,0 +1,39 @@
+{
+  "models": {
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cudnn": 90100,
+    "llm": {
+      "device": "cuda:0",
+      "dtype": "torch.bfloat16"
+    },
+    "tts": {
+      "device": "cuda:0",
+      "dtype": "torch.float32",
+      "voice": "zf_001",
+      "sample_rate": 24000
+    }
+  },
+  "packages": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "kokoro": "0.9.4",
+    "aiohttp": "3.14.3"
+  },
+  "source_sha256": {
+    "exp16/engine.py": "bf6697f4928662a7490d3edc14a173f24e53b0cee3659b28ab345fce328fccf8",
+    "exp16/test_engine.py": "3cd136409dc08a6d0343a6c282778b058f099e0a08eb8c777b164ae9c96fd30b",
+    "exp16/server.py": "df31550febbed41194bf6105eeeefb15e36d5166bb6eaeb2692cac403d5773eb",
+    "exp16/worklet.js": "c0b5b21cdf90ee279ee2e2e866835efdab5a5b7f1644e972919bf9f78c3e285a",
+    "exp14/models.py": "cb662829bae6d45ea5bd902f9df362f3a97d90e57d10c2df0fc9c6b3337960c6",
+    "exp14/logic.py": "004cfc81290e60f3021922ba4de64e79ad3347abf4699cb72c02e73398ccc7ed"
+  },
+  "output_rate": 24000,
+  "asr_vad": "not run; playback-position control",
+  "initial_gpu": {
+    "monotonic_ns": 409987539453151,
+    "memory_mib": 1917,
+    "utilization_percent": 0
+  }
+}

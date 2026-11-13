@@ -1,0 +1,253 @@
+{
+  "fixture": {
+    "id": "no_tokenizer",
+    "raw": "说完了",
+    "thinking": false,
+    "action": "no_tokenizer",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "",
+        "reasoning": "",
+        "tools": [],
+        "finish": null,
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "",
+        "reasoning": "",
+        "tools": [],
+        "finish": "in_progress",
+        "status": "in_progress",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "",
+        "reasoning": "",
+        "tools": [],
+        "finish": null,
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "stream_error",
+    "expect_native_finished": false,
+    "modes": [
+      "text"
+    ],
+    "patterns": [
+      "whole"
+    ],
+    "expect_error": "without a tokenizer"
+  },
+  "protocol": "responses",
+  "mode": "text",
+  "pattern": "whole",
+  "events": [
+    {
+      "event": "response.created",
+      "data": "{\"type\":\"response.created\",\"response\":{\"id\":\"exp20\",\"object\":\"response\",\"created_at\":1792745584,\"status\":\"in_progress\",\"background\":false,\"completed_at\":null,\"content_filters\":null,\"error\":null,\"frequency_penalty\":0.0,\"incomplete_details\":null,\"instructions\":null,\"max_output_tokens\":null,\"max_tool_calls\":null,\"model\":\"DeepSeek-V4.1-Flash\",\"moderation\":null,\"output\":[],\"parallel_tool_calls\":true,\"presence_penalty\":0.0,\"previous_response_id\":null,\"prompt_cache_key\":null,\"prompt_cache_retention\":null,\"reasoning\":{\"effort\":\"none\",\"summary\":null},\"safety_identifier\":null,\"service_tier\":\"default\",\"store\":false,\"temperature\":1.0,\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":null},\"tool_choice\":\"auto\",\"tools\":[],\"top_logprobs\":0,\"top_p\":1.0,\"truncation\":\"disabled\",\"usage\":null,\"user\":null,\"metadata\":{}},\"sequence_number\":0}"
+    },
+    {
+      "event": "response.in_progress",
+      "data": "{\"type\":\"response.in_progress\",\"response\":{\"id\":\"exp20\",\"object\":\"response\",\"created_at\":1792745584,\"status\":\"in_progress\",\"background\":false,\"completed_at\":null,\"content_filters\":null,\"error\":null,\"frequency_penalty\":0.0,\"incomplete_details\":null,\"instructions\":null,\"max_output_tokens\":null,\"max_tool_calls\":null,\"model\":\"DeepSeek-V4.1-Flash\",\"moderation\":null,\"output\":[],\"parallel_tool_calls\":true,\"presence_penalty\":0.0,\"previous_response_id\":null,\"prompt_cache_key\":null,\"prompt_cache_retention\":null,\"reasoning\":{\"effort\":\"none\",\"summary\":null},\"safety_identifier\":null,\"service_tier\":\"default\",\"store\":false,\"temperature\":1.0,\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":null},\"tool_choice\":\"auto\",\"tools\":[],\"top_logprobs\":0,\"top_p\":1.0,\"truncation\":\"disabled\",\"usage\":null,\"user\":null,\"metadata\":{}},\"sequence_number\":1}"
+    }
+  ],
+  "backend_finish_seen": false,
+  "native_finished": false,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "stream_error",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "input": "请继续报站",
+    "reasoning": {
+      "effort": "none"
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "None"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "unmeasured text token_count=0",
+    "processor_has_tokenizer": false
+  },
+  "native_error": {
+    "type": "RuntimeError",
+    "message": "token chunk received without a tokenizer"
+  },
+  "probe_error": {
+    "type": "RuntimeError",
+    "message": "token chunk received without a tokenizer"
+  },
+  "response": {
+    "id": "exp20",
+    "object": "response",
+    "created_at": 1792745584,
+    "status": "in_progress",
+    "background": false,
+    "completed_at": null,
+    "content_filters": null,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "model": "DeepSeek-V4.1-Flash",
+    "moderation": null,
+    "output": [],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": null,
+    "reasoning": {
+      "effort": "none",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": null
+    },
+    "tool_choice": "auto",
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 1.0,
+    "truncation": "disabled",
+    "usage": null,
+    "user": null,
+    "metadata": {}
+  },
+  "semantic": {
+    "text": "",
+    "reasoning": "",
+    "tools": [],
+    "finish": "in_progress",
+    "status": "in_progress",
+    "stop_sequence": null
+  },
+  "id": "no_tokenizer--responses--text--whole",
+  "contract": "f3d2cb3ed4f00ddd520d27448e3f9c6c8e377016da50b01a075e40758045b8c0",
+  "sse": {
+    "bytes": 1724,
+    "sha256": "b83224023450852d5e55ae3cc52e4cbb7cad28f122fa5c6f3578ef9db88ba522",
+    "done_data": null,
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 2
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 2
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 2
+      }
+    ],
+    "expected_events": 2,
+    "incomplete_eof_count": 1,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "",
+          "reasoning": "",
+          "tools": [],
+          "finish": "in_progress",
+          "status": "in_progress",
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "",
+          "reasoning": "",
+          "tools": [],
+          "finish": "in_progress",
+          "status": "in_progress",
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "stream_error"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": false
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": {
+        "type": "RuntimeError",
+        "message": "token chunk received without a tokenizer"
+      }
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 2
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 2
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 2
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 1
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "no_tokenizer--responses--text--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

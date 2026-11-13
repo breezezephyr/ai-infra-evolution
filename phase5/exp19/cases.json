@@ -1,0 +1,1940 @@
+{
+  "cases": [
+    {
+      "id": "text-default-chat",
+      "protocol": "chat",
+      "family": "text_default",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "你好，请原样返回 TEXT_OK_19。"
+          }
+        ]
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "你好，请原样返回 TEXT_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "high",
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "你好，请原样返回 TEXT_OK_19。"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "encode_without_tokenizer_raises_runtime_error",
+        "resolve_default_thinking_65536",
+        "resolve_context_prompt_overflow",
+        "resolve_context_at_limit_returns_one"
+      ]
+    },
+    {
+      "id": "text-default-responses",
+      "protocol": "responses",
+      "family": "text_default",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "你好，请原样返回 TEXT_OK_19。"
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "你好，请原样返回 TEXT_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "high",
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "你好，请原样返回 TEXT_OK_19。"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "encode_without_tokenizer_raises_runtime_error",
+        "resolve_default_thinking_65536",
+        "resolve_context_prompt_overflow",
+        "resolve_context_at_limit_returns_one"
+      ]
+    },
+    {
+      "id": "text-default-messages",
+      "protocol": "messages",
+      "family": "text_default",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "你好，请原样返回 TEXT_OK_19。"
+          }
+        ]
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "你好，请原样返回 TEXT_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "high",
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "你好，请原样返回 TEXT_OK_19。"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "encode_without_tokenizer_raises_runtime_error",
+        "resolve_default_thinking_65536",
+        "resolve_context_prompt_overflow",
+        "resolve_context_at_limit_returns_one"
+      ]
+    },
+    {
+      "id": "multi-disabled-chat",
+      "protocol": "chat",
+      "family": "multi_disabled",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "system",
+            "content": "你是简洁的中文助手。"
+          },
+          {
+            "role": "user",
+            "content": "记住暗号 MULTI_ALPHA_19。"
+          },
+          {
+            "role": "assistant",
+            "content": "已记住 MULTI_ALPHA_19。",
+            "reasoning_content": "HISTORY_REASONING_DROP_19"
+          },
+          {
+            "role": "user",
+            "content": "刚才的暗号是什么？"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "reasoning_effort": "max"
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "你是简洁的中文助手。",
+          "记住暗号 MULTI_ALPHA_19。",
+          "已记住 MULTI_ALPHA_19。",
+          "刚才的暗号是什么？"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "system",
+            "user",
+            "assistant",
+            "user"
+          ],
+          "message_contents": [
+            "你是简洁的中文助手。",
+            "记住暗号 MULTI_ALPHA_19。",
+            "已记住 MULTI_ALPHA_19。",
+            "刚才的暗号是什么？"
+          ],
+          "assistant_reasoning_contents": [
+            null
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "historical_reasoning_cleared",
+        "resolve_default_non_thinking_8192"
+      ]
+    },
+    {
+      "id": "multi-disabled-responses",
+      "protocol": "responses",
+      "family": "multi_disabled",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "instructions": "你是简洁的中文助手。",
+        "input": [
+          {
+            "role": "user",
+            "content": "记住暗号 MULTI_ALPHA_19。"
+          },
+          {
+            "type": "reasoning",
+            "content": [
+              {
+                "type": "reasoning_text",
+                "text": "HISTORY_REASONING_DROP_19"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": "已记住 MULTI_ALPHA_19。"
+          },
+          {
+            "role": "user",
+            "content": "刚才的暗号是什么？"
+          }
+        ],
+        "reasoning": {
+          "effort": "none"
+        }
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "你是简洁的中文助手。",
+          "记住暗号 MULTI_ALPHA_19。",
+          "已记住 MULTI_ALPHA_19。",
+          "刚才的暗号是什么？"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "system",
+            "user",
+            "assistant",
+            "user"
+          ],
+          "message_contents": [
+            "你是简洁的中文助手。",
+            "记住暗号 MULTI_ALPHA_19。",
+            "已记住 MULTI_ALPHA_19。",
+            "刚才的暗号是什么？"
+          ],
+          "assistant_reasoning_contents": [
+            null
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "historical_reasoning_cleared",
+        "resolve_default_non_thinking_8192"
+      ]
+    },
+    {
+      "id": "multi-disabled-messages",
+      "protocol": "messages",
+      "family": "multi_disabled",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "system": "你是简洁的中文助手。",
+        "messages": [
+          {
+            "role": "user",
+            "content": "记住暗号 MULTI_ALPHA_19。"
+          },
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "thinking",
+                "thinking": "HISTORY_REASONING_DROP_19",
+                "signature": "fixture-signature"
+              },
+              {
+                "type": "text",
+                "text": "已记住 MULTI_ALPHA_19。"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "content": "刚才的暗号是什么？"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "output_config": {
+          "effort": "max"
+        }
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "你是简洁的中文助手。",
+          "记住暗号 MULTI_ALPHA_19。",
+          "已记住 MULTI_ALPHA_19。",
+          "刚才的暗号是什么？"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "system",
+            "user",
+            "assistant",
+            "user"
+          ],
+          "message_contents": [
+            "你是简洁的中文助手。",
+            "记住暗号 MULTI_ALPHA_19。",
+            "已记住 MULTI_ALPHA_19。",
+            "刚才的暗号是什么？"
+          ],
+          "assistant_reasoning_contents": [
+            null
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "historical_reasoning_cleared",
+        "resolve_default_non_thinking_8192"
+      ]
+    },
+    {
+      "id": "thinking-max-chat",
+      "protocol": "chat",
+      "family": "thinking_max",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "2+2等于几？"
+          },
+          {
+            "role": "assistant",
+            "content": "4。",
+            "reasoning_content": "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+          },
+          {
+            "role": "user",
+            "content": "再加1呢？"
+          }
+        ],
+        "thinking": {
+          "type": "enabled"
+        },
+        "reasoning_effort": "max",
+        "temperature": 0.25,
+        "top_p": 0.5
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "2+2等于几？",
+          "4。",
+          "再加1呢？"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "max",
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 0.95,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user",
+            "assistant",
+            "user"
+          ],
+          "message_contents": [
+            "2+2等于几？",
+            "4。",
+            "再加1呢？"
+          ],
+          "assistant_reasoning_contents": [
+            "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "reasoning_join_protocol_difference",
+        "resolve_default_max_effort_131072"
+      ]
+    },
+    {
+      "id": "thinking-max-responses",
+      "protocol": "responses",
+      "family": "thinking_max",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": [
+          {
+            "role": "user",
+            "content": "2+2等于几？"
+          },
+          {
+            "type": "reasoning",
+            "content": [
+              {
+                "type": "reasoning_text",
+                "text": "HISTORY_REASONING_A_19"
+              },
+              {
+                "type": "reasoning_text",
+                "text": "HISTORY_REASONING_B_19"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": "4。"
+          },
+          {
+            "role": "user",
+            "content": "再加1呢？"
+          }
+        ],
+        "reasoning": {
+          "effort": "max"
+        },
+        "temperature": 0.25,
+        "top_p": 0.5
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "2+2等于几？",
+          "4。",
+          "再加1呢？"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "max",
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 0.95,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user",
+            "assistant",
+            "user"
+          ],
+          "message_contents": [
+            "2+2等于几？",
+            "4。",
+            "再加1呢？"
+          ],
+          "assistant_reasoning_contents": [
+            "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "reasoning_join_protocol_difference",
+        "resolve_default_max_effort_131072"
+      ]
+    },
+    {
+      "id": "thinking-max-messages",
+      "protocol": "messages",
+      "family": "thinking_max",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "2+2等于几？"
+          },
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "thinking",
+                "thinking": "HISTORY_REASONING_A_19",
+                "signature": "fixture-signature-a"
+              },
+              {
+                "type": "thinking",
+                "thinking": "HISTORY_REASONING_B_19",
+                "signature": "fixture-signature-b"
+              },
+              {
+                "type": "text",
+                "text": "4。"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "content": "再加1呢？"
+          }
+        ],
+        "thinking": {
+          "type": "enabled",
+          "budget_tokens": 1024
+        },
+        "output_config": {
+          "effort": "max"
+        },
+        "temperature": 0.25,
+        "top_p": 0.5
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "2+2等于几？",
+          "4。",
+          "再加1呢？"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "max",
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 0.95,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user",
+            "assistant",
+            "user"
+          ],
+          "message_contents": [
+            "2+2等于几？",
+            "4。",
+            "再加1呢？"
+          ],
+          "assistant_reasoning_contents": [
+            "HISTORY_REASONING_A_19\n\nHISTORY_REASONING_B_19"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "reasoning_join_protocol_difference",
+        "resolve_default_max_effort_131072"
+      ]
+    },
+    {
+      "id": "tool-declaration-chat",
+      "protocol": "chat",
+      "family": "tool_declaration",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "可以调用 get_weather 查询杭州天气。"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "get_weather",
+              "description": "返回指定城市的天气。",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "city"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "可以调用 get_weather 查询杭州天气。",
+          "get_weather"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [
+            "get_weather"
+          ],
+          "tool_choice": "auto",
+          "output_constraint_kind": "tool_call",
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ],
+          "tool_parameter_schemas": [
+            {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "parse_tool_calls": true,
+          "starts_in_tool_calls": false
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "tool_declaration_only"
+      ]
+    },
+    {
+      "id": "tool-declaration-responses",
+      "protocol": "responses",
+      "family": "tool_declaration",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "可以调用 get_weather 查询杭州天气。",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "get_weather",
+            "description": "返回指定城市的天气。",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ],
+              "additionalProperties": false
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "可以调用 get_weather 查询杭州天气。",
+          "get_weather"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [
+            "get_weather"
+          ],
+          "tool_choice": "auto",
+          "output_constraint_kind": "tool_call",
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ],
+          "tool_parameter_schemas": [
+            {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "parse_tool_calls": true,
+          "starts_in_tool_calls": false
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "tool_declaration_only"
+      ]
+    },
+    {
+      "id": "tool-declaration-messages",
+      "protocol": "messages",
+      "family": "tool_declaration",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "可以调用 get_weather 查询杭州天气。"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "tools": [
+          {
+            "name": "get_weather",
+            "description": "返回指定城市的天气。",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ],
+              "additionalProperties": false
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "any"
+        }
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "可以调用 get_weather 查询杭州天气。",
+          "get_weather"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [
+            "get_weather"
+          ],
+          "tool_choice": "auto",
+          "output_constraint_kind": "tool_call",
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ],
+          "tool_parameter_schemas": [
+            {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "parse_tool_calls": true,
+          "starts_in_tool_calls": false
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "tool_declaration_only"
+      ]
+    },
+    {
+      "id": "limit-stop-chat",
+      "protocol": "chat",
+      "family": "limit_stop",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "只输出 LIMIT_STOP_OK_19。"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 64,
+        "stop": [
+          "END_19",
+          "完成"
+        ]
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "只输出 LIMIT_STOP_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": 64,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [
+            "END_19",
+            "完成"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "resolve_explicit_max_tokens",
+        "resolve_context_requested_output_overflow",
+        "stop_sequences_preserved"
+      ]
+    },
+    {
+      "id": "limit-stop-responses",
+      "protocol": "responses",
+      "family": "limit_stop",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "只输出 LIMIT_STOP_OK_19。",
+        "reasoning": {
+          "effort": "none"
+        },
+        "max_output_tokens": 64,
+        "stop": [
+          "END_19",
+          "完成"
+        ]
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "只输出 LIMIT_STOP_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": 64,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": []
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "resolve_explicit_max_tokens",
+        "resolve_context_requested_output_overflow",
+        "unknown_stop_field_ignored"
+      ]
+    },
+    {
+      "id": "limit-stop-messages",
+      "protocol": "messages",
+      "family": "limit_stop",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "只输出 LIMIT_STOP_OK_19。"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 64,
+        "stop_sequences": [
+          "END_19",
+          "完成"
+        ]
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "只输出 LIMIT_STOP_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": 64,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [
+            "END_19",
+            "完成"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "resolve_explicit_max_tokens",
+        "resolve_context_requested_output_overflow",
+        "stop_sequences_preserved"
+      ]
+    },
+    {
+      "id": "max-overflow-chat",
+      "protocol": "chat",
+      "family": "max_tokens_upper_bound",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "测试输出上界 UPPER_BOUND_19。"
+          }
+        ],
+        "max_tokens": 393217
+      },
+      "options": {},
+      "expect": {
+        "conversion": "error",
+        "facts": {
+          "error_status_code": 400,
+          "error_contains": [
+            "valid range of max_tokens is [1, 393216]"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_conversion_error"
+      ]
+    },
+    {
+      "id": "max-overflow-responses",
+      "protocol": "responses",
+      "family": "max_tokens_upper_bound",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "测试输出上界 UPPER_BOUND_19。",
+        "max_output_tokens": 393217
+      },
+      "options": {},
+      "expect": {
+        "conversion": "error",
+        "facts": {
+          "error_status_code": 400,
+          "error_contains": [
+            "valid range of max_tokens is [1, 393216]"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_conversion_error"
+      ]
+    },
+    {
+      "id": "max-overflow-messages",
+      "protocol": "messages",
+      "family": "max_tokens_upper_bound",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "测试输出上界 UPPER_BOUND_19。"
+          }
+        ],
+        "max_tokens": 393217
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "测试输出上界 UPPER_BOUND_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "high",
+          "max_tokens": 393216,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": []
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "max_tokens_clamped",
+        "resolve_explicit_max_tokens"
+      ]
+    },
+    {
+      "id": "model-unregistered-chat",
+      "protocol": "chat",
+      "family": "model_unregistered",
+      "input": {
+        "model": "deepseek-chat",
+        "messages": [
+          {
+            "role": "user",
+            "content": "验证模型名称 MODEL_NAME_19。"
+          }
+        ]
+      },
+      "options": {},
+      "expect": {
+        "conversion": "error",
+        "facts": {
+          "error_status_code": 400,
+          "error_contains": [
+            "The supported API model names are DeepSeek-V4-Pro, DeepSeek-V4.1-Flash, but you passed deepseek-chat."
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_conversion_error"
+      ]
+    },
+    {
+      "id": "model-unregistered-responses",
+      "protocol": "responses",
+      "family": "model_unregistered",
+      "input": {
+        "model": "deepseek-chat",
+        "input": "验证模型名称 MODEL_NAME_19。"
+      },
+      "options": {},
+      "expect": {
+        "conversion": "error",
+        "facts": {
+          "error_status_code": 400,
+          "error_contains": [
+            "The supported API model names are DeepSeek-V4-Pro, DeepSeek-V4.1-Flash, but you passed deepseek-chat."
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_conversion_error"
+      ]
+    },
+    {
+      "id": "model-unregistered-messages",
+      "protocol": "messages",
+      "family": "model_unregistered",
+      "input": {
+        "model": "deepseek-chat",
+        "messages": [
+          {
+            "role": "user",
+            "content": "验证模型名称 MODEL_NAME_19。"
+          }
+        ]
+      },
+      "options": {},
+      "expect": {
+        "conversion": "error",
+        "facts": {
+          "error_status_code": 400,
+          "error_contains": [
+            "The supported API model names are DeepSeek-V4-Pro, DeepSeek-V4.1-Flash, but you passed deepseek-chat."
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_conversion_error"
+      ]
+    },
+    {
+      "id": "alias-v41-chat",
+      "protocol": "chat",
+      "family": "alias_v41",
+      "input": {
+        "model": "deepseek-chat",
+        "messages": [
+          {
+            "role": "user",
+            "content": "返回 ALIAS_OK_19。"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "temperature": 0.25,
+        "top_p": 0.6
+      },
+      "options": {
+        "alias": {
+          "name": "deepseek-chat",
+          "version": "v41"
+        }
+      },
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "返回 ALIAS_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 0.25,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "alias_resolves_version",
+        "resolve_default_non_thinking_8192"
+      ]
+    },
+    {
+      "id": "alias-v41-responses",
+      "protocol": "responses",
+      "family": "alias_v41",
+      "input": {
+        "model": "deepseek-chat",
+        "input": "返回 ALIAS_OK_19。",
+        "reasoning": {
+          "effort": "none"
+        },
+        "temperature": 0.25,
+        "top_p": 0.6
+      },
+      "options": {
+        "alias": {
+          "name": "deepseek-chat",
+          "version": "v41"
+        }
+      },
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "返回 ALIAS_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 0.25,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "alias_resolves_version",
+        "resolve_default_non_thinking_8192"
+      ]
+    },
+    {
+      "id": "alias-v41-messages",
+      "protocol": "messages",
+      "family": "alias_v41",
+      "input": {
+        "model": "deepseek-chat",
+        "messages": [
+          {
+            "role": "user",
+            "content": "返回 ALIAS_OK_19。"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "temperature": 0.25,
+        "top_p": 0.6
+      },
+      "options": {
+        "alias": {
+          "name": "deepseek-chat",
+          "version": "v41"
+        }
+      },
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "返回 ALIAS_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 0.25,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "alias_resolves_version",
+        "resolve_default_non_thinking_8192"
+      ]
+    },
+    {
+      "id": "alias-v4-chat",
+      "protocol": "chat",
+      "family": "alias_v4",
+      "input": {
+        "model": "deepseek-chat",
+        "messages": [
+          {
+            "role": "user",
+            "content": "返回 ALIAS_OK_19。"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "temperature": 0.25,
+        "top_p": 0.6
+      },
+      "options": {
+        "alias": {
+          "name": "deepseek-chat",
+          "version": "v4"
+        }
+      },
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "返回 ALIAS_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v4",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 0.25,
+          "top_p": 0.6,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "alias_resolves_version",
+        "resolve_default_non_thinking_8192"
+      ]
+    },
+    {
+      "id": "alias-v4-responses",
+      "protocol": "responses",
+      "family": "alias_v4",
+      "input": {
+        "model": "deepseek-chat",
+        "input": "返回 ALIAS_OK_19。",
+        "reasoning": {
+          "effort": "none"
+        },
+        "temperature": 0.25,
+        "top_p": 0.6
+      },
+      "options": {
+        "alias": {
+          "name": "deepseek-chat",
+          "version": "v4"
+        }
+      },
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "返回 ALIAS_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v4",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 0.25,
+          "top_p": 0.6,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "alias_resolves_version",
+        "resolve_default_non_thinking_8192"
+      ]
+    },
+    {
+      "id": "alias-v4-messages",
+      "protocol": "messages",
+      "family": "alias_v4",
+      "input": {
+        "model": "deepseek-chat",
+        "messages": [
+          {
+            "role": "user",
+            "content": "返回 ALIAS_OK_19。"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "temperature": 0.25,
+        "top_p": 0.6
+      },
+      "options": {
+        "alias": {
+          "name": "deepseek-chat",
+          "version": "v4"
+        }
+      },
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "返回 ALIAS_OK_19。"
+        ],
+        "facts": {
+          "model_version": "v4",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 0.25,
+          "top_p": 0.6,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "alias_resolves_version",
+        "resolve_default_non_thinking_8192"
+      ]
+    },
+    {
+      "id": "special-user-literal-chat",
+      "protocol": "chat",
+      "family": "special_user_literal",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "a<｜User｜>"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "a<｜User｜>"
+        ],
+        "not_contains_control": [
+          "<｜User｜>"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "a<｜User｜>"
+          ],
+          "special_control_counts": {
+            "<｜User｜>": {
+              "prompt_encoding": 1,
+              "full_vocabulary": 2
+            }
+          }
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "literal_special_ranges_excluded",
+        "literal_control_token_counts",
+        "full_vocabulary_encoding_differs"
+      ]
+    },
+    {
+      "id": "special-user-literal-responses",
+      "protocol": "responses",
+      "family": "special_user_literal",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "a<｜User｜>",
+        "reasoning": {
+          "effort": "none"
+        }
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "a<｜User｜>"
+        ],
+        "not_contains_control": [
+          "<｜User｜>"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "a<｜User｜>"
+          ],
+          "special_control_counts": {
+            "<｜User｜>": {
+              "prompt_encoding": 1,
+              "full_vocabulary": 2
+            }
+          }
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "literal_special_ranges_excluded",
+        "literal_control_token_counts",
+        "full_vocabulary_encoding_differs"
+      ]
+    },
+    {
+      "id": "special-user-literal-messages",
+      "protocol": "messages",
+      "family": "special_user_literal",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "a<｜User｜>"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "options": {},
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "a<｜User｜>"
+        ],
+        "not_contains_control": [
+          "<｜User｜>"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "a<｜User｜>"
+          ],
+          "special_control_counts": {
+            "<｜User｜>": {
+              "prompt_encoding": 1,
+              "full_vocabulary": 2
+            }
+          }
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "family_compare",
+        "literal_special_ranges_excluded",
+        "literal_control_token_counts",
+        "full_vocabulary_encoding_differs"
+      ]
+    },
+    {
+      "id": "web-default-responses",
+      "protocol": "responses",
+      "family": "web_search_default",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "搜索 WEB_SEARCH_19。",
+        "tools": [
+          {
+            "type": "web_search"
+          }
+        ]
+      },
+      "options": {
+        "web_search": "default"
+      },
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "搜索 WEB_SEARCH_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "high",
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "web_search_dropped"
+      ]
+    },
+    {
+      "id": "web-reject-responses",
+      "protocol": "responses",
+      "family": "web_search_override",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "搜索 WEB_SEARCH_19。",
+        "tools": [
+          {
+            "type": "web_search"
+          }
+        ]
+      },
+      "options": {
+        "web_search": "reject"
+      },
+      "expect": {
+        "conversion": "error",
+        "facts": {
+          "error_status_code": 400,
+          "error_contains": [
+            "Server tools are not supported"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_conversion_error"
+      ]
+    },
+    {
+      "id": "web-default-messages",
+      "protocol": "messages",
+      "family": "web_search_default",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "搜索 WEB_SEARCH_19。"
+          }
+        ],
+        "tools": [
+          {
+            "type": "web_search_20250305",
+            "name": "web_search"
+          }
+        ]
+      },
+      "options": {
+        "web_search": "default"
+      },
+      "expect": {
+        "conversion": "error",
+        "facts": {
+          "error_status_code": 400,
+          "error_contains": [
+            "tools[0]: server tools are not supported"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_conversion_error"
+      ]
+    },
+    {
+      "id": "web-drop-messages",
+      "protocol": "messages",
+      "family": "web_search_override",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "搜索 WEB_SEARCH_19。"
+          }
+        ],
+        "tools": [
+          {
+            "type": "web_search_20250305",
+            "name": "web_search"
+          }
+        ]
+      },
+      "options": {
+        "web_search": "drop"
+      },
+      "expect": {
+        "conversion": "ok",
+        "contains_text": [
+          "搜索 WEB_SEARCH_19。"
+        ],
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "high",
+          "max_tokens": null,
+          "temperature": 1,
+          "top_p": 1,
+          "tool_names": [],
+          "tool_choice": "auto",
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "roles": [
+            "user"
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_facts",
+        "render",
+        "encode_with_matching_tokenizer",
+        "web_search_dropped"
+      ]
+    },
+    {
+      "id": "stop-empty-chat",
+      "protocol": "chat",
+      "family": "empty_stop_rejected",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "返回 STOP_ERROR_19。"
+          }
+        ],
+        "stop": ""
+      },
+      "options": {},
+      "expect": {
+        "conversion": "error",
+        "facts": {
+          "error_status_code": 400,
+          "error_contains": [
+            "Invalid 'stop': empty string."
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_conversion_error"
+      ]
+    },
+    {
+      "id": "stop-empty-messages",
+      "protocol": "messages",
+      "family": "empty_stop_rejected",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "返回 STOP_ERROR_19。"
+          }
+        ],
+        "stop_sequences": [
+          ""
+        ]
+      },
+      "options": {},
+      "expect": {
+        "conversion": "error",
+        "facts": {
+          "error_status_code": 400,
+          "error_contains": [
+            "Invalid 'stop[0]': empty string."
+          ]
+        }
+      },
+      "checks": [
+        "convert",
+        "assert_conversion_error"
+      ]
+    }
+  ]
+}

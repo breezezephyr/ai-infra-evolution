@@ -1,0 +1,26 @@
+{
+  "uname": {
+    "system": "Linux",
+    "node": "DARYU",
+    "release": "192.0.2.10-microsoft-standard-WSL2",
+    "version": "#1 SMP PREEMPT_DYNAMIC Mon Dec  1 20:46:23 UTC 2025",
+    "machine": "x86_64",
+    "processor": "x86_64"
+  },
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "package": "mooncake-transfer-engine-non-cuda",
+  "version": "0.3.13.post1",
+  "plan_sha256": "179226c2f3a709ec780956ffb90327ef7873bc33f443c867c49b0def84d61c83",
+  "executed_code_sha256": {
+    "audit.py": "92158ee24f61e03b8dab60677e997676cfcd2e50a3bf4ba940633fcab3816656",
+    "freeze.py": "00a2231bf162ad51036f5af4af7d7f35609a257cb751036b45b5ce3f00547c38",
+    "runner.py": "f216384e97b4f72595af4c2ef18eb31ac5040bce06cf84e44fab104f89241805",
+    "worker.py": "cf4d5f01b4968857175701a15b948d52367b70c356345522af545c8cc53204d6"
+  },
+  "clock": "perf_counter_ns around individual Python Store call in same worker",
+  "gpu_used": false,
+  "transport": "tcp loopback",
+  "master_ha": false,
+  "snapshot_restore": false,
+  "ssd_offload": false
+}

@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;background:#f8f5ee;color:#1c1a17;font-family:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:72px 76px;display:flex;flex-direction:column}
+.eyebrow{display:flex;align-items:center;gap:14px;color:#8a8378;font-size:26px;letter-spacing:.04em;font-family:Menlo,"SF Mono",monospace}
+.eyebrow::before{content:"";width:34px;height:5px;background:#2f5f8a;border-radius:3px}
+h1{font-size:74px;line-height:1.18;font-weight:800;letter-spacing:-.01em;margin-top:34px}
+.sub{color:#6f695f;font-size:32px;margin-top:22px;line-height:1.5}
+.card{background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:34px 38px;margin-top:44px}
+.callout{background:#fbf1e6;border:2px solid #f0dcc4;border-radius:18px;padding:32px 36px;font-size:32px;line-height:1.6;margin-top:40px;color:#2a2620}
+.callout b{color:#1c1a17}
+.note{color:#9a9386;font-size:24px;margin-top:auto;padding-top:36px;line-height:1.5}
+.blue{color:#2f5f8a}.orange{color:#c4763a}.green{color:#4f7a52}.gray{color:#9a9386}.red{color:#a84d3a}
+.mono{font-family:Menlo,"SF Mono",monospace}
+.row{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:2px solid #eee8dc;font-size:32px}
+.row:last-child{border-bottom:0}
+.card>div:last-child{border-bottom:0!important}
+.row .k{font-weight:600}.row .v{font-weight:700}
+.strike{text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:#a84d3a;color:#9a9386}
+.tag{display:inline-block;font-size:22px;padding:4px 14px;border-radius:8px;background:#eee8dc;color:#6f695f;margin-left:12px;vertical-align:middle;font-weight:600}
+html,body{height:1420px}</style></head><body><div class="eyebrow">进化之路 · 引导</div><h1>旧问题 + 新约束</h1><div class="sub">这一层的知识结构。左边是做过的，右边是多出来的那一个条件。</div>
+<div class="card" style="padding:6px 38px"><div style="display:grid;grid-template-columns:230px 60px 1fr;align-items:center;padding:28px 0;border-bottom:2px solid #eee8dc">
+<div style="font-size:34px;font-weight:800">限流</div><div style="color:#c4763a;font-size:34px;text-align:center">+</div><div style="font-size:28px;line-height:1.45;color:#2a2620">计量单位从 QPS 变成 token，输出长度事先不知道</div></div><div style="display:grid;grid-template-columns:230px 60px 1fr;align-items:center;padding:28px 0;border-bottom:2px solid #eee8dc">
+<div style="font-size:34px;font-weight:800">负载均衡</div><div style="color:#c4763a;font-size:34px;text-align:center">+</div><div style="font-size:28px;line-height:1.45;color:#2a2620">prefix cache 是实例本地的，打错实例就丢</div></div><div style="display:grid;grid-template-columns:230px 60px 1fr;align-items:center;padding:28px 0;border-bottom:2px solid #eee8dc">
+<div style="font-size:34px;font-weight:800">优雅下线</div><div style="color:#c4763a;font-size:34px;text-align:center">+</div><div style="font-size:28px;line-height:1.45;color:#2a2620">实例上挂的不是连接池，是显存里的 KV cache</div></div><div style="display:grid;grid-template-columns:230px 60px 1fr;align-items:center;padding:28px 0;border-bottom:2px solid #eee8dc">
+<div style="font-size:34px;font-weight:800">扩缩容</div><div style="color:#c4763a;font-size:34px;text-align:center">+</div><div style="font-size:28px;line-height:1.45;color:#2a2620">新实例要加载几十 GB 权重，分钟级</div></div><div style="display:grid;grid-template-columns:230px 60px 1fr;align-items:center;padding:28px 0;border-bottom:2px solid #eee8dc">
+<div style="font-size:34px;font-weight:800">灰度发布</div><div style="color:#c4763a;font-size:34px;text-align:center">+</div><div style="font-size:28px;line-height:1.45;color:#2a2620">接口 200 但回答变差——做过 Agent 评测的人有工具</div></div></div>
+<div class="callout">街道布局是老家的，<b>路牌换了语言</b>。</div></body></html>

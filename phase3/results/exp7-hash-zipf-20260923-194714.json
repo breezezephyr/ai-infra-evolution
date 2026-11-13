@@ -1,0 +1,47 @@
+{
+  "name": "exp7-hash-zipf",
+  "prefix_groups": 8,
+  "prefix_len": 1536,
+  "zipf": 1.1,
+  "prom_start": 1790164034,
+  "prom_end": 1790164197,
+  "secs": 163.0,
+  "classes": {
+    "user": {
+      "k": 8,
+      "inp": 64,
+      "out": 64,
+      "prio": 100,
+      "think": 0.0,
+      "done": 785,
+      "err": 0,
+      "ttft_p50": 56.6,
+      "ttft_p90": 67.7,
+      "ttft_p99": 441.2,
+      "itl_p50": 23.5,
+      "itl_p99": 39.7,
+      "e2e_p50": 1557.9,
+      "out_tok_s": 308.3
+    }
+  },
+  "servers": {
+    "8004": {
+      "queries": 31468.0,
+      "hits": 29834.0,
+      "preempt": 0.0,
+      "prompt_tok": 505169.0,
+      "gen_tok": 19264.0,
+      "done": 301.0,
+      "hit_rate": 0.948
+    },
+    "8005": {
+      "queries": 50744.0,
+      "hits": 47424.0,
+      "preempt": 0.0,
+      "prompt_tok": 816059.0,
+      "gen_tok": 30976.0,
+      "done": 484.0,
+      "hit_rate": 0.935
+    }
+  }
+}

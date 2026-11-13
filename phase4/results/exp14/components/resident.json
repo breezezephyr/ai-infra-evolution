@@ -1,0 +1,140 @@
+{
+  "kind": "actual_cuda_component_smoke",
+  "component": "resident",
+  "models": {
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cudnn": 90100,
+    "asr": {
+      "device": "cuda",
+      "compute_type": "int8_float16"
+    },
+    "llm": {
+      "device": "cuda:0",
+      "dtype": "torch.bfloat16"
+    },
+    "tts": {
+      "device": "cuda:0",
+      "dtype": "torch.float32",
+      "voice": "zf_001",
+      "sample_rate": 24000
+    },
+    "vad": {
+      "device": "cpu",
+      "window_samples": 512,
+      "sample_rate": 16000
+    }
+  },
+  "before_mib": 342,
+  "loaded_mib": 2173,
+  "observed_peak_mib": 2711,
+  "model_load_ms": 5390.029008034617,
+  "versions": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.3",
+    "kokoro": "0.9.4",
+    "misaki": "0.9.4",
+    "silero-vad": "6.2.3"
+  },
+  "records": [
+    {
+      "repeat": 0,
+      "warmup": true,
+      "asr": {
+        "text": "你是誰?",
+        "ms": 235.87096604751423
+      },
+      "llm": {
+        "text": "排队是指按照某种规则或顺序依次等待服务或物品。",
+        "first_text_ms": 317.9135550162755,
+        "total_ms": 661.5183380199596,
+        "thread_stopped": true,
+        "generated_tokens": 14,
+        "finish_reason": "stop"
+      },
+      "tts": {
+        "first_pcm_ms": 485.8920199912973,
+        "total_ms": 508.2746649859473,
+        "samples": 100200,
+        "first_non_silent_sample": 6738,
+        "wav": "resident-0.wav",
+        "sha256": "7766f1092dee85f2e0ff2bb63d6df0e5de23519d0f8fe895375c578bd3929431"
+      }
+    },
+    {
+      "repeat": 1,
+      "warmup": false,
+      "asr": {
+        "text": "你是誰?",
+        "ms": 72.44409597478807
+      },
+      "llm": {
+        "text": "排队是指按照某种规则或顺序依次等待服务或物品。",
+        "first_text_ms": 44.97326799901202,
+        "total_ms": 370.96972297877073,
+        "thread_stopped": true,
+        "generated_tokens": 14,
+        "finish_reason": "stop"
+      },
+      "tts": {
+        "first_pcm_ms": 54.830882989335805,
+        "total_ms": 77.36893399851397,
+        "samples": 100200,
+        "first_non_silent_sample": 6739,
+        "wav": "resident-1.wav",
+        "sha256": "9a9b39c58309c5790b0f0c037149fb52f3f570a196e950dfaacd0f08552bc395"
+      }
+    },
+    {
+      "repeat": 2,
+      "warmup": false,
+      "asr": {
+        "text": "你是誰?",
+        "ms": 71.3026889716275
+      },
+      "llm": {
+        "text": "排队是指按照某种规则或顺序依次等待服务或物品。",
+        "first_text_ms": 45.49115803092718,
+        "total_ms": 355.8328650542535,
+        "thread_stopped": true,
+        "generated_tokens": 14,
+        "finish_reason": "stop"
+      },
+      "tts": {
+        "first_pcm_ms": 54.64466701960191,
+        "total_ms": 77.8334240312688,
+        "samples": 100200,
+        "first_non_silent_sample": 6740,
+        "wav": "resident-2.wav",
+        "sha256": "cc18bb5666d6ddb433ae1ecd86c883a4b226dd974803e99a8c21996b2de0348d"
+      }
+    },
+    {
+      "repeat": 3,
+      "warmup": false,
+      "asr": {
+        "text": "你是誰?",
+        "ms": 66.90889596939087
+      },
+      "llm": {
+        "text": "排队是指按照某种规则或顺序依次等待服务或物品。",
+        "first_text_ms": 30.121502000838518,
+        "total_ms": 339.51943001011387,
+        "thread_stopped": true,
+        "generated_tokens": 14,
+        "finish_reason": "stop"
+      },
+      "tts": {
+        "first_pcm_ms": 56.50909000542015,
+        "total_ms": 79.3864680454135,
+        "samples": 100200,
+        "first_non_silent_sample": 6737,
+        "wav": "resident-3.wav",
+        "sha256": "bcf51b70ae956e2076c0b6a91be1b5cf31b980598cf52a032fd1fda1c17f13de"
+      }
+    }
+  ]
+}

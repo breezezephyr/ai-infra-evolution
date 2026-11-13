@@ -1,0 +1,253 @@
+{
+  "fixture": {
+    "id": "unfinished_thinking",
+    "raw": "\n还在思考",
+    "thinking": true,
+    "action": "Stop",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "",
+        "reasoning": "还在思考",
+        "tools": [],
+        "finish": "stop",
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "",
+        "reasoning": "还在思考",
+        "tools": [],
+        "finish": "completed",
+        "status": "completed",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "",
+        "reasoning": "还在思考",
+        "tools": [],
+        "finish": "end_turn",
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "backend_finish",
+    "expect_native_finished": true
+  },
+  "protocol": "messages",
+  "mode": "tokens",
+  "pattern": "unit",
+  "events": [
+    {
+      "event": "message_start",
+      "data": "{\"type\":\"message_start\",\"message\":{\"id\":\"exp20\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"DeepSeek-V4.1-Flash\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":0,\"service_tier\":\"standard\"}}}"
+    },
+    {
+      "event": "content_block_start",
+      "data": "{\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"thinking\",\"thinking\":\"\",\"signature\":\"\"}}"
+    },
+    {
+      "event": "ping",
+      "data": "{\"type\":\"ping\"}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"还在\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"思考\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"signature_delta\",\"signature\":\"exp20\"}}"
+    },
+    {
+      "event": "content_block_stop",
+      "data": "{\"type\":\"content_block_stop\",\"index\":0}"
+    },
+    {
+      "event": "message_delta",
+      "data": "{\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\",\"stop_sequence\":null},\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":3,\"service_tier\":\"standard\"}}"
+    },
+    {
+      "event": "message_stop",
+      "data": "{\"type\":\"message_stop\"}"
+    }
+  ],
+  "backend_finish_seen": true,
+  "native_finished": true,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "backend_finish",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "请继续报站"
+      }
+    ],
+    "max_tokens": 128,
+    "thinking": {
+      "type": "enabled"
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "ThinkingInitialStage.ReasoningStart"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "token IDs",
+    "processor_has_tokenizer": true
+  },
+  "input_units": [
+    201,
+    14121,
+    10655
+  ],
+  "native_finished_after_data": false,
+  "backend_finish_reason": "Stop",
+  "response": {
+    "id": "exp20",
+    "type": "message",
+    "role": "assistant",
+    "model": "DeepSeek-V4.1-Flash",
+    "content": [
+      {
+        "type": "thinking",
+        "thinking": "还在思考",
+        "signature": "exp20"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3,
+      "output_tokens": 3,
+      "service_tier": "standard"
+    }
+  },
+  "semantic": {
+    "text": "",
+    "reasoning": "还在思考",
+    "tools": [],
+    "finish": "end_turn",
+    "status": null,
+    "stop_sequence": null
+  },
+  "id": "unfinished_thinking--messages--tokens--unit",
+  "contract": "e8560cbb0f90b7c577e8711c9de4899e4524cf5f1828562d5841d6dae7c35f11",
+  "sse": {
+    "bytes": 1257,
+    "sha256": "efc404a75a19dd2509b865fbddb3f3086f99fa9836aa2b71102a5bfb7a390c93",
+    "done_data": null,
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 9
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 9
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 9
+      }
+    ],
+    "expected_events": 9,
+    "incomplete_eof_count": 8,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "",
+          "reasoning": "还在思考",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "",
+          "reasoning": "还在思考",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "backend_finish"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": true
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 9
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 9
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 9
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 8
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "unfinished_thinking--messages--tokens--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

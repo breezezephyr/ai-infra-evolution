@@ -1,0 +1,177 @@
+{
+  "checked_at_utc": "2026-10-26T10:15:33.142162+00:00",
+  "status": "pass",
+  "steps": [
+    {
+      "name": "prepare",
+      "argv": [
+        "phase5/.venv-exp19/bin/python",
+        "-B",
+        "phase5/exp27/contribution/prepare_patch.py"
+      ],
+      "cwd": "phase5/exp27/contribution",
+      "returncode": 0,
+      "stdout": "evidence/prepare.stdout.txt",
+      "stderr": "evidence/prepare.stderr.txt"
+    },
+    {
+      "name": "patch-check",
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "--whitespace=error",
+        "phase5/exp27/contribution/patch.diff"
+      ],
+      "cwd": "phase5/exp27/contribution/patched-upstream",
+      "returncode": 0,
+      "stdout": "evidence/patch-check.stdout.txt",
+      "stderr": "evidence/patch-check.stderr.txt"
+    },
+    {
+      "name": "patch-apply",
+      "argv": [
+        "git",
+        "apply",
+        "phase5/exp27/contribution/patch.diff"
+      ],
+      "cwd": "phase5/exp27/contribution/patched-upstream",
+      "returncode": 0,
+      "stdout": "evidence/patch-apply.stdout.txt",
+      "stderr": "evidence/patch-apply.stderr.txt"
+    },
+    {
+      "name": "patch-whitespace",
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "--whitespace=error",
+        "--reverse",
+        "phase5/exp27/contribution/patch.diff"
+      ],
+      "cwd": "phase5/exp27/contribution/patched-upstream",
+      "returncode": 0,
+      "stdout": "evidence/patch-whitespace.stdout.txt",
+      "stderr": "evidence/patch-whitespace.stderr.txt"
+    },
+    {
+      "name": "repro",
+      "argv": [
+        "phase5/.venv-exp19/bin/python",
+        "-B",
+        "phase5/exp27/contribution/repro.py"
+      ],
+      "cwd": "phase5/exp27/contribution",
+      "returncode": 0,
+      "stdout": "evidence/repro.stdout.txt",
+      "stderr": "evidence/repro.stderr.txt"
+    },
+    {
+      "name": "local-tests",
+      "argv": [
+        "phase5/.venv-exp19/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "phase5/exp27/contribution/test_context_budget.py",
+        "--junitxml=phase5/exp27/contribution/evidence/local-tests.xml"
+      ],
+      "cwd": "phase5/exp27/contribution",
+      "returncode": 0,
+      "stdout": "evidence/local-tests.stdout.txt",
+      "stderr": "evidence/local-tests.stderr.txt",
+      "junit": {
+        "tests": 6,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "upstream-baseline-tests",
+      "argv": [
+        "phase5/.venv-exp19/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "phase5/exp27/contribution/evidence/upstream-current/deepseek-recipe-python/tests/test_bindings.py",
+        "--junitxml=phase5/exp27/contribution/evidence/upstream-baseline-tests.xml",
+        "-k",
+        "test_resolve_max_tokens"
+      ],
+      "cwd": "phase5/exp27/contribution",
+      "returncode": 0,
+      "stdout": "evidence/upstream-baseline-tests.stdout.txt",
+      "stderr": "evidence/upstream-baseline-tests.stderr.txt",
+      "junit": {
+        "tests": 1,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "upstream-patched-tests",
+      "argv": [
+        "phase5/.venv-exp19/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "phase5/exp27/contribution/patched-upstream/deepseek-recipe-python/tests/test_bindings.py",
+        "--junitxml=phase5/exp27/contribution/evidence/upstream-patched-tests.xml",
+        "-k",
+        "test_resolve_max_tokens"
+      ],
+      "cwd": "phase5/exp27/contribution",
+      "returncode": 0,
+      "stdout": "evidence/upstream-patched-tests.stdout.txt",
+      "stderr": "evidence/upstream-patched-tests.stderr.txt",
+      "junit": {
+        "tests": 7,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "environment": {
+    "executable": "phase5/.venv-exp19/bin/python",
+    "python": "3.12.10 (main, Apr  8 2025, 11:35:47) [Clang 17.0.0 (clang-1700.0.13.3)]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "recipe_version": "0.2.0",
+    "pytest_version": "8.4.2",
+    "wheel": "phase5/vendor/deepseek_recipe-0.2.0-cp310-abi3-macosx_11_0_arm64.whl",
+    "wheel_sha256": "624bb4d0fb3ed541b9e34d2ef96ff66057026ded7d6708b0b9088cc6d6723999",
+    "installed_native": "phase5/.venv-exp19/lib/python3.12/site-packages/deepseek_recipe/_native.abi3.so",
+    "native_sha256": "7b9a8e9165be8ae9148a7b671d63c8576a171dbcd256745760cba0612e3dba9e",
+    "wheel_native_matches": true,
+    "stub_matches_fixed_current_source": true,
+    "native_build_commit": null
+  },
+  "protected_files_checked": 197,
+  "protected_files_changed": [],
+  "evidence_scope": {
+    "native_executed": true,
+    "original_current_upstream_tests_selected": 1,
+    "proposed_boundary_cases": 6,
+    "patched_selected_cases": 7,
+    "full_upstream_suite_run": false,
+    "current_source_built": false,
+    "synthetic_context_limits": true,
+    "repro_prompt_tokens_actually_encoded": true,
+    "model_calls": 0,
+    "backend_dispatched": false,
+    "remote_resources_started": false,
+    "upstream_write_requests": 0
+  }
+}

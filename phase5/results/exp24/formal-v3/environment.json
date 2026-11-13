@@ -1,0 +1,27 @@
+{
+  "uname": {
+    "system": "Linux",
+    "node": "DARYU",
+    "release": "192.0.2.10-microsoft-standard-WSL2",
+    "version": "#1 SMP PREEMPT_DYNAMIC Mon Dec  1 20:46:23 UTC 2025",
+    "machine": "x86_64",
+    "processor": "x86_64"
+  },
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "package": "mooncake-transfer-engine-non-cuda",
+  "version": "0.3.13.post1",
+  "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+  "executed_code_sha256": {
+    "audit.py": "69479fe0bfe1f82d56ade7ea8c714203fb8594c8fcf501ca889bc3c6f596debe",
+    "freeze.py": "33cd2e422484f0493b783c03329684d315cf9c184e06e3132d700226aab9b895",
+    "runner.py": "52cfa1343a42c041550d6700c6bdf3f82fc8def926320ef53931159338ef0bd6",
+    "summarize.py": "d23f5a2da00bbe40c76888d04d3d2e3b803f9d9256f294c8572ef804eb95d680",
+    "worker.py": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832"
+  },
+  "clock": "perf_counter_ns around individual Python Store call in same worker",
+  "gpu_used": false,
+  "transport": "TCP-configured cross-process local Store API; per-payload branch/socket path not traced",
+  "master_ha": false,
+  "snapshot_restore": false,
+  "ssd_offload": false
+}

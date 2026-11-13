@@ -1,0 +1,116 @@
+{
+  "groups": [
+    {
+      "policy": "server_only",
+      "trigger_ms": 200.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 1920.0,
+        "minimum": 1920.0,
+        "maximum": 1940.0
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 43.112684,
+        "minimum": 23.330598,
+        "maximum": 116.750191
+      }
+    },
+    {
+      "policy": "server_only",
+      "trigger_ms": 1000.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 1940.0,
+        "minimum": 1920.0,
+        "maximum": 1980.0
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 18.323537,
+        "minimum": 16.865808,
+        "maximum": 230.926365
+      }
+    },
+    {
+      "policy": "server_only",
+      "trigger_ms": 4000.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 1890.0,
+        "minimum": 1890.0,
+        "maximum": 1910.0
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 11.21081,
+        "minimum": 9.347302,
+        "maximum": 16.688521
+      }
+    },
+    {
+      "policy": "full",
+      "trigger_ms": 200.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 2.6666666666666665,
+        "minimum": 2.6666666666666665,
+        "maximum": 2.6666666666666665
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 47.687254,
+        "minimum": 29.830023,
+        "maximum": 58.075269
+      }
+    },
+    {
+      "policy": "full",
+      "trigger_ms": 1000.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 2.6666666666666665,
+        "minimum": 2.6666666666666665,
+        "maximum": 2.6666666666666665
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 13.816655,
+        "minimum": 12.748821,
+        "maximum": 24.657805
+      }
+    },
+    {
+      "policy": "full",
+      "trigger_ms": 4000.0,
+      "render_tail_ms": {
+        "n": 3,
+        "p50": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      "stop_to_join_ms": {
+        "n": 3,
+        "p50": 18.171727,
+        "minimum": 12.129562,
+        "maximum": 18.199773
+      }
+    }
+  ],
+  "probe_groups": {
+    "llm": {
+      "n": 3,
+      "p50": 22.5856,
+      "minimum": 7.271989,
+      "maximum": 145.036533
+    },
+    "tts": {
+      "n": 3,
+      "p50": 59.424884,
+      "minimum": 49.609623,
+      "maximum": 65.926077
+    }
+  },
+  "history_nonempty": 3,
+  "gpu_peak": 2347
+}

@@ -1,0 +1,426 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Verified non-secret SHA256 31ba1a19817bc00c8d89"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^0aefb2995ab2f5c7094d237cf7292801f62ddfdfed66bffdbaef2c8e4db61ab0$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 2fc100fab7bf9763a808"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^10306c1e599384f0b9ae1b7c0a5169b213fb47ce61138e55e178a048fcffda64$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp25/preflight/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 8d63596061d371da97ca"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^1115a81b83e21ff0c76c970e2caf4dd2e051d1a68aacda5ce155064adcd7d804$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 4b5a5860509a55aee5c5"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^1d8f90d435a843f1d39f1eee670e4726dcc3e025f77063b520391fea3250d5b6$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 e120e222c7c67f96f782"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^23bee5c7a3efc07426e889febb51c692d717ce32565f2e0a85f4f10a1dc983a8$"]
+paths = ["(?:^|/)phase5/results/exp19/formal\\-v1/max\\-overflow\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/max\\-overflow\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/records\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 7362ad1b55c3370ed0c1"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0$"]
+paths = ["(?:^|/)phase5/exp21/remote\\-preflight\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 2b6d8016e054c65df00c"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^27655caeeadb5cbaef19a0194aaabd5d8a21fca52faf4ae561c2b34991c3be0f$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 d62e8a2bd601c3e70190"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^2803aea157ff17a3eec792cf658c3648ad247b00c47b71cb88ffc4cd044e81d4$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 78ec59c7db11f4b53163"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^298b98548ad84b768673650a293a79b17e79f7ff3be2c1c2eddac0083c4fc75f$"]
+paths = ["(?:^|/)phase5/results/exp19/formal\\-v1/limit\\-stop\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/limit\\-stop\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/limit\\-stop\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/limit\\-stop\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/limit\\-stop\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/limit\\-stop\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/records\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 163f5d1cc408cdcbb040"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^2a4944f1b0f10670e756c5c236d9b4ea88bfb94e770ccc1258277b19b2c4b433$"]
+paths = ["(?:^|/)phase5/results/exp19/formal\\-v1/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/web\\-default\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/web\\-drop\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/web\\-default\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/web\\-drop\\-messages\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 34f8ae766d40e879513f"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^2f4fc89e6a454b222cad83ec0fa26a51dca6ebca4eabd5fa6522b98ee9d9835b$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 98e55ebd88bd6b50e8f8"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^2ff50e65c7336aa1c4fa6606c32d7945f6e62f8c584d2425ab3d93ad3117b48c$"]
+paths = ["(?:^|/)phase5/results/exp19/formal\\-v1/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/special\\-user\\-literal\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/special\\-user\\-literal\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/special\\-user\\-literal\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/special\\-user\\-literal\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/special\\-user\\-literal\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/special\\-user\\-literal\\-responses\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 c5056bf99b456ebc7165"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^31adddecb5b79809b15829227290e6ebffe475ab4e778e223d35192939c8be34$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 4cb13fde44aea6996bfa"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^32b6fa70c21cd65bcf0d5b8343173f1a2848a4d032b328d1cb65a253ca26e59c$"]
+paths = ["(?:^|/)phase5/exp27/contribution/evidence/historical\\-counterexample\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/text\\-default\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/text\\-default\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/text\\-default\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/text\\-default\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/text\\-default\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/text\\-default\\-responses\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 282339af2fe4da72856c"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^3442ad51416f0ae7a707ccb5059dd76727232e57b0f1a55b205d0a7a77543d46$"]
+paths = ["(?:^|/)phase5/results/exp19/formal\\-v1/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/tool\\-declaration\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/tool\\-declaration\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/tool\\-declaration\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/tool\\-declaration\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/tool\\-declaration\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/tool\\-declaration\\-responses\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 404ba1a8b22e5be41252"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^42aaa53266070309a6daa3067c07055e4fbe6e984e182a7f501a2c513e63a42b$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 e1bed273dacac9668c0b"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^42c2e25850c2d91ae804e764d29f16a711d6281603b45eb7c6a5b862c0cf3637$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 1d84c76a08e0952f4477"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^45971c554ccd6d741774db88de3182b3c77e714a342d7f66b8027b308da334a1$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 59015eaa73d20cf2ba2a"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^495841bf5c90d92286c894d34af0ee6ec66f88dcf8a85458af520d018e78fd03$"]
+paths = ["(?:^|/)phase5/results/exp19/formal\\-v1/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/thinking\\-max\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/thinking\\-max\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/thinking\\-max\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/thinking\\-max\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/thinking\\-max\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/thinking\\-max\\-responses\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 1d3daa0d1d0518d14a68"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^4b25a7ccd4bafee9f71ecded55d92a4cf5c297a689736a4c415a1ec3b0e65d88$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 7e472fe668263bb04ab6"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^4f0a48496ff3f729ca8d6b9d4237206e0127e9e788777e9ee0843fb3d8ee003a$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 1bcdcd53d1280c123fdf"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^5c0560d6ab52b2d0153143caa5a35bfc93a69e76ca747599d0b3d8b562720565$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 8c98be31eb50ddf7d0f0"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^5c828a08d58e43afe2f07695629f8fa78753a5ec4b3f22ab0e84d53e5543508b$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 76b8775b82e6b16d72df"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^6431490ef9d57ddba15e5b3563db80c08599098b8d928b5dd2a003aee220b94c$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 7b5c4807669c5af5b56b"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^64e1fa90324e9f3561d1d53df6f977728b949846ac96a8ed4f8f465a775df494$"]
+paths = ["(?:^|/)phase5/results/exp19/formal\\-v1/multi\\-disabled\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/multi\\-disabled\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/multi\\-disabled\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/multi\\-disabled\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/multi\\-disabled\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/multi\\-disabled\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/records\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 a5d8ba3cb7e0a6c02575"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^6ed0b188be71f761cf50e3709325c9a7c0b5437b522b93a5aa0e2daebf9e58a3$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 f184fcc24702bafc7d32"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^75314e93db21f413eae13ea79b6b000b27be181ea9289c286ba6eea0ef61bfe4$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 1191afc02524d3f3b96e"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^77627a44ad0ced7ee3444872d5b20b5eb068033e97ecc42ffcaccea421a34687$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 3a7ee3067d5894714786"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^7c68f1aa3e2dfb1f7168c83322b69133b5c33cd421506b5430ea248b4b1327ef$"]
+paths = ["(?:^|/)phase5/results/exp19/formal\\-v1/alias\\-v4\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/alias\\-v4\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/alias\\-v4\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/alias\\-v41\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/alias\\-v41\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/alias\\-v41\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v1/records\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/alias\\-v4\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/alias\\-v4\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/alias\\-v4\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/alias\\-v41\\-chat\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/alias\\-v41\\-messages\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/alias\\-v41\\-responses\\.json$", "(?:^|/)phase5/results/exp19/formal\\-v2/records\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 e2c9ff56da48cad7891e"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^7e40cbecfe78873b135dffd42f56ee1082053199dd2678370f07ad2b282bb225$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 fa769687b8c6bb5d3bac"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^814a158db634855f764ebd3902f16b0e493804e3b6c53e36436b389d0ebe1bb7$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 0c39eac7d4a700f45a86"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^81f64d1248a68ce3663e07ab3ee48b851e5df0e32d27cb98e4c9a268151e8d99$"]
+paths = ["(?:^|/)phase5/exp20/execute\\.py$", "(?:^|/)phase5/results/exp20\\-summary\\.json$", "(?:^|/)phase5/results/exp20/formal\\-v1/provenance/execute\\.py$", "(?:^|/)phase5/results/exp20/formal\\-v1/summary\\.json$", "(?:^|/)phase5/results/exp20/pilot\\-v1/provenance/execute\\.py$", "(?:^|/)phase5/results/exp20/pilot\\-v1/summary\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 a007795ed20eeb34dfdd"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^8d1f0f80566e540bc119a3e4cc8e605675f7d79536676fe5c29728edf8ce6278$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 87299a64109112f73913"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^958de487187768c1dad7094ef16f4fcec66bd1ca8f138c3e11375e2a8b3c0363$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 9a0cd6095214c1c70334"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^a08911fec97f379b7627c7c714e96f2ba8d4f4766d91ef2992d497488f78a805$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 19f7051a0e943b4d50af"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\-startup\\.json$", "(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp25/formal\\-v1/plan\\.json$", "(?:^|/)phase5/results/exp25/independent\\-review\\.json$", "(?:^|/)phase5/results/exp25/model\\-identity\\.json$", "(?:^|/)phase5/results/exp25/preflight/gateway\\-startup\\.json$", "(?:^|/)phase5/results/exp25/preflight/gateway\\.jsonl$", "(?:^|/)phase5/results/exp26/backend\\-startup\\.json$", "(?:^|/)phase5/results/exp26/model\\-identity\\.json$", "(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\-startup\\.json$", "(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v1/model\\-identity\\.json$", "(?:^|/)phase5/results/exp27/formal\\-v1/plan\\.json$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\-startup\\.json$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/model\\-identity\\.json$", "(?:^|/)phase5/results/exp27/formal\\-v2/plan\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 1a050dc39a94422e62ed"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^b1a8439305b58efc02a0fb34698fb601667b176dabf7b489a704d91365af1e88$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 f730ddc6b512b758b481"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^bddb2ed374fa2e9b9a5f416b04fa92edf6d30f646383088147c39c452ff4ac27$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 dfd698959cc20270103f"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^c1ddf52a903c9307580cf3e771df9dc0b992e6a735e1e83c427df248fc978077$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 6b1ccb7f6e9680d9b76a"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^c23d7e383220823fb7ba25995fa4fc6607a75d995b20bdc637e4190ee16b349a$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 e20c9024c15b341c5056"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^cb497b22b9e5d661506afc57ebcfc552c00bd301bedfb19f197bd54ff65f3e05$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 a88f13cd0be3e5f98df0"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^cfc5abfefb08adf83f1039d3c7c4d263e3a6350a7e8dcd5dcd7448ca1e98633c$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 b1b47540db18ffc94ff6"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101$"]
+paths = ["(?:^|/)phase5/exp21/remote\\-preflight\\.json$", "(?:^|/)phase5/results/exp25/formal\\-v1/plan\\.json$", "(?:^|/)phase5/results/exp25/independent\\-review\\.json$", "(?:^|/)phase5/results/exp25/model\\-identity\\.json$", "(?:^|/)phase5/results/exp26/backend\\-startup\\.json$", "(?:^|/)phase5/results/exp26/model\\-identity\\.json$", "(?:^|/)phase5/results/exp27/formal\\-v1/model\\-identity\\.json$", "(?:^|/)phase5/results/exp27/formal\\-v2/model\\-identity\\.json$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 f3418764d5264be6871e"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^d8bb2f54d4ff7493b32cfa53e44ba36468ffff9d99e5ca99aeb52c970295fd16$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 6f1aff3efd1cf9cb1d73"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^dfe9c58d133235cc101fd5c81caf13ac97dc3743f9d674e0f8e5f7ca70014eff$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 a346a24591d13fd61167"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^e770d40721c1988b7f7001958957c5f7a09dedf2aedefab6646606691047d2f6$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 61b5f4a7493a3bc99cb3"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^e9813ce995a5f44dbd459d7f1a16d4e1657d59dfa759d26fc2ce080e1a60d2fd$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 2b2e8255107cdaeabb3a"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^f2bb95819cc096dac390bd27e3b2fe25ec9647281d04d3b9356b0e9bc198ecee$"]
+paths = ["(?:^|/)phase5/results/exp27/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp27/formal\\-v2/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 2ea10d0e1c4ecd8af973"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^f31d4e1597321dc95491ee1a4eedd9f1ff58615d7a6c4b442658204bb9f8fedc$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp25/preflight/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 4c971231c0204a652504"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^f63e2986c64c8a0a917ad57006820e701c5128f2f47c53ddf94b80f3a3d61576$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 2afb5e2bd1a50bba9c2e"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^f6a8dbdb4ac9056f7f5fed3a74155ee06b90cfa505b07bedcc9f9693556bb04e$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$", "(?:^|/)phase5/results/exp25/preflight/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified non-secret SHA256 ca964ca5134fc1dde013"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^f91f3433d30b2014c69d7335dd12dc72d6c462146964ee6f58b675f445325a02$"]
+paths = ["(?:^|/)phase5/results/exp25/formal\\-v1/gateway\\.jsonl$"]
+
+[[allowlists]]
+description = "Verified upstream Git tree SHA1 in exact provenance file"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^935817c66f5d6e64838f419692545f06787e485f$"]
+paths = ["(?:^|/)tools/upstream\\-metadata/exp20\\-source/sources\\.json$"]

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>exp14 · 语音接力</title>
+<style>
+  :root { font-family: system-ui, sans-serif; color: #1e293b; background: #f7f8fa; }
+  body { max-width: 1100px; margin: 36px auto; padding: 0 20px; }
+  h1 { font-size: 26px; } p { line-height: 1.65; }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  button, select { font: inherit; padding: 9px 14px; border: 1px solid #cbd5e1; border-radius: 6px; background: white; }
+  button { cursor: pointer; } button:disabled { opacity: .5; cursor: default; }
+  #status { min-height: 1.6em; } .scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
+  th, td { text-align: left; padding: 12px 9px; border-bottom: 1px solid #e2e8f0; white-space: nowrap; }
+  th { background: #eef2f6; } details { margin: 16px 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 14px; background: #edf0f4; font-size: 12px; max-height: 420px; overflow: auto; }
+  a { color: #1d4ed8; } .note { color: #526078; font-size: 14px; }
+</style>
+<h1>exp14 · 语音接力</h1>
+<p>选择题目运行，或按 A → B → C 各运行一次 short_01。</p>
+<div class="controls">
+  <label>题目 <select id="case" disabled aria-label="选择题目"></select></label>
+  <button data-mode="A" disabled>Run A</button>
+  <button data-mode="B" disabled>Run B</button>
+  <button data-mode="C" disabled>Run C</button>
+  <button id="batch" disabled>依次运行 A / B / C</button>
+</div>
+<p id="status" role="status" aria-live="polite">正在读取题目…</p>
+<p class="note">表中延迟从输入参考末声计算。设备输出为估计，非声学测量；无数据记为「—」。</p>
+<div class="scroll"><table>
+  <thead><tr><th>题目 / 模式</th><th>首 PCM 收到</th><th>首非静音渲染</th><th>设备输出估计</th><th>欠载</th><th>结果</th></tr></thead>
+  <tbody id="results"></tbody>
+</table></div>
+<div id="records"></div>
+<script type="module">
+  import { runBrowserTurn } from '/playback.js';
+  const select = document.querySelector('#case');
+  const buttons = [...document.querySelectorAll('button')];
+  const status = document.querySelector('#status');
+  let cases = [], context = null, loadedWorklet = false, busy = false;
+  const setStatus = text => { status.textContent = text; };
+  const lock = value => {
+    busy = value; buttons.forEach(button => { button.disabled = value || !cases.length; });
+    select.disabled = value || !cases.length;
+  };
+  const ms = value => Number.isFinite(value) ? `${value.toFixed(1)} ms` : '—';
+  function showResult(result) {
+    const row = document.createElement('tr');
+    const outcome = [result.terminal.finish_reason, result.client_error,
+      result.saved ? '已保存' : '保存失败'].filter(Boolean).join(' · ');
+    const fields = [`${result.case_id} / ${result.mode}`, ms(result.latencies_ms.reference_to_first_pcm),
+      ms(result.latencies_ms.reference_to_first_render), ms(result.latencies_ms.reference_to_device_output_estimate),
+      ms(result.underrun_samples / 24), outcome];
+    for (const text of fields) { const cell = document.createElement('td'); cell.textContent = text; row.append(cell); }
+    document.querySelector('#results').append(row);
+    const details = document.createElement('details'), summary = document.createElement('summary');
+    summary.textContent = `${result.case_id} / ${result.mode} · 原始记录`;
+    const raw = JSON.stringify(result, null, 2), pre = document.createElement('pre'); pre.textContent = raw;
+    const download = document.createElement('a'); download.textContent = '下载 JSON';
+    download.href = URL.createObjectURL(new Blob([raw + '\n'], { type: 'application/json' }));
+    download.download = `${result.id}.json`; details.append(summary, download, pre);
+    document.querySelector('#records').prepend(details);
+  }
+  async function run(modes, caseId) {
+    if (busy) return;
+    lock(true);
+    try {
+      const AudioContextType = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextType || !window.AudioWorkletNode) throw new Error('此浏览器不支持所需音频功能');
+      context ||= new AudioContextType();
+      // This call stays in the click handler, before any fetch/await.
+      const resumed = context.resume();
+      await resumed;
+      if (context.state !== 'running') throw new Error('音频未开启，请再次点击运行');
+      if (!loadedWorklet) { await context.audioWorklet.addModule('/playback.js'); loadedWorklet = true; }
+      const caseInfo = cases.find(item => item.id === caseId);
+      if (!caseInfo) throw new Error(`找不到题目 ${caseId}`);
+      for (const mode of modes) {
+        const result = await runBrowserTurn({ context, caseInfo, mode, onStatus: setStatus });
+        showResult(result);
+        if (result.client_error || !result.saved || !result.evidence.server_terminal_received
+            || !['stop', 'length'].includes(result.terminal.finish_reason)) {
+          setStatus(`${mode} 未完成：${result.client_error || result.save_error || result.terminal.finish_reason}。原始记录可下载。`);
+          return;
+        }
+      }
+      setStatus('运行完成，结果已保存。');
+    } catch (error) { setStatus(`运行失败：${error.message}`); }
+    finally { lock(false); }
+  }
+  for (const button of document.querySelectorAll('[data-mode]')) {
+    button.addEventListener('click', () => run([button.dataset.mode], select.value));
+  }
+  document.querySelector('#batch').addEventListener('click', () => run(['A', 'B', 'C'], 'short_01'));
+  try {
+    const response = await fetch('/manifest');
+    if (!response.ok) throw new Error(`题目 HTTP ${response.status}`);
+    const manifest = await response.json();
+    if (!Array.isArray(manifest.cases) || !manifest.cases.length) throw new Error('题目清单为空');
+    cases = manifest.cases;
+    for (const item of cases) {
+      const option = document.createElement('option'); option.value = item.id;
+      option.textContent = `${item.id} · ${item.reference_text}`; select.append(option);
+    }
+    select.value = cases.some(item => item.id === 'short_01') ? 'short_01' : cases[0].id;
+    lock(false); setStatus('就绪。点击运行后会播放回答。');
+  } catch (error) { setStatus(`读取失败：${error.message}`); }
+</script>
+</html>

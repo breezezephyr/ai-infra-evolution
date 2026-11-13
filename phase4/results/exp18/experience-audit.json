@@ -1,0 +1,4694 @@
+{
+  "schema_version": "exp18.experience.v1",
+  "exp14": {
+    "formal": {
+      "n": 108,
+      "counts": {
+        "stop": 108,
+        "early": 24,
+        "endpoint_complete": 84,
+        "success": 84,
+        "failures": 24,
+        "unknown": 0
+      },
+      "endpoint_completeness": {
+        "n": 108,
+        "passed": 84,
+        "failures": 24,
+        "unknown": 0,
+        "clock": "source sample indices / terminal state; no clock subtraction",
+        "definition": "endpoint_confirmed.sample_offset >= offline energy-reference last speech sample",
+        "unit": "count",
+        "source_paths": [
+          "results/exp14/live-final-v1/records.jsonl"
+        ]
+      },
+      "terminal_stop": {
+        "n": 108,
+        "passed": 108,
+        "failures": 0,
+        "unknown": 0,
+        "clock": "source sample indices / terminal state; no clock subtraction",
+        "definition": "terminal.type=terminal AND finish_reason=stop",
+        "unit": "count",
+        "source_paths": [
+          "results/exp14/live-final-v1/records.jsonl"
+        ]
+      },
+      "first_pcm_ms": {
+        "n": 108,
+        "eligible": 108,
+        "measured": 84,
+        "unknown": 0,
+        "p50": 1479.922763,
+        "p95": 2493.11987305,
+        "clock": "client_monotonic, one process per raw turn",
+        "definition": "first_pcm_received_ns - (input_start_ns + offline energy-reference sample/rate). Synthetic paced-input reference; successful complete turns only; not acoustic first sound.",
+        "unit": "ms",
+        "source_paths": [
+          "results/exp14/live-final-v1/records.jsonl"
+        ],
+        "failures": 24
+      },
+      "candidate_800ms": {
+        "n": 108,
+        "eligible": 108,
+        "passed": 12,
+        "failed": 96,
+        "failures": 96,
+        "unknown": 0,
+        "threshold_ms": 800,
+        "all_observations_pass": false,
+        "exploration_only": true,
+        "production_compliance": null,
+        "clock": "same client clock within each observation",
+        "definition": "Complete endpoint AND natural stop AND integrity/no-error checks AND observed nonnegative reference-end to first-PCM <=800ms; full cohort denominator. 800ms is an exploratory threshold, not a production SLO.",
+        "unit": "count",
+        "source_paths": [
+          "results/exp14/live-final-v1/records.jsonl"
+        ]
+      },
+      "n_expected": 108,
+      "n_raw_formal": 108,
+      "n_warmup": 3,
+      "by_mode": {
+        "A": {
+          "n": 36,
+          "counts": {
+            "stop": 36,
+            "early": 6,
+            "endpoint_complete": 30,
+            "success": 30,
+            "failures": 6,
+            "unknown": 0
+          },
+          "endpoint_completeness": {
+            "n": 36,
+            "passed": 30,
+            "failures": 6,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "endpoint_confirmed.sample_offset >= offline energy-reference last speech sample",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ]
+          },
+          "terminal_stop": {
+            "n": 36,
+            "passed": 36,
+            "failures": 0,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "terminal.type=terminal AND finish_reason=stop",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ]
+          },
+          "first_pcm_ms": {
+            "n": 36,
+            "eligible": 36,
+            "measured": 30,
+            "unknown": 0,
+            "p50": 1837.2891325,
+            "p95": 2755.00881055,
+            "clock": "client_monotonic, one process per raw turn",
+            "definition": "first_pcm_received_ns - (input_start_ns + offline energy-reference sample/rate). Synthetic paced-input reference; successful complete turns only; not acoustic first sound.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ],
+            "failures": 6
+          },
+          "candidate_800ms": {
+            "n": 36,
+            "eligible": 36,
+            "passed": 0,
+            "failed": 36,
+            "failures": 36,
+            "unknown": 0,
+            "threshold_ms": 800,
+            "all_observations_pass": false,
+            "exploration_only": true,
+            "production_compliance": null,
+            "clock": "same client clock within each observation",
+            "definition": "Complete endpoint AND natural stop AND integrity/no-error checks AND observed nonnegative reference-end to first-PCM <=800ms; full cohort denominator. 800ms is an exploratory threshold, not a production SLO.",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ]
+          }
+        },
+        "B": {
+          "n": 36,
+          "counts": {
+            "stop": 36,
+            "early": 9,
+            "endpoint_complete": 27,
+            "success": 27,
+            "failures": 9,
+            "unknown": 0
+          },
+          "endpoint_completeness": {
+            "n": 36,
+            "passed": 27,
+            "failures": 9,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "endpoint_confirmed.sample_offset >= offline energy-reference last speech sample",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ]
+          },
+          "terminal_stop": {
+            "n": 36,
+            "passed": 36,
+            "failures": 0,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "terminal.type=terminal AND finish_reason=stop",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ]
+          },
+          "first_pcm_ms": {
+            "n": 36,
+            "eligible": 36,
+            "measured": 27,
+            "unknown": 0,
+            "p50": 1385.489396,
+            "p95": 2256.4318877,
+            "clock": "client_monotonic, one process per raw turn",
+            "definition": "first_pcm_received_ns - (input_start_ns + offline energy-reference sample/rate). Synthetic paced-input reference; successful complete turns only; not acoustic first sound.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ],
+            "failures": 9
+          },
+          "candidate_800ms": {
+            "n": 36,
+            "eligible": 36,
+            "passed": 6,
+            "failed": 30,
+            "failures": 30,
+            "unknown": 0,
+            "threshold_ms": 800,
+            "all_observations_pass": false,
+            "exploration_only": true,
+            "production_compliance": null,
+            "clock": "same client clock within each observation",
+            "definition": "Complete endpoint AND natural stop AND integrity/no-error checks AND observed nonnegative reference-end to first-PCM <=800ms; full cohort denominator. 800ms is an exploratory threshold, not a production SLO.",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ]
+          }
+        },
+        "C": {
+          "n": 36,
+          "counts": {
+            "stop": 36,
+            "early": 9,
+            "endpoint_complete": 27,
+            "success": 27,
+            "failures": 9,
+            "unknown": 0
+          },
+          "endpoint_completeness": {
+            "n": 36,
+            "passed": 27,
+            "failures": 9,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "endpoint_confirmed.sample_offset >= offline energy-reference last speech sample",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ]
+          },
+          "terminal_stop": {
+            "n": 36,
+            "passed": 36,
+            "failures": 0,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "terminal.type=terminal AND finish_reason=stop",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ]
+          },
+          "first_pcm_ms": {
+            "n": 36,
+            "eligible": 36,
+            "measured": 27,
+            "unknown": 0,
+            "p50": 1396.056274,
+            "p95": 1561.0491201,
+            "clock": "client_monotonic, one process per raw turn",
+            "definition": "first_pcm_received_ns - (input_start_ns + offline energy-reference sample/rate). Synthetic paced-input reference; successful complete turns only; not acoustic first sound.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ],
+            "failures": 9
+          },
+          "candidate_800ms": {
+            "n": 36,
+            "eligible": 36,
+            "passed": 6,
+            "failed": 30,
+            "failures": 30,
+            "unknown": 0,
+            "threshold_ms": 800,
+            "all_observations_pass": false,
+            "exploration_only": true,
+            "production_compliance": null,
+            "clock": "same client clock within each observation",
+            "definition": "Complete endpoint AND natural stop AND integrity/no-error checks AND observed nonnegative reference-end to first-PCM <=800ms; full cohort denominator. 800ms is an exploratory threshold, not a production SLO.",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/live-final-v1/records.jsonl"
+            ]
+          }
+        }
+      },
+      "rows": [
+        {
+          "id": "live-final-v1-short_01-r0-A-4",
+          "mode": "A",
+          "case_id": "short_01",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 4
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 910.66763,
+          "reference_sample": 9440,
+          "reference_end_ns": 396235237587663,
+          "first_pcm_received_ns": 396236148255293,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_01-r0-B-5",
+          "mode": "B",
+          "case_id": "short_01",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 5
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 660.520722,
+          "reference_sample": 9440,
+          "reference_end_ns": 396236748913175,
+          "first_pcm_received_ns": 396237409433897,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_01-r0-C-6",
+          "mode": "C",
+          "case_id": "short_01",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 6
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 632.678564,
+          "reference_sample": 9440,
+          "reference_end_ns": 396238157367691,
+          "first_pcm_received_ns": 396238790046255,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_01-r1-B-7",
+          "mode": "B",
+          "case_id": "short_01",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 7
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 628.028433,
+          "reference_sample": 9440,
+          "reference_end_ns": 396239565494799,
+          "first_pcm_received_ns": 396240193523232,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_01-r1-C-8",
+          "mode": "C",
+          "case_id": "short_01",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 8
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 653.246504,
+          "reference_sample": 9440,
+          "reference_end_ns": 396240972402338,
+          "first_pcm_received_ns": 396241625648842,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_01-r1-A-9",
+          "mode": "A",
+          "case_id": "short_01",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 9
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 903.331366,
+          "reference_sample": 9440,
+          "reference_end_ns": 396242380708484,
+          "first_pcm_received_ns": 396243284039850,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_01-r2-C-10",
+          "mode": "C",
+          "case_id": "short_01",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 10
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 636.07539,
+          "reference_sample": 9440,
+          "reference_end_ns": 396243884415775,
+          "first_pcm_received_ns": 396244520491165,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_01-r2-A-11",
+          "mode": "A",
+          "case_id": "short_01",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 11
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 905.117995,
+          "reference_sample": 9440,
+          "reference_end_ns": 396245291291903,
+          "first_pcm_received_ns": 396246196409898,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_01-r2-B-12",
+          "mode": "B",
+          "case_id": "short_01",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 12
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 647.396829,
+          "reference_sample": 9440,
+          "reference_end_ns": 396246796536853,
+          "first_pcm_received_ns": 396247443933682,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_02-r0-B-13",
+          "mode": "B",
+          "case_id": "short_02",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 13
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 788.783217,
+          "reference_sample": 20480,
+          "reference_end_ns": 396248898743677,
+          "first_pcm_received_ns": 396249687526894,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_02-r0-C-14",
+          "mode": "C",
+          "case_id": "short_02",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 14
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 727.314278,
+          "reference_sample": 20480,
+          "reference_end_ns": 396250982978288,
+          "first_pcm_received_ns": 396251710292566,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_02-r0-A-15",
+          "mode": "A",
+          "case_id": "short_02",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 15
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1141.781577,
+          "reference_sample": 20480,
+          "reference_end_ns": 396253071264727,
+          "first_pcm_received_ns": 396254213046304,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_02-r1-C-16",
+          "mode": "C",
+          "case_id": "short_02",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 16
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 770.454497,
+          "reference_sample": 20480,
+          "reference_end_ns": 396255503517584,
+          "first_pcm_received_ns": 396256273972081,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_02-r1-A-17",
+          "mode": "A",
+          "case_id": "short_02",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 17
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1055.793814,
+          "reference_sample": 20480,
+          "reference_end_ns": 396257588954903,
+          "first_pcm_received_ns": 396258644748717,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_02-r1-B-18",
+          "mode": "B",
+          "case_id": "short_02",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 18
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 746.511462,
+          "reference_sample": 20480,
+          "reference_end_ns": 396259938994377,
+          "first_pcm_received_ns": 396260685505839,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_02-r2-A-19",
+          "mode": "A",
+          "case_id": "short_02",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 19
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1018.541436,
+          "reference_sample": 20480,
+          "reference_end_ns": 396262026219216,
+          "first_pcm_received_ns": 396263044760652,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_02-r2-B-20",
+          "mode": "B",
+          "case_id": "short_02",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 20
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 664.732741,
+          "reference_sample": 20480,
+          "reference_end_ns": 396264335428407,
+          "first_pcm_received_ns": 396265000161148,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_02-r2-C-21",
+          "mode": "C",
+          "case_id": "short_02",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 21
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 703.877902,
+          "reference_sample": 20480,
+          "reference_end_ns": 396266426447421,
+          "first_pcm_received_ns": 396267130325323,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_03-r0-C-22",
+          "mode": "C",
+          "case_id": "short_03",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 22
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1200.643775,
+          "reference_sample": 29920,
+          "reference_end_ns": 396269109817425,
+          "first_pcm_received_ns": 396270310461200,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_03-r0-A-23",
+          "mode": "A",
+          "case_id": "short_03",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 23
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1455.561207,
+          "reference_sample": 29920,
+          "reference_end_ns": 396272206321278,
+          "first_pcm_received_ns": 396273661882485,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_03-r0-B-24",
+          "mode": "B",
+          "case_id": "short_03",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 24
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1142.80072,
+          "reference_sample": 29920,
+          "reference_end_ns": 396275558491055,
+          "first_pcm_received_ns": 396276701291775,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_03-r1-A-25",
+          "mode": "A",
+          "case_id": "short_03",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 25
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1481.78794,
+          "reference_sample": 29920,
+          "reference_end_ns": 396278595167762,
+          "first_pcm_received_ns": 396280076955702,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_03-r1-B-26",
+          "mode": "B",
+          "case_id": "short_03",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 26
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1129.163828,
+          "reference_sample": 29920,
+          "reference_end_ns": 396281973868766,
+          "first_pcm_received_ns": 396283103032594,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_03-r1-C-27",
+          "mode": "C",
+          "case_id": "short_03",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 27
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1167.290356,
+          "reference_sample": 29920,
+          "reference_end_ns": 396284996645971,
+          "first_pcm_received_ns": 396286163936327,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_03-r2-B-28",
+          "mode": "B",
+          "case_id": "short_03",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 28
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1199.985916,
+          "reference_sample": 29920,
+          "reference_end_ns": 396288058725023,
+          "first_pcm_received_ns": 396289258710939,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_03-r2-C-29",
+          "mode": "C",
+          "case_id": "short_03",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 29
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1201.875332,
+          "reference_sample": 29920,
+          "reference_end_ns": 396291152671876,
+          "first_pcm_received_ns": 396292354547208,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_03-r2-A-30",
+          "mode": "A",
+          "case_id": "short_03",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 30
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1527.862252,
+          "reference_sample": 29920,
+          "reference_end_ns": 396294249438821,
+          "first_pcm_received_ns": 396295777301073,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_04-r0-A-31",
+          "mode": "A",
+          "case_id": "short_04",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 31
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1852.974274,
+          "reference_sample": 40000,
+          "reference_end_ns": 396298307247784,
+          "first_pcm_received_ns": 396300160222058,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_04-r0-B-32",
+          "mode": "B",
+          "case_id": "short_04",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 32
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1437.355685,
+          "reference_sample": 40000,
+          "reference_end_ns": 396302684477187,
+          "first_pcm_received_ns": 396304121832872,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_04-r0-C-33",
+          "mode": "C",
+          "case_id": "short_04",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 33
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1478.057586,
+          "reference_sample": 40000,
+          "reference_end_ns": 396306639766866,
+          "first_pcm_received_ns": 396308117824452,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_04-r1-B-34",
+          "mode": "B",
+          "case_id": "short_04",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 34
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1379.890735,
+          "reference_sample": 40000,
+          "reference_end_ns": 396310641690421,
+          "first_pcm_received_ns": 396312021581156,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_04-r1-C-35",
+          "mode": "C",
+          "case_id": "short_04",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 35
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1664.366447,
+          "reference_sample": 40000,
+          "reference_end_ns": 396314550869592,
+          "first_pcm_received_ns": 396316215236039,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_04-r1-A-36",
+          "mode": "A",
+          "case_id": "short_04",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 36
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1688.177943,
+          "reference_sample": 40000,
+          "reference_end_ns": 396318739257225,
+          "first_pcm_received_ns": 396320427435168,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_04-r2-C-37",
+          "mode": "C",
+          "case_id": "short_04",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 37
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1410.149238,
+          "reference_sample": 40000,
+          "reference_end_ns": 396322951976932,
+          "first_pcm_received_ns": 396324362126170,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_04-r2-A-38",
+          "mode": "A",
+          "case_id": "short_04",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 38
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1684.98203,
+          "reference_sample": 40000,
+          "reference_end_ns": 396326888302600,
+          "first_pcm_received_ns": 396328573284630,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_04-r2-B-39",
+          "mode": "B",
+          "case_id": "short_04",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 39
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1385.489396,
+          "reference_sample": 40000,
+          "reference_end_ns": 396331098331595,
+          "first_pcm_received_ns": 396332483820991,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_05-r0-B-40",
+          "mode": "B",
+          "case_id": "short_05",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 40
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1682.318751,
+          "reference_sample": 40800,
+          "reference_end_ns": 396335063246408,
+          "first_pcm_received_ns": 396336745565159,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_05-r0-C-41",
+          "mode": "C",
+          "case_id": "short_05",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 41
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1433.595438,
+          "reference_sample": 40800,
+          "reference_end_ns": 396339329579660,
+          "first_pcm_received_ns": 396340763175098,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_05-r0-A-42",
+          "mode": "A",
+          "case_id": "short_05",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 42
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1883.038725,
+          "reference_sample": 40800,
+          "reference_end_ns": 396343606606560,
+          "first_pcm_received_ns": 396345489645285,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_05-r1-C-43",
+          "mode": "C",
+          "case_id": "short_05",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 43
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1353.556415,
+          "reference_sample": 40800,
+          "reference_end_ns": 396348070318530,
+          "first_pcm_received_ns": 396349423874945,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_05-r1-A-44",
+          "mode": "A",
+          "case_id": "short_05",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 44
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1901.673987,
+          "reference_sample": 40800,
+          "reference_end_ns": 396352224525816,
+          "first_pcm_received_ns": 396354126199803,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_05-r1-B-45",
+          "mode": "B",
+          "case_id": "short_05",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 45
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1589.72913,
+          "reference_sample": 40800,
+          "reference_end_ns": 396356695259443,
+          "first_pcm_received_ns": 396358284988573,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_05-r2-A-46",
+          "mode": "A",
+          "case_id": "short_05",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 46
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1821.603991,
+          "reference_sample": 40800,
+          "reference_end_ns": 396360866640675,
+          "first_pcm_received_ns": 396362688244666,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_05-r2-B-47",
+          "mode": "B",
+          "case_id": "short_05",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 47
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1590.095545,
+          "reference_sample": 40800,
+          "reference_end_ns": 396365268524457,
+          "first_pcm_received_ns": 396366858620002,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_05-r2-C-48",
+          "mode": "C",
+          "case_id": "short_05",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 48
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1402.299796,
+          "reference_sample": 40800,
+          "reference_end_ns": 396369494351771,
+          "first_pcm_received_ns": 396370896651567,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_06-r0-C-49",
+          "mode": "C",
+          "case_id": "short_06",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 49
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1296.799507,
+          "reference_sample": 55520,
+          "reference_end_ns": 396374714349732,
+          "first_pcm_received_ns": 396376011149239,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_06-r0-A-50",
+          "mode": "A",
+          "case_id": "short_06",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 50
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1488.523357,
+          "reference_sample": 55520,
+          "reference_end_ns": 396379499667269,
+          "first_pcm_received_ns": 396380988190626,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_06-r0-B-51",
+          "mode": "B",
+          "case_id": "short_06",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 51
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1194.793365,
+          "reference_sample": 55520,
+          "reference_end_ns": 396384476187162,
+          "first_pcm_received_ns": 396385670980527,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_06-r1-A-52",
+          "mode": "A",
+          "case_id": "short_06",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 52
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1551.619936,
+          "reference_sample": 55520,
+          "reference_end_ns": 396389159861909,
+          "first_pcm_received_ns": 396390711481845,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_06-r1-B-53",
+          "mode": "B",
+          "case_id": "short_06",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 53
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1153.32312,
+          "reference_sample": 55520,
+          "reference_end_ns": 396394200066007,
+          "first_pcm_received_ns": 396395353389127,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_06-r1-C-54",
+          "mode": "C",
+          "case_id": "short_06",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 54
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1166.857694,
+          "reference_sample": 55520,
+          "reference_end_ns": 396398843013944,
+          "first_pcm_received_ns": 396400009871638,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_06-r2-B-55",
+          "mode": "B",
+          "case_id": "short_06",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 55
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1140.493218,
+          "reference_sample": 55520,
+          "reference_end_ns": 396403498576899,
+          "first_pcm_received_ns": 396404639070117,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_06-r2-C-56",
+          "mode": "C",
+          "case_id": "short_06",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 56
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1475.421299,
+          "reference_sample": 55520,
+          "reference_end_ns": 396408128818997,
+          "first_pcm_received_ns": 396409604240296,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-short_06-r2-A-57",
+          "mode": "A",
+          "case_id": "short_06",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 57
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1719.057914,
+          "reference_sample": 55520,
+          "reference_end_ns": 396413093339820,
+          "first_pcm_received_ns": 396414812397734,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_01-r0-A-58",
+          "mode": "A",
+          "case_id": "pause_01",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 58
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2482.300892,
+          "reference_sample": 68640,
+          "reference_end_ns": 396419123743099,
+          "first_pcm_received_ns": 396421606043991,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_01-r0-B-59",
+          "mode": "B",
+          "case_id": "pause_01",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 59
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -1358.22436,
+          "reference_sample": 68640,
+          "reference_end_ns": 396425924872183,
+          "first_pcm_received_ns": 396424566647823,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_01-r0-C-60",
+          "mode": "C",
+          "case_id": "pause_01",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 60
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -1616.326253,
+          "reference_sample": 68640,
+          "reference_end_ns": 396431035250388,
+          "first_pcm_received_ns": 396429418924135,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_01-r1-B-61",
+          "mode": "B",
+          "case_id": "pause_01",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 61
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -1194.65246,
+          "reference_sample": 68640,
+          "reference_end_ns": 396436147628468,
+          "first_pcm_received_ns": 396434952976008,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_01-r1-C-62",
+          "mode": "C",
+          "case_id": "pause_01",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 62
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -1688.50987,
+          "reference_sample": 68640,
+          "reference_end_ns": 396441259233429,
+          "first_pcm_received_ns": 396439570723559,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_01-r1-A-63",
+          "mode": "A",
+          "case_id": "pause_01",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 63
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1877.652193,
+          "reference_sample": 68640,
+          "reference_end_ns": 396446373109439,
+          "first_pcm_received_ns": 396448250761632,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_01-r2-C-64",
+          "mode": "C",
+          "case_id": "pause_01",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 64
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -1689.835491,
+          "reference_sample": 68640,
+          "reference_end_ns": 396452566697940,
+          "first_pcm_received_ns": 396450876862449,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_01-r2-A-65",
+          "mode": "A",
+          "case_id": "pause_01",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 65
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2051.648736,
+          "reference_sample": 68640,
+          "reference_end_ns": 396457677470096,
+          "first_pcm_received_ns": 396459729118832,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_01-r2-B-66",
+          "mode": "B",
+          "case_id": "pause_01",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 66
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -1388.361204,
+          "reference_sample": 68640,
+          "reference_end_ns": 396464050691045,
+          "first_pcm_received_ns": 396462662329841,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_02-r0-B-67",
+          "mode": "B",
+          "case_id": "pause_02",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 67
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2503.718519,
+          "reference_sample": 72640,
+          "reference_end_ns": 396469415672439,
+          "first_pcm_received_ns": 396466911953920,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_02-r0-C-68",
+          "mode": "C",
+          "case_id": "pause_02",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 68
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2405.807783,
+          "reference_sample": 72640,
+          "reference_end_ns": 396474763341605,
+          "first_pcm_received_ns": 396472357533822,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_02-r0-A-69",
+          "mode": "A",
+          "case_id": "pause_02",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 69
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2142.380075,
+          "reference_sample": 72640,
+          "reference_end_ns": 396480110882647,
+          "first_pcm_received_ns": 396477968502572,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_02-r1-C-70",
+          "mode": "C",
+          "case_id": "pause_02",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 70
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2338.663539,
+          "reference_sample": 72640,
+          "reference_end_ns": 396485460315873,
+          "first_pcm_received_ns": 396483121652334,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_02-r1-A-71",
+          "mode": "A",
+          "case_id": "pause_02",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 71
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2083.68646,
+          "reference_sample": 72640,
+          "reference_end_ns": 396490811121551,
+          "first_pcm_received_ns": 396488727435091,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_02-r1-B-72",
+          "mode": "B",
+          "case_id": "pause_02",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 72
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2496.576628,
+          "reference_sample": 72640,
+          "reference_end_ns": 396496161683733,
+          "first_pcm_received_ns": 396493665107105,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_02-r2-A-73",
+          "mode": "A",
+          "case_id": "pause_02",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 73
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2247.919237,
+          "reference_sample": 72640,
+          "reference_end_ns": 396501512361372,
+          "first_pcm_received_ns": 396499264442135,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_02-r2-B-74",
+          "mode": "B",
+          "case_id": "pause_02",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 74
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2571.15729,
+          "reference_sample": 72640,
+          "reference_end_ns": 396506863059985,
+          "first_pcm_received_ns": 396504291902695,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_02-r2-C-75",
+          "mode": "C",
+          "case_id": "pause_02",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 75
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2501.619877,
+          "reference_sample": 72640,
+          "reference_end_ns": 396512213856816,
+          "first_pcm_received_ns": 396509712236939,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_03-r0-C-76",
+          "mode": "C",
+          "case_id": "pause_03",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 76
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2649.853835,
+          "reference_sample": 93600,
+          "reference_end_ns": 396518877810304,
+          "first_pcm_received_ns": 396516227956469,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_03-r0-A-77",
+          "mode": "A",
+          "case_id": "pause_03",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 77
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -939.581351,
+          "reference_sample": 93600,
+          "reference_end_ns": 396525550224399,
+          "first_pcm_received_ns": 396524610643048,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_03-r0-B-78",
+          "mode": "B",
+          "case_id": "pause_03",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 78
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2566.036634,
+          "reference_sample": 93600,
+          "reference_end_ns": 396532223314171,
+          "first_pcm_received_ns": 396529657277537,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_03-r1-A-79",
+          "mode": "A",
+          "case_id": "pause_03",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 79
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -865.731936,
+          "reference_sample": 93600,
+          "reference_end_ns": 396538892394640,
+          "first_pcm_received_ns": 396538026662704,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_03-r1-B-80",
+          "mode": "B",
+          "case_id": "pause_03",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 80
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2704.29659,
+          "reference_sample": 93600,
+          "reference_end_ns": 396545562553382,
+          "first_pcm_received_ns": 396542858256792,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_03-r1-C-81",
+          "mode": "C",
+          "case_id": "pause_03",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 81
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2704.756346,
+          "reference_sample": 93600,
+          "reference_end_ns": 396552235692660,
+          "first_pcm_received_ns": 396549530936314,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_03-r2-B-82",
+          "mode": "B",
+          "case_id": "pause_03",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 82
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2662.557811,
+          "reference_sample": 93600,
+          "reference_end_ns": 396558903972733,
+          "first_pcm_received_ns": 396556241414922,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_03-r2-C-83",
+          "mode": "C",
+          "case_id": "pause_03",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 83
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -2611.188711,
+          "reference_sample": 93600,
+          "reference_end_ns": 396565575142545,
+          "first_pcm_received_ns": 396562963953834,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-pause_03-r2-A-84",
+          "mode": "A",
+          "case_id": "pause_03",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 84
+          },
+          "endpoint_complete": false,
+          "endpoint_early": true,
+          "stop": true,
+          "success": false,
+          "integrity": true,
+          "first_pcm_ms": -748.951519,
+          "reference_sample": 93600,
+          "reference_end_ns": 396572244011075,
+          "first_pcm_received_ns": 396571495059556,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_01-r0-A-85",
+          "mode": "A",
+          "case_id": "long_01",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 85
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2423.997086,
+          "reference_sample": 99840,
+          "reference_end_ns": 396579307019415,
+          "first_pcm_received_ns": 396581731016501,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_01-r0-B-86",
+          "mode": "B",
+          "case_id": "long_01",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 86
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2156.601014,
+          "reference_sample": 99840,
+          "reference_end_ns": 396588018127833,
+          "first_pcm_received_ns": 396590174728847,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_01-r0-C-87",
+          "mode": "C",
+          "case_id": "long_01",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 87
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1562.108346,
+          "reference_sample": 99840,
+          "reference_end_ns": 396596462465665,
+          "first_pcm_received_ns": 396598024574011,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_01-r1-B-88",
+          "mode": "B",
+          "case_id": "long_01",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 88
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2199.952535,
+          "reference_sample": 99840,
+          "reference_end_ns": 396605007853338,
+          "first_pcm_received_ns": 396607207805873,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_01-r1-C-89",
+          "mode": "C",
+          "case_id": "long_01",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 89
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1541.662558,
+          "reference_sample": 99840,
+          "reference_end_ns": 396613502080501,
+          "first_pcm_received_ns": 396615043743059,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_01-r1-A-90",
+          "mode": "A",
+          "case_id": "long_01",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 90
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2436.173357,
+          "reference_sample": 99840,
+          "reference_end_ns": 396622005704727,
+          "first_pcm_received_ns": 396624441878084,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_01-r2-C-91",
+          "mode": "C",
+          "case_id": "long_01",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 91
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1527.087967,
+          "reference_sample": 99840,
+          "reference_end_ns": 396630728053608,
+          "first_pcm_received_ns": 396632255141575,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_01-r2-A-92",
+          "mode": "A",
+          "case_id": "long_01",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 92
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2424.102427,
+          "reference_sample": 99840,
+          "reference_end_ns": 396639213016754,
+          "first_pcm_received_ns": 396641637119181,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_01-r2-B-93",
+          "mode": "B",
+          "case_id": "long_01",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 93
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2223.50274,
+          "reference_sample": 99840,
+          "reference_end_ns": 396647933891766,
+          "first_pcm_received_ns": 396650157394506,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_02-r0-B-94",
+          "mode": "B",
+          "case_id": "long_02",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 94
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1991.711184,
+          "reference_sample": 117280,
+          "reference_end_ns": 396657539777037,
+          "first_pcm_received_ns": 396659531488221,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_02-r0-C-95",
+          "mode": "C",
+          "case_id": "long_02",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 95
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1486.527039,
+          "reference_sample": 117280,
+          "reference_end_ns": 396666900862724,
+          "first_pcm_received_ns": 396668387389763,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_02-r0-A-96",
+          "mode": "A",
+          "case_id": "long_02",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 96
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 3206.575017,
+          "reference_sample": 117280,
+          "reference_end_ns": 396676135799878,
+          "first_pcm_received_ns": 396679342374895,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_02-r1-C-97",
+          "mode": "C",
+          "case_id": "long_02",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 97
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1558.577593,
+          "reference_sample": 117280,
+          "reference_end_ns": 396686707213718,
+          "first_pcm_received_ns": 396688265791311,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_02-r1-A-98",
+          "mode": "A",
+          "case_id": "long_02",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 98
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2346.605646,
+          "reference_sample": 117280,
+          "reference_end_ns": 396696016234072,
+          "first_pcm_received_ns": 396698362839718,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_02-r1-B-99",
+          "mode": "B",
+          "case_id": "long_02",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 99
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1864.138833,
+          "reference_sample": 117280,
+          "reference_end_ns": 396705729057807,
+          "first_pcm_received_ns": 396707593196640,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_02-r2-A-100",
+          "mode": "A",
+          "case_id": "long_02",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 100
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2174.108633,
+          "reference_sample": 117280,
+          "reference_end_ns": 396714958062565,
+          "first_pcm_received_ns": 396717132171198,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_02-r2-B-101",
+          "mode": "B",
+          "case_id": "long_02",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 101
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1795.176489,
+          "reference_sample": 117280,
+          "reference_end_ns": 396724497499214,
+          "first_pcm_received_ns": 396726292675703,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_02-r2-C-102",
+          "mode": "C",
+          "case_id": "long_02",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 102
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1517.579736,
+          "reference_sample": 117280,
+          "reference_end_ns": 396733660090876,
+          "first_pcm_received_ns": 396735177670612,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_03-r0-C-103",
+          "mode": "C",
+          "case_id": "long_03",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 103
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1328.481088,
+          "reference_sample": 110560,
+          "reference_end_ns": 396742483287056,
+          "first_pcm_received_ns": 396743811768144,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_03-r0-A-104",
+          "mode": "A",
+          "case_id": "long_03",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 104
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2770.553368,
+          "reference_sample": 110560,
+          "reference_end_ns": 396751882890725,
+          "first_pcm_received_ns": 396754653444093,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_03-r0-B-105",
+          "mode": "B",
+          "case_id": "long_03",
+          "repeat": 0,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 105
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2882.15515,
+          "reference_sample": 110560,
+          "reference_end_ns": 396761609090943,
+          "first_pcm_received_ns": 396764491246093,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_03-r1-A-106",
+          "mode": "A",
+          "case_id": "long_03",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 106
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2736.009907,
+          "reference_sample": 110560,
+          "reference_end_ns": 396771738775471,
+          "first_pcm_received_ns": 396774474785378,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_03-r1-B-107",
+          "mode": "B",
+          "case_id": "long_03",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 107
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2269.215338,
+          "reference_sample": 110560,
+          "reference_end_ns": 396781426206344,
+          "first_pcm_received_ns": 396783695421682,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_03-r1-C-108",
+          "mode": "C",
+          "case_id": "long_03",
+          "repeat": 1,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 108
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1396.056274,
+          "reference_sample": 110560,
+          "reference_end_ns": 396790904716330,
+          "first_pcm_received_ns": 396792300772604,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_03-r2-B-109",
+          "mode": "B",
+          "case_id": "long_03",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 109
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2226.603837,
+          "reference_sample": 110560,
+          "reference_end_ns": 396800417897437,
+          "first_pcm_received_ns": 396802644501274,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_03-r2-C-110",
+          "mode": "C",
+          "case_id": "long_03",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 110
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 1457.228673,
+          "reference_sample": 110560,
+          "reference_end_ns": 396809839340515,
+          "first_pcm_received_ns": 396811296569188,
+          "clock": "client_monotonic",
+          "issues": []
+        },
+        {
+          "id": "live-final-v1-long_03-r2-A-111",
+          "mode": "A",
+          "case_id": "long_03",
+          "repeat": 2,
+          "source": {
+            "path": "results/exp14/live-final-v1/records.jsonl",
+            "line": 111
+          },
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "stop": true,
+          "success": true,
+          "integrity": true,
+          "first_pcm_ms": 2495.029105,
+          "reference_sample": 110560,
+          "reference_end_ns": 396820531593152,
+          "first_pcm_received_ns": 396823026622257,
+          "clock": "client_monotonic",
+          "issues": []
+        }
+      ],
+      "reference_definition": "Offline synthetic input energy reference: non-overlapping 10ms RMS windows, PCM16 threshold 120; mapped via input_start_ns + sample/rate in the capture client monotonic clock. Not live microphone endpoint/acoustic onset."
+    },
+    "browser": {
+      "n": 3,
+      "n_expected": 3,
+      "rows": [
+        {
+          "id": "browser-1539c33e-2593-4d03-bff8-c43df57f56f5",
+          "mode": "A",
+          "source": {
+            "path": "results/exp14/server-eof-fixed/browser-browser-1539c33e-2593-4d03-bff8-c43df57f56f5.json"
+          },
+          "success": true,
+          "stop": true,
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "first_pcm_ms": 1208.2999999970198,
+          "first_non_silent_render_ms": 1489.0791666607056,
+          "first_render_notification_ms": 1500.0999999940395,
+          "acoustic_first_sound_ms": null,
+          "issues": []
+        },
+        {
+          "id": "browser-2b6e8f3c-99ef-4dc7-b9d9-d9f7f9346a8a",
+          "mode": "B",
+          "source": {
+            "path": "results/exp14/server-eof-fixed/browser-browser-2b6e8f3c-99ef-4dc7-b9d9-d9f7f9346a8a.json"
+          },
+          "success": true,
+          "stop": true,
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "first_pcm_ms": 831.8999999910593,
+          "first_non_silent_render_ms": 1108.8374999910593,
+          "first_render_notification_ms": 1121.3999999910593,
+          "acoustic_first_sound_ms": null,
+          "issues": []
+        },
+        {
+          "id": "browser-83ca3e2b-817b-4943-b06f-8cfa9cb07784",
+          "mode": "C",
+          "source": {
+            "path": "results/exp14/server-eof-fixed/browser-browser-83ca3e2b-817b-4943-b06f-8cfa9cb07784.json"
+          },
+          "success": true,
+          "stop": true,
+          "endpoint_complete": true,
+          "endpoint_early": false,
+          "first_pcm_ms": 988.2000000029802,
+          "first_non_silent_render_ms": 1267.1916666726283,
+          "first_render_notification_ms": 1279.9000000059605,
+          "acoustic_first_sound_ms": null,
+          "issues": []
+        }
+      ],
+      "by_mode": {
+        "A": {
+          "n": 1,
+          "counts": {
+            "stop": 1,
+            "early": 0,
+            "endpoint_complete": 1,
+            "success": 1,
+            "failures": 0,
+            "unknown": 0
+          },
+          "endpoint_completeness": {
+            "n": 1,
+            "passed": 1,
+            "failures": 0,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "endpoint_confirmed.sample_offset >= offline energy-reference last speech sample",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-1539c33e-2593-4d03-bff8-c43df57f56f5.json"
+            ]
+          },
+          "terminal_stop": {
+            "n": 1,
+            "passed": 1,
+            "failures": 0,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "terminal.type=terminal AND finish_reason=stop",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-1539c33e-2593-4d03-bff8-c43df57f56f5.json"
+            ]
+          },
+          "first_pcm_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 1,
+            "unknown": 0,
+            "p50": 1208.2999999970198,
+            "p95": 1208.2999999970198,
+            "clock": "browser_performance",
+            "definition": "first_pcm_received_perf_ms - validated actual frame-send/sample reference in this browser.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-1539c33e-2593-4d03-bff8-c43df57f56f5.json"
+            ],
+            "failures": 0
+          },
+          "candidate_800ms": {
+            "n": 1,
+            "eligible": 1,
+            "passed": 0,
+            "failed": 1,
+            "failures": 1,
+            "unknown": 0,
+            "threshold_ms": 800,
+            "all_observations_pass": false,
+            "exploration_only": true,
+            "production_compliance": null,
+            "clock": "same client clock within each observation",
+            "definition": "Complete endpoint AND natural stop AND integrity/no-error checks AND observed nonnegative reference-end to first-PCM <=800ms; full cohort denominator. 800ms is an exploratory threshold, not a production SLO.",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-1539c33e-2593-4d03-bff8-c43df57f56f5.json"
+            ]
+          },
+          "first_non_silent_render_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 1,
+            "unknown": 0,
+            "p50": 1489.0791666607056,
+            "p95": 1489.0791666607056,
+            "clock": "browser_performance, within each browser turn",
+            "definition": "Calibrated AudioContext first non-silent sample mapped by bracketed performance anchors minus actual-send/sample input reference.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-1539c33e-2593-4d03-bff8-c43df57f56f5.json"
+            ],
+            "failures": 0
+          },
+          "first_render_notification_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 1,
+            "unknown": 0,
+            "p50": 1500.0999999940395,
+            "p95": 1500.0999999940395,
+            "clock": "browser_performance, within each browser turn",
+            "definition": "Main-thread observed_performance_ms for first non-silent render notification minus same-browser actual-send/sample input reference.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-1539c33e-2593-4d03-bff8-c43df57f56f5.json"
+            ],
+            "failures": 0
+          },
+          "acoustic_first_sound_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 0,
+            "unknown": 1,
+            "p50": null,
+            "p95": null,
+            "clock": "browser_performance, within each browser turn",
+            "definition": "No acoustic loopback captured; always unknown.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-1539c33e-2593-4d03-bff8-c43df57f56f5.json"
+            ],
+            "failures": 0
+          }
+        },
+        "B": {
+          "n": 1,
+          "counts": {
+            "stop": 1,
+            "early": 0,
+            "endpoint_complete": 1,
+            "success": 1,
+            "failures": 0,
+            "unknown": 0
+          },
+          "endpoint_completeness": {
+            "n": 1,
+            "passed": 1,
+            "failures": 0,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "endpoint_confirmed.sample_offset >= offline energy-reference last speech sample",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-2b6e8f3c-99ef-4dc7-b9d9-d9f7f9346a8a.json"
+            ]
+          },
+          "terminal_stop": {
+            "n": 1,
+            "passed": 1,
+            "failures": 0,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "terminal.type=terminal AND finish_reason=stop",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-2b6e8f3c-99ef-4dc7-b9d9-d9f7f9346a8a.json"
+            ]
+          },
+          "first_pcm_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 1,
+            "unknown": 0,
+            "p50": 831.8999999910593,
+            "p95": 831.8999999910593,
+            "clock": "browser_performance",
+            "definition": "first_pcm_received_perf_ms - validated actual frame-send/sample reference in this browser.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-2b6e8f3c-99ef-4dc7-b9d9-d9f7f9346a8a.json"
+            ],
+            "failures": 0
+          },
+          "candidate_800ms": {
+            "n": 1,
+            "eligible": 1,
+            "passed": 0,
+            "failed": 1,
+            "failures": 1,
+            "unknown": 0,
+            "threshold_ms": 800,
+            "all_observations_pass": false,
+            "exploration_only": true,
+            "production_compliance": null,
+            "clock": "same client clock within each observation",
+            "definition": "Complete endpoint AND natural stop AND integrity/no-error checks AND observed nonnegative reference-end to first-PCM <=800ms; full cohort denominator. 800ms is an exploratory threshold, not a production SLO.",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-2b6e8f3c-99ef-4dc7-b9d9-d9f7f9346a8a.json"
+            ]
+          },
+          "first_non_silent_render_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 1,
+            "unknown": 0,
+            "p50": 1108.8374999910593,
+            "p95": 1108.8374999910593,
+            "clock": "browser_performance, within each browser turn",
+            "definition": "Calibrated AudioContext first non-silent sample mapped by bracketed performance anchors minus actual-send/sample input reference.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-2b6e8f3c-99ef-4dc7-b9d9-d9f7f9346a8a.json"
+            ],
+            "failures": 0
+          },
+          "first_render_notification_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 1,
+            "unknown": 0,
+            "p50": 1121.3999999910593,
+            "p95": 1121.3999999910593,
+            "clock": "browser_performance, within each browser turn",
+            "definition": "Main-thread observed_performance_ms for first non-silent render notification minus same-browser actual-send/sample input reference.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-2b6e8f3c-99ef-4dc7-b9d9-d9f7f9346a8a.json"
+            ],
+            "failures": 0
+          },
+          "acoustic_first_sound_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 0,
+            "unknown": 1,
+            "p50": null,
+            "p95": null,
+            "clock": "browser_performance, within each browser turn",
+            "definition": "No acoustic loopback captured; always unknown.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-2b6e8f3c-99ef-4dc7-b9d9-d9f7f9346a8a.json"
+            ],
+            "failures": 0
+          }
+        },
+        "C": {
+          "n": 1,
+          "counts": {
+            "stop": 1,
+            "early": 0,
+            "endpoint_complete": 1,
+            "success": 1,
+            "failures": 0,
+            "unknown": 0
+          },
+          "endpoint_completeness": {
+            "n": 1,
+            "passed": 1,
+            "failures": 0,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "endpoint_confirmed.sample_offset >= offline energy-reference last speech sample",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-83ca3e2b-817b-4943-b06f-8cfa9cb07784.json"
+            ]
+          },
+          "terminal_stop": {
+            "n": 1,
+            "passed": 1,
+            "failures": 0,
+            "unknown": 0,
+            "clock": "source sample indices / terminal state; no clock subtraction",
+            "definition": "terminal.type=terminal AND finish_reason=stop",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-83ca3e2b-817b-4943-b06f-8cfa9cb07784.json"
+            ]
+          },
+          "first_pcm_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 1,
+            "unknown": 0,
+            "p50": 988.2000000029802,
+            "p95": 988.2000000029802,
+            "clock": "browser_performance",
+            "definition": "first_pcm_received_perf_ms - validated actual frame-send/sample reference in this browser.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-83ca3e2b-817b-4943-b06f-8cfa9cb07784.json"
+            ],
+            "failures": 0
+          },
+          "candidate_800ms": {
+            "n": 1,
+            "eligible": 1,
+            "passed": 0,
+            "failed": 1,
+            "failures": 1,
+            "unknown": 0,
+            "threshold_ms": 800,
+            "all_observations_pass": false,
+            "exploration_only": true,
+            "production_compliance": null,
+            "clock": "same client clock within each observation",
+            "definition": "Complete endpoint AND natural stop AND integrity/no-error checks AND observed nonnegative reference-end to first-PCM <=800ms; full cohort denominator. 800ms is an exploratory threshold, not a production SLO.",
+            "unit": "count",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-83ca3e2b-817b-4943-b06f-8cfa9cb07784.json"
+            ]
+          },
+          "first_non_silent_render_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 1,
+            "unknown": 0,
+            "p50": 1267.1916666726283,
+            "p95": 1267.1916666726283,
+            "clock": "browser_performance, within each browser turn",
+            "definition": "Calibrated AudioContext first non-silent sample mapped by bracketed performance anchors minus actual-send/sample input reference.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-83ca3e2b-817b-4943-b06f-8cfa9cb07784.json"
+            ],
+            "failures": 0
+          },
+          "first_render_notification_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 1,
+            "unknown": 0,
+            "p50": 1279.9000000059605,
+            "p95": 1279.9000000059605,
+            "clock": "browser_performance, within each browser turn",
+            "definition": "Main-thread observed_performance_ms for first non-silent render notification minus same-browser actual-send/sample input reference.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-83ca3e2b-817b-4943-b06f-8cfa9cb07784.json"
+            ],
+            "failures": 0
+          },
+          "acoustic_first_sound_ms": {
+            "n": 1,
+            "eligible": 1,
+            "measured": 0,
+            "unknown": 1,
+            "p50": null,
+            "p95": null,
+            "clock": "browser_performance, within each browser turn",
+            "definition": "No acoustic loopback captured; always unknown.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp14/server-eof-fixed/browser-browser-83ca3e2b-817b-4943-b06f-8cfa9cb07784.json"
+            ],
+            "failures": 0
+          }
+        }
+      }
+    }
+  },
+  "exp15": {
+    "media": {
+      "n": 24,
+      "n_expected": 24,
+      "groups": {
+        "ws/baseline": {
+          "n": 6,
+          "n_expected": 6,
+          "failures": 0,
+          "unknown": 0,
+          "start_to_first_render_ms": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 46.599999994039536,
+            "p95": 65.1000000052154,
+            "clock": "browser_performance; client.js",
+            "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "connect_reported_ms": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 94.0,
+            "p95": 271.2249999977648,
+            "clock": "browser_performance; client.js",
+            "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "ws_underrun_ms": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 0.0,
+            "p95": 74.0,
+            "clock": "AudioWorklet source samples / context_rate",
+            "definition": "1000 * playback.underrun_samples / context_rate; empty queue after playback starts and before expected source consumption. Different definition from RTC concealment.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "by_fixture": {
+            "short": {
+              "start_to_first_render_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 47.70000000298023,
+                "p95": 68.58000000566244,
+                "clock": "browser_performance; client.js",
+                "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "connect_reported_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 95.29999999701977,
+                "p95": 144.88999999165534,
+                "clock": "browser_performance; client.js",
+                "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "ws_underrun_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 0.0,
+                "p95": 88.8,
+                "clock": "AudioWorklet source samples / context_rate",
+                "definition": "1000 * playback.underrun_samples / context_rate; empty queue after playback starts and before expected source consumption. Different definition from RTC concealment.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              }
+            },
+            "long": {
+              "start_to_first_render_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 46.5,
+                "p95": 46.67999998927117,
+                "clock": "browser_performance; client.js",
+                "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "connect_reported_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 92.70000000298023,
+                "p95": 289.620000000298,
+                "clock": "browser_performance; client.js",
+                "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "ws_underrun_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 0.0,
+                "p95": 0.0,
+                "clock": "AudioWorklet source samples / context_rate",
+                "definition": "1000 * playback.underrun_samples / context_rate; empty queue after playback starts and before expected source consumption. Different definition from RTC concealment.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              }
+            }
+          }
+        },
+        "ws/source_pause": {
+          "n": 6,
+          "n_expected": 6,
+          "failures": 0,
+          "unknown": 0,
+          "start_to_first_render_ms": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 46.75,
+            "p95": 56.849999994039536,
+            "clock": "browser_performance; client.js",
+            "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "connect_reported_ms": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 95.15000000596046,
+            "p95": 102.44999999552965,
+            "clock": "browser_performance; client.js",
+            "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "ws_underrun_ms": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 220.0,
+            "p95": 269.0,
+            "clock": "AudioWorklet source samples / context_rate",
+            "definition": "1000 * playback.underrun_samples / context_rate; empty queue after playback starts and before expected source consumption. Different definition from RTC concealment.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "by_fixture": {
+            "short": {
+              "start_to_first_render_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 44.0,
+                "p95": 46.7,
+                "clock": "browser_performance; client.js",
+                "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "connect_reported_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 98.3999999910593,
+                "p95": 103.25999999642372,
+                "clock": "browser_performance; client.js",
+                "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "ws_underrun_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 185.33333333333331,
+                "p95": 211.73333333333335,
+                "clock": "AudioWorklet source samples / context_rate",
+                "definition": "1000 * playback.underrun_samples / context_rate; empty queue after playback starts and before expected source consumption. Different definition from RTC concealment.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              }
+            },
+            "long": {
+              "start_to_first_render_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 47.099999994039536,
+                "p95": 58.79999999403954,
+                "clock": "browser_performance; client.js",
+                "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "connect_reported_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 94.1000000089407,
+                "p95": 95.99000000357628,
+                "clock": "browser_performance; client.js",
+                "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "ws_underrun_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 264.0,
+                "p95": 270.0,
+                "clock": "AudioWorklet source samples / context_rate",
+                "definition": "1000 * playback.underrun_samples / context_rate; empty queue after playback starts and before expected source consumption. Different definition from RTC concealment.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              }
+            }
+          }
+        },
+        "rtc/baseline": {
+          "n": 6,
+          "n_expected": 6,
+          "failures": 0,
+          "unknown": 0,
+          "start_to_first_render_ms": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 33.75,
+            "p95": 75.65000000223517,
+            "clock": "browser_performance; client.js",
+            "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "connect_reported_ms": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 292.2500000074506,
+            "p95": 488.17500000074506,
+            "clock": "browser_performance; client.js",
+            "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "rtc_concealed_end": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 2575.5,
+            "p95": 9213.25,
+            "clock": "RTC inbound-rtp cumulative end snapshot",
+            "definition": "End concealedSamples snapshot, diagnostic only; not interval or WS underrun duration.",
+            "unit": "samples",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "rtc_concealed_delta": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 0,
+            "unknown": 6,
+            "p50": null,
+            "p95": null,
+            "clock": "RTC matched inbound-rtp stream counters",
+            "definition": "End minus start concealedSamples for matching inbound audio id; absent start => null.",
+            "unit": "samples",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "by_fixture": {
+            "short": {
+              "start_to_first_render_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 44.0,
+                "p95": 81.9800000026822,
+                "clock": "browser_performance; client.js",
+                "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "connect_reported_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 280.40000000596046,
+                "p95": 513.5900000005961,
+                "clock": "browser_performance; client.js",
+                "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "rtc_concealed_end": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 1311.0,
+                "p95": 3587.1,
+                "clock": "RTC inbound-rtp cumulative end snapshot",
+                "definition": "End concealedSamples snapshot, diagnostic only; not interval or WS underrun duration.",
+                "unit": "samples",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "rtc_concealed_delta": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 0,
+                "unknown": 3,
+                "p50": null,
+                "p95": null,
+                "clock": "RTC matched inbound-rtp stream counters",
+                "definition": "End minus start concealedSamples for matching inbound audio id; absent start => null.",
+                "unit": "samples",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              }
+            },
+            "long": {
+              "start_to_first_render_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 32.0,
+                "p95": 35.15,
+                "clock": "browser_performance; client.js",
+                "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "connect_reported_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 304.1000000089407,
+                "p95": 331.1900000035763,
+                "clock": "browser_performance; client.js",
+                "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "rtc_concealed_end": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 8059.0,
+                "p95": 9444.1,
+                "clock": "RTC inbound-rtp cumulative end snapshot",
+                "definition": "End concealedSamples snapshot, diagnostic only; not interval or WS underrun duration.",
+                "unit": "samples",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "rtc_concealed_delta": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 0,
+                "unknown": 3,
+                "p50": null,
+                "p95": null,
+                "clock": "RTC matched inbound-rtp stream counters",
+                "definition": "End minus start concealedSamples for matching inbound audio id; absent start => null.",
+                "unit": "samples",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              }
+            }
+          }
+        },
+        "rtc/source_pause": {
+          "n": 6,
+          "n_expected": 6,
+          "failures": 0,
+          "unknown": 0,
+          "start_to_first_render_ms": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 24.30000000447035,
+            "p95": 30.699999999254942,
+            "clock": "browser_performance; client.js",
+            "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "connect_reported_ms": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 280.70000000298023,
+            "p95": 305.57499999925494,
+            "clock": "browser_performance; client.js",
+            "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+            "unit": "ms",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "rtc_concealed_end": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 6,
+            "unknown": 0,
+            "p50": 13060.0,
+            "p95": 15529.5,
+            "clock": "RTC inbound-rtp cumulative end snapshot",
+            "definition": "End concealedSamples snapshot, diagnostic only; not interval or WS underrun duration.",
+            "unit": "samples",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "rtc_concealed_delta": {
+            "n": 6,
+            "eligible": 6,
+            "measured": 0,
+            "unknown": 6,
+            "p50": null,
+            "p95": null,
+            "clock": "RTC matched inbound-rtp stream counters",
+            "definition": "End minus start concealedSamples for matching inbound audio id; absent start => null.",
+            "unit": "samples",
+            "source_paths": [
+              "results/exp15/browser-formal-v2/records.json"
+            ],
+            "failures": 0
+          },
+          "by_fixture": {
+            "short": {
+              "start_to_first_render_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 30.400000005960464,
+                "p95": 30.759999997913837,
+                "clock": "browser_performance; client.js",
+                "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "connect_reported_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 281.79999999701977,
+                "p95": 292.5999999970198,
+                "clock": "browser_performance; client.js",
+                "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "rtc_concealed_end": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 13306.0,
+                "p95": 15868.3,
+                "clock": "RTC inbound-rtp cumulative end snapshot",
+                "definition": "End concealedSamples snapshot, diagnostic only; not interval or WS underrun duration.",
+                "unit": "samples",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "rtc_concealed_delta": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 0,
+                "unknown": 3,
+                "p50": null,
+                "p95": null,
+                "clock": "RTC matched inbound-rtp stream counters",
+                "definition": "End minus start concealedSamples for matching inbound audio id; absent start => null.",
+                "unit": "samples",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              }
+            },
+            "long": {
+              "start_to_first_render_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 20.69999998807907,
+                "p95": 24.480000004172325,
+                "clock": "browser_performance; client.js",
+                "definition": "first_render_notification_performance_ms - media_start_performance_ms; pre-generated media probe, includes main-thread dispatch; not user end-of-speech or acoustic latency.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "connect_reported_ms": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 277.80000001192093,
+                "p95": 306.3300000011921,
+                "clock": "browser_performance; client.js",
+                "definition": "Raw client connect_ms = ready_ms - startedPerf, includes player preparation/80ms warmup. startedPerf was not persisted; this scalar is reported, not independently recomputed.",
+                "unit": "ms",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "rtc_concealed_end": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 3,
+                "unknown": 0,
+                "p50": 12814.0,
+                "p95": 13574.5,
+                "clock": "RTC inbound-rtp cumulative end snapshot",
+                "definition": "End concealedSamples snapshot, diagnostic only; not interval or WS underrun duration.",
+                "unit": "samples",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              },
+              "rtc_concealed_delta": {
+                "n": 3,
+                "eligible": 3,
+                "measured": 0,
+                "unknown": 3,
+                "p50": null,
+                "p95": null,
+                "clock": "RTC matched inbound-rtp stream counters",
+                "definition": "End minus start concealedSamples for matching inbound audio id; absent start => null.",
+                "unit": "samples",
+                "source_paths": [
+                  "results/exp15/browser-formal-v2/records.json"
+                ],
+                "failures": 0
+              }
+            }
+          }
+        }
+      },
+      "rows": [
+        {
+          "id": "formal-0-1792664987590",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/0"
+          },
+          "transport": "ws",
+          "scenario": "baseline",
+          "fixture_id": "short",
+          "repeat": 0,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 47.70000000298023,
+          "connect_reported_ms": 150.3999999910593,
+          "ws_underrun_ms": 98.66666666666667,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-0-1792664987590.json"
+          }
+        },
+        {
+          "id": "formal-1-1792664991604",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/1"
+          },
+          "transport": "rtc",
+          "scenario": "baseline",
+          "fixture_id": "short",
+          "repeat": 0,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 86.20000000298023,
+          "connect_reported_ms": 539.5,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 0,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 0,
+              "packetsReceived": 156,
+              "packetsLost": 0,
+              "jitterBufferDelay": 7036.8,
+              "jitterBufferEmittedCount": 148800
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-1-1792664991604.json"
+          }
+        },
+        {
+          "id": "formal-2-1792664995421",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/2"
+          },
+          "transport": "ws",
+          "scenario": "baseline",
+          "fixture_id": "long",
+          "repeat": 0,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 46.5,
+          "connect_reported_ms": 92.70000000298023,
+          "ws_underrun_ms": 0.0,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-2-1792664995421.json"
+          }
+        },
+        {
+          "id": "formal-3-1792665011420",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/3"
+          },
+          "transport": "rtc",
+          "scenario": "baseline",
+          "fixture_id": "long",
+          "repeat": 0,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 20.099999994039536,
+          "connect_reported_ms": 270,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 9598,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 9598,
+              "packetsReceived": 786,
+              "packetsLost": 0,
+              "jitterBufferDelay": 87696,
+              "jitterBufferEmittedCount": 751680
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-3-1792665011420.json"
+          }
+        },
+        {
+          "id": "formal-4-1792665027606",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/4"
+          },
+          "transport": "rtc",
+          "scenario": "baseline",
+          "fixture_id": "short",
+          "repeat": 1,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 30.0,
+          "connect_reported_ms": 264.40000000596046,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 3840,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 3840,
+              "packetsReceived": 161,
+              "packetsLost": 0,
+              "jitterBufferDelay": 12249.6,
+              "jitterBufferEmittedCount": 148800
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-4-1792665027606.json"
+          }
+        },
+        {
+          "id": "formal-5-1792665031242",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/5"
+          },
+          "transport": "ws",
+          "scenario": "baseline",
+          "fixture_id": "short",
+          "repeat": 1,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 43.20000000298023,
+          "connect_reported_ms": 89.29999999701977,
+          "ws_underrun_ms": 0.0,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-5-1792665031242.json"
+          }
+        },
+        {
+          "id": "formal-6-1792665034658",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/6"
+          },
+          "transport": "rtc",
+          "scenario": "baseline",
+          "fixture_id": "long",
+          "repeat": 1,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 35.5,
+          "connect_reported_ms": 334.20000000298023,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 8059,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 8059,
+              "packetsReceived": 792,
+              "packetsLost": 0,
+              "jitterBufferDelay": 84249.6,
+              "jitterBufferEmittedCount": 751680
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-6-1792665034658.json"
+          }
+        },
+        {
+          "id": "formal-7-1792665051100",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/7"
+          },
+          "transport": "ws",
+          "scenario": "baseline",
+          "fixture_id": "long",
+          "repeat": 1,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 46.69999998807907,
+          "connect_reported_ms": 311.5,
+          "ws_underrun_ms": 0.0,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-7-1792665051100.json"
+          }
+        },
+        {
+          "id": "formal-8-1792665067296",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/8"
+          },
+          "transport": "ws",
+          "scenario": "baseline",
+          "fixture_id": "short",
+          "repeat": 2,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 70.90000000596046,
+          "connect_reported_ms": 95.29999999701977,
+          "ws_underrun_ms": 0.0,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-8-1792665067296.json"
+          }
+        },
+        {
+          "id": "formal-9-1792665070716",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/9"
+          },
+          "transport": "rtc",
+          "scenario": "baseline",
+          "fixture_id": "short",
+          "repeat": 2,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 44.0,
+          "connect_reported_ms": 280.40000000596046,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 1311,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 1311,
+              "packetsReceived": 159,
+              "packetsLost": 0,
+              "jitterBufferDelay": 10022.4,
+              "jitterBufferEmittedCount": 148800
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-9-1792665070716.json"
+          }
+        },
+        {
+          "id": "formal-10-1792665074357",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/10"
+          },
+          "transport": "ws",
+          "scenario": "baseline",
+          "fixture_id": "long",
+          "repeat": 2,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 44.900000005960464,
+          "connect_reported_ms": 92.59999999403954,
+          "ws_underrun_ms": 0.0,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-10-1792665074357.json"
+          }
+        },
+        {
+          "id": "formal-11-1792665090346",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/11"
+          },
+          "transport": "rtc",
+          "scenario": "baseline",
+          "fixture_id": "long",
+          "repeat": 2,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 32.0,
+          "connect_reported_ms": 304.1000000089407,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 0,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 0,
+              "packetsReceived": 785,
+              "packetsLost": 0,
+              "jitterBufferDelay": 23875.2,
+              "jitterBufferEmittedCount": 751680
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-11-1792665090346.json"
+          }
+        },
+        {
+          "id": "formal-12-1792665106513",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/12"
+          },
+          "transport": "ws",
+          "scenario": "source_pause",
+          "fixture_id": "short",
+          "repeat": 0,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 42.3999999910593,
+          "connect_reported_ms": 103.79999999701977,
+          "ws_underrun_ms": 214.66666666666669,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-12-1792665106513.json"
+          }
+        },
+        {
+          "id": "formal-13-1792665110149",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/13"
+          },
+          "transport": "rtc",
+          "scenario": "source_pause",
+          "fixture_id": "short",
+          "repeat": 0,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 30.400000005960464,
+          "connect_reported_ms": 281.79999999701977,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 8593,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 8593,
+              "packetsReceived": 156,
+              "packetsLost": 0,
+              "jitterBufferDelay": 2486.4,
+              "jitterBufferEmittedCount": 149760
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-13-1792665110149.json"
+          }
+        },
+        {
+          "id": "formal-14-1792665113908",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/14"
+          },
+          "transport": "ws",
+          "scenario": "source_pause",
+          "fixture_id": "long",
+          "repeat": 0,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 47.099999994039536,
+          "connect_reported_ms": 96.20000000298023,
+          "ws_underrun_ms": 264.0,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-14-1792665113908.json"
+          }
+        },
+        {
+          "id": "formal-15-1792665130139",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/15"
+          },
+          "transport": "rtc",
+          "scenario": "source_pause",
+          "fixture_id": "long",
+          "repeat": 0,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 20.099999994039536,
+          "connect_reported_ms": 268.79999999701977,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 12814,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 12814,
+              "packetsReceived": 793,
+              "packetsLost": 0,
+              "jitterBufferDelay": 168892.8,
+              "jitterBufferEmittedCount": 751680
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-15-1792665130139.json"
+          }
+        },
+        {
+          "id": "formal-16-1792665146604",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/16"
+          },
+          "transport": "rtc",
+          "scenario": "source_pause",
+          "fixture_id": "short",
+          "repeat": 1,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 30.799999997019768,
+          "connect_reported_ms": 293.79999999701977,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 16153,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 16153,
+              "packetsReceived": 163,
+              "packetsLost": 0,
+              "jitterBufferDelay": 8592,
+              "jitterBufferEmittedCount": 147840
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-16-1792665146604.json"
+          }
+        },
+        {
+          "id": "formal-17-1792665150505",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/17"
+          },
+          "transport": "ws",
+          "scenario": "source_pause",
+          "fixture_id": "short",
+          "repeat": 1,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 47.0,
+          "connect_reported_ms": 98.3999999910593,
+          "ws_underrun_ms": 166.66666666666666,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-17-1792665150505.json"
+          }
+        },
+        {
+          "id": "formal-18-1792665154095",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/18"
+          },
+          "transport": "rtc",
+          "scenario": "source_pause",
+          "fixture_id": "long",
+          "repeat": 1,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 20.69999998807907,
+          "connect_reported_ms": 277.80000001192093,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 12379,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 12379,
+              "packetsReceived": 790,
+              "packetsLost": 0,
+              "jitterBufferDelay": 131529.6,
+              "jitterBufferEmittedCount": 751680
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-18-1792665154095.json"
+          }
+        },
+        {
+          "id": "formal-19-1792665170552",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/19"
+          },
+          "transport": "ws",
+          "scenario": "source_pause",
+          "fixture_id": "long",
+          "repeat": 1,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 46.5,
+          "connect_reported_ms": 93,
+          "ws_underrun_ms": 225.33333333333334,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-19-1792665170552.json"
+          }
+        },
+        {
+          "id": "formal-20-1792665186964",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/20"
+          },
+          "transport": "ws",
+          "scenario": "source_pause",
+          "fixture_id": "short",
+          "repeat": 2,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 44.0,
+          "connect_reported_ms": 91.80000001192093,
+          "ws_underrun_ms": 185.33333333333331,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-20-1792665186964.json"
+          }
+        },
+        {
+          "id": "formal-21-1792665190547",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/21"
+          },
+          "transport": "rtc",
+          "scenario": "source_pause",
+          "fixture_id": "short",
+          "repeat": 2,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 149760,
+          "expected_source_samples": 149760,
+          "start_to_first_render_ms": 23.700000002980232,
+          "connect_reported_ms": 279.6000000089407,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 13306,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 13306,
+              "packetsReceived": 160,
+              "packetsLost": 0,
+              "jitterBufferDelay": 5817.6,
+              "jitterBufferEmittedCount": 148800
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-21-1792665190547.json"
+          }
+        },
+        {
+          "id": "formal-22-1792665194384",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/22"
+          },
+          "transport": "ws",
+          "scenario": "source_pause",
+          "fixture_id": "long",
+          "repeat": 2,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 60.099999994039536,
+          "connect_reported_ms": 94.1000000089407,
+          "ws_underrun_ms": 270.6666666666667,
+          "rtc_concealed_end": null,
+          "rtc_concealed_delta": null,
+          "rtc": null,
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-22-1792665194384.json"
+          }
+        },
+        {
+          "id": "formal-23-1792665210663",
+          "source": {
+            "path": "results/exp15/browser-formal-v2/records.json",
+            "pointer": "/records/23"
+          },
+          "transport": "rtc",
+          "scenario": "source_pause",
+          "fixture_id": "long",
+          "repeat": 2,
+          "success": true,
+          "source_complete": true,
+          "source_samples": 752640,
+          "expected_source_samples": 752640,
+          "start_to_first_render_ms": 24.900000005960464,
+          "connect_reported_ms": 309.5,
+          "ws_underrun_ms": null,
+          "rtc_concealed_end": 13659,
+          "rtc_concealed_delta": null,
+          "rtc": {
+            "start_present": false,
+            "end": {
+              "concealedSamples": 13659,
+              "packetsReceived": 792,
+              "packetsLost": 0,
+              "jitterBufferDelay": 155404.8,
+              "jitterBufferEmittedCount": 751680
+            },
+            "delta": {
+              "concealedSamples": null,
+              "packetsReceived": null,
+              "packetsLost": null,
+              "jitterBufferDelay": null,
+              "jitterBufferEmittedCount": null
+            }
+          },
+          "rtc_bit_exact_source_ack": null,
+          "server_source": {
+            "path": "results/exp15/media-server-formal/server-formal-23-1792665210663.json"
+          }
+        }
+      ]
+    },
+    "drain": {
+      "n": 1,
+      "source": {
+        "path": "results/exp15/sessions/browser-playback/record.json"
+      },
+      "source_samples": 149760,
+      "received_samples": 149760,
+      "rendered_samples": 149760,
+      "latest_report_consumed_samples": 114304,
+      "latest_report_unrendered_samples": 35456,
+      "instantaneous_queue_exact": false,
+      "initial_buffer_ms": 600,
+      "ack_source": "audio_worklet_consumed",
+      "worker_status": "drained",
+      "acoustic_first_sound_ms": null,
+      "producer_done_to_finished_ms": {
+        "n": 1,
+        "eligible": 1,
+        "measured": 1,
+        "unknown": 0,
+        "p50": 654.7000000029802,
+        "p95": 654.7000000029802,
+        "clock": "browser_performance; session-client.js",
+        "definition": "worklet finished notification.performance_ms - producer_done_observed.performance_ms; n=1 actual AudioWorklet consumption, includes message dispatch; not acoustic tail.",
+        "unit": "ms",
+        "source_paths": [
+          "results/exp15/sessions/browser-playback/record.json"
+        ],
+        "failures": 0
+      }
+    },
+    "control": {
+      "n_forced": 1,
+      "forced": [
+        {
+          "source": {
+            "path": "results/exp15/sessions/http-ws-final/server-events.jsonl",
+            "line": 707
+          },
+          "status": "forced",
+          "reason": "drain_deadline_expired",
+          "source_samples": 149760,
+          "sent_samples": 149760,
+          "synthetic_ack_samples": 24000,
+          "unacknowledged_samples": 125760,
+          "audio_loss_samples": null,
+          "included_in_browser_drain": false
+        }
+      ],
+      "worker_terminal_states": [
+        {
+          "source": {
+            "path": "results/exp15/sessions/http-ws-final/server-events.jsonl",
+            "line": 536
+          },
+          "owner": "a",
+          "status": "drained",
+          "drained": true
+        },
+        {
+          "source": {
+            "path": "results/exp15/sessions/http-ws-final/server-events.jsonl",
+            "line": 706
+          },
+          "owner": "b",
+          "status": "forced",
+          "drained": false
+        }
+      ],
+      "clock": "server_monotonic; session_http.py",
+      "definition": "Synthetic Python ACK control; forced is separate from normal drained. Unacknowledged samples are not measured acoustic loss.",
+      "failures": 0,
+      "unknown": 0,
+      "deadline_200ms": {
+        "n": 1,
+        "eligible": 1,
+        "measured": 1,
+        "unknown": 0,
+        "p50": 201.264667,
+        "p95": 201.264667,
+        "clock": "server_monotonic; session_http.py",
+        "definition": "deadline_fired.monotonic_ns - deadline_scheduled.monotonic_ns, same server process.",
+        "unit": "ms",
+        "source_paths": [
+          "results/exp15/sessions/http-ws-final/server-events.jsonl"
+        ],
+        "failures": 0
+      }
+    }
+  },
+  "sources": [
+    {
+      "path": "exp14/audio/manifest.json",
+      "sha256": "ca5bd184626dc5418311950e3b6995eed2c587271b9db0bc2fe15c3b29e042d8"
+    },
+    {
+      "path": "results/exp14/live-final-v1/records.jsonl",
+      "sha256": "744265c8306f27810d3da9d8f6496446f2b97a340a4f561e4ccce2a7ffb8e27e"
+    },
+    {
+      "path": "results/exp14/server-eof-fixed/browser-browser-1539c33e-2593-4d03-bff8-c43df57f56f5.json",
+      "sha256": "3ae4ba96f3fd75cdb7ddaeeaa8f536f70a1d9a16866640b61a65ae8913d0e88b"
+    },
+    {
+      "path": "results/exp14/server-eof-fixed/browser-browser-2b6e8f3c-99ef-4dc7-b9d9-d9f7f9346a8a.json",
+      "sha256": "3cb641bdf7c2b9d6ed4d8df2402994e6fec1666bd943fb3fa4aee5ec9315c6a6"
+    },
+    {
+      "path": "results/exp14/server-eof-fixed/browser-browser-83ca3e2b-817b-4943-b06f-8cfa9cb07784.json",
+      "sha256": "a688f40ae81d2807433dc0129afaa957fe3da403a86b60e5d6bc5945b660d76e"
+    },
+    {
+      "path": "results/exp15/browser-formal-v2/records.json",
+      "sha256": "e652bde04cfe96c9ab24e03cae8f2cc97b202004225f8124f706426b49ece71c"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-0-1792664987590.json",
+      "sha256": "674a5c22bd02495117455e16bb4d7ee5730cbd49817362691a2600c90f83942f"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-1-1792664991604.json",
+      "sha256": "6c31cdb66c859835310296bc0b5fb869bd608c1f67bfefd7288eca232fffe23b"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-2-1792664995421.json",
+      "sha256": "d4eaedad61908a6b0a56cea10a13a677cf5ad30ce072edc6e7e4a8a68204c2fc"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-3-1792665011420.json",
+      "sha256": "c275972fce077f6367ee60401657c653d0e071206171bb3715f9fcde6e2007ad"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-4-1792665027606.json",
+      "sha256": "d0ef2e793b97911535a22a7bf3442ba692188a488313db5aa23506e955535451"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-5-1792665031242.json",
+      "sha256": "1c546594eb8767a7d0969d3ce9633a78db1f5ab4dce2a5cdcd53d7752c2c2188"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-6-1792665034658.json",
+      "sha256": "9cf44945044ea75bc5a426be2b2dc0651ec01a774e09629e77345bb58c014b5f"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-7-1792665051100.json",
+      "sha256": "58d7940a2576d4ef2db51737e6242e64a61cb92521373fe1f820d8a2b540e3d5"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-8-1792665067296.json",
+      "sha256": "1366f1456da717ee2e6c1b4d275cab835c36368757a8b28664fde122cf742216"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-9-1792665070716.json",
+      "sha256": "71996149b39bd2ec63d0291680d745859e41f075d8b73f61ad9197e50d2c5174"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-10-1792665074357.json",
+      "sha256": "373432ee1ca29bf10192ef0e3c0dce3d508d160b6a545bb007e1fe2b286f196b"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-11-1792665090346.json",
+      "sha256": "130161120a352393b644ed33f26164c50819b5943fa7326cb60ab1290f650631"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-12-1792665106513.json",
+      "sha256": "d109d64e63909a0f7c9d50080a12e314cb101bd8f4704effacd4d500b0b65634"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-13-1792665110149.json",
+      "sha256": "99e67dfc17d1f9eea44a5550b514089a359b24a3ff83a8a093fb6926cfb0007a"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-14-1792665113908.json",
+      "sha256": "357968ff17fcb1d0fbfa5f769f43a32b07f842f83073a434220b8d2749e5b37e"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-15-1792665130139.json",
+      "sha256": "e736e01acd3353b04dd25c40ed9a9f37c9a155f79fd69c4cbdd6e622aed05d2c"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-16-1792665146604.json",
+      "sha256": "c9efbf1755839a85b5bc0fd329cb3dd00d769e613e5e4586801357c485b2d231"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-17-1792665150505.json",
+      "sha256": "7d032325bd25418009412d816b9b1a7c562e19abc65578c62b2b5978cca59a2a"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-18-1792665154095.json",
+      "sha256": "1704a54d6c5884e3f74355cdc2c2aaf53ba193b93d6343b3b75bba46286c168d"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-19-1792665170552.json",
+      "sha256": "54b925c564f1dce686c093715d9e7c5dfd8c4e63292f3dccc9e20460e594c5e1"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-20-1792665186964.json",
+      "sha256": "4a4bbe34d6865e2b692a299ebaee9014cf008fdbeff8a5978864f6c3ca642594"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-21-1792665190547.json",
+      "sha256": "6d6ab4801bdc15ec2b4d82150adceb9c881b034bde089a3cccf126c16e09a1b0"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-22-1792665194384.json",
+      "sha256": "1e5e7d864f112aa358f464ed0a981db5ed8c2dd40754eccb8f6c75350b927452"
+    },
+    {
+      "path": "results/exp15/media-server-formal/server-formal-23-1792665210663.json",
+      "sha256": "334ab1f18a82a872040f30e13ae872f01f779765293f226f32552073993cd05d"
+    },
+    {
+      "path": "results/exp15/sessions/browser-playback/record.json",
+      "sha256": "1e5a45d3e06bbd1cee807fc82958bb3d9d862e8bdac3288074920455532888de"
+    },
+    {
+      "path": "results/exp15/sessions/http-ws-final/server-events.jsonl",
+      "sha256": "ec2a7ae700f5687998645e337f906172599ee565efc2b7361537842312a82734"
+    },
+    {
+      "path": "exp14/run.py",
+      "sha256": "6a8011aaa408b4ddadf9bea7581cafd51ab853260c5c9046195fd541192f1ed1",
+      "role": "field/clock definition"
+    },
+    {
+      "path": "exp14/playback.js",
+      "sha256": "e91c6fbf548ccfdf4f70f6808499591118f19ddba6e340d5d78eb9c10b718503",
+      "role": "field/clock definition"
+    },
+    {
+      "path": "exp14/prepare_audio.py",
+      "sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+      "role": "field/clock definition"
+    },
+    {
+      "path": "exp14/analyze.py",
+      "sha256": "71d56d0fb900e024070bdbe264cd65ebc22c212c598269e542cd8e34ac3348f0",
+      "role": "field/clock definition"
+    },
+    {
+      "path": "exp15/client.js",
+      "sha256": "b0d0e316247b43b7f0099b4537a44c835a1a8374d27d067a5a541816dce573cb",
+      "role": "field/clock definition"
+    },
+    {
+      "path": "exp15/session-client.js",
+      "sha256": "20c3dbcdde7453b442dc381b3478a62c1ea01bd05f8cff578d9a781afb1a1771",
+      "role": "field/clock definition"
+    },
+    {
+      "path": "exp15/session_http.py",
+      "sha256": "bf1ea42c72676ea8fb3a4aff045e83951a4b0c6b65efdfd4dc814dcd03fd910c",
+      "role": "field/clock definition"
+    },
+    {
+      "path": "exp15/analyze.py",
+      "sha256": "52e202eeebacfe77427197aa5b15a4d44bfe6bbf1e8c7e007ad382819ddbf26d",
+      "role": "field/clock definition"
+    }
+  ],
+  "limitations": [
+    "800ms is exploratory only; production compliance is unknown.",
+    "No acoustic loopback or perceptual quality measurement.",
+    "exp14 capture and browser, exp15 media and control/drain are separate cohorts.",
+    "RTC absent initial inbound-rtp cannot support interval concealment/loss/jitter metrics.",
+    "Only named final directories; pilots, earlier versions and old summaries are excluded."
+  ]
+}

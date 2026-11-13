@@ -1,0 +1,30 @@
+{
+  "review": "independent-review.json",
+  "rereview_performed": false,
+  "fix_passes": 1,
+  "unresolved_important": 0,
+  "tests_passed": 22,
+  "resolutions": [
+    {
+      "id": "EXP27-IR-001",
+      "status": "fixed",
+      "tdd": "delete aggregated usage while raw chunks retain it; invalid chunk base64; RED to GREEN",
+      "change": "strict per-attempt/http_id chunk reconstruction for input and before_send output, byte reconciliation with aggregates, preserve raw chunk usage in diagnostic ledger and reject success on disagreement"
+    },
+    {
+      "id": "EXP27-IR-002",
+      "status": "fixed",
+      "tdd": "swap PID/1ns resource tables, absent backend startup, inconsistent start interval RED to GREEN",
+      "change": "bind resource+cleanup PID to gateway startup and backend startup/native hook PID; backend supervisor clock/start time, model/port/middleware args and frozen sources validated"
+    },
+    {
+      "id": "EXP27-IR-003",
+      "status": "fixed",
+      "tdd": "Linux PATH nvidia-smi CPU probe RED to GREEN",
+      "change": "EXP27_NVIDIA_SMI override, PATH lookup then WSL fallback; missing query yields null instead of blocking cleanup report"
+    }
+  ],
+  "final_metrics_unchanged": true,
+  "final_analysis": "formal-v2/analysis-revision1/summary.json",
+  "new_gpu_calls_after_review": 0
+}

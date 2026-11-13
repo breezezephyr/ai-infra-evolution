@@ -1,0 +1,133 @@
+# Phase5：读通推理栈，做成一个模型网关
+
+更新：2026-10-26。源码阅读与网关实战两条线并重，九篇本地稿与exp19～27全部完成；exp27最终formal-v2已真实GPU执行，accepted=true。P5·1～9已于2026-10-26通过API上传公众号草稿箱并回读核验，九篇草稿齐，未群发。正文、一次最终独立审校与一轮离线修复已完成。贡献候选仍未提交上游；后续由用户选择迁移或贡献。
+
+| 进度 | 入口 |
+|---|---|
+| P5·1已于2026-10-26 API上传草稿箱并回读核验，未群发 | [先验车票：请求怎样变成模型输入](../20-Phase5·1-先验车票/正文.md) |
+| exp19真实recipe CPU实验完成 | [结论](results/exp19-结论.md)、[复现命令](exp19/README.md)、[正式摘要](results/exp19/formal-v2/summary.json) |
+| P5·2已于2026-10-26 API上传草稿箱并回读核验，未群发 | [广播分几段：流式输出与工具调用](../21-Phase5·2-广播分几段/正文.md) |
+| exp20正式formal-v1完成 | [结论](results/exp20-结论.md)、[复现命令](exp20/README.md)、[正式摘要](results/exp20/formal-v1/summary.json) |
+| P5·3已于2026-10-26 API上传草稿箱并回读核验，未群发 | [按格式报站：结构化输出谁来保证](../22-Phase5·3-按格式报站/正文.md) |
+| exp21 CPU/GPU独立对照完成 | [结论](results/exp21-结论.md)、[复现命令](exp21/README.md)、[源码笔记](exp21/源码笔记.md)、[GPU摘要](results/exp21/gpu-summary.json) |
+| P5·4已于2026-10-26 API上传公众号草稿箱并回读核验，未群发 | [班次表藏在哪里：调度循环与确定性](../23-Phase5·4-班次表藏在哪里/正文.md)、[上传记录（未收录：发布或账号材料）](../docs/PRIVACY.md) |
+| exp22真实HTTP/GPU对照完成 | [结论](results/exp22-结论.md)、[复现命令](exp22/README.md)、[正式摘要](results/exp22/formal-v1/summary.json) |
+| P5·5已于2026-10-26 API上传公众号草稿箱并回读核验，未群发 | [少跑几圈：草稿、验收与有界回放](../24-Phase5·5-少跑几圈/正文.md)、[上传记录（未收录：发布或账号材料）](../docs/PRIVACY.md) |
+| exp23 CPU教学重放与源码探针完成 | [结论](results/exp23-结论.md)、[复现](exp23/README.md)、[正式摘要](results/exp23/formal-v2/summary.json)、[源码探针](results/exp23/source-probes-v1/summary.json) |
+| P5·6已于2026-10-26 API上传公众号草稿箱并回读核验，未群发 | [行李不跟车走：KV与分离式服务](../25-Phase5·6-行李不跟车走/正文.md)、[上传记录（未收录：发布或账号材料）](../docs/PRIVACY.md) |
+| exp24真实Mooncake Store API formal-v3完成 | [结论](results/exp24-结论.md)、[复现](exp24/README.md)、[最终摘要](results/exp24/formal-v3/summary.json) |
+| P5·7已于2026-10-26 API上传公众号草稿箱并回读核验，未群发 | [把站台接起来：一个能对账的网关](../26-Phase5·7-把站台接起来/正文.md)、[上传记录（未收录：发布或账号材料）](../docs/PRIVACY.md) |
+| exp25纵向网关formal-v1完成 | [结论](results/exp25-结论.md)、[复现](exp25/README.md)、[正式摘要](results/exp25/formal-v1/summary.json) |
+| P5·8已于2026-10-26 API上传公众号草稿箱并回读核验，未群发 | [半路抛锚：取消、排空与安全重试](../27-Phase5·8-半路抛锚/正文.md)、[上传记录（未收录：发布或账号材料）](../docs/PRIVACY.md) |
+| exp26故障矩阵formal-v1完成 | [结论](results/exp26-结论.md)、[复现](exp26/README.md)、[正式摘要](results/exp26/formal-v1/summary.json)、[原生收尾分析修订](results/exp26/formal-v1/analysis-revision2/summary.json) |
+| P5·9已于2026-10-26 API上传公众号草稿箱并回读核验，未群发；一次最终独立审校完成，2项重要和1项轻微问题均经离线回归修复，22项主/审计器/环境检查通过 | [交班时拿什么说话：体验、资源与贡献](../28-Phase5·9-交班时拿什么说话/正文.md)、[上传记录（未收录：发布或账号材料）](../docs/PRIVACY.md) |
+| exp27真实GPU联合验收formal-v2完成，accepted=true | [结论](results/exp27-结论.md)、[复现与交班](exp27/README.md)、[正式摘要](results/exp27/formal-v2/summary.json)、[本地贡献候选](exp27/contribution/候选说明.md) |
+| 固定输入资料 | [资料地图](资料地图.md)、[版本与执行状态](资料输入.json) |
+
+P5·1～3逐篇通过draft/get回读、完整正文文字相等检查，每篇两张正文CDN图HEAD均为200；证据见[批量回读（未收录：发布或账号材料）](../docs/PRIVACY.md)及[P5·1上传记录（未收录：发布或账号材料）](../docs/PRIVACY.md)、[P5·2上传记录（未收录：发布或账号材料）](../docs/PRIVACY.md)、[P5·3上传记录（未收录：发布或账号材料）](../docs/PRIVACY.md)。
+
+P5·4～9本批[回读（未收录：发布或账号材料）](../docs/PRIVACY.md)6/6通过，[全文与图片核验（未收录：发布或账号材料）](../docs/PRIVACY.md)确认六篇全文一致、12张正文图HEAD 200；[上传后清单（未收录：发布或账号材料）](../docs/PRIVACY.md)共14稿，其中P5·1～9各一份，ID与前三篇旧记录及本批六份收据匹配。九篇均为公众号草稿，未群发；贡献候选仍未提交上游。
+
+本批各章证据保存于各章的 `publish/2026-10-26/`：上传输入为 `upload.md`，由发布脚本内部渲染，上传前快照为 `rendered-before-upload.html`。安装skill未改，本批本地adapter保留P5黄色底与深色字，并使用已有Bun避免npx缓存冲突。P5·4～6的外链已转为文末脚注；P5·7～9原无外链，无引用列表；本地链接转为文字。
+
+exp19共36条输入、211项声明检查通过，9条转换按预期拒绝；另有16项记录器回归检查和固定源码单文件48项上游测试通过。exp19未执行DeepInfer或模型推理；未将CPU协议检查写成GPU性能、外部API兼容或回答质量结论。
+
+exp20正式formal-v1由19个输入定义展开222条配置流，222通过、失败0、未知0；2004项重复声明检查通过，666次本地SSE字节重放一致。另有48项本地回归（25项记录器＋23项字节层）和上游bindings单文件48项测试通过。范围为CPU真实recipe 0.2.0原生库＋合成后端输出，没有模型推理、真实HTTP网络或工具执行结论。
+
+exp21于2026-10-26完成：CPU真实recipe 0.2.0的126条配置中90接受、36预期拒绝，另有18条真实parser探针（合成后端文本）。GPU为DARYU RTX4060 Laptop、Qwen3-0.6B原生模板、vLLM 0.8.5/xgrammar 0.1.18；20任务×2seed×3组共120条正式请求，110接受、10条因数组长度关键字minItems/maxItems不支持而400拒绝，运输错误0；120/120入口body SHA256与HTTP状态匹配。
+
+每组计划40条，按“接收／JSON合法／schema合格／可交付”计数：
+
+| 组别 | 接收 | JSON合法 | schema合格 | 可交付 |
+|---|---:|---:|---:|---:|
+| 仅提示词 | 40 | 7 | 7 | 7 |
+| JSON约束 | 40 | 40 | 30 | 17 |
+| schema约束 | 30 | 30 | 30 | 17 |
+
+可交付要求完整结束、结构合格且业务答案正确；10条400保留在计划分母中。CPU与GPU是独立实验，没有recipe→Qwen端到端集成；DeepInfer仅源码阅读、未执行，无工具执行或生产容量结论。清理记录确认本实验PID、8021端口和隧道已收拢，GPU占用恢复667MiB；本轮仅引用本地证据，未重新连接远端。
+
+exp22于2026-10-26完成144条正式真实HTTP/GPU请求，全部200；4条预检分开。8个单独基线之后136次实际token序列比较88同48异；85条混批观察37同48异，59条单批观察含8基线和51个相同比较。输入ID按任务稳定，入口body/status逐条核对。贪心自由生成，无teacher forcing；stop90/length54，不验收答案质量。DeepInfer仅源码阅读；客户端/网关/后端计时分别留证，非CUDA kernel时间线或生产容量。实验服务与隧道已回收，GPU恢复667MiB；P5·4已于2026-10-26 API上传公众号草稿箱并回读核验，未群发。
+
+exp23于2026-10-26完成：240条CPU草稿教学重放、99个窗口求和教学案例，隔离官方配置/局部断言16组（7通过/5断言拒绝/4解析拒绝），10形状5216参考可见域行、3pivot及1缓存控制。最终formal-v2读回计划并执行快照，逐轮独立审计，240输出/轮次/成本与v1一致，不新增独立样本；62项本地检查通过。不是DSpark调度实现、真实C++metadata或模型运行，无速度/质量结论。本轮无远端资源启动；P5·4～5已上传公众号草稿箱并回读核验，未群发。
+
+exp24于2026-10-26完成，最终引用[formal-v3](results/exp24/formal-v3/summary.json)：DARYU Linux上的Mooncake non-CUDA 0.3.13.post1，配置TCP、单机跨进程Store API；238次操作含228项声明检查通过及10项探索观察，失败/缺失/超时0。40个已知对象按1B/4KiB/64KiB/1MiB各10个，长度/hash全部匹配；197项本地测试通过。独立调用方身份合约12例：1例不变可通过、11例单字段变化均不匹配；不是Store认证或真实KV导入器。formal-v1/v2保留，不与v3合并对象数或时延。未逐次追踪载荷分支/socket字节，不报告纯TCP网络性能；无GPU、模型、RDMA或真实P/D执行。最终[清理回读](results/exp24/formal-v3/cleanup-live.json)确认5个owned PID及11个静态/日志实际端口全部收拢，命名键经Store API读回不存在，不代表物理内存擦除。见[结论](results/exp24-结论.md)、[复现](exp24/README.md)；[P5·6正文](../25-Phase5·6-行李不跟车走/正文.md)已完成，P5·1～9均已上传公众号草稿箱并回读核验，未群发。
+
+2026-10-26新增：[结论](results/exp25-结论.md)、[复现](exp25/README.md)、[正式摘要](results/exp25/formal-v1/summary.json)。exp25正式formal-v1完成42条请求，全部关联且符合预期终态：delivered 17（含6条length截断）、认证拒绝1、能力拒绝9、预算拒绝1、准入拒绝12、实验审核拒绝2；delivered不等于完整自然结束或业务质量合格。缓存hit 7、miss 24、not_checked 11。12次真实GPU attempt的原生usage共642 token（租户A 407、B 235）；审核拒绝仍消耗54 token，下游模型正文交付为0，该消耗已保留在总账。
+
+后端为DARYU Qwen3-0.6B / vLLM 0.8.5，1张GPU、2个合成租户、两个逻辑路由共用同一GPU。原生文件hash已核验，revision=null；使用完整响应缓冲后的LAB_BLOCK实验门控，审核后才向下游发送SSE；缓存为精确响应缓存，不是KV缓存。未执行recipe/DeepInfer，不据此声称HA、取消传播、安全重试或生产容量。模型/模板/策略变化仅由CPU测试覆盖；legacy的3组分数引用与3条标记探针为独立CPU旧资料诊断，不并入42条请求或12次GPU attempt。exp25最终31项CPU测试通过，见[测试记录](results/exp25/tests.txt)。清理回读为后端PID不存在、8025/8125均关闭、GPU 664MiB/利用率0%。[P5·7正文](../26-Phase5·7-把站台接起来/正文.md)已完成；P5·1～9均已上传公众号草稿箱并回读核验，未群发。
+
+2026-10-26新增：[结论](results/exp26-结论.md)、[复现](exp26/README.md)、[P5·8正文](../27-Phase5·8-半路抛锚/正文.md)、[正式formal-v1摘要](results/exp26/formal-v1/summary.json)、[原生收尾分析修订](results/exp26/formal-v1/analysis-revision2/summary.json)。exp26正式结果位于`results/exp26/formal-v1`。17条请求、19次attempt：12条受控请求/13次attempt，5条真实GPU请求/6次attempt；全部故障为实验安排，不是自然故障率或HA测试。
+
+请求终态直接从[gateway.jsonl](results/exp26/formal-v1/gateway.jsonl)读取：
+
+| 终态 | 请求数 |
+|---|---:|
+| completed | 6 |
+| backend_error | 3 |
+| review_rejected | 1 |
+| review_unavailable | 1 |
+| cancelled | 1 |
+| superseded | 1 |
+| drain_timeout | 2 |
+| draining | 1 |
+| client_disconnected | 1 |
+
+completed仅为协议收尾；GPU重试后的回答以length结束（192输出token），不代表完整回答或质量合格。客户端断开项没有终态帧，网关/后端终态仍有记录。首个内容ASGI send成功返回才算提交；首段后断流不拼接另一回答，取消后迟到片段与旧generation不再交付。结算按attempt唯一键在本进程内存中去重，没有跨进程重启事务保证。
+
+GPU的6次attempt中2条known原生usage共248 token（输入54、输出194），其余4条unknown保留null；受控13次attempt中4条known synthetic计数共28，其余9条unknown。两类计量分列、不相加，248只是原生已知小计，不代表全部消耗或货币账单。
+
+6次GPU attempt全部映射到实际engine request；2条正常结束，4条取消路径均有原生abort_done及后续tracker/队列清空快照，6次attempt最终均无pending/unfinished、无observation_error。真实重试的下一原生请求晚于前次清空快照；证据为CPU侧原生钩子与调度状态，不是CUDA kernel停止证明，也不支持HA结论。原执行摘要与分析修订分别保留，修订未新增GPU样本。
+
+[cleanup.json](results/exp26/cleanup.json)回读确认owned后端PID125928已退出、8026/8126关闭、GPU663MiB/0%，4个模型文件hash未变。本地CPU检查最终53项通过，以[tests.txt](results/exp26/tests.txt)为准。P5·1～9均已上传公众号草稿箱并回读核验，未群发。
+
+
+## exp27实际执行与P5本地收官（2026-10-26）
+
+最终正式记录为[formal-v2](results/exp27/formal-v2/summary.json)，真实GPU执行且 `accepted=true`，表示证据验收通过，不表示所有回答质量合格。[formal-v1](results/exp27/formal-v1/summary.json)失败记录保留，不并入最终样本；旧编号观测header、末事件计时和缓存绕过故障的前置条件已修正，v2独立重跑。质量标准、SLO和负载数未因结果调整。
+
+单DARYU RTX4060 Laptop、Qwen3-0.6B原生模板、vLLM 0.8.5 V0/BF16/eager、loopback HTTP，两个合成租户；缓存为应用精确响应缓存，冷暖不代表GPU冷启动。42条请求中37条为回答目标（eligible），29次真实GPU attempt；42条均保留，入口拒绝与故障不伪装成回答成功。
+
+| 判定（回答目标37条） | 通过 | 不通过 | 未知 |
+|---|---:|---:|---:|
+| 协议收尾有效（含明确错误终态） | 32 | 5 | 0 |
+| 预定质量标准 | 21 | 10 | 6 |
+| SLO：首内容≤1000ms、收尾≤3000ms | 30 | 1 | 6 |
+
+同request的协议、质量、SLO及来源／对账交集为**21/37**；全部42条作分母则为**21/42**。completed为30条、协议有效收尾为33条，都不能作为质量成功数；HTTP 200也不等于交付成功。
+
+| 场景 | 实际执行 |
+|---|---|
+| 两租户×3轮×直通／集成缓存冷／缓存暖 | 18条，三组各6条全部quality＋SLO及联合验收合格 |
+| 算术直通／集成 | 6条正常返回、SLO合格，但去空白精确整数＋finish=stop质量标准全部失败 |
+| 突发6条 | 2条completed但质量失败、4条准入拒绝；其中1条首内容超SLO |
+| 截断／已提交后交付中断 | 各1条质量失败；明确错误终态不变成质量成功，不拼接另一回答 |
+| 首段前重试／策略与租户隔离 | 重试1条、隔离2条联合合格；重试前一次原生CPU tracker／调度状态已清空 |
+| 客户端取消／排空中请求 | 各1条质量与SLO未知，保留在eligible分母；排空新入口另有1条预期拒绝 |
+| 身份／能力／预算入口拒绝与实验审核拒绝 | 3条入口拒绝＋1条审核拒绝均保留；质量和SLO未知，不当作回答成功 |
+
+逐条及分层细表以[summary](results/exp27/formal-v2/summary.json)为准。6条暖缓存命中当前无生成，origin usage单列，不重复计入新生成。29次GPU attempt中26条known原生usage合计**770 token（624输入／146输出）**，3条unknown保留未知；5个failed attempt内2条known共76 token、3条unknown；重试后继1条known为50 token。76和50都是770内部切片，不另加；770是已知小计，不是全部消耗或货币账。
+
+[资源原始记录](results/exp27/formal-v2/resources.json)中模型服务＋网关进程区间合并union为**19.423秒**，ready区间union为**8.036秒**；CPU wait4回收为**32.227秒**（被回收进程／后代的CPU累计，含启动或空闲工作，可并行）。backend-only原始interval按backend组件单列，不能把合并union写成模型独占时间。这些不是GPU kernel秒、精确权重常驻、租户GPU分摊或实付账，未测字段保持null。原生abort_done及后续tracker／调度清空仅属CPU侧证据，不证明CUDA停止或独立故障域HA。
+
+[cleanup](results/exp27/formal-v2/cleanup.json)确认owned PID127352、127245已回收，8027／8127关闭，GPU630MiB／0%，4个模型文件hash未变。本次更新引用留存原始证据，没有再次启动GPU。本地网关main＋audit检查的最终条数以 `results/exp27/tests.txt` 为准，进度页不固化临时测试数；最终独立审校结论由主流程落盘。
+
+[贡献候选](exp27/contribution/候选说明.md)为recipe满上下文预算的中英文指南澄清＋6个绑定测试，已有上游#42／#44讨论，属于已知边界的文档／测试候选，不是新bug或性能修复。真实recipe 0.2.0 native编码得到41 token，再以人为上下文参数做6次helper调用；相关选定上游测试补丁后7 passed，未运行完整上游套件。helper调用不是模型调用，不与29次GPU attempt相加；wheel构建commit未知，不把发行包等同固定源码构建。候选仅本地留存，未提交／推送／创建PR／联系上游。
+
+证据类别分别为固定源码阅读、真实recipe native CPU库调用、真实小模型GPU请求，以及合成租户／受控故障；不把受控场景、CPU钩子或缓存命中写成新增模型推理。DeepInfer仍未执行，没有recipe→DeepInfer端到端、生产容量、货币账或真实语音分钟结论。
+
+九篇本地稿与exp19～27全部完成；[P5·9正文／图文](../28-Phase5·9-交班时拿什么说话/正文.md)位于 `28-Phase5·9-交班时拿什么说话/`，正文／一次最终独立审校完成，2项重要和1项轻微问题均经离线回归修复，22项主/审计器/环境检查通过。P5·1～9均已上传公众号草稿箱并回读核验，未群发，九篇草稿齐。贡献候选仍未提交上游；后续由用户选择迁移或贡献。迁移范围见[能力与迁移清单](exp27/能力与迁移清单.md)，上游是否接受贡献与本地课程完成分别记录。
+
+
+## Kaggle新增验证（2026-11-09）
+
+新增[exp28入口](exp28/README.md)与[结论对应表/写作建议](exp28/结论映射与写作建议.md)，独立于exp19～27。首轮计划最多一张512×512、8步图片；实际公网health返回404，已停止，新增GPU样本0。Notebook本地诊断尚未获得执行证据，不能据UI模型驻留宣称接口正常。[本轮补充结论](results/exp28-补充结论.md)保留原始失败响应、恢复入口与限制。
+
+本轮只新增实验与写作材料，没有重启现有会话、卸载模型、重新上传或群发文章。原九篇文章、完成校验、发布记录和实验复现包保留；恢复分享地址后再继续这次受控验证。
+
+## 独立 Kaggle 文本验证（2026-11-10）
+
+[exp29](exp29/README.md) 已在[新 Notebook](https://www.kaggle.com/code/example/experiment-notebook) 完成，使用 Qwen3-4B FP16 / Transformers 4.51.3 / 单 GPU0；平台分配 T4 x2，模型没有跨卡。5 条串行 HTTP 用例全部对账通过：404 模型拒绝、422 参数拒绝、普通生成、流式生成、1-token 上限。实际 3 次生成，共 41 个原生输出 token；两条拒绝请求没有调用生成。模型加载后 allocated 7.545 GiB，进程观测峰值 7.561 GiB。
+
+见[补充结论与写作边界](results/exp29-补充结论.md)、[正式摘要](results/exp29/exp29-kaggle-20261110-a74160a0/summary.json)、[本地回读](results/exp29/local-readback.json)。原始归档 44 个文件 hash 校验通过，下载的已执行 Notebook 源码及输出与归档一致。Kaggle Quick Save Version #1 保存成功；资源最终状态见 [运行记录](exp29/active-run.json)。这轮是环回接口合约验证，没有执行 DeepInfer/recipe、生产并发或质量评测，不与 exp19～28 合并样本。
+
+随后按用户要求，P5·7～P5·9各增加一段独立补验，并于2026-11-10通过 `draft/update` 原位写回公众号草稿箱；三篇原media_id、封面、两张正文图、摘要和评论设置均保留，未群发。旧正文完整保留，新增段落、图片与样式已回读核对，三篇各一份无重复。见[更新批次（未收录：发布或账号材料）](../docs/PRIVACY.md)及[全文核验（未收录：发布或账号材料）](../docs/PRIVACY.md)。

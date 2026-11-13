@@ -1,0 +1,456 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF                                         [100%]
+=================================== FAILURES ===================================
+___ test_equal_clipped_representations_do_not_prove_full_history_equivalence ___
+
+    def test_equal_clipped_representations_do_not_prove_full_history_equivalence():
+>       row=window_toy.compare(list(range(1,17)),window=4,backtrack=2,layers=2,keep=6)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:6: AttributeError
+_____________ test_same_suffix_is_sufficient_for_the_one_layer_toy _____________
+
+    def test_same_suffix_is_sufficient_for_the_one_layer_toy():
+>       row=window_toy.compare(list(range(1,17)),4,2,1,6)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:13: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[0-1-2] ______
+
+window = 2, layers = 1, backtrack = 0
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[0-1-4] ______
+
+window = 4, layers = 1, backtrack = 0
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[0-1-8] ______
+
+window = 8, layers = 1, backtrack = 0
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[0-2-2] ______
+
+window = 2, layers = 2, backtrack = 0
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[0-2-4] ______
+
+window = 4, layers = 2, backtrack = 0
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[0-2-8] ______
+
+window = 8, layers = 2, backtrack = 0
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[0-3-2] ______
+
+window = 2, layers = 3, backtrack = 0
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[0-3-4] ______
+
+window = 4, layers = 3, backtrack = 0
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[0-3-8] ______
+
+window = 8, layers = 3, backtrack = 0
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[1-1-2] ______
+
+window = 2, layers = 1, backtrack = 1
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[1-1-4] ______
+
+window = 4, layers = 1, backtrack = 1
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[1-1-8] ______
+
+window = 8, layers = 1, backtrack = 1
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[1-2-2] ______
+
+window = 2, layers = 2, backtrack = 1
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[1-2-4] ______
+
+window = 4, layers = 2, backtrack = 1
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[1-2-8] ______
+
+window = 8, layers = 2, backtrack = 1
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[1-3-2] ______
+
+window = 2, layers = 3, backtrack = 1
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[1-3-4] ______
+
+window = 4, layers = 3, backtrack = 1
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[1-3-8] ______
+
+window = 8, layers = 3, backtrack = 1
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[3-1-2] ______
+
+window = 2, layers = 1, backtrack = 3
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[3-1-4] ______
+
+window = 4, layers = 1, backtrack = 3
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[3-1-8] ______
+
+window = 8, layers = 1, backtrack = 3
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[3-2-2] ______
+
+window = 2, layers = 2, backtrack = 3
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[3-2-4] ______
+
+window = 4, layers = 2, backtrack = 3
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[3-2-8] ______
+
+window = 8, layers = 2, backtrack = 3
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[3-3-2] ______
+
+window = 2, layers = 3, backtrack = 3
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[3-3-4] ______
+
+window = 4, layers = 3, backtrack = 3
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+______ test_dependency_coverage_is_sufficient_in_this_declared_toy[3-3-8] ______
+
+window = 8, layers = 3, backtrack = 3
+
+    @pytest.mark.parametrize('window',[2,4,8])
+    @pytest.mark.parametrize('layers',[1,2,3])
+    @pytest.mark.parametrize('backtrack',[0,1,3])
+    def test_dependency_coverage_is_sufficient_in_this_declared_toy(window,layers,backtrack):
+        keep=layers*(window-1)+1+backtrack
+>       row=window_toy.compare(list(range(1,65)),window,backtrack,layers,keep)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:22: AttributeError
+_____________ test_backtracked_query_cannot_read_evicted_positions _____________
+
+    def test_backtracked_query_cannot_read_evicted_positions():
+>       row=window_toy.compare(list(range(1,17)),window=4,backtrack=6,layers=2,keep=3)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:30: AttributeError
+__________ test_full_history_is_never_labelled_approximate_in_the_toy __________
+
+    def test_full_history_is_never_labelled_approximate_in_the_toy():
+>       row=window_toy.compare(list(range(1,17)),4,2,3,16)
+            ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:35: AttributeError
+______________________ test_invalid_geometry_is_explicit _______________________
+
+    def test_invalid_geometry_is_explicit():
+        for args in [([],4,0,2,6),([1,2],0,0,2,2),([1,2],2,0,0,2),([1,2],2,2,1,2),([1,2],2,0,1,0)]:
+>           with pytest.raises(ValueError):window_toy.compare(*args)
+                                           ^^^^^^^^^^^^^^^^^^
+E           AttributeError: module 'window_toy' has no attribute 'compare'
+
+phase5/exp23/test_window.py:41: AttributeError
+- generated xml file: phase5/results/exp23/tests-b-red.xml -
+=========================== short test summary info ============================
+FAILED phase5/exp23/test_window.py::test_equal_clipped_representations_do_not_prove_full_history_equivalence
+FAILED phase5/exp23/test_window.py::test_same_suffix_is_sufficient_for_the_one_layer_toy
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[0-1-2]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[0-1-4]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[0-1-8]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[0-2-2]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[0-2-4]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[0-2-8]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[0-3-2]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[0-3-4]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[0-3-8]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[1-1-2]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[1-1-4]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[1-1-8]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[1-2-2]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[1-2-4]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[1-2-8]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[1-3-2]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[1-3-4]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[1-3-8]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[3-1-2]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[3-1-4]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[3-1-8]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[3-2-2]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[3-2-4]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[3-2-8]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[3-3-2]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[3-3-4]
+FAILED phase5/exp23/test_window.py::test_dependency_coverage_is_sufficient_in_this_declared_toy[3-3-8]
+FAILED phase5/exp23/test_window.py::test_backtracked_query_cannot_read_evicted_positions
+FAILED phase5/exp23/test_window.py::test_full_history_is_never_labelled_approximate_in_the_toy
+FAILED phase5/exp23/test_window.py::test_invalid_geometry_is_explicit - Attri...
+32 failed in 0.06s

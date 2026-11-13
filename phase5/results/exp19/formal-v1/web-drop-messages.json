@@ -1,0 +1,226 @@
+{
+  "id": "web-drop-messages",
+  "protocol": "messages",
+  "family": "web_search_override",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "messages": [
+      {
+        "role": "user",
+        "content": "搜索 WEB_SEARCH_19。"
+      }
+    ],
+    "tools": [
+      {
+        "type": "web_search_20250305",
+        "name": "web_search"
+      }
+    ]
+  },
+  "options": {
+    "web_search": "drop"
+  },
+  "input_sha256": "0b54bfc05c49b3a9c6688a74cd042f45183c7c71ab6f7a5fa2a739a8a3dd3979",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "pass",
+      "evidence": {
+        "prompt_tokens": 37
+      }
+    },
+    {
+      "name": "web_search_dropped",
+      "status": "pass",
+      "evidence": {
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "high",
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "搜索 WEB_SEARCH_19。"
+          ],
+          "assistant_reasoning_contents": [],
+          "tool_names": [],
+          "tool_parameter_schemas": [],
+          "tool_choice": "auto",
+          "max_tokens": null,
+          "temperature": 1.0,
+          "top_p": 1.0,
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "parse_tool_calls": false,
+          "starts_in_tool_calls": false
+        },
+        "differences": {}
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "搜索 WEB_SEARCH_19。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": true,
+      "reasoning_effort": "high",
+      "tools": [],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": null,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": null
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": false,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [],
+      "thinking_initial_stage": "ThinkingInitialStage.ReasoningStart"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": true,
+    "reasoning_effort": "high",
+    "roles": [
+      "user"
+    ],
+    "message_contents": [
+      "搜索 WEB_SEARCH_19。"
+    ],
+    "assistant_reasoning_contents": [],
+    "tool_names": [],
+    "tool_parameter_schemas": [],
+    "tool_choice": "auto",
+    "max_tokens": null,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "output_constraint_kind": null,
+    "stop_sequences": [],
+    "parse_tool_calls": false,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜System｜>Reasoning Effort: 75 (range 1-100, the higher the value, the more thorough the reasoning)\n\n<｜User｜>搜索 WEB_SEARCH_19。<｜Assistant｜><think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        31
+      ],
+      [
+        122,
+        130
+      ],
+      [
+        147,
+        160
+      ],
+      [
+        160,
+        167
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜System｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "<think>"
+    ]
+  },
+  "encoding": {
+    "status": "ok",
+    "token_ids": [
+      0,
+      128799,
+      77666,
+      288,
+      9504,
+      482,
+      28,
+      223,
+      2402,
+      343,
+      16801,
+      223,
+      19,
+      15,
+      1457,
+      14,
+      270,
+      4077,
+      270,
+      1990,
+      14,
+      270,
+      850,
+      15146,
+      270,
+      22805,
+      868,
+      128803,
+      17288,
+      95723,
+      97448,
+      24606,
+      65,
+      511,
+      320,
+      128804,
+      128821
+    ],
+    "prompt_tokens": 37,
+    "token_ids_sha256": "2a4944f1b0f10670e756c5c236d9b4ea88bfb94e770ccc1258277b19b2c4b433"
+  },
+  "context_probes": [],
+  "elapsed_ms": 8.94325
+}

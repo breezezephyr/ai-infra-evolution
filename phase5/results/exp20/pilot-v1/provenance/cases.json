@@ -1,0 +1,879 @@
+{
+  "schema": "exp20-fixtures-v1",
+  "date": "2026-10-23",
+  "source_commit": "935817c66f5d6e64838f419692545f06787e485f",
+  "scope": "synthetic backend output; real recipe native library; no inference/tool execution/network",
+  "base_semantic_fixture_count": 11,
+  "cases": [
+    {
+      "id": "plain_unicode",
+      "raw": "你好🦀，车到站。",
+      "thinking": false,
+      "action": "Stop",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "你好🦀，车到站。",
+          "reasoning": "",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "你好🦀，车到站。",
+          "reasoning": "",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "你好🦀，车到站。",
+          "reasoning": "",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true
+    },
+    {
+      "id": "thinking_answer",
+      "raw": "\n先想一下。</think>答案：42。",
+      "thinking": true,
+      "action": "Stop",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true
+    },
+    {
+      "id": "one_tool",
+      "raw": "<｜DSML｜tool_calls><｜DSML｜invoke name=\"weather\"><｜DSML｜parameter name=\"city\" string=\"true\">杭州</｜DSML｜parameter></｜DSML｜invoke></｜DSML｜tool_calls>",
+      "thinking": false,
+      "action": "Stop",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "",
+          "reasoning": "",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": {
+                "city": "杭州"
+              }
+            }
+          ],
+          "finish": "tool_calls",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "",
+          "reasoning": "",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": {
+                "city": "杭州"
+              }
+            }
+          ],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "",
+          "reasoning": "",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": {
+                "city": "杭州"
+              }
+            }
+          ],
+          "finish": "tool_use",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true,
+      "tools": [
+        "weather"
+      ]
+    },
+    {
+      "id": "two_tools",
+      "raw": "先查两站。</think><｜DSML｜tool_calls><｜DSML｜invoke name=\"weather\"><｜DSML｜parameter name=\"city\" string=\"true\">杭州</｜DSML｜parameter></｜DSML｜invoke><｜DSML｜invoke name=\"route\"><｜DSML｜parameter name=\"city\" string=\"true\">南京</｜DSML｜parameter></｜DSML｜invoke></｜DSML｜tool_calls>",
+      "thinking": true,
+      "action": "Stop",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "",
+          "reasoning": "先查两站。",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": {
+                "city": "杭州"
+              }
+            },
+            {
+              "name": "route",
+              "arguments": {
+                "city": "南京"
+              }
+            }
+          ],
+          "finish": "tool_calls",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "",
+          "reasoning": "先查两站。",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": {
+                "city": "杭州"
+              }
+            },
+            {
+              "name": "route",
+              "arguments": {
+                "city": "南京"
+              }
+            }
+          ],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "",
+          "reasoning": "先查两站。",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": {
+                "city": "杭州"
+              }
+            },
+            {
+              "name": "route",
+              "arguments": {
+                "city": "南京"
+              }
+            }
+          ],
+          "finish": "tool_use",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true,
+      "tools": [
+        "weather",
+        "route"
+      ]
+    },
+    {
+      "id": "stop_sequence",
+      "raw": "车已到站END20这段不显示",
+      "thinking": false,
+      "action": "Stop",
+      "stop": [
+        "END20"
+      ],
+      "expect": {
+        "chat": {
+          "text": "车已到站",
+          "reasoning": "",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "车已到站",
+          "reasoning": "",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "车已到站",
+          "reasoning": "",
+          "tools": [],
+          "finish": "stop_sequence",
+          "status": null,
+          "stop_sequence": "END20"
+        }
+      },
+      "expect_termination": "parser_stop",
+      "expect_native_finished": true
+    },
+    {
+      "id": "length",
+      "raw": "还没说完",
+      "thinking": false,
+      "action": "Length",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "还没说完",
+          "reasoning": "",
+          "tools": [],
+          "finish": "length",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "还没说完",
+          "reasoning": "",
+          "tools": [],
+          "finish": "max_output_tokens",
+          "status": "incomplete",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "还没说完",
+          "reasoning": "",
+          "tools": [],
+          "finish": "max_tokens",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true
+    },
+    {
+      "id": "content_filter",
+      "raw": "已有前缀",
+      "thinking": false,
+      "action": "ContentFilter",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "已有前缀",
+          "reasoning": "",
+          "tools": [],
+          "finish": "content_filter",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "已有前缀",
+          "reasoning": "",
+          "tools": [],
+          "finish": "content_filter",
+          "status": "incomplete",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "已有前缀",
+          "reasoning": "",
+          "tools": [],
+          "finish": "refusal",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true
+    },
+    {
+      "id": "missing_finish",
+      "raw": "未完待续",
+      "thinking": false,
+      "action": "eof",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "未完待续",
+          "reasoning": "",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "未完待续",
+          "reasoning": "",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "未完待续",
+          "reasoning": "",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "unconfirmed_eof",
+      "expect_native_finished": true
+    },
+    {
+      "id": "client_close",
+      "raw": "说到一半",
+      "thinking": false,
+      "action": "close",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "说到一半",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "说到一半",
+          "reasoning": "",
+          "tools": [],
+          "finish": "in_progress",
+          "status": "in_progress",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "说到一半",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "client_abort",
+      "expect_native_finished": false
+    },
+    {
+      "id": "unfinished_thinking",
+      "raw": "\n还在思考",
+      "thinking": true,
+      "action": "Stop",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "",
+          "reasoning": "还在思考",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "",
+          "reasoning": "还在思考",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "",
+          "reasoning": "还在思考",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true
+    },
+    {
+      "id": "unfinished_tool",
+      "raw": "<｜DSML｜tool_calls><｜DSML｜invoke name=\"weather\"><｜DSML｜parameter name=\"city\" string=\"true\">杭州",
+      "thinking": false,
+      "action": "Stop",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "",
+          "reasoning": "",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": "{\"city\": \"杭州"
+            }
+          ],
+          "finish": "tool_calls",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "",
+          "reasoning": "",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": "{\"city\": \"杭州"
+            }
+          ],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "",
+          "reasoning": "",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": {}
+            }
+          ],
+          "finish": "tool_use",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true,
+      "tools": [
+        "weather"
+      ]
+    },
+    {
+      "id": "text_with_tokenizer",
+      "raw": "\n先想一下。</think>答案：42。",
+      "thinking": true,
+      "action": "Stop",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true,
+      "modes": [
+        "text_tokenizer"
+      ],
+      "patterns": [
+        "whole"
+      ],
+      "expect_usage": {
+        "chat": {
+          "prompt_tokens": 13,
+          "completion_tokens": 0,
+          "total_tokens": 13,
+          "prompt_tokens_details": {
+            "cached_tokens": 3
+          },
+          "prompt_cache_hit_tokens": 3,
+          "prompt_cache_miss_tokens": 10,
+          "completion_tokens_details": {
+            "reasoning_tokens": 4
+          }
+        },
+        "responses": {
+          "input_tokens": 13,
+          "input_tokens_details": {
+            "cached_tokens": 3
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 4
+          },
+          "total_tokens": 13
+        },
+        "messages": {
+          "input_tokens": 10,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 3,
+          "output_tokens": 0,
+          "service_tier": "standard"
+        }
+      }
+    },
+    {
+      "id": "text_supplied_count",
+      "raw": "\n先想一下。</think>答案：42。",
+      "thinking": true,
+      "action": "Stop",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true,
+      "modes": [
+        "text"
+      ],
+      "patterns": [
+        "whole"
+      ],
+      "text_token_count": 7,
+      "expect_usage": {
+        "chat": {
+          "prompt_tokens": 13,
+          "completion_tokens": 7,
+          "total_tokens": 20,
+          "prompt_tokens_details": {
+            "cached_tokens": 3
+          },
+          "prompt_cache_hit_tokens": 3,
+          "prompt_cache_miss_tokens": 10
+        },
+        "responses": {
+          "input_tokens": 13,
+          "input_tokens_details": {
+            "cached_tokens": 3
+          },
+          "output_tokens": 7,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 20
+        },
+        "messages": {
+          "input_tokens": 10,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 3,
+          "output_tokens": 7,
+          "service_tier": "standard"
+        }
+      }
+    },
+    {
+      "id": "no_tokenizer",
+      "raw": "说完了",
+      "thinking": false,
+      "action": "no_tokenizer",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "",
+          "reasoning": "",
+          "tools": [],
+          "finish": "in_progress",
+          "status": "in_progress",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "stream_error",
+      "expect_native_finished": false,
+      "modes": [
+        "text"
+      ],
+      "patterns": [
+        "whole"
+      ],
+      "expect_error": "without a tokenizer"
+    },
+    {
+      "id": "logprob_mismatch",
+      "raw": "说完了",
+      "thinking": false,
+      "action": "logprob_mismatch",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "",
+          "reasoning": "",
+          "tools": [],
+          "finish": "in_progress",
+          "status": "in_progress",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "stream_error",
+      "expect_native_finished": false,
+      "modes": [
+        "text"
+      ],
+      "patterns": [
+        "whole"
+      ],
+      "expect_error": "log probabilities for 2 token IDs"
+    },
+    {
+      "id": "duplicate_finish",
+      "raw": "说完了",
+      "thinking": false,
+      "action": "duplicate_finish",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true,
+      "modes": [
+        "text"
+      ],
+      "patterns": [
+        "whole"
+      ],
+      "expect_error": "finished"
+    },
+    {
+      "id": "extra_push",
+      "raw": "说完了",
+      "thinking": false,
+      "action": "extra_push",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true,
+      "modes": [
+        "text"
+      ],
+      "patterns": [
+        "whole"
+      ],
+      "expect_error": "finished"
+    },
+    {
+      "id": "repeat_flush",
+      "raw": "说完了",
+      "thinking": false,
+      "action": "repeat_flush",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": "stop",
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": "completed",
+          "status": "completed",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "backend_finish",
+      "expect_native_finished": true,
+      "modes": [
+        "text"
+      ],
+      "patterns": [
+        "whole"
+      ],
+      "expect_error": null
+    },
+    {
+      "id": "close_then_finish",
+      "raw": "说完了",
+      "thinking": false,
+      "action": "close_then_finish",
+      "stop": [],
+      "expect": {
+        "chat": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        },
+        "responses": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": "in_progress",
+          "status": "in_progress",
+          "stop_sequence": null
+        },
+        "messages": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        }
+      },
+      "expect_termination": "client_abort",
+      "expect_native_finished": false,
+      "modes": [
+        "text"
+      ],
+      "patterns": [
+        "whole"
+      ],
+      "expect_error": "closed"
+    }
+  ]
+}

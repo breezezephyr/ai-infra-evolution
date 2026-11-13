@@ -1,0 +1,50 @@
+{
+  "id": "order-2--prompt_only--seed17",
+  "contract": "be914e14fd15803f2e80eb4192ae04dafb332dd8658c2aafff09efea63dac7ab",
+  "arm": "prompt_only",
+  "case_id": "order-2",
+  "seed": 17,
+  "family": "ordered_selection",
+  "payload_sha256": "ff92923a901b0061f1c0c2f84ee90af57da55b3117d8f17ec6e2f528f696e690",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-00962268caa048679f4ecee986ddaef8",
+    "object": "chat.completion",
+    "created": 1792983661,
+    "model": "exp21-qwen3-0.6b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"stops\": [\"苏州\"],\n    \"count\": 1\n  }\n}\n```",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 165,
+      "total_tokens": 200,
+      "completion_tokens": 35,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "accepted": true,
+  "content": "```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"stops\": [\"苏州\"],\n    \"count\": 1\n  }\n}\n```",
+  "finish_reason": "stop",
+  "evaluation": {
+    "json_valid": false,
+    "schema_valid": false,
+    "business_correct": false,
+    "complete": true,
+    "deliverable": false,
+    "parse_error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  "client_elapsed_ms": 1408.506208,
+  "clock_domain": "client_process_monotonic_ns"
+}

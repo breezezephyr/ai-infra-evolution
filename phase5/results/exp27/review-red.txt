@@ -1,0 +1,98 @@
+.......FFFFF                                                             [100%]
+=================================== FAILURES ===================================
+_____ ReviewRegressions.test_backend_start_time_matches_resource_interval ______
+
+self = <test_analyze.ReviewRegressions testMethod=test_backend_start_time_matches_resource_interval>
+
+    def test_backend_start_time_matches_resource_interval(self):
+        r=read(self.out,'resources.json');r['intervals'][0]['started_ns']=1
+>       write(self.out,'resources.json',r);self.reject()
+                                           ^^^^^^^^^^^^^
+
+phase5/exp27/test_analyze.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+phase5/exp27/test_analyze.py:206: in reject
+    self.assertFalse(result['accepted'])
+E   AssertionError: True is not false
+______________ ReviewRegressions.test_backend_startup_is_required ______________
+
+self = <test_analyze.ReviewRegressions testMethod=test_backend_startup_is_required>
+
+    def test_backend_startup_is_required(self):
+        p=self.out/'backend-startup.json'
+        if p.exists():p.unlink()
+>       self.reject()
+
+phase5/exp27/test_analyze.py:325: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+phase5/exp27/test_analyze.py:206: in reject
+    self.assertFalse(result['accepted'])
+E   AssertionError: True is not false
+_ ReviewRegressions.test_invalid_request_or_response_chunk_base64_is_rejected __
+
+self = <test_analyze.ReviewRegressions testMethod=test_invalid_request_or_response_chunk_base64_is_rejected>
+
+    def test_invalid_request_or_response_chunk_base64_is_rejected(self):
+        original=read(self.out,'backend.jsonl')
+        for kind in ['http_request_chunk','http_response_chunk']:
+            b=copy.deepcopy(original);x=next(x for x in b if x['event']==kind);x['body_b64']='NOT BASE64'
+>           write(self.out,'backend.jsonl',b);self.reject()
+                                              ^^^^^^^^^^^^^
+
+phase5/exp27/test_analyze.py:315: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+phase5/exp27/test_analyze.py:206: in reject
+    self.assertFalse(result['accepted'])
+E   AssertionError: True is not false
+_ ReviewRegressions.test_original_chunk_usage_cannot_be_erased_by_aggregated_rows _
+
+self = <test_analyze.ReviewRegressions testMethod=test_original_chunk_usage_cannot_be_erased_by_aggregated_rows>
+
+    def test_original_chunk_usage_cannot_be_erased_by_aggregated_rows(self):
+        g=read(self.out,'gateway.jsonl');a=g[0]['attempts'][0];aid=a['attempt_id']
+        def strip_usage(raw):
+            return ''.join(f+'\n\n' for f in raw.split('\n\n') if f and '"usage"' not in f)
+        a.update(raw_sse=strip_usage(a['raw_sse']),usage=None,usage_source='unknown',usage_frames=[])
+        g[0]['settlements'][0].update(usage=None,source='unknown');write(self.out,'gateway.jsonl',g)
+        c=read(self.out,'clients.json');frames=c[0]['raw'].split('\n\n');changed=[]
+        for f in frames:
+            if f.startswith('data: {'):
+                obj=json.loads(f[6:])
+                if obj.get('type')=='terminal':obj['settlements']=g[0]['settlements']
+                changed.append(wire(obj))
+            elif f:changed.append(f+'\n\n')
+        c[0]['raw']=''.join(changed);write(self.out,'clients.json',c)
+        b=read(self.out,'backend.jsonl');h=next(x for x in b if x.get('event')=='http_finished' and x['attempt_id']==aid)
+        h['sse']=strip_usage(h['sse']);h['response_sha256']=sha(h['sse'])
+        import base64
+        h['response_b64']=base64.b64encode(h['sse'].encode()).decode();h['send_returned_b64']=h['response_b64'];write(self.out,'backend.jsonl',b)
+>       r=self.reject();entry=next(x for x in r['attempt_ledger'] if x['attempt_id']==aid)
+          ^^^^^^^^^^^^^
+
+phase5/exp27/test_analyze.py:308: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+phase5/exp27/test_analyze.py:206: in reject
+    self.assertFalse(result['accepted'])
+E   AssertionError: True is not false
+____ ReviewRegressions.test_wrong_resource_pid_cannot_bind_to_cleanup_only _____
+
+self = <test_analyze.ReviewRegressions testMethod=test_wrong_resource_pid_cannot_bind_to_cleanup_only>
+
+    def test_wrong_resource_pid_cannot_bind_to_cleanup_only(self):
+        r=read(self.out,'resources.json');c=read(self.out,'cleanup.json')
+        for i,x in enumerate(r['intervals']):x.update(pid=900000+i,started_ns=0,ready_ns=0,stop_requested_ns=1,exited_ns=1)
+>       c['owned_pids']=[900000,900001];write(self.out,'resources.json',r);write(self.out,'cleanup.json',c);self.reject()
+                                                                                                            ^^^^^^^^^^^^^
+
+phase5/exp27/test_analyze.py:320: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+phase5/exp27/test_analyze.py:206: in reject
+    self.assertFalse(result['accepted'])
+E   AssertionError: True is not false
+=========================== short test summary info ============================
+FAILED phase5/exp27/test_analyze.py::ReviewRegressions::test_backend_start_time_matches_resource_interval
+FAILED phase5/exp27/test_analyze.py::ReviewRegressions::test_backend_startup_is_required
+FAILED phase5/exp27/test_analyze.py::ReviewRegressions::test_invalid_request_or_response_chunk_base64_is_rejected
+FAILED phase5/exp27/test_analyze.py::ReviewRegressions::test_original_chunk_usage_cannot_be_erased_by_aggregated_rows
+FAILED phase5/exp27/test_analyze.py::ReviewRegressions::test_wrong_resource_pid_cannot_bind_to_cleanup_only
+5 failed, 7 passed in 0.40s

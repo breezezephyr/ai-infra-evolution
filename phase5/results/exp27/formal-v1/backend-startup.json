@@ -1,0 +1,42 @@
+{
+  "pid": 126769,
+  "command": [
+    "/root/vllm-env/bin/vllm",
+    "serve",
+    "/opt/models/Qwen3-0.6B",
+    "--served-model-name",
+    "exp27-qwen3-0.6b",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8027",
+    "--dtype",
+    "bfloat16",
+    "--max-model-len",
+    "2048",
+    "--max-num-seqs",
+    "4",
+    "--max-num-batched-tokens",
+    "4096",
+    "--gpu-memory-utilization",
+    "0.60",
+    "--enforce-eager",
+    "--disable-frontend-multiprocessing",
+    "--disable-log-requests",
+    "--generation-config",
+    "vllm",
+    "--middleware",
+    "backend_audit.AuditMiddleware"
+  ],
+  "clock_domain": "supervisor-126731",
+  "started_ns": 729658877707238,
+  "source_sha256": {
+    "plan.py": "2671b93b2e5a3a8b00566cd381c9aaaaa435a49c3d8c07dab386cf4a4e8f394e",
+    "analyze.py": "ce9ed57659407db6a16e693f759a56fd1b86f7087d8880807cf89d720f5481d6",
+    "run.py": "3d20e459e9cc1fcafc42c81318c94d70a406b151fa9687bf63f2655dd8e0a711",
+    "serve_gateway.py": "ab50c04404608778083f0015dcded832e5d3d546ccf5e943a0bfdc1aa5d7016b",
+    "gateway.py": "17fdde3b2970e8342a48984056a6d58de5bfa8f446d168c1a9f1f232e7cce5d1",
+    "lifecycle.py": "3f02b0cae2ec254e11a3b8cdb40245f71acc2fb2234a21354e0108d7a3892ab0",
+    "backend_audit.py": "a4f95c98a6e6d82853bc77e2597a2af073ef67c51631fd3869aee18c9ed1f3ff"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-26T04:13:05.455884+00:00",
+  "experiment_pid": 121137,
+  "pid_exists": false,
+  "remote_port8022_open": false,
+  "local_port18022_open": false,
+  "ssh_control_exit": "Exit request sent",
+  "gpu_snapshot": {
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "used_mib": 667,
+    "free_mib": 7291,
+    "utilization_percent": 0
+  },
+  "scope": "only stopped exp22 server and own tunnel; no other services stopped",
+  "evidence": "live SSH /proc PID absence, ss no8022 listener, nvidia-smi; local lsof no18022 listener"
+}

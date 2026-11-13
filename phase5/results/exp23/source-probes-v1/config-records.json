@@ -1,0 +1,234 @@
+[
+  {
+    "id": "defaults_off",
+    "provided_config": {},
+    "window": 128,
+    "nextn": 5,
+    "backtracking": 6,
+    "mode": "off",
+    "keep": 0,
+    "status": "guard_passed",
+    "expected": "guard_passed",
+    "conformant": true
+  },
+  {
+    "id": "below_default_bound",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "133"
+    },
+    "window": 128,
+    "nextn": 5,
+    "backtracking": 6,
+    "mode": "compact",
+    "keep": 133,
+    "status": "guard_rejected",
+    "expected": "guard_rejected",
+    "conformant": true
+  },
+  {
+    "id": "at_default_bound",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "134"
+    },
+    "window": 128,
+    "nextn": 5,
+    "backtracking": 6,
+    "mode": "compact",
+    "keep": 134,
+    "status": "guard_passed",
+    "expected": "guard_passed",
+    "conformant": true
+  },
+  {
+    "id": "mask_at_bound",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "mask",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "134"
+    },
+    "window": 128,
+    "nextn": 5,
+    "backtracking": 6,
+    "mode": "mask",
+    "keep": 134,
+    "status": "guard_passed",
+    "expected": "guard_passed",
+    "conformant": true
+  },
+  {
+    "id": "recommended140",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "140"
+    },
+    "window": 128,
+    "nextn": 5,
+    "backtracking": 6,
+    "mode": "compact",
+    "keep": 140,
+    "status": "guard_passed",
+    "expected": "guard_passed",
+    "conformant": true
+  },
+  {
+    "id": "zero_draft_below",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "128",
+      "DEEPINFER_USE_NEXTN_DECODE": "0"
+    },
+    "window": 128,
+    "nextn": 0,
+    "backtracking": 1,
+    "mode": "compact",
+    "keep": 128,
+    "status": "guard_rejected",
+    "expected": "guard_rejected",
+    "conformant": true
+  },
+  {
+    "id": "zero_draft_at",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "129",
+      "DEEPINFER_USE_NEXTN_DECODE": "0"
+    },
+    "window": 128,
+    "nextn": 0,
+    "backtracking": 1,
+    "mode": "compact",
+    "keep": 129,
+    "status": "guard_passed",
+    "expected": "guard_passed",
+    "conformant": true
+  },
+  {
+    "id": "explicit_backtrack_below",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "147",
+      "DEEPINFER_MAX_BACKTRACKING_TOKENS": "20"
+    },
+    "window": 128,
+    "nextn": 5,
+    "backtracking": 20,
+    "mode": "compact",
+    "keep": 147,
+    "status": "guard_rejected",
+    "expected": "guard_rejected",
+    "conformant": true
+  },
+  {
+    "id": "explicit_backtrack_at",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "148",
+      "DEEPINFER_MAX_BACKTRACKING_TOKENS": "20"
+    },
+    "window": 128,
+    "nextn": 5,
+    "backtracking": 20,
+    "mode": "compact",
+    "keep": 148,
+    "status": "guard_passed",
+    "expected": "guard_passed",
+    "conformant": true
+  },
+  {
+    "id": "negative_raw_clamped",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "134",
+      "DEEPINFER_MAX_BACKTRACKING_TOKENS": "-1"
+    },
+    "window": 128,
+    "nextn": 5,
+    "backtracking": 6,
+    "mode": "compact",
+    "keep": 134,
+    "status": "guard_passed",
+    "expected": "guard_passed",
+    "conformant": true
+  },
+  {
+    "id": "no_window",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "140"
+    },
+    "window": 0,
+    "nextn": 5,
+    "backtracking": 6,
+    "mode": "compact",
+    "keep": 140,
+    "status": "guard_rejected",
+    "expected": "guard_rejected",
+    "conformant": true
+  },
+  {
+    "id": "zero_keep",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "0"
+    },
+    "window": 128,
+    "nextn": 5,
+    "backtracking": 6,
+    "mode": "compact",
+    "keep": 0,
+    "status": "guard_rejected",
+    "expected": "guard_rejected",
+    "conformant": true
+  },
+  {
+    "id": "invalid_mode",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "invalid",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "140"
+    },
+    "window": 128,
+    "status": "parse_rejected",
+    "error_type": "ValueError",
+    "expected": "parse_rejected",
+    "conformant": true
+  },
+  {
+    "id": "invalid_keep",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "invalid"
+    },
+    "window": 128,
+    "status": "parse_rejected",
+    "error_type": "ValueError",
+    "expected": "parse_rejected",
+    "conformant": true
+  },
+  {
+    "id": "invalid_nextn",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "140",
+      "DEEPINFER_USE_NEXTN_DECODE": "invalid"
+    },
+    "window": 128,
+    "status": "parse_rejected",
+    "error_type": "ValueError",
+    "expected": "parse_rejected",
+    "conformant": true
+  },
+  {
+    "id": "invalid_backtrack",
+    "provided_config": {
+      "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+      "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "140",
+      "DEEPINFER_MAX_BACKTRACKING_TOKENS": "invalid"
+    },
+    "window": 128,
+    "status": "parse_rejected",
+    "error_type": "ValueError",
+    "expected": "parse_rejected",
+    "conformant": true
+  }
+]

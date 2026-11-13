@@ -1,0 +1,47 @@
+{
+  "run_id": "smoke-0-1792663645041",
+  "fixture_id": "short",
+  "transport": "ws",
+  "scenario": "baseline",
+  "produced_samples": 149760,
+  "fixture_samples": 149760,
+  "events": [
+    {
+      "event": "created",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 108492758337791
+    },
+    {
+      "event": "start_received",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 108492765837333
+    },
+    {
+      "event": "first_frame_sent",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 108492766015750
+    },
+    {
+      "event": "source_exhausted",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 108495867244541
+    },
+    {
+      "event": "all_samples_acknowledged",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 108495965248708,
+      "samples": 149760
+    },
+    {
+      "event": "client_result_received",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 108495971546041
+    },
+    {
+      "event": "socket_closed",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 108495976202583,
+      "last_ack": 149760
+    }
+  ]
+}

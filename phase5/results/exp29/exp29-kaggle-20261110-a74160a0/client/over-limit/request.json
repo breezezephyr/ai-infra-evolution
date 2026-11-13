@@ -1,0 +1,24 @@
+{
+  "case_id": "over-limit",
+  "client_request_id": "exp29-kaggle-20261110-a74160a0:over-limit",
+  "expected_status": 422,
+  "body": {
+    "model": "qwen3-4b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "请用一句简短的中文解释天空为什么通常是蓝色的。"
+      }
+    ],
+    "max_tokens": 65,
+    "stream": false,
+    "temperature": 0,
+    "seed": 29
+  },
+  "body_sha256": "d7740ea0f352336b731496307207afc019435e70ab9eac9120578a529ae2991f",
+  "headers": {
+    "X-Client-Request-Id": "exp29-kaggle-20261110-a74160a0:over-limit",
+    "Content-Type": "application/json",
+    "Accept-Encoding": "identity"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "repository": "https://github.com/deepseek-ai/DeepInfer",
+  "commit": "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+  "scope": "DSpark read-only fixed-commit source audit; no DeepInfer execution",
+  "full_git_checkout": false,
+  "files": [
+    {
+      "path": "README.md",
+      "local_path": "phase5/vendor/exp22-source/DeepInfer/README.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/README.md",
+      "sha256": "b55624158ada4dc21b882d24ded06bf82f65350b44d170877b68395712cd670d",
+      "bytes": 4660,
+      "acquisition": "verified existing fixed-commit cache",
+      "provenance_manifest": "phase5/vendor/exp22-source/DeepInfer/manifest.json"
+    },
+    {
+      "path": "deepinfer/environ.py",
+      "local_path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/environ.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/environ.py",
+      "sha256": "fe2c531989c419f0b51b169a07f5ed826dcec7f95c0c5bc3a351805923c4f218",
+      "bytes": 8738,
+      "acquisition": "verified existing fixed-commit cache",
+      "provenance_manifest": "phase5/vendor/exp22-source/DeepInfer/manifest.json"
+    },
+    {
+      "path": "csrc/engine/scheduler.hpp",
+      "local_path": "phase5/vendor/exp22-source/DeepInfer/csrc/engine/scheduler.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/scheduler.hpp",
+      "sha256": "c14de4d5341170227b82ddf2d146d9c6a337937885a6886237aab5a7238da5db",
+      "bytes": 66347,
+      "acquisition": "verified existing fixed-commit cache",
+      "provenance_manifest": "phase5/vendor/exp22-source/DeepInfer/manifest.json"
+    },
+    {
+      "path": "deepinfer/model_executor/layers/sampler.py",
+      "local_path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/model_executor/layers/sampler.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/sampler.py",
+      "sha256": "81205a12e860041ffa904321b852db2d048bc038bb07d494dbb78b44b522d9a9",
+      "bytes": 30729,
+      "acquisition": "verified existing fixed-commit cache",
+      "provenance_manifest": "phase5/vendor/exp22-source/DeepInfer/manifest.json"
+    },
+    {
+      "path": "deepinfer/worker/worker.py",
+      "local_path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/worker/worker.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/worker/worker.py",
+      "sha256": "ad32e595d9ab289dff1a7709136431ac60dae709e9e5123ae42eb0ebf7c30cbb",
+      "bytes": 11604,
+      "acquisition": "verified existing fixed-commit cache",
+      "provenance_manifest": "phase5/vendor/exp22-source/DeepInfer/manifest.json"
+    },
+    {
+      "path": "deepinfer/engine/llm_engine.py",
+      "local_path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/engine/llm_engine.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/engine/llm_engine.py",
+      "sha256": "a636d60ca5711f6b7c21e68370c3bd9c2de6fc3f4439a7429ca4f572f0edeebe",
+      "bytes": 45489,
+      "acquisition": "verified existing fixed-commit cache",
+      "provenance_manifest": "phase5/vendor/exp22-source/DeepInfer/manifest.json"
+    },
+    {
+      "path": "deepinfer/worker/model_runner.py",
+      "local_path": "phase5/vendor/exp22-source/DeepInfer/deepinfer/worker/model_runner.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/worker/model_runner.py",
+      "sha256": "9e2e18d136c9e0c9f23905ff994e9d23afaa94aa7a133d425e7fc1fc069033ef",
+      "bytes": 29533,
+      "acquisition": "verified existing fixed-commit cache",
+      "provenance_manifest": "phase5/vendor/exp22-source/DeepInfer/manifest.json"
+    },
+    {
+      "path": "csrc/engine/mtp_varlen.hpp",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/csrc/engine/mtp_varlen.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/mtp_varlen.hpp",
+      "sha256": "164f45db4cccd6d6909dd2846e7dfffb57754b108af679443bf4bd71ec33785a",
+      "bytes": 12151,
+      "acquisition": "verified existing fixed-commit cache",
+      "provenance_manifest": "phase5/vendor/exp23-source/DeepInfer/swa-source-manifest.json"
+    },
+    {
+      "path": "csrc/engine/sequence.hpp",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/csrc/engine/sequence.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/sequence.hpp",
+      "sha256": "67ef6ea70ee31a519fd632ee2d7be4710a6d796f786cf336dd3d3f06f7fbe16b",
+      "bytes": 17396,
+      "acquisition": "verified existing fixed-commit cache",
+      "provenance_manifest": "phase5/vendor/exp23-source/DeepInfer/swa-source-manifest.json"
+    },
+    {
+      "path": "deepinfer/model_executor/layers/sampler_utils.py",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/sampler_utils.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/sampler_utils.py",
+      "sha256": "35bdfd873865375cbf834258543e54ea7a1dbb860767412b8b8e44bea1b296b9",
+      "bytes": 7895,
+      "acquisition": "fixed-commit official raw; exclusive create"
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/sampler.py",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/sampler.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/sampler.py",
+      "sha256": "cef9d2dda13f24fed56ca9bef45fdffa883edc63208d54e1b83ead9358271304",
+      "bytes": 48850,
+      "acquisition": "fixed-commit official raw; exclusive create"
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/schedule_mtp_varlen.py",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/schedule_mtp_varlen.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/schedule_mtp_varlen.py",
+      "sha256": "0c6e5eb4faa087b96e0558ea4791e1b4ead1939a6cc8b086de86ca2f68bd4e88",
+      "bytes": 7003,
+      "acquisition": "fixed-commit official raw; exclusive create"
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/compute_seqlens_k_zos.py",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/compute_seqlens_k_zos.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/compute_seqlens_k_zos.py",
+      "sha256": "83d5decd78b992d697074f38f1005db007c0e75332a7ab2a90620922844406f4",
+      "bytes": 4043,
+      "acquisition": "fixed-commit official raw; exclusive create"
+    },
+    {
+      "path": "deepinfer/model_executor/layers/mtp_info_pool.py",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/mtp_info_pool.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/mtp_info_pool.py",
+      "sha256": "f0ae9ad98d03e2bc6d3f4406cd757e7ce82010ec6fdc0f545d9d86776e31ee72",
+      "bytes": 3288,
+      "acquisition": "fixed-commit official raw; exclusive create"
+    },
+    {
+      "path": "deepinfer/model_executor/models/mtp/dflash.py",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/models/mtp/dflash.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/models/mtp/dflash.py",
+      "sha256": "12ebfb9c793062844d40e0fab17164d5365d965c318f8b9f0f4adf51b3afb684",
+      "bytes": 17894,
+      "acquisition": "fixed-commit official raw; exclusive create"
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/fused_sample.py",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/fused_sample.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/fused_sample.py",
+      "sha256": "f43ac934284d15f708a0aa07aaa8fff7daa257984e311ca554bd9dbea89e5e1d",
+      "bytes": 38007,
+      "acquisition": "fixed-commit official raw; exclusive create"
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/common.py",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/common.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/common.py",
+      "sha256": "d5cbc52dda0bd611d5ea417d2e8bb1ec70c70f5932edaeb809eb7cfa6a669a1b",
+      "bytes": 2254,
+      "acquisition": "fixed-commit official raw; exclusive create"
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/random_sampling.py",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/random_sampling.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/random_sampling.py",
+      "sha256": "59d8d5befc1a98ec28ca824117ff1ffa7829740fb327240c1ec9a0c77731f9c2",
+      "bytes": 13300,
+      "acquisition": "fixed-commit official raw; exclusive create"
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/ops.py",
+      "local_path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/model_executor/layers/tilelang_ops/ops.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/ops.py",
+      "sha256": "9b443cb87be447a15853781f76b9d54c224cf60fbafcf577b71f4ba14da989cd",
+      "bytes": 1278,
+      "acquisition": "fixed-commit official raw; exclusive create"
+    }
+  ],
+  "fetch_attempts": [
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/ops/__init__.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/layers/tilelang_ops/ops/__init__.py",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "recorded_at_utc": "2026-10-26T05:56:56.752759+00:00"
+}

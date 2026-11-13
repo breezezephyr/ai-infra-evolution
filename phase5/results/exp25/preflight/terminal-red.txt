@@ -1,0 +1,35 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______________ test_terminal_clock_contains_last_recorded_event _______________
+
+tmp_path = PosixPath('/private/tmp/pytest-of-researcher/pytest-11/test_terminal_clock_contains_l0')
+
+    def test_terminal_clock_contains_last_recorded_event(tmp_path):
+     async def run():
+      app,_=setup(tmp_path);await post(app)
+      r=rows(tmp_path)[0];assert r['started_ns']<=r['events'][0]['monotonic_ns'] and r['ended_ns']>=r['events'][-1]['monotonic_ns']
+>    asyncio.run(run())
+
+phase5/exp25/test_gateway.py:168: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def run():
+     app,_=setup(tmp_path);await post(app)
+>    r=rows(tmp_path)[0];assert r['started_ns']<=r['events'][0]['monotonic_ns'] and r['ended_ns']>=r['events'][-1]['monotonic_ns']
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    assert (232278397179000 <= 232278397201916 and 232278397428625 >= 232278397429375)
+
+phase5/exp25/test_gateway.py:167: AssertionError
+=========================== short test summary info ============================
+FAILED phase5/exp25/test_gateway.py::test_terminal_clock_contains_last_recorded_event
+1 failed in 0.41s

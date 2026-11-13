@@ -1,0 +1,41 @@
+{
+  "gpu_smoke_records": 3,
+  "browser_records": 3,
+  "all_generated_samples_delivered": true,
+  "browser_all_samples_consumed": true,
+  "browser": [
+    {
+      "mode": "B",
+      "latencies_ms": {
+        "reference_to_first_pcm": 831.8999999910593,
+        "reference_to_first_render": 1108.8374999910593,
+        "reference_to_device_output_estimate": 1142.0948333303531
+      },
+      "underrun_samples": 32,
+      "samples": 62400,
+      "id": "browser-2b6e8f3c-99ef-4dc7-b9d9-d9f7f9346a8a"
+    },
+    {
+      "mode": "A",
+      "latencies_ms": {
+        "reference_to_first_pcm": 1208.2999999970198,
+        "reference_to_first_render": 1489.0791666607056,
+        "reference_to_device_output_estimate": 1522.2524999910584
+      },
+      "underrun_samples": 0,
+      "samples": 62400,
+      "id": "browser-1539c33e-2593-4d03-bff8-c43df57f56f5"
+    },
+    {
+      "mode": "C",
+      "latencies_ms": {
+        "reference_to_first_pcm": 988.2000000029802,
+        "reference_to_first_render": 1267.1916666726283,
+        "reference_to_device_output_estimate": 1300.1320000000014
+      },
+      "underrun_samples": 0,
+      "samples": 62400,
+      "id": "browser-83ca3e2b-817b-4943-b06f-8cfa9cb07784"
+    }
+  ]
+}

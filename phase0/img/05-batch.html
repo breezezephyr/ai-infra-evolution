@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;background:#f8f5ee;color:#1c1a17;font-family:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:72px 76px;display:flex;flex-direction:column}
+.eyebrow{display:flex;align-items:center;gap:14px;color:#8a8378;font-size:26px;letter-spacing:.04em;font-family:Menlo,"SF Mono",monospace}
+.eyebrow::before{content:"";width:34px;height:5px;background:#2f5f8a;border-radius:3px}
+h1{font-size:74px;line-height:1.18;font-weight:800;letter-spacing:-.01em;margin-top:34px}
+.sub{color:#6f695f;font-size:32px;margin-top:22px;line-height:1.5}
+.card{background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:34px 38px;margin-top:44px}
+.callout{background:#fbf1e6;border:2px solid #f0dcc4;border-radius:18px;padding:32px 36px;font-size:32px;line-height:1.6;margin-top:40px;color:#2a2620}
+.callout b{color:#1c1a17}
+.note{color:#9a9386;font-size:24px;margin-top:auto;padding-top:36px;line-height:1.5}
+.blue{color:#2f5f8a}.orange{color:#c4763a}.green{color:#4f7a52}.gray{color:#9a9386}.red{color:#a84d3a}
+.mono{font-family:Menlo,"SF Mono",monospace}
+.row{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:2px solid #eee8dc;font-size:32px}
+.row:last-child{border-bottom:0}
+.card>div:last-child{border-bottom:0!important}
+.row .k{font-weight:600}.row .v{font-weight:700}
+.strike{text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:#a84d3a;color:#9a9386}
+.tag{display:inline-block;font-size:22px;padding:4px 14px;border-radius:8px;background:#eee8dc;color:#6f695f;margin-left:12px;vertical-align:middle;font-weight:600}
+
+.seats{display:grid;grid-template-columns:repeat(12,1fr);gap:8px;margin-top:14px}
+.seat{aspect-ratio:1;border-radius:8px;background:#e6e0d4;position:relative}
+.seat.p{background:#2f5f8a}
+.seat.l{background:#c4763a}
+.seat.p::after{content:"";position:absolute;inset:30%;border-radius:50%;background:#fff;opacity:.9}
+.lane{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px}
+.lane .box{background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:30px 34px}
+.lane h3{font-size:34px;font-weight:800;margin-bottom:6px}
+.lane .cap{font-size:24px;color:#6f695f;line-height:1.45}
+.big{font-size:86px;font-weight:800;line-height:1;letter-spacing:-.02em}
+.formula{font-family:Menlo,monospace;font-size:30px;background:#fff;border:2px solid #e6e0d4;border-radius:18px;padding:26px 30px;margin-top:36px;line-height:1.6}
+.formula b{color:#c4763a}
+.bus{display:flex;gap:6px;margin-top:30px}
+.bus .car{flex:1;height:120px;border-radius:14px;background:#2f5f8a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;position:relative}
+.bus .car::after{content:"";position:absolute;right:-6px;top:50%;width:6px;height:16px;background:#9a9386;transform:translateY(-50%)}
+.bus .car:last-child::after{display:none}
+html,body{height:1400px}</style></head><body><div class="eyebrow">个人进化 · Phase 0 复习</div><h1>一圈油钱固定，<br>多坐人就便宜</h1><div class="sub">batch = 车上坐几人。这是 decode 唯一的分摊手段。</div>
+<div class="formula">每圈搬运 = <b>油钱 17.5 GB</b>（与人数无关）<br>+ 人数 × 每人 41 KB × 行李件数 ctx</div>
+<div class="card" style="padding:0;overflow:hidden"><div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;font-size:27px">
+<div style="padding:22px 26px;background:#f3eee3;font-weight:700">坐几人</div><div style="padding:22px 26px;background:#f3eee3;font-weight:700">每圈搬运</div><div style="padding:22px 26px;background:#f3eee3;font-weight:700">一圈多久</div><div style="padding:22px 26px;background:#f3eee3;font-weight:700">每人每字成本</div><div style="padding:22px 26px;border-top:2px solid #eee8dc" class="mono">8</div><div style="padding:22px 26px;border-top:2px solid #eee8dc">18.8 GB</div><div style="padding:22px 26px;border-top:2px solid #eee8dc">6.74 ms</div><div style="padding:22px 26px;border-top:2px solid #eee8dc;color:#2f5f8a;font-weight:700">1×</div><div style="padding:22px 26px;border-top:2px solid #eee8dc" class="mono">32</div><div style="padding:22px 26px;border-top:2px solid #eee8dc">22.9 GB</div><div style="padding:22px 26px;border-top:2px solid #eee8dc">6.83 ms</div><div style="padding:22px 26px;border-top:2px solid #eee8dc;color:#2f5f8a;font-weight:700">1/4</div><div style="padding:22px 26px;border-top:2px solid #eee8dc" class="mono">128</div><div style="padding:22px 26px;border-top:2px solid #eee8dc">39.0 GB</div><div style="padding:22px 26px;border-top:2px solid #eee8dc">12.75 ms</div><div style="padding:22px 26px;border-top:2px solid #eee8dc;color:#2f5f8a;font-weight:700">1/8.5</div></div></div>
+<div class="callout">坐 16 倍的人，一圈只慢不到一倍，每人成本降到 1/8.5。<b>连续批处理 = 随上随下</b>，车一直跑，座位不空。</div>
+<div class="note">ctx = 4096。fast 档贵 2–3 倍，机制上是「包一辆少载人的车」。</div></body></html>

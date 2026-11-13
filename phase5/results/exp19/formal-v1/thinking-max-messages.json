@@ -1,0 +1,371 @@
+{
+  "id": "thinking-max-messages",
+  "protocol": "messages",
+  "family": "thinking_max",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "messages": [
+      {
+        "role": "user",
+        "content": "2+2等于几？"
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "thinking",
+            "thinking": "HISTORY_REASONING_A_19",
+            "signature": "fixture-signature-a"
+          },
+          {
+            "type": "thinking",
+            "thinking": "HISTORY_REASONING_B_19",
+            "signature": "fixture-signature-b"
+          },
+          {
+            "type": "text",
+            "text": "4。"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "再加1呢？"
+      }
+    ],
+    "thinking": {
+      "type": "enabled",
+      "budget_tokens": 1024
+    },
+    "output_config": {
+      "effort": "max"
+    },
+    "temperature": 0.25,
+    "top_p": 0.5
+  },
+  "options": {},
+  "input_sha256": "fc29f5c31c228e526394d2ec3d815351ca92bc8000fabf99b0f9a2de9e22df7e",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "pass",
+      "evidence": {
+        "prompt_tokens": 46
+      }
+    },
+    {
+      "name": "reasoning_join_protocol_difference",
+      "status": "pass",
+      "evidence": {
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "max",
+          "roles": [
+            "user",
+            "assistant",
+            "user"
+          ],
+          "message_contents": [
+            "2+2等于几？",
+            "4。",
+            "再加1呢？"
+          ],
+          "assistant_reasoning_contents": [
+            "HISTORY_REASONING_A_19\n\nHISTORY_REASONING_B_19"
+          ],
+          "tool_names": [],
+          "tool_parameter_schemas": [],
+          "tool_choice": "auto",
+          "max_tokens": null,
+          "temperature": 1.0,
+          "top_p": 0.949999988079071,
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "parse_tool_calls": false,
+          "starts_in_tool_calls": false
+        },
+        "differences": {}
+      }
+    },
+    {
+      "name": "resolve_default_max_effort_131072",
+      "status": "pass",
+      "evidence": {
+        "large_context": 131072,
+        "seven_left": 7,
+        "expected_default": 131072
+      }
+    },
+    {
+      "name": "family_compare",
+      "status": "pass",
+      "evidence": {
+        "family": "thinking_max",
+        "n": 3,
+        "ids": [
+          "thinking-max-chat",
+          "thinking-max-responses",
+          "thinking-max-messages"
+        ],
+        "invariant_fields": [
+          "max_tokens",
+          "message_contents",
+          "model_version",
+          "output_constraint_kind",
+          "reasoning_effort",
+          "roles",
+          "stop_sequences",
+          "temperature",
+          "thinking_mode",
+          "tool_choice",
+          "tool_names",
+          "top_p"
+        ],
+        "declared_protocol_differences": {
+          "assistant_reasoning_contents": [
+            [
+              "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+            ],
+            [
+              "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+            ],
+            [
+              "HISTORY_REASONING_A_19\n\nHISTORY_REASONING_B_19"
+            ]
+          ]
+        },
+        "passed": true,
+        "prompt_equality_required": false
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "2+2等于几？",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "4。",
+          "reasoning_content": "HISTORY_REASONING_A_19\n\nHISTORY_REASONING_B_19",
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        },
+        {
+          "role": "user",
+          "content": "再加1呢？",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": true,
+      "reasoning_effort": "max",
+      "tools": [],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": null,
+      "temperature": 1.0,
+      "top_p": 0.949999988079071,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": null
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": false,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [],
+      "thinking_initial_stage": "ThinkingInitialStage.ReasoningStart"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": true,
+    "reasoning_effort": "max",
+    "roles": [
+      "user",
+      "assistant",
+      "user"
+    ],
+    "message_contents": [
+      "2+2等于几？",
+      "4。",
+      "再加1呢？"
+    ],
+    "assistant_reasoning_contents": [
+      "HISTORY_REASONING_A_19\n\nHISTORY_REASONING_B_19"
+    ],
+    "tool_names": [],
+    "tool_parameter_schemas": [],
+    "tool_choice": "auto",
+    "max_tokens": null,
+    "temperature": 1.0,
+    "top_p": 0.949999988079071,
+    "output_constraint_kind": null,
+    "stop_sequences": [],
+    "parse_tool_calls": false,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜System｜>Reasoning Effort: 100 (range 1-100, the higher the value, the more thorough the reasoning)\n\n<｜User｜>2+2等于几？<｜Assistant｜></think>4。<｜end▁of▁sentence｜><｜User｜>再加1呢？<｜Assistant｜><think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        31
+      ],
+      [
+        123,
+        131
+      ],
+      [
+        138,
+        151
+      ],
+      [
+        151,
+        159
+      ],
+      [
+        161,
+        180
+      ],
+      [
+        180,
+        188
+      ],
+      [
+        193,
+        206
+      ],
+      [
+        206,
+        213
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜System｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "</think>",
+      "<｜end▁of▁sentence｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "<think>"
+    ]
+  },
+  "encoding": {
+    "status": "ok",
+    "token_ids": [
+      0,
+      128799,
+      77666,
+      288,
+      9504,
+      482,
+      28,
+      223,
+      1457,
+      343,
+      16801,
+      223,
+      19,
+      15,
+      1457,
+      14,
+      270,
+      4077,
+      270,
+      1990,
+      14,
+      270,
+      850,
+      15146,
+      270,
+      22805,
+      868,
+      128803,
+      20,
+      13,
+      20,
+      15120,
+      2040,
+      1148,
+      128804,
+      128822,
+      22,
+      320,
+      1,
+      128803,
+      68147,
+      19,
+      3159,
+      1148,
+      128804,
+      128821
+    ],
+    "prompt_tokens": 46,
+    "token_ids_sha256": "495841bf5c90d92286c894d34af0ee6ec66f88dcf8a85458af520d018e78fd03"
+  },
+  "context_probes": [
+    {
+      "prompt": 46,
+      "context": 262190,
+      "value": 131072
+    },
+    {
+      "prompt": 46,
+      "context": 53,
+      "value": 7
+    }
+  ],
+  "elapsed_ms": 11.223083
+}

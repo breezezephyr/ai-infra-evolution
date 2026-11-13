@@ -1,0 +1,9 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>exp15 · 传输与会话</title>
+<style>body{max-width:1100px;margin:32px auto;padding:0 20px;font:16px system-ui;color:#243040;background:#faf8f4}button,select{font:inherit;padding:9px;margin:4px}table{border-collapse:collapse;background:white}th,td{padding:12px;border:1px solid #ddd;text-align:left}pre{white-space:pre-wrap;overflow-wrap:anywhere}#status{min-height:2em}.scroll{overflow:auto}a{color:#ad4355}</style>
+<h1>exp15 · 传输与会话</h1><p>固定回放 exp14 的 GPU 输出，首尾增加探针音。此处测连接与媒体，不重新调用模型；非静音渲染不等于声学首声。</p>
+<select id="fixture"><option>short</option><option>long</option></select><select id="scenario"><option value="baseline">正常供给</option><option value="source_pause">源端暂停 200 ms</option></select>
+<button id="ws">WS / PCM</button><button id="rtc">WebRTC / Opus</button><p id="status">就绪</p>
+<div class="scroll"><table><thead><tr><th>路径 / 样例</th><th>连接 ms</th><th>启动 → 探针渲染 ms</th><th>WS欠载 ms</th><th>RTP掩盖样本</th><th>状态</th></tr></thead><tbody id="results"></tbody></table></div>
+<details><summary>最近一条原始记录</summary><pre id="record"></pre></details>
+<script type="module" src="/client.js"></script></html>

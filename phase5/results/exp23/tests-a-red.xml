@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="18" skipped="0" tests="18" time="0.080" timestamp="2026-10-26T13:55:30.566545+08:00" hostname="lab-host.example.invalid"><testcase classname="phase5.exp23.test_replay" name="test_first_rejection_discards_the_whole_uncommitted_suffix" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'verify_round'">def test_first_rejection_discards_the_whole_uncommitted_suffix():
+&gt;       row=replay.verify_round([10,11,12,0],0,[0,11,12])
+            ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'replay' has no attribute 'verify_round'
+
+phase5/exp23/test_replay.py:7: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_all_accepted_has_bonus_but_never_runs_past_eos" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'verify_round'">def test_all_accepted_has_bonus_but_never_runs_past_eos():
+&gt;       first=replay.verify_round([10,11,12,0],0,[10,11])
+              ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'replay' has no attribute 'verify_round'
+
+phase5/exp23/test_replay.py:13: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_last_draft_rejection_has_no_bonus" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'verify_round'">def test_last_draft_rejection_has_no_bonus():
+&gt;       row=replay.verify_round([10,11,12,0],0,[10,11,99])
+            ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'replay' has no attribute 'verify_round'
+
+phase5/exp23/test_replay.py:20: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_early_rejection_still_charges_all_planned_verification_positions" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">def test_early_rejection_still_charges_all_planned_verification_positions():
+&gt;       row=replay.run_trace([10,11,12,13,14,0],[False]*6,[.99]*6,'fixed5',(800,100,25))
+            ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:26: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_zero_draft_is_a_complete_target_only_baseline" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">def test_zero_draft_is_a_complete_target_only_baseline():
+&gt;       r=replay.run_trace([10,11,0],[False]*3,[.99]*3,'fixed0',(800,100,25))
+          ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:32: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_low_confidence_correct_drafts_can_lose_setup_amortization" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">def test_low_confidence_correct_drafts_can_lose_setup_amortization():
+        args=([10,11,12,13,14,15,0],[True]*7,[.1]*7)
+&gt;       fixed=replay.run_trace(*args,'fixed5',(800,100,25))
+              ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:38: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_high_confidence_wrong_drafts_do_not_become_committed_tokens" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">def test_high_confidence_wrong_drafts_do_not_become_committed_tokens():
+&gt;       r=replay.run_trace([10,11,0],[False]*3,[.99]*3,'candidate',(800,100,25))
+          ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:45: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_every_short_acceptance_mask_preserves_the_target_sequence[1]" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">n = 1
+
+    @pytest.mark.parametrize('n',range(1,8))
+    def test_every_short_acceptance_mask_preserves_the_target_sequence(n):
+        truth=list(range(10,10+n-1))+[0]
+        for mask in itertools.product([True,False],repeat=n):
+            for policy in ['fixed0','fixed1','fixed3','fixed5','candidate']:
+&gt;               r=replay.run_trace(truth,list(mask),[.95 if x else .2 for x in mask],policy,(800,100,25))
+                  ^^^^^^^^^^^^^^^^
+E               AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:54: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_every_short_acceptance_mask_preserves_the_target_sequence[2]" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">n = 2
+
+    @pytest.mark.parametrize('n',range(1,8))
+    def test_every_short_acceptance_mask_preserves_the_target_sequence(n):
+        truth=list(range(10,10+n-1))+[0]
+        for mask in itertools.product([True,False],repeat=n):
+            for policy in ['fixed0','fixed1','fixed3','fixed5','candidate']:
+&gt;               r=replay.run_trace(truth,list(mask),[.95 if x else .2 for x in mask],policy,(800,100,25))
+                  ^^^^^^^^^^^^^^^^
+E               AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:54: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_every_short_acceptance_mask_preserves_the_target_sequence[3]" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">n = 3
+
+    @pytest.mark.parametrize('n',range(1,8))
+    def test_every_short_acceptance_mask_preserves_the_target_sequence(n):
+        truth=list(range(10,10+n-1))+[0]
+        for mask in itertools.product([True,False],repeat=n):
+            for policy in ['fixed0','fixed1','fixed3','fixed5','candidate']:
+&gt;               r=replay.run_trace(truth,list(mask),[.95 if x else .2 for x in mask],policy,(800,100,25))
+                  ^^^^^^^^^^^^^^^^
+E               AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:54: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_every_short_acceptance_mask_preserves_the_target_sequence[4]" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">n = 4
+
+    @pytest.mark.parametrize('n',range(1,8))
+    def test_every_short_acceptance_mask_preserves_the_target_sequence(n):
+        truth=list(range(10,10+n-1))+[0]
+        for mask in itertools.product([True,False],repeat=n):
+            for policy in ['fixed0','fixed1','fixed3','fixed5','candidate']:
+&gt;               r=replay.run_trace(truth,list(mask),[.95 if x else .2 for x in mask],policy,(800,100,25))
+                  ^^^^^^^^^^^^^^^^
+E               AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:54: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_every_short_acceptance_mask_preserves_the_target_sequence[5]" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">n = 5
+
+    @pytest.mark.parametrize('n',range(1,8))
+    def test_every_short_acceptance_mask_preserves_the_target_sequence(n):
+        truth=list(range(10,10+n-1))+[0]
+        for mask in itertools.product([True,False],repeat=n):
+            for policy in ['fixed0','fixed1','fixed3','fixed5','candidate']:
+&gt;               r=replay.run_trace(truth,list(mask),[.95 if x else .2 for x in mask],policy,(800,100,25))
+                  ^^^^^^^^^^^^^^^^
+E               AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:54: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_every_short_acceptance_mask_preserves_the_target_sequence[6]" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">n = 6
+
+    @pytest.mark.parametrize('n',range(1,8))
+    def test_every_short_acceptance_mask_preserves_the_target_sequence(n):
+        truth=list(range(10,10+n-1))+[0]
+        for mask in itertools.product([True,False],repeat=n):
+            for policy in ['fixed0','fixed1','fixed3','fixed5','candidate']:
+&gt;               r=replay.run_trace(truth,list(mask),[.95 if x else .2 for x in mask],policy,(800,100,25))
+                  ^^^^^^^^^^^^^^^^
+E               AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:54: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_every_short_acceptance_mask_preserves_the_target_sequence[7]" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">n = 7
+
+    @pytest.mark.parametrize('n',range(1,8))
+    def test_every_short_acceptance_mask_preserves_the_target_sequence(n):
+        truth=list(range(10,10+n-1))+[0]
+        for mask in itertools.product([True,False],repeat=n):
+            for policy in ['fixed0','fixed1','fixed3','fixed5','candidate']:
+&gt;               r=replay.run_trace(truth,list(mask),[.95 if x else .2 for x in mask],policy,(800,100,25))
+                  ^^^^^^^^^^^^^^^^
+E               AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:54: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_invalid_confidence_is_rejected[confidence0]" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">confidence = [nan]
+
+    @pytest.mark.parametrize('confidence',[[float('nan')],[1.1],[-.1]])
+    def test_invalid_confidence_is_rejected(confidence):
+&gt;       with pytest.raises(ValueError):replay.run_trace([0],[True],confidence,'candidate',(800,100,25))
+                                       ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:63: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_invalid_confidence_is_rejected[confidence1]" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">confidence = [1.1]
+
+    @pytest.mark.parametrize('confidence',[[float('nan')],[1.1],[-.1]])
+    def test_invalid_confidence_is_rejected(confidence):
+&gt;       with pytest.raises(ValueError):replay.run_trace([0],[True],confidence,'candidate',(800,100,25))
+                                       ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:63: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_invalid_confidence_is_rejected[confidence2]" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">confidence = [-0.1]
+
+    @pytest.mark.parametrize('confidence',[[float('nan')],[1.1],[-.1]])
+    def test_invalid_confidence_is_rejected(confidence):
+&gt;       with pytest.raises(ValueError):replay.run_trace([0],[True],confidence,'candidate',(800,100,25))
+                                       ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:63: AttributeError</failure></testcase><testcase classname="phase5.exp23.test_replay" name="test_invalid_input_or_cost_cannot_enter_a_replay" time="0.000"><failure message="AttributeError: module 'replay' has no attribute 'run_trace'">def test_invalid_input_or_cost_cannot_enter_a_replay():
+        for truth,mask,confidence,policy,cost in [([1], [True],[.9],'fixed1',(800,100,25)),
+                ([0],[True,False],[.9],'fixed1',(800,100,25)),
+                ([0],[True],[.9],'unknown',(800,100,25)),([0],[True],[.9],'fixed1',(-1,100,25))]:
+&gt;           with pytest.raises(ValueError):replay.run_trace(truth,mask,confidence,policy,cost)
+                                           ^^^^^^^^^^^^^^^^
+E           AttributeError: module 'replay' has no attribute 'run_trace'
+
+phase5/exp23/test_replay.py:70: AttributeError</failure></testcase></testsuite></testsuites>

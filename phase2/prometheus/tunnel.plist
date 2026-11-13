@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>local.daryu-metrics-tunnel</string>
+  <key>ProgramArguments</key><array>
+    <string>/usr/bin/ssh</string><string>-N</string><string>-o</string><string>ServerAliveInterval=30</string>
+    <string>-o</string><string>ExitOnForwardFailure=yes</string><string>-o</string><string>BatchMode=yes</string>
+    <string>-L</string><string>18001:127.0.0.1:8001</string>
+    <string>-L</string><string>18003:127.0.0.1:8003</string>
+    <string>-L</string><string>18000:127.0.0.1:8000</string>
+    <string>-p</string><string>6064</string><string>root@192.0.2.36</string>
+  </array>
+  <key>RunAtLoad</key><true/><key>KeepAlive</key><true/>
+  <key>StandardErrorPath</key><string>/tmp/daryu-tunnel.err</string>
+</dict></plist>

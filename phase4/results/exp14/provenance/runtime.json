@@ -1,0 +1,50 @@
+{
+  "hardware_and_models": {
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cudnn": 90100,
+    "asr": {
+      "device": "cuda",
+      "compute_type": "int8_float16"
+    },
+    "llm": {
+      "device": "cuda:0",
+      "dtype": "torch.bfloat16"
+    },
+    "tts": {
+      "device": "cuda:0",
+      "dtype": "torch.float32",
+      "voice": "zf_001",
+      "sample_rate": 24000
+    },
+    "vad": {
+      "device": "cpu",
+      "window_samples": 512,
+      "sample_rate": 16000
+    }
+  },
+  "versions": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.3",
+    "kokoro": "0.9.4",
+    "misaki": "0.9.4",
+    "silero-vad": "6.2.3"
+  },
+  "resource": {
+    "stopped_server_pid": 79142,
+    "server_exited": true,
+    "gpu_after_mib": 342,
+    "observed_peak_mib_by_run": {
+      "gpu-samples-fixed.jsonl": 3191,
+      "gpu-samples-eof-fixed.jsonl": 2707
+    },
+    "gpu_router": "active"
+  },
+  "memory_sampling_scope": "whole_gpu_used_including_baseline_and_other_processes",
+  "client_capture": "DARYU loopback",
+  "browser": "Codex in-app browser via localhost SSH forwarding, device rate 48000 Hz",
+  "acoustic_measurement": null
+}

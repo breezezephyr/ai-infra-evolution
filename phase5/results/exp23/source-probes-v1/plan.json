@@ -1,0 +1,165 @@
+{
+  "scope": "isolated official configuration parser, AST guard and Python reference functions; no engine/C++ extension/metadata kernel/model inference",
+  "config_specs": [
+    {
+      "id": "defaults_off",
+      "config": {},
+      "window": 128,
+      "expected": "guard_passed"
+    },
+    {
+      "id": "below_default_bound",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "133"
+      },
+      "window": 128,
+      "expected": "guard_rejected"
+    },
+    {
+      "id": "at_default_bound",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "134"
+      },
+      "window": 128,
+      "expected": "guard_passed"
+    },
+    {
+      "id": "mask_at_bound",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "mask",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "134"
+      },
+      "window": 128,
+      "expected": "guard_passed"
+    },
+    {
+      "id": "recommended140",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "140"
+      },
+      "window": 128,
+      "expected": "guard_passed"
+    },
+    {
+      "id": "zero_draft_below",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "128",
+        "DEEPINFER_USE_NEXTN_DECODE": "0"
+      },
+      "window": 128,
+      "expected": "guard_rejected"
+    },
+    {
+      "id": "zero_draft_at",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "129",
+        "DEEPINFER_USE_NEXTN_DECODE": "0"
+      },
+      "window": 128,
+      "expected": "guard_passed"
+    },
+    {
+      "id": "explicit_backtrack_below",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "147",
+        "DEEPINFER_MAX_BACKTRACKING_TOKENS": "20"
+      },
+      "window": 128,
+      "expected": "guard_rejected"
+    },
+    {
+      "id": "explicit_backtrack_at",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "148",
+        "DEEPINFER_MAX_BACKTRACKING_TOKENS": "20"
+      },
+      "window": 128,
+      "expected": "guard_passed"
+    },
+    {
+      "id": "negative_raw_clamped",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "134",
+        "DEEPINFER_MAX_BACKTRACKING_TOKENS": "-1"
+      },
+      "window": 128,
+      "expected": "guard_passed"
+    },
+    {
+      "id": "no_window",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "140"
+      },
+      "window": 0,
+      "expected": "guard_rejected"
+    },
+    {
+      "id": "zero_keep",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "0"
+      },
+      "window": 128,
+      "expected": "guard_rejected"
+    },
+    {
+      "id": "invalid_mode",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "invalid",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "140"
+      },
+      "window": 128,
+      "expected": "parse_rejected"
+    },
+    {
+      "id": "invalid_keep",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "invalid"
+      },
+      "window": 128,
+      "expected": "parse_rejected"
+    },
+    {
+      "id": "invalid_nextn",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "140",
+        "DEEPINFER_USE_NEXTN_DECODE": "invalid"
+      },
+      "window": 128,
+      "expected": "parse_rejected"
+    },
+    {
+      "id": "invalid_backtrack",
+      "config": {
+        "DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE": "compact",
+        "DEEPINFER_YOCO_PREFILL_KEEP_TOKENS": "140",
+        "DEEPINFER_MAX_BACKTRACKING_TOKENS": "invalid"
+      },
+      "window": 128,
+      "expected": "parse_rejected"
+    }
+  ],
+  "mask_reference_args": {
+    "keep_tokens": 140,
+    "window": 128,
+    "chunk": 512
+  },
+  "reference_limit": "_reference_visible does not include swa_valid_start; no general metadata equivalence claim",
+  "source_sha256": {
+    "deepinfer/environ.py": "fe2c531989c419f0b51b169a07f5ed826dcec7f95c0c5bc3a351805923c4f218",
+    "deepinfer/worker/model_runner.py": "9e2e18d136c9e0c9f23905ff994e9d23afaa94aa7a133d425e7fc1fc069033ef",
+    "examples/yoco/yoco_equiv.py": "4abe933e510b7797ada8835d57d7504dcc049834c990429316e34e937f6c0032"
+  },
+  "harness_sha256": "658494f94e2cc1814105a6fb1a6810103aef1c108f7329b81f2a08eadb684527"
+}

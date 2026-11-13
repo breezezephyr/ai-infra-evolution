@@ -1,0 +1,177 @@
+{
+  "repository": "https://github.com/kvcache-ai/Mooncake",
+  "commit": "c67a88f381f69e869045f353539e90c76e738830",
+  "source_declared_version": "0.3.12.post1",
+  "scope": "Original seven cited Mooncake files plus six narrowly cited files for MC_STORE_MEMCPY parsing, same-process branch selection, and TCP-only transport predicate; source archive only, no services/build/install/model execution",
+  "full_git_checkout": false,
+  "recorded_at_utc": "2026-10-26T06:46:49.697Z",
+  "runtime_wheel_boundary": {
+    "distribution": "mooncake-transfer-engine-non-cuda",
+    "version": "0.3.13.post1",
+    "provenance": "Main task live preflight; not independently verified by archival subtask; no asserted commit equivalence"
+  },
+  "published_documentation": [
+    {
+      "url": "https://kvcache-ai.github.io/Mooncake/getting_started/quick-start.html",
+      "versioned": false,
+      "verification": "Opened with browser during source research"
+    },
+    {
+      "url": "https://kvcache-ai.github.io/Mooncake/getting_started/supported-protocols.html",
+      "versioned": false,
+      "verification": "Opened with browser during source research"
+    },
+    {
+      "url": "https://kvcache-ai.github.io/Mooncake/api-reference/python/mooncake-store.html",
+      "versioned": false,
+      "verification": "Opened with browser during source research"
+    }
+  ],
+  "files": [
+    {
+      "path": "pyproject.toml",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/pyproject.toml",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/pyproject.toml",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/pyproject.toml",
+      "sha256": "f3b4c06e171a63d60a29dbe5560d7cc608fc3619ae136f0b6582dab04d92d038",
+      "bytes": 3571,
+      "line_count": 120,
+      "acquisition": "official fixed-commit raw; fetched and compared with research cache when available; exclusive create"
+    },
+    {
+      "path": "mooncake-integration/store/store_py.cpp",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-integration/store/store_py.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-integration/store/store_py.cpp",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-integration/store/store_py.cpp",
+      "sha256": "f7800bbd8aad6f50b38e83bc06bfb08774ecde2dd1b333c1032d0be99bc60d7c",
+      "bytes": 155770,
+      "line_count": 3544,
+      "acquisition": "official fixed-commit raw; fetched and compared with research cache when available; exclusive create"
+    },
+    {
+      "path": "mooncake-store/include/types.h",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/include/types.h",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/include/types.h",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/include/types.h",
+      "sha256": "27835d66552eec4ab3772e69dbef729282d772f429922f128baf5f545f34bdca",
+      "bytes": 22152,
+      "line_count": 546,
+      "acquisition": "official fixed-commit raw; fetched and compared with research cache when available; exclusive create"
+    },
+    {
+      "path": "mooncake-store/src/master.cpp",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/master.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/master.cpp",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/master.cpp",
+      "sha256": "9cd76b98227abef90c1783a7da31d2f647b5a98949c9800499752104fec18b9a",
+      "bytes": 82540,
+      "line_count": 1770,
+      "acquisition": "official fixed-commit raw; fetched and compared with research cache when available; exclusive create"
+    },
+    {
+      "path": "mooncake-store/src/client_service.cpp",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/client_service.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/client_service.cpp",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/client_service.cpp",
+      "sha256": "c8a99a4633ef4ae2aa2509e1e3be9d4933837988cb1cdc13624410ab7b7a1251",
+      "bytes": 226432,
+      "line_count": 5699,
+      "acquisition": "official fixed-commit raw; fetched and compared with research cache when available; exclusive create"
+    },
+    {
+      "path": "mooncake-store/src/real_client.cpp",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/real_client.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/real_client.cpp",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/real_client.cpp",
+      "sha256": "613fd165773933e57eb03ced5cb89096a3fad92f3b5e7eb5de0ab34223a872fe",
+      "bytes": 388841,
+      "line_count": 9313,
+      "acquisition": "official fixed-commit raw; fetched and compared with research cache when available; exclusive create"
+    },
+    {
+      "path": "mooncake-store/src/master_service.cpp",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/master_service.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/master_service.cpp",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/master_service.cpp",
+      "sha256": "88c19cca1f3cf6427d69f21c291f3b8ebf7b3afebc4d94f11aef38e2c0099c0c",
+      "bytes": 567699,
+      "line_count": 12919,
+      "acquisition": "official fixed-commit raw; fetched and compared with research cache when available; exclusive create"
+    },
+    {
+      "path": "mooncake-store/src/transfer_task.cpp",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/transfer_task.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/transfer_task.cpp",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/transfer_task.cpp",
+      "sha256": "19fe2c291312dc680a8fca66d8a3dc000a6ab0e383b40ccd46163d717e88640e",
+      "bytes": 81879,
+      "line_count": 2136,
+      "acquisition": "official fixed-commit raw; exact memcpy predicate/parser/transport chain extension requested in review; exclusive create"
+    },
+    {
+      "path": "mooncake-store/src/config/transfer_submitter_config.cpp",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/config/transfer_submitter_config.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/config/transfer_submitter_config.cpp",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/config/transfer_submitter_config.cpp",
+      "sha256": "60b4629d3c52b9e453e0a0a10b48942cd5b52ade0ce9b0519f21ff37c4d05fc4",
+      "bytes": 1115,
+      "line_count": 36,
+      "acquisition": "official fixed-commit raw; exact memcpy predicate/parser/transport chain extension requested in review; exclusive create"
+    },
+    {
+      "path": "mooncake-common/include/bool_parser.h",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-common/include/bool_parser.h",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-common/include/bool_parser.h",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-common/include/bool_parser.h",
+      "sha256": "1ed688c5d26fa9c99db6f236ea767f6e1afba9e197973016d248a86435b14009",
+      "bytes": 1418,
+      "line_count": 62,
+      "acquisition": "official fixed-commit raw; exact memcpy predicate/parser/transport chain extension requested in review; exclusive create"
+    },
+    {
+      "path": "mooncake-transfer-engine/src/transfer_engine.cpp",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-transfer-engine/src/transfer_engine.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-transfer-engine/src/transfer_engine.cpp",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-transfer-engine/src/transfer_engine.cpp",
+      "sha256": "6749aaf3f513fb8a1b25172f7620859825c0e5d8311306932f7bc07a4290f84d",
+      "bytes": 69094,
+      "line_count": 1912,
+      "acquisition": "official fixed-commit raw; exact memcpy predicate/parser/transport chain extension requested in review; exclusive create"
+    },
+    {
+      "path": "mooncake-transfer-engine/include/transfer_engine_impl.h",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-transfer-engine/include/transfer_engine_impl.h",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-transfer-engine/include/transfer_engine_impl.h",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-transfer-engine/include/transfer_engine_impl.h",
+      "sha256": "1a081a02836fa0eca378d13c7d3f19ef1c0ce3677659e822b961c689d604e031",
+      "bytes": 20288,
+      "line_count": 586,
+      "acquisition": "official fixed-commit raw; exact memcpy predicate/parser/transport chain extension requested in review; exclusive create"
+    },
+    {
+      "path": "mooncake-transfer-engine/src/multi_transport.cpp",
+      "local_path": "phase5/vendor/exp24-source/Mooncake/mooncake-transfer-engine/src/multi_transport.cpp",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/c67a88f381f69e869045f353539e90c76e738830/mooncake-transfer-engine/src/multi_transport.cpp",
+      "source_url": "https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-transfer-engine/src/multi_transport.cpp",
+      "sha256": "2ed389cd5ac91c68553006f14098e4820c9dd5cf16e17b7502254040e2fda4ec",
+      "bytes": 38505,
+      "line_count": 1003,
+      "acquisition": "official fixed-commit raw; exact memcpy predicate/parser/transport chain extension requested in review; exclusive create"
+    }
+  ],
+  "updated_at_utc": "2026-10-26T07:03:43.214Z",
+  "extensions": [
+    {
+      "reason": "Reviewer requested exact MC_STORE_MEMCPY settings, local-copy criteria and zero-global reader boundary",
+      "recorded_at_utc": "2026-10-26T07:03:43.214Z",
+      "paths": [
+        "mooncake-store/src/transfer_task.cpp",
+        "mooncake-store/src/config/transfer_submitter_config.cpp",
+        "mooncake-common/include/bool_parser.h",
+        "mooncake-transfer-engine/src/transfer_engine.cpp",
+        "mooncake-transfer-engine/include/transfer_engine_impl.h",
+        "mooncake-transfer-engine/src/multi_transport.cpp"
+      ]
+    }
+  ]
+}

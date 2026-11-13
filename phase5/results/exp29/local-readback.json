@@ -1,0 +1,63 @@
+{
+  "artifact_hashes_verified": 44,
+  "all_five_cases_verified": true,
+  "raw_http_reassembled": true,
+  "actual_output_tokens": 41,
+  "cases": [
+    {
+      "case": "missing-model",
+      "status": 404,
+      "generated_tokens": 0,
+      "read_fragments": 1,
+      "client_first_content_ms": null,
+      "client_total_ms": 13.276579
+    },
+    {
+      "case": "over-limit",
+      "status": 422,
+      "generated_tokens": 0,
+      "read_fragments": 1,
+      "client_first_content_ms": null,
+      "client_total_ms": 1.700941
+    },
+    {
+      "case": "nonstream",
+      "status": 200,
+      "generated_tokens": 20,
+      "read_fragments": 1,
+      "client_first_content_ms": 2079.079683,
+      "client_total_ms": 2079.183412
+    },
+    {
+      "case": "stream",
+      "status": 200,
+      "generated_tokens": 20,
+      "read_fragments": 23,
+      "client_first_content_ms": 117.417634,
+      "client_total_ms": 1126.440073
+    },
+    {
+      "case": "one-token",
+      "status": 200,
+      "generated_tokens": 1,
+      "read_fragments": 1,
+      "client_first_content_ms": 61.849718,
+      "client_total_ms": 61.951337
+    }
+  ],
+  "scope": "local readback of one downloaded remote run; no new generation",
+  "run_id": "exp29-kaggle-20261110-a74160a0",
+  "archive_sha256": "65e781eeb6c7b5e6bc5943f9c6f5cf73e27e37fddae282d35afde74a78a1d1f1",
+  "notebook_source_matches": true,
+  "notebook_outputs_match_summary_and_archive": true,
+  "downloaded_notebook_sha256": "5a058105773b06e17edfc3004864479e9423a793795923b337fbc225eb3ce9cc",
+  "notebook_execution_counts": [
+    null,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "kaggle_quick_save_version": 1
+}

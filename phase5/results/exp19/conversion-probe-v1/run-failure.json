@@ -1,0 +1,6 @@
+{
+  "stage": "result JSON serialization",
+  "error": "ThinkingInitialStage native enum is not JSON serializable",
+  "status": "failed pilot; not included in formal results",
+  "fix": "explicit enum string serialization; regression test test_native_enum_in_raw_conversion_is_json_serializable"
+}

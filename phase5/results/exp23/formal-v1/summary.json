@@ -1,0 +1,46 @@
+{
+  "scope": "synthetic CPU teaching replay; no inference, no DSpark implementation, no DeepInfer speed/quality measurement",
+  "a": {
+    "planned": 240,
+    "statuses": {
+      "conformant": 240
+    },
+    "declared_checks_passed": 1200,
+    "candidate_vs_fixed5": [
+      {
+        "cost": "setup_heavy",
+        "paired_traces": 16,
+        "candidate_lower_work": 8,
+        "equal_work": 4,
+        "candidate_higher_work": 4
+      },
+      {
+        "cost": "draft_expensive",
+        "paired_traces": 16,
+        "candidate_lower_work": 12,
+        "equal_work": 4,
+        "candidate_higher_work": 0
+      },
+      {
+        "cost": "linear_verify",
+        "paired_traces": 16,
+        "candidate_lower_work": 12,
+        "equal_work": 4,
+        "candidate_higher_work": 0
+      }
+    ]
+  },
+  "b_toy": {
+    "planned": 99,
+    "conformant": 99,
+    "representation_equal": 99,
+    "full_equal": 54,
+    "single_window_covered_but_full_differs": 18
+  },
+  "artifact_sha256": {
+    "plan.json": "de2324b5c873e1ecaab02b0aa528c2689fbb292ccce46d7fd55ea4ba99eb3620",
+    "replays.json": "dc79195410a0c4700602bde19d779875288e903a48cc17a161f90e90bae1cacf",
+    "window-cases.json": "5fac6ea411d2e97ff8f01912cdd2ca854a9e0c3d3efcd596e93b2440ad959e3b",
+    "replay-matrix.csv": "f3c4736f07fb10f60bde18426a6252687af0fc11682e962e146fdb674a378ec5"
+  }
+}

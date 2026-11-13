@@ -1,0 +1,723 @@
+{
+  "schema_version": 1,
+  "review": "P5.6 independent final article/source-claim review",
+  "reviewed_at": "2026-10-26T07:18:51.724656+00:00",
+  "workspace": ".",
+  "status": "passed",
+  "blocking_issues": [],
+  "material_issues": [],
+  "summary": "未发现阻断或实质性问题。正文、发布说明与图卡文字的科学口径符合final-v3，所有要求的实验/源码限制均明确保留。",
+  "scope": {
+    "only_write": "phase5/results/exp24/article-review.json",
+    "article_or_code_modified": false,
+    "store_rerun": false,
+    "remote_commands_run": false,
+    "upload_performed": false,
+    "mobile_and_screenshots": "由主任务负责；本次未重做移动端或截图验收",
+    "progress_docs_modified": false,
+    "method": "只读文本/固定源码片段与清单；用Python标准库离线重算现存formal-v3记录和预算，不执行Store、模型、绘图或测试脚本。"
+  },
+  "checks": [
+    {
+      "id": "C01",
+      "status": "passed",
+      "requirement": "系列公交比喻与源码、实践并重",
+      "assessment": "源码讲清引擎布局、Store索引/搬运与发布边界；独立进程实验、重复键和故障观察给出可核对证据。比喻始终对应车辆、箱子、寄存台和搬运员，没有将字节读回升级为车辆能够继续计算。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 30,
+          "quote": "用公交车的比喻：寄存台管理编号，搬运员负责送箱子，车辆工作人员负责确认箱子里的东西适用于这班车。编号查得到，不能替代最后这次确认。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 34,
+          "quote": "## 三、源码里，谁管状态，谁管搬运"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 50,
+          "quote": "## 四、40只箱子，换个进程再打开"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 75,
+          "quote": "## 五、三个返回值里的陷阱"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 148,
+          "quote": "| 模型能否接着算 | 尚需真实KV导出/导入、布局与数值检查 |"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/img/build.py",
+          "line": 86,
+          "quote": "<div class=\"info blue\"><h2>老做法</h2><p>算过的KV随原实例保留，后续请求尽量回到原车。</p></div>"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/img/build.py",
+          "line": 97,
+          "quote": "<div class=\"step pending\"><span class=\"num\">04</span><div><h3>接入模型后验恢复结果</h3><p>导出、导入、数值与P/D收益，尚待真实模型验证。</p></div></div>"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/img/cover.py",
+          "line": 18,
+          "quote": "active = number == '5'"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "status": "passed",
+      "requirement": "238次API操作 = 228项声明检查 + 10项探索观察；不是模型调用",
+      "assessment": "238条原始记录与238项冻结计划一一对应，重算返回码/字节检查符合审计。探索项继续单列，不当成全部238项语义成功，不合并旧轮分母。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 58,
+          "quote": "第一次同进程预跑也保留了，但没有并入这40个跨进程对象的分母。最终记录共238次API操作：228项符合预先声明的返回或内容检查，10项为单列的异常/重启探索观察，缺失与超时均为0。它们不是238次模型请求。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/发布说明.md",
+          "line": 12,
+          "quote": "本篇采用formal-v3：238次真实Store API操作，228声明检查通过、10探索观察，40个跨进程对象长度/hash一致。12个身份案例为独立CPU教学；不把API次数写成模型请求。v1同进程、v2跨进程记录均保留，不合并分母。"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/audit.json",
+          "json_pointer": "/outcomes"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/plan.json",
+          "json_pointer": "/cases"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/summary.json",
+          "json_pointer": "/revision"
+        }
+      ],
+      "verified": {
+        "operations": 238,
+        "declared_checks_passed": 228,
+        "exploratory_observations": 10,
+        "fail": 0,
+        "missing": 0,
+        "timeout_records": 0,
+        "model_calls": 0
+      }
+    },
+    {
+      "id": "C03",
+      "status": "passed",
+      "requirement": "40个已知字节对象，跨进程 A写/B读",
+      "assessment": "按冻结seed独立生成SHAKE256字节后重新算SHA256，40条读回长度/hash完全匹配；A/B PID不同。每个主对象remove返回0、随后is_exist返回0。A为128MiB，B不贡献global segment，32MiB是local buffer。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 54,
+          "quote": "master负责索引；进程A提供128MiB存储空间；进程B只提供读取缓冲区，不贡献存储段。A写入，B读回，避免同一个进程读自己的对象，误把本地读回当成跨进程交接。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 56,
+          "quote": "1B、4KiB、64KiB、1MiB，每档10个确定性字节块，共40个对象。逐个核对读回长度与SHA256，**40个全部匹配**。随后逐个强制删除，并确认对应的`is_exist`为0。"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/plan.json",
+          "json_pointer": "/cases/0"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/plan.json",
+          "json_pointer": "/cases/1"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/summary.json",
+          "json_pointer": "/primary_data_get_clients"
+        }
+      ],
+      "verified": {
+        "sizes_bytes": [
+          1,
+          4096,
+          65536,
+          1048576
+        ],
+        "objects_per_size": 10,
+        "objects": 40,
+        "length_and_hash_matches": 40,
+        "writer_pid": 123880,
+        "reader_pid": 123927,
+        "post_remove_absence_checks": 40
+      }
+    },
+    {
+      "id": "C04",
+      "status": "passed",
+      "requirement": "正文所有时延仅匹配final-v3，不引用旧v2时延",
+      "assessment": "12组中位数/最小/最大从final-v3原始记录独立重算一致；正文8个三位小数中位数完全一致。worker同进程单调时钟计时，payload生成在前，读回hash在后。图脚本实际读取formal-v3（其旧docstring未影响数据路径）。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 60,
+          "quote": "调用时延只作本机小样本描述。计时使用同一个工作进程的单调时钟；`put`的字节生成在计时前，读回hash在计时后。每档每种操作仅10条，未预热，没有并发压测。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 64,
+          "quote": "| 1B | 0.185ms | 0.139ms |"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 65,
+          "quote": "| 4KiB | 0.187ms | 0.137ms |"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 66,
+          "quote": "| 64KiB | 0.232ms | 0.160ms |"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 67,
+          "quote": "| 1MiB | 0.698ms | 0.540ms |"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/code/worker.py",
+          "line": 20,
+          "quote": "data=payload(c['seed'],c['size']) if c['op']=='put' else None"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/code/worker.py",
+          "line": 29,
+          "quote": "elapsed=(time.perf_counter_ns()-t)/1e6"
+        },
+        {
+          "path": "phase5/exp24/plot.py",
+          "line": 7,
+          "quote": "R=D.parent/'results/exp24/formal-v3'"
+        }
+      ],
+      "verified": {
+        "timing_groups": 12,
+        "valid_samples": 120,
+        "per_size_per_operation": 10,
+        "displayed_medians": [
+          {
+            "size": "1B",
+            "put_ms": "0.185",
+            "get_ms": "0.139"
+          },
+          {
+            "size": "4KiB",
+            "put_ms": "0.187",
+            "get_ms": "0.137"
+          },
+          {
+            "size": "64KiB",
+            "put_ms": "0.232",
+            "get_ms": "0.160"
+          },
+          {
+            "size": "1MiB",
+            "put_ms": "0.698",
+            "get_ms": "0.540"
+          }
+        ],
+        "warmup": false,
+        "concurrency_load_test": false
+      }
+    },
+    {
+      "id": "C05",
+      "status": "passed",
+      "requirement": "12项调用方身份教学案例，不是模型KV兼容性或Store ACL验证",
+      "assessment": "1个完全相同、11个各改变一个身份字段；两个literal boolean门禁缺一拒绝。正文区分身份hash/内容hash，并明确导入器只是教学标志、租户为合成输入、没有认证/ACL/部分前缀或真实模型验证。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 129,
+          "quote": "12个冻结案例中，1个保持完全一致，另11个各改一个字段。结果是1个身份相同、11个不同。完全一致时，还要求“内容hash已验证”和“导入器兼容”两个明确条件；缺少任意一个都拒绝复用。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 131,
+          "quote": "这里的导入器兼容只是教学输入标志，没有运行模型作兼容认证；租户字段也是合成输入，没有接认证系统或验证Store的多租户权限。合约只检查完整前缀相等，没有实现部分前缀匹配、KV块引用或语义缓存。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 127,
+          "quote": "先把这些字段规范化，再计算带版本的身份hash。**这份hash标识计算上下文；读回内容的hash核对字节完整性，两者用途不同。**"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/img/build.py",
+          "line": 113,
+          "quote": "<p><b>身份合约：</b>调用方合成元数据与标志，非模型兼容认证。</p>"
+        },
+        {
+          "path": "phase5/results/exp24/identity-v1/summary.json",
+          "json_pointer": "/rows"
+        },
+        {
+          "path": "phase5/results/exp24/identity-v1/summary.json",
+          "json_pointer": "/gate_controls"
+        },
+        {
+          "path": "phase5/exp24/identity.py",
+          "line": 126,
+          "quote": "return cached == requested and payload_hash_verified and importer_compatible"
+        }
+      ],
+      "verified": {
+        "cases": 12,
+        "unchanged_eligible": 1,
+        "single_field_changes_rejected": 11,
+        "model_KV_import_tested": false,
+        "authentication_or_Store_ACL_tested": false
+      }
+    },
+    {
+      "id": "C06",
+      "status": "passed",
+      "requirement": "固定源码版本0.3.12.post1与实际wheel0.3.13.post1分开；构建commit未证明",
+      "assessment": "归档13个文件的SHA256/字节数/行数全部符合清单；pyproject声明0.3.12.post1。现存二进制身份记录的6个原生文件wheel/安装hash相同，但binary_build_commit_verified为false。文章没有建立源码commit等于wheel构建commit的等式。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 46,
+          "quote": "版本要分开记录：源码阅读固定Mooncake的`c67a88f`，该源码声明`0.3.12.post1`；实际运行的是Linux non-CUDA wheel `0.3.13.post1`。wheel的SHA256和安装后的原生文件已核对，但没有证明它由前述commit构建。下面的返回值，以本轮实际记录为准。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/发布说明.md",
+          "line": 16,
+          "quote": "源码Mooncake c67a88f声明0.3.12.post1，实际wheel0.3.13.post1，构建commit未验证。重复put返回0但保留原值；get空字节会折叠缺失/错误；默认无HA/快照/SSD的重启观察不能推广到其他配置。"
+        },
+        {
+          "path": "phase5/vendor/exp24-source/Mooncake/pyproject.toml",
+          "line": 15,
+          "quote": "version = \"0.3.12.post1\""
+        },
+        {
+          "path": "phase5/vendor/exp24-source/Mooncake/source-manifest.json",
+          "json_pointer": "/commit"
+        },
+        {
+          "path": "phase5/results/exp24/preflight/binary-identity.json",
+          "json_pointer": "/binary_build_commit_verified"
+        }
+      ],
+      "verified": {
+        "source_commit": "c67a88f381f69e869045f353539e90c76e738830",
+        "source_declared_version": "0.3.12.post1",
+        "wheel_version": "0.3.13.post1",
+        "wheel_sha256": "892fd0ee77d736fc8d625981c485a43282dbdbc0926b95f05c1cadd8b0debe51",
+        "archived_files_hash_matched": 13,
+        "native_file_hash_pairs_matched": 6,
+        "wheel_build_commit_verified": false
+      }
+    },
+    {
+      "id": "C07",
+      "status": "passed",
+      "requirement": "配置TCP不等于逐载荷走TCP；memcpy自动开启，实际分支未追踪",
+      "assessment": "正文、发布说明和源码笔记均保留native分支/socket字节未追踪的限制。A/B日志各有memcpy enabled；固定源码根据endpoint条件决定LOCAL_MEMCPY，配置本身不是逐次路径证据。没有纯TCP、RDMA、生产尾延迟或TTFT收益结论。官方Quick Start的单机例子确实使用tcp。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 69,
+          "quote": "这是配置为TCP的本机Store接口测量。日志还显示本地复制优化自动开启；本轮没有逐次跟踪载荷的传输分支或socket字节，因此不把时延解释成纯TCP链路延迟、RDMA带宽、生产尾延迟或模型首字收益。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/发布说明.md",
+          "line": 14,
+          "quote": "配置TCP、跨进程读取，未逐次跟踪载荷分支或socket字节；日志显示本地复制优化可启用。时延是接口路径描述，每档10条，无负载测试。无模型KV、GPU、RDMA或真实P/D结论；身份标志不是已执行导入器或Store ACL。"
+        },
+        {
+          "path": "phase5/exp24/源码笔记.md",
+          "line": 71,
+          "quote": "B global=0 只排除 B 作为 global 存储贡献者，不会自动把 `memcpy_enabled_` 设为 false。若 A 是唯一 owner、B 无 hot-cache 重定向，且对象 E 与 B 的上述两个标识都不同，则**按本固定源码**，B 的 Store 本地复制条件为假，应进入 TE；这是有前提的源码推论，不是已安装 wheel 的逐次分支观测。A 向自己的副本 put 仍可能走本地复制，因此跨进程 get 也不能把整组 put/get 称为纯 TCP 数据路径。"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/client-A.log",
+          "line": 13,
+          "quote": "I1026 15:04:17.490938 123880 transfer_task.cpp:965] MC_STORE_MEMCPY not set, auto-detected: TCP-only environment, memcpy enabled"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/client-B.log",
+          "line": 13,
+          "quote": "I1026 15:04:17.529742 123927 transfer_task.cpp:965] MC_STORE_MEMCPY not set, auto-detected: TCP-only environment, memcpy enabled"
+        },
+        {
+          "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/transfer_task.cpp",
+          "line": 1095,
+          "quote": "memcpy_enabled_ = engine_.isTcpOnly();"
+        }
+      ],
+      "verified": {
+        "transport_configured": "tcp",
+        "per_payload_branch_verified": false,
+        "socket_payload_bytes_verified": false,
+        "official_documentation": "https://kvcache-ai.github.io/Mooncake/getting_started/quick-start.html",
+        "documentation_checked": "single-node put/get example lines 358-378; published mutable documentation, not commit proof"
+      }
+    },
+    {
+      "id": "C08",
+      "status": "passed",
+      "requirement": "重复put返回0不证明覆盖，四次读回原4KiB内容",
+      "assessment": "initial/identical/same-size/different-size均返回0；四次get始终返回初始内容hash。已有键转成功分支与固定源码一致；正文明确未测upsert。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 79,
+          "quote": "同一个键，先写入一份4KiB内容，再依次写入同值、同长度异值、不同长度异值。四次`put`都返回0，四次读回都是最初那份内容的hash。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 83,
+          "quote": "所以，不能拿一次`put == 0`证明模型版本已经更新。若调用方要保存不同状态，应先定义不可变对象的身份；需要更新时，再选择并验证适用的更新接口。本轮没有测试`upsert`。"
+        },
+        {
+          "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/client_service.cpp",
+          "line": 2025,
+          "quote": "if (err == ErrorCode::OBJECT_ALREADY_EXISTS) {"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/summary.json",
+          "json_pointer": "/duplicate_cases"
+        }
+      ],
+      "verified": {
+        "put_calls": 4,
+        "get_calls": 4,
+        "original_readback_bytes": 4096
+      }
+    },
+    {
+      "id": "C09",
+      "status": "passed",
+      "requirement": "get空字节折叠缺失与故障；负数真值与非原子检查限制",
+      "assessment": "不存在键get为空、is_exist=0；停master后get为空、is_exist/put=-900。固定源码RPC_FAIL=-900、Python空句柄转空bytes；文章明确不能用truthiness和不能将is_exist+get当原子命中。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 87,
+          "quote": "一个不存在的键，`get`返回`b''`。停掉master后，原本存在的键也返回`b''`。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 89,
+          "quote": "但`is_exist`留下了区别：前者为0，后者为`-900`；故障期间的`put`也是`-900`。固定源码将这个码定义为RPC失败。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 98,
+          "quote": "至少要区分`== 1`、`== 0`和`< 0`。而且，`is_exist`与随后的`get`是两次调用，中间仍可能发生删除或故障；它们不能合成一个原子的“已确认命中”。固定源码的[`get`失败路径](https://github.com/kvcache-ai/Mooncake/blob/c67a88f381f69e869045f353539e90c76e738830/mooncake-store/src/real_client.cpp#L3842-L3964)也说明，空字节会折叠多种失败。"
+        },
+        {
+          "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/include/types.h",
+          "line": 369,
+          "quote": "RPC_FAIL = -900,     ///< RPC operation failed."
+        },
+        {
+          "path": "phase5/vendor/exp24-source/Mooncake/mooncake-integration/store/store_py.cpp",
+          "line": 669,
+          "quote": "return kNullString;"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/plan.json",
+          "json_pointer": "/cases/2"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/summary.json",
+          "json_pointer": "/lifecycle_observations"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "status": "passed",
+      "requirement": "非HA/无快照恢复/无SSD的master重启只支持本轮3秒+再12秒窗口",
+      "assessment": "A/B存活，仅重启master；计划和生命周期均记等待3秒再12秒。已有client两次及新C均查不到旧键，三个get为空；新键另有写读删成功记录。正文不推广成全部Mooncake持久化/HA行为，也不声称内存物理擦除。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 102,
+          "quote": "本轮关闭HA、快照与恢复，也没有SSD卸载。A、B进程保留，只重启master。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 104,
+          "quote": "原键重启、等待约3秒后首次查询是0；再等12秒仍是0。新建的进程C也查不到，三次读取均为空字节。与此同时，新键仍可以重新写入、读回并删除。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 106,
+          "quote": "观察支持的是：**在这套配置和观察窗口里，旧对象没有恢复为可读取的键，新一轮服务可以工作。** 它没有证明A里的旧字节被物理擦除，也不能推广为Mooncake所有持久化和HA配置的行为。"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/plan.json",
+          "json_pointer": "/steps"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/lifecycle.json",
+          "json_pointer": "/5"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/lifecycle.json",
+          "json_pointer": "/6"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/environment.json",
+          "json_pointer": "/master_ha"
+        }
+      ],
+      "verified": {
+        "scheduled_wait_seconds": [
+          3,
+          12
+        ],
+        "old_key_absence_observations": 3,
+        "old_key_empty_reads": 3,
+        "configuration_generalization": false,
+        "physical_zeroization_claimed": false
+      }
+    },
+    {
+      "id": "C11",
+      "status": "passed",
+      "requirement": "读/存在性续租；force只用于串行受控清理，仍有副本/复制任务约束",
+      "assessment": "固定源码ExistKey授予读租约，Query刷新读租约；CheckRemovable仅用force跳过租约，仍检查副本完成和复制任务。worker remove固定传True；正文明确未测普通租约到期或并发删除安全。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 108,
+          "quote": "清理时还要记住租约。固定源码中的成功读取和存在性检查会刷新读租约；普通删除可能因此被拒绝。本轮暂停并发读取后使用`force=True`清理，没有验证普通租约到期或并发删除安全。强制删除也并非绕过所有检查，副本就绪与复制任务仍有约束。"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/code/worker.py",
+          "line": 27,
+          "quote": "elif op=='remove': v=store.remove(c['key'],True)"
+        },
+        {
+          "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/master_service.cpp",
+          "line": 2865,
+          "quote": "return ExistKeyImpl(key, tenant_id, /*grant_lease=*/true);"
+        },
+        {
+          "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/master_service.cpp",
+          "line": 7361,
+          "quote": "if (!force && !metadata.IsLeaseExpired(now)) {"
+        },
+        {
+          "path": "phase5/vendor/exp24-source/Mooncake/mooncake-store/src/master_service.cpp",
+          "line": 2107,
+          "quote": "if (state.replication_task) {"
+        }
+      ]
+    },
+    {
+      "id": "C12",
+      "status": "passed",
+      "requirement": "旧P3计算上限18.08与共享理论10GbE上限10.64是预算重算",
+      "assessment": "独立按保留的输入/输出长度、KV字节公式与P/D性能假设重算：16卡6P+10D的min计算容量18.08449，单条共享10GbE链路10.64369。原整数配卡循环确实只取计算min。正文明确条件句、理论值、纸面预算，没有将本轮1MiB接口耗时外推成模型KV搬运性能。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 141,
+          "quote": "这次复核还要补一个限制：旧表的整数配卡循环只取P、D计算容量的较小值，没有把网络容量一起纳入。若16卡共用同一条理论10GbE链路，原来的计算上限约18.08req/s，还要再受约10.64req/s的搬运上限约束。这里仍是原假设下的纸面重算，不是新测得的网络能力。"
+        },
+        {
+          "path": "phase3/pd_ratio.py",
+          "line": 45,
+          "quote": "best = max(((p, n - p) for p in range(1, n)), key=lambda x: min(x[0] * mu_P, x[1] * mu_D))"
+        },
+        {
+          "path": "phase3/pd_ratio.py",
+          "line": 46,
+          "quote": "v = min(best[0] * mu_P, best[1] * mu_D)"
+        },
+        {
+          "path": "phase3/results/pd_ratio.md",
+          "line": 19,
+          "quote": "| 16 | 6P + 10D | 18.08 | 23.25 | 78% |"
+        },
+        {
+          "path": "phase5/results/exp24/preflight/p3-budget-recheck.json",
+          "json_pointer": "/kv_bytes"
+        }
+      ],
+      "verified": {
+        "kv_bytes": 117440512,
+        "compute_only_req_s": 18.08449074074074,
+        "shared_theoretical_10GbE_req_s": 10.64368656703404,
+        "rounded_compute_only": 18.08,
+        "rounded_shared_link": 10.64,
+        "new_network_measurement": false
+      }
+    },
+    {
+      "id": "C13",
+      "status": "passed",
+      "requirement": "DeepInfer内部KV布局不等于已发布完整外部KV/P/D服务；旧512字符路由不等于KV搬运",
+      "assessment": "固定README第38-42行明确未包含完整服务所需KV系统、VE/P/D分离与DP负载均衡；cache_engine确有uint8数据/scale和布局。旧网关default hash_chars=512，按字符片段crc32选后端；正文解释为亲和路由并保留真实KV连接层/数值/收益验收。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 40,
+          "quote": "同时，这次公开发布没有包含完整的外部KV系统、完整的Prefill/Decode分离服务及相关跨副本负载均衡。这与内部存在KV管理并不矛盾。不能把“引擎有cache代码”写成“分离服务已搭好”。依据见[DeepInfer固定README](https://github.com/deepseek-ai/DeepInfer/blob/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/README.md)。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 38,
+          "quote": "它的cache engine还描述了具体的存储区域、层序、对齐和压缩格式。一个物理`uint8`缓冲区，内部可能同时包含压缩数据与scale。**字节数相等，不代表两边对每一段字节有相同解释。**"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 133,
+          "quote": "旧P3网关的前512字符亲和路由，则是在选择更可能已有本地前缀缓存的后端。它没有搬运KV，也不能代替这份身份合约。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/正文.md",
+          "line": 148,
+          "quote": "| 模型能否接着算 | 尚需真实KV导出/导入、布局与数值检查 |"
+        },
+        {
+          "path": "phase5/vendor/exp23-source/DeepInfer/README.md",
+          "line": 38,
+          "quote": "Required for a complete inference service (not included in this release):"
+        },
+        {
+          "path": "phase5/vendor/exp23-source/DeepInfer/deepinfer/worker/cache_engine.py",
+          "line": 213,
+          "quote": "V41 stores [data | scale] per token: 288 bytes for per-16 FP4 or 528 for MXFP8.\"\"\""
+        },
+        {
+          "path": "phase3/gateway/gw.py",
+          "line": 134,
+          "quote": "home = self.backends[zlib.crc32(prompt[: self.hash_chars].encode()) % n]"
+        }
+      ]
+    },
+    {
+      "id": "C14",
+      "status": "passed",
+      "requirement": "清理只证明指定键/API、owned PID和端口回读，不证明物理擦除",
+      "assessment": "现有cleanup-live记录5个owned PID与11端口均关闭，40主键删除后分别is_exist=0。文章与解释卡的清理表述有支持；本审校只读该记录，没有再次连接远端或扩大清理范围。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/img/build.py",
+          "line": 104,
+          "quote": "<div class=\"check\"><strong>清理也回读</strong><p>逐键查不存在，进程与端口收拢。</p></div>"
+        },
+        {
+          "path": "phase5/results/exp24-结论.md",
+          "line": 48,
+          "quote": "初轮185项、修复后197项本地pytest通过。原始[记录器审校](exp24/recorder-review.json)与[修复](exp24/review-resolution.json)、[复审](exp24/recorder-rereview.json)分开保留。[本轮清理](exp24/formal-v3/cleanup.json)及[远端最终回读](exp24/formal-v3/cleanup-live.json)覆盖5个owned PID和11个静态/日志实际端口，均收拢；命名键不存在另有API记录，非内存擦除证明。独立venv、wheel与原始证据留在实验目录，未修改已有vLLM环境。"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/cleanup-live.json",
+          "json_pointer": "/all_closed"
+        },
+        {
+          "path": "phase5/results/exp24/formal-v3/cleanup-live.json",
+          "json_pointer": "/scope"
+        }
+      ],
+      "verified": {
+        "owned_pids_closed": 5,
+        "ports_closed": 11,
+        "live_cleanup_repeated_by_reviewer": false
+      }
+    },
+    {
+      "id": "C15",
+      "status": "passed",
+      "requirement": "发布说明、封面与解释卡同正文结论一致",
+      "assessment": "标题、P5黄与只亮第5站保持系列身份；3张PNG头部像素尺寸符合发布说明。解释卡40对象/12身份案例与无真实P/D结论一致。197本地检查有tests.txt记录，此次未重跑。未执行上传；远端公众号草稿状态不在本次验证范围。",
+      "evidence": [
+        {
+          "path": "25-Phase5·6-行李不跟车走/发布说明.md",
+          "line": 6,
+          "quote": "- 封面：`img/00-封面.png`，2560×1090；只亮第5站，P5黄`#F2D479`，眉题“进化之路 · P5 · 6”。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/发布说明.md",
+          "line": 7,
+          "quote": "- 图卡：`img/01-一页纸.png`，2160×4160；证据图`img/11-exp24.png`，1920×2048。"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/img/cover.py",
+          "line": 10,
+          "quote": "('5', '实战', '#F2D479'),"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/img/build.py",
+          "line": 101,
+          "quote": "<div class=\"check\"><strong>40个已知对象</strong><p>4种大小 × 10，跨进程读回。</p></div>"
+        },
+        {
+          "path": "25-Phase5·6-行李不跟车走/img/build.py",
+          "line": 103,
+          "quote": "<div class=\"check\"><strong>12个身份教学案例</strong><p>1个不变，11个各改一个字段。</p></div>"
+        },
+        {
+          "path": "phase5/results/exp24/tests.txt",
+          "line": 4,
+          "quote": "197 passed in 0.21s"
+        }
+      ],
+      "verified": {
+        "png_dimensions": {
+          "00-封面.png": [
+            2560,
+            1090
+          ],
+          "01-一页纸.png": [
+            2160,
+            4160
+          ],
+          "11-exp24.png": [
+            1920,
+            2048
+          ]
+        },
+        "local_test_log_passed": 197,
+        "tests_rerun_by_reviewer": false,
+        "mobile_screenshots_reviewed": false,
+        "publication_state_queried": false
+      }
+    }
+  ],
+  "reviewed_input_sha256": {
+    "25-Phase5·6-行李不跟车走/正文.md": "211bcf66607b313f5723636da9ceb319785d0cabd975bbd9dd819aa17ff9cd86",
+    "25-Phase5·6-行李不跟车走/发布说明.md": "41226d6fa286eb6507fc83cdf2736cb9836ffce99c0dc6f62fadcabc7b64d88d",
+    "25-Phase5·6-行李不跟车走/img/build.py": "efbd241794ea2fa0e1e2a3b6de059292b99158492658d8eeea8893907a4b2158",
+    "25-Phase5·6-行李不跟车走/img/cover.py": "2f31b9aa5896fce49a727646864bcf27c6529ca323a47d059016395b15d84feb",
+    "phase5/results/exp24-结论.md": "93022c22a30098ab6a4f36f4acb46bf815846b46d370dbb6a74ac3bcaecf8ef9",
+    "phase5/exp24/源码笔记.md": "7bdb16ebc873bc87d42f9e1b42528bfb55c9e0c93c1aae49d409261ef31bcd91",
+    "phase5/vendor/exp24-source/Mooncake/source-manifest.json": "c5ec0aac7f8b3cc0aa8c2bf92213eca447c15c8808dd34e4b522b8ffa238993b",
+    "phase5/results/exp24/formal-v3/summary.json": "8f35d30572fe88b6b2d996cb85b0f2027f0c539cf4fed4ce1c142f1a466e8eb4",
+    "phase5/results/exp24/formal-v3/plan.json": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+    "phase5/results/exp24/formal-v3/audit.json": "dccbab8142258ba9312f21712097f2b556f0b39e6623f2f2d63b94b0ca971ee6",
+    "phase5/results/exp24/formal-v3/cleanup-live.json": "745179d0b5087b1ab3c297a22e3e5a17f89957c0f33b52e380026ad5afc90ee1",
+    "phase5/results/exp24/formal-v3/records.jsonl": "6c8a21f01041a6fc51629f6fe6f83ff5c5236e455a6e0e3b870ce19848d3eeef",
+    "phase5/results/exp24/formal-v3/environment.json": "31c39f952ed03b1e41b1e00f4b8e726700732a73d87b14e8eb096c32c44b41ba",
+    "phase5/results/exp24/formal-v3/lifecycle.json": "6a57a79690919c6b29a4173e769c90832e1ebf4a92faf5a1f957033b50811ddc",
+    "phase5/results/exp24/formal-v3/code/worker.py": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+    "phase5/results/exp24/identity-v1/plan.json": "7d50e64bae8f2db91f166860ceaac87e0cda58b1de5f001c0a85c81774b35a68",
+    "phase5/results/exp24/identity-v1/summary.json": "f84da01b1ef72b65a4c4c652f273154eb6372b50e90757a3dbe82cdf4744aaa5",
+    "phase5/exp24/identity.py": "7ebc58c1d94bd13ea0ab602b689154dbb269c3909c30d574bb0b247b5c9f85b0",
+    "phase5/results/exp24/preflight/binary-identity.json": "d1b3987a223fbb0e25b980f7e0a5d036a936305f2174248ef0e5a2e0b66bfdac",
+    "phase5/results/exp24/preflight/p3-budget-recheck.json": "3ead4d6b3abccae483351c0e68ce7972cd9a16cac107b27fc20fe03ef6a9136a",
+    "phase3/pd_ratio.py": "8c09a8717bd8114282f9213e836c551108fe87245163e5e0d663925a90034db6",
+    "phase3/results/pd_ratio.md": "72b55b2de084119e2f8fb9d12967bd02a5961aebb40dce8edc1f819d2a0af123",
+    "phase3/gateway/gw.py": "bec67d1fde01503ae8ae185f833cb655febcaab1772a81e95920bb8b40554410",
+    "phase5/exp24/plot.py": "431c9dccf716717ef1823d43526101a4fdff6616549e26e3d3e6cdf171e828f5",
+    "phase5/results/exp24/tests.txt": "0ef999b1c252ed6e232f352e2515901bb49c7784bd35086689de169558ae6220"
+  },
+  "limitations": [
+    "wheel原生文件身份以已保存binary-identity.json为运行证据；本次未重下载wheel或连接远端。源码commit与wheel build commit的对应关系仍未证明，正文已明示。",
+    "配置TCP与跨进程本身不证明逐次载荷分支或socket传输；未追踪实际native payload路径，正文已明示。",
+    "重启与清理仅限已保存记录中的配置、对象和观察窗口；不证明所有持久化配置或物理内存擦除。",
+    "本结论限定于reviewed_input_sha256对应内容；移动端、截图及进度文档由主任务处理。"
+  ]
+}

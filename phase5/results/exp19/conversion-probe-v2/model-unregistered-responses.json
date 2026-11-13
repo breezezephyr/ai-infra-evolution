@@ -1,0 +1,58 @@
+{
+  "id": "model-unregistered-responses",
+  "protocol": "responses",
+  "family": "model_unregistered",
+  "input": {
+    "model": "deepseek-chat",
+    "input": "验证模型名称 MODEL_NAME_19。"
+  },
+  "options": {},
+  "input_sha256": "d695ac29948e796171311ac9d6127654aab58168a47a3dc407634d717be17be2",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "error",
+    "error": {
+      "type": "ConversionError",
+      "message": "The supported API model names are DeepSeek-V4-Pro, DeepSeek-V4.1-Flash, but you passed deepseek-chat.",
+      "body": "{\"error\":{\"message\":\"The supported API model names are DeepSeek-V4-Pro, DeepSeek-V4.1-Flash, but you passed deepseek-chat.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+      "status_code": 400,
+      "stage": "request-construction-or-convert"
+    }
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "status": "error",
+        "error": {
+          "type": "ConversionError",
+          "message": "The supported API model names are DeepSeek-V4-Pro, DeepSeek-V4.1-Flash, but you passed deepseek-chat.",
+          "body": "{\"error\":{\"message\":\"The supported API model names are DeepSeek-V4-Pro, DeepSeek-V4.1-Flash, but you passed deepseek-chat.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+          "status_code": 400,
+          "stage": "request-construction-or-convert"
+        }
+      }
+    },
+    {
+      "name": "assert_conversion_error",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "type": "ConversionError",
+          "message": "The supported API model names are DeepSeek-V4-Pro, DeepSeek-V4.1-Flash, but you passed deepseek-chat.",
+          "body": "{\"error\":{\"message\":\"The supported API model names are DeepSeek-V4-Pro, DeepSeek-V4.1-Flash, but you passed deepseek-chat.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+          "status_code": 400,
+          "stage": "request-construction-or-convert"
+        },
+        "expected": {
+          "error_status_code": 400,
+          "error_contains": [
+            "The supported API model names are DeepSeek-V4-Pro, DeepSeek-V4.1-Flash, but you passed deepseek-chat."
+          ]
+        }
+      }
+    }
+  ],
+  "elapsed_ms": 0.008834
+}

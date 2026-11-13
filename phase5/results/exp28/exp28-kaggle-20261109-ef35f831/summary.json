@@ -1,0 +1,60 @@
+{
+  "run_id": "exp28-kaggle-20261109-ef35f831",
+  "finished_at": "2026-11-09T11:29:25.136489+00:00",
+  "state": "preflight_unavailable",
+  "reason": "No generation sent: health unavailable or not ready",
+  "requests": [
+    {
+      "client_request_id": "exp28-kaggle-20261109-ef35f831-preflight-12fc769f",
+      "server_request_id_propagation": "unverified",
+      "method": "GET",
+      "path": "/health",
+      "auth_mode": "valid",
+      "started_at": "2026-11-09T11:29:23.995883+00:00",
+      "request_body_sha256": null,
+      "status": 404,
+      "response_headers": {
+        "Date": "Mon, 09 Nov 2026 11:29:25 GMT",
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Length": "499"
+      },
+      "response_body_sha256": "eaad2331760f7dda1f072face9288594b365dfe296b193cc267ad63f0e66905a",
+      "response_bytes": 499,
+      "client_seconds_to_response_headers": 1.1372434579971014,
+      "client_response_read_seconds": 0.0006100000027799979,
+      "client_total_http_seconds": 1.1378534579998814,
+      "finished_at": "2026-11-09T11:29:25.135655+00:00"
+    }
+  ],
+  "planned_contract_requests": 4,
+  "planned_generations": 1,
+  "generation_http_requests_sent": 0,
+  "successful_images_received": 0,
+  "backend_gpu_attempts": null,
+  "backend_execution_log_received": false,
+  "full_provenance_accepted": false,
+  "api_contract_and_delivery_passed": false,
+  "image": null,
+  "timing_boundaries": {
+    "client_http": "dispatch through complete response body; not TTFT",
+    "client_headers": "time to HTTP response headers, not first image/model token",
+    "server_elapsed": "self-reported; observed implementation starts before generation lock and includes image/file processing",
+    "queue_seconds": null,
+    "pipeline_only_seconds": null,
+    "network_only_seconds": null,
+    "cold_start_or_model_load_measured": false
+  },
+  "unsupported_claims": [
+    "token usage",
+    "TTFT",
+    "SSE",
+    "KV/prefix cache",
+    "continuous batching",
+    "capacity or HA",
+    "CUDA cancellation",
+    "currency cost"
+  ],
+  "automatic_retries": false,
+  "service_restarted": false,
+  "existing_models_replaced": false
+}

@@ -1,0 +1,71 @@
+{
+  "id": "web-default-messages",
+  "protocol": "messages",
+  "family": "web_search_default",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "messages": [
+      {
+        "role": "user",
+        "content": "搜索 WEB_SEARCH_19。"
+      }
+    ],
+    "tools": [
+      {
+        "type": "web_search_20250305",
+        "name": "web_search"
+      }
+    ]
+  },
+  "options": {
+    "web_search": "default"
+  },
+  "input_sha256": "0b54bfc05c49b3a9c6688a74cd042f45183c7c71ab6f7a5fa2a739a8a3dd3979",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "error",
+    "error": {
+      "type": "ConversionError",
+      "message": "tools[0]: server tools are not supported",
+      "body": "{\"error\":{\"message\":\"tools[0]: server tools are not supported\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+      "status_code": 400,
+      "stage": "request-construction-or-convert"
+    }
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "status": "error",
+        "error": {
+          "type": "ConversionError",
+          "message": "tools[0]: server tools are not supported",
+          "body": "{\"error\":{\"message\":\"tools[0]: server tools are not supported\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+          "status_code": 400,
+          "stage": "request-construction-or-convert"
+        }
+      }
+    },
+    {
+      "name": "assert_conversion_error",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "type": "ConversionError",
+          "message": "tools[0]: server tools are not supported",
+          "body": "{\"error\":{\"message\":\"tools[0]: server tools are not supported\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+          "status_code": 400,
+          "stage": "request-construction-or-convert"
+        },
+        "expected": {
+          "error_status_code": 400,
+          "error_contains": [
+            "tools[0]: server tools are not supported"
+          ]
+        }
+      }
+    }
+  ],
+  "elapsed_ms": 0.021875
+}

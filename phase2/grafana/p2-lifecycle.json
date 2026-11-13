@@ -1,0 +1,659 @@
+{
+  "title": "进化之路 P2 · 一位乘客的一生",
+  "uid": "p2-lifecycle",
+  "tags": [
+    "vllm",
+    "进化之路"
+  ],
+  "timezone": "browser",
+  "refresh": "5s",
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "schemaVersion": 39,
+  "panels": [
+    {
+      "type": "row",
+      "title": "站台 · waiting（决定 2 之前）",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 1
+      },
+      "collapsed": false
+    },
+    {
+      "type": "timeseries",
+      "title": "站台上有几人",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 1,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "none"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "vllm:num_requests_waiting{job=\"$job\"}",
+          "legendFormat": "waiting"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "排队多久 · request_queue_time",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 1,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "none"
+            }
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.5, sum(rate(vllm:request_queue_time_seconds_bucket{job=\"$job\"}[30s])) by (le))",
+          "legendFormat": "p50"
+        },
+        {
+          "refId": "B",
+          "expr": "histogram_quantile(0.95, sum(rate(vllm:request_queue_time_seconds_bucket{job=\"$job\"}[30s])) by (le))",
+          "legendFormat": "p95"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "座位 · KV（决定 2 的准入 / 决定 3 的触发）",
+      "gridPos": {
+        "x": 0,
+        "y": 8,
+        "w": 24,
+        "h": 1
+      },
+      "collapsed": false
+    },
+    {
+      "type": "timeseries",
+      "title": "行李架用了几成 · gpu_cache_usage_perc",
+      "description": "P0：batch × ctx × 每 token KV ≤ 预算。接近 1 就要请人下车",
+      "gridPos": {
+        "x": 0,
+        "y": 9,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "none"
+            }
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "vllm:gpu_cache_usage_perc{job=\"$job\"}",
+          "legendFormat": "kv usage"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "寄存箱命中率 · prefix cache",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 9,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "none"
+            }
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(vllm:gpu_prefix_cache_hits_total{job=\"$job\"}[30s])) / sum(rate(vllm:gpu_prefix_cache_queries_total{job=\"$job\"}[30s]))",
+          "legendFormat": "hit rate"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "搬行李 · prefill（决定 4）",
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 24,
+        "h": 1
+      },
+      "collapsed": false
+    },
+    {
+      "type": "timeseries",
+      "title": "首字延迟 · TTFT",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 17,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "none"
+            }
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.5, sum(rate(vllm:time_to_first_token_seconds_bucket{job=\"$job\"}[30s])) by (le))",
+          "legendFormat": "p50"
+        },
+        {
+          "refId": "B",
+          "expr": "histogram_quantile(0.95, sum(rate(vllm:time_to_first_token_seconds_bucket{job=\"$job\"}[30s])) by (le))",
+          "legendFormat": "p95"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "搬行李用时 · request_prefill_time",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 17,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "none"
+            }
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.5, sum(rate(vllm:request_prefill_time_seconds_bucket{job=\"$job\"}[30s])) by (le))",
+          "legendFormat": "p50"
+        },
+        {
+          "refId": "B",
+          "expr": "histogram_quantile(0.95, sum(rate(vllm:request_prefill_time_seconds_bucket{job=\"$job\"}[30s])) by (le))",
+          "legendFormat": "p95"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "跑圈 · decode（决定 1 + 4）",
+      "gridPos": {
+        "x": 0,
+        "y": 24,
+        "w": 24,
+        "h": 1
+      },
+      "collapsed": false
+    },
+    {
+      "type": "timeseries",
+      "title": "车上坐几人 · num_requests_running",
+      "description": "batch。P0：一圈油钱固定，多坐人就便宜",
+      "gridPos": {
+        "x": 0,
+        "y": 25,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "none"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "vllm:num_requests_running{job=\"$job\"}",
+          "legendFormat": "running"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "每字间隔 · TPOT / ITL",
+      "description": "P0 算的地板：6.34 ms（H100·70B·TP8）。这张卡自己算一遍",
+      "gridPos": {
+        "x": 12,
+        "y": 25,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "none"
+            }
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.5, sum(rate(vllm:time_per_output_token_seconds_bucket{job=\"$job\"}[30s])) by (le))",
+          "legendFormat": "p50"
+        },
+        {
+          "refId": "B",
+          "expr": "histogram_quantile(0.95, sum(rate(vllm:time_per_output_token_seconds_bucket{job=\"$job\"}[30s])) by (le))",
+          "legendFormat": "p95"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "下车 · finished / 抢占（决定 1 / 决定 3）",
+      "gridPos": {
+        "x": 0,
+        "y": 32,
+        "w": 24,
+        "h": 1
+      },
+      "collapsed": false
+    },
+    {
+      "type": "timeseries",
+      "title": "被请下车 · num_preemptions（rate）",
+      "description": "P1：不该是 0（车太空），也不该持续涨（车太小）",
+      "gridPos": {
+        "x": 0,
+        "y": 33,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "none"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rate(vllm:num_preemptions_total{job=\"$job\"}[30s])",
+          "legendFormat": "preemptions/s"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "下车原因 · request_success by finished_reason",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 33,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "normal"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(vllm:request_success_total{job=\"$job\"}[30s])) by (finished_reason)",
+          "legendFormat": "{{finished_reason}}"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "吞吐",
+      "gridPos": {
+        "x": 0,
+        "y": 40,
+        "w": 24,
+        "h": 1
+      },
+      "collapsed": false
+    },
+    {
+      "type": "timeseries",
+      "title": "每秒 token · 输入 vs 输出",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 41,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "none"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(vllm:prompt_tokens_total{job=\"$job\"}[30s]))",
+          "legendFormat": "prompt tok/s"
+        },
+        {
+          "refId": "B",
+          "expr": "sum(rate(vllm:generation_tokens_total{job=\"$job\"}[30s]))",
+          "legendFormat": "generation tok/s"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "端到端 · e2e_request_latency",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 41,
+        "w": 12,
+        "h": 7
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "stacking": {
+              "mode": "none"
+            }
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.5, sum(rate(vllm:e2e_request_latency_seconds_bucket{job=\"$job\"}[30s])) by (le))",
+          "legendFormat": "p50"
+        },
+        {
+          "refId": "B",
+          "expr": "histogram_quantile(0.95, sum(rate(vllm:e2e_request_latency_seconds_bucket{job=\"$job\"}[30s])) by (le))",
+          "legendFormat": "p95"
+        }
+      ]
+    }
+  ],
+  "templating": {
+    "list": [
+      {
+        "name": "job",
+        "label": "目标",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prom"
+        },
+        "query": "label_values(vllm:num_requests_running, job)",
+        "definition": "label_values(vllm:num_requests_running, job)",
+        "current": {
+          "text": "vllm-bench",
+          "value": "vllm-bench"
+        },
+        "refresh": 2,
+        "includeAll": false,
+        "multi": false,
+        "sort": 1
+      }
+    ]
+  }
+}

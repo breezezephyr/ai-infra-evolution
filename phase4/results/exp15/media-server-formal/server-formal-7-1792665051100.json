@@ -1,0 +1,47 @@
+{
+  "run_id": "formal-7-1792665051100",
+  "fixture_id": "long",
+  "transport": "ws",
+  "scenario": "baseline",
+  "produced_samples": 752640,
+  "fixture_samples": 752640,
+  "events": [
+    {
+      "event": "created",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109898806955291
+    },
+    {
+      "event": "start_received",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109898917559083
+    },
+    {
+      "event": "first_frame_sent",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109898917700375
+    },
+    {
+      "event": "source_exhausted",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109914579053250
+    },
+    {
+      "event": "all_samples_acknowledged",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109914638856041,
+      "samples": 752640
+    },
+    {
+      "event": "client_result_received",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109914644585375
+    },
+    {
+      "event": "socket_closed",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 109914657937958,
+      "last_ack": 752640
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "repository": "https://github.com/deepseek-ai/deepseek-recipe",
+  "commit": "935817c66f5d6e64838f419692545f06787e485f",
+  "retrieved_at_utc": "2026-10-23T08:39:31.514981+00:00",
+  "git_tree_api_url": "https://api.github.com/repos/deepseek-ai/deepseek-recipe/git/trees/935817c66f5d6e64838f419692545f06787e485f",
+  "git_tree_api_returned_sha": "935817c66f5d6e64838f419692545f06787e485f",
+  "git_tree_truncated": false,
+  "selection": "Only stream parser, decoder, processor, Python bridge, three protocol generators, response accumulation and one streaming guide; no full archive/tokenizer re-download. Three response schemas added to verify exact finish-reason, usage and SSE mapping rather than infer from names.",
+  "files": [
+    {
+      "path": "docs/streaming.zh.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/docs/streaming.zh.md",
+      "local_path": "phase5/vendor/exp20-source/docs/streaming.zh.md",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 3601,
+      "sha256": "56b00ff9c1311254bd4785b5a68ee8a134e6393c85a5e6d58995b7b7fe527b0b",
+      "git_blob_sha1": "aa0f2caf713e0ebd115354d01c491b39672d3bfd",
+      "expected_git_blob_sha1": "aa0f2caf713e0ebd115354d01c491b39672d3bfd",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/stream/inference.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/stream/inference.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/stream/inference.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 3538,
+      "sha256": "1088a96d606e6090e0aedf08419c587536deb84d4afadf063b753f13436f203d",
+      "git_blob_sha1": "2a3e410fe6ddbac32fdc74a58479e2069299991f",
+      "expected_git_blob_sha1": "2a3e410fe6ddbac32fdc74a58479e2069299991f",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/stream/decoder.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/stream/decoder.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/stream/decoder.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 8791,
+      "sha256": "2237f08024225c3afa79042e9fcd1f3fc838d3e433027d4f193f20e5f1f9d084",
+      "git_blob_sha1": "befc2926e85e72586bab8c2b9097d004d463ee82",
+      "expected_git_blob_sha1": "befc2926e85e72586bab8c2b9097d004d463ee82",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/stream/output_parser.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/stream/output_parser.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/stream/output_parser.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 30794,
+      "sha256": "38aeb5e0cd475c39b2269e71adc037167e713cf98ba551d7210365ceb6eccbc7",
+      "git_blob_sha1": "99a349136d09b3342b760a4f8e8e2aa50f95f2e6",
+      "expected_git_blob_sha1": "99a349136d09b3342b760a4f8e8e2aa50f95f2e6",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/stream/processor.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/stream/processor.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/stream/processor.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 45272,
+      "sha256": "40eb9f349666af775e8649ab340ba32ae76f8c5e251b8a05a38fe854afc35bc4",
+      "git_blob_sha1": "870a41942014fdf240c32ebd2f901ea3cd8663d2",
+      "expected_git_blob_sha1": "870a41942014fdf240c32ebd2f901ea3cd8663d2",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe-python/src/response.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-python/src/response.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe-python/src/response.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 17966,
+      "sha256": "ab4bba07e6372e713194c5f00501728fef449b24ed3796463d19725e317ae6dc",
+      "git_blob_sha1": "cee290c6c0ba03fbd9c54ecb717bf0f13501fdc6",
+      "expected_git_blob_sha1": "cee290c6c0ba03fbd9c54ecb717bf0f13501fdc6",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/response.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/response.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/response.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 2148,
+      "sha256": "26a4639a915497a5cbb75e6361c550ba737cd94c69c5b1dc98481ac4bc143309",
+      "git_blob_sha1": "13048dffbc5bb2574f4a364c8288eff2e9646af8",
+      "expected_git_blob_sha1": "13048dffbc5bb2574f4a364c8288eff2e9646af8",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/protocol/openai/chat_completion/response/chunk_generator.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/chat_completion/response/chunk_generator.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/openai/chat_completion/response/chunk_generator.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 10370,
+      "sha256": "996a5613aa858a30b0527a0f3ef46ae6ca3108ed626655156600e10915627bba",
+      "git_blob_sha1": "ab2832d7887e26bb6d148e902d3ae685789e3a94",
+      "expected_git_blob_sha1": "ab2832d7887e26bb6d148e902d3ae685789e3a94",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/protocol/openai/responses/response/chunk_generator.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/responses/response/chunk_generator.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/openai/responses/response/chunk_generator.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 21714,
+      "sha256": "74b2c09afb6ce53cbb713f051e9a62d278bec82d599a48ece17ea46dd795eb9a",
+      "git_blob_sha1": "2b2694b36cb10b296036b236bfef245ed18a1ed6",
+      "expected_git_blob_sha1": "2b2694b36cb10b296036b236bfef245ed18a1ed6",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/protocol/anthropic/messages/response/chunk_generator.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/anthropic/messages/response/chunk_generator.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/anthropic/messages/response/chunk_generator.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 7611,
+      "sha256": "82f5f28088cbdd911e3df92e05be999fc6382d8ca49b9255b4e9daa713b18094",
+      "git_blob_sha1": "b06f88250d608986317bfea84b74fbc2031d40c2",
+      "expected_git_blob_sha1": "b06f88250d608986317bfea84b74fbc2031d40c2",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/protocol/openai/responses/response/accumulator.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/responses/response/accumulator.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/openai/responses/response/accumulator.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 8381,
+      "sha256": "78c6d10ee389f49ca9d3fc9abe7d418183fa6ef56dc3e7c2d0ba603c548f7668",
+      "git_blob_sha1": "4350fcdcf9f1df87809364391adff1dc5bfefd54",
+      "expected_git_blob_sha1": "4350fcdcf9f1df87809364391adff1dc5bfefd54",
+      "git_tree_match": true
+    },
+    {
+      "path": "README.zh.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/README.zh.md",
+      "local_path": "phase5/vendor/minimal/README.zh.md",
+      "origin": "existing_local_fixed_source",
+      "bytes": 6660,
+      "sha256": "62c22884aaa0446109a73d6b92e3d9c59e81399e8a57902f6ef49fc0dba5bedb",
+      "git_blob_sha1": "eaa74964e340ce9d8dc24ec80759f4cabfdac91c",
+      "expected_git_blob_sha1": "eaa74964e340ce9d8dc24ec80759f4cabfdac91c",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe-python/tests/test_bindings.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-python/tests/test_bindings.py",
+      "local_path": "phase5/vendor/minimal/deepseek-recipe-python/tests/test_bindings.py",
+      "origin": "existing_local_fixed_source",
+      "bytes": 41826,
+      "sha256": "d852276ec3a11917f8cf2fbee95662dc3445d042096ed89a8a6a113b12b0f087",
+      "git_blob_sha1": "78dd6592574ce8c53d102c11faa34ca492b11b94",
+      "expected_git_blob_sha1": "78dd6592574ce8c53d102c11faa34ca492b11b94",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe-python/python/deepseek_recipe/_native.pyi",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-python/python/deepseek_recipe/_native.pyi",
+      "local_path": "phase5/vendor/minimal/deepseek-recipe-python/python/deepseek_recipe/_native.pyi",
+      "origin": "existing_local_fixed_source",
+      "bytes": 40062,
+      "sha256": "e24cb343288b736a0cfadbada954fa0272f4393ae27222adee8ed080aa2b0e92",
+      "git_blob_sha1": "856de4060d2ca518a4edd676644076281b32a64b",
+      "expected_git_blob_sha1": "856de4060d2ca518a4edd676644076281b32a64b",
+      "git_tree_match": true
+    },
+    {
+      "path": "docs/tokenizer.zh.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/docs/tokenizer.zh.md",
+      "local_path": "phase5/vendor/minimal/docs/tokenizer.zh.md",
+      "origin": "existing_local_fixed_source",
+      "bytes": 9742,
+      "sha256": "807c746fbba4c72ed2c4aa178639cd4ba74c4839102f6f60c6fa4cf1d79ffb82",
+      "git_blob_sha1": "e94a39aa6ca7a77972acf36473506108de19947c",
+      "expected_git_blob_sha1": "e94a39aa6ca7a77972acf36473506108de19947c",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/protocol/openai/chat_completion/response/schema.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/chat_completion/response/schema.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/openai/chat_completion/response/schema.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 11371,
+      "sha256": "590d034db959facd31c28db13c95201e5bf93ebfa0c8ee8ed0c3390ee992b9df",
+      "git_blob_sha1": "017e5a53d2ebbbcd092475f30c54df2490e222ad",
+      "expected_git_blob_sha1": "017e5a53d2ebbbcd092475f30c54df2490e222ad",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/protocol/anthropic/messages/response/schema.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/anthropic/messages/response/schema.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/anthropic/messages/response/schema.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 8581,
+      "sha256": "095216a701eca19b11139bf1cc25a3d60c5338f31d1292b75dea8dadafe68e24",
+      "git_blob_sha1": "dbe8f94f72545c61e7f4e89b8e7c1b909844e1d5",
+      "expected_git_blob_sha1": "dbe8f94f72545c61e7f4e89b8e7c1b909844e1d5",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/protocol/openai/responses/response/schema.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/protocol/openai/responses/response/schema.rs",
+      "local_path": "phase5/vendor/exp20-source/deepseek-recipe/src/protocol/openai/responses/response/schema.rs",
+      "origin": "downloaded_fixed_raw",
+      "bytes": 16397,
+      "sha256": "dbbc4b7bd2c1481a9d9dd15a984d68151f64eb352d7752e0b5ab1772a7f4964d",
+      "git_blob_sha1": "5b6131e361eb600fd1458e4e339819274c1a2ff3",
+      "expected_git_blob_sha1": "5b6131e361eb600fd1458e4e339819274c1a2ff3",
+      "git_tree_match": true
+    }
+  ],
+  "execution_scope": {
+    "installed_distribution": "deepseek-recipe==0.2.0",
+    "installed_or_upgraded": false,
+    "native_code_executed": false,
+    "tests_executed": false,
+    "inference_executed": false,
+    "http_server_started": false,
+    "tools_executed": false,
+    "actor": "source_review_lane_only; main agent runtime work is independent"
+  },
+  "native_binary_revision_caveat": "Fixed source identity does not establish native wheel build commit; current installed stub identity is checked separately below.",
+  "existing_wheel": {
+    "path": "phase5/vendor/deepseek_recipe-0.2.0-cp310-abi3-macosx_11_0_arm64.whl",
+    "bytes": 9549388,
+    "sha256": "624bb4d0fb3ed541b9e34d2ef96ff66057026ded7d6708b0b9088cc6d6723999",
+    "metadata_name": "deepseek-recipe",
+    "metadata_version": "0.2.0"
+  },
+  "installed_stub_comparison": {
+    "path": "phase5/.venv-exp19/lib/python3.12/site-packages/deepseek_recipe/_native.pyi",
+    "sha256": "e24cb343288b736a0cfadbada954fa0272f4393ae27222adee8ed080aa2b0e92",
+    "fixed_source_sha256": "e24cb343288b736a0cfadbada954fa0272f4393ae27222adee8ed080aa2b0e92",
+    "byte_identical": true,
+    "scope": "Stub only; no native binary provenance claim."
+  },
+  "updated_at_utc": "2026-10-23T08:42:42.173009+00:00",
+  "commit_api": {
+    "url": "https://api.github.com/repos/deepseek-ai/deepseek-recipe/git/commits/935817c66f5d6e64838f419692545f06787e485f",
+    "sha": "935817c66f5d6e64838f419692545f06787e485f",
+    "root_git_tree_sha": "87a3a67b0d12d34534682cf494536aedec5fafa1",
+    "commit_date": "2026-10-19T17:51:02Z"
+  },
+  "artifact_validation": {
+    "source_entries_rehashed": 18,
+    "downloaded_fixed_raw_files": 14,
+    "downloaded_bytes": 196535,
+    "all_git_blob_matches": true,
+    "note_invariant_ids": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S10",
+      "S11",
+      "S12"
+    ],
+    "local_note_links_exist": true,
+    "validation_scope": "Only source identity, wheel zip metadata and note structure; no inference, native invocation, runner or cases executed."
+  }
+}

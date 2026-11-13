@@ -1,0 +1,22 @@
+......................FF                                                 [100%]
+=================================== FAILURES ===================================
+_______ test_invariant_zero_applicable_is_unknown_and_not_a_vacuous_pass _______
+
+    def test_invariant_zero_applicable_is_unknown_and_not_a_vacuous_pass():
+>       result = cpu.invariant('empty', [], lambda row: True)
+                 ^^^^^^^^^^^^^
+E       AttributeError: module 'cpu' has no attribute 'invariant'
+
+phase5/exp21/test_cpu.py:170: AttributeError
+_________ test_invariant_exception_retains_denominator_and_unknown_id __________
+
+    def test_invariant_exception_retains_denominator_and_unknown_id():
+>       result = cpu.invariant('field', [{'id': 'bad'}, {'id': 'ok', 'x': 1}], lambda row: row['x'] == 1)
+                 ^^^^^^^^^^^^^
+E       AttributeError: module 'cpu' has no attribute 'invariant'
+
+phase5/exp21/test_cpu.py:176: AttributeError
+=========================== short test summary info ============================
+FAILED phase5/exp21/test_cpu.py::test_invariant_zero_applicable_is_unknown_and_not_a_vacuous_pass
+FAILED phase5/exp21/test_cpu.py::test_invariant_exception_retains_denominator_and_unknown_id
+2 failed, 22 passed in 0.09s

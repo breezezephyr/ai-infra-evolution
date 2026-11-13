@@ -1,0 +1,124 @@
+{
+  "run_id": "probes-pilot-v1-llm-0",
+  "kind": "llm",
+  "state": {
+    "text": "出门",
+    "llm": {
+      "thread_stopped": true,
+      "generated_tokens": 1,
+      "token_steps": [
+        {
+          "monotonic_ns": 410036511236770,
+          "tokens": 1,
+          "stop": true
+        }
+      ],
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "你是中文语音助手。请用自然口语回答，用六到八个完整句子，不要标题、列表、编号或思考过程。"
+        },
+        {
+          "role": "user",
+          "content": "请介绍如何安排一次周末城市散步，从出门准备一直说到回家，详细一些。"
+        }
+      ],
+      "finish_reason": "cancelled",
+      "generate_return_ns": 410036526738779
+    },
+    "computed_samples": 0,
+    "discarded_after_stop_samples": 0,
+    "queued_samples": 0,
+    "llm_thread_stopped": true,
+    "tts_thread_stopped": true
+  },
+  "events": [
+    {
+      "event": "generation_start",
+      "component": "generation",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410035780968737,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "llm_start",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410035781704379,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036497859404,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "出门"
+    },
+    {
+      "event": "probe_detection",
+      "component": "probe",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036499230187,
+      "turn_id": 1,
+      "generation_id": 1,
+      "kind": "llm"
+    },
+    {
+      "event": "cancel_received",
+      "component": "cancel",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036499233917,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "stop_signal_set",
+      "component": "stop",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036499239737,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "server_queue_cleared",
+      "component": "server",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036499245970,
+      "turn_id": 1,
+      "generation_id": 1,
+      "discarded_samples": 0
+    },
+    {
+      "event": "tts_worker_returned",
+      "component": "tts",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036505176854,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "llm_worker_returned",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036526824668,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "workers_joined",
+      "component": "workers",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036526922148,
+      "turn_id": 1,
+      "generation_id": 1,
+      "llm_stopped": true,
+      "tts_stopped": true
+    }
+  ],
+  "segments": [],
+  "source": "actual CUDA; synthetic boundary control"
+}

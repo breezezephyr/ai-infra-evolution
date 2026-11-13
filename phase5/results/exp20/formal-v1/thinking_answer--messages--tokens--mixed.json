@@ -1,0 +1,276 @@
+{
+  "fixture": {
+    "id": "thinking_answer",
+    "raw": "\n先想一下。</think>答案：42。",
+    "thinking": true,
+    "action": "Stop",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "答案：42。",
+        "reasoning": "先想一下。",
+        "tools": [],
+        "finish": "stop",
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "答案：42。",
+        "reasoning": "先想一下。",
+        "tools": [],
+        "finish": "completed",
+        "status": "completed",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "答案：42。",
+        "reasoning": "先想一下。",
+        "tools": [],
+        "finish": "end_turn",
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "backend_finish",
+    "expect_native_finished": true
+  },
+  "protocol": "messages",
+  "mode": "tokens",
+  "pattern": "mixed",
+  "events": [
+    {
+      "event": "message_start",
+      "data": "{\"type\":\"message_start\",\"message\":{\"id\":\"exp20\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"DeepSeek-V4.1-Flash\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":0,\"service_tier\":\"standard\"}}}"
+    },
+    {
+      "event": "content_block_start",
+      "data": "{\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"thinking\",\"thinking\":\"\",\"signature\":\"\"}}"
+    },
+    {
+      "event": "ping",
+      "data": "{\"type\":\"ping\"}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"先想一下\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"。\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"signature_delta\",\"signature\":\"exp20\"}}"
+    },
+    {
+      "event": "content_block_stop",
+      "data": "{\"type\":\"content_block_stop\",\"index\":0}"
+    },
+    {
+      "event": "content_block_start",
+      "data": "{\"type\":\"content_block_start\",\"index\":1,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":1,\"delta\":{\"type\":\"text_delta\",\"text\":\"答案：42。\"}}"
+    },
+    {
+      "event": "content_block_stop",
+      "data": "{\"type\":\"content_block_stop\",\"index\":1}"
+    },
+    {
+      "event": "message_delta",
+      "data": "{\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\",\"stop_sequence\":null},\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":10,\"service_tier\":\"standard\"}}"
+    },
+    {
+      "event": "message_stop",
+      "data": "{\"type\":\"message_stop\"}"
+    }
+  ],
+  "backend_finish_seen": true,
+  "native_finished": true,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "backend_finish",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "请继续报站"
+      }
+    ],
+    "max_tokens": 128,
+    "thinking": {
+      "type": "enabled"
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "ThinkingInitialStage.ReasoningStart"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "token IDs",
+    "processor_has_tokenizer": true
+  },
+  "input_units": [
+    201,
+    1735,
+    1134,
+    4915,
+    320,
+    128822,
+    7624,
+    768,
+    3180,
+    320
+  ],
+  "native_finished_after_data": false,
+  "backend_finish_reason": "Stop",
+  "response": {
+    "id": "exp20",
+    "type": "message",
+    "role": "assistant",
+    "model": "DeepSeek-V4.1-Flash",
+    "content": [
+      {
+        "type": "thinking",
+        "thinking": "先想一下。",
+        "signature": "exp20"
+      },
+      {
+        "type": "text",
+        "text": "答案：42。"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3,
+      "output_tokens": 10,
+      "service_tier": "standard"
+    }
+  },
+  "semantic": {
+    "text": "答案：42。",
+    "reasoning": "先想一下。",
+    "tools": [],
+    "finish": "end_turn",
+    "status": null,
+    "stop_sequence": null
+  },
+  "id": "thinking_answer--messages--tokens--mixed",
+  "contract": "64ac2bac1d59346977242d6ee9ee37c7e7572304b648c13cc2c08b13ed31476f",
+  "sse": {
+    "bytes": 1580,
+    "sha256": "c102f1a74373211b618b121fa8c19d6aef5c9e576749a776c3ac75855e39a07f",
+    "done_data": null,
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 12
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 12
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 12
+      }
+    ],
+    "expected_events": 12,
+    "incomplete_eof_count": 11,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "答案：42。",
+          "reasoning": "先想一下。",
+          "tools": [],
+          "finish": "end_turn",
+          "status": null,
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "backend_finish"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": true
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 12
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 12
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 12
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 11
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "thinking_answer--messages--tokens--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

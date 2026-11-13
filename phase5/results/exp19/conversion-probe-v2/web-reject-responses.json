@@ -1,0 +1,65 @@
+{
+  "id": "web-reject-responses",
+  "protocol": "responses",
+  "family": "web_search_override",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "input": "搜索 WEB_SEARCH_19。",
+    "tools": [
+      {
+        "type": "web_search"
+      }
+    ]
+  },
+  "options": {
+    "web_search": "reject"
+  },
+  "input_sha256": "76c76e3c989a468c5ace8955cb7525f0144730819044164e13b4d4b07dcb6cd5",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "error",
+    "error": {
+      "type": "ConversionError",
+      "message": "Server tools are not supported",
+      "body": "{\"error\":{\"message\":\"Server tools are not supported\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+      "status_code": 400,
+      "stage": "request-construction-or-convert"
+    }
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "status": "error",
+        "error": {
+          "type": "ConversionError",
+          "message": "Server tools are not supported",
+          "body": "{\"error\":{\"message\":\"Server tools are not supported\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+          "status_code": 400,
+          "stage": "request-construction-or-convert"
+        }
+      }
+    },
+    {
+      "name": "assert_conversion_error",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "type": "ConversionError",
+          "message": "Server tools are not supported",
+          "body": "{\"error\":{\"message\":\"Server tools are not supported\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+          "status_code": 400,
+          "stage": "request-construction-or-convert"
+        },
+        "expected": {
+          "error_status_code": 400,
+          "error_contains": [
+            "Server tools are not supported"
+          ]
+        }
+      }
+    }
+  ],
+  "elapsed_ms": 0.010333
+}

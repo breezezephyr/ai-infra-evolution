@@ -1,0 +1,120 @@
+{
+  "case_id": "nonstream",
+  "client_request_id": "exp29-kaggle-20261110-a74160a0:nonstream",
+  "body_sha256": "8862a50ed63f5ac5eb9575cea684c5f8586327cd3fb3b27a9355914977cfa00f",
+  "clock_domain": "client-153:monotonic_ns",
+  "started_ns": 1035618325566,
+  "state": "passed",
+  "status": 200,
+  "actual_server_request_id": "ccc520137c184fa7b8b0ef8f92dbc624",
+  "first_nonempty_content_rel_ns": 2079079683,
+  "first_content_observation": "content parsed from complete JSON body",
+  "fragment_semantics": "HTTP response entity read1 chunks; not TCP packets or model tokens",
+  "reason": "OK",
+  "http_version": 11,
+  "response_headers": [
+    [
+      "date",
+      "Tue, 10 Nov 2026 02:36:33 GMT"
+    ],
+    [
+      "server",
+      "uvicorn"
+    ],
+    [
+      "x-request-id",
+      "ccc520137c184fa7b8b0ef8f92dbc624"
+    ],
+    [
+      "x-client-request-id",
+      "exp29-kaggle-20261110-a74160a0:nonstream"
+    ],
+    [
+      "x-run-id",
+      "exp29-kaggle-20261110-a74160a0"
+    ],
+    [
+      "content-length",
+      "673"
+    ],
+    [
+      "content-type",
+      "application/json"
+    ]
+  ],
+  "echoed_client_request_id": "exp29-kaggle-20261110-a74160a0:nonstream",
+  "echoed_run_id": "exp29-kaggle-20261110-a74160a0",
+  "headers_received_rel_ns": 2078895003,
+  "full_duration_ns": 2079183412,
+  "response_json": {
+    "id": "chatcmpl-ccc520137c184fa7b8b0ef8f92dbc624",
+    "request_id": "ccc520137c184fa7b8b0ef8f92dbc624",
+    "client_request_id": "exp29-kaggle-20261110-a74160a0:nonstream",
+    "run_id": "exp29-kaggle-20261110-a74160a0",
+    "model": "qwen3-4b",
+    "body_sha256": "8862a50ed63f5ac5eb9575cea684c5f8586327cd3fb3b27a9355914977cfa00f",
+    "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+    "object": "chat.completion",
+    "usage": {
+      "prompt_tokens": 26,
+      "completion_tokens": 20,
+      "total_tokens": 46
+    },
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "天空呈现蓝色是因为阳光中的蓝光被大气中的分子散射到了我们的视线中。"
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  "text": "天空呈现蓝色是因为阳光中的蓝光被大气中的分子散射到了我们的视线中。",
+  "http_usage": {
+    "prompt_tokens": 26,
+    "completion_tokens": 20,
+    "total_tokens": 46
+  },
+  "finish_reason": "stop",
+  "response_raw_sha256": "52bc1ef1b3df818fec85ac97baf425816fd34ce775c4024cd519b88ae5dcc844",
+  "response_raw_bytes": 673,
+  "read_count": 1,
+  "checks": {
+    "http_status": true,
+    "transport_completed": true,
+    "server_id_present": true,
+    "echoed_client_id": true,
+    "echoed_run_id": true,
+    "native_record_present": true,
+    "native_request_id": true,
+    "native_client_request_id": true,
+    "native_run_id": true,
+    "native_body_sha256": true,
+    "native_prompt_sha256": true,
+    "exact_request_body": true,
+    "requested_model": true,
+    "native_http_status": true,
+    "payloads_present": true,
+    "http_payload_request_id": true,
+    "http_payload_client_request_id": true,
+    "http_payload_run_id": true,
+    "http_payload_body_sha256": true,
+    "http_payload_prompt_sha256": true,
+    "http_payload_model": true,
+    "http_payload_id": true,
+    "native_completed": true,
+    "native_ids_source": true,
+    "output_limit": true,
+    "native_counts": true,
+    "http_usage": true,
+    "text": true,
+    "finish": true,
+    "actual_callbacks": true,
+    "native_first_callback": true,
+    "trace_alias": true,
+    "nonempty_body_observed": true
+  },
+  "failed_checks": []
+}

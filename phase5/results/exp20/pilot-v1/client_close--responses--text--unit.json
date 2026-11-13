@@ -1,0 +1,277 @@
+{
+  "fixture": {
+    "id": "client_close",
+    "raw": "说到一半",
+    "thinking": false,
+    "action": "close",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "说到一半",
+        "reasoning": "",
+        "tools": [],
+        "finish": null,
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "说到一半",
+        "reasoning": "",
+        "tools": [],
+        "finish": "in_progress",
+        "status": "in_progress",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "说到一半",
+        "reasoning": "",
+        "tools": [],
+        "finish": null,
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "client_abort",
+    "expect_native_finished": false
+  },
+  "protocol": "responses",
+  "mode": "text",
+  "pattern": "unit",
+  "events": [
+    {
+      "event": "response.created",
+      "data": "{\"type\":\"response.created\",\"response\":{\"id\":\"exp20\",\"object\":\"response\",\"created_at\":1792745584,\"status\":\"in_progress\",\"background\":false,\"completed_at\":null,\"content_filters\":null,\"error\":null,\"frequency_penalty\":0.0,\"incomplete_details\":null,\"instructions\":null,\"max_output_tokens\":null,\"max_tool_calls\":null,\"model\":\"DeepSeek-V4.1-Flash\",\"moderation\":null,\"output\":[],\"parallel_tool_calls\":true,\"presence_penalty\":0.0,\"previous_response_id\":null,\"prompt_cache_key\":null,\"prompt_cache_retention\":null,\"reasoning\":{\"effort\":\"none\",\"summary\":null},\"safety_identifier\":null,\"service_tier\":\"default\",\"store\":false,\"temperature\":1.0,\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":null},\"tool_choice\":\"auto\",\"tools\":[],\"top_logprobs\":0,\"top_p\":1.0,\"truncation\":\"disabled\",\"usage\":null,\"user\":null,\"metadata\":{}},\"sequence_number\":0}"
+    },
+    {
+      "event": "response.in_progress",
+      "data": "{\"type\":\"response.in_progress\",\"response\":{\"id\":\"exp20\",\"object\":\"response\",\"created_at\":1792745584,\"status\":\"in_progress\",\"background\":false,\"completed_at\":null,\"content_filters\":null,\"error\":null,\"frequency_penalty\":0.0,\"incomplete_details\":null,\"instructions\":null,\"max_output_tokens\":null,\"max_tool_calls\":null,\"model\":\"DeepSeek-V4.1-Flash\",\"moderation\":null,\"output\":[],\"parallel_tool_calls\":true,\"presence_penalty\":0.0,\"previous_response_id\":null,\"prompt_cache_key\":null,\"prompt_cache_retention\":null,\"reasoning\":{\"effort\":\"none\",\"summary\":null},\"safety_identifier\":null,\"service_tier\":\"default\",\"store\":false,\"temperature\":1.0,\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":null},\"tool_choice\":\"auto\",\"tools\":[],\"top_logprobs\":0,\"top_p\":1.0,\"truncation\":\"disabled\",\"usage\":null,\"user\":null,\"metadata\":{}},\"sequence_number\":1}"
+    },
+    {
+      "event": "response.output_item.added",
+      "data": "{\"type\":\"response.output_item.added\",\"item\":{\"type\":\"message\",\"id\":\"msg_exp20_0\",\"status\":\"in_progress\",\"role\":\"assistant\",\"phase\":\"final_answer\",\"content\":[]},\"output_index\":0,\"sequence_number\":2}"
+    },
+    {
+      "event": "response.content_part.added",
+      "data": "{\"type\":\"response.content_part.added\",\"content_index\":0,\"item_id\":\"msg_exp20_0\",\"output_index\":0,\"part\":{\"type\":\"output_text\",\"annotations\":[],\"logprobs\":[],\"text\":\"\"},\"sequence_number\":3}"
+    },
+    {
+      "event": "response.output_text.delta",
+      "data": "{\"type\":\"response.output_text.delta\",\"content_index\":0,\"delta\":\"说\",\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":4}"
+    },
+    {
+      "event": "response.output_text.delta",
+      "data": "{\"type\":\"response.output_text.delta\",\"content_index\":0,\"delta\":\"到\",\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":5}"
+    },
+    {
+      "event": "response.output_text.delta",
+      "data": "{\"type\":\"response.output_text.delta\",\"content_index\":0,\"delta\":\"一\",\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":6}"
+    },
+    {
+      "event": "response.output_text.delta",
+      "data": "{\"type\":\"response.output_text.delta\",\"content_index\":0,\"delta\":\"半\",\"item_id\":\"msg_exp20_0\",\"logprobs\":[],\"output_index\":0,\"sequence_number\":7}"
+    }
+  ],
+  "backend_finish_seen": false,
+  "native_finished": false,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "client_abort",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "input": "请继续报站",
+    "reasoning": {
+      "effort": "none"
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "None"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "unmeasured text token_count=0",
+    "processor_has_tokenizer": false
+  },
+  "input_units": "说到一半",
+  "native_finished_after_data": false,
+  "response": {
+    "id": "exp20",
+    "object": "response",
+    "created_at": 1792745584,
+    "status": "in_progress",
+    "background": false,
+    "completed_at": null,
+    "content_filters": null,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "model": "DeepSeek-V4.1-Flash",
+    "moderation": null,
+    "output": [
+      {
+        "type": "message",
+        "id": "msg_exp20_0",
+        "status": "in_progress",
+        "role": "assistant",
+        "phase": "final_answer",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "说到一半"
+          }
+        ]
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": null,
+    "reasoning": {
+      "effort": "none",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": null
+    },
+    "tool_choice": "auto",
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 1.0,
+    "truncation": "disabled",
+    "usage": null,
+    "user": null,
+    "metadata": {}
+  },
+  "semantic": {
+    "text": "说到一半",
+    "reasoning": "",
+    "tools": [],
+    "finish": "in_progress",
+    "status": "in_progress",
+    "stop_sequence": null
+  },
+  "id": "client_close--responses--text--unit",
+  "contract": "7a4f20f7aa1e3d13d5b7040743228440a1cb265fead1116de40926476db446a3",
+  "sse": {
+    "bytes": 2938,
+    "sha256": "9176f75497f934efc4a685e296abf15fcad0177cbc13f0abf9c855137dc47351",
+    "done_data": null,
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 8
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 8
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 8
+      }
+    ],
+    "expected_events": 8,
+    "incomplete_eof_count": 7,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "说到一半",
+          "reasoning": "",
+          "tools": [],
+          "finish": "in_progress",
+          "status": "in_progress",
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "说到一半",
+          "reasoning": "",
+          "tools": [],
+          "finish": "in_progress",
+          "status": "in_progress",
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "client_abort"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": false
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 8
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 8
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 8
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 7
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "client_close--responses--text--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

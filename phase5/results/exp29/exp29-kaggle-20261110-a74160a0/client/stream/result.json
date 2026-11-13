@@ -1,0 +1,513 @@
+{
+  "case_id": "stream",
+  "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+  "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+  "clock_domain": "client-153:monotonic_ns",
+  "started_ns": 1037698843377,
+  "state": "passed",
+  "status": 200,
+  "actual_server_request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+  "first_nonempty_content_rel_ns": 117417634,
+  "first_content_observation": "parsed SSE content delta",
+  "fragment_semantics": "HTTP response entity read1 chunks; not TCP packets or model tokens",
+  "reason": "OK",
+  "http_version": 11,
+  "response_headers": [
+    [
+      "date",
+      "Tue, 10 Nov 2026 02:36:35 GMT"
+    ],
+    [
+      "server",
+      "uvicorn"
+    ],
+    [
+      "x-request-id",
+      "24e8fbd1a02346dd94344a9f4f65d73a"
+    ],
+    [
+      "x-client-request-id",
+      "exp29-kaggle-20261110-a74160a0:stream"
+    ],
+    [
+      "x-run-id",
+      "exp29-kaggle-20261110-a74160a0"
+    ],
+    [
+      "content-type",
+      "text/event-stream; charset=utf-8"
+    ],
+    [
+      "transfer-encoding",
+      "chunked"
+    ]
+  ],
+  "echoed_client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+  "echoed_run_id": "exp29-kaggle-20261110-a74160a0",
+  "headers_received_rel_ns": 76793773,
+  "full_duration_ns": 1126440073,
+  "text": "天空呈现蓝色是因为阳光中的蓝光被大气中的分子散射到了我们的视线中。",
+  "http_usage": {
+    "prompt_tokens": 26,
+    "completion_tokens": 20,
+    "total_tokens": 46
+  },
+  "finish_reason": "stop",
+  "done": true,
+  "sse_events": [
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "role": "assistant"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "天空"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "呈现"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "蓝色"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "是因为"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "阳光"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "中的"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "蓝"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "光"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "被"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "大气"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "中的"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "分子"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "散"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "射"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "到了"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "我们的"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "视线"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "中"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {
+            "content": "。"
+          },
+          "finish_reason": null
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [
+        {
+          "index": 0,
+          "delta": {},
+          "finish_reason": "stop"
+        }
+      ]
+    },
+    {
+      "id": "chatcmpl-24e8fbd1a02346dd94344a9f4f65d73a",
+      "request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "run_id": "exp29-kaggle-20261110-a74160a0",
+      "model": "qwen3-4b",
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b",
+      "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+      "object": "chat.completion.chunk",
+      "choices": [],
+      "usage": {
+        "prompt_tokens": 26,
+        "completion_tokens": 20,
+        "total_tokens": 46
+      }
+    },
+    "[DONE]"
+  ],
+  "response_raw_sha256": "1ef995277a9f4116e3e2d185cfabcbaf4a08acdaa0298ad7b1d3f7ee03e6e513",
+  "response_raw_bytes": 10948,
+  "read_count": 23,
+  "checks": {
+    "http_status": true,
+    "transport_completed": true,
+    "server_id_present": true,
+    "echoed_client_id": true,
+    "echoed_run_id": true,
+    "native_record_present": true,
+    "native_request_id": true,
+    "native_client_request_id": true,
+    "native_run_id": true,
+    "native_body_sha256": true,
+    "native_prompt_sha256": true,
+    "exact_request_body": true,
+    "requested_model": true,
+    "native_http_status": true,
+    "payloads_present": true,
+    "http_payload_request_id": true,
+    "http_payload_client_request_id": true,
+    "http_payload_run_id": true,
+    "http_payload_body_sha256": true,
+    "http_payload_prompt_sha256": true,
+    "http_payload_model": true,
+    "http_payload_id": true,
+    "native_completed": true,
+    "native_ids_source": true,
+    "output_limit": true,
+    "native_counts": true,
+    "http_usage": true,
+    "text": true,
+    "finish": true,
+    "actual_callbacks": true,
+    "native_first_callback": true,
+    "trace_alias": true,
+    "nonempty_body_observed": true,
+    "sse_done": true
+  },
+  "failed_checks": []
+}

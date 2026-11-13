@@ -1,0 +1,99 @@
+{
+  "planned": 42,
+  "matched_requests": 42,
+  "failed_requests": 0,
+  "accepted": true,
+  "issues": {
+    "a-first": [],
+    "a-repeat": [],
+    "b-first": [],
+    "b-repeat": [],
+    "spoofed-tenant-header": [],
+    "route2-first": [],
+    "route2-repeat": [],
+    "options-first": [],
+    "options-repeat": [],
+    "unauthenticated": [],
+    "reject-tools": [],
+    "reject-format": [],
+    "reject-nonstream": [],
+    "reject-wrong-seed": [],
+    "reject-zero-output-budget": [],
+    "reject-unknown-model": [],
+    "reject-image-content": [],
+    "reject-tenant-body": [],
+    "over-prompt-budget": [],
+    "invalid-json": [],
+    "review-0": [],
+    "review-1": [],
+    "length-0": [],
+    "length-1": [],
+    "burst-0-0": [],
+    "burst-0-1": [],
+    "burst-0-2": [],
+    "burst-0-3": [],
+    "burst-0-4": [],
+    "burst-0-5": [],
+    "burst-0-6": [],
+    "burst-0-7": [],
+    "burst-0-warm-hit": [],
+    "burst-1-0": [],
+    "burst-1-1": [],
+    "burst-1-2": [],
+    "burst-1-3": [],
+    "burst-1-4": [],
+    "burst-1-5": [],
+    "burst-1-6": [],
+    "burst-1-7": [],
+    "burst-1-warm-hit": []
+  },
+  "global_issues": [],
+  "terminal_counts": {
+    "delivered": 17,
+    "authentication_rejected": 1,
+    "capability_rejected": 9,
+    "budget_rejected": 1,
+    "review_rejected": 2,
+    "admission_rejected": 12
+  },
+  "cache_counts": {
+    "miss": 24,
+    "hit": 7,
+    "not_checked": 11
+  },
+  "attempts": 12,
+  "known_total_tokens": 642,
+  "unknown_usage_attempts": 0,
+  "tenant_usage": {
+    "tenant-a": {
+      "prompt_tokens": 263,
+      "completion_tokens": 144,
+      "total_tokens": 407
+    },
+    "tenant-b": {
+      "prompt_tokens": 105,
+      "completion_tokens": 130,
+      "total_tokens": 235
+    }
+  },
+  "illegal_cache_reuses": 0,
+  "peak_gateway_attempt_intervals_by_clock_domain": {
+    "daryu-gateway-124988": 1
+  },
+  "client_first_content": {
+    "n": 17,
+    "median_ms": 51.625583,
+    "max_ms": 2103.921824
+  },
+  "gateway_receive_to_backend_first_content": {
+    "n": 12,
+    "median_ms": 37.9858935,
+    "max_ms": 1086.887056
+  },
+  "admission_wait": {
+    "n": 12,
+    "median_ms": 0.0171125,
+    "max_ms": 1051.941354
+  },
+  "scope": "one small GPU; buffered whole-response lab gate; exact response cache; no monetary billing, KV migration, semantic correctness or HA claim"
+}

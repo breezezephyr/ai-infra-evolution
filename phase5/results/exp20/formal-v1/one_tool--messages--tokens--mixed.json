@@ -1,0 +1,374 @@
+{
+  "fixture": {
+    "id": "one_tool",
+    "raw": "<｜DSML｜tool_calls><｜DSML｜invoke name=\"weather\"><｜DSML｜parameter name=\"city\" string=\"true\">杭州</｜DSML｜parameter></｜DSML｜invoke></｜DSML｜tool_calls>",
+    "thinking": false,
+    "action": "Stop",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "",
+        "reasoning": "",
+        "tools": [
+          {
+            "name": "weather",
+            "arguments": {
+              "city": "杭州"
+            }
+          }
+        ],
+        "finish": "tool_calls",
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "",
+        "reasoning": "",
+        "tools": [
+          {
+            "name": "weather",
+            "arguments": {
+              "city": "杭州"
+            }
+          }
+        ],
+        "finish": "completed",
+        "status": "completed",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "",
+        "reasoning": "",
+        "tools": [
+          {
+            "name": "weather",
+            "arguments": {
+              "city": "杭州"
+            }
+          }
+        ],
+        "finish": "tool_use",
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "backend_finish",
+    "expect_native_finished": true,
+    "tools": [
+      "weather"
+    ]
+  },
+  "protocol": "messages",
+  "mode": "tokens",
+  "pattern": "mixed",
+  "events": [
+    {
+      "event": "message_start",
+      "data": "{\"type\":\"message_start\",\"message\":{\"id\":\"exp20\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"DeepSeek-V4.1-Flash\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":0,\"service_tier\":\"standard\"}}}"
+    },
+    {
+      "event": "content_block_start",
+      "data": "{\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"tool_use\",\"id\":\"call_00_dk7an4ZO6mKhuZ0uIxki5125\",\"name\":\"weather\",\"input\":{}}}"
+    },
+    {
+      "event": "ping",
+      "data": "{\"type\":\"ping\"}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"{\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"city\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\": \"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"杭州\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"}\"}}"
+    },
+    {
+      "event": "content_block_stop",
+      "data": "{\"type\":\"content_block_stop\",\"index\":0}"
+    },
+    {
+      "event": "message_delta",
+      "data": "{\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"tool_use\",\"stop_sequence\":null},\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":37,\"service_tier\":\"standard\"}}"
+    },
+    {
+      "event": "message_stop",
+      "data": "{\"type\":\"message_stop\"}"
+    }
+  ],
+  "backend_finish_seen": true,
+  "native_finished": true,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "backend_finish",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "请继续报站"
+      }
+    ],
+    "max_tokens": 128,
+    "thinking": {
+      "type": "disabled"
+    },
+    "tools": [
+      {
+        "name": "weather",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "city": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "city"
+          ]
+        }
+      }
+    ]
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "None"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "token IDs",
+    "processor_has_tokenizer": true
+  },
+  "input_units": [
+    30,
+    128825,
+    72461,
+    4941,
+    12548,
+    5451,
+    128825,
+    40148,
+    5406,
+    2329,
+    1281,
+    50219,
+    15073,
+    128825,
+    41523,
+    2329,
+    1281,
+    37399,
+    4,
+    3418,
+    1281,
+    11476,
+    3320,
+    24463,
+    1718,
+    128825,
+    41523,
+    7339,
+    128825,
+    40148,
+    5406,
+    7339,
+    128825,
+    72461,
+    4941,
+    12548,
+    32
+  ],
+  "native_finished_after_data": false,
+  "backend_finish_reason": "Stop",
+  "response": {
+    "id": "exp20",
+    "type": "message",
+    "role": "assistant",
+    "model": "DeepSeek-V4.1-Flash",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "call_00_dk7an4ZO6mKhuZ0uIxki5125",
+        "name": "weather",
+        "input": {
+          "city": "杭州"
+        }
+      }
+    ],
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3,
+      "output_tokens": 37,
+      "service_tier": "standard"
+    }
+  },
+  "semantic": {
+    "text": "",
+    "reasoning": "",
+    "tools": [
+      {
+        "id": "call_00_dk7an4ZO6mKhuZ0uIxki5125",
+        "name": "weather",
+        "arguments": {
+          "city": "杭州"
+        }
+      }
+    ],
+    "finish": "tool_use",
+    "status": null,
+    "stop_sequence": null
+  },
+  "id": "one_tool--messages--tokens--mixed",
+  "contract": "f6777ea3e3a7e75ceb0472fa18e86cfbf44fa565bb5526b5489a04c296f8b6e9",
+  "sse": {
+    "bytes": 1963,
+    "sha256": "14047bfc1a7c3231ec423efce11a521b80d7e6e39c79189ea95533d81af6ca03",
+    "done_data": null,
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 14
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 14
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 14
+      }
+    ],
+    "expected_events": 14,
+    "incomplete_eof_count": 13,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "",
+          "reasoning": "",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": {
+                "city": "杭州"
+              }
+            }
+          ],
+          "finish": "tool_use",
+          "status": null,
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "",
+          "reasoning": "",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": {
+                "city": "杭州"
+              }
+            }
+          ],
+          "finish": "tool_use",
+          "status": null,
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "backend_finish"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": true
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": [
+        "call_00_dk7an4ZO6mKhuZ0uIxki5125"
+      ]
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 14
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 14
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 14
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 13
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "one_tool--messages--tokens--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

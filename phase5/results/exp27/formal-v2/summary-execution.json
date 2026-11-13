@@ -1,0 +1,2875 @@
+{
+  "schema": 1,
+  "experiment": "exp27",
+  "accepted": true,
+  "planned": 42,
+  "eligible": 37,
+  "expected_max_native_attempts": 29,
+  "auditor_sha256": "6624c240afac37b8e7ab956cb4fd06ebaa5c7ba055ff303d24b3e78cd2c1be1c",
+  "frozen_source_sha256": {
+    "plan.py": "17a5bcc91b50d15014ebe64b319b1ee5069bca88aaff66b2f9e0d2026ab799d7",
+    "analyze.py": "6624c240afac37b8e7ab956cb4fd06ebaa5c7ba055ff303d24b3e78cd2c1be1c",
+    "run.py": "3d20e459e9cc1fcafc42c81318c94d70a406b151fa9687bf63f2655dd8e0a711",
+    "serve_gateway.py": "ab50c04404608778083f0015dcded832e5d3d546ccf5e943a0bfdc1aa5d7016b",
+    "gateway.py": "17fdde3b2970e8342a48984056a6d58de5bfa8f446d168c1a9f1f232e7cce5d1",
+    "lifecycle.py": "273a83b420f6e9e70eb5eb85d3916270c1926c208f054ec347094097eba85d32",
+    "backend_audit.py": "a4f95c98a6e6d82853bc77e2597a2af073ef67c51631fd3869aee18c9ed1f3ff"
+  },
+  "errors": [],
+  "metrics": {
+    "gpu": {
+      "attempts": 29,
+      "known_usage_attempts": 26,
+      "unknown_usage_attempts": 3,
+      "known_prompt_tokens": 624,
+      "known_completion_tokens": 146,
+      "known_total_tokens": 770,
+      "failed": {
+        "attempts": 5,
+        "known_usage_attempts": 2,
+        "unknown_usage_attempts": 3,
+        "known_prompt_tokens": 57,
+        "known_completion_tokens": 19,
+        "known_total_tokens": 76
+      },
+      "retry": {
+        "attempts": 1,
+        "known_usage_attempts": 1,
+        "unknown_usage_attempts": 0,
+        "known_prompt_tokens": 34,
+        "known_completion_tokens": 16,
+        "known_total_tokens": 50
+      }
+    },
+    "resource": {
+      "process_union_ns": 19423045294,
+      "ready_union_ns": 8036243285,
+      "supervisor_clock_domain": "supervisor-127213",
+      "cpu_reaped_seconds": 32.226986,
+      "cpu_scope": "reaped process rusage; may include startup and idle CPU",
+      "gpu_kernel_seconds": null,
+      "gpu_weight_residency_seconds": null,
+      "tenant_gpu_seconds": null,
+      "paid_currency": null
+    },
+    "joint": {
+      "denominator": 42,
+      "joint_pass": 21,
+      "joint_rate": 0.5,
+      "protocol": {
+        "passed": 33,
+        "failed": 9,
+        "unknown": 0
+      },
+      "quality": {
+        "passed": 21,
+        "failed": 10,
+        "unknown": 11
+      },
+      "slo": {
+        "passed": 30,
+        "failed": 1,
+        "unknown": 11
+      }
+    },
+    "joint_eligible": {
+      "denominator": 37,
+      "joint_pass": 21,
+      "joint_rate": 0.5675675675675675,
+      "protocol": {
+        "passed": 32,
+        "failed": 5,
+        "unknown": 0
+      },
+      "quality": {
+        "passed": 21,
+        "failed": 10,
+        "unknown": 6
+      },
+      "slo": {
+        "passed": 30,
+        "failed": 1,
+        "unknown": 6
+      }
+    },
+    "by_route": {
+      "direct": {
+        "denominator": 9,
+        "joint_pass": 6,
+        "joint_rate": 0.6666666666666666,
+        "protocol": {
+          "passed": 9,
+          "failed": 0,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 6,
+          "failed": 3,
+          "unknown": 0
+        },
+        "slo": {
+          "passed": 9,
+          "failed": 0,
+          "unknown": 0
+        }
+      },
+      "integrated": {
+        "denominator": 33,
+        "joint_pass": 15,
+        "joint_rate": 0.45454545454545453,
+        "protocol": {
+          "passed": 24,
+          "failed": 9,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 15,
+          "failed": 7,
+          "unknown": 11
+        },
+        "slo": {
+          "passed": 21,
+          "failed": 1,
+          "unknown": 11
+        }
+      }
+    },
+    "by_stratum": {
+      "burst": {
+        "denominator": 6,
+        "joint_pass": 0,
+        "joint_rate": 0.0,
+        "protocol": {
+          "passed": 2,
+          "failed": 4,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 0,
+          "failed": 2,
+          "unknown": 4
+        },
+        "slo": {
+          "passed": 1,
+          "failed": 1,
+          "unknown": 4
+        }
+      },
+      "cache-cold": {
+        "denominator": 6,
+        "joint_pass": 6,
+        "joint_rate": 1.0,
+        "protocol": {
+          "passed": 6,
+          "failed": 0,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 6,
+          "failed": 0,
+          "unknown": 0
+        },
+        "slo": {
+          "passed": 6,
+          "failed": 0,
+          "unknown": 0
+        }
+      },
+      "cache-warm": {
+        "denominator": 6,
+        "joint_pass": 6,
+        "joint_rate": 1.0,
+        "protocol": {
+          "passed": 6,
+          "failed": 0,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 6,
+          "failed": 0,
+          "unknown": 0
+        },
+        "slo": {
+          "passed": 6,
+          "failed": 0,
+          "unknown": 0
+        }
+      },
+      "cancel": {
+        "denominator": 1,
+        "joint_pass": 0,
+        "joint_rate": 0.0,
+        "protocol": {
+          "passed": 0,
+          "failed": 1,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 0,
+          "failed": 0,
+          "unknown": 1
+        },
+        "slo": {
+          "passed": 0,
+          "failed": 0,
+          "unknown": 1
+        }
+      },
+      "delivery-fault": {
+        "denominator": 1,
+        "joint_pass": 0,
+        "joint_rate": 0.0,
+        "protocol": {
+          "passed": 1,
+          "failed": 0,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 0,
+          "failed": 1,
+          "unknown": 0
+        },
+        "slo": {
+          "passed": 1,
+          "failed": 0,
+          "unknown": 0
+        }
+      },
+      "drain": {
+        "denominator": 2,
+        "joint_pass": 0,
+        "joint_rate": 0.0,
+        "protocol": {
+          "passed": 1,
+          "failed": 1,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 0,
+          "failed": 0,
+          "unknown": 2
+        },
+        "slo": {
+          "passed": 0,
+          "failed": 0,
+          "unknown": 2
+        }
+      },
+      "entry-reject": {
+        "denominator": 3,
+        "joint_pass": 0,
+        "joint_rate": 0.0,
+        "protocol": {
+          "passed": 0,
+          "failed": 3,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 0,
+          "failed": 0,
+          "unknown": 3
+        },
+        "slo": {
+          "passed": 0,
+          "failed": 0,
+          "unknown": 3
+        }
+      },
+      "identity-change": {
+        "denominator": 2,
+        "joint_pass": 2,
+        "joint_rate": 1.0,
+        "protocol": {
+          "passed": 2,
+          "failed": 0,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 2,
+          "failed": 0,
+          "unknown": 0
+        },
+        "slo": {
+          "passed": 2,
+          "failed": 0,
+          "unknown": 0
+        }
+      },
+      "math": {
+        "denominator": 6,
+        "joint_pass": 0,
+        "joint_rate": 0.0,
+        "protocol": {
+          "passed": 6,
+          "failed": 0,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 0,
+          "failed": 6,
+          "unknown": 0
+        },
+        "slo": {
+          "passed": 6,
+          "failed": 0,
+          "unknown": 0
+        }
+      },
+      "normal-direct": {
+        "denominator": 6,
+        "joint_pass": 6,
+        "joint_rate": 1.0,
+        "protocol": {
+          "passed": 6,
+          "failed": 0,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 6,
+          "failed": 0,
+          "unknown": 0
+        },
+        "slo": {
+          "passed": 6,
+          "failed": 0,
+          "unknown": 0
+        }
+      },
+      "retry": {
+        "denominator": 1,
+        "joint_pass": 1,
+        "joint_rate": 1.0,
+        "protocol": {
+          "passed": 1,
+          "failed": 0,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 1,
+          "failed": 0,
+          "unknown": 0
+        },
+        "slo": {
+          "passed": 1,
+          "failed": 0,
+          "unknown": 0
+        }
+      },
+      "review": {
+        "denominator": 1,
+        "joint_pass": 0,
+        "joint_rate": 0.0,
+        "protocol": {
+          "passed": 1,
+          "failed": 0,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 0,
+          "failed": 0,
+          "unknown": 1
+        },
+        "slo": {
+          "passed": 0,
+          "failed": 0,
+          "unknown": 1
+        }
+      },
+      "truncated": {
+        "denominator": 1,
+        "joint_pass": 0,
+        "joint_rate": 0.0,
+        "protocol": {
+          "passed": 1,
+          "failed": 0,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 0,
+          "failed": 1,
+          "unknown": 0
+        },
+        "slo": {
+          "passed": 1,
+          "failed": 0,
+          "unknown": 0
+        }
+      }
+    },
+    "by_tenant": {
+      "tenant-a": {
+        "denominator": 31,
+        "joint_pass": 11,
+        "joint_rate": 0.3548387096774194,
+        "protocol": {
+          "passed": 23,
+          "failed": 8,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 11,
+          "failed": 10,
+          "unknown": 10
+        },
+        "slo": {
+          "passed": 20,
+          "failed": 1,
+          "unknown": 10
+        }
+      },
+      "tenant-b": {
+        "denominator": 10,
+        "joint_pass": 10,
+        "joint_rate": 1.0,
+        "protocol": {
+          "passed": 10,
+          "failed": 0,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 10,
+          "failed": 0,
+          "unknown": 0
+        },
+        "slo": {
+          "passed": 10,
+          "failed": 0,
+          "unknown": 0
+        }
+      },
+      "unknown": {
+        "denominator": 1,
+        "joint_pass": 0,
+        "joint_rate": 0.0,
+        "protocol": {
+          "passed": 0,
+          "failed": 1,
+          "unknown": 0
+        },
+        "quality": {
+          "passed": 0,
+          "failed": 0,
+          "unknown": 1
+        },
+        "slo": {
+          "passed": 0,
+          "failed": 0,
+          "unknown": 1
+        }
+      }
+    }
+  },
+  "requests": [
+    {
+      "case_id": "tenant-a-repeat0-direct",
+      "request_id": "exp27-tenant-a-repeat0-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 391.389009,
+      "end_ms": 463.086852,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-a-repeat0-cold",
+      "request_id": "exp27-tenant-a-repeat0-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 95.404379,
+      "end_ms": 95.750515,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-a-repeat0-warm",
+      "request_id": "exp27-tenant-a-repeat0-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.592867,
+      "end_ms": 1.761896,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-a-repeat1-direct",
+      "request_id": "exp27-tenant-a-repeat1-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 51.678943,
+      "end_ms": 79.021912,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-a-repeat1-cold",
+      "request_id": "exp27-tenant-a-repeat1-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 74.477199,
+      "end_ms": 74.799682,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-a-repeat1-warm",
+      "request_id": "exp27-tenant-a-repeat1-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.259396,
+      "end_ms": 1.381317,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-a-repeat2-direct",
+      "request_id": "exp27-tenant-a-repeat2-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 46.660789,
+      "end_ms": 71.315057,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-a-repeat2-cold",
+      "request_id": "exp27-tenant-a-repeat2-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 83.896216,
+      "end_ms": 84.22906,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-a-repeat2-warm",
+      "request_id": "exp27-tenant-a-repeat2-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.310452,
+      "end_ms": 1.42239,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-b-repeat0-direct",
+      "request_id": "exp27-tenant-b-repeat0-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 47.505888,
+      "end_ms": 71.067316,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-b-repeat0-cold",
+      "request_id": "exp27-tenant-b-repeat0-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 70.120434,
+      "end_ms": 70.47267,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-b-repeat0-warm",
+      "request_id": "exp27-tenant-b-repeat0-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.156734,
+      "end_ms": 1.263363,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-b-repeat1-direct",
+      "request_id": "exp27-tenant-b-repeat1-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 58.03166,
+      "end_ms": 80.390277,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-b-repeat1-cold",
+      "request_id": "exp27-tenant-b-repeat1-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 81.204517,
+      "end_ms": 81.539641,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-b-repeat1-warm",
+      "request_id": "exp27-tenant-b-repeat1-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.169127,
+      "end_ms": 1.303684,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-b-repeat2-direct",
+      "request_id": "exp27-tenant-b-repeat2-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 47.359095,
+      "end_ms": 69.192402,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-b-repeat2-cold",
+      "request_id": "exp27-tenant-b-repeat2-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 77.77454,
+      "end_ms": 78.077172,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-b-repeat2-warm",
+      "request_id": "exp27-tenant-b-repeat2-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.065104,
+      "end_ms": 1.214741,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "math-17+25-direct",
+      "request_id": "exp27-math-17+25-direct",
+      "route": "direct",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 44.146963,
+      "end_ms": 146.238772,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "math-17+25-integrated",
+      "request_id": "exp27-math-17+25-integrated",
+      "route": "integrated",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 141.856426,
+      "end_ms": 142.124851,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "math-31-8-direct",
+      "request_id": "exp27-math-31-8-direct",
+      "route": "direct",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 41.325505,
+      "end_ms": 182.698831,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "math-31-8-integrated",
+      "request_id": "exp27-math-31-8-integrated",
+      "route": "integrated",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 229.137591,
+      "end_ms": 229.418571,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "math-12*7-direct",
+      "request_id": "exp27-math-12*7-direct",
+      "route": "direct",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 46.84276,
+      "end_ms": 127.086291,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "math-12*7-integrated",
+      "request_id": "exp27-math-12*7-integrated",
+      "route": "integrated",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 129.181488,
+      "end_ms": 129.458352,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "reject-auth",
+      "request_id": "exp27-reject-auth",
+      "route": "integrated",
+      "stratum": "entry-reject",
+      "tenant_id": "unknown",
+      "planned_tenant": "tenant-a",
+      "eligible": false,
+      "terminal": "authentication_rejected",
+      "cache": "not_checked",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 0.926048,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "reject-tools",
+      "request_id": "exp27-reject-tools",
+      "route": "integrated",
+      "stratum": "entry-reject",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": false,
+      "terminal": "capability_rejected",
+      "cache": "not_checked",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 0.795243,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "reject-budget",
+      "request_id": "exp27-reject-budget",
+      "route": "integrated",
+      "stratum": "entry-reject",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": false,
+      "terminal": "budget_rejected",
+      "cache": "not_checked",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 2.334747,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "review-marker",
+      "request_id": "exp27-review-marker",
+      "route": "integrated",
+      "stratum": "review",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": false,
+      "terminal": "review_rejected",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 99.977574,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "truncated",
+      "request_id": "exp27-truncated",
+      "route": "integrated",
+      "stratum": "truncated",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 80.513939,
+      "end_ms": 80.872806,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "burst-0",
+      "request_id": "exp27-burst-0",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 655.398786,
+      "end_ms": 655.865595,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "burst-1",
+      "request_id": "exp27-burst-1",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": false,
+      "first_content_ms": 1332.845029,
+      "end_ms": 1333.327382,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "burst-2",
+      "request_id": "exp27-burst-2",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "admission_rejected",
+      "cache": "miss",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 4.89634,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "burst-3",
+      "request_id": "exp27-burst-3",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "admission_rejected",
+      "cache": "miss",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 5.379188,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "burst-4",
+      "request_id": "exp27-burst-4",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "admission_rejected",
+      "cache": "miss",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 6.774295,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "burst-5",
+      "request_id": "exp27-burst-5",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "admission_rejected",
+      "cache": "miss",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 6.27679,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "retry-before-content",
+      "request_id": "exp27-retry-before-content",
+      "route": "integrated",
+      "stratum": "retry",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 2,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 462.30778,
+      "end_ms": 462.705493,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "break-after-commit",
+      "request_id": "exp27-break-after-commit",
+      "route": "integrated",
+      "stratum": "delivery-fault",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "backend_error",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 444.002888,
+      "end_ms": 444.277692,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "client-cancel",
+      "request_id": "exp27-client-cancel",
+      "route": "integrated",
+      "stratum": "cancel",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "client_disconnected",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 278.897425,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "drain-running",
+      "request_id": "exp27-drain-running",
+      "route": "integrated",
+      "stratum": "drain",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "drain_timeout",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 299.566685,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "drain-new-entry",
+      "request_id": "exp27-drain-new-entry",
+      "route": "integrated",
+      "stratum": "drain",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": false,
+      "terminal": "draining",
+      "cache": "not_checked",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 1.291526,
+      "joint": false,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "policy-change",
+      "request_id": "exp27-policy-change",
+      "route": "integrated",
+      "stratum": "identity-change",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 59.070799,
+      "end_ms": 59.322905,
+      "joint": true,
+      "evidence_valid": true
+    },
+    {
+      "case_id": "tenant-change",
+      "request_id": "exp27-tenant-change",
+      "route": "integrated",
+      "stratum": "identity-change",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 78.406862,
+      "end_ms": 78.675289,
+      "joint": true,
+      "evidence_valid": true
+    }
+  ],
+  "attempt_ledger": [
+    {
+      "case_id": "tenant-a-repeat0-direct",
+      "request_id": "exp27-tenant-a-repeat0-direct",
+      "attempt_id": "exp27-tenant-a-repeat0-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat0-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-a-repeat0-cold",
+      "request_id": "exp27-tenant-a-repeat0-cold",
+      "attempt_id": "exp27-tenant-a-repeat0-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat0-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-a-repeat1-direct",
+      "request_id": "exp27-tenant-a-repeat1-direct",
+      "attempt_id": "exp27-tenant-a-repeat1-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat1-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-a-repeat1-cold",
+      "request_id": "exp27-tenant-a-repeat1-cold",
+      "attempt_id": "exp27-tenant-a-repeat1-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat1-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-a-repeat2-direct",
+      "request_id": "exp27-tenant-a-repeat2-direct",
+      "attempt_id": "exp27-tenant-a-repeat2-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat2-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-a-repeat2-cold",
+      "request_id": "exp27-tenant-a-repeat2-cold",
+      "attempt_id": "exp27-tenant-a-repeat2-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat2-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-b-repeat0-direct",
+      "request_id": "exp27-tenant-b-repeat0-direct",
+      "attempt_id": "exp27-tenant-b-repeat0-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat0-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-b-repeat0-cold",
+      "request_id": "exp27-tenant-b-repeat0-cold",
+      "attempt_id": "exp27-tenant-b-repeat0-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat0-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-b-repeat1-direct",
+      "request_id": "exp27-tenant-b-repeat1-direct",
+      "attempt_id": "exp27-tenant-b-repeat1-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat1-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-b-repeat1-cold",
+      "request_id": "exp27-tenant-b-repeat1-cold",
+      "attempt_id": "exp27-tenant-b-repeat1-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat1-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-b-repeat2-direct",
+      "request_id": "exp27-tenant-b-repeat2-direct",
+      "attempt_id": "exp27-tenant-b-repeat2-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat2-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-b-repeat2-cold",
+      "request_id": "exp27-tenant-b-repeat2-cold",
+      "attempt_id": "exp27-tenant-b-repeat2-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat2-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "math-17+25-direct",
+      "request_id": "exp27-math-17+25-direct",
+      "attempt_id": "exp27-math-17+25-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-17+25-direct/a1",
+        "usage": {
+          "prompt_tokens": 30,
+          "total_tokens": 36,
+          "completion_tokens": 6
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      }
+    },
+    {
+      "case_id": "math-17+25-integrated",
+      "request_id": "exp27-math-17+25-integrated",
+      "attempt_id": "exp27-math-17+25-integrated/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-17+25-integrated/a1",
+        "usage": {
+          "prompt_tokens": 30,
+          "total_tokens": 36,
+          "completion_tokens": 6
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      }
+    },
+    {
+      "case_id": "math-31-8-direct",
+      "request_id": "exp27-math-31-8-direct",
+      "attempt_id": "exp27-math-31-8-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-31-8-direct/a1",
+        "usage": {
+          "prompt_tokens": 29,
+          "total_tokens": 37,
+          "completion_tokens": 8
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      }
+    },
+    {
+      "case_id": "math-31-8-integrated",
+      "request_id": "exp27-math-31-8-integrated",
+      "attempt_id": "exp27-math-31-8-integrated/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-31-8-integrated/a1",
+        "usage": {
+          "prompt_tokens": 29,
+          "total_tokens": 37,
+          "completion_tokens": 8
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      }
+    },
+    {
+      "case_id": "math-12*7-direct",
+      "request_id": "exp27-math-12*7-direct",
+      "attempt_id": "exp27-math-12*7-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-12*7-direct/a1",
+        "usage": {
+          "prompt_tokens": 29,
+          "total_tokens": 34,
+          "completion_tokens": 5
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      }
+    },
+    {
+      "case_id": "math-12*7-integrated",
+      "request_id": "exp27-math-12*7-integrated",
+      "attempt_id": "exp27-math-12*7-integrated/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-12*7-integrated/a1",
+        "usage": {
+          "prompt_tokens": 29,
+          "total_tokens": 34,
+          "completion_tokens": 5
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      }
+    },
+    {
+      "case_id": "review-marker",
+      "request_id": "exp27-review-marker",
+      "attempt_id": "exp27-review-marker/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "review",
+      "outcome": "review_rejected",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 23,
+        "total_tokens": 26,
+        "completion_tokens": 3
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 23,
+        "total_tokens": 26,
+        "completion_tokens": 3
+      },
+      "settlement": {
+        "attempt_id": "exp27-review-marker/a1",
+        "usage": {
+          "prompt_tokens": 23,
+          "total_tokens": 26,
+          "completion_tokens": 3
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 23,
+        "total_tokens": 26,
+        "completion_tokens": 3
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 23,
+        "total_tokens": 26,
+        "completion_tokens": 3
+      }
+    },
+    {
+      "case_id": "truncated",
+      "request_id": "exp27-truncated",
+      "attempt_id": "exp27-truncated/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "truncated",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 39,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 39,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-truncated/a1",
+        "usage": {
+          "prompt_tokens": 37,
+          "total_tokens": 39,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 39,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 39,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "burst-0",
+      "request_id": "exp27-burst-0",
+      "attempt_id": "exp27-burst-0/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "burst",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 63,
+        "completion_tokens": 22
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 63,
+        "completion_tokens": 22
+      },
+      "settlement": {
+        "attempt_id": "exp27-burst-0/a1",
+        "usage": {
+          "prompt_tokens": 41,
+          "total_tokens": 63,
+          "completion_tokens": 22
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 63,
+        "completion_tokens": 22
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 63,
+        "completion_tokens": 22
+      }
+    },
+    {
+      "case_id": "burst-1",
+      "request_id": "exp27-burst-1",
+      "attempt_id": "exp27-burst-1/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "burst",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 62,
+        "completion_tokens": 21
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 62,
+        "completion_tokens": 21
+      },
+      "settlement": {
+        "attempt_id": "exp27-burst-1/a1",
+        "usage": {
+          "prompt_tokens": 41,
+          "total_tokens": 62,
+          "completion_tokens": 21
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 62,
+        "completion_tokens": 21
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 62,
+        "completion_tokens": 21
+      }
+    },
+    {
+      "case_id": "retry-before-content",
+      "request_id": "exp27-retry-before-content",
+      "attempt_id": "exp27-retry-before-content/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "retry",
+      "outcome": "first_content_timeout",
+      "retry": false,
+      "usage": null,
+      "usage_source": "unknown",
+      "usage_known": false,
+      "native_usage": null,
+      "settlement": {
+        "attempt_id": "exp27-retry-before-content/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "resource_usage": null,
+      "resource_usage_source": "unknown",
+      "backend_http_usage": null
+    },
+    {
+      "case_id": "retry-before-content",
+      "request_id": "exp27-retry-before-content",
+      "attempt_id": "exp27-retry-before-content/a2",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "retry",
+      "outcome": "completed",
+      "retry": true,
+      "usage": {
+        "prompt_tokens": 34,
+        "total_tokens": 50,
+        "completion_tokens": 16
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 34,
+        "total_tokens": 50,
+        "completion_tokens": 16
+      },
+      "settlement": {
+        "attempt_id": "exp27-retry-before-content/a2",
+        "usage": {
+          "prompt_tokens": 34,
+          "total_tokens": 50,
+          "completion_tokens": 16
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 34,
+        "total_tokens": 50,
+        "completion_tokens": 16
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 34,
+        "total_tokens": 50,
+        "completion_tokens": 16
+      }
+    },
+    {
+      "case_id": "break-after-commit",
+      "request_id": "exp27-break-after-commit",
+      "attempt_id": "exp27-break-after-commit/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "delivery-fault",
+      "outcome": "injected_delivery_break",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 34,
+        "total_tokens": 50,
+        "completion_tokens": 16
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 34,
+        "total_tokens": 50,
+        "completion_tokens": 16
+      },
+      "settlement": {
+        "attempt_id": "exp27-break-after-commit/a1",
+        "usage": {
+          "prompt_tokens": 34,
+          "total_tokens": 50,
+          "completion_tokens": 16
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 34,
+        "total_tokens": 50,
+        "completion_tokens": 16
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 34,
+        "total_tokens": 50,
+        "completion_tokens": 16
+      }
+    },
+    {
+      "case_id": "client-cancel",
+      "request_id": "exp27-client-cancel",
+      "attempt_id": "exp27-client-cancel/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "cancel",
+      "outcome": "client_disconnected",
+      "retry": false,
+      "usage": null,
+      "usage_source": "unknown",
+      "usage_known": false,
+      "native_usage": null,
+      "settlement": {
+        "attempt_id": "exp27-client-cancel/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "resource_usage": null,
+      "resource_usage_source": "unknown",
+      "backend_http_usage": null
+    },
+    {
+      "case_id": "drain-running",
+      "request_id": "exp27-drain-running",
+      "attempt_id": "exp27-drain-running/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "drain",
+      "outcome": "drain_timeout",
+      "retry": false,
+      "usage": null,
+      "usage_source": "unknown",
+      "usage_known": false,
+      "native_usage": null,
+      "settlement": {
+        "attempt_id": "exp27-drain-running/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "resource_usage": null,
+      "resource_usage_source": "unknown",
+      "backend_http_usage": null
+    },
+    {
+      "case_id": "policy-change",
+      "request_id": "exp27-policy-change",
+      "attempt_id": "exp27-policy-change/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "identity-change",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-policy-change/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    },
+    {
+      "case_id": "tenant-change",
+      "request_id": "exp27-tenant-change",
+      "attempt_id": "exp27-tenant-change/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "integrated",
+      "stratum": "identity-change",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-change/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "backend_http",
+      "backend_http_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      }
+    }
+  ],
+  "backend": {
+    "http_rows": 29,
+    "http_evidence": "checked",
+    "engine_abort_evidence": "checked_cpu_hooks",
+    "non_http_rows": 14976,
+    "scope": "HTTP transport evidence does not establish engine abort or GPU kernel stop",
+    "engine_attempts": [
+      {
+        "attempt_id": "exp27-tenant-a-repeat0-direct/a1",
+        "engine_request_ids": [
+          "chatcmpl-460fdee9f7194628b5f33b0a231ab388"
+        ],
+        "http_id": "6dc03a49db2a4ef293b4f1b56638062f",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-a-repeat0-cold/a1",
+        "engine_request_ids": [
+          "chatcmpl-0aba3e9a76a641df8cba256291df3058"
+        ],
+        "http_id": "a12538d3350a49bda4c3bcd3c4c2c533",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-a-repeat1-direct/a1",
+        "engine_request_ids": [
+          "chatcmpl-b3b272ca776c4d83966d098b0277d789"
+        ],
+        "http_id": "d06a080820cf4bf2bc4e7b322bd3c1c3",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-a-repeat1-cold/a1",
+        "engine_request_ids": [
+          "chatcmpl-e16541c170454ad9ad6ae87a61faa679"
+        ],
+        "http_id": "850346c20ca84c91bd895308ebb80ae0",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-a-repeat2-direct/a1",
+        "engine_request_ids": [
+          "chatcmpl-22d6a6a7cd2f4a45acd3b41cebba483a"
+        ],
+        "http_id": "d3eee22b991d43e2a83515572f33610c",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-a-repeat2-cold/a1",
+        "engine_request_ids": [
+          "chatcmpl-07e80dd300744c0ca6137c4280e6bfe8"
+        ],
+        "http_id": "5639f0438ce744229a948af846d7a338",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat0-direct/a1",
+        "engine_request_ids": [
+          "chatcmpl-77ffd1f02a5b4cafa65e0c93a3e506cb"
+        ],
+        "http_id": "95f0715d09014a899bf35ef7667de4eb",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat0-cold/a1",
+        "engine_request_ids": [
+          "chatcmpl-271694f4f08d4f6192653f6281d4c2df"
+        ],
+        "http_id": "a4de27e5702a4807985988bca36c7b0c",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat1-direct/a1",
+        "engine_request_ids": [
+          "chatcmpl-00fb31c67aa143e79e8b85614b89e7c3"
+        ],
+        "http_id": "28ca29f43332416e82716769e1a0b30a",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat1-cold/a1",
+        "engine_request_ids": [
+          "chatcmpl-bd30fd6c264e43609edf70160bcc01ef"
+        ],
+        "http_id": "04f53dffb22648ce89a909b1467a5829",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat2-direct/a1",
+        "engine_request_ids": [
+          "chatcmpl-be8502093e064f1e894eb0d34e8838cc"
+        ],
+        "http_id": "c0a03513d1674799925594da3b8d559a",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat2-cold/a1",
+        "engine_request_ids": [
+          "chatcmpl-02344119161f4aa8a3b3c92b2baac676"
+        ],
+        "http_id": "d31d01bffbd74230b1c24c411c689a5b",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-17+25-direct/a1",
+        "engine_request_ids": [
+          "chatcmpl-99ff41998e43498fa3b95d35b5ac19d9"
+        ],
+        "http_id": "a06af271238f49b288caf816161fb383",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-17+25-integrated/a1",
+        "engine_request_ids": [
+          "chatcmpl-0a3a6c5ed1ed48c19a32992980e02c63"
+        ],
+        "http_id": "d4eeb7a55dff4d248cb31cb39c8283a3",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-31-8-direct/a1",
+        "engine_request_ids": [
+          "chatcmpl-8295810cfaeb4b19842a58abd6e63230"
+        ],
+        "http_id": "de1bb1346919418696122698bbd094b7",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-31-8-integrated/a1",
+        "engine_request_ids": [
+          "chatcmpl-da862887544a431491315b769478b85e"
+        ],
+        "http_id": "fcb96e87bdbe42bb9f835a2d3f5f2341",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-12*7-direct/a1",
+        "engine_request_ids": [
+          "chatcmpl-9cc70aa8a5794980b25ca74e6189ffb1"
+        ],
+        "http_id": "c29b372782e8460bb7a80ae39bd9462b",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-12*7-integrated/a1",
+        "engine_request_ids": [
+          "chatcmpl-35680b8611d246d7b0e484806fde8817"
+        ],
+        "http_id": "ed6711cb04a2444c824c34468c5f65a7",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-review-marker/a1",
+        "engine_request_ids": [
+          "chatcmpl-18ec4409a6884bdbb978e08a161b3331"
+        ],
+        "http_id": "e47c9f4965664644a7eb3a15a52c9462",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-truncated/a1",
+        "engine_request_ids": [
+          "chatcmpl-2a0e11631ff04943897a66f196363697"
+        ],
+        "http_id": "a53ea538ce714531886ece936ac5d54f",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-burst-0/a1",
+        "engine_request_ids": [
+          "chatcmpl-c3cc58c465094467853b56458b59355a"
+        ],
+        "http_id": "f8b10c9460d14e9fa7cee63704d45988",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-burst-1/a1",
+        "engine_request_ids": [
+          "chatcmpl-287c98b1e60f412eab8d5a83c334cd96"
+        ],
+        "http_id": "0fe7ababc724443895b1bb29a547c522",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-retry-before-content/a1",
+        "engine_request_ids": [
+          "chatcmpl-b5d0b8752e11417aba4cc17101af7ad0"
+        ],
+        "http_id": "3840667b8b19408e925c0565d0c03ba7",
+        "engine_finished": false,
+        "abort_called": true,
+        "abort_returned": true,
+        "abort_done_observed": true,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-retry-before-content/a2",
+        "engine_request_ids": [
+          "chatcmpl-bd6188fbdd2b40a98dd4f1720dd03a89"
+        ],
+        "http_id": "a4016fbc9bcf405489e8b12b5a5cd349",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-break-after-commit/a1",
+        "engine_request_ids": [
+          "chatcmpl-b2f76469b9ed4e63b6728bc219c8d538"
+        ],
+        "http_id": "d50f16b671354abb9e3f9df99beb1cdf",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-client-cancel/a1",
+        "engine_request_ids": [
+          "chatcmpl-a9a7dc1f6ddb46a197366120c9a89e94"
+        ],
+        "http_id": "b56614ae306941f4a1b4a742b5d966fa",
+        "engine_finished": false,
+        "abort_called": true,
+        "abort_returned": true,
+        "abort_done_observed": true,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-drain-running/a1",
+        "engine_request_ids": [
+          "chatcmpl-392fdd1fb8294636899bce825f2cf207"
+        ],
+        "http_id": "e2e9130f036b479082fc41f09c99f8f3",
+        "engine_finished": false,
+        "abort_called": true,
+        "abort_returned": true,
+        "abort_done_observed": true,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-policy-change/a1",
+        "engine_request_ids": [
+          "chatcmpl-4e3dcf92cbd6428db744817bf3d38fcf"
+        ],
+        "http_id": "a82e9c92a8b043ba9fe05905d2acc2f7",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-change/a1",
+        "engine_request_ids": [
+          "chatcmpl-db408f1017934a339378e7442b217453"
+        ],
+        "http_id": "837c44448c9d436bbcf94d79880ba3a9",
+        "engine_finished": true,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": true,
+        "gpu_kernel_stopped": "unknown"
+      }
+    ],
+    "native_retry_order": [
+      {
+        "previous_attempt_id": "exp27-retry-before-content/a1",
+        "attempt_id": "exp27-retry-before-content/a2",
+        "previous_engine_quiescent_before_next": true,
+        "evidence": "same backend monotonic clock; CPU scheduler/tracker only"
+      }
+    ],
+    "gpu_kernel_stopped": "unknown"
+  },
+  "resource": {
+    "process_union_ns": 19423045294,
+    "ready_union_ns": 8036243285,
+    "supervisor_clock_domain": "supervisor-127213",
+    "cpu_reaped_seconds": 32.226986,
+    "cpu_scope": "reaped process rusage; may include startup and idle CPU",
+    "gpu_kernel_seconds": null,
+    "gpu_weight_residency_seconds": null,
+    "tenant_gpu_seconds": null,
+    "paid_currency": null
+  },
+  "observed": {
+    "gateway_rows": 42,
+    "client_rows": 42,
+    "backend_rows": 15005,
+    "terminal_counts": {
+      "completed": 30,
+      "authentication_rejected": 1,
+      "capability_rejected": 1,
+      "budget_rejected": 1,
+      "review_rejected": 1,
+      "admission_rejected": 4,
+      "backend_error": 1,
+      "client_disconnected": 1,
+      "draining": 1,
+      "drain_timeout": 1
+    }
+  },
+  "scope": "Single GPU loopback experiment; known native-token subtotal is not total cost, kernel time, tenant GPU time or paid currency"
+}

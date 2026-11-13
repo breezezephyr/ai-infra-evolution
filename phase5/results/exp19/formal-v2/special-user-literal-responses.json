@@ -1,0 +1,260 @@
+{
+  "id": "special-user-literal-responses",
+  "protocol": "responses",
+  "family": "special_user_literal",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "input": "a<｜User｜>",
+    "reasoning": {
+      "effort": "none"
+    }
+  },
+  "options": {},
+  "input_sha256": "22e7774b7b1b0a2024820f761a6d3a21f9c1f7e6927112d553a2e7ccbe1738f0",
+  "contract_sha256": "11ce3b2ee406d2aad5900121d76eb29e934487651999c2c53237f214993223ed",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "pass",
+      "evidence": {
+        "prompt_tokens": 10
+      }
+    },
+    {
+      "name": "literal_special_ranges_excluded",
+      "status": "pass",
+      "evidence": {
+        "literal_span": [
+          29,
+          38
+        ],
+        "overlapping_control_ranges": []
+      }
+    },
+    {
+      "name": "literal_control_token_counts",
+      "status": "pass",
+      "evidence": {
+        "spelling": "<｜User｜>",
+        "control_id": [
+          128803
+        ],
+        "prompt_encoding_count": 1,
+        "full_vocabulary_count": 2,
+        "full_vocabulary_ids": [
+          0,
+          128803,
+          67,
+          128803,
+          128804,
+          128822
+        ]
+      }
+    },
+    {
+      "name": "full_vocabulary_encoding_differs",
+      "status": "pass",
+      "evidence": {
+        "spelling": "<｜User｜>",
+        "control_id": [
+          128803
+        ],
+        "prompt_encoding_count": 1,
+        "full_vocabulary_count": 2,
+        "full_vocabulary_ids": [
+          0,
+          128803,
+          67,
+          128803,
+          128804,
+          128822
+        ]
+      }
+    },
+    {
+      "name": "family_compare",
+      "status": "pass",
+      "evidence": {
+        "family": "special_user_literal",
+        "n": 3,
+        "expected_n": 3,
+        "ids": [
+          "special-user-literal-chat",
+          "special-user-literal-responses",
+          "special-user-literal-messages"
+        ],
+        "invariant_fields": [
+          "max_tokens",
+          "message_contents",
+          "model_version",
+          "output_constraint_kind",
+          "reasoning_effort",
+          "roles",
+          "stop_sequences",
+          "temperature",
+          "thinking_mode",
+          "tool_choice",
+          "tool_names",
+          "top_p"
+        ],
+        "declared_protocol_differences": {
+          "special_control_counts": [
+            null,
+            null,
+            null
+          ]
+        },
+        "passed": true,
+        "prompt_equality_required": false
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "a<｜User｜>",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": false,
+      "reasoning_effort": null,
+      "tools": [],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": null,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": null
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": false,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [],
+      "thinking_initial_stage": "None"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": false,
+    "reasoning_effort": null,
+    "roles": [
+      "user"
+    ],
+    "message_contents": [
+      "a<｜User｜>"
+    ],
+    "assistant_reasoning_contents": [],
+    "tool_names": [],
+    "tool_parameter_schemas": [],
+    "tool_choice": "auto",
+    "max_tokens": null,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "output_constraint_kind": null,
+    "stop_sequences": [],
+    "parse_tool_calls": false,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜User｜>a<｜User｜><｜Assistant｜></think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        29
+      ],
+      [
+        38,
+        51
+      ],
+      [
+        51,
+        59
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "</think>"
+    ]
+  },
+  "encoding": {
+    "status": "ok",
+    "token_ids": [
+      0,
+      128803,
+      67,
+      30,
+      28217,
+      6756,
+      28217,
+      32,
+      128804,
+      128822
+    ],
+    "prompt_tokens": 10,
+    "token_ids_sha256": "2ff50e65c7336aa1c4fa6606c32d7945f6e62f8c584d2425ab3d93ad3117b48c"
+  },
+  "context_probes": [],
+  "literal_special_probe": {
+    "spelling": "<｜User｜>",
+    "control_id": [
+      128803
+    ],
+    "prompt_encoding_count": 1,
+    "full_vocabulary_count": 2,
+    "full_vocabulary_ids": [
+      0,
+      128803,
+      67,
+      128803,
+      128804,
+      128822
+    ]
+  },
+  "elapsed_ms": 9.640791
+}

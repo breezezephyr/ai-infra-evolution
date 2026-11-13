@@ -1,0 +1,551 @@
+{
+  "fixture": {
+    "id": "two_tools",
+    "raw": "先查两站。</think><｜DSML｜tool_calls><｜DSML｜invoke name=\"weather\"><｜DSML｜parameter name=\"city\" string=\"true\">杭州</｜DSML｜parameter></｜DSML｜invoke><｜DSML｜invoke name=\"route\"><｜DSML｜parameter name=\"city\" string=\"true\">南京</｜DSML｜parameter></｜DSML｜invoke></｜DSML｜tool_calls>",
+    "thinking": true,
+    "action": "Stop",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "",
+        "reasoning": "先查两站。",
+        "tools": [
+          {
+            "name": "weather",
+            "arguments": {
+              "city": "杭州"
+            }
+          },
+          {
+            "name": "route",
+            "arguments": {
+              "city": "南京"
+            }
+          }
+        ],
+        "finish": "tool_calls",
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "",
+        "reasoning": "先查两站。",
+        "tools": [
+          {
+            "name": "weather",
+            "arguments": {
+              "city": "杭州"
+            }
+          },
+          {
+            "name": "route",
+            "arguments": {
+              "city": "南京"
+            }
+          }
+        ],
+        "finish": "completed",
+        "status": "completed",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "",
+        "reasoning": "先查两站。",
+        "tools": [
+          {
+            "name": "weather",
+            "arguments": {
+              "city": "杭州"
+            }
+          },
+          {
+            "name": "route",
+            "arguments": {
+              "city": "南京"
+            }
+          }
+        ],
+        "finish": "tool_use",
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "backend_finish",
+    "expect_native_finished": true,
+    "tools": [
+      "weather",
+      "route"
+    ]
+  },
+  "protocol": "messages",
+  "mode": "tokens",
+  "pattern": "unit",
+  "events": [
+    {
+      "event": "message_start",
+      "data": "{\"type\":\"message_start\",\"message\":{\"id\":\"exp20\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"DeepSeek-V4.1-Flash\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":0,\"service_tier\":\"standard\"}}}"
+    },
+    {
+      "event": "content_block_start",
+      "data": "{\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"thinking\",\"thinking\":\"\",\"signature\":\"\"}}"
+    },
+    {
+      "event": "ping",
+      "data": "{\"type\":\"ping\"}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"先\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"查\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"两\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"站\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"。\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"signature_delta\",\"signature\":\"exp20\"}}"
+    },
+    {
+      "event": "content_block_stop",
+      "data": "{\"type\":\"content_block_stop\",\"index\":0}"
+    },
+    {
+      "event": "content_block_start",
+      "data": "{\"type\":\"content_block_start\",\"index\":1,\"content_block\":{\"type\":\"tool_use\",\"id\":\"call_00_2ZW7c1hyrmhaWRalx3OM2497\",\"name\":\"weather\",\"input\":{}}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":1,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"{\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":1,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":1,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"city\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":1,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":1,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\": \"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":1,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":1,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"杭州\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":1,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":1,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"}\"}}"
+    },
+    {
+      "event": "content_block_stop",
+      "data": "{\"type\":\"content_block_stop\",\"index\":1}"
+    },
+    {
+      "event": "content_block_start",
+      "data": "{\"type\":\"content_block_start\",\"index\":2,\"content_block\":{\"type\":\"tool_use\",\"id\":\"call_01_uEWlVymcQ6OEbNq1mLih6306\",\"name\":\"route\",\"input\":{}}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":2,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"{\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":2,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":2,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"city\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":2,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":2,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\": \"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":2,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":2,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"南京\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":2,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"\\\"\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":2,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"}\"}}"
+    },
+    {
+      "event": "content_block_stop",
+      "data": "{\"type\":\"content_block_stop\",\"index\":2}"
+    },
+    {
+      "event": "message_delta",
+      "data": "{\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"tool_use\",\"stop_sequence\":null},\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":69,\"service_tier\":\"standard\"}}"
+    },
+    {
+      "event": "message_stop",
+      "data": "{\"type\":\"message_stop\"}"
+    }
+  ],
+  "backend_finish_seen": true,
+  "native_finished": true,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "backend_finish",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "请继续报站"
+      }
+    ],
+    "max_tokens": 128,
+    "thinking": {
+      "type": "enabled"
+    },
+    "tools": [
+      {
+        "name": "weather",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "city": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "city"
+          ]
+        }
+      },
+      {
+        "name": "route",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "city": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "city"
+          ]
+        }
+      }
+    ]
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "ThinkingInitialStage.ReasoningStart"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "token IDs",
+    "processor_has_tokenizer": true
+  },
+  "input_units": [
+    1735,
+    2097,
+    1412,
+    3067,
+    320,
+    128822,
+    30,
+    128825,
+    72461,
+    4941,
+    12548,
+    5451,
+    128825,
+    40148,
+    5406,
+    2329,
+    1281,
+    50219,
+    15073,
+    128825,
+    41523,
+    2329,
+    1281,
+    37399,
+    4,
+    3418,
+    1281,
+    11476,
+    3320,
+    24463,
+    1718,
+    128825,
+    41523,
+    7339,
+    128825,
+    40148,
+    5406,
+    5451,
+    128825,
+    40148,
+    5406,
+    2329,
+    1281,
+    28293,
+    15073,
+    128825,
+    41523,
+    2329,
+    1281,
+    37399,
+    4,
+    3418,
+    1281,
+    11476,
+    3320,
+    18057,
+    1718,
+    128825,
+    41523,
+    7339,
+    128825,
+    40148,
+    5406,
+    7339,
+    128825,
+    72461,
+    4941,
+    12548,
+    32
+  ],
+  "native_finished_after_data": false,
+  "response": {
+    "id": "exp20",
+    "type": "message",
+    "role": "assistant",
+    "model": "DeepSeek-V4.1-Flash",
+    "content": [
+      {
+        "type": "thinking",
+        "thinking": "先查两站。",
+        "signature": "exp20"
+      },
+      {
+        "type": "tool_use",
+        "id": "call_00_2ZW7c1hyrmhaWRalx3OM2497",
+        "name": "weather",
+        "input": {
+          "city": "杭州"
+        }
+      },
+      {
+        "type": "tool_use",
+        "id": "call_01_uEWlVymcQ6OEbNq1mLih6306",
+        "name": "route",
+        "input": {
+          "city": "南京"
+        }
+      }
+    ],
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3,
+      "output_tokens": 69,
+      "service_tier": "standard"
+    }
+  },
+  "semantic": {
+    "text": "",
+    "reasoning": "先查两站。",
+    "tools": [
+      {
+        "id": "call_00_2ZW7c1hyrmhaWRalx3OM2497",
+        "name": "weather",
+        "arguments": {
+          "city": "杭州"
+        }
+      },
+      {
+        "id": "call_01_uEWlVymcQ6OEbNq1mLih6306",
+        "name": "route",
+        "arguments": {
+          "city": "南京"
+        }
+      }
+    ],
+    "finish": "tool_use",
+    "status": null,
+    "stop_sequence": null
+  },
+  "id": "two_tools--messages--tokens--unit",
+  "contract": "b5a0e03d1de10dec6b7fcdfd4e2a3e46534678a79d7240748c2f5c4a96ebd435",
+  "sse": {
+    "bytes": 4498,
+    "sha256": "661953953ddbec4543f087ee1a2d96197e1a97f21637ffe1964a13e32e6fe2bc",
+    "done_data": null,
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 34
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 34
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 34
+      }
+    ],
+    "expected_events": 34,
+    "incomplete_eof_count": 33,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "",
+          "reasoning": "先查两站。",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": {
+                "city": "杭州"
+              }
+            },
+            {
+              "name": "route",
+              "arguments": {
+                "city": "南京"
+              }
+            }
+          ],
+          "finish": "tool_use",
+          "status": null,
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "",
+          "reasoning": "先查两站。",
+          "tools": [
+            {
+              "name": "weather",
+              "arguments": {
+                "city": "杭州"
+              }
+            },
+            {
+              "name": "route",
+              "arguments": {
+                "city": "南京"
+              }
+            }
+          ],
+          "finish": "tool_use",
+          "status": null,
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "backend_finish"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": true
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": [
+        "call_00_2ZW7c1hyrmhaWRalx3OM2497",
+        "call_01_uEWlVymcQ6OEbNq1mLih6306"
+      ]
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 34
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 34
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 34
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 33
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "two_tools--messages--tokens--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

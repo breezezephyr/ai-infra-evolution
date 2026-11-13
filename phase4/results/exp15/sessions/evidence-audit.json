@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "assertions": 56,
+  "scenario_checks": {
+    "startup": 5,
+    "sticky_multi_turn_and_wrong_owner": 13,
+    "drain_rejects_new_and_waits_for_ack": 13,
+    "disconnect_resume_epoch_and_stale_ack": 15,
+    "real_deadline_force_preserves_unplayed": 10
+  },
+  "server_events": 711,
+  "client_events": 754,
+  "server_audio_frames": 639,
+  "client_validated_frames": 639,
+  "monotonic_event_order_valid": true,
+  "deadline_elapsed_ms": 201.264667,
+  "forced_played_samples": 24000,
+  "forced_unplayed_samples": 125760,
+  "cleanup": {
+    "host": "127.0.0.1",
+    "port": 18146,
+    "connect_ex": 61,
+    "port_closed": true,
+    "monotonic_ns": 108750931352166
+  },
+  "browser_audio_validated": false
+}

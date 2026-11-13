@@ -1,0 +1,24 @@
+{
+  "case_id": "nonstream",
+  "client_request_id": "exp29-kaggle-20261110-a74160a0:nonstream",
+  "expected_status": 200,
+  "body": {
+    "model": "qwen3-4b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "请用一句简短的中文解释天空为什么通常是蓝色的。"
+      }
+    ],
+    "max_tokens": 32,
+    "stream": false,
+    "temperature": 0,
+    "seed": 29
+  },
+  "body_sha256": "8862a50ed63f5ac5eb9575cea684c5f8586327cd3fb3b27a9355914977cfa00f",
+  "headers": {
+    "X-Client-Request-Id": "exp29-kaggle-20261110-a74160a0:nonstream",
+    "Content-Type": "application/json",
+    "Accept-Encoding": "identity"
+  }
+}

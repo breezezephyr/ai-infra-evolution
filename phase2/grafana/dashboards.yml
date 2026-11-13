@@ -1,0 +1,9 @@
+apiVersion: 1
+providers:
+  - name: p2
+    folder: 进化之路
+    type: file
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /home/researcher/p2/dashboards

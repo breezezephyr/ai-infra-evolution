@@ -1,0 +1,70 @@
+..................FFF                                                    [100%]
+=================================== FAILURES ===================================
+___ test_strict_schema_records_original_and_normalized_constraint_separately ___
+
+    def test_strict_schema_records_original_and_normalized_constraint_separately():
+        c = case(); c['input']['response_format'] = {'type': 'json_schema', 'json_schema': {
+            'schema': {'type': 'object', 'properties': {'city': {'type': 'string'}}}, 'strict': True}}
+        c['expect'] = {'outcome': 'accepted', 'constraint_kind': 'json', 'facts': {
+            'constraint_schema_json': {'type': 'object', 'properties': {'city': {'type': 'string'}},
+                                       'required': ['city'], 'additionalProperties': False}}}
+        row = cpu.run_case(c)
+>       assert row['verdict'] == 'pass'
+E       AssertionError: assert 'fail' == 'pass'
+E         
+E         - pass
+E         + fail
+
+phase5/exp21/test_cpu.py:139: AssertionError
+_____ test_corrupt_record_with_missing_snapshot_cannot_crash_or_pass_audit _____
+
+    def test_corrupt_record_with_missing_snapshot_cannot_crash_or_pass_audit():
+        c = case(); row = cpu.run_case(c); row.pop('snapshot')
+>       summary = cpu.summarize([c], [row])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:146: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+phase5/exp21/cpu.py:154: in summarize
+    verdict, _ = assess(case, row)
+                 ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = {'expect': {'constraint_kind': None, 'outcome': 'accepted'}, 'family': 'baseline', 'id': 'chat-basic', 'input': {'mess... [{'content': 'Return JSON.', 'role': 'user'}], 'model': 'DeepSeek-V4.1-Flash', 'thinking': {'type': 'disabled'}}, ...}
+row = {'backend_mapping': {'compiler_commit': '9bd9cf243fc53ef9afbf8f04d391d989117d6ab9', 'decision': 'none', 'evidence_leve...a256': 'ddacafaaa7054066800448ce892be8fa8ebc64dfd44d644323780b13ee49a128', 'differences': [], 'elapsed_ns': 87167, ...}
+
+    def assess(case, row):
+        expected = case.get('expect')
+        if not expected:
+            return 'unknown', ['No frozen expectation.']
+        differences = []
+        if row['outcome'] != expected['outcome']:
+            differences.append(f"outcome: expected {expected['outcome']}, got {row['outcome']}")
+        if row['outcome'] == 'rejected' and expected['outcome'] == 'rejected':
+            err = row['error']
+            for key, actual in [('stage', err['stage']), ('error_type', err['type']), ('status_code', err['status_code'])]:
+                if key in expected and actual != expected[key]:
+                    differences.append(f'{key}: expected {expected[key]!r}, got {actual!r}')
+            if 'message_contains' in expected and expected['message_contains'] not in err['message'] + (err['body'] or ''):
+                differences.append('Expected rejection message did not match.')
+        if row['outcome'] == 'accepted' and expected['outcome'] == 'accepted':
+>           view = row['snapshot']; constraint = view['output_constraint']
+                   ^^^^^^^^^^^^^^^
+E           KeyError: 'snapshot'
+
+phase5/exp21/cpu.py:93: KeyError
+____ test_parse_fixture_does_not_validate_instance_against_declared_schema _____
+
+    def test_parse_fixture_does_not_validate_instance_against_declared_schema():
+        c = case(); c['input']['response_format'] = {'type': 'json_schema', 'json_schema': {
+            'schema': {'type': 'object', 'properties': {'city': {'type': 'string'}}, 'required': ['city']}}}
+>       row = cpu.parse_probe(c, '{"city":4}')
+              ^^^^^^^^^^^^^^^
+E       AttributeError: module 'cpu' has no attribute 'parse_probe'
+
+phase5/exp21/test_cpu.py:154: AttributeError
+=========================== short test summary info ============================
+FAILED phase5/exp21/test_cpu.py::test_strict_schema_records_original_and_normalized_constraint_separately
+FAILED phase5/exp21/test_cpu.py::test_corrupt_record_with_missing_snapshot_cannot_crash_or_pass_audit
+FAILED phase5/exp21/test_cpu.py::test_parse_fixture_does_not_validate_instance_against_declared_schema
+3 failed, 18 passed in 0.08s

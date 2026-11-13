@@ -1,0 +1,177 @@
+{
+  "verified_at": "2026-10-22T10:57:41.171981+00:00",
+  "formal_version": "v2",
+  "media_complete": 24,
+  "ws_exact_sample_count": 12,
+  "rtc_source_terminal_and_probe": 12,
+  "session_functional_tests_passed": 12,
+  "http_ws_control_scenarios": 4,
+  "http_ws_assertions_passed": 56,
+  "http_ws_pcm_frames_verified": 639,
+  "browser_drain": {
+    "browserVersion": "155.0.8059.85",
+    "producer_unrendered_samples": 35456,
+    "producer_to_finished_ms": 654.7000000029802,
+    "rendered_samples": 149760,
+    "worker_status": "drained",
+    "ack_source": "audio_worklet_consumed",
+    "acoustic_loopback": false
+  },
+  "new_gpu_inferences": 0,
+  "media_run_checks": [
+    {
+      "run_id": "formal-0-1792664987590",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-1-1792664991604",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-2-1792664995421",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-3-1792665011420",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-4-1792665027606",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-5-1792665031242",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-6-1792665034658",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-7-1792665051100",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-8-1792665067296",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-9-1792665070716",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-10-1792665074357",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-11-1792665090346",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-12-1792665106513",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-13-1792665110149",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-14-1792665113908",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-15-1792665130139",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-16-1792665146604",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-17-1792665150505",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-18-1792665154095",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-19-1792665170552",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-20-1792665186964",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-21-1792665190547",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-22-1792665194384",
+      "transport": "ws",
+      "source_complete": true,
+      "client_completion_verified": true
+    },
+    {
+      "run_id": "formal-23-1792665210663",
+      "transport": "rtc",
+      "source_complete": true,
+      "client_completion_verified": true
+    }
+  ],
+  "source_hashes_current": true,
+  "fixtures_hashes_verified": true,
+  "phone_layout_verified": true,
+  "independent_article_review": "addressed scope, report-lag and timestamp-boundary findings",
+  "article_markdown_sha256": "e371cc067e91c2ecb8887a47bf0d0618f1d100e8fb74029a3f40260ebe5f1ead",
+  "article_html_sha256": "bf26c28bc34ef57c26075c16ed9fa5caddd7acb02300503d907189999d41316f",
+  "experiment_plot_sha256": "7b83c8c11494027a3d1d6e38246e529cc4dcb4406a447f34f0a9e7d519edbef6",
+  "cleanup_evidence": "cleanup-verification.json",
+  "known_missing_metric": "12 RTC initial inbound objects absent; interval counters stay null",
+  "status": "complete_local_not_uploaded"
+}

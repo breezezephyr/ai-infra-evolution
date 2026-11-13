@@ -1,0 +1,231 @@
+{
+  "fixture": {
+    "id": "client_close",
+    "raw": "说到一半",
+    "thinking": false,
+    "action": "close",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "说到一半",
+        "reasoning": "",
+        "tools": [],
+        "finish": null,
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "说到一半",
+        "reasoning": "",
+        "tools": [],
+        "finish": "in_progress",
+        "status": "in_progress",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "说到一半",
+        "reasoning": "",
+        "tools": [],
+        "finish": null,
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "client_abort",
+    "expect_native_finished": false
+  },
+  "protocol": "messages",
+  "mode": "text",
+  "pattern": "mixed",
+  "events": [
+    {
+      "event": "message_start",
+      "data": "{\"type\":\"message_start\",\"message\":{\"id\":\"exp20\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"DeepSeek-V4.1-Flash\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":0,\"service_tier\":\"standard\"}}}"
+    },
+    {
+      "event": "content_block_start",
+      "data": "{\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}"
+    },
+    {
+      "event": "ping",
+      "data": "{\"type\":\"ping\"}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"说\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"到一半\"}}"
+    }
+  ],
+  "backend_finish_seen": false,
+  "native_finished": false,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "client_abort",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "请继续报站"
+      }
+    ],
+    "max_tokens": 128,
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "None"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "unmeasured text token_count=0",
+    "processor_has_tokenizer": false
+  },
+  "input_units": "说到一半",
+  "native_finished_after_data": false,
+  "response": {
+    "id": "exp20",
+    "type": "message",
+    "role": "assistant",
+    "model": "DeepSeek-V4.1-Flash",
+    "content": [
+      {
+        "type": "text",
+        "text": "说到一半"
+      }
+    ],
+    "stop_reason": null,
+    "stop_sequence": null,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3,
+      "output_tokens": 0,
+      "service_tier": "standard"
+    }
+  },
+  "semantic": {
+    "text": "说到一半",
+    "reasoning": "",
+    "tools": [],
+    "finish": null,
+    "status": null,
+    "stop_sequence": null
+  },
+  "id": "client_close--messages--text--mixed",
+  "contract": "d9ceabd30ee807a473ae3a8c023accd3924e628bc9a81c7a1dca17ed7d62e43a",
+  "sse": {
+    "bytes": 723,
+    "sha256": "9ab317560dbce8cc9dae8b6414d20dc7318cedeaf02e9e2701c3c3fb263d3019",
+    "done_data": null,
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 5
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 5
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 5
+      }
+    ],
+    "expected_events": 5,
+    "incomplete_eof_count": 4,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "说到一半",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "说到一半",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "client_abort"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": false
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 5
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 5
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 5
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 4
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "client_close--messages--text--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

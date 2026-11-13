@@ -1,0 +1,37 @@
+id,protocol,family,conversion,conformance,model_version,input_max_tokens,converted_max_tokens,temperature,top_p,stop_sequences,prompt_tokens,checks_pass,checks_fail,checks_unknown
+text-default-chat,chat,text_default,ok,pass,v41,,,1.0,1.0,[],41,9,0,0
+text-default-responses,responses,text_default,ok,pass,v41,,,1.0,1.0,[],41,9,0,0
+text-default-messages,messages,text_default,ok,pass,v41,,,1.0,1.0,[],41,9,0,0
+multi-disabled-chat,chat,multi_disabled,ok,pass,v41,,,1.0,1.0,[],44,7,0,0
+multi-disabled-responses,responses,multi_disabled,ok,pass,v41,,,1.0,1.0,[],44,7,0,0
+multi-disabled-messages,messages,multi_disabled,ok,pass,v41,,,1.0,1.0,[],44,7,0,0
+thinking-max-chat,chat,thinking_max,ok,pass,v41,,,1.0,0.949999988079071,[],46,7,0,0
+thinking-max-responses,responses,thinking_max,ok,pass,v41,,,1.0,0.949999988079071,[],46,7,0,0
+thinking-max-messages,messages,thinking_max,ok,pass,v41,,,1.0,0.949999988079071,[],46,7,0,0
+tool-declaration-chat,chat,tool_declaration,ok,pass,v41,,,1.0,1.0,[],279,6,0,0
+tool-declaration-responses,responses,tool_declaration,ok,pass,v41,,,1.0,1.0,[],279,6,0,0
+tool-declaration-messages,messages,tool_declaration,ok,pass,v41,,,1.0,1.0,[],279,6,0,0
+limit-stop-chat,chat,limit_stop,ok,pass,v41,64,64,1.0,1.0,"[""END_19"", ""完成""]",14,8,0,0
+limit-stop-responses,responses,limit_stop,ok,pass,v41,64,64,1.0,1.0,[],14,8,0,0
+limit-stop-messages,messages,limit_stop,ok,pass,v41,64,64,1.0,1.0,"[""END_19"", ""完成""]",14,8,0,0
+max-overflow-chat,chat,max_tokens_upper_bound,error,pass,,393217,,,,null,,2,0,0
+max-overflow-responses,responses,max_tokens_upper_bound,error,pass,,393217,,,,null,,2,0,0
+max-overflow-messages,messages,max_tokens_upper_bound,ok,pass,v41,393217,393216,1.0,1.0,[],42,6,0,0
+model-unregistered-chat,chat,model_unregistered,error,pass,,,,,,null,,2,0,0
+model-unregistered-responses,responses,model_unregistered,error,pass,,,,,,null,,2,0,0
+model-unregistered-messages,messages,model_unregistered,error,pass,,,,,,null,,2,0,0
+alias-v41-chat,chat,alias_v41,ok,pass,v41,,,0.25,1.0,[],11,7,0,0
+alias-v41-responses,responses,alias_v41,ok,pass,v41,,,0.25,1.0,[],11,7,0,0
+alias-v41-messages,messages,alias_v41,ok,pass,v41,,,0.25,1.0,[],11,7,0,0
+alias-v4-chat,chat,alias_v4,ok,pass,v4,,,0.25,0.6000000238418579,[],11,7,0,0
+alias-v4-responses,responses,alias_v4,ok,pass,v4,,,0.25,0.6000000238418579,[],11,7,0,0
+alias-v4-messages,messages,alias_v4,ok,pass,v4,,,0.25,0.6000000238418579,[],11,7,0,0
+special-user-literal-chat,chat,special_user_literal,ok,pass,v41,,,1.0,1.0,[],10,8,0,0
+special-user-literal-responses,responses,special_user_literal,ok,pass,v41,,,1.0,1.0,[],10,8,0,0
+special-user-literal-messages,messages,special_user_literal,ok,pass,v41,,,1.0,1.0,[],10,8,0,0
+web-default-responses,responses,web_search_default,ok,pass,v41,,,1.0,1.0,[],37,5,0,0
+web-reject-responses,responses,web_search_override,error,pass,,,,,,null,,2,0,0
+web-default-messages,messages,web_search_default,error,pass,,,,,,null,,2,0,0
+web-drop-messages,messages,web_search_override,ok,pass,v41,,,1.0,1.0,[],37,5,0,0
+stop-empty-chat,chat,empty_stop_rejected,error,pass,,,,,,null,,2,0,0
+stop-empty-messages,messages,empty_stop_rejected,error,pass,,,,,,null,,2,0,0

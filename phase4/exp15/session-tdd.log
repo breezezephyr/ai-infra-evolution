@@ -1,0 +1,47 @@
+Scope: only session.py, test_session.py, session-tdd.log in phase4/exp15.
+Design read: 设计.md, 会话与排空 and 实施顺序 session-test boundary.
+Runtime: Python standard library unittest; -B prevents bytecode writes.
+No installs, network, remote processes, real-time dependencies, sleeps, or mocks.
+
+RED bootstrap
+  Command: python3 -B -m unittest -v test_session
+  Exit: 1; import error: ModuleNotFoundError: No module named 'session'.
+  Tests were written before session.py existed. This is only bootstrap evidence.
+
+RED functional (initial state machine, before the release completion gate)
+  Command: python3 -B -m unittest -v test_session
+  Exit: 1; Ran 11 tests; FAILED (failures=3), other 8 passed.
+  AssertionError: SessionError not raised in:
+    test_disconnected_session_keeps_drain_pending_until_replay_is_acknowledged
+    test_empty_and_zero_audio_sessions_can_release_and_idle_workers_drain
+    test_normal_drain_waits_for_producer_playback_and_explicit_release
+  Missing behavior: release must reject any unfinished turn, including zero
+  samples without producer_done and replay sent but not playback-acknowledged.
+
+GREEN minimal release gate
+  Change: reject release when a turn exists and its completion predicate is
+  false (producer_done AND sent == total AND played == total).
+  Command: python3 -B -m unittest -v test_session
+  Exit: 0; Ran 11 tests; OK.
+
+GREEN final functional coverage
+  Added coverage for draining multiple sessions including a disconnected idle
+  session, retaining already-released tombstones during force_drain, and JSON
+  serialization of detached snapshots. No production changes were needed.
+  Command (workspace root):
+    python3 -B -m unittest discover -s phase4/exp15 -p test_session.py -v
+  Exit: 0; Ran 12 tests; OK.
+  Scope: state module only; HTTP/WS/WebRTC/browser verification belongs to mainserver.
+  Git checks were unavailable because this workspace is not a Git repository;
+  syntax/whitespace verification uses direct reads of the three allowed files.
+
+Integration contract
+  SessionRegistry(*, max_sessions=1024, max_generations=1024, history_limit=128).
+  Methods and return shapes are documented at the top of session.py.
+  All errors are SessionError with .code; rejected operations preserve state.
+  begin_turn returns a session view with top-level resume_from=played_samples.
+  New epochs must resume before sent/ACK/producer_done. Lifetime sent_samples
+  survives reconnect; epoch_sent_samples bounds ACKs after replay starts.
+  mainserver owns replay, buffering, ACK provenance, deadlines, and shutdown.
+  force_drain records total-played and sent-played, fences epochs, and returns
+  status=forced, drained=False. No clock is consulted and no completion is faked.

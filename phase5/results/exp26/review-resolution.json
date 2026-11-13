@@ -1,0 +1,37 @@
+{
+  "review": "independent-review.json",
+  "rereview_performed": false,
+  "fix_passes": 1,
+  "unresolved_important": 0,
+  "tests_passed": 53,
+  "resolutions": [
+    {
+      "id": "EXP26-IR-01",
+      "status": "fixed",
+      "change": "strict nonnegative integer usage and sum validation; retain every raw frame; invalid or duplicate usage ends as error without overwriting the first valid usage; settlement validates too",
+      "tdd": "negative/bool/conflicting-zero 3 RED to GREEN"
+    },
+    {
+      "id": "EXP26-IR-02",
+      "status": "fixed",
+      "change": "every GPU attempt requires independent backend HTTP coverage even if body fields erased; formal CLI requires native hooks; HTTP-only fixture profile explicit in test API and report",
+      "tdd": "empty backend, HTTP-only formal, deleted bodies+backend 3 RED to GREEN"
+    },
+    {
+      "id": "EXP26-IR-03",
+      "status": "fixed",
+      "change": "backend known usage retained as separate resource_usage with source; mismatch against gateway settlement rejects acceptance and suppresses metrics, never rewrites historical client/gateway raw",
+      "tdd": "backend known/gateway unknown RED to GREEN"
+    }
+  ],
+  "native_cpu_replays": {
+    "count": 6,
+    "known_tokens": 248,
+    "unknown": 4,
+    "evidence": "native-cpu-replay.json",
+    "scope": "captured outputs through current gateway, not original timing/cancel replay; no new GPU calls"
+  },
+  "formal_metrics_unchanged": true,
+  "analysis": "formal-v1/analysis-revision2/summary.json",
+  "execution_snapshot_preserved": true
+}

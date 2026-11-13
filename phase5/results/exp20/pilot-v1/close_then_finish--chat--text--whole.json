@@ -1,0 +1,233 @@
+{
+  "fixture": {
+    "id": "close_then_finish",
+    "raw": "说完了",
+    "thinking": false,
+    "action": "close_then_finish",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "说完了",
+        "reasoning": "",
+        "tools": [],
+        "finish": null,
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "说完了",
+        "reasoning": "",
+        "tools": [],
+        "finish": "in_progress",
+        "status": "in_progress",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "说完了",
+        "reasoning": "",
+        "tools": [],
+        "finish": null,
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "client_abort",
+    "expect_native_finished": false,
+    "modes": [
+      "text"
+    ],
+    "patterns": [
+      "whole"
+    ],
+    "expect_error": "closed"
+  },
+  "protocol": "chat",
+  "mode": "text",
+  "pattern": "whole",
+  "events": [
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745584,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}"
+    },
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745584,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"content\":\"说完了\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}"
+    }
+  ],
+  "backend_finish_seen": false,
+  "native_finished": false,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "client_abort",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "请继续报站"
+      }
+    ],
+    "max_tokens": 128,
+    "thinking": {
+      "type": "disabled"
+    },
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "None"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "unmeasured text token_count=0",
+    "processor_has_tokenizer": false
+  },
+  "input_units": "说完了",
+  "native_finished_after_data": false,
+  "probe_error": {
+    "type": "RuntimeError",
+    "message": "stream processor is closed"
+  },
+  "response": {
+    "id": "exp20",
+    "object": "chat.completion",
+    "created": 0,
+    "model": "DeepSeek-V4.1-Flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "说完了"
+        },
+        "logprobs": null,
+        "finish_reason": null
+      }
+    ],
+    "system_fingerprint": null
+  },
+  "semantic": {
+    "text": "说完了",
+    "reasoning": "",
+    "tools": [],
+    "finish": null,
+    "status": null,
+    "stop_sequence": null
+  },
+  "id": "close_then_finish--chat--text--whole",
+  "contract": "806ea6fd52f3b55eeb65458ebff6d6477eae3a3b227390940c26cda28f9fc0b7",
+  "sse": {
+    "bytes": 486,
+    "sha256": "a39cab58adc82b772089cd9cb18f14ed8a16eae3de81a5b18a2183d603e76422",
+    "done_data": null,
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 2
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 2
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 2
+      }
+    ],
+    "expected_events": 2,
+    "incomplete_eof_count": 1,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "说完了",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "client_abort"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": false
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": {
+        "type": "RuntimeError",
+        "message": "stream processor is closed"
+      }
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 2
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 2
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 2
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 1
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "close_then_finish--chat--text--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

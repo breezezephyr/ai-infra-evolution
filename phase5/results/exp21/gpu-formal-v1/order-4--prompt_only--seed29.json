@@ -1,0 +1,50 @@
+{
+  "id": "order-4--prompt_only--seed29",
+  "contract": "38f14b948c684b8741aaaedcbee3aa8056eaf3c11d96abb437cd6c6a2364758f",
+  "arm": "prompt_only",
+  "case_id": "order-4",
+  "seed": 29,
+  "family": "ordered_selection",
+  "payload_sha256": "6d5cb30aca0a65c7ea5744ff2f973aa925817587e7c705f08b43aead37e2d589",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-de24a7ccaf2642cbb78fc56a32286768",
+    "object": "chat.completion",
+    "created": 1792983720,
+    "model": "exp21-qwen3-0.6b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"stops\": [\n      \"杭州\"\n    ],\n    \"count\": 0\n  },\n  \"required\": [\"stops\", \"count\"]\n}\n```",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 165,
+      "total_tokens": 214,
+      "completion_tokens": 49,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "accepted": true,
+  "content": "```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"stops\": [\n      \"杭州\"\n    ],\n    \"count\": 0\n  },\n  \"required\": [\"stops\", \"count\"]\n}\n```",
+  "finish_reason": "stop",
+  "evaluation": {
+    "json_valid": false,
+    "schema_valid": false,
+    "business_correct": false,
+    "complete": true,
+    "deliverable": false,
+    "parse_error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  "client_elapsed_ms": 1375.833292,
+  "clock_domain": "client_process_monotonic_ns"
+}

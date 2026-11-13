@@ -1,0 +1,100 @@
+{
+  "findings": [
+    {
+      "id": "EXP27-IR-001",
+      "severity": "important",
+      "file": "phase5/exp27/analyze.py",
+      "line": 583,
+      "problem": "原生 HTTP chunk 未参与对账，已有计量可以被汇总层抹为 unknown 而仍正式通过。backend() 只解析 http_finished.sse，并核对该汇总自己的 hash/base64；native_backend() 只检查 http_response_chunk 的身份和事件顺序，不解码 body_b64，也不将 chunk 拼接结果与 http_finished 对照。因此 summary、网关和客户端结算同时丢失 usage 时，独立原始 chunk 明明仍保留用量，审计却把 known 降为 unknown 并继续发布成功指标。当前真实 raw 的29组 chunk 与汇总逐字节相同，此项是验收器缺口，不指控当前770有误。",
+      "reproduction": "已在 formal-v2 的内存深拷贝上实跑，未写 raw/summary。加载冻结 code/analyze.py，继承 _Audit，load() 从深拷贝提供 JSON 对象；将 summary_path 换成 parent.mkdir/write_text 均为空操作的对象。取 exp27-tenant-a-repeat0-direct/a1（原生usage为17输入+2输出=19）。从该 attempt.raw_sse 和对应 http_finished.sse 删除完整 usage frame；将 attempt.usage=null、usage_source=unknown、usage_frames=[]，同时将 gateway.settlements 和客户端终态 settlements 改为 null/unknown；按删帧后的 sse 重算 http_finished.response_sha256、response_b64、send_returned_b64。所有 http_response_chunk 均保持原样。结果 accepted=true、errors=[]，known_total_tokens 从770变为751，known/unknown从26/3变为25/4，joint仍21/37。独立拼接原有 http_response_chunk.body_b64 后 parse_native_sse 仍得到17+2=19。另仅把首个 http_response_chunk.body_b64 改为 NOT BASE64，也仍 accepted=true。",
+      "fix": "在审计器中按 attempt/http_id 与事件顺序严格解码并重建 http_request_chunk、http_response_chunk；将重建字节与 http_finished 的 body/sse/hash/base64 对照，并分别保留 before_send 与 send_returned 的语义。缺失、无效base64或不一致应拒绝正式指标，不能退回汇总自证；从仍完整的原始 usage frame 保留诊断账本的已知消耗。增加上述删usage和坏chunk的离线回归，保证 accepted=false、metrics=null 且原始19 token没有被抹掉。保留历史冻结源和raw，通过明确标记的新审计修订输出修复结果，无需重跑GPU。"
+    },
+    {
+      "id": "EXP27-IR-002",
+      "severity": "important",
+      "file": "phase5/exp27/analyze.py",
+      "line": 444,
+      "problem": "资源/清理只在 resources.json 与 cleanup.json 之间互证 PID，没有绑定到实际服务身份。provenance() 虽读取 gateway-startup.pid，native_backend() 虽读取 hooks_installed.pid，但 resources() 不与它们比较，也从未要求 backend-startup.json。因此另一组进程的区间、CPU与回收记录可被当成本轮服务资源账，违背请求来源到资源收拢的闭环要求。当前实际记录中gateway127352、backend127245一致，19.423s/8.036s/32.227s按原始区间复算正确；问题是审计无法识别换错证据。",
+      "reproduction": "沿用上一项的无写入内存审计方法。仅将 resources.intervals 两个PID改为900000、900001，cleanup.owned_pids改成相同集合；两个区间均改为started_ns=ready_ns=0、stop_requested_ns=exited_ns=1，各组件user_seconds/system_seconds置0。gateway-startup.json、backend-startup.json和所有原生hook/请求记录保持原样。结果 accepted=true、errors=[]，process_union_ns=1、ready_union_ns=1、cpu_reaped_seconds=0，joint仍21/37。另从内存输入映射移除 backend-startup.json，审计仍 accepted=true，证实该启动证据没有读取。",
+      "fix": "将 gateway 资源PID绑定 gateway-startup.pid，将 backend 资源PID同时绑定 backend-startup.pid 与原生hooks_installed.pid，并要求 cleanup 回收集合恰好覆盖这些实际PID。读取并验证 backend-startup 的supervisor时钟、started_ns及已有启动参数/源码身份，避免仅由两张资源表互相确认。保留backend+gateway区间并集与CPU分列，不引入模型独占或kernel结论。加入换PID、缺启动证据和不一致启动区间的离线回归；当前真实raw不改。"
+    },
+    {
+      "id": "EXP27-IR-003",
+      "severity": "minor",
+      "file": "phase5/exp27/run.py",
+      "line": 17,
+      "problem": "可移交入口的环境说明少了WSL专用可执行文件依赖。README第14行只要求Linux及固定vLLM/Torch/transformers，而gpu()无条件调用 /usr/lib/wsl/lib/nvidia-smi。满足文档环境但只有 /usr/bin/nvidia-smi 的普通Linux会在启动前失败，finally中的同一调用还会阻止cleanup.json写出。此项不影响原DARYU实跑，只影响复现说明的准确性。",
+      "reproduction": "只读导入run.py，不执行execute、不调用GPU。用unittest.mock.patch.object(run.subprocess, check_output)提供一个仅接受 /usr/bin/nvidia-smi 的Linux路径解析替身；调用gpu()得到 FileNotFoundError，filename=/usr/lib/wsl/lib/nvidia-smi。源码第55行在start之前调用gpu()，第104行构造cleanup时再次调用；README没有列出该WSL路径前置条件。该验证是CPU路径探针，不是实际Linux/GPU复跑。",
+      "fix": "最小修复可直接在README写明当前入口要求DARYU/WSL及该nvidia-smi路径，并在执行前做可解释的环境检查；或者让nvidia-smi路径可配置/从PATH解析、将WSL路径作为回退。无需新增生产能力或重跑GPU。"
+    }
+  ],
+  "scope": {
+    "review": "P5.9 / exp27 唯一一次整体独立审校；2026-10-26；不二审。",
+    "write_scope": "本次仅创建 phase5/results/exp27/independent-review.json。所有证据变异在内存中，审计summary写入被空操作替代；使用python -B。未运行GPU、服务、贡献verify、会写临时文件的整套测试，未改产品/冻结源/历史raw，未提交或联系上游。",
+    "criteria": [
+      "phase5/实验计划.md:138-149",
+      "phase5/exp27/设计.md"
+    ],
+    "read": [
+      "phase5/exp27/{gateway,lifecycle,plan,run,analyze,backend_audit,serve_gateway}.py",
+      "phase5/exp27/test_gateway.py",
+      "phase5/exp27/test_analyze.py",
+      "phase5/results/exp27/formal-v2/{plan,freeze,model-identity,gateway-startup,backend-startup,clients,health,resources,cleanup,summary}.json",
+      "phase5/results/exp27/formal-v2/{gateway,backend}.jsonl",
+      "phase5/results/exp27/formal-v2/code/*：七个冻结源逐文件hash与当前实现一致",
+      "phase5/results/exp27/formal-v1/gateway.jsonl；v1独立留存，不合并样本",
+      "phase5/results/exp27/运行清单.json",
+      "phase5/results/exp27/tests.txt",
+      "phase5/exp27/README.md",
+      "phase5/exp27/能力与迁移清单.md",
+      "phase5/results/exp27-结论.md",
+      "28-Phase5·9-交班时拿什么说话/正文.md、正文.html对应渲染记录、排版检查.json、预览渲染.json",
+      "28-Phase5·9-交班时拿什么说话/img/{00-封面,01-一页纸,11-exp27}.png及手机排版截图",
+      "phase5/exp27/contribution/候选说明.md、repro.py、verify.py、prepare_patch.py、test_context_budget.py、patch.diff、manifest.json、evidence.json",
+      "phase5/exp27/contribution/evidence/：原生repro、JUnit/XML、verification、当前源码/上游API归档与补丁副本的相关证据"
+    ],
+    "baseline": {
+      "frozen_analyzer_sha256": "6624c240afac37b8e7ab956cb4fd06ebaa5c7ba055ff303d24b3e78cd2c1be1c",
+      "replayed_frozen_audit_equals_saved_summary": true,
+      "accepted": true,
+      "planned": 42,
+      "eligible": 37,
+      "gpu_attempts": 29,
+      "known_usage_attempts": 26,
+      "known_prompt_tokens": 624,
+      "known_completion_tokens": 146,
+      "known_total_tokens": 770,
+      "unknown_usage_attempts": 3,
+      "joint_eligible": "21/37",
+      "joint_all": "21/42",
+      "completed": 30,
+      "protocol_valid": 33,
+      "normal_strata": "直通/集成缓存冷/缓存暖各n=6、各6联合通过；应用缓存冷暖不称GPU冷启动。",
+      "quality": "固定算术6条全不合格；未修改答案或放宽stop/completed条件。",
+      "slo": "1000ms/3000ms固定；burst-1首内容1332.85ms失败。文章明确有首内容时的客户端流收尾可能为错误终态，joint另要求质量/completed/stop；不作为实质定义冲突。",
+      "process_union_ns": 19423045294,
+      "ready_union_ns": 8036243285,
+      "cpu_reaped_seconds": 32.226986,
+      "resource_scope": "backend+gateway服务进程区间并集；CPU wait4分列；权重驻留/kernel秒/租户GPU时间/实付均未知。",
+      "cleanup_readback": "已保存owned PID127352/127245回收、8027/8127关闭、GPU630MiB/0%、四个模型文件比较为true；没有远端重新探测。",
+      "v1": "从原始gateway复算39请求/25attempt、24known共740/1unknown，仅gateway来源未独立对账；与v2分列，不当零成本或并入42分母。"
+    },
+    "verification": {
+      "native_chunk_readback": "独立拼接29个attempt的http_response_chunk，与对应http_finished.sse全部字节一致；全部已知prompt_tokens与网关编码长度一致。",
+      "mutations_executed": "8个内存变异：删usage但保留原chunk、坏base64 chunk、换资源PID/区间/CPU、缺backend-startup、缺cleanup.gpu、缺native hooks、修改冻结质量答案、有效SLO超限。首4个暴露前两项缺口；缺cleanup.gpu可通过但未单列findings，GPU快照不当kernel退出证明。",
+      "positive_controls": "仅留http_finished而去掉native hooks被拒绝；篡改冻结expected_text被plan_contract拒绝且metrics=null；将一条合格请求首内容改为1000ms+1ns保留证据accepted但SLO失败、joint由21降20，未把质量或SLO失败误当证据格式错误。",
+      "existing_tests": "已读当前16 passed记录与测试源码；本轮未重跑这些会创建临时文件的测试。",
+      "contribution": "只读运行repro.py再次确认真实native编码41token、C40/41/42与省略/显式额度六次helper结果一致，无模型派发；6本地/1baseline/7patched的JUnit均无失败，共用同wheel，不相加。manifest逐成员hash无漂移。归档上游main SHA935817c66f5d6e64838f419692545f06787e485f、#42 open、#44 closed/merged=false；wheel构建commit未知，未提交的表述有证据支持。未重新联网或运行会改写证据的verify.py。",
+      "visuals": "三张PNG及手机截图已目视，最新390px排版报告表宽299.48px小于父容器342px，无未解析Markdown；未将渲染中的短暂缺报告/旧待证文字记作bug。"
+    },
+    "limits": "不重跑GPU，不推断生产SLO/容量/HA、安全通用性或kernel退出。新增build_bundle/check_artifacts属于并行收尾，本次不据其未完成/重建中的manifest或压缩包提出问题，也未声称独立复跑它们。",
+    "handoff": "本报告一次定稿，供主流程一轮必要TDD修复；不安排二审，不修改已冻结执行证据或重做42请求。"
+  },
+  "verdict": {
+    "status": "needs_fixes",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "reason": "现有formal-v2的770已知token、21/37交集及资源算术可以从当前raw复核；但独立验收器可放过原始计量被抹除和无关进程资源替换，两项会削弱结题包声称的可独立对账/可移交闭环，需主流程以离线TDD修补。Linux复现前置条件另有一项轻微说明缺口。"
+  }
+}

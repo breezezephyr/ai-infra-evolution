@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;background:#f8f5ee;color:#1c1a17;font-family:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:72px 76px;display:flex;flex-direction:column}
+.eyebrow{display:flex;align-items:center;gap:14px;color:#8a8378;font-size:26px;letter-spacing:.04em;font-family:Menlo,"SF Mono",monospace}
+.eyebrow::before{content:"";width:34px;height:5px;background:#c4763a;border-radius:3px}
+h1{font-size:74px;line-height:1.18;font-weight:800;letter-spacing:-.01em;margin-top:34px}
+.sub{color:#6f695f;font-size:32px;margin-top:22px;line-height:1.5}
+.callout{background:#fbf1e6;border:2px solid #f0dcc4;border-radius:18px;padding:32px 36px;font-size:32px;line-height:1.6;margin-top:40px;color:#2a2620}
+.callout b{color:#1c1a17}
+.note{color:#9a9386;font-size:24px;margin-top:28px;padding-top:0;line-height:1.5}
+.orange{color:#c4763a}.green{color:#4f7a52}.gray{color:#9a9386}
+.strike{text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:#a84d3a;color:#9a9386}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.box{background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:30px 32px}
+.box h3{font-size:34px;font-weight:800}
+.box .cap{font-size:24px;color:#6f695f;line-height:1.5;margin-top:10px}
+.box .big{font-size:64px;font-weight:800;line-height:1.1;margin-top:8px;letter-spacing:-.02em}
+.one{display:grid;grid-template-columns:170px 1fr;gap:0;margin-top:40px;background:#fff;border:2px solid #e6e0d4;border-radius:22px;overflow:hidden}
+.one>div{padding:26px 30px;border-bottom:2px solid #eee8dc;font-size:29px;line-height:1.55}
+.one>.h{background:#f3eee3;font-weight:800;color:#6f695f;font-size:27px}
+.one>div:nth-last-child(-n+2){border-bottom:0}
+html,body{height:1860px}</style></head><body>
+<div class="eyebrow">进化之路 · P3b·3</div>
+<h1>账本：<br>一趟车记在谁头上</h1>
+<div class="sub">一页纸 · token 算费用，卡的时间另分摊</div>
+<div class="one">
+ <div class="h">老做法</div><div>调用一次扣一份<br>请求耗时相加，再乘卡单价</div>
+ <div class="h">哪里失效</div><div>缓存是输入的子集，不能再收一遍<br>一张卡上的生成流重叠，失败也可能已经花钱</div>
+ <div class="h">新方案</div><div>输入拆成 <b>未命中 / 缓存命中</b>，再加输出<br>request_id、租户、usage 和计费版本一起落账<br>没有归属就留待归因项，<b>未知不填 0</b><br><span class="strike">每条流都算独占卡</span></div>
+ <div class="h">怎么验</div><div>明细之和对总账；分摊加未分配对观测窗<br>排队预测分开统计等到准入与超时的请求</div>
+</div>
+<div class="grid3">
+ <div class="box"><h3>示例费用</h3><div class="big green">−39%</div><div class="cap">哈希对轮询<br>每千次完成</div></div>
+ <div class="box"><h3>一张卡</h3><div class="big">163 s</div><div class="cap">生成时长相加<br>却有 1155 s</div></div>
+ <div class="box"><h3>叫号预估</h3><div class="big">19.5%</div><div class="cap">落在真实等待<br>±30% 的比例</div></div>
+</div>
+<div class="callout"><b>总账能算，还得找得到主人。</b><br>旧日志没有租户和逐请求缓存量，真实分账先留空。排位换秒数没有通过预期，倒计时也先不报。</div>
+<div class="note">exp12 离线回放 · 费率为示例点数 · 时间分摊为代理<br>排队误差：133 条等到准入的请求，另 113 条超时单列</div>
+</body></html>

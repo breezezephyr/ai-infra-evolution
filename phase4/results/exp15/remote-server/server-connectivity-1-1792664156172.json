@@ -1,0 +1,50 @@
+{
+  "run_id": "connectivity-1-1792664156172",
+  "fixture_id": "short",
+  "transport": "rtc",
+  "scenario": "baseline",
+  "produced_samples": 0,
+  "fixture_samples": 149760,
+  "events": [
+    {
+      "event": "created",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 406314572552010
+    },
+    {
+      "event": "answer_ready",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 406315598076321,
+      "sdp": "v=0\r\no=- 4001652957 4001652957 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=msid-semantic:WMS *\r\nm=audio 34363 UDP/TLS/RTP/SAVPF 111\r\nc=IN IP4 192.0.2.208\r\na=sendonly\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=mid:0\r\na=msid:64d497f4-0e24-4dab-9729-e4095731be96 e43299c7-a1f5-4a2b-b00e-e2a48016578d\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtcp-mux\r\na=ssrc:800915684 cname:d0fd7605-2cd3-4e30-ac5e-2c3ff3336102\r\na=rtpmap:111 opus/48000/2\r\na=candidate:04ca8b06d45d14b04e47bfd6f27e21ea 1 udp 2130706431 192.0.2.208 34363 typ host\r\na=candidate:0501bf3e6c798d5b2341dfee6a6b6bc3 1 udp 2130706431 192.0.2.94 58159 typ host\r\na=end-of-candidates\r\na=ice-ufrag:EkRZ\r\na=ice-pwd:zC9cY38d0p7jmqCvnhw232\r\na=fingerprint:sha-256 46:DC:04:E7:C5:15:39:6E:D1:96:0B:C5:17:20:96:D8:94:95:33:D5:71:8D:68:7E:EC:3F:FE:C5:E8:EB:8E:BF\r\na=fingerprint:sha-384 09:5D:F2:D6:66:B7:51:9B:DE:59:E8:79:1F:CD:21:C5:74:C4:90:29:03:81:C8:E7:D7:0F:A7:53:E5:A9:AB:30:DE:CA:D3:C9:05:6C:44:A0:9A:F9:94:AA:B4:B5:7A:3B\r\na=fingerprint:sha-512 28:A1:9C:74:11:3A:CC:43:FF:90:32:CC:92:C4:6C:D3:03:20:99:50:62:20:F1:C1:FD:AB:0C:29:D9:EA:4D:3C:85:D6:75:E8:BF:C4:40:5A:78:71:5A:99:F3:54:EF:D2:29:E2:31:65:A7:2E:CD:24:25:55:FB:37:47:50:02:6E\r\na=setup:active\r\nm=application 34363 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 192.0.2.208\r\na=mid:1\r\na=sctp-port:5000\r\na=max-message-size:65536\r\na=candidate:04ca8b06d45d14b04e47bfd6f27e21ea 1 udp 2130706431 192.0.2.208 34363 typ host\r\na=candidate:0501bf3e6c798d5b2341dfee6a6b6bc3 1 udp 2130706431 192.0.2.94 58159 typ host\r\na=end-of-candidates\r\na=ice-ufrag:EkRZ\r\na=ice-pwd:zC9cY38d0p7jmqCvnhw232\r\na=fingerprint:sha-256 46:DC:04:E7:C5:15:39:6E:D1:96:0B:C5:17:20:96:D8:94:95:33:D5:71:8D:68:7E:EC:3F:FE:C5:E8:EB:8E:BF\r\na=fingerprint:sha-384 09:5D:F2:D6:66:B7:51:9B:DE:59:E8:79:1F:CD:21:C5:74:C4:90:29:03:81:C8:E7:D7:0F:A7:53:E5:A9:AB:30:DE:CA:D3:C9:05:6C:44:A0:9A:F9:94:AA:B4:B5:7A:3B\r\na=fingerprint:sha-512 28:A1:9C:74:11:3A:CC:43:FF:90:32:CC:92:C4:6C:D3:03:20:99:50:62:20:F1:C1:FD:AB:0C:29:D9:EA:4D:3C:85:D6:75:E8:BF:C4:40:5A:78:71:5A:99:F3:54:EF:D2:29:E2:31:65:A7:2E:CD:24:25:55:FB:37:47:50:02:6E\r\na=setup:active\r\n"
+    },
+    {
+      "event": "ice_state",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 406315598577912,
+      "state": "checking"
+    },
+    {
+      "event": "connection_state",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 406315598651247,
+      "state": "connecting"
+    },
+    {
+      "event": "client_result_received",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 406330056055566
+    },
+    {
+      "event": "ice_state",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 406826071730213,
+      "state": "closed"
+    },
+    {
+      "event": "connection_state",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 406826071867940,
+      "state": "closed"
+    }
+  ]
+}

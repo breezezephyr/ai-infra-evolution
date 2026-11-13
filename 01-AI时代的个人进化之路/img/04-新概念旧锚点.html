@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;background:#f8f5ee;color:#1c1a17;font-family:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:72px 76px;display:flex;flex-direction:column}
+.eyebrow{display:flex;align-items:center;gap:14px;color:#8a8378;font-size:26px;letter-spacing:.04em;font-family:Menlo,"SF Mono",monospace}
+.eyebrow::before{content:"";width:34px;height:5px;background:#2f5f8a;border-radius:3px}
+h1{font-size:74px;line-height:1.18;font-weight:800;letter-spacing:-.01em;margin-top:34px}
+.sub{color:#6f695f;font-size:32px;margin-top:22px;line-height:1.5}
+.card{background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:34px 38px;margin-top:44px}
+.callout{background:#fbf1e6;border:2px solid #f0dcc4;border-radius:18px;padding:32px 36px;font-size:32px;line-height:1.6;margin-top:40px;color:#2a2620}
+.callout b{color:#1c1a17}
+.note{color:#9a9386;font-size:24px;margin-top:auto;padding-top:36px;line-height:1.5}
+.blue{color:#2f5f8a}.orange{color:#c4763a}.green{color:#4f7a52}.gray{color:#9a9386}.red{color:#a84d3a}
+.mono{font-family:Menlo,"SF Mono",monospace}
+.row{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:2px solid #eee8dc;font-size:32px}
+.row:last-child{border-bottom:0}
+.card>div:last-child{border-bottom:0!important}
+.row .k{font-weight:600}.row .v{font-weight:700}
+.strike{text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:#a84d3a;color:#9a9386}
+.tag{display:inline-block;font-size:22px;padding:4px 14px;border-radius:8px;background:#eee8dc;color:#6f695f;margin-left:12px;vertical-align:middle;font-weight:600}
+html,body{height:1500px}</style></head><body><div class="eyebrow">进化之路 · 引导</div><h1>每个新概念，<br>先找旧锚点</h1><div class="sub">学习路线的设计原则。有锚点的概念学起来是修正，不是记忆。</div>
+<div class="card" style="padding:6px 38px"><div style="display:grid;grid-template-columns:1fr 70px 300px;align-items:center;padding:24px 0;border-bottom:2px solid #eee8dc">
+<div><div style="font-size:30px;font-weight:800" class="mono">KV cache</div><div style="font-size:24px;color:#6f695f;margin-top:4px">随对话增长的显存租约</div></div>
+<div style="color:#9a9386;font-size:30px;text-align:center">←</div>
+<div style="font-size:28px;font-weight:600;color:#2f5f8a;line-height:1.4">手动维护的 messages 数组</div></div><div style="display:grid;grid-template-columns:1fr 70px 300px;align-items:center;padding:24px 0;border-bottom:2px solid #eee8dc">
+<div><div style="font-size:30px;font-weight:800" class="mono">Continuous batching</div><div style="font-size:24px;color:#6f695f;margin-top:4px">每步 decode 间动态换人</div></div>
+<div style="color:#9a9386;font-size:30px;text-align:center">←</div>
+<div style="font-size:28px;font-weight:600;color:#2f5f8a;line-height:1.4">攒批</div></div><div style="display:grid;grid-template-columns:1fr 70px 300px;align-items:center;padding:24px 0;border-bottom:2px solid #eee8dc">
+<div><div style="font-size:30px;font-weight:800" class="mono">PagedAttention</div><div style="font-size:24px;color:#6f695f;margin-top:4px">block table 逻辑块→物理块</div></div>
+<div style="color:#9a9386;font-size:30px;text-align:center">←</div>
+<div style="font-size:28px;font-weight:600;color:#2f5f8a;line-height:1.4">操作系统页表</div></div><div style="display:grid;grid-template-columns:1fr 70px 300px;align-items:center;padding:24px 0;border-bottom:2px solid #eee8dc">
+<div><div style="font-size:30px;font-weight:800" class="mono">抢占</div><div style="font-size:24px;color:#6f695f;margin-top:4px">显存满了踢谁</div></div>
+<div style="color:#9a9386;font-size:30px;text-align:center">←</div>
+<div style="font-size:28px;font-weight:600;color:#2f5f8a;line-height:1.4">任务队列、状态机</div></div><div style="display:grid;grid-template-columns:1fr 70px 300px;align-items:center;padding:24px 0;border-bottom:2px solid #eee8dc">
+<div><div style="font-size:30px;font-weight:800" class="mono">Cache-aware 路由</div><div style="font-size:24px;color:#6f695f;margin-top:4px">相同前缀落同一实例</div></div>
+<div style="color:#9a9386;font-size:30px;text-align:center">←</div>
+<div style="font-size:28px;font-weight:600;color:#2f5f8a;line-height:1.4">轮询 / 最少连接</div></div><div style="display:grid;grid-template-columns:1fr 70px 300px;align-items:center;padding:24px 0;border-bottom:2px solid #eee8dc">
+<div><div style="font-size:30px;font-weight:800" class="mono">实时会话</div><div style="font-size:24px;color:#6f695f;margin-top:4px">有状态长连接绑 GPU</div></div>
+<div style="color:#9a9386;font-size:30px;text-align:center">←</div>
+<div style="font-size:28px;font-weight:600;color:#2f5f8a;line-height:1.4">WebSocket 网关</div></div></div>
+<div style="display:flex;gap:22px;margin-top:40px;font-size:26px;color:#6f695f"><span class="mono" style="color:#1c1a17">左</span>要去的地方的语言<span class="mono" style="color:#2f5f8a;margin-left:30px">右</span>已经会的语言</div></body></html>

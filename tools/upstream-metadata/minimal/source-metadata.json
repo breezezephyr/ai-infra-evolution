@@ -1,0 +1,92 @@
+{
+  "repository": "https://github.com/deepseek-ai/deepseek-recipe",
+  "commit": "935817c66f5d6e64838f419692545f06787e485f",
+  "git_tree_sha": "87a3a67b0d12d34534682cf494536aedec5fafa1",
+  "retrieved_at_utc": "2026-10-23T07:58:30.820Z",
+  "files": [
+    {
+      "path": "deepseek-recipe-python/tests/test_bindings.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-python/tests/test_bindings.py",
+      "sha256": "d852276ec3a11917f8cf2fbee95662dc3445d042096ed89a8a6a113b12b0f087",
+      "bytes": 41826,
+      "git_blob_sha1": "78dd6592574ce8c53d102c11faa34ca492b11b94",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe-python/python/deepseek_recipe/_native.pyi",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-python/python/deepseek_recipe/_native.pyi",
+      "sha256": "e24cb343288b736a0cfadbada954fa0272f4393ae27222adee8ed080aa2b0e92",
+      "bytes": 40062,
+      "git_blob_sha1": "856de4060d2ca518a4edd676644076281b32a64b",
+      "git_tree_match": true
+    },
+    {
+      "path": "deepseek-recipe/src/request/mod.rs",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/request/mod.rs",
+      "sha256": "c2d996aca81b6956b9e997c24fd4239a1191248d4e5399dfa069ee41f19fc2b9",
+      "bytes": 11979,
+      "git_blob_sha1": "7fee29fda71d0345115bd06d43ea73d39e91e000",
+      "git_tree_match": true
+    },
+    {
+      "path": "README.zh.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/README.zh.md",
+      "sha256": "62c22884aaa0446109a73d6b92e3d9c59e81399e8a57902f6ef49fc0dba5bedb",
+      "bytes": 6660,
+      "git_blob_sha1": "eaa74964e340ce9d8dc24ec80759f4cabfdac91c",
+      "git_tree_match": true
+    },
+    {
+      "path": "docs/tokenizer.zh.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/docs/tokenizer.zh.md",
+      "sha256": "807c746fbba4c72ed2c4aa178639cd4ba74c4839102f6f60c6fa4cf1d79ffb82",
+      "bytes": 9742,
+      "git_blob_sha1": "e94a39aa6ca7a77972acf36473506108de19947c",
+      "git_tree_match": true
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/LICENSE",
+      "sha256": "ebb4f09972aee8608be255debaf78451a68e95c290f55c240dec2ecfa16ea6be",
+      "bytes": 1065,
+      "git_blob_sha1": "c1f7a78e89e4e4dc7b86664c3b3c76eb5eee1785",
+      "git_tree_match": true
+    }
+  ],
+  "installed_wheel_stub_comparison": {
+    "installed_path": "phase5/.venv-exp19/lib/python3.12/site-packages/deepseek_recipe/_native.pyi",
+    "installed_bytes": 40062,
+    "installed_sha256": "e24cb343288b736a0cfadbada954fa0272f4393ae27222adee8ed080aa2b0e92",
+    "fixed_source_path": "deepseek-recipe-python/python/deepseek_recipe/_native.pyi",
+    "fixed_source_bytes": 40062,
+    "fixed_source_sha256": "e24cb343288b736a0cfadbada954fa0272f4393ae27222adee8ed080aa2b0e92",
+    "byte_identical": true,
+    "scope": "stub bytes only; does not establish native binary build revision"
+  },
+  "upstream_test_selection": {
+    "review_only": true,
+    "tests_executed": false,
+    "dependencies_installed": false,
+    "conftest_found_in_fixed_tree": false,
+    "conftest_downloaded": false,
+    "without_tokenizer": [
+      "test_rendering",
+      "test_deferred_loading_follows_model_version",
+      "test_web_search_conversion_options",
+      "test_reasoning_content_conversion_options",
+      "test_model_version_mapping",
+      "test_protocol_requests_expose_model_until_converted",
+      "test_output_constraints_reach_inference_options",
+      "test_resolve_max_tokens_reports_the_context_length_error",
+      "test_max_tokens_upper_bound_rejects_or_clamps",
+      "test_the_thinking_mode_selects_the_thinking_initial_stage"
+    ],
+    "with_v41_tokenizer": [
+      "test_encoding_with_tokenizer",
+      "test_prompt_encoding_differs_from_tokenizer_on_special_token_spellings",
+      "test_tokenizer_from_str"
+    ],
+    "tokenizer_path_relative_to_minimal": "static/tokenizers/v41/tokenizer.json",
+    "excluded": "Image/image-source tests, image-server fixtures, and stream/response processor tests are excluded from this exp19 selection."
+  }
+}

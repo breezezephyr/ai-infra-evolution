@@ -1,0 +1,44 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+____________ test_complete_trace_settles_only_native_attempt_usage _____________
+
+    def test_complete_trace_settles_only_native_attempt_usage():
+>    report=analyze.audit(*fixture())
+            ^^^^^^^^^^^^^
+E    AttributeError: module 'analyze' has no attribute 'audit'
+
+phase5/exp25/test_analyze.py:21: AttributeError
+_____ test_missing_duplicate_or_corrupt_evidence_retains_plan_denominator ______
+
+    def test_missing_duplicate_or_corrupt_evidence_retains_plan_denominator():
+     for which in ('missing_backend','duplicate_client','wrong_tenant','wrong_wire_hash','wrong_native_usage','missing_done'):
+      p,c,g,b=fixture()
+      if which=='missing_backend':b=[]
+      elif which=='duplicate_client':c.append(copy.deepcopy(c[0]))
+      elif which=='wrong_tenant':g[0]['tenant_id']='tenant-b'
+      elif which=='wrong_wire_hash':b[0]['request_sha256']='wrong'
+      elif which=='wrong_native_usage':g[0]['attempts'][0]['usage_raw']={'prompt_tokens':1,'completion_tokens':1,'total_tokens':2}
+      elif which=='missing_done':c[0]['raw']=c[0]['raw'].replace('data: [DONE]\n\n','')
+>     r=analyze.audit(p,c,g,b)
+        ^^^^^^^^^^^^^
+E     AttributeError: module 'analyze' has no attribute 'audit'
+
+phase5/exp25/test_analyze.py:36: AttributeError
+_______ test_empty_usage_is_unknown_and_never_replaced_with_text_length ________
+
+    def test_empty_usage_is_unknown_and_never_replaced_with_text_length():
+     p,c,g,b=fixture()
+     raw=RAW.replace(',"usage":{"prompt_tokens":7,"completion_tokens":2,"total_tokens":9}','')
+     b[0].update(sse=raw,response_sha256=hashlib.sha256(raw.encode()).hexdigest())
+     a=g[0]['attempts'][0];a.update(usage_raw=None,usage=None,usage_source='unknown',response_sse_sha256=hashlib.sha256(raw.encode()).hexdigest())
+     g[0]['generation_usage']=None
+>    r=analyze.audit(p,c,g,b)
+       ^^^^^^^^^^^^^
+E    AttributeError: module 'analyze' has no attribute 'audit'
+
+phase5/exp25/test_analyze.py:46: AttributeError
+=========================== short test summary info ============================
+FAILED phase5/exp25/test_analyze.py::test_complete_trace_settles_only_native_attempt_usage
+FAILED phase5/exp25/test_analyze.py::test_missing_duplicate_or_corrupt_evidence_retains_plan_denominator
+FAILED phase5/exp25/test_analyze.py::test_empty_usage_is_unknown_and_never_replaced_with_text_length
+3 failed in 0.03s

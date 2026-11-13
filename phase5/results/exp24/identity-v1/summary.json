@@ -1,0 +1,116 @@
+{
+  "planned": 12,
+  "matched": 12,
+  "eligible": 1,
+  "rows": [
+    {
+      "change": null,
+      "value": null,
+      "expected": true,
+      "actual": true,
+      "key": "exp24:cache-identity:v1:sha256:a4e0c219a748cf55c765c36ceab4eef19f2bf1889590e9cf8f1c1f1444fe08cb",
+      "matches_expected": true
+    },
+    {
+      "change": "schema_version",
+      "value": "2",
+      "expected": false,
+      "actual": false,
+      "key": "exp24:cache-identity:v1:sha256:61491db4dc8a285f6bf3520bc72eb04513a0e46aa8ea71c05b0e92b569067a80",
+      "matches_expected": true
+    },
+    {
+      "change": "tenant_id",
+      "value": "tenant-b",
+      "expected": false,
+      "actual": false,
+      "key": "exp24:cache-identity:v1:sha256:7afc90065b5268b51a70dd713808610b2ee19c55c2c6892e7dd744d5c77003c5",
+      "matches_expected": true
+    },
+    {
+      "change": "model_revision",
+      "value": "model-sha256:example-v2",
+      "expected": false,
+      "actual": false,
+      "key": "exp24:cache-identity:v1:sha256:d0fdb35af8c4cce836c068ecaf4b57c79a3a816f3af48a6e9c4b63b7c66b76d4",
+      "matches_expected": true
+    },
+    {
+      "change": "tokenizer_revision",
+      "value": "tok-sha256:example-v2",
+      "expected": false,
+      "actual": false,
+      "key": "exp24:cache-identity:v1:sha256:b95c4fa2794555f502201ef18b175ad1e6e58364a17cfb0c717562225b549488",
+      "matches_expected": true
+    },
+    {
+      "change": "template_revision",
+      "value": "template-sha256:example-v2",
+      "expected": false,
+      "actual": false,
+      "key": "exp24:cache-identity:v1:sha256:b2ff830157743a13d8df538e175cc965115c1a507b440e3a0601f7c549c8d9da",
+      "matches_expected": true
+    },
+    {
+      "change": "token_ids",
+      "value": [
+        1,
+        43,
+        0,
+        2048
+      ],
+      "expected": false,
+      "actual": false,
+      "key": "exp24:cache-identity:v1:sha256:21e931b4642488c49cdac00f1e1004f99c4694db671bf1f8957ce856ceedab7b",
+      "matches_expected": true
+    },
+    {
+      "change": "kv_layout_revision",
+      "value": "layout-v2",
+      "expected": false,
+      "actual": false,
+      "key": "exp24:cache-identity:v1:sha256:a27f191d91377cd06c1507c8dedd987724e96753f161e310257bee3107c61d8c",
+      "matches_expected": true
+    },
+    {
+      "change": "dtype",
+      "value": "bfloat16",
+      "expected": false,
+      "actual": false,
+      "key": "exp24:cache-identity:v1:sha256:c8e3d189e73f4cc99c008f512d5fec64d99c129f8084191581957315ba016671",
+      "matches_expected": true
+    },
+    {
+      "change": "tensor_parallel_partition",
+      "value": "tp2-rank1",
+      "expected": false,
+      "actual": false,
+      "key": "exp24:cache-identity:v1:sha256:b1f87cc8511a0fa379f76e93a66d07bf45062a02b566f9d3bf3dd77b6a89084c",
+      "matches_expected": true
+    },
+    {
+      "change": "position_attention_namespace",
+      "value": "rope20000-pos0..3-causal",
+      "expected": false,
+      "actual": false,
+      "key": "exp24:cache-identity:v1:sha256:976ff2e313a7b4f9844cbac22f5e3595dabaf870c25dd91e50ad532fb8eb2bca",
+      "matches_expected": true
+    },
+    {
+      "change": "modality_identity",
+      "value": [
+        "image-sha256:example"
+      ],
+      "expected": false,
+      "actual": false,
+      "key": "exp24:cache-identity:v1:sha256:3300c3c566ccabbd867e59a538368967df2f1170352c7044581e7c42fe9d6e52",
+      "matches_expected": true
+    }
+  ],
+  "gate_controls": {
+    "no_flags": false,
+    "integrity_only": false,
+    "importer_only": false,
+    "both_attestations": true
+  }
+}

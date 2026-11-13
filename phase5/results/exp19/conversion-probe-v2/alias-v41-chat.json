@@ -1,0 +1,219 @@
+{
+  "id": "alias-v41-chat",
+  "protocol": "chat",
+  "family": "alias_v41",
+  "input": {
+    "model": "deepseek-chat",
+    "messages": [
+      {
+        "role": "user",
+        "content": "返回 ALIAS_OK_19。"
+      }
+    ],
+    "thinking": {
+      "type": "disabled"
+    },
+    "temperature": 0.25,
+    "top_p": 0.6
+  },
+  "options": {
+    "alias": {
+      "name": "deepseek-chat",
+      "version": "v41"
+    }
+  },
+  "input_sha256": "4e76704ec7e9d8c8ed7589fcac754a4765f233d22376f79b375b9cc2d88d5fe2",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "unknown",
+      "evidence": {
+        "status": "unknown",
+        "reason": "matching tokenizer unavailable"
+      }
+    },
+    {
+      "name": "alias_resolves_version",
+      "status": "pass",
+      "evidence": {
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "返回 ALIAS_OK_19。"
+          ],
+          "assistant_reasoning_contents": [],
+          "tool_names": [],
+          "tool_parameter_schemas": [],
+          "tool_choice": "auto",
+          "max_tokens": null,
+          "temperature": 0.25,
+          "top_p": 1.0,
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "parse_tool_calls": false,
+          "starts_in_tool_calls": false
+        },
+        "differences": {}
+      }
+    },
+    {
+      "name": "family_compare",
+      "status": "pass",
+      "evidence": {
+        "family": "alias_v41",
+        "n": 3,
+        "ids": [
+          "alias-v41-chat",
+          "alias-v41-responses",
+          "alias-v41-messages"
+        ],
+        "invariant_fields": [
+          "max_tokens",
+          "model_version",
+          "output_constraint_kind",
+          "reasoning_effort",
+          "roles",
+          "stop_sequences",
+          "temperature",
+          "thinking_mode",
+          "tool_choice",
+          "tool_names",
+          "top_p"
+        ],
+        "declared_protocol_differences": {},
+        "passed": true,
+        "prompt_equality_required": false
+      }
+    },
+    {
+      "name": "resolve_default_non_thinking_8192",
+      "status": "unknown",
+      "evidence": {
+        "reason": "prerequisite unavailable"
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "返回 ALIAS_OK_19。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": false,
+      "reasoning_effort": null,
+      "tools": [],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": null,
+      "temperature": 0.25,
+      "top_p": 1.0,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": null
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": false,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [],
+      "thinking_initial_stage": "None"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": false,
+    "reasoning_effort": null,
+    "roles": [
+      "user"
+    ],
+    "message_contents": [
+      "返回 ALIAS_OK_19。"
+    ],
+    "assistant_reasoning_contents": [],
+    "tool_names": [],
+    "tool_parameter_schemas": [],
+    "tool_choice": "auto",
+    "max_tokens": null,
+    "temperature": 0.25,
+    "top_p": 1.0,
+    "output_constraint_kind": null,
+    "stop_sequences": [],
+    "parse_tool_calls": false,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜User｜>返回 ALIAS_OK_19。<｜Assistant｜></think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        29
+      ],
+      [
+        44,
+        57
+      ],
+      [
+        57,
+        65
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "</think>"
+    ]
+  },
+  "encoding": {
+    "status": "unknown",
+    "reason": "matching tokenizer unavailable"
+  },
+  "elapsed_ms": 0.046292
+}

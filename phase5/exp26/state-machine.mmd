@@ -1,0 +1,16 @@
+stateDiagram-v2
+    [*] --> 入口
+    入口 --> 拒绝 : draining
+    入口 --> 尝试中 : 准入
+    尝试中 --> 已提交 : 首个内容send成功返回
+    尝试中 --> 取消并join : 超时/取消/旧generation/审核失败
+    取消并join --> 新尝试 : 未提交+纯文本+key+可重试+次数小于2
+    新尝试 --> 尝试中 : 新attempt_id
+    取消并join --> 失败终态 : 不满足重试条件
+    已提交 --> 完成终态 : 原生finish与完整流
+    已提交 --> 取消并join : 断流/取消/排空超时
+    完成终态 --> 逐attempt结算
+    失败终态 --> 逐attempt结算
+    拒绝 --> 无attempt终态
+    逐attempt结算 --> [*] : 已知usage或null，不抹账
+    无attempt终态 --> [*]

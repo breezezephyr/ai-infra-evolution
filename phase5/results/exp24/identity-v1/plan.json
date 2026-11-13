@@ -1,0 +1,91 @@
+{
+  "scope": "caller-side exact metadata teaching contract; no real model, tokenization, KV importer or Store ACL",
+  "base": {
+    "schema_version": "1",
+    "tenant_id": "tenant-a",
+    "model_revision": "model-sha256:example-v1",
+    "tokenizer_revision": "tok-sha256:example-v1",
+    "template_revision": "template-sha256:example-v1",
+    "token_ids": [
+      1,
+      42,
+      0,
+      2048
+    ],
+    "kv_layout_revision": "layout-v1",
+    "dtype": "float16",
+    "tensor_parallel_partition": "tp2-rank0",
+    "position_attention_namespace": "rope10000-pos0..3-causal",
+    "modality_identity": []
+  },
+  "cases": [
+    {
+      "change": null,
+      "value": null,
+      "expected": true
+    },
+    {
+      "change": "schema_version",
+      "value": "2",
+      "expected": false
+    },
+    {
+      "change": "tenant_id",
+      "value": "tenant-b",
+      "expected": false
+    },
+    {
+      "change": "model_revision",
+      "value": "model-sha256:example-v2",
+      "expected": false
+    },
+    {
+      "change": "tokenizer_revision",
+      "value": "tok-sha256:example-v2",
+      "expected": false
+    },
+    {
+      "change": "template_revision",
+      "value": "template-sha256:example-v2",
+      "expected": false
+    },
+    {
+      "change": "token_ids",
+      "value": [
+        1,
+        43,
+        0,
+        2048
+      ],
+      "expected": false
+    },
+    {
+      "change": "kv_layout_revision",
+      "value": "layout-v2",
+      "expected": false
+    },
+    {
+      "change": "dtype",
+      "value": "bfloat16",
+      "expected": false
+    },
+    {
+      "change": "tensor_parallel_partition",
+      "value": "tp2-rank1",
+      "expected": false
+    },
+    {
+      "change": "position_attention_namespace",
+      "value": "rope20000-pos0..3-causal",
+      "expected": false
+    },
+    {
+      "change": "modality_identity",
+      "value": [
+        "image-sha256:example"
+      ],
+      "expected": false
+    }
+  ],
+  "identity_code_sha256": "7ebc58c1d94bd13ea0ab602b689154dbb269c3909c30d574bb0b247b5c9f85b0"
+}

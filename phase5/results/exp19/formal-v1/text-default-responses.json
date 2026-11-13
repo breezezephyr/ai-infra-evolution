@@ -1,0 +1,288 @@
+{
+  "id": "text-default-responses",
+  "protocol": "responses",
+  "family": "text_default",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "input": "你好，请原样返回 TEXT_OK_19。"
+  },
+  "options": {},
+  "input_sha256": "67666d0ede584ab8adab8a504932c5c67e6567e51d3dd31042d600b895c62dab",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_without_tokenizer_raises_runtime_error",
+      "status": "pass",
+      "evidence": {
+        "type": "RuntimeError",
+        "message": "no tokenizer is attached to the encoding",
+        "body": null,
+        "status_code": null,
+        "stage": "encode_without_tokenizer"
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "pass",
+      "evidence": {
+        "prompt_tokens": 41
+      }
+    },
+    {
+      "name": "resolve_default_thinking_65536",
+      "status": "pass",
+      "evidence": {
+        "large_context": 65536,
+        "seven_left": 7,
+        "expected_default": 65536
+      }
+    },
+    {
+      "name": "resolve_context_prompt_overflow",
+      "status": "pass",
+      "evidence": {
+        "prompt": 41,
+        "context": 40,
+        "error": {
+          "type": "ConversionError",
+          "message": "This model's maximum context length is 40 tokens. However, you requested 41 tokens (41 in the messages, 0 in the completion). Please reduce the length of the messages or completion.",
+          "body": "{\"error\":{\"message\":\"This model's maximum context length is 40 tokens. However, you requested 41 tokens (41 in the messages, 0 in the completion). Please reduce the length of the messages or completion.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+          "status_code": 400,
+          "stage": "resolve_max_tokens"
+        }
+      }
+    },
+    {
+      "name": "resolve_context_at_limit_returns_one",
+      "status": "pass",
+      "evidence": {
+        "remaining": 0,
+        "note": "library boundary behavior, not model generation proof"
+      }
+    },
+    {
+      "name": "family_compare",
+      "status": "pass",
+      "evidence": {
+        "family": "text_default",
+        "n": 3,
+        "ids": [
+          "text-default-chat",
+          "text-default-responses",
+          "text-default-messages"
+        ],
+        "invariant_fields": [
+          "max_tokens",
+          "message_contents",
+          "model_version",
+          "output_constraint_kind",
+          "reasoning_effort",
+          "roles",
+          "stop_sequences",
+          "temperature",
+          "thinking_mode",
+          "tool_choice",
+          "tool_names",
+          "top_p"
+        ],
+        "declared_protocol_differences": {},
+        "passed": true,
+        "prompt_equality_required": false
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "你好，请原样返回 TEXT_OK_19。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": true,
+      "reasoning_effort": "high",
+      "tools": [],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": null,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": null
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": false,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [],
+      "thinking_initial_stage": "ThinkingInitialStage.ReasoningStart"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": true,
+    "reasoning_effort": "high",
+    "roles": [
+      "user"
+    ],
+    "message_contents": [
+      "你好，请原样返回 TEXT_OK_19。"
+    ],
+    "assistant_reasoning_contents": [],
+    "tool_names": [],
+    "tool_parameter_schemas": [],
+    "tool_choice": "auto",
+    "max_tokens": null,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "output_constraint_kind": null,
+    "stop_sequences": [],
+    "parse_tool_calls": false,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜System｜>Reasoning Effort: 75 (range 1-100, the higher the value, the more thorough the reasoning)\n\n<｜User｜>你好，请原样返回 TEXT_OK_19。<｜Assistant｜><think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        31
+      ],
+      [
+        122,
+        130
+      ],
+      [
+        150,
+        163
+      ],
+      [
+        163,
+        170
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜System｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "<think>"
+    ]
+  },
+  "encoding": {
+    "status": "ok",
+    "token_ids": [
+      0,
+      128799,
+      77666,
+      288,
+      9504,
+      482,
+      28,
+      223,
+      2402,
+      343,
+      16801,
+      223,
+      19,
+      15,
+      1457,
+      14,
+      270,
+      4077,
+      270,
+      1990,
+      14,
+      270,
+      850,
+      15146,
+      270,
+      22805,
+      868,
+      128803,
+      30594,
+      303,
+      2788,
+      1532,
+      1295,
+      13199,
+      66427,
+      110393,
+      65,
+      511,
+      320,
+      128804,
+      128821
+    ],
+    "prompt_tokens": 41,
+    "token_ids_sha256": "32b6fa70c21cd65bcf0d5b8343173f1a2848a4d032b328d1cb65a253ca26e59c"
+  },
+  "context_probes": [
+    {
+      "prompt": 41,
+      "context": 262185,
+      "value": 65536
+    },
+    {
+      "prompt": 41,
+      "context": 48,
+      "value": 7
+    },
+    {
+      "prompt": 41,
+      "context": 40,
+      "error": {
+        "type": "ConversionError",
+        "message": "This model's maximum context length is 40 tokens. However, you requested 41 tokens (41 in the messages, 0 in the completion). Please reduce the length of the messages or completion.",
+        "body": "{\"error\":{\"message\":\"This model's maximum context length is 40 tokens. However, you requested 41 tokens (41 in the messages, 0 in the completion). Please reduce the length of the messages or completion.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+        "status_code": 400,
+        "stage": "resolve_max_tokens"
+      }
+    },
+    {
+      "prompt": 41,
+      "context": 41,
+      "value": 1
+    }
+  ],
+  "elapsed_ms": 12.089583
+}

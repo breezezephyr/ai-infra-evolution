@@ -1,0 +1,50 @@
+{
+  "id": "calc-4--prompt_only--seed17",
+  "contract": "a0ae65cfec334628a7407ea1a8cf2588744b46b3a8685994c7d8188d9f18e482",
+  "arm": "prompt_only",
+  "case_id": "calc-4",
+  "seed": 17,
+  "family": "arithmetic",
+  "payload_sha256": "7be037dbfaf86e32252e883dd508a005a20ee313979cf11b786893db4c08ad31",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-a26250efa64c4501a6695de1b9c4b49a",
+    "object": "chat.completion",
+    "created": 1792983654,
+    "model": "exp21-qwen3-0.6b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "```json\n{\n  \"total\": 3700,\n  \"has_discount\": true\n}\n```",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 139,
+      "total_tokens": 163,
+      "completion_tokens": 24,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "accepted": true,
+  "content": "```json\n{\n  \"total\": 3700,\n  \"has_discount\": true\n}\n```",
+  "finish_reason": "stop",
+  "evaluation": {
+    "json_valid": false,
+    "schema_valid": false,
+    "business_correct": false,
+    "complete": true,
+    "deliverable": false,
+    "parse_error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  "client_elapsed_ms": 843.978333,
+  "clock_domain": "client_process_monotonic_ns"
+}

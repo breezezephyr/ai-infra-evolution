@@ -1,0 +1,100 @@
+{
+  "schema": "exp18-metric-contract-v1",
+  "status": "measurement design; no production SLO assertion",
+  "date": "2026-10-23",
+  "joint_production_sessions_observed": null,
+  "global_rules": [
+    "Retain eligible, success, failure and unknown separately; never silently drop failed turns.",
+    "A latency distribution includes measured samples only and must show its measured/eligible denominator.",
+    "Differences require a common clock or explicit clock calibration; never add p95 values.",
+    "Do not multiply rates from different experiments to estimate joint session success.",
+    "Target rates, reporting window, quality criteria and permitted exclusions require a real service contract."
+  ],
+  "metrics": [
+    {
+      "id": "endpoint_completeness",
+      "eligible": "all formal eligible turns in each exp14 strategy, 36 each",
+      "success": "endpoint contains the complete frozen input speech reference",
+      "failure": "premature endpoint",
+      "unknown": "missing decision/reference",
+      "unit": "turn count",
+      "source": "exp14 final formal raw records",
+      "production_target": null
+    },
+    {
+      "id": "client_first_pcm",
+      "origin": "client scheduled source start + offline energy-reference speech-end offset",
+      "end": "client first PCM receipt",
+      "clock": "client monotonic",
+      "eligible": "all exp14 formal turns; distribution conditional on complete endpoint",
+      "failure": "premature endpoint remains a separate failure",
+      "unknown": "missing same-clock timestamp",
+      "unit": "ms",
+      "exploratory_threshold_ms": 800,
+      "production_target": null
+    },
+    {
+      "id": "render_first_sound_proxy",
+      "origin": "same-browser actual frame-send/sample reference end",
+      "end": "first non-silent AudioContext sample mapped through recorded bracketed performance anchors; main-thread consumption notification is a separate signal",
+      "clock": "calibrated browser performance timeline",
+      "eligible": "3 exp14 final browser replay runs only",
+      "unit": "ms",
+      "acoustic_first_sound_ms": null,
+      "production_target": null
+    },
+    {
+      "id": "playback_continuity",
+      "eligible": "exp15 final media runs, 6 per transport/scenario",
+      "ws": "AudioWorklet underrun samples with that player and playout window",
+      "rtc": "concealedSamples from receiver stats; initial missing => interval delta unknown",
+      "unit": "path-specific sample counts; NOT a combined stall rate",
+      "production_target": null
+    },
+    {
+      "id": "interruption_render_tail",
+      "origin": "browser controlled trigger frame",
+      "end": "last old-generation render frame",
+      "clock": "AudioContext frame index at context sample rate",
+      "eligible": "exp16 18 browser interruption runs, grouped by policy/position",
+      "unit": "ms, render proxy",
+      "microphone_onset_ms": null,
+      "acoustic_stop_ms": null,
+      "production_target": null
+    },
+    {
+      "id": "worker_cleanup",
+      "origin": "server stop signal set",
+      "end": "all relevant generation workers joined",
+      "clock": "server monotonic",
+      "eligible": "exp16 browser interruption runs; separate GPU boundary probes not pooled",
+      "unit": "ms",
+      "production_target": null
+    },
+    {
+      "id": "continuation_playback",
+      "eligible": "exp16 18 new generations",
+      "success": "new generation produced/sent/played counts match with no remaining queue at completion",
+      "unit": "turn count",
+      "semantic_quality": null,
+      "production_target": null
+    },
+    {
+      "id": "session_success",
+      "eligible": "real jointly instrumented service sessions under specified load and window",
+      "success": "same-session conjunction of selected completeness/latency/continuity/cancellation/quality rules",
+      "unit": "session count",
+      "observed": null,
+      "production_target": null
+    },
+    {
+      "id": "gpu_cost_per_session_minute",
+      "numerator": "per-device union of resident intervals in hours times explicit assumed or paid rate; sum devices separately",
+      "denominator": "sum actual session minutes in same window; not input audio or demo-turn minutes",
+      "other_costs": "CPU, memory, network, storage, API costs tracked separately",
+      "actual_session_minutes": null,
+      "actual_bill": null,
+      "observed": null
+    }
+  ]
+}

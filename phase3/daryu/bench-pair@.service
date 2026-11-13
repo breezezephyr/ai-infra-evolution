@@ -1,0 +1,25 @@
+[Unit]
+Description=P3 exp7 bench vLLM pair (Qwen3-0.6B, port %i, metrics on)
+After=network.target
+# 两个实例共用一张卡：与现网模型、单实例 bench 互斥；实验完 systemctl start qwen3-embedding 恢复
+Conflicts=qwen3-embedding.service bonsai-llm.service bench-vllm.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/models/Qwen3-0.6B
+EnvironmentFile=-/etc/default/bench-pair
+# 按实例覆盖（可选）
+EnvironmentFile=-/etc/default/bench-pair-%i
+Environment=PYTHONPATH=/opt/p2/stub
+ExecStart=/root/vllm-env/bin/vllm serve /opt/models/Qwen3-0.6B \
+  --served-model-name qwen3-0.6b --host 127.0.0.1 --port %i \
+  --dtype bfloat16 --max-model-len ${MAX_MODEL_LEN} \
+  --gpu-memory-utilization ${GPU_UTIL} \
+  --max-num-seqs ${MAX_NUM_SEQS} --max-num-batched-tokens ${MAX_BATCHED_TOKENS} \
+  $EXTRA_ARGS
+Restart=no
+TimeoutStartSec=10min
+
+[Install]
+WantedBy=multi-user.target

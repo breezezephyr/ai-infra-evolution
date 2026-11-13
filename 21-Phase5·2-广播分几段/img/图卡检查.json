@@ -1,0 +1,100 @@
+{
+  "kind": "P5.2 deterministic graphic verification",
+  "scope": "21-Phase5·2-广播分几段/img",
+  "files": {
+    "00-封面.png": {
+      "sha256": "78f674488932538642f396241c61367c55f6758de3f9547090b81995b27657ef",
+      "bytes": 386114
+    },
+    "01-一页纸.png": {
+      "sha256": "286ad81d37e7bc8fc02ad778cdbac995f27c39bdd92485d08889fc3e407f0f2a",
+      "bytes": 680216
+    },
+    "00-封面.html": {
+      "sha256": "9f1f0135c1c1ffc5751e315623abcae1b40f2c995fd03779eaf2b7e0d276cbeb",
+      "bytes": 8904
+    },
+    "01-一页纸.html": {
+      "sha256": "92cfaa911889860bad3fdaa31f65872936277ce8e776e833069ab8c83773d235",
+      "bytes": 11969
+    }
+  },
+  "dimensions": {
+    "cover": [
+      2560,
+      1090
+    ],
+    "one_page": [
+      2160,
+      4160
+    ]
+  },
+  "dom_evidence": {
+    "cover": "00-封面.layout.json",
+    "one_page": "01-一页纸.layout.json",
+    "overflow_issues": [],
+    "sibling_overlap_issues": [],
+    "fonts": "loaded"
+  },
+  "readability": {
+    "review_method": "view_image of actual headless Chrome PNGs; both images visually inspected.",
+    "inspected_preview_sizes": {
+      "cover": [
+        2048,
+        872
+      ],
+      "one_page": [
+        1063,
+        2048
+      ]
+    },
+    "body_font_css_px": 23,
+    "body_font_exported_px": 46,
+    "main_flow_heading_css_px": 27,
+    "terminal_state_font_css_px": 23,
+    "footer_font_css_px": 22,
+    "observations": [
+      "封面保持原文件与尺寸、色彩；仅第5站高亮。",
+      "已查看修订后PNG：finish()关闭输入说明完整清晰。",
+      "步骤03先保存event/data；分支A输入原生事件对象，分支B输入同一事件的event/data快照。",
+      "分支A与分支B标题均为单行；无串行箭头，无文字遮挡、截断或重叠。"
+    ]
+  },
+  "content_audit": {
+    "required_content_present": true,
+    "unprovided_result_counts_or_pass_rates": false,
+    "placeholder_results": false,
+    "tool_execution_claim": false,
+    "content_type": "完整解释卡，不包含实验结果"
+  },
+  "source_template_unchanged": {
+    "verified": true,
+    "changed": [],
+    "added": [],
+    "baseline": "source-hashes.json"
+  },
+  "template_reuse": {
+    "cover": "前篇cover.py，仅更新标题、副标题、眉题。",
+    "one_page": "前篇build.py的色彩、字号、间距、分类网格和流程行；增加终态表。",
+    "renderer": "前篇render.py；本目录内扩展DOM字号、位置、站点亮度和重叠证据。"
+  },
+  "write_boundary": "Only this img directory; no article text, experiment code or results modified.",
+  "revision": {
+    "requested_changes": [
+      "finish()关闭输入；关闭输入并收尾，不等于后端Finish。",
+      "原生accumulate输入事件对象，本地SSE输入同一事件的序列化快照。"
+    ],
+    "step_count_preserved": true,
+    "png_count_preserved": true,
+    "cover_unchanged": true,
+    "dimensions_preserved": true,
+    "colors_preserved": true,
+    "changed_files": [
+      "build.py",
+      "01-一页纸.html",
+      "01-一页纸.png",
+      "01-一页纸.layout.json",
+      "图卡检查.json"
+    ]
+  }
+}

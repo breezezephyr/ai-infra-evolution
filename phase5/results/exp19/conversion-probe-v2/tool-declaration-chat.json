@@ -1,0 +1,352 @@
+{
+  "id": "tool-declaration-chat",
+  "protocol": "chat",
+  "family": "tool_declaration",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "messages": [
+      {
+        "role": "user",
+        "content": "可以调用 get_weather 查询杭州天气。"
+      }
+    ],
+    "thinking": {
+      "type": "disabled"
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_weather",
+          "description": "返回指定城市的天气。",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    ],
+    "tool_choice": "auto"
+  },
+  "options": {},
+  "input_sha256": "ac144bab3045207db30a583d0e9992fb43cd94edc854b706f83416e3cf7fde68",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "unknown",
+      "evidence": {
+        "status": "unknown",
+        "reason": "matching tokenizer unavailable"
+      }
+    },
+    {
+      "name": "tool_declaration_only",
+      "status": "pass",
+      "evidence": {
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "可以调用 get_weather 查询杭州天气。"
+          ],
+          "assistant_reasoning_contents": [],
+          "tool_names": [
+            "get_weather"
+          ],
+          "tool_parameter_schemas": [
+            {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "tool_choice": "auto",
+          "max_tokens": null,
+          "temperature": 1.0,
+          "top_p": 1.0,
+          "output_constraint_kind": "tool_call",
+          "stop_sequences": [],
+          "parse_tool_calls": true,
+          "starts_in_tool_calls": false
+        },
+        "differences": {}
+      }
+    },
+    {
+      "name": "family_compare",
+      "status": "pass",
+      "evidence": {
+        "family": "tool_declaration",
+        "n": 3,
+        "ids": [
+          "tool-declaration-chat",
+          "tool-declaration-responses",
+          "tool-declaration-messages"
+        ],
+        "invariant_fields": [
+          "max_tokens",
+          "model_version",
+          "output_constraint_kind",
+          "parse_tool_calls",
+          "reasoning_effort",
+          "roles",
+          "starts_in_tool_calls",
+          "stop_sequences",
+          "temperature",
+          "thinking_mode",
+          "tool_choice",
+          "tool_names",
+          "tool_parameter_schemas",
+          "top_p"
+        ],
+        "declared_protocol_differences": {},
+        "passed": true,
+        "prompt_equality_required": false
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "可以调用 get_weather 查询杭州天气。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": false,
+      "reasoning_effort": null,
+      "tools": [
+        {
+          "name": "get_weather",
+          "description": "返回指定城市的天气。",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ],
+            "additionalProperties": false
+          },
+          "strict": null,
+          "defer_loading": false
+        }
+      ],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": null,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": {
+        "kind": "tool_call",
+        "schema": "[{\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"description\":\"返回指定城市的天气。\",\"parameters\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\"}},\"required\":[\"city\"],\"additionalProperties\":false},\"strict\":null}}]"
+      }
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": true,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [],
+      "thinking_initial_stage": "None"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": false,
+    "reasoning_effort": null,
+    "roles": [
+      "user"
+    ],
+    "message_contents": [
+      "可以调用 get_weather 查询杭州天气。"
+    ],
+    "assistant_reasoning_contents": [],
+    "tool_names": [
+      "get_weather"
+    ],
+    "tool_parameter_schemas": [
+      {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "city"
+        ],
+        "additionalProperties": false
+      }
+    ],
+    "tool_choice": "auto",
+    "max_tokens": null,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "output_constraint_kind": "tool_call",
+    "stop_sequences": [],
+    "parse_tool_calls": true,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜System｜>\n\n## Tools\n\nYou have access to a set of tools to help answer the user's question. You can invoke tools by writing a \"<｜DSML｜ calls>\" block like the following:\n\n<｜DSML｜ calls>\n<｜DSML｜ invoke name=\"$TOOL_NAME\">\n<｜DSML｜ parameter name=\"$PARAMETER_NAME\" string=\"true|false\">$PARAMETER_VALUE</｜DSML｜ parameter>\n...\n</｜DSML｜ invoke>\n<｜DSML｜ invoke name=\"$TOOL_NAME2\">\n...\n</｜DSML｜ invoke>\n</｜DSML｜ calls>\n\nString parameters should be specified as is and set `string=\"true\"`. For all other types (numbers, booleans, arrays, objects), pass the value in JSON format and set `string=\"false\"`.\n\nIf thinking_mode is enabled (triggered by <think>), you MUST output your complete reasoning inside <think>...</think> BEFORE any tool calls or final response.\n\nOtherwise, output directly after </think> with tool calls or final response.\n\n### Available Tool Schemas\n\n{\"name\": \"get_weather\", \"description\": \"返回指定城市的天气。\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"], \"additionalProperties\": false}}\n\nYou MUST strictly follow the above defined tool name and parameter schemas to invoke tool calls.\n<｜User｜>可以调用 get_weather 查询杭州天气。<｜Assistant｜></think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        31
+      ],
+      [
+        149,
+        155
+      ],
+      [
+        192,
+        198
+      ],
+      [
+        207,
+        213
+      ],
+      [
+        241,
+        247
+      ],
+      [
+        319,
+        325
+      ],
+      [
+        343,
+        349
+      ],
+      [
+        359,
+        365
+      ],
+      [
+        399,
+        405
+      ],
+      [
+        416,
+        422
+      ],
+      [
+        657,
+        664
+      ],
+      [
+        714,
+        721
+      ],
+      [
+        724,
+        732
+      ],
+      [
+        808,
+        816
+      ],
+      [
+        1163,
+        1171
+      ],
+      [
+        1195,
+        1208
+      ],
+      [
+        1208,
+        1216
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜System｜>",
+      "｜DSML｜",
+      "｜DSML｜",
+      "｜DSML｜",
+      "｜DSML｜",
+      "｜DSML｜",
+      "｜DSML｜",
+      "｜DSML｜",
+      "｜DSML｜",
+      "｜DSML｜",
+      "<think>",
+      "<think>",
+      "</think>",
+      "</think>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "</think>"
+    ]
+  },
+  "encoding": {
+    "status": "unknown",
+    "reason": "matching tokenizer unavailable"
+  },
+  "elapsed_ms": 9.583875
+}

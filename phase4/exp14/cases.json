@@ -1,0 +1,137 @@
+{
+  "source": "self_authored_chinese",
+  "description": "exp14 自写控制输入；segments 完整拼接为 reference_text，pauses_ms 只表示片段之间额外插入的零样本静音。",
+  "cases": [
+    {
+      "id": "short_01",
+      "category": "short",
+      "reference_text": "你是谁？",
+      "segments": [
+        "你是谁？"
+      ],
+      "pauses_ms": [],
+      "source": "self_authored_chinese"
+    },
+    {
+      "id": "short_02",
+      "category": "short",
+      "reference_text": "今天适合散步吗？",
+      "segments": [
+        "今天适合散步吗？"
+      ],
+      "pauses_ms": [],
+      "source": "self_authored_chinese"
+    },
+    {
+      "id": "short_03",
+      "category": "short",
+      "reference_text": "请解释一下什么是缓存。",
+      "segments": [
+        "请解释一下什么是缓存。"
+      ],
+      "pauses_ms": [],
+      "source": "self_authored_chinese"
+    },
+    {
+      "id": "short_04",
+      "category": "short",
+      "reference_text": "一顿清淡又省事的晚饭可以怎么做？",
+      "segments": [
+        "一顿清淡又省事的晚饭可以怎么做？"
+      ],
+      "pauses_ms": [],
+      "source": "self_authored_chinese"
+    },
+    {
+      "id": "short_05",
+      "category": "short",
+      "reference_text": "怎么把手机里的照片备份到电脑上？",
+      "segments": [
+        "怎么把手机里的照片备份到电脑上？"
+      ],
+      "pauses_ms": [],
+      "source": "self_authored_chinese"
+    },
+    {
+      "id": "short_06",
+      "category": "short",
+      "reference_text": "请用一句话说明地铁换乘时应该先确认什么。",
+      "segments": [
+        "请用一句话说明地铁换乘时应该先确认什么。"
+      ],
+      "pauses_ms": [],
+      "source": "self_authored_chinese"
+    },
+    {
+      "id": "pause_01",
+      "category": "pause",
+      "reference_text": "我想安排周末的活动，请推荐一个适合亲子出游的地方。",
+      "segments": [
+        "我想安排周末的活动，",
+        "请推荐一个适合亲子出游的地方。"
+      ],
+      "pauses_ms": [
+        300
+      ],
+      "source": "self_authored_chinese"
+    },
+    {
+      "id": "pause_02",
+      "category": "pause",
+      "reference_text": "先别急着回答，我还想知道这两种方案各有什么缺点。",
+      "segments": [
+        "先别急着回答，",
+        "我还想知道这两种方案各有什么缺点。"
+      ],
+      "pauses_ms": [
+        600
+      ],
+      "source": "self_authored_chinese"
+    },
+    {
+      "id": "pause_03",
+      "category": "pause",
+      "reference_text": "请先比较步行和骑车，再考虑下雨的情况，最后给我一个出行建议。",
+      "segments": [
+        "请先比较步行和骑车，",
+        "再考虑下雨的情况，",
+        "最后给我一个出行建议。"
+      ],
+      "pauses_ms": [
+        300,
+        600
+      ],
+      "source": "self_authored_chinese"
+    },
+    {
+      "id": "long_01",
+      "category": "long_request",
+      "reference_text": "请分步骤解释家里的无线网络为什么会变慢，并给出普通人能照着做的排查办法。",
+      "segments": [
+        "请分步骤解释家里的无线网络为什么会变慢，并给出普通人能照着做的排查办法。"
+      ],
+      "pauses_ms": [],
+      "source": "self_authored_chinese"
+    },
+    {
+      "id": "long_02",
+      "category": "long_request",
+      "reference_text": "我只有一个小阳台，请帮我设计从选菜、播种到日常照料的种菜计划，并说明常见问题。",
+      "segments": [
+        "我只有一个小阳台，请帮我设计从选菜、播种到日常照料的种菜计划，并说明常见问题。"
+      ],
+      "pauses_ms": [],
+      "source": "self_authored_chinese"
+    },
+    {
+      "id": "long_03",
+      "category": "long_request",
+      "reference_text": "请比较纸质书和电子书的阅读体验，结合通勤、学习和睡前阅读三个场景给出建议。",
+      "segments": [
+        "请比较纸质书和电子书的阅读体验，结合通勤、学习和睡前阅读三个场景给出建议。"
+      ],
+      "pauses_ms": [],
+      "source": "self_authored_chinese"
+    }
+  ]
+}

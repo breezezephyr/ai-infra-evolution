@@ -1,0 +1,170 @@
+[
+  {
+    "id": "exp22-preflight-v1-b00-i0",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 218862531721416,
+    "started_ns": 218862531786083,
+    "finished_ns": 218865572810541,
+    "response": {
+      "id": "chatcmpl-exp22-preflight-v1-b00-i0",
+      "object": "chat.completion",
+      "created": 1792987094,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 0,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-preflight-v1-b00-i1",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 218862532011708,
+    "started_ns": 218865572968750,
+    "finished_ns": 218867615696041,
+    "response": {
+      "id": "chatcmpl-exp22-preflight-v1-b00-i1",
+      "object": "chat.completion",
+      "created": 1792987096,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 925,
+        "completion_tokens": 93,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 0,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 1
+  },
+  {
+    "id": "exp22-preflight-v1-b01-i0",
+    "task": "short-interactive-a",
+    "kind": "interactive",
+    "status": 200,
+    "error": null,
+    "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+    "submitted_ns": 218867616383833,
+    "started_ns": 218867616475583,
+    "finished_ns": 218868307309458,
+    "response": {
+      "id": "chatcmpl-exp22-preflight-v1-b01-i0",
+      "object": "chat.completion",
+      "created": 1792987098,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "公交专用道是为公交车提供专用通行通道，减少对其他车辆的干扰。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 39,
+        "completion_tokens": 19,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 1,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 4
+  },
+  {
+    "id": "exp22-preflight-v1-b01-i1",
+    "task": "long-batch-a",
+    "kind": "batch",
+    "status": 200,
+    "error": null,
+    "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+    "submitted_ns": 218867616680833,
+    "started_ns": 218867616747000,
+    "finished_ns": 218869429339875,
+    "response": {
+      "id": "chatcmpl-exp22-preflight-v1-b01-i1",
+      "object": "chat.completion",
+      "created": 1792987098,
+      "model": "exp22-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划发车，运行稳定，无异常情况。本次班次运行顺利，为后续运营提供了可靠基础。",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 832,
+        "total_tokens": 915,
+        "completion_tokens": 83,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    },
+    "batch": 1,
+    "repeat": 0,
+    "mode": "direct",
+    "concurrency": 4
+  }
+]

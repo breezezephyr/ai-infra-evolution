@@ -1,0 +1,374 @@
+{
+  "run": "phase5/results/exp21/gpu-formal-v1",
+  "overall": {
+    "n": 120,
+    "recorded_current_contract": 120,
+    "missing_or_stale": 0,
+    "accepted": 110,
+    "rejected": 10,
+    "transport_errors": 0,
+    "json_valid": 77,
+    "json_valid_measured": 110,
+    "schema_valid": 67,
+    "schema_valid_measured": 110,
+    "business_correct": 41,
+    "business_correct_measured": 110,
+    "complete": 110,
+    "complete_measured": 110,
+    "deliverable": 41,
+    "deliverable_measured": 110
+  },
+  "arms": {
+    "prompt_only": {
+      "n": 40,
+      "recorded_current_contract": 40,
+      "missing_or_stale": 0,
+      "accepted": 40,
+      "rejected": 0,
+      "transport_errors": 0,
+      "json_valid": 7,
+      "json_valid_measured": 40,
+      "schema_valid": 7,
+      "schema_valid_measured": 40,
+      "business_correct": 7,
+      "business_correct_measured": 40,
+      "complete": 40,
+      "complete_measured": 40,
+      "deliverable": 7,
+      "deliverable_measured": 40
+    },
+    "json_object": {
+      "n": 40,
+      "recorded_current_contract": 40,
+      "missing_or_stale": 0,
+      "accepted": 40,
+      "rejected": 0,
+      "transport_errors": 0,
+      "json_valid": 40,
+      "json_valid_measured": 40,
+      "schema_valid": 30,
+      "schema_valid_measured": 40,
+      "business_correct": 17,
+      "business_correct_measured": 40,
+      "complete": 40,
+      "complete_measured": 40,
+      "deliverable": 17,
+      "deliverable_measured": 40
+    },
+    "json_schema": {
+      "n": 40,
+      "recorded_current_contract": 40,
+      "missing_or_stale": 0,
+      "accepted": 30,
+      "rejected": 10,
+      "transport_errors": 0,
+      "json_valid": 30,
+      "json_valid_measured": 30,
+      "schema_valid": 30,
+      "schema_valid_measured": 30,
+      "business_correct": 17,
+      "business_correct_measured": 30,
+      "complete": 30,
+      "complete_measured": 30,
+      "deliverable": 17,
+      "deliverable_measured": 30
+    }
+  },
+  "backend_ingress": {
+    "n": 120,
+    "received": 120,
+    "body_matches": 120,
+    "status_matches": 120
+  },
+  "schema_valid_but_wrong_count": 26,
+  "schema_valid_but_wrong_examples": [
+    {
+      "id": "intent-1--json_object--seed17",
+      "task": "查一下车次，不着急。提取kind和urgent，只有明确紧急才标urgent=true。",
+      "expected": {
+        "kind": "查询",
+        "urgent": false
+      },
+      "content": "{\"kind\": \"查询\", \"urgent\": true}",
+      "evaluation": {
+        "json_valid": true,
+        "schema_valid": true,
+        "business_correct": false,
+        "complete": true,
+        "deliverable": false,
+        "value": {
+          "kind": "查询",
+          "urgent": true
+        },
+        "schema_errors": []
+      }
+    },
+    {
+      "id": "intent-1--json_schema--seed17",
+      "task": "查一下车次，不着急。提取kind和urgent，只有明确紧急才标urgent=true。",
+      "expected": {
+        "kind": "查询",
+        "urgent": false
+      },
+      "content": "{\"kind\": \"查询\", \"urgent\": true}",
+      "evaluation": {
+        "json_valid": true,
+        "schema_valid": true,
+        "business_correct": false,
+        "complete": true,
+        "deliverable": false,
+        "value": {
+          "kind": "查询",
+          "urgent": true
+        },
+        "schema_errors": []
+      }
+    },
+    {
+      "id": "intent-3--json_object--seed17",
+      "task": "帮我退掉车票，可以晚点处理。提取kind和urgent，只有明确紧急才标urgent=true。",
+      "expected": {
+        "kind": "退票",
+        "urgent": false
+      },
+      "content": "{\"kind\": \"退票\", \"urgent\": true}",
+      "evaluation": {
+        "json_valid": true,
+        "schema_valid": true,
+        "business_correct": false,
+        "complete": true,
+        "deliverable": false,
+        "value": {
+          "kind": "退票",
+          "urgent": true
+        },
+        "schema_errors": []
+      }
+    },
+    {
+      "id": "intent-3--json_schema--seed17",
+      "task": "帮我退掉车票，可以晚点处理。提取kind和urgent，只有明确紧急才标urgent=true。",
+      "expected": {
+        "kind": "退票",
+        "urgent": false
+      },
+      "content": "{\"kind\": \"退票\", \"urgent\": true}",
+      "evaluation": {
+        "json_valid": true,
+        "schema_valid": true,
+        "business_correct": false,
+        "complete": true,
+        "deliverable": false,
+        "value": {
+          "kind": "退票",
+          "urgent": true
+        },
+        "schema_errors": []
+      }
+    },
+    {
+      "id": "intent-5--json_schema--seed17",
+      "task": "我想改签，没有时间要求。提取kind和urgent，只有明确紧急才标urgent=true。",
+      "expected": {
+        "kind": "改签",
+        "urgent": false
+      },
+      "content": "{\"kind\": \"查询\", \"urgent\": true}",
+      "evaluation": {
+        "json_valid": true,
+        "schema_valid": true,
+        "business_correct": false,
+        "complete": true,
+        "deliverable": false,
+        "value": {
+          "kind": "查询",
+          "urgent": true
+        },
+        "schema_errors": []
+      }
+    },
+    {
+      "id": "intent-5--json_object--seed17",
+      "task": "我想改签，没有时间要求。提取kind和urgent，只有明确紧急才标urgent=true。",
+      "expected": {
+        "kind": "改签",
+        "urgent": false
+      },
+      "content": "{\"kind\": \"查询\", \"urgent\": true}",
+      "evaluation": {
+        "json_valid": true,
+        "schema_valid": true,
+        "business_correct": false,
+        "complete": true,
+        "deliverable": false,
+        "value": {
+          "kind": "查询",
+          "urgent": true
+        },
+        "schema_errors": []
+      }
+    },
+    {
+      "id": "calc-1--json_object--seed17",
+      "task": "票价17元，买13张，再减19元。计算实付total和是否有优惠has_discount。",
+      "expected": {
+        "total": 202,
+        "has_discount": true
+      },
+      "content": "{\"total\": 100, \"has_discount\": true}",
+      "evaluation": {
+        "json_valid": true,
+        "schema_valid": true,
+        "business_correct": false,
+        "complete": true,
+        "deliverable": false,
+        "value": {
+          "total": 100,
+          "has_discount": true
+        },
+        "schema_errors": []
+      }
+    },
+    {
+      "id": "calc-1--json_schema--seed17",
+      "task": "票价17元，买13张，再减19元。计算实付total和是否有优惠has_discount。",
+      "expected": {
+        "total": 202,
+        "has_discount": true
+      },
+      "content": "{\"total\": 100, \"has_discount\": true}",
+      "evaluation": {
+        "json_valid": true,
+        "schema_valid": true,
+        "business_correct": false,
+        "complete": true,
+        "deliverable": false,
+        "value": {
+          "total": 100,
+          "has_discount": true
+        },
+        "schema_errors": []
+      }
+    }
+  ],
+  "scope": "Qwen3-0.6B native template / RTX4060 / vLLM0.8.5; 20 synthetic tasks, 2 seeds, single concurrency; no DeepInfer inference, no recipe/Qwen end-to-end integration",
+  "denominator_note": "each arm denominator is all 40 planned requests; rejected/unmeasured fields remain null; measured and accepted counts are separate; repeats not independent tasks",
+  "matched_supported_subset": {
+    "prompt_only": {
+      "n": 30,
+      "recorded_current_contract": 30,
+      "missing_or_stale": 0,
+      "accepted": 30,
+      "rejected": 0,
+      "transport_errors": 0,
+      "json_valid": 7,
+      "json_valid_measured": 30,
+      "schema_valid": 7,
+      "schema_valid_measured": 30,
+      "business_correct": 7,
+      "business_correct_measured": 30,
+      "complete": 30,
+      "complete_measured": 30,
+      "deliverable": 7,
+      "deliverable_measured": 30
+    },
+    "json_object": {
+      "n": 30,
+      "recorded_current_contract": 30,
+      "missing_or_stale": 0,
+      "accepted": 30,
+      "rejected": 0,
+      "transport_errors": 0,
+      "json_valid": 30,
+      "json_valid_measured": 30,
+      "schema_valid": 30,
+      "schema_valid_measured": 30,
+      "business_correct": 17,
+      "business_correct_measured": 30,
+      "complete": 30,
+      "complete_measured": 30,
+      "deliverable": 17,
+      "deliverable_measured": 30
+    },
+    "json_schema": {
+      "n": 30,
+      "recorded_current_contract": 30,
+      "missing_or_stale": 0,
+      "accepted": 30,
+      "rejected": 0,
+      "transport_errors": 0,
+      "json_valid": 30,
+      "json_valid_measured": 30,
+      "schema_valid": 30,
+      "schema_valid_measured": 30,
+      "business_correct": 17,
+      "business_correct_measured": 30,
+      "complete": 30,
+      "complete_measured": 30,
+      "deliverable": 17,
+      "deliverable_measured": 30
+    }
+  },
+  "sensitivity_exclude_ambiguous_calc4": {
+    "prompt_only": {
+      "n": 28,
+      "recorded_current_contract": 28,
+      "missing_or_stale": 0,
+      "accepted": 28,
+      "rejected": 0,
+      "transport_errors": 0,
+      "json_valid": 7,
+      "json_valid_measured": 28,
+      "schema_valid": 7,
+      "schema_valid_measured": 28,
+      "business_correct": 7,
+      "business_correct_measured": 28,
+      "complete": 28,
+      "complete_measured": 28,
+      "deliverable": 7,
+      "deliverable_measured": 28
+    },
+    "json_object": {
+      "n": 28,
+      "recorded_current_contract": 28,
+      "missing_or_stale": 0,
+      "accepted": 28,
+      "rejected": 0,
+      "transport_errors": 0,
+      "json_valid": 28,
+      "json_valid_measured": 28,
+      "schema_valid": 28,
+      "schema_valid_measured": 28,
+      "business_correct": 17,
+      "business_correct_measured": 28,
+      "complete": 28,
+      "complete_measured": 28,
+      "deliverable": 17,
+      "deliverable_measured": 28
+    },
+    "json_schema": {
+      "n": 28,
+      "recorded_current_contract": 28,
+      "missing_or_stale": 0,
+      "accepted": 28,
+      "rejected": 0,
+      "transport_errors": 0,
+      "json_valid": 28,
+      "json_valid_measured": 28,
+      "schema_valid": 28,
+      "schema_valid_measured": 28,
+      "business_correct": 17,
+      "business_correct_measured": 28,
+      "complete": 28,
+      "complete_measured": 28,
+      "deliverable": 17,
+      "deliverable_measured": 28
+    }
+  },
+  "prompt_fence_diagnostics": {
+    "parse_failures": 33,
+    "failures_starting_code_fence": 33,
+    "repair_applied": false
+  },
+  "records_sha256": "998755d1aebc94b233db2e75fc7e1d2c5d5aed021786abb347ad3b2747ef45ea"
+}

@@ -1,0 +1,7 @@
+# 实验参数：改这里，然后 systemctl restart bench-vllm
+GPU_UTIL=0.90
+MAX_MODEL_LEN=8192
+MAX_NUM_SEQS=256
+MAX_BATCHED_TOKENS=8192
+# 例：EXTRA_ARGS="--no-enable-prefix-caching"  或  "--speculative-config {\"method\":\"ngram\",\"num_speculative_tokens\":5,\"prompt_lookup_max\":4}"
+EXTRA_ARGS=

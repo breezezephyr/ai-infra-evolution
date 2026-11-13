@@ -1,0 +1,50 @@
+{
+  "id": "order-3--prompt_only--seed29",
+  "contract": "8517ba47acb7272a6847a7e4f6ffb560466dd5b0f33e185404727cc429e01696",
+  "arm": "prompt_only",
+  "case_id": "order-3",
+  "seed": 29,
+  "family": "ordered_selection",
+  "payload_sha256": "025efe8949e8686c9ff995ea9fe593550bf1076d334f9db7ac4be50ec4f94e8b",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-4dfd589a3db643c8ac5ebf8cc88533a3",
+    "object": "chat.completion",
+    "created": 1792983714,
+    "model": "exp21-qwen3-0.6b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"stops\": [\n      \"南京\",\n      \"苏州\",\n      \"杭州\"\n    ],\n    \"count\": 3\n  },\n  \"required\": [\"stops\", \"count\"]\n}\n```",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 165,
+      "total_tokens": 222,
+      "completion_tokens": 57,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "accepted": true,
+  "content": "```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"stops\": [\n      \"南京\",\n      \"苏州\",\n      \"杭州\"\n    ],\n    \"count\": 3\n  },\n  \"required\": [\"stops\", \"count\"]\n}\n```",
+  "finish_reason": "stop",
+  "evaluation": {
+    "json_valid": false,
+    "schema_valid": false,
+    "business_correct": false,
+    "complete": true,
+    "deliverable": false,
+    "parse_error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  "client_elapsed_ms": 1305.986334,
+  "clock_domain": "client_process_monotonic_ns"
+}

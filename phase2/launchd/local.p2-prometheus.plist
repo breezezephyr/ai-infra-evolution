@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>local.p2-prometheus</string>
+  <key>ProgramArguments</key><array>
+    <string>/home/researcher/p2/prometheus/prometheus</string>
+    <string>--config.file=/home/researcher/p2/prometheus.yml</string>
+    <string>--storage.tsdb.path=/home/researcher/p2/data/prom</string>
+    <string>--storage.tsdb.retention.time=60d</string>
+    <string>--web.listen-address=127.0.0.1:9090</string>
+  </array>
+  <key>RunAtLoad</key><true/><key>KeepAlive</key><true/>
+  <key>StandardOutPath</key><string>/tmp/p2-prometheus.log</string>
+  <key>StandardErrorPath</key><string>/tmp/p2-prometheus.log</string>
+</dict></plist>

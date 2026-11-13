@@ -1,0 +1,47 @@
+{
+  "name": "exp7-hash",
+  "prefix_groups": 8,
+  "prefix_len": 1536,
+  "zipf": 0.0,
+  "prom_start": 1790163857,
+  "prom_end": 1790164021,
+  "secs": 163.3,
+  "classes": {
+    "user": {
+      "k": 8,
+      "inp": 64,
+      "out": 64,
+      "prio": 100,
+      "think": 0.0,
+      "done": 771,
+      "err": 0,
+      "ttft_p50": 55.3,
+      "ttft_p90": 66.7,
+      "ttft_p99": 542.5,
+      "itl_p50": 23.6,
+      "itl_p99": 39.0,
+      "e2e_p50": 1566.3,
+      "out_tok_s": 302.1
+    }
+  },
+  "servers": {
+    "8004": {
+      "queries": 34816.0,
+      "hits": 33008.0,
+      "preempt": 0.0,
+      "prompt_tok": 559944.0,
+      "gen_tok": 21376.0,
+      "done": 334.0,
+      "hit_rate": 0.948
+    },
+    "8005": {
+      "queries": 45662.0,
+      "hits": 43428.0,
+      "preempt": 0.0,
+      "prompt_tok": 734084.0,
+      "gen_tok": 27968.0,
+      "done": 437.0,
+      "hit_rate": 0.951
+    }
+  }
+}

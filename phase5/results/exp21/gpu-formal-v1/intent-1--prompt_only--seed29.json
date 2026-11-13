@@ -1,0 +1,50 @@
+{
+  "id": "intent-1--prompt_only--seed29",
+  "contract": "e9f1d67c3e390912a4bb32a69f542dc3ec5d504fb77a034820b7df3c4d4ee89a",
+  "arm": "prompt_only",
+  "case_id": "intent-1",
+  "seed": 29,
+  "family": "classify",
+  "payload_sha256": "9600086a37a132c5ae27fc9231d6fa14d4b75b5931da45d78e27f763de6300d3",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-f7bdd7ac1854484d919a5bcc3084ad9d",
+    "object": "chat.completion",
+    "created": 1792983683,
+    "model": "exp21-qwen3-0.6b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "```json\n{\n  \"kind\": \"查询\",\n  \"urgent\": true\n}\n```",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 130,
+      "total_tokens": 150,
+      "completion_tokens": 20,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "accepted": true,
+  "content": "```json\n{\n  \"kind\": \"查询\",\n  \"urgent\": true\n}\n```",
+  "finish_reason": "stop",
+  "evaluation": {
+    "json_valid": false,
+    "schema_valid": false,
+    "business_correct": false,
+    "complete": true,
+    "deliverable": false,
+    "parse_error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  "client_elapsed_ms": 852.605792,
+  "clock_domain": "client_process_monotonic_ns"
+}

@@ -1,0 +1,237 @@
+{
+  "id": "max-overflow-messages",
+  "protocol": "messages",
+  "family": "max_tokens_upper_bound",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "messages": [
+      {
+        "role": "user",
+        "content": "测试输出上界 UPPER_BOUND_19。"
+      }
+    ],
+    "max_tokens": 393217
+  },
+  "options": {},
+  "input_sha256": "5cdb17f7f77f028cf624ea6bdac0ac5d4b301135136d8eee340221858003fa05",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "pass",
+      "evidence": {
+        "prompt_tokens": 42
+      }
+    },
+    {
+      "name": "max_tokens_clamped",
+      "status": "pass",
+      "evidence": {
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "high",
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "测试输出上界 UPPER_BOUND_19。"
+          ],
+          "assistant_reasoning_contents": [],
+          "tool_names": [],
+          "tool_parameter_schemas": [],
+          "tool_choice": "auto",
+          "max_tokens": 393216,
+          "temperature": 1.0,
+          "top_p": 1.0,
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "parse_tool_calls": false,
+          "starts_in_tool_calls": false
+        },
+        "differences": {}
+      }
+    },
+    {
+      "name": "resolve_explicit_max_tokens",
+      "status": "pass",
+      "evidence": {
+        "expected": 393216
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "测试输出上界 UPPER_BOUND_19。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": true,
+      "reasoning_effort": "high",
+      "tools": [],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": 393216,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": null
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": false,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [],
+      "thinking_initial_stage": "ThinkingInitialStage.ReasoningStart"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": true,
+    "reasoning_effort": "high",
+    "roles": [
+      "user"
+    ],
+    "message_contents": [
+      "测试输出上界 UPPER_BOUND_19。"
+    ],
+    "assistant_reasoning_contents": [],
+    "tool_names": [],
+    "tool_parameter_schemas": [],
+    "tool_choice": "auto",
+    "max_tokens": 393216,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "output_constraint_kind": null,
+    "stop_sequences": [],
+    "parse_tool_calls": false,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜System｜>Reasoning Effort: 75 (range 1-100, the higher the value, the more thorough the reasoning)\n\n<｜User｜>测试输出上界 UPPER_BOUND_19。<｜Assistant｜><think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        31
+      ],
+      [
+        122,
+        130
+      ],
+      [
+        152,
+        165
+      ],
+      [
+        165,
+        172
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜System｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "<think>"
+    ]
+  },
+  "encoding": {
+    "status": "ok",
+    "token_ids": [
+      0,
+      128799,
+      77666,
+      288,
+      9504,
+      482,
+      28,
+      223,
+      2402,
+      343,
+      16801,
+      223,
+      19,
+      15,
+      1457,
+      14,
+      270,
+      4077,
+      270,
+      1990,
+      14,
+      270,
+      850,
+      15146,
+      270,
+      22805,
+      868,
+      128803,
+      10251,
+      10626,
+      572,
+      2234,
+      628,
+      10124,
+      1647,
+      14568,
+      43136,
+      65,
+      511,
+      320,
+      128804,
+      128821
+    ],
+    "prompt_tokens": 42,
+    "token_ids_sha256": "23bee5c7a3efc07426e889febb51c692d717ce32565f2e0a85f4f10a1dc983a8"
+  },
+  "context_probes": [
+    {
+      "prompt": 42,
+      "context": 393258,
+      "value": 393216
+    }
+  ],
+  "elapsed_ms": 10.717209
+}

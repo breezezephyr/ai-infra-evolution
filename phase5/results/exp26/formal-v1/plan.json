@@ -1,0 +1,226 @@
+{
+  "schema": 1,
+  "experiment": "exp26",
+  "scope": "single physical GPU; controlled faults, not natural HA failures; text only; in-memory settlement",
+  "backend_port": 8026,
+  "gateway_port": 8126,
+  "cases": [
+    {
+      "case_id": "unconnected-retry",
+      "request_id": "exp26-unconnected-retry",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-unconnected-retry",
+      "terminal": "completed",
+      "attempts": 2,
+      "mode": "controlled",
+      "faults": [
+        "unconnected",
+        null
+      ],
+      "control": null
+    },
+    {
+      "case_id": "pre-timeout-retry",
+      "request_id": "exp26-pre-timeout-retry",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-pre-timeout-retry",
+      "terminal": "completed",
+      "attempts": 2,
+      "mode": "controlled",
+      "faults": [
+        "pre_timeout",
+        null
+      ],
+      "control": null
+    },
+    {
+      "case_id": "post-break",
+      "request_id": "exp26-post-break",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-post-break",
+      "terminal": "backend_error",
+      "attempts": 1,
+      "mode": "controlled",
+      "faults": [
+        "post_break"
+      ],
+      "control": null
+    },
+    {
+      "case_id": "review-reject",
+      "request_id": "exp26-review-reject",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-review-reject",
+      "terminal": "review_rejected",
+      "attempts": 1,
+      "mode": "controlled",
+      "faults": [],
+      "control": null,
+      "review": "reject"
+    },
+    {
+      "case_id": "review-unavailable",
+      "request_id": "exp26-review-unavailable",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-review-unavailable",
+      "terminal": "review_unavailable",
+      "attempts": 1,
+      "mode": "controlled",
+      "faults": [],
+      "control": null,
+      "review": "unavailable"
+    },
+    {
+      "case_id": "cancel-late",
+      "request_id": "exp26-cancel-late",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-cancel-late",
+      "terminal": "cancelled",
+      "attempts": 1,
+      "mode": "controlled",
+      "faults": [],
+      "control": "cancel",
+      "late": true
+    },
+    {
+      "case_id": "stale-generation",
+      "request_id": "exp26-stale-generation",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-stale-generation",
+      "terminal": "superseded",
+      "attempts": 1,
+      "mode": "controlled",
+      "faults": [],
+      "control": "supersede",
+      "late": true
+    },
+    {
+      "case_id": "drain-graceful",
+      "request_id": "exp26-drain-graceful",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-drain-graceful",
+      "terminal": "completed",
+      "attempts": 1,
+      "mode": "controlled",
+      "faults": [],
+      "control": "drain_graceful"
+    },
+    {
+      "case_id": "drain-timeout",
+      "request_id": "exp26-drain-timeout",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-drain-timeout",
+      "terminal": "drain_timeout",
+      "attempts": 1,
+      "mode": "controlled",
+      "faults": [],
+      "control": "drain_timeout"
+    },
+    {
+      "case_id": "drain-reject",
+      "request_id": "exp26-drain-reject",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-drain-reject",
+      "terminal": "draining",
+      "attempts": 0,
+      "mode": "controlled",
+      "faults": [],
+      "control": null,
+      "pre_draining": true
+    },
+    {
+      "case_id": "no-key",
+      "request_id": "exp26-no-key",
+      "generation_id": "g0",
+      "idempotency_key": null,
+      "terminal": "backend_error",
+      "attempts": 1,
+      "mode": "controlled",
+      "faults": [
+        "unconnected"
+      ],
+      "control": null
+    },
+    {
+      "case_id": "duplicate-settlement",
+      "request_id": "exp26-duplicate-settlement",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-duplicate-settlement",
+      "terminal": "completed",
+      "attempts": 1,
+      "mode": "controlled",
+      "faults": [],
+      "control": null,
+      "duplicate_settlement": true
+    },
+    {
+      "case_id": "gpu-normal",
+      "request_id": "exp26-gpu-normal",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-gpu-normal",
+      "terminal": "completed",
+      "attempts": 1,
+      "mode": "gpu",
+      "faults": [],
+      "control": null
+    },
+    {
+      "case_id": "gpu-pre-retry",
+      "request_id": "exp26-gpu-pre-retry",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-gpu-pre-retry",
+      "terminal": "completed",
+      "attempts": 2,
+      "mode": "gpu",
+      "faults": [
+        "pre_timeout",
+        null
+      ],
+      "control": null
+    },
+    {
+      "case_id": "gpu-post-break",
+      "request_id": "exp26-gpu-post-break",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-gpu-post-break",
+      "terminal": "backend_error",
+      "attempts": 1,
+      "mode": "gpu",
+      "faults": [
+        "post_break"
+      ],
+      "control": null
+    },
+    {
+      "case_id": "gpu-disconnect",
+      "request_id": "exp26-gpu-disconnect",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-gpu-disconnect",
+      "terminal": "client_disconnected",
+      "attempts": 1,
+      "mode": "gpu",
+      "faults": [],
+      "control": null,
+      "client_disconnect": true
+    },
+    {
+      "case_id": "gpu-drain-timeout",
+      "request_id": "exp26-gpu-drain-timeout",
+      "generation_id": "g0",
+      "idempotency_key": "safe-text-gpu-drain-timeout",
+      "terminal": "drain_timeout",
+      "attempts": 1,
+      "mode": "gpu",
+      "faults": [],
+      "control": "drain_timeout"
+    }
+  ],
+  "source_sha256": {
+    "analyze.py": "6a2a26f2a247a9bbe63cffb6fd287eb67c8d1af61afc5184a31834ddd59f2c1f",
+    "run.py": "18fe956ead9c28013bd2165967f0ce79aaec94ac0d34ad8bf852714d524a907a",
+    "serve_gateway.py": "fd1f884275bc8798d5201e80d29f2bd456388163519d8e7afd20c7f4b4af523d",
+    "gateway.py": "af50a1fca7e6adefb0802995c9552e0a57a18db58b4d83fd77e5e530140b719a",
+    "backend_audit.py": "c7bcfd1daf58299ee58ee5577fc1417268f7ed7b552d96cd26ad7862facace9f",
+    "manage_backend.py": "06242855cf3922572e9d3bdad7e0a14c7f2a22db8f2db07658d9083e84af2560"
+  }
+}

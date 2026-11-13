@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;background:#f8f5ee;color:#1c1a17;font-family:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:72px 76px;display:flex;flex-direction:column}
+.eyebrow{display:flex;align-items:center;gap:14px;color:#8a8378;font-size:26px;letter-spacing:.04em;font-family:Menlo,"SF Mono",monospace}
+.eyebrow::before{content:"";width:34px;height:5px;background:#2f5f8a;border-radius:3px}
+h1{font-size:74px;line-height:1.18;font-weight:800;letter-spacing:-.01em;margin-top:34px}
+.sub{color:#6f695f;font-size:32px;margin-top:22px;line-height:1.5}
+.card{background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:34px 38px;margin-top:44px}
+.callout{background:#fbf1e6;border:2px solid #f0dcc4;border-radius:18px;padding:32px 36px;font-size:32px;line-height:1.6;margin-top:40px;color:#2a2620}
+.callout b{color:#1c1a17}
+.note{color:#9a9386;font-size:24px;margin-top:auto;padding-top:36px;line-height:1.5}
+.blue{color:#2f5f8a}.orange{color:#c4763a}.green{color:#4f7a52}.gray{color:#9a9386}.red{color:#a84d3a}
+.mono{font-family:Menlo,"SF Mono",monospace}
+.row{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:2px solid #eee8dc;font-size:32px}
+.row:last-child{border-bottom:0}
+.card>div:last-child{border-bottom:0!important}
+.row .k{font-weight:600}.row .v{font-weight:700}
+.strike{text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:#a84d3a;color:#9a9386}
+.tag{display:inline-block;font-size:22px;padding:4px 14px;border-radius:8px;background:#eee8dc;color:#6f695f;margin-left:12px;vertical-align:middle;font-weight:600}
+html,body{height:1400px}</style></head><body><div class="eyebrow">进化之路 · 引导</div><h1>已经站着的位置</h1><div class="sub">8 月写的技术版五篇，约 40,000 字，36 张图。这次路线的第一阶段，大半在这里。</div>
+<div class="card" style="padding:28px 34px"><div style="font-size:26px;color:#2f5f8a;font-weight:700;letter-spacing:.06em" class="mono">技术版 · AI 推理的成本结构</div><div style="font-size:23px;color:#9a9386;margin:6px 0 10px">给架构师，每个数字标来源</div><div style="display:flex;gap:18px;padding:22px 0;border-bottom:2px solid #eee8dc;font-size:29px;line-height:1.4"><span class="mono" style="color:#2f5f8a;font-weight:700;flex:none">01</span><span>LLM Cost 为什么要分三档？从推理硬件讲起</span></div><div style="display:flex;gap:18px;padding:22px 0;border-bottom:2px solid #eee8dc;font-size:29px;line-height:1.4"><span class="mono" style="color:#2f5f8a;font-weight:700;flex:none">02</span><span>KV cache、decode batch，和容量规划该盯的变量</span></div><div style="display:flex;gap:18px;padding:22px 0;border-bottom:2px solid #eee8dc;font-size:29px;line-height:1.4"><span class="mono" style="color:#2f5f8a;font-weight:700;flex:none">03</span><span>cached token 到底省了什么</span></div><div style="display:flex;gap:18px;padding:22px 0;border-bottom:2px solid #eee8dc;font-size:29px;line-height:1.4"><span class="mono" style="color:#2f5f8a;font-weight:700;flex:none">04</span><span>fast 档的溢价买的是什么，以及预留容量的陷阱</span></div><div style="display:flex;gap:18px;padding:22px 0;border-bottom:2px solid #eee8dc;font-size:29px;line-height:1.4"><span class="mono" style="color:#2f5f8a;font-weight:700;flex:none">05</span><span>一张图、一秒音频、一秒视频，各值多少 token</span></div></div>
+<div class="callout">它们回答的是<b>每一步花多少钱</b>。这次要补的是<b>引擎每一步怎么决定让谁上</b>。</div>
+<div class="note">五篇链接见文末。</div></body></html>

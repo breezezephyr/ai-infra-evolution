@@ -1,0 +1,34 @@
+{
+  "observed_on": "2026-10-22",
+  "date_timezone": "Asia/Shanghai",
+  "host": "DARYU",
+  "scope": "read_only_inventory_not_model_inference",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "total_mib": 8188,
+    "used_mib": 350
+  },
+  "model_filesystem": {
+    "path": "/opt/models",
+    "available_human_readable": "916G"
+  },
+  "existing_python": "/root/vllm-env/bin/python",
+  "torch": "2.6.0+cu124",
+  "torch_cuda": "12.4",
+  "torch_cudnn_version": 90100,
+  "module_import_spec_present": {
+    "transformers": true,
+    "torchaudio": true,
+    "soundfile": false,
+    "faster_whisper": false,
+    "funasr": false,
+    "kokoro": false,
+    "silero_vad": false,
+    "ctranslate2": false
+  },
+  "limits": [
+    "module discovery does not prove successful import or CUDA execution",
+    "PyTorch cuDNN availability does not prove CTranslate2 dynamic library resolution",
+    "free GPU memory does not prove three-model resident inference fits"
+  ]
+}

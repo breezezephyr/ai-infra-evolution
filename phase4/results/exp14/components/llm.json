@@ -1,0 +1,77 @@
+{
+  "kind": "actual_cuda_component_smoke",
+  "component": "llm",
+  "models": {
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cudnn": 90100,
+    "llm": {
+      "device": "cuda:0",
+      "dtype": "torch.bfloat16"
+    }
+  },
+  "before_mib": 342,
+  "loaded_mib": 1593,
+  "observed_peak_mib": 1629,
+  "model_load_ms": 5554.960720008239,
+  "versions": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.3",
+    "kokoro": "0.9.4",
+    "misaki": "0.9.4",
+    "silero-vad": "6.2.3"
+  },
+  "records": [
+    {
+      "repeat": 0,
+      "warmup": true,
+      "llm": {
+        "text": "排队是指按照某种规则或顺序依次等待服务或物品。",
+        "first_text_ms": 499.09205501899123,
+        "total_ms": 922.2346959868446,
+        "thread_stopped": true,
+        "generated_tokens": 14,
+        "finish_reason": "stop"
+      }
+    },
+    {
+      "repeat": 1,
+      "warmup": false,
+      "llm": {
+        "text": "排队是指按照某种规则或顺序依次等待服务或物品。",
+        "first_text_ms": 40.26138398330659,
+        "total_ms": 431.1299449764192,
+        "thread_stopped": true,
+        "generated_tokens": 14,
+        "finish_reason": "stop"
+      }
+    },
+    {
+      "repeat": 2,
+      "warmup": false,
+      "llm": {
+        "text": "排队是指按照某种规则或顺序依次等待服务或物品。",
+        "first_text_ms": 41.69985995395109,
+        "total_ms": 482.69114596769214,
+        "thread_stopped": true,
+        "generated_tokens": 14,
+        "finish_reason": "stop"
+      }
+    },
+    {
+      "repeat": 3,
+      "warmup": false,
+      "llm": {
+        "text": "排队是指按照某种规则或顺序依次等待服务或物品。",
+        "first_text_ms": 32.90881897555664,
+        "total_ms": 546.0536439786665,
+        "thread_stopped": true,
+        "generated_tokens": 14,
+        "finish_reason": "stop"
+      }
+    }
+  ]
+}

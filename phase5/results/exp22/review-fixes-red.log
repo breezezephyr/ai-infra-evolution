@@ -1,0 +1,201 @@
+..........FFFFFFFFFFF                                                    [100%]
+=================================== FAILURES ===================================
+____________ test_strict_gate_rejects_mutated_evidence[response_id] ____________
+
+mutation = 'response_id'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+>       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError
+___________ test_strict_gate_rejects_mutated_evidence[prompt_usage] ____________
+
+mutation = 'prompt_usage'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+>       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError
+_______________ test_strict_gate_rejects_mutated_evidence[seed] ________________
+
+mutation = 'seed'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+>       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError
+______________ test_strict_gate_rejects_mutated_evidence[config] _______________
+
+mutation = 'config'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+>       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError
+_________ test_strict_gate_rejects_mutated_evidence[duplicate_request] _________
+
+mutation = 'duplicate_request'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+>       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError
+_________ test_strict_gate_rejects_mutated_evidence[missing_finished] __________
+
+mutation = 'missing_finished'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+>       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError
+____________ test_strict_gate_rejects_mutated_evidence[prompt_hash] ____________
+
+mutation = 'prompt_hash'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+>       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError
+_____________ test_strict_gate_rejects_mutated_evidence[plan_body] _____________
+
+mutation = 'plan_body'
+
+    @pytest.mark.parametrize('mutation', ['response_id','prompt_usage','seed','config','duplicate_request','missing_finished','prompt_hash','plan_body'])
+    def test_strict_gate_rejects_mutated_evidence(mutation):
+        row,gateway,events,payload,config=strict_fixture()
+        if mutation=='response_id':row['response']['id']='stale'
+        if mutation=='prompt_usage':row['response']['usage']['prompt_tokens']=42
+        if mutation=='seed':events[3]['settings']['seed']=29
+        if mutation=='config':events[3]['effective_config']['max_num_seqs']=8
+        if mutation=='duplicate_request':events.append(events[3])
+        if mutation=='missing_finished':events.pop(2)
+        if mutation=='prompt_hash':events[-1]['prompt_token_ids']=[1,2]
+        if mutation=='plan_body':payload['max_tokens']=96
+>       assert measure.validate_record(row,gateway,events,payload,config)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:115: AttributeError
+__________________ test_strict_gate_accepts_complete_evidence __________________
+
+    def test_strict_gate_accepts_complete_evidence():
+>       assert measure.validate_record(*strict_fixture())==[]
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'validate_record'
+
+phase5/exp22/test_measure.py:119: AttributeError
+________ test_bad_baseline_cannot_be_replaced_by_first_surviving_output ________
+
+    def test_bad_baseline_cannot_be_replaced_by_first_surviving_output():
+        rows=[{'id':'a','task':'x','status':200},{'id':'b','task':'x','status':200}]
+>       r=measure.compare_outputs(rows,{'a':{'token_ids':[1]},'b':{'token_ids':[1]}},
+                                  verified_ids={'b'},baseline_ids={'x':'a'})
+E       TypeError: compare_outputs() got an unexpected keyword argument 'verified_ids'
+
+phase5/exp22/test_measure.py:124: TypeError
+_______ test_wall_clock_jump_is_flagged_without_modifying_token_evidence _______
+
+    def test_wall_clock_jump_is_flagged_without_modifying_token_evidence():
+>       assert measure.clock_discontinuity({'arrival_time':1000,'finished_time':1004.3},0,2_000_000_000)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'clock_discontinuity'
+
+phase5/exp22/test_measure.py:131: AttributeError
+- generated xml file: phase5/results/exp22/review-fixes-red.xml -
+=========================== short test summary info ============================
+FAILED phase5/exp22/test_measure.py::test_strict_gate_rejects_mutated_evidence[response_id]
+FAILED phase5/exp22/test_measure.py::test_strict_gate_rejects_mutated_evidence[prompt_usage]
+FAILED phase5/exp22/test_measure.py::test_strict_gate_rejects_mutated_evidence[seed]
+FAILED phase5/exp22/test_measure.py::test_strict_gate_rejects_mutated_evidence[config]
+FAILED phase5/exp22/test_measure.py::test_strict_gate_rejects_mutated_evidence[duplicate_request]
+FAILED phase5/exp22/test_measure.py::test_strict_gate_rejects_mutated_evidence[missing_finished]
+FAILED phase5/exp22/test_measure.py::test_strict_gate_rejects_mutated_evidence[prompt_hash]
+FAILED phase5/exp22/test_measure.py::test_strict_gate_rejects_mutated_evidence[plan_body]
+FAILED phase5/exp22/test_measure.py::test_strict_gate_accepts_complete_evidence
+FAILED phase5/exp22/test_measure.py::test_bad_baseline_cannot_be_replaced_by_first_surviving_output
+FAILED phase5/exp22/test_measure.py::test_wall_clock_jump_is_flagged_without_modifying_token_evidence
+11 failed, 10 passed in 0.14s

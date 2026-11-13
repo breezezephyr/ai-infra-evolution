@@ -1,0 +1,356 @@
+FFFFFFFFFFFFFFFFFF                                                       [100%]
+=================================== FAILURES ===================================
+___________ test_missing_row_keeps_configured_denominator_and_fails ____________
+
+    def test_missing_row_keeps_configured_denominator_and_fails():
+>       summary = cpu.summarize([case()], [])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cases = [{'expect': {'constraint_kind': None, 'outcome': 'accepted'}, 'family': 'baseline', 'id': 'chat-basic', 'input': {'mes...[{'content': 'Return JSON.', 'role': 'user'}], 'model': 'DeepSeek-V4.1-Flash', 'thinking': {'type': 'disabled'}}, ...}]
+rows = []
+
+    def summarize(cases, rows):
+>       raise NotImplementedError("TDD red: completeness audit missing")
+E       NotImplementedError: TDD red: completeness audit missing
+
+phase5/exp21/cpu.py:8: NotImplementedError
+_________________ test_duplicate_row_cannot_inflate_pass_count _________________
+
+    def test_duplicate_row_cannot_inflate_pass_count():
+>       c = case(); row = cpu.run_case(c)
+                          ^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = {'expect': {'constraint_kind': None, 'outcome': 'accepted'}, 'family': 'baseline', 'id': 'chat-basic', 'input': {'mess... [{'content': 'Return JSON.', 'role': 'user'}], 'model': 'DeepSeek-V4.1-Flash', 'thinking': {'type': 'disabled'}}, ...}
+observer = None
+
+    def run_case(case, observer=None):
+>       raise NotImplementedError("TDD red: recorder missing")
+E       NotImplementedError: TDD red: recorder missing
+
+phase5/exp21/cpu.py:4: NotImplementedError
+_________________ test_unconfigured_row_is_an_integrity_error __________________
+
+    def test_unconfigured_row_is_an_integrity_error():
+>       row = cpu.run_case(case())
+              ^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = {'expect': {'constraint_kind': None, 'outcome': 'accepted'}, 'family': 'baseline', 'id': 'chat-basic', 'input': {'mess... [{'content': 'Return JSON.', 'role': 'user'}], 'model': 'DeepSeek-V4.1-Flash', 'thinking': {'type': 'disabled'}}, ...}
+observer = None
+
+    def run_case(case, observer=None):
+>       raise NotImplementedError("TDD red: recorder missing")
+E       NotImplementedError: TDD red: recorder missing
+
+phase5/exp21/cpu.py:4: NotImplementedError
+______ test_accepted_request_records_constraint_and_unmeasured_execution _______
+
+    def test_accepted_request_records_constraint_and_unmeasured_execution():
+        c = case(); c['input']['response_format'] = {'type': 'json_object'}
+        c['expect']['constraint_kind'] = 'json'
+>       row = cpu.run_case(c)
+              ^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = {'expect': {'constraint_kind': 'json', 'outcome': 'accepted'}, 'family': 'baseline', 'id': 'chat-basic', 'input': {'me...}], 'model': 'DeepSeek-V4.1-Flash', 'response_format': {'type': 'json_object'}, 'thinking': {'type': 'disabled'}}, ...}
+observer = None
+
+    def run_case(case, observer=None):
+>       raise NotImplementedError("TDD red: recorder missing")
+E       NotImplementedError: TDD red: recorder missing
+
+phase5/exp21/cpu.py:4: NotImplementedError
+_____ test_expected_native_rejection_has_error_stage_and_is_not_acceptance _____
+
+    def test_expected_native_rejection_has_error_stage_and_is_not_acceptance():
+        c = case({'outcome': 'rejected', 'stage': 'convert', 'error_type': 'ConversionError',
+                  'status_code': 400, 'message_contains': "word 'json'"})
+        c['input']['messages'][0]['content'] = 'Hello'
+        c['input']['response_format'] = {'type': 'json_object'}
+>       row = cpu.run_case(c)
+              ^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = {'expect': {'error_type': 'ConversionError', 'message_contains': "word 'json'", 'outcome': 'rejected', 'stage': 'conve...}], 'model': 'DeepSeek-V4.1-Flash', 'response_format': {'type': 'json_object'}, 'thinking': {'type': 'disabled'}}, ...}
+observer = None
+
+    def run_case(case, observer=None):
+>       raise NotImplementedError("TDD red: recorder missing")
+E       NotImplementedError: TDD red: recorder missing
+
+phase5/exp21/cpu.py:4: NotImplementedError
+___________ test_wrong_rejection_type_message_or_stage_does_not_pass ___________
+
+    def test_wrong_rejection_type_message_or_stage_does_not_pass():
+        c = case({'outcome': 'rejected', 'stage': 'parse', 'error_type': 'ValueError',
+                  'message_contains': 'deliberate other error'})
+        c['input']['model'] = 'unregistered'
+>       assert cpu.run_case(c)['verdict'] == 'fail'
+               ^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = {'expect': {'error_type': 'ValueError', 'message_contains': 'deliberate other error', 'outcome': 'rejected', 'stage': ...sages': [{'content': 'Return JSON.', 'role': 'user'}], 'model': 'unregistered', 'thinking': {'type': 'disabled'}}, ...}
+observer = None
+
+    def run_case(case, observer=None):
+>       raise NotImplementedError("TDD red: recorder missing")
+E       NotImplementedError: TDD red: recorder missing
+
+phase5/exp21/cpu.py:4: NotImplementedError
+__________ test_observer_exception_never_counts_as_expected_rejection __________
+
+    def test_observer_exception_never_counts_as_expected_rejection():
+        c = case({'outcome': 'rejected', 'stage': 'convert', 'error_type': 'ConversionError',
+                  'message_contains': "word 'json'"})
+        def observe(_):
+            invalid = copy.deepcopy(case()['input'])
+            invalid['messages'][0]['content'] = 'Hello'
+            invalid['response_format'] = {'type': 'json_object'}
+            recipe.ChatCompletionRequest(invalid).convert(recipe.ConversionOptions())
+>       row = cpu.run_case(c, observer=observe)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = {'expect': {'error_type': 'ConversionError', 'message_contains': "word 'json'", 'outcome': 'rejected', 'stage': 'conve... [{'content': 'Return JSON.', 'role': 'user'}], 'model': 'DeepSeek-V4.1-Flash', 'thinking': {'type': 'disabled'}}, ...}
+observer = <function test_observer_exception_never_counts_as_expected_rejection.<locals>.observe at 0x10616e3e0>
+
+    def run_case(case, observer=None):
+>       raise NotImplementedError("TDD red: recorder missing")
+E       NotImplementedError: TDD red: recorder missing
+
+phase5/exp21/cpu.py:4: NotImplementedError
+_____________ test_tampered_case_or_record_is_not_silently_reused ______________
+
+    def test_tampered_case_or_record_is_not_silently_reused():
+>       c = case(); row = cpu.run_case(c)
+                          ^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = {'expect': {'constraint_kind': None, 'outcome': 'accepted'}, 'family': 'baseline', 'id': 'chat-basic', 'input': {'mess... [{'content': 'Return JSON.', 'role': 'user'}], 'model': 'DeepSeek-V4.1-Flash', 'thinking': {'type': 'disabled'}}, ...}
+observer = None
+
+    def run_case(case, observer=None):
+>       raise NotImplementedError("TDD red: recorder missing")
+E       NotImplementedError: TDD red: recorder missing
+
+phase5/exp21/cpu.py:4: NotImplementedError
+_________________ test_missing_expectation_is_unknown_not_pass _________________
+
+    def test_missing_expectation_is_unknown_not_pass():
+        c = case(); c.pop('expect')
+>       assert cpu.run_case(c)['verdict'] == 'unknown'
+               ^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = {'family': 'baseline', 'id': 'chat-basic', 'input': {'messages': [{'content': 'Return JSON.', 'role': 'user'}], 'model': 'DeepSeek-V4.1-Flash', 'thinking': {'type': 'disabled'}}, 'protocol': 'chat'}
+observer = None
+
+    def run_case(case, observer=None):
+>       raise NotImplementedError("TDD red: recorder missing")
+E       NotImplementedError: TDD red: recorder missing
+
+phase5/exp21/cpu.py:4: NotImplementedError
+____________ test_unmapped_kinds_are_explicitly_rejected[tool_call] ____________
+
+kind = 'tool_call'
+
+    @pytest.mark.parametrize('kind', ['tool_call', 'tool_call_required', 'ebnf', 'other'])
+    def test_unmapped_kinds_are_explicitly_rejected(kind):
+>       mapping = cpu.backend_mapping({'kind': kind, 'schema': '[]'})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+constraint = {'kind': 'tool_call', 'schema': '[]'}
+
+    def backend_mapping(constraint):
+>       raise NotImplementedError("TDD red: explicit mapping missing")
+E       NotImplementedError: TDD red: explicit mapping missing
+
+phase5/exp21/cpu.py:12: NotImplementedError
+_______ test_unmapped_kinds_are_explicitly_rejected[tool_call_required] ________
+
+kind = 'tool_call_required'
+
+    @pytest.mark.parametrize('kind', ['tool_call', 'tool_call_required', 'ebnf', 'other'])
+    def test_unmapped_kinds_are_explicitly_rejected(kind):
+>       mapping = cpu.backend_mapping({'kind': kind, 'schema': '[]'})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+constraint = {'kind': 'tool_call_required', 'schema': '[]'}
+
+    def backend_mapping(constraint):
+>       raise NotImplementedError("TDD red: explicit mapping missing")
+E       NotImplementedError: TDD red: explicit mapping missing
+
+phase5/exp21/cpu.py:12: NotImplementedError
+______________ test_unmapped_kinds_are_explicitly_rejected[ebnf] _______________
+
+kind = 'ebnf'
+
+    @pytest.mark.parametrize('kind', ['tool_call', 'tool_call_required', 'ebnf', 'other'])
+    def test_unmapped_kinds_are_explicitly_rejected(kind):
+>       mapping = cpu.backend_mapping({'kind': kind, 'schema': '[]'})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+constraint = {'kind': 'ebnf', 'schema': '[]'}
+
+    def backend_mapping(constraint):
+>       raise NotImplementedError("TDD red: explicit mapping missing")
+E       NotImplementedError: TDD red: explicit mapping missing
+
+phase5/exp21/cpu.py:12: NotImplementedError
+______________ test_unmapped_kinds_are_explicitly_rejected[other] ______________
+
+kind = 'other'
+
+    @pytest.mark.parametrize('kind', ['tool_call', 'tool_call_required', 'ebnf', 'other'])
+    def test_unmapped_kinds_are_explicitly_rejected(kind):
+>       mapping = cpu.backend_mapping({'kind': kind, 'schema': '[]'})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+constraint = {'kind': 'other', 'schema': '[]'}
+
+    def backend_mapping(constraint):
+>       raise NotImplementedError("TDD red: explicit mapping missing")
+E       NotImplementedError: TDD red: explicit mapping missing
+
+phase5/exp21/cpu.py:12: NotImplementedError
+_____ test_empty_any_json_constraint_is_not_forwarded_as_empty_json_schema _____
+
+    def test_empty_any_json_constraint_is_not_forwarded_as_empty_json_schema():
+>       mapping = cpu.backend_mapping({'kind': 'json', 'schema': ''})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+constraint = {'kind': 'json', 'schema': ''}
+
+    def backend_mapping(constraint):
+>       raise NotImplementedError("TDD red: explicit mapping missing")
+E       NotImplementedError: TDD red: explicit mapping missing
+
+phase5/exp21/cpu.py:12: NotImplementedError
+_ test_schema_and_regex_mappings_are_only_unexecuted_candidates[json-{"type":"object"}] _
+
+kind = 'json', schema = '{"type":"object"}'
+
+    @pytest.mark.parametrize('kind,schema', [('json', '{"type":"object"}'), ('regex', '[A-Z]+')])
+    def test_schema_and_regex_mappings_are_only_unexecuted_candidates(kind, schema):
+>       mapping = cpu.backend_mapping({'kind': kind, 'schema': schema})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+constraint = {'kind': 'json', 'schema': '{"type":"object"}'}
+
+    def backend_mapping(constraint):
+>       raise NotImplementedError("TDD red: explicit mapping missing")
+E       NotImplementedError: TDD red: explicit mapping missing
+
+phase5/exp21/cpu.py:12: NotImplementedError
+_ test_schema_and_regex_mappings_are_only_unexecuted_candidates[regex-[A-Z]+] __
+
+kind = 'regex', schema = '[A-Z]+'
+
+    @pytest.mark.parametrize('kind,schema', [('json', '{"type":"object"}'), ('regex', '[A-Z]+')])
+    def test_schema_and_regex_mappings_are_only_unexecuted_candidates(kind, schema):
+>       mapping = cpu.backend_mapping({'kind': kind, 'schema': schema})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+constraint = {'kind': 'regex', 'schema': '[A-Z]+'}
+
+    def backend_mapping(constraint):
+>       raise NotImplementedError("TDD red: explicit mapping missing")
+E       NotImplementedError: TDD red: explicit mapping missing
+
+phase5/exp21/cpu.py:12: NotImplementedError
+______________ test_constraint_none_maps_to_no_backend_constraint ______________
+
+    def test_constraint_none_maps_to_no_backend_constraint():
+>       mapping = cpu.backend_mapping(None)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+constraint = None
+
+    def backend_mapping(constraint):
+>       raise NotImplementedError("TDD red: explicit mapping missing")
+E       NotImplementedError: TDD red: explicit mapping missing
+
+phase5/exp21/cpu.py:12: NotImplementedError
+__________ test_bad_protocol_is_recorder_error_not_a_native_rejection __________
+
+    def test_bad_protocol_is_recorder_error_not_a_native_rejection():
+        c = case(); c['protocol'] = 'bad'
+>       row = cpu.run_case(c)
+              ^^^^^^^^^^^^^^^
+
+phase5/exp21/test_cpu.py:127: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = {'expect': {'constraint_kind': None, 'outcome': 'accepted'}, 'family': 'baseline', 'id': 'chat-basic', 'input': {'mess... [{'content': 'Return JSON.', 'role': 'user'}], 'model': 'DeepSeek-V4.1-Flash', 'thinking': {'type': 'disabled'}}, ...}
+observer = None
+
+    def run_case(case, observer=None):
+>       raise NotImplementedError("TDD red: recorder missing")
+E       NotImplementedError: TDD red: recorder missing
+
+phase5/exp21/cpu.py:4: NotImplementedError
+=========================== short test summary info ============================
+FAILED phase5/exp21/test_cpu.py::test_missing_row_keeps_configured_denominator_and_fails
+FAILED phase5/exp21/test_cpu.py::test_duplicate_row_cannot_inflate_pass_count
+FAILED phase5/exp21/test_cpu.py::test_unconfigured_row_is_an_integrity_error
+FAILED phase5/exp21/test_cpu.py::test_accepted_request_records_constraint_and_unmeasured_execution
+FAILED phase5/exp21/test_cpu.py::test_expected_native_rejection_has_error_stage_and_is_not_acceptance
+FAILED phase5/exp21/test_cpu.py::test_wrong_rejection_type_message_or_stage_does_not_pass
+FAILED phase5/exp21/test_cpu.py::test_observer_exception_never_counts_as_expected_rejection
+FAILED phase5/exp21/test_cpu.py::test_tampered_case_or_record_is_not_silently_reused
+FAILED phase5/exp21/test_cpu.py::test_missing_expectation_is_unknown_not_pass
+FAILED phase5/exp21/test_cpu.py::test_unmapped_kinds_are_explicitly_rejected[tool_call]
+FAILED phase5/exp21/test_cpu.py::test_unmapped_kinds_are_explicitly_rejected[tool_call_required]
+FAILED phase5/exp21/test_cpu.py::test_unmapped_kinds_are_explicitly_rejected[ebnf]
+FAILED phase5/exp21/test_cpu.py::test_unmapped_kinds_are_explicitly_rejected[other]
+FAILED phase5/exp21/test_cpu.py::test_empty_any_json_constraint_is_not_forwarded_as_empty_json_schema
+FAILED phase5/exp21/test_cpu.py::test_schema_and_regex_mappings_are_only_unexecuted_candidates[json-{"type":"object"}]
+FAILED phase5/exp21/test_cpu.py::test_schema_and_regex_mappings_are_only_unexecuted_candidates[regex-[A-Z]+]
+FAILED phase5/exp21/test_cpu.py::test_constraint_none_maps_to_no_backend_constraint
+FAILED phase5/exp21/test_cpu.py::test_bad_protocol_is_recorder_error_not_a_native_rejection
+18 failed in 0.08s

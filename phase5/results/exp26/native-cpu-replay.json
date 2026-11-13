@@ -1,0 +1,54 @@
+{
+  "scope": "CPU replay of six captured backend SSE bodies through the fixed gateway.\nNo GPU calls, engine cancellation, original timing or original scenario replay.",
+  "source_sha256": {
+    "gateway.py": "9565f18df932966594610ab9a1e64c238f4d174c5edd30cbb76cde8d0a89bd6f",
+    "replay_native.py": "9a424bcb307ecde1a677990d86dc672e957d1f3933463f847ebaad04d11564d6"
+  },
+  "cases": [
+    {
+      "captured_attempt_id": "exp26-gpu-normal/a1",
+      "replay_terminal": "completed",
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "worker_joined": true
+    },
+    {
+      "captured_attempt_id": "exp26-gpu-pre-retry/a1",
+      "replay_terminal": "backend_error",
+      "usage": null,
+      "worker_joined": true
+    },
+    {
+      "captured_attempt_id": "exp26-gpu-pre-retry/a2",
+      "replay_terminal": "completed",
+      "usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 229,
+        "completion_tokens": 192
+      },
+      "worker_joined": true
+    },
+    {
+      "captured_attempt_id": "exp26-gpu-post-break/a1",
+      "replay_terminal": "backend_error",
+      "usage": null,
+      "worker_joined": true
+    },
+    {
+      "captured_attempt_id": "exp26-gpu-disconnect/a1",
+      "replay_terminal": "backend_error",
+      "usage": null,
+      "worker_joined": true
+    },
+    {
+      "captured_attempt_id": "exp26-gpu-drain-timeout/a1",
+      "replay_terminal": "backend_error",
+      "usage": null,
+      "worker_joined": true
+    }
+  ],
+  "accepted": true
+}

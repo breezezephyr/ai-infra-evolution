@@ -1,0 +1,64 @@
+.........F..F...                                                         [100%]
+=================================== FAILURES ===================================
+______ test_backend_failure_has_completed_attempt_ledger_before_terminal _______
+
+tmp_path = PosixPath('/private/tmp/pytest-of-researcher/pytest-9/test_backend_failure_has_compl0')
+
+    def test_backend_failure_has_completed_attempt_ledger_before_terminal(tmp_path):
+     class Failed(Fixture):
+      async def generate(self,*args):raise RuntimeError('injected')
+     async def run():
+      app,_=setup(tmp_path);app.state.gateway.backend=Failed()
+      assert (await post(app)).status_code==502
+      record=rows(tmp_path)[0];a=record['attempts'][0]
+      assert a['ended_ns']>=a['started_ns'] and record['generation_usage'] is None
+      assert record['ended_ns']>=a['ended_ns']
+>    asyncio.run(run())
+
+phase5/exp25/test_gateway.py:135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def run():
+     app,_=setup(tmp_path);app.state.gateway.backend=Failed()
+     assert (await post(app)).status_code==502
+     record=rows(tmp_path)[0];a=record['attempts'][0]
+>    assert a['ended_ns']>=a['started_ns'] and record['generation_usage'] is None
+            ^^^^^^^^^^^^^
+E    KeyError: 'ended_ns'
+
+phase5/exp25/test_gateway.py:133: KeyError
+______ test_stream_parser_preserves_usage_and_exact_bytes_sent_to_backend ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109793bc0>
+
+    def test_stream_parser_preserves_usage_and_exact_bytes_sent_to_backend(monkeypatch):
+     original=httpx.AsyncClient;seen=[]
+     def handle(request):
+      seen.append(request)
+      return httpx.Response(200,content=RAW)
+     monkeypatch.setattr(gateway.httpx,'AsyncClient',lambda **kwargs:original(transport=httpx.MockTransport(handle),**kwargs))
+     body={'z':'中文','a':1}
+     result=asyncio.run(HTTPBackend('http://fixture').generate(body,'r1','a1',lambda *a,**k:None))
+     assert result.content=='OK' and result.finish=='stop' and result.usage['total_tokens']==9
+     assert result.raw_sse.encode()==RAW
+>    assert seen[0].content==b'{"a":1,"z":"\xe4\xb8\xad\xe6\x96\x87"}'
+E    assert b'{"z":"\xe4\...6\x87","a":1}' == b'{"a":1,"z":...xe6\x96\x87"}'
+E      
+E      At index 2 diff: b'z' != b'a'
+E      Use -v to get more diff
+
+phase5/exp25/test_http_backend.py:22: AssertionError
+=========================== short test summary info ============================
+FAILED phase5/exp25/test_gateway.py::test_backend_failure_has_completed_attempt_ledger_before_terminal
+FAILED phase5/exp25/test_http_backend.py::test_stream_parser_preserves_usage_and_exact_bytes_sent_to_backend
+2 failed, 14 passed in 0.41s

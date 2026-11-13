@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;background:#f8f5ee;color:#1c1a17;font-family:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:72px 76px;display:flex;flex-direction:column}
+.eyebrow{display:flex;align-items:center;gap:14px;color:#8a8378;font-size:26px;letter-spacing:.04em;font-family:Menlo,"SF Mono",monospace}
+.eyebrow::before{content:"";width:34px;height:5px;background:#2f5f8a;border-radius:3px}
+h1{font-size:74px;line-height:1.18;font-weight:800;letter-spacing:-.01em;margin-top:34px}
+.sub{color:#6f695f;font-size:32px;margin-top:22px;line-height:1.5}
+.card{background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:34px 38px;margin-top:44px}
+.callout{background:#fbf1e6;border:2px solid #f0dcc4;border-radius:18px;padding:32px 36px;font-size:32px;line-height:1.6;margin-top:40px;color:#2a2620}
+.callout b{color:#1c1a17}
+.note{color:#9a9386;font-size:24px;margin-top:auto;padding-top:36px;line-height:1.5}
+.blue{color:#2f5f8a}.orange{color:#c4763a}.green{color:#4f7a52}.gray{color:#9a9386}.red{color:#a84d3a}
+.mono{font-family:Menlo,"SF Mono",monospace}
+.row{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:2px solid #eee8dc;font-size:32px}
+.row:last-child{border-bottom:0}
+.card>div:last-child{border-bottom:0!important}
+.row .k{font-weight:600}.row .v{font-weight:700}
+.strike{text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:#a84d3a;color:#9a9386}
+.tag{display:inline-block;font-size:22px;padding:4px 14px;border-radius:8px;background:#eee8dc;color:#6f695f;margin-left:12px;vertical-align:middle;font-weight:600}
+html,body{height:1640px}</style></head><body><div class="eyebrow">进化之路 · 引导</div><h1>大模型公司的<br>四层技术团队</h1><div class="sub">一个热门项目容易让人以为那就是全部。地图摊开，它是最底下的一个区域。</div>
+<div style="margin-top:48px"><div style="display:flex;gap:26px;align-items:stretch;margin-bottom:18px">
+<div style="flex:1;background:#eee8dc;color:#1c1a17;border-radius:18px;padding:30px 34px">
+<div style="font-size:38px;font-weight:800">应用 / Agent</div><div style="font-size:26px;margin-top:8px;opacity:.85;line-height:1.45">把模型能力包成用户愿意付钱的东西</div></div>
+<div style="width:250px;display:flex;align-items:center;font-size:26px;line-height:1.4;font-weight:600"><span style=color:#2f5f8a>我们过去两年在这里</span></div></div><div style="display:flex;gap:26px;align-items:stretch;margin-bottom:18px">
+<div style="flex:1;background:#2f5f8a;color:#fff;border-radius:18px;padding:30px 34px">
+<div style="font-size:38px;font-weight:800">在线服务架构</div><div style="font-size:26px;margin-top:8px;opacity:.85;line-height:1.45">让海量请求稳定、便宜地被接住：路由、限流、扩缩容、缓存、可观测</div></div>
+<div style="width:250px;display:flex;align-items:center;font-size:26px;line-height:1.4;font-weight:600"><span style=color:#2f5f8a>这次找到的接入点</span></div></div><div style="display:flex;gap:26px;align-items:stretch;margin-bottom:18px">
+<div style="flex:1;background:#e6e0d4;color:#1c1a17;border-radius:18px;padding:30px 34px">
+<div style="font-size:38px;font-weight:800">训练 / 推理框架</div><div style="font-size:26px;margin-top:8px;opacity:.85;line-height:1.45">让一个模型在一台机器上跑得快：vLLM、Megatron</div></div>
+<div style="width:250px;display:flex;align-items:center;font-size:26px;line-height:1.4;font-weight:600"></div></div><div style="display:flex;gap:26px;align-items:stretch;margin-bottom:18px">
+<div style="flex:1;background:#c4763a;color:#fff;border-radius:18px;padding:30px 34px">
+<div style="font-size:38px;font-weight:800">算子 / 硬件适配</div><div style="font-size:26px;margin-top:8px;opacity:.85;line-height:1.45">让一次矩阵乘法跑得更快：CUDA kernel、FlashMLA</div></div>
+<div style="width:250px;display:flex;align-items:center;font-size:26px;line-height:1.4;font-weight:600"><span style=color:#c4763a>起点，先放着</span></div></div></div>
+<div class="callout">往下一层不需要重学：<b>我们已经站在最上层，接入点就在隔壁。</b></div>
+<div class="note">分层是简化口径；训练 Infra 与推理 Infra 在多数公司是两个团队，这里合并显示。</div></body></html>

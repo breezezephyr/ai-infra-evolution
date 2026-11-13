@@ -1,0 +1,107 @@
+{
+  "status": "materialissues",
+  "reviewed_at": "2026-10-26T06:56:27.535044+00:00",
+  "scope": "Specified exp24 code and formal-v2/preflight/identity-v1 evidence only; formal-v1 excluded; no manuscript/graphics review or native Store rerun.",
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "medium",
+      "category": "claim_scope",
+      "finding": "Cross-process loopback reads establish byte correctness, but do not establish that payload bytes traversed TCP rather than a local-copy optimization.",
+      "evidence": [
+        "formal-v2/client-B.log:10-15 reports protocol tcp, TcpTransport listening, MC_STORE_MEMCPY not set ... memcpy enabled, and global segment size 0.",
+        "freeze.py:26-35 and records op-001/op-002 confirm A owns 128 MiB and B has global_size=0; all 40 primary reads are B. These controls remove the same-client case but do not identify the executed transfer branch.",
+        "worker.py:18 selects tcp; the permitted evidence contains no per-transfer branch trace or payload socket-byte accounting. summary.json scope nevertheless labels the run single-host TCP."
+      ],
+      "suggestedfix": "Describe these as TCP-configured cross-process local Store calls with the payload path unverified. Before claiming measured TCP payload transport, record the effective local-copy setting and branch/socket evidence tied to the known-object reads; use a separate controlled run if needed. Do not combine v1 and v2."
+    },
+    {
+      "id": "R2",
+      "severity": "medium",
+      "category": "recorder_correlation",
+      "finding": "Audit acceptance does not enforce client/stage/request correlation, and the summary reports read-client identities from the plan.",
+      "evidence": [
+        "audit.py:6-8 validates id/op, but not client/stage/key or request arguments. worker.py:23-30 does not echo key/request digest/PID; runner.py:75 supplies client/stage from the planned case.",
+        "In-memory mutation of op-007 client B to A, or stage normal to master-down, still yields pass and accepted=true. After the client mutation, summarize.py:31 still emits primary_data_get_clients=[B]. Altering that planned get key also leaves audit accepted.",
+        "The actual 238 rows independently match planned id/op/client/stage and call order; no such mismatch was found in formal-v2. Current hashes for all four frozen source files match plan.code_sha256."
+      ],
+      "suggestedfix": "Compare client and stage during audit, derive client summaries from validated observations, and have the worker echo a request digest/key and process identity. Bind the record stream to its run/plan/code hashes so the claimed execution context can be checked with the rows."
+    },
+    {
+      "id": "R3",
+      "severity": "medium",
+      "category": "failure_signaling",
+      "finding": "A failed audit still lets runner.py return normally, so freeze.py subprocess check=True is not an acceptance gate.",
+      "evidence": [
+        "runner.py:87-92 writes and prints the audit but never raises when accepted=false; freeze.py:81 checks only subprocess exit status.",
+        "A bounded in-memory invocation of the actual runner with a synthetic IPC timeout produced planned=1, fail=1, accepted=false, then returned normally. No native Store, real worker process, or filesystem output was used.",
+        "Actual formal-v2 audit is accepted with zero fail/missing; this is a recorder failure-path defect, not an observed failed formal run."
+      ],
+      "suggestedfix": "After preserving raw rows, audit and cleanup evidence, return nonzero when audit acceptance fails. Keep observed outcomes separate from assertion passes and retain every planned operation in the denominator."
+    },
+    {
+      "id": "R4",
+      "severity": "low",
+      "category": "timing_validation",
+      "finding": "The summarizer does not apply the auditor finite/nonnegative latency filter.",
+      "evidence": [
+        "audit.py:44-48 excludes missing, nonfinite, boolean and negative latency samples; summarize.py:19-25 includes every assertion-pass latency.",
+        "In-memory op-007 latency=-1 leaves audit.valid_latency_samples=119 while the summary claims 120 valid timings and emits min_ms=-1. Setting it to null raises TypeError.",
+        "All 238 actual latencies are finite and nonnegative; all 120 actual timing samples and all 12 distributions independently reproduce exactly."
+      ],
+      "suggestedfix": "Use one latency-eligibility predicate in audit and summarize. Report invalid timing separately from operation outcome, retaining planned/failed/missing/observed denominators."
+    }
+  ],
+  "verified": {
+    "formal_v2": {
+      "planned": 238,
+      "recorded_unique": 238,
+      "assertion_pass": 228,
+      "observed_only": 10,
+      "failed": 0,
+      "missing": 0,
+      "audit_reproduced": true,
+      "summary_audit_reproduced": true
+    },
+    "byte_checks": {
+      "primary_objects": 40,
+      "sizes_bytes": [
+        1,
+        4096,
+        65536,
+        1048576
+      ],
+      "repetitions_per_size": 10,
+      "primary_get_client": "B",
+      "primary_hash_matches": 40,
+      "all_asserted_byte_hashes_recomputed": 48,
+      "mismatches": 0,
+      "basis": "SHA-256 of worker-returned bytes compared with independent SHAKE-256 seed/size reconstruction; raw payload bytes are not retained in these artifacts."
+    },
+    "plan_code": {
+      "generated_cases_and_steps_match": true,
+      "all_four_current_frozen_source_hashes_match": true,
+      "plan_sha256": "0676dafd1d3dcf0bdbe99529854ed8339ff9454cec94672a6e9f5943c7f85b6a",
+      "coverage": "freeze.py, runner.py, worker.py, audit.py; summarize.py is outside the formal code-hash map. Archived code and environment/lifecycle files were outside the allowlist and were not inspected."
+    },
+    "timings": {
+      "samples": 120,
+      "groups": 12,
+      "samples_per_group": 10,
+      "recomputed_exactly": true,
+      "clock_scope": "Worker-local perf_counter_ns difference around Python Store dispatch/call. Excludes put payload generation, returned-byte hashing, JSON/IPC and parent overhead; includes Python/native API overhead. Descriptive serial local measurements, not network-only latency or a load benchmark."
+    },
+    "duplicate_put": "op-126/128/130/132 all return 0. Each following B get returns 4096 bytes with original hash f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82, including changed-content and changed-size writes. Return 0 does not demonstrate overwrite.",
+    "empty_get": "op-003 (absent key) and op-218 (master down) both return b-empty with the empty SHA-256. B log:16-17 ties the latter to RPC_FAIL; accompanying master-down is_exist/put return -900. Audit ambiguous=0 describes the planned byte-shape assertions, not semantic disambiguation of miss versus error. No zero-length put case was tested.",
+    "restart": "Runner explicitly disables HA, snapshots, snapshot restore and offload. Existing and fresh clients report survivor is_exist=0 and empty get after restart; fresh C can put/get/hash/remove a new object. This is bounded non-HA metadata/recovery behavior, not a test of HA or physical byte erasure. The first probe follows a planned 3-second sleep; after12s means 12 more seconds after that probe, not 12 seconds since restart. Per-call absolute start timestamps are absent.",
+    "cleanup": "40 normal remove/absence pairs, duplicate remove/absence, C recovery remove/absence, and survivor/down-write absence readbacks match. The last two removes return -704 after restart, then is_exist=0. A/B/C close return 0. cleanup.json records five owned PIDs exited, all five named ports closed, and plan unchanged; this is recorded cleanup evidence, not a new live Linux process/port inspection or proof of clearing every physical buffer/dynamic listener.",
+    "binary_identity": "Preflight package/version/wheel hash matches the formal plan and all six reported installed/native-file hashes match wheel entries. Native files were not independently reread here; binary_build_commit_verified=false prevents attributing this wheel to source_read_commit.",
+    "identity_v1": "12/12 cases, all recorded keys, current identity.py hash and four gate controls reproduce; exactly one case is eligible with both literal boolean flags. This is exact full-prefix caller metadata equality. The key hashes metadata, not payload; flags are caller attestations, not byte verification/importer execution. Tenant metadata supplies no authentication/Store ACL, and opaque revision labels require caller completeness. These limits are explicit in identity.py; no model/tokenizer/KV reuse was exercised."
+  },
+  "bounded_checks": {
+    "method": "Standard-library reconciliation and in-memory mutation/stub execution of the inspected modules; source/evidence left unchanged.",
+    "positive_controls": "Wrong op/hash/incomplete replies fail; a missing row stays in planned=238 and makes acceptance false.",
+    "pytest": "Could not run supplied pytest files: local Python reports No module named pytest. No dependencies were installed.",
+    "native_experiment_repeated": false
+  }
+}

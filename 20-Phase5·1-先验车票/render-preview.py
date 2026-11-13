@@ -1,0 +1,46 @@
+"""使用已安装的微信渲染器生成本地预览；不会调用上传接口。"""
+from pathlib import Path
+import hashlib
+import html
+import json
+import re
+import subprocess
+
+root = Path(__file__).resolve().parent
+renderer = Path.home() / '.agents/skills/baoyu-post-to-wechat/scripts/md-to-wechat.ts'
+bun = Path.home() / '.bun/bin/bun'
+result = subprocess.run(
+    [str(bun), '--no-install', '--no-env-file', str(renderer),
+     str(root / '正文.md'), '--theme', 'grace', '--color', '#F2D479', '--no-cite'],
+    check=True, capture_output=True, text=True,
+)
+rendered = json.loads(result.stdout)
+content = Path(rendered['htmlPath']).read_text()
+# P5 retains the yellow station accent, with dark text for readable contrast.
+content = re.sub(r'<h2\b[^>]*>', lambda m: m.group().replace('color: #fff;', 'color: #403718;'), content)
+content = re.sub(r'<strong\b[^>]*>', lambda m: m.group().replace('color: #F2D479;', 'color: #88702f;'), content)
+for item in rendered['contentImages']:
+    relative = str(Path(item['localPath']).relative_to(root))
+    image = (f'<img src="{html.escape(relative, quote=True)}" '
+             f'alt="{html.escape(item.get("alt", ""), quote=True)}" '
+             'style="display:block;width:100%;height:auto;margin:1.5em auto;">')
+    content = content.replace(item['placeholder'], image)
+viewport = '<meta name="viewport" content="width=device-width, initial-scale=1">'
+if '<head>' in content:
+    content = content.replace('<head>', '<head>' + viewport, 1)
+else:
+    content = ('<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">'
+               + viewport + '<title>' + html.escape(rendered['title'])
+               + '</title></head><body>' + content + '</body></html>')
+(root / '正文.html').write_text(content)
+manifest = {
+    'theme': 'grace', 'color': '#F2D479', 'citationMode': 'external-links-retained',
+    'headingTextColor': '#403718', 'emphasisTextColor': '#88702f',
+    'renderer': str(renderer),
+    'rendererSha256': hashlib.sha256(renderer.read_bytes()).hexdigest(),
+    'markdownSha256': hashlib.sha256((root / '正文.md').read_bytes()).hexdigest(),
+    'htmlSha256': hashlib.sha256(content.encode()).hexdigest(),
+    'images': [i['originalPath'] for i in rendered['contentImages']],
+}
+(root / '预览渲染.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+print(json.dumps({'htmlPath': str(root / '正文.html'), **manifest}, ensure_ascii=False))

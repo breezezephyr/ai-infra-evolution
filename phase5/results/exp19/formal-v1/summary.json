@@ -1,0 +1,457 @@
+{
+  "n": 36,
+  "accepted": 27,
+  "rejected": 9,
+  "expected_rejections": 9,
+  "conformant": 36,
+  "failed": 0,
+  "unknown": 0,
+  "requested_check_count": 211,
+  "check_counts": {
+    "pass": 211,
+    "fail": 0,
+    "unknown": 0
+  },
+  "outcomes": [
+    {
+      "id": "text-default-chat",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "text-default-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "text-default-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "multi-disabled-chat",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "multi-disabled-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "multi-disabled-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "thinking-max-chat",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "thinking-max-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "thinking-max-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "tool-declaration-chat",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "tool-declaration-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "tool-declaration-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "limit-stop-chat",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "limit-stop-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "limit-stop-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "max-overflow-chat",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "max-overflow-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "max-overflow-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "model-unregistered-chat",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "model-unregistered-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "model-unregistered-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "alias-v41-chat",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "alias-v41-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "alias-v41-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "alias-v4-chat",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "alias-v4-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "alias-v4-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "special-user-literal-chat",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "special-user-literal-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "special-user-literal-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "web-default-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "web-reject-responses",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "web-default-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "web-drop-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "stop-empty-chat",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    },
+    {
+      "id": "stop-empty-messages",
+      "status": "pass",
+      "reason": "all frozen checks satisfied"
+    }
+  ],
+  "families": [
+    {
+      "family": "text_default",
+      "n": 3,
+      "ids": [
+        "text-default-chat",
+        "text-default-responses",
+        "text-default-messages"
+      ],
+      "invariant_fields": [
+        "max_tokens",
+        "message_contents",
+        "model_version",
+        "output_constraint_kind",
+        "reasoning_effort",
+        "roles",
+        "stop_sequences",
+        "temperature",
+        "thinking_mode",
+        "tool_choice",
+        "tool_names",
+        "top_p"
+      ],
+      "declared_protocol_differences": {},
+      "passed": true,
+      "prompt_equality_required": false
+    },
+    {
+      "family": "multi_disabled",
+      "n": 3,
+      "ids": [
+        "multi-disabled-chat",
+        "multi-disabled-responses",
+        "multi-disabled-messages"
+      ],
+      "invariant_fields": [
+        "assistant_reasoning_contents",
+        "max_tokens",
+        "message_contents",
+        "model_version",
+        "output_constraint_kind",
+        "reasoning_effort",
+        "roles",
+        "stop_sequences",
+        "temperature",
+        "thinking_mode",
+        "tool_choice",
+        "tool_names",
+        "top_p"
+      ],
+      "declared_protocol_differences": {},
+      "passed": true,
+      "prompt_equality_required": false
+    },
+    {
+      "family": "thinking_max",
+      "n": 3,
+      "ids": [
+        "thinking-max-chat",
+        "thinking-max-responses",
+        "thinking-max-messages"
+      ],
+      "invariant_fields": [
+        "max_tokens",
+        "message_contents",
+        "model_version",
+        "output_constraint_kind",
+        "reasoning_effort",
+        "roles",
+        "stop_sequences",
+        "temperature",
+        "thinking_mode",
+        "tool_choice",
+        "tool_names",
+        "top_p"
+      ],
+      "declared_protocol_differences": {
+        "assistant_reasoning_contents": [
+          [
+            "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+          ],
+          [
+            "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+          ],
+          [
+            "HISTORY_REASONING_A_19\n\nHISTORY_REASONING_B_19"
+          ]
+        ]
+      },
+      "passed": true,
+      "prompt_equality_required": false
+    },
+    {
+      "family": "tool_declaration",
+      "n": 3,
+      "ids": [
+        "tool-declaration-chat",
+        "tool-declaration-responses",
+        "tool-declaration-messages"
+      ],
+      "invariant_fields": [
+        "max_tokens",
+        "model_version",
+        "output_constraint_kind",
+        "parse_tool_calls",
+        "reasoning_effort",
+        "roles",
+        "starts_in_tool_calls",
+        "stop_sequences",
+        "temperature",
+        "thinking_mode",
+        "tool_choice",
+        "tool_names",
+        "tool_parameter_schemas",
+        "top_p"
+      ],
+      "declared_protocol_differences": {},
+      "passed": true,
+      "prompt_equality_required": false
+    },
+    {
+      "family": "limit_stop",
+      "n": 3,
+      "ids": [
+        "limit-stop-chat",
+        "limit-stop-responses",
+        "limit-stop-messages"
+      ],
+      "invariant_fields": [
+        "max_tokens",
+        "model_version",
+        "output_constraint_kind",
+        "reasoning_effort",
+        "temperature",
+        "thinking_mode",
+        "tool_choice",
+        "tool_names",
+        "top_p"
+      ],
+      "declared_protocol_differences": {
+        "stop_sequences": [
+          [
+            "END_19",
+            "完成"
+          ],
+          [],
+          [
+            "END_19",
+            "完成"
+          ]
+        ]
+      },
+      "passed": true,
+      "prompt_equality_required": false
+    },
+    {
+      "family": "alias_v41",
+      "n": 3,
+      "ids": [
+        "alias-v41-chat",
+        "alias-v41-responses",
+        "alias-v41-messages"
+      ],
+      "invariant_fields": [
+        "max_tokens",
+        "model_version",
+        "output_constraint_kind",
+        "reasoning_effort",
+        "roles",
+        "stop_sequences",
+        "temperature",
+        "thinking_mode",
+        "tool_choice",
+        "tool_names",
+        "top_p"
+      ],
+      "declared_protocol_differences": {},
+      "passed": true,
+      "prompt_equality_required": false
+    },
+    {
+      "family": "alias_v4",
+      "n": 3,
+      "ids": [
+        "alias-v4-chat",
+        "alias-v4-responses",
+        "alias-v4-messages"
+      ],
+      "invariant_fields": [
+        "max_tokens",
+        "model_version",
+        "output_constraint_kind",
+        "reasoning_effort",
+        "roles",
+        "stop_sequences",
+        "temperature",
+        "thinking_mode",
+        "tool_choice",
+        "tool_names",
+        "top_p"
+      ],
+      "declared_protocol_differences": {},
+      "passed": true,
+      "prompt_equality_required": false
+    },
+    {
+      "family": "special_user_literal",
+      "n": 3,
+      "ids": [
+        "special-user-literal-chat",
+        "special-user-literal-responses",
+        "special-user-literal-messages"
+      ],
+      "invariant_fields": [
+        "max_tokens",
+        "message_contents",
+        "model_version",
+        "output_constraint_kind",
+        "reasoning_effort",
+        "roles",
+        "stop_sequences",
+        "temperature",
+        "thinking_mode",
+        "tool_choice",
+        "tool_names",
+        "top_p"
+      ],
+      "declared_protocol_differences": {
+        "special_control_counts": [
+          null,
+          null,
+          null
+        ]
+      },
+      "passed": true,
+      "prompt_equality_required": false
+    }
+  ],
+  "scope": "actual native recipe library on CPU; no model/HTTP/tool execution",
+  "model_inference_calls": 0,
+  "fixture_sha256": "f1eef62b42a9b3209bcb7cc63204976e342b70dcb5cdb5367921820cdc48c6fe",
+  "tokenizer": {
+    "v41": {
+      "path": "phase5/vendor/minimal/static/tokenizers/v41/tokenizer.json",
+      "sha256": "81f64d1248a68ce3663e07ab3ee48b851e5df0e32d27cb98e4c9a268151e8d99",
+      "bytes": 6367247
+    },
+    "v4": {
+      "path": "phase5/vendor/minimal/static/tokenizers/v4/tokenizer.json",
+      "sha256": "97d2f31b020d18b5aee5c9b3d5b4efb10ea210f3fe3f7dffe3f1cd90542d6b19",
+      "bytes": 6367146
+    }
+  },
+  "environment": {
+    "python": "3.12.10 (main, Apr  8 2025, 11:35:47) [Clang 17.0.0 (clang-1700.0.13.3)]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "package": "0.2.0",
+    "native_module": "phase5/.venv-exp19/lib/python3.12/site-packages/deepseek_recipe"
+  },
+  "clock_note": "local perf_counter elapsed is diagnostic, not inference TTFT"
+}

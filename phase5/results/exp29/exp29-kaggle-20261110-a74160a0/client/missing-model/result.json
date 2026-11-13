@@ -1,0 +1,92 @@
+{
+  "case_id": "missing-model",
+  "client_request_id": "exp29-kaggle-20261110-a74160a0:missing-model",
+  "body_sha256": "405483f632a5d86132db76ed5a3750cf2b2d3a3c1afca9cb69c1062806496bfe",
+  "clock_domain": "client-153:monotonic_ns",
+  "started_ns": 1035601176898,
+  "state": "passed",
+  "status": 404,
+  "actual_server_request_id": "d1f6f89596a0467b810715193592a330",
+  "first_nonempty_content_rel_ns": null,
+  "first_content_observation": "content parsed from complete JSON body",
+  "fragment_semantics": "HTTP response entity read1 chunks; not TCP packets or model tokens",
+  "reason": "Not Found",
+  "http_version": 11,
+  "response_headers": [
+    [
+      "date",
+      "Tue, 10 Nov 2026 02:36:33 GMT"
+    ],
+    [
+      "server",
+      "uvicorn"
+    ],
+    [
+      "x-request-id",
+      "d1f6f89596a0467b810715193592a330"
+    ],
+    [
+      "x-client-request-id",
+      "exp29-kaggle-20261110-a74160a0:missing-model"
+    ],
+    [
+      "x-run-id",
+      "exp29-kaggle-20261110-a74160a0"
+    ],
+    [
+      "content-length",
+      "476"
+    ],
+    [
+      "content-type",
+      "application/json"
+    ]
+  ],
+  "echoed_client_request_id": "exp29-kaggle-20261110-a74160a0:missing-model",
+  "echoed_run_id": "exp29-kaggle-20261110-a74160a0",
+  "headers_received_rel_ns": 13029382,
+  "full_duration_ns": 13276579,
+  "response_json": {
+    "id": "chatcmpl-d1f6f89596a0467b810715193592a330",
+    "request_id": "d1f6f89596a0467b810715193592a330",
+    "client_request_id": "exp29-kaggle-20261110-a74160a0:missing-model",
+    "run_id": "exp29-kaggle-20261110-a74160a0",
+    "model": "qwen3-4b-nonexistent",
+    "body_sha256": "405483f632a5d86132db76ed5a3750cf2b2d3a3c1afca9cb69c1062806496bfe",
+    "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+    "error": {
+      "code": "model_not_found",
+      "message": "unknown served model alias"
+    }
+  },
+  "response_raw_sha256": "b4825ca3583c5c964032e90c6fb20999ca4ec3164d2f2a494834d73b65ce712d",
+  "response_raw_bytes": 476,
+  "read_count": 1,
+  "checks": {
+    "http_status": true,
+    "transport_completed": true,
+    "server_id_present": true,
+    "echoed_client_id": true,
+    "echoed_run_id": true,
+    "native_record_present": true,
+    "native_request_id": true,
+    "native_client_request_id": true,
+    "native_run_id": true,
+    "native_body_sha256": true,
+    "native_prompt_sha256": true,
+    "exact_request_body": true,
+    "requested_model": true,
+    "native_http_status": true,
+    "payloads_present": true,
+    "http_payload_request_id": true,
+    "http_payload_client_request_id": true,
+    "http_payload_run_id": true,
+    "http_payload_body_sha256": true,
+    "http_payload_prompt_sha256": true,
+    "http_payload_model": true,
+    "http_payload_id": true,
+    "rejected_without_generate": true,
+    "expected_error_code": true
+  },
+  "failed_checks": []
+}

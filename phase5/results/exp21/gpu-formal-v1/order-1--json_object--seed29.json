@@ -1,0 +1,73 @@
+{
+  "id": "order-1--json_object--seed29",
+  "contract": "b230dd4e454236f818dee5dae0bcc5672cf5af88c6aa1fc5a27af875383a490b",
+  "arm": "json_object",
+  "case_id": "order-1",
+  "seed": 29,
+  "family": "ordered_selection",
+  "payload_sha256": "ea0d6d9149fe9db3254065c36bfd2008224e247232064cdf1319f6b874d70fc2",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-c78e279274ec4d73b172f1257ab72766",
+    "object": "chat.completion",
+    "created": 1792983709,
+    "model": "exp21-qwen3-0.6b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "{\"type\": \"object\", \"properties\": {\"stops\": [\"杭州\", \"南京\"], \"count\": 2} }",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 165,
+      "total_tokens": 191,
+      "completion_tokens": 26,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "accepted": true,
+  "content": "{\"type\": \"object\", \"properties\": {\"stops\": [\"杭州\", \"南京\"], \"count\": 2} }",
+  "finish_reason": "stop",
+  "evaluation": {
+    "json_valid": true,
+    "schema_valid": false,
+    "business_correct": false,
+    "complete": true,
+    "deliverable": false,
+    "value": {
+      "type": "object",
+      "properties": {
+        "stops": [
+          "杭州",
+          "南京"
+        ],
+        "count": 2
+      }
+    },
+    "schema_errors": [
+      {
+        "path": [],
+        "message": "'stops' is a required property"
+      },
+      {
+        "path": [],
+        "message": "'count' is a required property"
+      },
+      {
+        "path": [],
+        "message": "Additional properties are not allowed ('properties', 'type' were unexpected)"
+      }
+    ]
+  },
+  "client_elapsed_ms": 1031.655584,
+  "clock_domain": "client_process_monotonic_ns"
+}

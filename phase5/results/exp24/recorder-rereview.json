@@ -1,0 +1,108 @@
+{
+  "status": "noissues",
+  "remaining_material_issues": 0,
+  "reviewed_at": "2026-10-26T07:11:18.566298+00:00",
+  "scope": "Updated exp24 recorder code/tests and formal-v3 plan, records, audit, summary, archived code, environment, lifecycle, cleanup and cleanup-live only. No Store rerun; v1/v2 excluded; original review retained; manuscript/graphics not reviewed.",
+  "findings": [],
+  "resolved": [
+    {
+      "id": "R1",
+      "status": "resolved_by_claim_narrowing",
+      "evidence": "freeze.py:10, formal-v3 plan/summary scope and environment.transport consistently say TCP-configured cross-process local Store API and explicitly leave the payload branch/socket path untraced. No measured TCP payload/network conclusion is supported or asserted in these reviewed fields."
+    },
+    {
+      "id": "R2",
+      "status": "resolved",
+      "evidence": "All 238 rows independently match canonical request SHA-256, key/client/stage, lifecycle client PID, plan SHA-256 and frozen worker hash. Five archived/current source hashes match plan.code_sha256 and environment.executed_code_sha256, now including summarize.py. Worker loads the frozen plan, validates the envelope and reports its own PID/hash; successful replies are not relabeled by the parent. Seven independent correlation mutations are rejected. Summary reproduces exactly and derives clients from validated observations; changing all 40 primary read clients to A gives zero hash matches and an empty validated-client list."
+    },
+    {
+      "id": "R3",
+      "status": "resolved",
+      "evidence": "runner.py:93-105 saves the audit, raises on rejected acceptance, and executes cleanup in finally before the exception propagates to the uncaught CLI path. The targeted regression verifies a rejected missing-operation audit raises RuntimeError while audit.json and cleanup.json are retained. Freeze check=True therefore receives a nonzero runner exit on this path."
+    },
+    {
+      "id": "R4",
+      "status": "resolved",
+      "evidence": "audit.valid_latency is shared by audit and summarize. Independent in-memory null/boolean/negative/infinity/NaN probes all retain 228 operation assertion passes, report 119 valid plus 1 invalid timing, and satisfy planned=failed+valid+invalid_timing for every group without a summary exception. The actual run has 120 valid and zero invalid timing samples."
+    }
+  ],
+  "verification": {
+    "targeted_pytest": {
+      "python": "phase5/.venv-exp19/bin/python",
+      "tests": [
+        "phase5/exp24/test_audit.py",
+        "phase5/exp24/test_identity.py"
+      ],
+      "passed": 197,
+      "failed": 0,
+      "exit_code": 0,
+      "cache_and_bytecode_writes_disabled": true
+    },
+    "formal_v3": {
+      "planned": 238,
+      "unique_records": 238,
+      "assertion_pass": 228,
+      "observed_only": 10,
+      "fail": 0,
+      "missing": 0,
+      "ambiguous": 0,
+      "accepted": true,
+      "plan_call_and_record_order_match": true,
+      "audit_and_complete_summary_reproduced": true
+    },
+    "binding": {
+      "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+      "source_snapshots_checked": 5,
+      "all_source_archive_plan_environment_hashes_match": true,
+      "client_pids": {
+        "A": 123880,
+        "B": 123927,
+        "C": 124022
+      },
+      "record_binding_mismatches": 0,
+      "regenerated_plan_matches": true
+    },
+    "bytes": {
+      "primary_objects": 40,
+      "sizes_bytes": [
+        1,
+        4096,
+        65536,
+        1048576
+      ],
+      "repetitions_per_size": 10,
+      "primary_reader": "B",
+      "reader_global_size": 0,
+      "primary_hash_matches": 40,
+      "all_asserted_byte_hashes_recomputed": 48,
+      "mismatches": 0
+    },
+    "timings": {
+      "groups": 12,
+      "samples": 120,
+      "invalid": 0,
+      "all_distributions_recomputed_exactly": true,
+      "scope": "Worker-local perf_counter_ns Store dispatch/API duration; excludes payload generation, returned-byte hashing and parent IPC. finished_perf_ns is sampled after result/hash handling, so its difference from started_perf_ns is not the reported Store-only latency."
+    },
+    "cleanup": {
+      "normal_remove_absence_pairs": 40,
+      "owned_pids_match_five_lifecycle_starts_and_stops": true,
+      "recorded_exit_codes_all_zero": true,
+      "cleanup_plan_unchanged": true,
+      "cleanup_all_owned_exited": true,
+      "live_check_at": "2026-10-26T07:07:00.475018+00:00",
+      "live_owned_pids_absent": 5,
+      "live_named_static_and_logged_ports_closed": 11,
+      "cleanup_live_all_closed": true,
+      "basis": "Readback of supplied cleanup and cleanup-live artifacts; no new remote process/port probes were run."
+    },
+    "native_store_reruns": 0
+  },
+  "retained_boundaries": [
+    "228 assertion passes plus 10 exploratory observations are not 238 successful Store operations. Failed/missing operations remain in the planned denominator.",
+    "Duplicate puts returning 0 still read back the original 4096-byte hash, including changed-content/changed-size cases; no overwrite claim.",
+    "Empty get bytes remain ambiguous between absence and error; master-down companion operations return -900. Audit ambiguous=0 is not semantic disambiguation.",
+    "Restart is explicitly non-HA with snapshots/restore/offload disabled. Survivor absence and fresh-client recovery do not establish HA behavior or physical byte erasure.",
+    "Payload transfer branch is untraced; timing is descriptive local Store API timing. Identity/payload/importer flags remain caller attestations, as documented and covered by the identity tests."
+  ]
+}

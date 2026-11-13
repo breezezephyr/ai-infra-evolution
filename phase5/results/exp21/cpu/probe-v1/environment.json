@@ -1,0 +1,76 @@
+{
+  "utc": "2026-10-26T02:44:29.390183+00:00",
+  "python": "3.12.10 (main, Apr  8 2025, 11:35:47) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "executable": "phase5/.venv-exp19/bin/python",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "packages": {
+    "deepseek-recipe": "0.2.0",
+    "packaging": "26.3",
+    "Pygments": "2.21.0",
+    "jsonschema-specifications": "2025.9.1",
+    "pip": "25.1.1",
+    "iniconfig": "2.3.1",
+    "jsonschema": "4.25.1",
+    "pluggy": "1.7.0",
+    "pytest": "8.4.2",
+    "referencing": "0.37.0",
+    "rpds-py": "2026.9.1",
+    "attrs": "26.1.0",
+    "typing_extensions": "4.16.0"
+  },
+  "recipe_version": "0.2.0",
+  "recipe_source_commit": "935817c66f5d6e64838f419692545f06787e485f",
+  "deepinfer_source_commit": "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+  "files": [
+    {
+      "path": "phase5/vendor/deepseek_recipe-0.2.0-cp310-abi3-macosx_11_0_arm64.whl",
+      "bytes": 9549388,
+      "sha256": "624bb4d0fb3ed541b9e34d2ef96ff66057026ded7d6708b0b9088cc6d6723999"
+    },
+    {
+      "path": "phase5/.venv-exp19/lib/python3.12/site-packages/deepseek_recipe/_native.abi3.so",
+      "bytes": 18035632,
+      "sha256": "7b9a8e9165be8ae9148a7b671d63c8576a171dbcd256745760cba0612e3dba9e"
+    },
+    {
+      "path": "phase5/.venv-exp19/lib/python3.12/site-packages/deepseek_recipe/_native.pyi",
+      "bytes": 40062,
+      "sha256": "e24cb343288b736a0cfadbada954fa0272f4393ae27222adee8ed080aa2b0e92"
+    },
+    {
+      "path": "phase5/exp21/cpu.py",
+      "bytes": 15049,
+      "sha256": "a89370a048df0b0d0ef25eb812e17ec5864b0bb5d70252aa9da42fa0091ee75a"
+    },
+    {
+      "path": "phase5/exp21/test_cpu.py",
+      "bytes": 6642,
+      "sha256": "a344007b6b1ac55500b3a2d740224e517762fe07cedb97144f76c7f2540d5550"
+    },
+    {
+      "path": "phase5/exp21/cpu-cases.json",
+      "bytes": 126765,
+      "sha256": "bb0537658ea18a6b13f36e3b931c7eec9ca07efd497fd9ea7f727a2f4ad75d31"
+    },
+    {
+      "path": "phase5/vendor/minimal/source-metadata.json",
+      "bytes": 4498,
+      "sha256": "3ced6a5008918fa6fc185a967800a775a7670b707a34d86380912d174c1adefd"
+    },
+    {
+      "path": "phase5/vendor/exp20-source/sources.json",
+      "bytes": 14859,
+      "sha256": "f6be7af8930d269eca84c98caa12689a7e3e4bca13eef6af90991c9052a0ea09"
+    },
+    {
+      "path": "phase5/vendor/exp21-source/sources.json",
+      "bytes": 14904,
+      "sha256": "d24a76af56be167383872293c0977603f3537f7f275ff8e822e445699d022bb9"
+    }
+  ],
+  "installed_native_matches_wheel": true,
+  "native_build_commit": "not attested; fixed source and matching Python stub do not prove native build revision",
+  "dependencies_installed": false,
+  "gpu_inference": false,
+  "deepinfer_imported": false
+}

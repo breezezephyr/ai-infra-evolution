@@ -1,0 +1,301 @@
+{
+  "request_id": "ccc520137c184fa7b8b0ef8f92dbc624",
+  "client_request_id": "exp29-kaggle-20261110-a74160a0:nonstream",
+  "run_id": "exp29-kaggle-20261110-a74160a0",
+  "clock_domain": "server-155:monotonic_ns",
+  "request_started_ns": 1035618882088,
+  "body_utf8": "{\"model\":\"qwen3-4b\",\"messages\":[{\"role\":\"user\",\"content\":\"请用一句简短的中文解释天空为什么通常是蓝色的。\"}],\"max_tokens\":32,\"stream\":false,\"temperature\":0,\"seed\":29}",
+  "body_sha256": "8862a50ed63f5ac5eb9575cea684c5f8586327cd3fb3b27a9355914977cfa00f",
+  "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+  "requested_model": "qwen3-4b",
+  "loaded_model_alias": "qwen3-4b",
+  "native_state": "completed",
+  "token_callbacks": [
+    {
+      "token_ids": [
+        101916
+      ],
+      "rel_ns": 1005721826
+    },
+    {
+      "token_ids": [
+        104401
+      ],
+      "rel_ns": 1128512034
+    },
+    {
+      "token_ids": [
+        105681
+      ],
+      "rel_ns": 1185092878
+    },
+    {
+      "token_ids": [
+        104404
+      ],
+      "rel_ns": 1239969858
+    },
+    {
+      "token_ids": [
+        104166
+      ],
+      "rel_ns": 1294336399
+    },
+    {
+      "token_ids": [
+        101047
+      ],
+      "rel_ns": 1345122848
+    },
+    {
+      "token_ids": [
+        100400
+      ],
+      "rel_ns": 1396534286
+    },
+    {
+      "token_ids": [
+        99225
+      ],
+      "rel_ns": 1448619247
+    },
+    {
+      "token_ids": [
+        99250
+      ],
+      "rel_ns": 1500623144
+    },
+    {
+      "token_ids": [
+        105797
+      ],
+      "rel_ns": 1551891591
+    },
+    {
+      "token_ids": [
+        101047
+      ],
+      "rel_ns": 1603391767
+    },
+    {
+      "token_ids": [
+        102388
+      ],
+      "rel_ns": 1654508791
+    },
+    {
+      "token_ids": [
+        99632
+      ],
+      "rel_ns": 1705792630
+    },
+    {
+      "token_ids": [
+        99759
+      ],
+      "rel_ns": 1756625267
+    },
+    {
+      "token_ids": [
+        99495
+      ],
+      "rel_ns": 1808636113
+    },
+    {
+      "token_ids": [
+        103952
+      ],
+      "rel_ns": 1860539587
+    },
+    {
+      "token_ids": [
+        109612
+      ],
+      "rel_ns": 1912191527
+    },
+    {
+      "token_ids": [
+        15946
+      ],
+      "rel_ns": 1964646122
+    },
+    {
+      "token_ids": [
+        1773
+      ],
+      "rel_ns": 2017158341
+    },
+    {
+      "token_ids": [
+        151645
+      ],
+      "rel_ns": 2069485454
+    }
+  ],
+  "rendered_template": "<|im_start|>user\n请用一句简短的中文解释天空为什么通常是蓝色的。<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "rendered_template_sha256": "ddbd80db40636a9a447978cf9c4ead9b5b7eac7b9808fdef39674514d14189d9",
+  "input_token_ids": [
+    151644,
+    872,
+    198,
+    14880,
+    11622,
+    104670,
+    98237,
+    99534,
+    9370,
+    104811,
+    104136,
+    101916,
+    100678,
+    112452,
+    105681,
+    9370,
+    1773,
+    151645,
+    198,
+    151644,
+    77091,
+    198,
+    151667,
+    271,
+    151668,
+    271
+  ],
+  "generation_config": {
+    "max_length": 20,
+    "max_new_tokens": 32,
+    "min_length": 0,
+    "min_new_tokens": null,
+    "early_stopping": false,
+    "max_time": null,
+    "stop_strings": null,
+    "do_sample": false,
+    "num_beams": 1,
+    "num_beam_groups": 1,
+    "penalty_alpha": null,
+    "dola_layers": null,
+    "use_cache": true,
+    "cache_implementation": null,
+    "cache_config": null,
+    "return_legacy_cache": null,
+    "prefill_chunk_size": null,
+    "temperature": null,
+    "top_k": null,
+    "top_p": null,
+    "min_p": null,
+    "typical_p": 1.0,
+    "epsilon_cutoff": 0.0,
+    "eta_cutoff": 0.0,
+    "diversity_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "encoder_repetition_penalty": 1.0,
+    "length_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "bad_words_ids": null,
+    "force_words_ids": null,
+    "renormalize_logits": false,
+    "constraints": null,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": false,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "forced_decoder_ids": null,
+    "sequence_bias": null,
+    "token_healing": false,
+    "guidance_scale": null,
+    "low_memory": null,
+    "watermarking_config": null,
+    "num_return_sequences": 1,
+    "output_attentions": false,
+    "output_hidden_states": false,
+    "output_scores": false,
+    "output_logits": null,
+    "return_dict_in_generate": true,
+    "pad_token_id": 151643,
+    "bos_token_id": 151643,
+    "eos_token_id": [
+      151645,
+      151643
+    ],
+    "encoder_no_repeat_ngram_size": 0,
+    "decoder_start_token_id": null,
+    "is_assistant": false,
+    "num_assistant_tokens": 20,
+    "num_assistant_tokens_schedule": "constant",
+    "assistant_confidence_threshold": 0.4,
+    "prompt_lookup_num_tokens": null,
+    "max_matching_ngram_size": null,
+    "assistant_early_exit": null,
+    "assistant_lookbehind": 10,
+    "target_lookbehind": 10,
+    "disable_compile": false,
+    "generation_kwargs": {},
+    "_from_model_config": false,
+    "transformers_version": "4.51.3"
+  },
+  "gpu_memory_before_generation": {
+    "device": "cuda:0",
+    "allocated_bytes": 8101710336,
+    "reserved_bytes": 8103395328,
+    "peak_allocated_bytes": 8101710336,
+    "peak_reserved_bytes": 8103395328,
+    "device_free_bytes": 7315718144,
+    "device_total_bytes": 15636037632,
+    "device_free_scope": "whole GPU; may include other processes",
+    "allocator_scope": "this server process only"
+  },
+  "generate_started_ns": 1035623951540,
+  "first_token_callback_rel_ns": 1005721826,
+  "output_token_ids": [
+    101916,
+    104401,
+    105681,
+    104404,
+    104166,
+    101047,
+    100400,
+    99225,
+    99250,
+    105797,
+    101047,
+    102388,
+    99632,
+    99759,
+    99495,
+    103952,
+    109612,
+    15946,
+    1773,
+    151645
+  ],
+  "output_ids_source": "generate.sequences[0, actual_input_length:]",
+  "text": "天空呈现蓝色是因为阳光中的蓝光被大气中的分子散射到了我们的视线中。",
+  "native_usage": {
+    "prompt_tokens": 26,
+    "completion_tokens": 20,
+    "total_tokens": 46
+  },
+  "finish_reason": "stop",
+  "eos_token_ids": [
+    151645,
+    151643
+  ],
+  "output_count_includes_eos": true,
+  "generate_total_ns": 2070610562,
+  "gpu_memory_after_generation": {
+    "device": "cuda:0",
+    "allocated_bytes": 8116866048,
+    "reserved_bytes": 8134852608,
+    "peak_allocated_bytes": 8119002112,
+    "peak_reserved_bytes": 8134852608,
+    "device_free_bytes": 7254900736,
+    "device_total_bytes": 15636037632,
+    "device_free_scope": "whole GPU; may include other processes",
+    "allocator_scope": "this server process only"
+  },
+  "http_status": 200,
+  "request_total_ns": 2077230116
+}

@@ -1,0 +1,47 @@
+{
+  "name": "exp7-bounded",
+  "prefix_groups": 8,
+  "prefix_len": 1536,
+  "zipf": 1.1,
+  "prom_start": 1790164210,
+  "prom_end": 1790164373,
+  "secs": 163.4,
+  "classes": {
+    "user": {
+      "k": 8,
+      "inp": 64,
+      "out": 64,
+      "prio": 100,
+      "think": 0.0,
+      "done": 734,
+      "err": 0,
+      "ttft_p50": 57.6,
+      "ttft_p90": 229.7,
+      "ttft_p99": 315.5,
+      "itl_p50": 23.5,
+      "itl_p99": 36.1,
+      "e2e_p50": 1619.0,
+      "out_tok_s": 287.5
+    }
+  },
+  "servers": {
+    "8004": {
+      "queries": 35357.0,
+      "hits": 27877.0,
+      "preempt": 0.0,
+      "prompt_tok": 567862.0,
+      "gen_tok": 21632.0,
+      "done": 338.0,
+      "hit_rate": 0.788
+    },
+    "8005": {
+      "queries": 41513.0,
+      "hits": 36056.0,
+      "preempt": 0.0,
+      "prompt_tok": 667429.0,
+      "gen_tok": 25344.0,
+      "done": 396.0,
+      "hit_rate": 0.869
+    }
+  }
+}

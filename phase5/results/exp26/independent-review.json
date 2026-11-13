@@ -1,0 +1,73 @@
+{
+  "findings": [
+    {
+      "id": "EXP26-IR-01",
+      "severity": "important",
+      "file": "phase5/exp26/gateway.py",
+      "line": 125,
+      "problem": "原生 usage 未校验即覆盖 attempt.usage，结算去重只能保护最终写入，保护不了写入前被覆盖的用量。负数、布尔 token 或冲突的第二条 usage 都可成为 native_stream_usage 结算并随 completed 终态发给客户端；先收到 {3,2,5}、再收到全零 usage 时，已知 5 token 被覆盖为 0。当前离线分析器会拒绝这类原始流，但网关已经发布错误结算，不能据结算表 add 的幂等性声称这条路径不会抹账。正式原始数据未见该情况。",
+      "reproduction": "离线使用 httpx.MockTransport 替换 gateway.httpx.AsyncClient，向原版 Gateway 的 gpu-normal 场景返回：content OK、finish_reason=stop、usage {prompt_tokens:3,completion_tokens:2,total_tokens:-5}、[DONE]。实际 terminal=completed，settlements[0].usage.total_tokens=-5；将 prompt_tokens 换成 true 也完成。再返回两帧 usage，第一帧 {3,2,5}，第二帧 {0,0,0}，实际 completed 且结算全零。均执行原 Gateway.__call__ 和原 source，无 GPU、无源码或证据写入。",
+      "fix": "在归一化 usage 写入前校验三个 token 字段严格为非负 int（排除 bool），并核对 prompt+completion=total；保存原始帧供审计。每个 attempt 的第一份有效 usage 不被后续坏帧或冲突 usage 覆盖；冲突记录为协议/计量错误，保留已知用量和 attempt，不能结算为零或伪报正常完成。补负数、bool、重复冲突三种离线用例即可。"
+    },
+    {
+      "id": "EXP26-IR-02",
+      "severity": "important",
+      "file": "phase5/exp26/analyze.py",
+      "line": 385,
+      "problem": "backend_coverage 只在 http_rows 非空时执行；整份 backend.jsonl 丢失内容后走 absent_optional，且不进入 native_backend。即使冻结计划要求 6 次 GPU attempt，正式审计仍 accepted=true 并发布 GPU 指标。局部缺行会被拒绝，全部删除反而通过，使正式验收不再要求独立后端/原生取消证据。报告确实把 engine_abort_evidence 写为 unknown，故这里不是将 unknown 偷换成 kernel stop，而是整体正式验收错误通过。现存正式 backend 证据完整。",
+      "reproduction": "对 formal-v1 仅在内存中把 Path.read_text(formal-v1/backend.jsonl) 返回值替换为 \"\"，其他输入保持原样；拦截 summary 写入后调用当前 analyze.analyze(formal-v1)。实际 accepted=true、errors=[]、backend.http_rows=0、http_evidence=absent_optional、engine_abort_evidence=unknown；metrics.gpu 仍为 attempts=6、known_usage_attempts=2、unknown_usage_attempts=4、known_total_tokens=248，planned_attempts=19。未清空磁盘上的任何文件。",
+      "fix": "对本次正式验收，根据冻结计划中的 GPU attempts 无条件核对 backend-http 覆盖，并要求本实验声明的原生 hook/映射/最终 CPU 状态证据存在；缺失时 accepted=false、metrics=null。若 CPU 单测确需无后端证据的 fixture，显式区分测试用 evidence profile，不能让空日志自行降级正式审计要求。无需增加 CUDA trace 或生产监控。"
+    },
+    {
+      "id": "EXP26-IR-03",
+      "severity": "important",
+      "file": "phase5/exp26/analyze.py",
+      "line": 408,
+      "problem": "后端独立 HTTP 记录中已解析出的有效 usage 仅写入 backend_http_usage；usage_known 和 GPU known/unknown 小计仍只依据网关的 usage。失败/取消时，后端已生成完整计量、网关因断流未读到它，是本实验现有故障范围内的情况。此时审计 accepted=true，却把已有原生计量的 attempt 列为未知、漏出已知小计。原始后端计量并未被删除，但账本摘要没有对齐其已知性；不能把交付层未收到 usage 当成资源层未计量。当前正式 4 个未知 attempt 在后端记录中也未发现完整 usage，现有 248 小计无需因此改动。",
+      "reproduction": "在内存中生成 test_analyze.fixture 的独立 HTTP-only 原始证据（该证据形态当前被允许）。对 exp26-gpu-post-break/a1 的 backend-http.sse 追加完整 finish=stop、usage {prompt_tokens:37,completion_tokens:2,total_tokens:39}、[DONE]，更新该行 response_sha256；网关因提前断流仍保持 usage=null。实际 accepted=true、errors=[]；该 ledger 行 backend_http_usage.total_tokens=39，但 usage_known=false、usage=null；GPU 汇总仍为 fixture 原来的 2 known / 4 unknown / 18 token，而非反映新增已知计量的 3 known / 3 unknown / 57 token。对正式证据内存副本追加相同后端 usage 并更新 hash/base64，也观察到 accepted=true、已知小计仍248。",
+      "fix": "保持 gateway settlement、backend 原始 usage 和客户端交付证据分列，另按 attempt 对账资源计量。后端有有效完整 usage 而网关没有时，至少标出计量差异并阻止无说明的 accepted=true；若发布资源已知小计，可使用明确标注 backend_http 来源的规范化 usage，每个 attempt 只计一次。两层有效 usage 冲突时拒绝成功汇总并保留双方原值；不能直接改写历史客户端或网关原始结算。"
+    }
+  ],
+  "verdict": "needs_changes",
+  "scope": {
+    "review": "按用户要求进行唯一一次独立整体审校；截至本文件写入结束，不二审、不修产品代码。仅本文件作为持久输出。",
+    "contract": "当前已批准 phase5/实验计划.md exp26：提交前有条件重试、提交后不拼答、取消/迟到 generation/排空、失败 attempt 保留、结算幂等，以及 worker/native/client 证据分列。没有扩为生产 HA、持久数据库、工具执行或 kernel 停止验收。",
+    "inputs": [
+      "phase5/exp26/gateway.py",
+      "phase5/exp26/run.py",
+      "phase5/exp26/analyze.py",
+      "phase5/exp26/backend_audit.py",
+      "phase5/exp26/test_gateway.py",
+      "phase5/exp26/test_transport.py",
+      "phase5/exp26/test_analyze.py",
+      "phase5/exp26/serve_gateway.py",
+      "phase5/exp26/manage_backend.py",
+      "phase5/exp26/README.md",
+      "phase5/exp26/设计.md",
+      "phase5/exp26/源码笔记.md",
+      "phase5/results/exp26/formal-v1/",
+      "phase5/results/exp26/formal-v1/analysis-revision1/summary.json",
+      "phase5/results/exp26/cleanup.json",
+      "phase5/results/exp26/backend-startup.json",
+      "27-Phase5·8-半路抛锚/正文.md",
+      "27-Phase5·8-半路抛锚/正文.html",
+      "27-Phase5·8-半路抛锚/img/00-封面.png",
+      "27-Phase5·8-半路抛锚/img/01-一页纸.png",
+      "27-Phase5·8-半路抛锚/img/11-exp26.png",
+      "27-Phase5·8-半路抛锚/排版检查.json"
+    ],
+    "verification": {
+      "offline_tests": "独立执行 gateway/transport 23项通过，禁用pyc和pytest缓存；analyzer 22项通过，fixture和输出均映射到内存。未执行会通过子进程写临时文件的CLI单测；主流程 tests.txt 的46项通过仅作为已有证据读取。",
+      "formal_recompute": "当前分析器对正式原始输入只读重算、summary写入被拦截：accepted=true，17req/19attempt，13 controlled/6 GPU，GPU 2 known/248 token/4 unknown；controlled 28 synthetic 单列。分析基准采用revision1；root summary提升及summary-execution保留由主流程处理，未把执行版分析器hash差异当成错误。",
+      "source_execution": "核对plan字节hash、全部6个冻结Python文件、gateway-startup的source hash及backend-startup的source hash一致；run从out/code/run.py启动、网关从同目录serve_gateway.py导入冻结gateway。当前仅analyze.py相对执行冻结版变化，与分析修订说明一致。backend快照hash与model_identity快照hash吻合；未发现本次正式执行来源不符。",
+      "cancellation_evidence": "正式原生记录分别支持4个abort attempt的CPU状态清空、6个attempt最终CPU clear，重试顺序由同一后端时钟证据支持；不提升为CUDA kernel停止。已有迟到丢弃、提交后不重试、客户端metadata及完成字段变异检查通过；本次未将模拟supersede外推为完整会话系统。",
+      "cleanup": "读取到后端PID不存在、8026/8126均关闭、网关退出、模型文件hash未变，GPU快照663MiB/利用率0%；仅评价已保存清理证据，未重新接触远端。",
+      "article_visuals_mobile": "阅读正文及三张指定图片；390px浏览器只读重测scrollWidth=390，两张正文图片显示宽326、原图加载成功，无段落/标题/表格/图片横向溢出和未替换占位符；用不落盘截图查看首屏、图卡和用量段落。未发现需另列的实质夸大；正文明确length截断、248为已知小计、synthetic不相加及CPU证据边界。"
+    },
+    "limitations": [
+      "所有变异均为离线内存复现，不表示正式原始记录发生了这些故障。",
+      "未重跑GPU，未改变正式raw、冻结源码、历史summary、图像或其他文件。",
+      "主流程同时更新进度/manifest，不将缺少收尾manifest作为问题，也不在本次review后执行二审。"
+    ]
+  }
+}

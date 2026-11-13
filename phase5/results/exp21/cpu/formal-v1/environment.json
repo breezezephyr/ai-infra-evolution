@@ -1,0 +1,219 @@
+{
+  "utc": "2026-10-26T02:48:10.983002+00:00",
+  "python": "3.12.10 (main, Apr  8 2025, 11:35:47) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "executable": "phase5/.venv-exp19/bin/python",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "packages": {
+    "deepseek-recipe": "0.2.0",
+    "packaging": "26.3",
+    "Pygments": "2.21.0",
+    "jsonschema-specifications": "2025.9.1",
+    "pip": "25.1.1",
+    "iniconfig": "2.3.1",
+    "jsonschema": "4.25.1",
+    "pluggy": "1.7.0",
+    "pytest": "8.4.2",
+    "referencing": "0.37.0",
+    "rpds-py": "2026.9.1",
+    "attrs": "26.1.0",
+    "typing_extensions": "4.16.0"
+  },
+  "recipe_version": "0.2.0",
+  "recipe_source_commit": "935817c66f5d6e64838f419692545f06787e485f",
+  "deepinfer_source_commit": "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+  "files": [
+    {
+      "path": "phase5/vendor/deepseek_recipe-0.2.0-cp310-abi3-macosx_11_0_arm64.whl",
+      "bytes": 9549388,
+      "sha256": "624bb4d0fb3ed541b9e34d2ef96ff66057026ded7d6708b0b9088cc6d6723999"
+    },
+    {
+      "path": "phase5/.venv-exp19/lib/python3.12/site-packages/deepseek_recipe/_native.abi3.so",
+      "bytes": 18035632,
+      "sha256": "7b9a8e9165be8ae9148a7b671d63c8576a171dbcd256745760cba0612e3dba9e"
+    },
+    {
+      "path": "phase5/.venv-exp19/lib/python3.12/site-packages/deepseek_recipe/_native.pyi",
+      "bytes": 40062,
+      "sha256": "e24cb343288b736a0cfadbada954fa0272f4393ae27222adee8ed080aa2b0e92"
+    },
+    {
+      "path": "phase5/exp21/cpu.py",
+      "bytes": 23708,
+      "sha256": "b8fd79b3c917a4dcc976637a6dd4995e3d732a697406166fc94f88eb2d1a3fd6"
+    },
+    {
+      "path": "phase5/exp21/test_cpu.py",
+      "bytes": 7664,
+      "sha256": "f27ad9689e64142ec693a3168302607a82bf0639bcc620368bdd7bde7164189f"
+    },
+    {
+      "path": "phase5/exp21/cpu-cases.json",
+      "bytes": 136220,
+      "sha256": "6453363a61886408f523e5ee21ad2bc5aedaadd86993437fd516c16173fa3120"
+    },
+    {
+      "path": "phase5/vendor/minimal/source-metadata.json",
+      "bytes": 4498,
+      "sha256": "3ced6a5008918fa6fc185a967800a775a7670b707a34d86380912d174c1adefd"
+    },
+    {
+      "path": "phase5/vendor/exp20-source/sources.json",
+      "bytes": 14859,
+      "sha256": "f6be7af8930d269eca84c98caa12689a7e3e4bca13eef6af90991c9052a0ea09"
+    },
+    {
+      "path": "phase5/vendor/exp21-source/sources.json",
+      "bytes": 17501,
+      "sha256": "2b95f46bf9f2989b13af1ed25a0ca3f4940dd7faf00c2f955f8e8b9064f7126b"
+    }
+  ],
+  "source_verification": [
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/openai/chat_completion/request/schema.rs",
+      "sha256": "7934daf74887afd067461a8a9f1efdef5f39fee717728a21fba02e470254222f",
+      "git_blob_sha1": "f612f09ee4b588f33e80e788fe25384c6aefe309",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/openai/chat_completion/request/convert.rs",
+      "sha256": "2661a956939446d3e8aa3423c56fcef7b3fd892f9470477ba979570744adbaa5",
+      "git_blob_sha1": "e29b4fe3c9be5a591947f8098cf3e30fe35d520c",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/openai/responses/request/schema.rs",
+      "sha256": "1999d12454c8dcc19ec7384cf629ecd88720a46661ca9457760fadb19dc419fa",
+      "git_blob_sha1": "e8c2c98d9d48b4db3b1fdc9c3c952688ae17e9cd",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/openai/responses/request/convert.rs",
+      "sha256": "a6a5834f4fde9ad71a58a89e63f3df208ead50de45b8918b3ceb5f500e4b4bc2",
+      "git_blob_sha1": "e0e7dfd983ce5b9022a880d1f61c2193582aebd7",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/anthropic/messages/request/schema.rs",
+      "sha256": "699565374ab5d2292f2978eb5014eb4c91532728e4614af5ae869cd96954c4e0",
+      "git_blob_sha1": "8a39f36377fdb6c9ecf9863ed7d53a7ead1de6b8",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/anthropic/messages/request/convert.rs",
+      "sha256": "7e3e440804acde6be1b34c293ec4797bc797a1e8f7db80f02aeae65184b24967",
+      "git_blob_sha1": "d28748f6009ae91af991f8f520d1f7a99ab29fd6",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/validation.rs",
+      "sha256": "2d39eee7110bf6051dc5ebc75a639bedd72e804b2db3b0bbfa8799ee4be095fd",
+      "git_blob_sha1": "b44b4a9acc94fced9c3fcaaea4f75b0088b8c95c",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/structure_output/compiler.py",
+      "sha256": "05ae22caf6faddff075102f33e6e77aff32391c9f60f2f99047dfc68f104bbe8",
+      "git_blob_sha1": "4bbcddf3fefe0a23ea06fdab34796f89b37df48f",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/examples/_structured_output.py",
+      "sha256": "cade14c5f7eaf981d4129e983a4451fd3200ebaef375555017cae85e0e3bd948",
+      "git_blob_sha1": "9a0756fc183014050dafc6c79d58b2c4206e0f19",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/entrypoints/llm.py",
+      "sha256": "069a5333d9f47047ccc87584792627dfa6eee9cf93bdc046107cbd0218a6bada",
+      "git_blob_sha1": "aa8d5e821a333d901eda75bd9a5959b6ec8a5c12",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/engine/llm_engine.py",
+      "sha256": "a636d60ca5711f6b7c21e68370c3bd9c2de6fc3f4439a7429ca4f572f0edeebe",
+      "git_blob_sha1": "cb8794109d5bf03dd25dec4fa7550dbf46aa0ab3",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/sampling_params.py",
+      "sha256": "f800034efdebe1b21620660a51fa9122d3d7f138d8e60cd738f33d643c3116f8",
+      "git_blob_sha1": "0d03690041e655259f4477be88daca59b1a97ac9",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/output_constraint.rs",
+      "sha256": "3ac2d0bf86e3f099255b3d09e24ba4b2516e7e8c00e338e9a3bc4b13ffcaf4db",
+      "git_blob_sha1": "cb5f123b7cf680effbd9e9bda298bf47915cbe39",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/json_schema.rs",
+      "sha256": "b6a01d0d9a0fec45c9b79445b90f042c95e8c6eec5b8d51ed36307bd2a357451",
+      "git_blob_sha1": "f00a97d65bcdb55c5a28abbe779f2ce032923168",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/structure_output/so_matcher_builder.py",
+      "sha256": "1f26aea5205c2f6953ba7ca21079c84b888115ed44c158a120536a17517f1ee0",
+      "git_blob_sha1": "030d2dcfa7fada57a542e20b0fcfd0e6f0cffce7",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/deepinfer/structure_output/matcher.py",
+      "sha256": "83b69010567a4306d6d435c88d019a302e7ee2d89af01eb037a59e40c0e67ce1",
+      "git_blob_sha1": "862cd86625b58725e4071f814865bfbb31217a90",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/protocol/client_tools.rs",
+      "sha256": "6ac02a44eb42a2eb2a64d79eed22b9ea39396f868045bbe4636785d75ba7db73",
+      "git_blob_sha1": "fcd24bbf4e7ba0d162ee21b28c9ef84d9a9552cd",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/DeepInfer/README.md",
+      "sha256": "b55624158ada4dc21b882d24ded06bf82f65350b44d170877b68395712cd670d",
+      "git_blob_sha1": "7143caadd1258f56295e2c7766889478556836b3",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe/src/request/mod.rs",
+      "sha256": "c2d996aca81b6956b9e997c24fd4239a1191248d4e5399dfa069ee41f19fc2b9",
+      "git_blob_sha1": "7fee29fda71d0345115bd06d43ea73d39e91e000",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    },
+    {
+      "path": "phase5/vendor/exp21-source/deepseek-recipe/deepseek-recipe-python/python/deepseek_recipe/_native.pyi",
+      "sha256": "e24cb343288b736a0cfadbada954fa0272f4393ae27222adee8ed080aa2b0e92",
+      "git_blob_sha1": "856de4060d2ca518a4edd676644076281b32a64b",
+      "recorded_hashes_match": true,
+      "git_tree_match": null
+    }
+  ],
+  "installed_native_matches_wheel": true,
+  "installed_stub_matches_fixed_source": true,
+  "native_build_commit": "not attested; fixed source and matching Python stub do not prove native build revision",
+  "dependencies_installed": false,
+  "gpu_inference": false,
+  "deepinfer_imported": false
+}

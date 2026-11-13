@@ -1,0 +1,84 @@
+[
+  {
+    "action": "master_started",
+    "parent_monotonic_ns": 719087313607017,
+    "pid": 123071,
+    "cmd": [
+      "/opt/exp24-20261026-p5f/venv/bin/mooncake_master",
+      "--rpc_address=127.0.0.1",
+      "--rpc_port=50240",
+      "--metrics_port=9024",
+      "--enable_ha=false",
+      "--enable_snapshot=false",
+      "--enable_snapshot_restore=false",
+      "--enable_offload=false"
+    ],
+    "generation": 1
+  },
+  {
+    "action": "client_started",
+    "parent_monotonic_ns": 719087313938121,
+    "client": "A",
+    "pid": 123114
+  },
+  {
+    "action": "stopped",
+    "parent_monotonic_ns": 719088338441149,
+    "label": "master",
+    "pid": 123071,
+    "returncode": 0
+  },
+  {
+    "action": "master_started",
+    "parent_monotonic_ns": 719088390113072,
+    "pid": 123161,
+    "cmd": [
+      "/opt/exp24-20261026-p5f/venv/bin/mooncake_master",
+      "--rpc_address=127.0.0.1",
+      "--rpc_port=50240",
+      "--metrics_port=9024",
+      "--enable_ha=false",
+      "--enable_snapshot=false",
+      "--enable_snapshot_restore=false",
+      "--enable_offload=false"
+    ],
+    "generation": 2
+  },
+  {
+    "action": "sleep",
+    "parent_monotonic_ns": 719088390289085,
+    "seconds": 3
+  },
+  {
+    "action": "sleep",
+    "parent_monotonic_ns": 719091395556888,
+    "seconds": 12
+  },
+  {
+    "action": "client_started",
+    "parent_monotonic_ns": 719103397386334,
+    "client": "B",
+    "pid": 123207
+  },
+  {
+    "action": "stopped",
+    "parent_monotonic_ns": 719107403089778,
+    "label": "master",
+    "pid": 123161,
+    "returncode": 0
+  },
+  {
+    "action": "stopped",
+    "parent_monotonic_ns": 719107407080049,
+    "label": "client-A",
+    "pid": 123114,
+    "returncode": 0
+  },
+  {
+    "action": "stopped",
+    "parent_monotonic_ns": 719107407203479,
+    "label": "client-B",
+    "pid": 123207,
+    "returncode": 0
+  }
+]

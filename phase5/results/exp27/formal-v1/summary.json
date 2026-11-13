@@ -1,0 +1,2983 @@
+{
+  "schema": 1,
+  "experiment": "exp27",
+  "accepted": false,
+  "planned": 42,
+  "eligible": 37,
+  "expected_max_native_attempts": 29,
+  "auditor_sha256": "ce9ed57659407db6a16e693f759a56fd1b86f7087d8880807cf89d720f5481d6",
+  "frozen_source_sha256": {
+    "plan.py": "2671b93b2e5a3a8b00566cd381c9aaaaa435a49c3d8c07dab386cf4a4e8f394e",
+    "analyze.py": "ce9ed57659407db6a16e693f759a56fd1b86f7087d8880807cf89d720f5481d6",
+    "run.py": "3d20e459e9cc1fcafc42c81318c94d70a406b151fa9687bf63f2655dd8e0a711",
+    "serve_gateway.py": "ab50c04404608778083f0015dcded832e5d3d546ccf5e943a0bfdc1aa5d7016b",
+    "gateway.py": "17fdde3b2970e8342a48984056a6d58de5bfa8f446d168c1a9f1f232e7cce5d1",
+    "lifecycle.py": "3f02b0cae2ec254e11a3b8cdb40245f71acc2fb2234a21354e0108d7a3892ab0",
+    "backend_audit.py": "a4f95c98a6e6d82853bc77e2597a2af073ef67c51631fd3869aee18c9ed1f3ff"
+  },
+  "errors": [
+    {
+      "code": "case_coverage",
+      "context": "gateway",
+      "detail": ""
+    },
+    {
+      "code": "case_coverage",
+      "context": "clients",
+      "detail": ""
+    },
+    {
+      "code": "case_coverage",
+      "context": "health",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-a-repeat0-direct",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-a-repeat0-cold",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-a-repeat1-direct",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-a-repeat1-cold",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-a-repeat2-direct",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-a-repeat2-cold",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-b-repeat0-direct",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-b-repeat0-cold",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-b-repeat1-direct",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-b-repeat1-cold",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-b-repeat2-direct",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "tenant-b-repeat2-cold",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "math-17+25-direct",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "math-17+25-integrated",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "math-31-8-direct",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "math-31-8-integrated",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "math-12*7-direct",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "math-12*7-integrated",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "review-marker",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "truncated",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "burst-0",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "burst-1",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "retry-before-content",
+      "detail": ""
+    },
+    {
+      "code": "gateway_terminal",
+      "context": "break-after-commit",
+      "detail": ""
+    },
+    {
+      "code": "attempt_count",
+      "context": "break-after-commit",
+      "detail": ""
+    },
+    {
+      "code": "cache_hit_plan",
+      "context": "break-after-commit",
+      "detail": ""
+    },
+    {
+      "code": "gateway_terminal",
+      "context": "client-cancel",
+      "detail": ""
+    },
+    {
+      "code": "client_error",
+      "context": "client-cancel",
+      "detail": ""
+    },
+    {
+      "code": "event_order",
+      "context": "client-cancel",
+      "detail": ""
+    },
+    {
+      "code": "client_content_packets",
+      "context": "client-cancel",
+      "detail": ""
+    },
+    {
+      "code": "client_terminal",
+      "context": "client-cancel",
+      "detail": ""
+    },
+    {
+      "code": "not_quiescent",
+      "context": "drain-running",
+      "detail": ""
+    },
+    {
+      "code": "gateway_terminal",
+      "context": "drain-running",
+      "detail": ""
+    },
+    {
+      "code": "attempt_count",
+      "context": "drain-running",
+      "detail": ""
+    },
+    {
+      "code": "cache_hit_plan",
+      "context": "drain-running",
+      "detail": ""
+    },
+    {
+      "code": "not_quiescent",
+      "context": "drain-new-entry",
+      "detail": ""
+    },
+    {
+      "code": "not_quiescent",
+      "context": "policy-change",
+      "detail": ""
+    },
+    {
+      "code": "not_quiescent",
+      "context": "tenant-change",
+      "detail": ""
+    },
+    {
+      "code": "backend_coverage",
+      "context": "backend-http",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-a-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-a-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-a-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-a-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-a-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-a-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-a-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-a-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-a-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-a-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-a-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-a-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-a-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-a-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-a-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-a-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-a-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-a-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-a-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-a-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-a-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-a-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-a-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-a-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-a-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-a-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-a-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-a-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-a-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-a-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-a-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-a-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-a-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-a-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-a-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-a-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-b-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-b-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-b-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-b-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-b-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-b-repeat0-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-b-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-b-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-b-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-b-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-b-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-b-repeat0-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-b-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-b-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-b-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-b-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-b-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-b-repeat1-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-b-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-b-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-b-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-b-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-b-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-b-repeat1-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-b-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-b-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-b-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-b-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-b-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-b-repeat2-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-tenant-b-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-tenant-b-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-tenant-b-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-tenant-b-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-tenant-b-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-tenant-b-repeat2-cold/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-math-17+25-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-math-17+25-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-math-17+25-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-math-17+25-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-math-17+25-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-math-17+25-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-math-17+25-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-math-17+25-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-math-17+25-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-math-17+25-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-math-17+25-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-math-17+25-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-math-31-8-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-math-31-8-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-math-31-8-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-math-31-8-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-math-31-8-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-math-31-8-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-math-31-8-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-math-31-8-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-math-31-8-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-math-31-8-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-math-31-8-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-math-31-8-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-math-12*7-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-math-12*7-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-math-12*7-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-math-12*7-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-math-12*7-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-math-12*7-direct/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-math-12*7-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-math-12*7-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-math-12*7-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-math-12*7-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-math-12*7-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-math-12*7-integrated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-review-marker/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-review-marker/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-review-marker/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-review-marker/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_abort_missing",
+      "context": "exp27-review-marker/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-review-marker/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-truncated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-truncated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-truncated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-truncated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-truncated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-truncated/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-burst-0/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-burst-0/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-burst-0/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-burst-0/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-burst-0/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-burst-0/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-burst-1/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-burst-1/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-burst-1/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-burst-1/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-burst-1/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-burst-1/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-retry-before-content/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-retry-before-content/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-retry-before-content/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-retry-before-content/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_abort_missing",
+      "context": "exp27-retry-before-content/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-retry-before-content/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-retry-before-content/a2",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-retry-before-content/a2",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-retry-before-content/a2",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-retry-before-content/a2",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-retry-before-content/a2",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-retry-before-content/a2",
+      "detail": ""
+    },
+    {
+      "code": "native_http_lifecycle",
+      "context": "exp27-client-cancel/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_http_engine_ids",
+      "context": "exp27-client-cancel/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_engine_binding",
+      "context": "exp27-client-cancel/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_not_quiescent",
+      "context": "exp27-client-cancel/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_finish_missing",
+      "context": "exp27-client-cancel/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_final_snapshot",
+      "context": "exp27-client-cancel/a1",
+      "detail": ""
+    },
+    {
+      "code": "native_retry_overlap",
+      "context": "exp27-retry-before-content/a2",
+      "detail": ""
+    }
+  ],
+  "metrics": null,
+  "requests": [
+    {
+      "case_id": "tenant-a-repeat0-direct",
+      "request_id": "exp27-tenant-a-repeat0-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 394.958324,
+      "end_ms": 461.481178,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-a-repeat0-cold",
+      "request_id": "exp27-tenant-a-repeat0-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 76.794497,
+      "end_ms": 77.115344,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-a-repeat0-warm",
+      "request_id": "exp27-tenant-a-repeat0-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.204776,
+      "end_ms": 1.349472,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-a-repeat1-direct",
+      "request_id": "exp27-tenant-a-repeat1-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 48.346854,
+      "end_ms": 69.129469,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-a-repeat1-cold",
+      "request_id": "exp27-tenant-a-repeat1-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 67.840246,
+      "end_ms": 68.214537,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-a-repeat1-warm",
+      "request_id": "exp27-tenant-a-repeat1-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.107914,
+      "end_ms": 1.216885,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-a-repeat2-direct",
+      "request_id": "exp27-tenant-a-repeat2-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 44.844787,
+      "end_ms": 69.335924,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-a-repeat2-cold",
+      "request_id": "exp27-tenant-a-repeat2-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 87.965323,
+      "end_ms": 88.258083,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-a-repeat2-warm",
+      "request_id": "exp27-tenant-a-repeat2-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.138802,
+      "end_ms": 1.255455,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-b-repeat0-direct",
+      "request_id": "exp27-tenant-b-repeat0-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 42.914138,
+      "end_ms": 64.72052,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-b-repeat0-cold",
+      "request_id": "exp27-tenant-b-repeat0-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 71.302707,
+      "end_ms": 71.598484,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-b-repeat0-warm",
+      "request_id": "exp27-tenant-b-repeat0-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.063367,
+      "end_ms": 1.215742,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-b-repeat1-direct",
+      "request_id": "exp27-tenant-b-repeat1-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 50.247581,
+      "end_ms": 88.95384,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-b-repeat1-cold",
+      "request_id": "exp27-tenant-b-repeat1-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 84.467318,
+      "end_ms": 84.770041,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-b-repeat1-warm",
+      "request_id": "exp27-tenant-b-repeat1-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.163582,
+      "end_ms": 1.32569,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-b-repeat2-direct",
+      "request_id": "exp27-tenant-b-repeat2-direct",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 45.428613,
+      "end_ms": 67.934695,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-b-repeat2-cold",
+      "request_id": "exp27-tenant-b-repeat2-cold",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 68.368794,
+      "end_ms": 68.703581,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "tenant-b-repeat2-warm",
+      "request_id": "exp27-tenant-b-repeat2-warm",
+      "route": "integrated",
+      "stratum": "cache-warm",
+      "tenant_id": "tenant-b",
+      "planned_tenant": "tenant-b",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.142669,
+      "end_ms": 1.275949,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "math-17+25-direct",
+      "request_id": "exp27-math-17+25-direct",
+      "route": "direct",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 42.678318,
+      "end_ms": 149.184188,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "math-17+25-integrated",
+      "request_id": "exp27-math-17+25-integrated",
+      "route": "integrated",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 153.983386,
+      "end_ms": 154.31523,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "math-31-8-direct",
+      "request_id": "exp27-math-31-8-direct",
+      "route": "direct",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 41.465633,
+      "end_ms": 185.830635,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "math-31-8-integrated",
+      "request_id": "exp27-math-31-8-integrated",
+      "route": "integrated",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 172.494465,
+      "end_ms": 172.84456,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "math-12*7-direct",
+      "request_id": "exp27-math-12*7-direct",
+      "route": "direct",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "bypass",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 40.912833,
+      "end_ms": 120.036534,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "math-12*7-integrated",
+      "request_id": "exp27-math-12*7-integrated",
+      "route": "integrated",
+      "stratum": "math",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 121.889875,
+      "end_ms": 122.169514,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "reject-auth",
+      "request_id": "exp27-reject-auth",
+      "route": "integrated",
+      "stratum": "entry-reject",
+      "tenant_id": "unknown",
+      "planned_tenant": "tenant-a",
+      "eligible": false,
+      "terminal": "authentication_rejected",
+      "cache": "not_checked",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 0.925635,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "reject-tools",
+      "request_id": "exp27-reject-tools",
+      "route": "integrated",
+      "stratum": "entry-reject",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": false,
+      "terminal": "capability_rejected",
+      "cache": "not_checked",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 0.825118,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "reject-budget",
+      "request_id": "exp27-reject-budget",
+      "route": "integrated",
+      "stratum": "entry-reject",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": false,
+      "terminal": "budget_rejected",
+      "cache": "not_checked",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 2.4766,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "review-marker",
+      "request_id": "exp27-review-marker",
+      "route": "integrated",
+      "stratum": "review",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": false,
+      "terminal": "review_rejected",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 87.062152,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "truncated",
+      "request_id": "exp27-truncated",
+      "route": "integrated",
+      "stratum": "truncated",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 63.960235,
+      "end_ms": 64.261459,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "burst-0",
+      "request_id": "exp27-burst-0",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 604.69941,
+      "end_ms": 605.13079,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "burst-1",
+      "request_id": "exp27-burst-1",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": true,
+      "quality": false,
+      "slo": false,
+      "first_content_ms": 1183.20696,
+      "end_ms": 1183.802974,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "burst-2",
+      "request_id": "exp27-burst-2",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "admission_rejected",
+      "cache": "miss",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 3.933458,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "burst-3",
+      "request_id": "exp27-burst-3",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "admission_rejected",
+      "cache": "miss",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 4.697727,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "burst-4",
+      "request_id": "exp27-burst-4",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "admission_rejected",
+      "cache": "miss",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 5.240302,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "burst-5",
+      "request_id": "exp27-burst-5",
+      "route": "integrated",
+      "stratum": "burst",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "admission_rejected",
+      "cache": "miss",
+      "generation_count": 0,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 5.45828,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "retry-before-content",
+      "request_id": "exp27-retry-before-content",
+      "route": "integrated",
+      "stratum": "retry",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 2,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 432.507913,
+      "end_ms": 432.870929,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "break-after-commit",
+      "request_id": "exp27-break-after-commit",
+      "route": "integrated",
+      "stratum": "delivery-fault",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": true,
+      "slo": true,
+      "first_content_ms": 1.144456,
+      "end_ms": 1.259009,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "client-cancel",
+      "request_id": "exp27-client-cancel",
+      "route": "integrated",
+      "stratum": "cancel",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "miss",
+      "generation_count": 1,
+      "protocol": false,
+      "quality": null,
+      "slo": null,
+      "first_content_ms": null,
+      "end_ms": 5178.330124,
+      "joint": false,
+      "evidence_valid": false
+    },
+    {
+      "case_id": "drain-running",
+      "request_id": "exp27-drain-running",
+      "route": "integrated",
+      "stratum": "drain",
+      "tenant_id": "tenant-a",
+      "planned_tenant": "tenant-a",
+      "eligible": true,
+      "terminal": "completed",
+      "cache": "hit",
+      "generation_count": 0,
+      "protocol": true,
+      "quality": false,
+      "slo": true,
+      "first_content_ms": 1.196957,
+      "end_ms": 1.288396,
+      "joint": false,
+      "evidence_valid": false
+    }
+  ],
+  "attempt_ledger": [
+    {
+      "case_id": "tenant-a-repeat0-direct",
+      "request_id": "exp27-tenant-a-repeat0-direct",
+      "attempt_id": "exp27-tenant-a-repeat0-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat0-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "tenant-a-repeat0-cold",
+      "request_id": "exp27-tenant-a-repeat0-cold",
+      "attempt_id": "exp27-tenant-a-repeat0-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat0-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "tenant-a-repeat1-direct",
+      "request_id": "exp27-tenant-a-repeat1-direct",
+      "attempt_id": "exp27-tenant-a-repeat1-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat1-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "tenant-a-repeat1-cold",
+      "request_id": "exp27-tenant-a-repeat1-cold",
+      "attempt_id": "exp27-tenant-a-repeat1-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat1-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "tenant-a-repeat2-direct",
+      "request_id": "exp27-tenant-a-repeat2-direct",
+      "attempt_id": "exp27-tenant-a-repeat2-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat2-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "tenant-a-repeat2-cold",
+      "request_id": "exp27-tenant-a-repeat2-cold",
+      "attempt_id": "exp27-tenant-a-repeat2-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-a-repeat2-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "tenant-b-repeat0-direct",
+      "request_id": "exp27-tenant-b-repeat0-direct",
+      "attempt_id": "exp27-tenant-b-repeat0-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat0-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "tenant-b-repeat0-cold",
+      "request_id": "exp27-tenant-b-repeat0-cold",
+      "attempt_id": "exp27-tenant-b-repeat0-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat0-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "tenant-b-repeat1-direct",
+      "request_id": "exp27-tenant-b-repeat1-direct",
+      "attempt_id": "exp27-tenant-b-repeat1-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat1-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "tenant-b-repeat1-cold",
+      "request_id": "exp27-tenant-b-repeat1-cold",
+      "attempt_id": "exp27-tenant-b-repeat1-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat1-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "tenant-b-repeat2-direct",
+      "request_id": "exp27-tenant-b-repeat2-direct",
+      "attempt_id": "exp27-tenant-b-repeat2-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "direct",
+      "stratum": "normal-direct",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat2-direct/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "tenant-b-repeat2-cold",
+      "request_id": "exp27-tenant-b-repeat2-cold",
+      "attempt_id": "exp27-tenant-b-repeat2-cold/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-b",
+      "route": "integrated",
+      "stratum": "cache-cold",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-tenant-b-repeat2-cold/a1",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 17,
+        "total_tokens": 19,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "math-17+25-direct",
+      "request_id": "exp27-math-17+25-direct",
+      "attempt_id": "exp27-math-17+25-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-17+25-direct/a1",
+        "usage": {
+          "prompt_tokens": 30,
+          "total_tokens": 36,
+          "completion_tokens": 6
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "math-17+25-integrated",
+      "request_id": "exp27-math-17+25-integrated",
+      "attempt_id": "exp27-math-17+25-integrated/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-17+25-integrated/a1",
+        "usage": {
+          "prompt_tokens": 30,
+          "total_tokens": 36,
+          "completion_tokens": 6
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 36,
+        "completion_tokens": 6
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "math-31-8-direct",
+      "request_id": "exp27-math-31-8-direct",
+      "attempt_id": "exp27-math-31-8-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-31-8-direct/a1",
+        "usage": {
+          "prompt_tokens": 29,
+          "total_tokens": 37,
+          "completion_tokens": 8
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "math-31-8-integrated",
+      "request_id": "exp27-math-31-8-integrated",
+      "attempt_id": "exp27-math-31-8-integrated/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-31-8-integrated/a1",
+        "usage": {
+          "prompt_tokens": 29,
+          "total_tokens": 37,
+          "completion_tokens": 8
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 37,
+        "completion_tokens": 8
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "math-12*7-direct",
+      "request_id": "exp27-math-12*7-direct",
+      "attempt_id": "exp27-math-12*7-direct/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "direct",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-12*7-direct/a1",
+        "usage": {
+          "prompt_tokens": 29,
+          "total_tokens": 34,
+          "completion_tokens": 5
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "math-12*7-integrated",
+      "request_id": "exp27-math-12*7-integrated",
+      "attempt_id": "exp27-math-12*7-integrated/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "math",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "settlement": {
+        "attempt_id": "exp27-math-12*7-integrated/a1",
+        "usage": {
+          "prompt_tokens": 29,
+          "total_tokens": 34,
+          "completion_tokens": 5
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 34,
+        "completion_tokens": 5
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "review-marker",
+      "request_id": "exp27-review-marker",
+      "attempt_id": "exp27-review-marker/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "review",
+      "outcome": "review_rejected",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 23,
+        "total_tokens": 26,
+        "completion_tokens": 3
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 23,
+        "total_tokens": 26,
+        "completion_tokens": 3
+      },
+      "settlement": {
+        "attempt_id": "exp27-review-marker/a1",
+        "usage": {
+          "prompt_tokens": 23,
+          "total_tokens": 26,
+          "completion_tokens": 3
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 23,
+        "total_tokens": 26,
+        "completion_tokens": 3
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "truncated",
+      "request_id": "exp27-truncated",
+      "attempt_id": "exp27-truncated/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "truncated",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 39,
+        "completion_tokens": 2
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 39,
+        "completion_tokens": 2
+      },
+      "settlement": {
+        "attempt_id": "exp27-truncated/a1",
+        "usage": {
+          "prompt_tokens": 37,
+          "total_tokens": 39,
+          "completion_tokens": 2
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 39,
+        "completion_tokens": 2
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "burst-0",
+      "request_id": "exp27-burst-0",
+      "attempt_id": "exp27-burst-0/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "burst",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 63,
+        "completion_tokens": 22
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 63,
+        "completion_tokens": 22
+      },
+      "settlement": {
+        "attempt_id": "exp27-burst-0/a1",
+        "usage": {
+          "prompt_tokens": 41,
+          "total_tokens": 63,
+          "completion_tokens": 22
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 63,
+        "completion_tokens": 22
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "burst-1",
+      "request_id": "exp27-burst-1",
+      "attempt_id": "exp27-burst-1/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "burst",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 62,
+        "completion_tokens": 21
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 62,
+        "completion_tokens": 21
+      },
+      "settlement": {
+        "attempt_id": "exp27-burst-1/a1",
+        "usage": {
+          "prompt_tokens": 41,
+          "total_tokens": 62,
+          "completion_tokens": 21
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 41,
+        "total_tokens": 62,
+        "completion_tokens": 21
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "retry-before-content",
+      "request_id": "exp27-retry-before-content",
+      "attempt_id": "exp27-retry-before-content/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "retry",
+      "outcome": "first_content_timeout",
+      "retry": false,
+      "usage": null,
+      "usage_source": "unknown",
+      "usage_known": false,
+      "native_usage": null,
+      "settlement": {
+        "attempt_id": "exp27-retry-before-content/a1",
+        "usage": null,
+        "source": "unknown"
+      },
+      "resource_usage": null,
+      "resource_usage_source": "unknown"
+    },
+    {
+      "case_id": "retry-before-content",
+      "request_id": "exp27-retry-before-content",
+      "attempt_id": "exp27-retry-before-content/a2",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "retry",
+      "outcome": "completed",
+      "retry": true,
+      "usage": {
+        "prompt_tokens": 34,
+        "total_tokens": 50,
+        "completion_tokens": 16
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 34,
+        "total_tokens": 50,
+        "completion_tokens": 16
+      },
+      "settlement": {
+        "attempt_id": "exp27-retry-before-content/a2",
+        "usage": {
+          "prompt_tokens": 34,
+          "total_tokens": 50,
+          "completion_tokens": 16
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 34,
+        "total_tokens": 50,
+        "completion_tokens": 16
+      },
+      "resource_usage_source": "native_stream_usage"
+    },
+    {
+      "case_id": "client-cancel",
+      "request_id": "exp27-client-cancel",
+      "attempt_id": "exp27-client-cancel/a1",
+      "mode": "gpu",
+      "tenant_id": "tenant-a",
+      "route": "integrated",
+      "stratum": "cancel",
+      "outcome": "completed",
+      "retry": false,
+      "usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 58,
+        "completion_tokens": 21
+      },
+      "usage_source": "native_stream_usage",
+      "usage_known": true,
+      "native_usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 58,
+        "completion_tokens": 21
+      },
+      "settlement": {
+        "attempt_id": "exp27-client-cancel/a1",
+        "usage": {
+          "prompt_tokens": 37,
+          "total_tokens": 58,
+          "completion_tokens": 21
+        },
+        "source": "native_stream_usage"
+      },
+      "resource_usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 58,
+        "completion_tokens": 21
+      },
+      "resource_usage_source": "native_stream_usage"
+    }
+  ],
+  "backend": {
+    "http_rows": 0,
+    "http_evidence": "absent_optional",
+    "engine_abort_evidence": "invalid_cpu_hooks",
+    "non_http_rows": 1,
+    "scope": "HTTP transport evidence does not establish engine abort or GPU kernel stop",
+    "engine_attempts": [
+      {
+        "attempt_id": "exp27-tenant-a-repeat0-direct/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-a-repeat0-cold/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-a-repeat1-direct/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-a-repeat1-cold/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-a-repeat2-direct/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-a-repeat2-cold/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat0-direct/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat0-cold/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat1-direct/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat1-cold/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat2-direct/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-tenant-b-repeat2-cold/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-17+25-direct/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-17+25-integrated/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-31-8-direct/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-31-8-integrated/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-12*7-direct/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-math-12*7-integrated/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-review-marker/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-truncated/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-burst-0/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-burst-1/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-retry-before-content/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-retry-before-content/a2",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      },
+      {
+        "attempt_id": "exp27-client-cancel/a1",
+        "engine_request_ids": [],
+        "http_id": null,
+        "engine_finished": false,
+        "abort_called": false,
+        "abort_returned": false,
+        "abort_done_observed": false,
+        "scheduler_quiescent": false,
+        "gpu_kernel_stopped": "unknown"
+      }
+    ],
+    "native_retry_order": [
+      {
+        "previous_attempt_id": "exp27-retry-before-content/a1",
+        "attempt_id": "exp27-retry-before-content/a2",
+        "previous_engine_quiescent_before_next": null,
+        "evidence": "same backend monotonic clock; CPU scheduler/tracker only"
+      }
+    ],
+    "gpu_kernel_stopped": "unknown"
+  },
+  "resource": {
+    "process_union_ns": 27723854181,
+    "ready_union_ns": 16332582579,
+    "supervisor_clock_domain": "supervisor-126731",
+    "cpu_reaped_seconds": 32.060842,
+    "cpu_scope": "reaped process rusage; may include startup and idle CPU",
+    "gpu_kernel_seconds": null,
+    "gpu_weight_residency_seconds": null,
+    "tenant_gpu_seconds": null,
+    "paid_currency": null
+  },
+  "observed": {
+    "gateway_rows": 39,
+    "client_rows": 39,
+    "backend_rows": 1,
+    "terminal_counts": {
+      "completed": 31,
+      "authentication_rejected": 1,
+      "capability_rejected": 1,
+      "budget_rejected": 1,
+      "review_rejected": 1,
+      "admission_rejected": 4
+    }
+  },
+  "scope": "Single GPU loopback experiment; known native-token subtotal is not total cost, kernel time, tenant GPU time or paid currency"
+}

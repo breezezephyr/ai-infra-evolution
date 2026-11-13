@@ -1,0 +1,18 @@
+{
+  "platform": "Linux-192.0.2.10-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "versions": {
+    "vllm": "0.8.5",
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "fastapi": "0.136.3",
+    "httpx": "0.28.1"
+  },
+  "model_path": "/opt/models/Qwen3-0.6B",
+  "model_revision": null,
+  "files": {
+    "config.json": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "model.safetensors": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b"
+  }
+}

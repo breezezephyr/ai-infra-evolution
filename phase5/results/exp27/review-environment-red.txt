@@ -1,0 +1,19 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______________________ test_gpu_query_resolves_linux_path ______________________
+
+    def test_gpu_query_resolves_linux_path():
+     with patch.object(run.shutil,'which',return_value='/usr/bin/nvidia-smi'),patch.object(run.subprocess,'check_output',return_value='device, 0 MiB\n') as call:
+      assert run.gpu()=='device, 0 MiB'
+>     assert call.call_args.args[0][0]=='/usr/bin/nvidia-smi'
+E     AssertionError: assert '/usr/lib/wsl/lib/nvidia-smi' == '/usr/bin/nvidia-smi'
+E       
+E       - /usr/bin/nvidia-smi
+E       ?        ^
+E       + /usr/lib/wsl/lib/nvidia-smi
+E       ?      ++ ++++++ ^
+
+phase5/exp27/test_run.py:10: AssertionError
+=========================== short test summary info ============================
+FAILED phase5/exp27/test_run.py::test_gpu_query_resolves_linux_path - Asserti...
+1 failed in 0.03s

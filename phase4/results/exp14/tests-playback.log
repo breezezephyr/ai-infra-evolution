@@ -1,0 +1,202 @@
+TAP version 13
+# Subtest: WAV DataView reads exact signed 16 kHz samples through padded chunks
+ok 1 - WAV DataView reads exact signed 16 kHz samples through padded chunks
+  ---
+  duration_ms: 1.692208
+  type: 'test'
+  ...
+# Subtest: WAV rejects resampled formats, inconsistent lengths and half samples
+ok 2 - WAV rejects resampled formats, inconsistent lengths and half samples
+  ---
+  duration_ms: 0.345167
+  type: 'test'
+  ...
+# Subtest: wire format matches the 28-byte <4sIIIQI little-endian header
+ok 3 - wire format matches the 28-byte <4sIIIQI little-endian header
+  ---
+  duration_ms: 0.809208
+  type: 'test'
+  ...
+# Subtest: wire decoder rejects truncated, excess, empty and oversized payloads
+ok 4 - wire decoder rejects truncated, excess, empty and oversized payloads
+  ---
+  duration_ms: 0.206792
+  type: 'test'
+  ...
+# Subtest: sequence and sample offsets start at zero and reject gaps without advancing
+ok 5 - sequence and sample offsets start at zero and reject gaps without advancing
+  ---
+  duration_ms: 0.339625
+  type: 'test'
+  ...
+# Subtest: old turn, generation and previous session frames cannot contaminate playback
+ok 6 - old turn, generation and previous session frames cannot contaminate playback
+  ---
+  duration_ms: 0.166
+  type: 'test'
+  ...
+# Subtest: queue accepts exactly 48000 source samples and rejects overflow atomically
+ok 7 - queue accepts exactly 48000 source samples and rejects overflow atomically
+  ---
+  duration_ms: 8.785667
+  type: 'test'
+  ...
+# Subtest: 24k to 48k interpolation spans packet boundaries and terminal drains the tail
+ok 8 - 24k to 48k interpolation spans packet boundaries and terminal drains the tail
+  ---
+  duration_ms: 0.142666
+  type: 'test'
+  ...
+# Subtest: fractional resampling at 44100 Hz preserves source position across render blocks
+ok 9 - fractional resampling at 44100 Hz preserves source position across render blocks
+  ---
+  duration_ms: 0.824292
+  type: 'test'
+  ...
+# Subtest: downsampling consumes skipped source samples and never acknowledges unreceived samples
+ok 10 - downsampling consumes skipped source samples and never acknowledges unreceived samples
+  ---
+  duration_ms: 0.450958
+  type: 'test'
+  ...
+# Subtest: initial wait and time after terminal drain are excluded from underrun
+ok 11 - initial wait and time after terminal drain are excluded from underrun
+  ---
+  duration_ms: 0.479875
+  type: 'test'
+  ...
+# Subtest: active starvation counts only missing source time and stops at terminal even when empty
+ok 12 - active starvation counts only missing source time and stops at terminal even when empty
+  ---
+  duration_ms: 0.116292
+  type: 'test'
+  ...
+# Subtest: queue starvation resumes continuously without losing a fractional tail or inventing acks
+ok 13 - queue starvation resumes continuously without losing a fractional tail or inventing acks
+  ---
+  duration_ms: 0.083083
+  type: 'test'
+  ...
+# Subtest: terminal without any audio drains immediately and rejects subsequent current frames
+ok 14 - terminal without any audio drains immediately and rejects subsequent current frames
+  ---
+  duration_ms: 0.123959
+  type: 'test'
+  ...
+# Subtest: silence uses fixed 10ms RMS windows and records the first qualifying rendered sample
+ok 15 - silence uses fixed 10ms RMS windows and records the first qualifying rendered sample
+  ---
+  duration_ms: 0.857333
+  type: 'test'
+  ...
+# Subtest: one loud impulse below window RMS threshold does not become first sound
+ok 16 - one loud impulse below window RMS threshold does not become first sound
+  ---
+  duration_ms: 0.441083
+  type: 'test'
+  ...
+# Subtest: terminal evaluates a partial final silence window rather than losing a short sound
+ok 17 - terminal evaluates a partial final silence window rather than losing a short sound
+  ---
+  duration_ms: 0.1255
+  type: 'test'
+  ...
+# Subtest: device output estimate uses getOutputTimestamp clock mapping and unsupported maps to null
+ok 18 - device output estimate uses getOutputTimestamp clock mapping and unsupported maps to null
+  ---
+  duration_ms: 0.197667
+  type: 'test'
+  ...
+# Subtest: reference end maps within the actual frame send, including an exact frame boundary
+ok 19 - reference end maps within the actual frame send, including an exact frame boundary
+  ---
+  duration_ms: 0.097958
+  type: 'test'
+  ...
+# Subtest: input replay uses 320 sample packets at real 20ms cadence and waits for the final tail
+ok 20 - input replay uses 320 sample packets at real 20ms cadence and waits for the final tail
+  ---
+  duration_ms: 0.838042
+  type: 'test'
+  ...
+# Subtest: late input timers do not catch up by bursting multiple packets together
+ok 21 - late input timers do not catch up by bursting multiple packets together
+  ---
+  duration_ms: 0.165
+  type: 'test'
+  ...
+# Subtest: abort stops input without an input_end that falsely claims full delivery
+ok 22 - abort stops input without an input_end that falsely claims full delivery
+  ---
+  duration_ms: 0.177583
+  type: 'test'
+  ...
+# Subtest: real worklet adapter filters old messages and reports actual consumption with a bounded cadence
+ok 23 - real worklet adapter filters old messages and reports actual consumption with a bounded cadence
+  ---
+  duration_ms: 2.103541
+  type: 'test'
+  ...
+# Subtest: main-thread ledger acknowledges consumed source samples, never receipt or fractional progress
+ok 24 - main-thread ledger acknowledges consumed source samples, never receipt or fractional progress
+  ---
+  duration_ms: 0.222125
+  type: 'test'
+  ...
+# Subtest: main-thread ledger bounds in-flight plus worklet queue and drops stale socket identities
+ok 25 - main-thread ledger bounds in-flight plus worklet queue and drops stale socket identities
+  ---
+  duration_ms: 3.761333
+  type: 'test'
+  ...
+# Subtest: an empty active queue counts starvation until terminal and none afterwards
+ok 26 - an empty active queue counts starvation until terminal and none afterwards
+  ---
+  duration_ms: 0.201834
+  type: 'test'
+  ...
+# Subtest: browser turn sends start/input/actual acks and POSTs only after terminal audio tail is rendered
+ok 27 - browser turn sends start/input/actual acks and POSTs only after terminal audio tail is rendered
+  ---
+  duration_ms: 11.317917
+  type: 'test'
+  ...
+# Subtest: unsupported output timestamp preserves null while render and input sample mappings remain recorded
+ok 28 - unsupported output timestamp preserves null while render and input sample mappings remain recorded
+  ---
+  duration_ms: 2.67375
+  type: 'test'
+  ...
+# Subtest: socket close is a failure without explicit terminal but accepted output still drains
+ok 29 - socket close is a failure without explicit terminal but accepted output still drains
+  ---
+  duration_ms: 2.401958
+  type: 'test'
+  ...
+# Subtest: failed POST remains a visible failure with the full result available to download
+ok 30 - failed POST remains a visible failure with the full result available to download
+  ---
+  duration_ms: 2.921416
+  type: 'test'
+  ...
+# Subtest: acks advance while streaming only after the real worklet consumes source samples
+ok 31 - acks advance while streaming only after the real worklet consumes source samples
+  ---
+  duration_ms: 2.97125
+  type: 'test'
+  ...
+# Subtest: a premature success terminal cannot hide partial input as a successful complete run
+ok 32 - a premature success terminal cannot hide partial input as a successful complete run
+  ---
+  duration_ms: 0.952417
+  type: 'test'
+  ...
+1..32
+# tests 32
+# suites 0
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 104.751375

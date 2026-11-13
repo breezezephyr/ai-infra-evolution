@@ -1,0 +1,238 @@
+{
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "pid": 155,
+  "backend": "transformers.generate",
+  "served_model": "qwen3-4b",
+  "model_path": "/kaggle/temp/p5-exp29/hf/hub/models--Qwen--Qwen3-4B/snapshots/1cfa9a7208912126459214e8b04321603b3df60c",
+  "execution": "single GPU0, FP16, serial; no vLLM/DeepInfer/continuous batching",
+  "clock_domain": "server-155:monotonic_ns",
+  "timing_note": "instrumented wall time within this process; never subtract client clocks",
+  "torch": "2.11.0+cu130",
+  "transformers": "4.51.3",
+  "fastapi": "0.115.12",
+  "uvicorn": "0.34.2",
+  "cuda_runtime": "13.0",
+  "cuda_available": true,
+  "gpu0": {
+    "name": "Tesla T4",
+    "total_memory_bytes": 15636037632,
+    "capability": [
+      7,
+      5
+    ]
+  },
+  "visible_gpu_count": 2,
+  "gpu_memory_before_load": {
+    "device": "cuda:0",
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "device_free_bytes": 15419113472,
+    "device_total_bytes": 15636037632,
+    "device_free_scope": "whole GPU; may include other processes",
+    "allocator_scope": "this server process only"
+  },
+  "model_files": [
+    {
+      "path": "config.json",
+      "bytes": 726,
+      "sha256": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a"
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 239,
+      "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    {
+      "path": "model-00001-of-00003.safetensors",
+      "bytes": 3957900840,
+      "sha256": "328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223"
+    },
+    {
+      "path": "model-00002-of-00003.safetensors",
+      "bytes": 3987450520,
+      "sha256": "6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5"
+    },
+    {
+      "path": "model-00003-of-00003.safetensors",
+      "bytes": 99630640,
+      "sha256": "e4bf436957184f4eeb86a80e9db394503f1f56446b2e6b7edeac5b81470f4ca1"
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "bytes": 32819,
+      "sha256": "6dc0981b8829fead746441f68f38f24c5ca4a3a66351f652c26c6df0efc43ab2"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 11422654,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 9732,
+      "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+    },
+    {
+      "path": "vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "/kaggle/working/exp29-code/experiment.py",
+      "sha256": "dacfc38bc8fc2d57970219e5d9a6be6811ba627b176faa1366b8ce3f3e68f0b7"
+    },
+    {
+      "path": "/kaggle/working/exp29-code/test_sse.py",
+      "sha256": "85a3fbfe9cb164859345d8e2b872a7c667f743eb24d409a82747b1e2eb4db29f"
+    }
+  ],
+  "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {{- messages[0].content + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0].content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" and message.content is string and not(message.content.startswith('<tool_response>') and message.content.endswith('</tool_response>')) %}\n        {%- set ns.multi_step_tool = false %}\n        {%- set ns.last_query_index = index %}\n    {%- endif %}\n{%- endfor %}\n{%- for message in messages %}\n    {%- if message.content is string %}\n        {%- set content = message.content %}\n    {%- else %}\n        {%- set content = '' %}\n    {%- endif %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {%- if loop.last or (not loop.last and reasoning_content) %}\n                {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content.strip('\\n') + '\\n</think>\\n\\n' + content.lstrip('\\n') }}\n            {%- else %}\n                {{- '<|im_start|>' + message.role + '\\n' + content }}\n            {%- endif %}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- endif %}\n{%- endif %}",
+  "template_options": {
+    "enable_thinking": false,
+    "add_generation_prompt": true
+  },
+  "rendered_template": "<|im_start|>user\n请用一句简短的中文解释天空为什么通常是蓝色的。<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "model_config": {
+    "vocab_size": 151936,
+    "max_position_embeddings": 40960,
+    "hidden_size": 2560,
+    "intermediate_size": 9728,
+    "num_hidden_layers": 36,
+    "num_attention_heads": 32,
+    "use_sliding_window": false,
+    "sliding_window": null,
+    "max_window_layers": 36,
+    "num_key_value_heads": 8,
+    "head_dim": 128,
+    "hidden_act": "silu",
+    "initializer_range": 0.02,
+    "rms_norm_eps": 1e-06,
+    "use_cache": true,
+    "rope_theta": 1000000,
+    "rope_scaling": null,
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "return_dict": true,
+    "output_hidden_states": false,
+    "output_attentions": false,
+    "torchscript": false,
+    "torch_dtype": "float16",
+    "use_bfloat16": false,
+    "tf_legacy_loss": false,
+    "pruned_heads": {},
+    "tie_word_embeddings": true,
+    "chunk_size_feed_forward": 0,
+    "is_encoder_decoder": false,
+    "is_decoder": false,
+    "cross_attention_hidden_size": null,
+    "add_cross_attention": false,
+    "tie_encoder_decoder": false,
+    "max_length": 20,
+    "min_length": 0,
+    "do_sample": false,
+    "early_stopping": false,
+    "num_beams": 1,
+    "num_beam_groups": 1,
+    "diversity_penalty": 0.0,
+    "temperature": 1.0,
+    "top_k": 50,
+    "top_p": 1.0,
+    "typical_p": 1.0,
+    "repetition_penalty": 1.0,
+    "length_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "encoder_no_repeat_ngram_size": 0,
+    "bad_words_ids": null,
+    "num_return_sequences": 1,
+    "output_scores": false,
+    "return_dict_in_generate": false,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": false,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "architectures": [
+      "Qwen3ForCausalLM"
+    ],
+    "finetuning_task": null,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "tokenizer_class": null,
+    "prefix": null,
+    "bos_token_id": 151643,
+    "pad_token_id": null,
+    "eos_token_id": 151645,
+    "sep_token_id": null,
+    "decoder_start_token_id": null,
+    "task_specific_params": null,
+    "problem_type": null,
+    "_name_or_path": "/kaggle/temp/p5-exp29/hf/hub/models--Qwen--Qwen3-4B/snapshots/1cfa9a7208912126459214e8b04321603b3df60c",
+    "_attn_implementation_autoset": true,
+    "transformers_version": "4.51.3",
+    "model_type": "qwen3"
+  },
+  "parameter_count": 4022468096,
+  "parameter_devices": [
+    "cuda:0"
+  ],
+  "parameter_dtypes": [
+    "torch.float16"
+  ],
+  "gpu_memory_after_load": {
+    "device": "cuda:0",
+    "allocated_bytes": 8101709312,
+    "reserved_bytes": 8103395328,
+    "peak_allocated_bytes": 8101709312,
+    "peak_reserved_bytes": 8103395328,
+    "device_free_bytes": 7315718144,
+    "device_total_bytes": 15636037632,
+    "device_free_scope": "whole GPU; may include other processes",
+    "allocator_scope": "this server process only"
+  },
+  "implementation_files": [
+    {
+      "method": "GenerationMixin.generate",
+      "path": "/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py",
+      "sha256": "f22c21a037c4b26a431112138fa66a5108c5e9cfe4c9169e732c1d15ea7a8406"
+    },
+    {
+      "method": "TextStreamer.put",
+      "path": "/usr/local/lib/python3.13/dist-packages/transformers/generation/streamers.py",
+      "sha256": "4e7d663f74dbea34d2a09c46d307fa0db7f44a81c2d79febff024b3982541a4c"
+    },
+    {
+      "method": "PreTrainedTokenizerBase.apply_chat_template",
+      "path": "/usr/local/lib/python3.13/dist-packages/transformers/tokenization_utils_base.py",
+      "sha256": "32acd70cda55191fc1e1e659af62b9afce2411ddf21c5b8e2ffaa8ac0463da66"
+    }
+  ],
+  "port": 8765,
+  "bind_host": "127.0.0.1",
+  "gpu_memory_before_process_exit": {
+    "device": "cuda:0",
+    "allocated_bytes": 8110228992,
+    "reserved_bytes": 8134852608,
+    "peak_allocated_bytes": 8119002112,
+    "peak_reserved_bytes": 8134852608,
+    "device_free_bytes": 7254900736,
+    "device_total_bytes": 15636037632,
+    "device_free_scope": "whole GPU; may include other processes",
+    "allocator_scope": "this server process only"
+  }
+}

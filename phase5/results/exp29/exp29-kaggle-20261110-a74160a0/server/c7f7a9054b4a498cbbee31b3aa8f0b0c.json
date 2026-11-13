@@ -1,0 +1,17 @@
+{
+  "request_id": "c7f7a9054b4a498cbbee31b3aa8f0b0c",
+  "client_request_id": "exp29-kaggle-20261110-a74160a0:over-limit",
+  "run_id": "exp29-kaggle-20261110-a74160a0",
+  "clock_domain": "server-155:monotonic_ns",
+  "request_started_ns": 1035616277449,
+  "body_utf8": "{\"model\":\"qwen3-4b\",\"messages\":[{\"role\":\"user\",\"content\":\"请用一句简短的中文解释天空为什么通常是蓝色的。\"}],\"max_tokens\":65,\"stream\":false,\"temperature\":0,\"seed\":29}",
+  "body_sha256": "d7740ea0f352336b731496307207afc019435e70ab9eac9120578a529ae2991f",
+  "prompt_sha256": "c42234b79cc73251f8e6ae0d2c324cee401626697ed7aab915785d0392ac63d6",
+  "requested_model": "qwen3-4b",
+  "loaded_model_alias": "qwen3-4b",
+  "native_state": "not_run",
+  "token_callbacks": [],
+  "http_status": 422,
+  "rejection_code": "token_limit",
+  "request_total_ns": 375685
+}

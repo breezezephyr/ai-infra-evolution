@@ -1,0 +1,356 @@
+{
+  "id": "multi-disabled-chat",
+  "protocol": "chat",
+  "family": "multi_disabled",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是简洁的中文助手。"
+      },
+      {
+        "role": "user",
+        "content": "记住暗号 MULTI_ALPHA_19。"
+      },
+      {
+        "role": "assistant",
+        "content": "已记住 MULTI_ALPHA_19。",
+        "reasoning_content": "HISTORY_REASONING_DROP_19"
+      },
+      {
+        "role": "user",
+        "content": "刚才的暗号是什么？"
+      }
+    ],
+    "thinking": {
+      "type": "disabled"
+    },
+    "reasoning_effort": "max"
+  },
+  "options": {},
+  "input_sha256": "030be30fa6e49af8ac88476b1adbd6b0fef4394c6752ebd8e343522128122dfc",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "pass",
+      "evidence": {
+        "prompt_tokens": 44
+      }
+    },
+    {
+      "name": "historical_reasoning_cleared",
+      "status": "pass",
+      "evidence": {
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "roles": [
+            "system",
+            "user",
+            "assistant",
+            "user"
+          ],
+          "message_contents": [
+            "你是简洁的中文助手。",
+            "记住暗号 MULTI_ALPHA_19。",
+            "已记住 MULTI_ALPHA_19。",
+            "刚才的暗号是什么？"
+          ],
+          "assistant_reasoning_contents": [
+            null
+          ],
+          "tool_names": [],
+          "tool_parameter_schemas": [],
+          "tool_choice": "auto",
+          "max_tokens": null,
+          "temperature": 1.0,
+          "top_p": 1.0,
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "parse_tool_calls": false,
+          "starts_in_tool_calls": false
+        },
+        "differences": {}
+      }
+    },
+    {
+      "name": "resolve_default_non_thinking_8192",
+      "status": "pass",
+      "evidence": {
+        "large_context": 8192,
+        "seven_left": 7,
+        "expected_default": 8192
+      }
+    },
+    {
+      "name": "family_compare",
+      "status": "pass",
+      "evidence": {
+        "family": "multi_disabled",
+        "n": 3,
+        "ids": [
+          "multi-disabled-chat",
+          "multi-disabled-responses",
+          "multi-disabled-messages"
+        ],
+        "invariant_fields": [
+          "assistant_reasoning_contents",
+          "max_tokens",
+          "message_contents",
+          "model_version",
+          "output_constraint_kind",
+          "reasoning_effort",
+          "roles",
+          "stop_sequences",
+          "temperature",
+          "thinking_mode",
+          "tool_choice",
+          "tool_names",
+          "top_p"
+        ],
+        "declared_protocol_differences": {},
+        "passed": true,
+        "prompt_equality_required": false
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是简洁的中文助手。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        },
+        {
+          "role": "user",
+          "content": "记住暗号 MULTI_ALPHA_19。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "已记住 MULTI_ALPHA_19。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        },
+        {
+          "role": "user",
+          "content": "刚才的暗号是什么？",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": false,
+      "reasoning_effort": null,
+      "tools": [],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": null,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": null
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": false,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [],
+      "thinking_initial_stage": "None"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": false,
+    "reasoning_effort": null,
+    "roles": [
+      "system",
+      "user",
+      "assistant",
+      "user"
+    ],
+    "message_contents": [
+      "你是简洁的中文助手。",
+      "记住暗号 MULTI_ALPHA_19。",
+      "已记住 MULTI_ALPHA_19。",
+      "刚才的暗号是什么？"
+    ],
+    "assistant_reasoning_contents": [
+      null
+    ],
+    "tool_names": [],
+    "tool_parameter_schemas": [],
+    "tool_choice": "auto",
+    "max_tokens": null,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "output_constraint_kind": null,
+    "stop_sequences": [],
+    "parse_tool_calls": false,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜System｜>你是简洁的中文助手。<｜User｜>记住暗号 MULTI_ALPHA_19。<｜Assistant｜></think>已记住 MULTI_ALPHA_19。<｜end▁of▁sentence｜><｜User｜>刚才的暗号是什么？<｜Assistant｜></think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        31
+      ],
+      [
+        41,
+        49
+      ],
+      [
+        69,
+        82
+      ],
+      [
+        82,
+        90
+      ],
+      [
+        109,
+        128
+      ],
+      [
+        128,
+        136
+      ],
+      [
+        145,
+        158
+      ],
+      [
+        158,
+        166
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜System｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "</think>",
+      "<｜end▁of▁sentence｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "</think>"
+    ]
+  },
+  "encoding": {
+    "status": "ok",
+    "token_ids": [
+      0,
+      128799,
+      15061,
+      47321,
+      17001,
+      978,
+      52334,
+      320,
+      128803,
+      28985,
+      6291,
+      2449,
+      101695,
+      43,
+      65,
+      2570,
+      50,
+      11013,
+      65,
+      511,
+      320,
+      128804,
+      128822,
+      1481,
+      28985,
+      101695,
+      43,
+      65,
+      2570,
+      50,
+      11013,
+      65,
+      511,
+      320,
+      1,
+      128803,
+      16293,
+      301,
+      6291,
+      2449,
+      9416,
+      1148,
+      128804,
+      128822
+    ],
+    "prompt_tokens": 44,
+    "token_ids_sha256": "64e1fa90324e9f3561d1d53df6f977728b949846ac96a8ed4f8f465a775df494"
+  },
+  "context_probes": [
+    {
+      "prompt": 44,
+      "context": 262188,
+      "value": 8192
+    },
+    {
+      "prompt": 44,
+      "context": 51,
+      "value": 7
+    }
+  ],
+  "elapsed_ms": 10.066875
+}

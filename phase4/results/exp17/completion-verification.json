@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-23",
+  "gpu_formal_runs": 36,
+  "gpu_formal_errors": 0,
+  "warmup_runs": 4,
+  "queue_virtual_runs": 6,
+  "tests": {
+    "command": "python3 -B -m unittest discover -s phase4/exp17 -p 'test_*.py'",
+    "passed": 26,
+    "exit_code": 0,
+    "evidence": "Executed after final run_gpu warmup/input checks; Ran 26 tests in 1.065s, OK."
+  },
+  "raw_analysis_checks": {
+    "input_hashes_and_samples": true,
+    "no_future_audio_to_asr": true,
+    "only_selected_draft_after_final_published": true,
+    "all_model_threads_joined": true,
+    "old_draft_returned_before_next_start": true,
+    "queue_completed_plus_dropped_300_each": true,
+    "measured_source_hashes_match": true
+  },
+  "scope": {
+    "native_streaming_asr": false,
+    "microphone": false,
+    "vad": false,
+    "tts": false,
+    "playback": false,
+    "video_inference": false,
+    "queue_clock": "deterministic_virtual_integer_ticks"
+  },
+  "remote_cleanup": {
+    "independent_ssh_readback": true,
+    "experiment_processes": [],
+    "gpu_router": "active",
+    "full_card_gpu_mib_before": 342,
+    "full_card_gpu_mib_after": 350,
+    "new_http_service_or_ssh_tunnel": false
+  },
+  "layout": {
+    "viewport": 390,
+    "pageWidth": 390,
+    "pageHeight": 11071,
+    "images": [
+      {
+        "src": "img/01-一页纸.png",
+        "width": 2160,
+        "height": 4160,
+        "displayWidth": 326
+      },
+      {
+        "src": "img/11-exp17.png",
+        "width": 3000,
+        "height": 2040,
+        "displayWidth": 326
+      }
+    ],
+    "tables": [
+      {
+        "columns": 2,
+        "renderWidth": 326,
+        "parentWidth": 342,
+        "parentOverflow": "auto"
+      },
+      {
+        "columns": 2,
+        "renderWidth": 292,
+        "parentWidth": 342,
+        "parentOverflow": "auto"
+      },
+      {
+        "columns": 4,
+        "renderWidth": 328,
+        "parentWidth": 342,
+        "parentOverflow": "auto"
+      },
+      {
+        "columns": 4,
+        "renderWidth": 326,
+        "parentWidth": 342,
+        "parentOverflow": "auto"
+      }
+    ],
+    "headings": [
+      "一、可以先看地图，别急着报站",
+      "二、一页纸：输入、草稿、提交各有版本",
+      "三、这次做的是前缀重识别",
+      "四、先把版本管住，再看快了多少",
+      "五、少等一点，要多做多少",
+      "六、看得勤，还要看得新",
+      "七、先准备，确认以后再提交"
+    ],
+    "unresolved": false,
+    "literalBold": false
+  },
+  "independent_review": {
+    "status": "passed",
+    "scope": [
+      "article",
+      "conclusion",
+      "summary",
+      "raw GPU sample events and virtual queue",
+      "source scheduler/gate/analysis"
+    ],
+    "finding": "No factual issue found; denominators, timing/gating, stable2 no-preemption causal limits, waste accounting, real vs synthetic scopes and source claims match evidence."
+  },
+  "uploaded": false,
+  "preview_hashes_verified": true,
+  "experimental_plot_sha256_verified": true,
+  "images": {
+    "01-一页纸.png": {
+      "dimensions": [
+        2160,
+        4160
+      ],
+      "sha256": "f7ece9519c2ae09247fe3549f91e4c11c865a6c965d32fc9059f8983ebca5187"
+    },
+    "11-exp17.png": {
+      "dimensions": [
+        3000,
+        2040
+      ],
+      "sha256": "4ece3a8451283cb784f9e02b9c4c83c31fbdb015f613104ee934282a81fba286"
+    },
+    "00-封面.png": {
+      "dimensions": [
+        2560,
+        1090
+      ],
+      "sha256": "df1c88a58dd0e5c6c8c9b16023d4b6ee6b3f141717a77410db656d958d138749"
+    }
+  },
+  "article_sha256": "ba99da7102cf686a59219f2a0edd44ab376230abeb09c306ee85dbc1bc9dce5b",
+  "conclusion_sha256": "09e4dbca9f0ee6c234ed1aedf361b3dfee59be4caf8ae4ad1eb4cddf4d7f0df0"
+}

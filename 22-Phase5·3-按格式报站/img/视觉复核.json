@@ -1,0 +1,28 @@
+{
+  "method": "Actual inspection via view_image of both final PNG files after the user experiment-fact update",
+  "fact_source": "Current user experiment-fact update, not a new GPU experiment by the graphics scripts",
+  "images": [
+    {
+      "file": "00-封面.png",
+      "sha256": "07f7cdbe441d64c6915d7545a451a6e9f0967ed45ec957c460e4e0cb52c9bc68",
+      "observations": [
+        "深色系列封面、黄标题、白副标题完整。",
+        "眉题与七站路线保留，只有站5高亮。"
+      ]
+    },
+    {
+      "file": "01-一页纸.png",
+      "sha256": "b388d6110c35fb240d07b47ee009098c2f822502bdc97c314cc5e5b910afdfff",
+      "observations": [
+        "米色底与四块结构保留，五栏标题未使用串行箭头。",
+        "CPU线和GPU线分别标记，虚线与语义映射核对说明清晰。",
+        "范围为CPU真实recipe转换加小GPU后端独立对照，无条件性表述。",
+        "拒绝、失败和未知保留分母，数组maxItems返回400且不静默削弱schema。",
+        "recipe prompt / OutputConstraint未直接接Qwen，未端到端集成、未运行DeepInfer均完整可读。",
+        "原生Qwen模板、工具声明边界和两行页脚完整，无裁切或遮挡。"
+      ]
+    }
+  ],
+  "status": "PASS",
+  "repeat_render_note": "Rerender after visual inspection produced identical PNG hashes."
+}

@@ -1,0 +1,606 @@
+{
+  "scope": "real non-CUDA Mooncake single-host TCP; no model KV, GPU, RDMA or HA",
+  "revision": "formal-v2 cross-process reader; v1 same-process retained separately",
+  "audit": {
+    "planned": 238,
+    "pass": 228,
+    "observed": 10,
+    "fail": 0,
+    "ambiguous": 0,
+    "missing": 0,
+    "accepted": true,
+    "valid_latency_samples": 120
+  },
+  "data_objects": 40,
+  "hash_matches": 40,
+  "primary_data_get_clients": [
+    "B"
+  ],
+  "timing_scope": "worker perf_counter_ns Store call only; put payload generated before timer; hash after timer; final-v2 only",
+  "timing_samples_per_size_op": 10,
+  "descriptive_only": true,
+  "timings": [
+    {
+      "size_bytes": 1,
+      "op": "put",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.18884,
+      "min_ms": 0.1307,
+      "max_ms": 0.271731
+    },
+    {
+      "size_bytes": 1,
+      "op": "get",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.1356805,
+      "min_ms": 0.130638,
+      "max_ms": 0.51622
+    },
+    {
+      "size_bytes": 4096,
+      "op": "put",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.1748885,
+      "min_ms": 0.160902,
+      "max_ms": 0.22463
+    },
+    {
+      "size_bytes": 4096,
+      "op": "get",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.13459300000000002,
+      "min_ms": 0.130093,
+      "max_ms": 0.147116
+    },
+    {
+      "size_bytes": 65536,
+      "op": "put",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.22684300000000002,
+      "min_ms": 0.201678,
+      "max_ms": 0.296403
+    },
+    {
+      "size_bytes": 65536,
+      "op": "get",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.16308450000000002,
+      "min_ms": 0.141992,
+      "max_ms": 0.218839
+    },
+    {
+      "size_bytes": 1048576,
+      "op": "put",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.700789,
+      "min_ms": 0.676596,
+      "max_ms": 1.090895
+    },
+    {
+      "size_bytes": 1048576,
+      "op": "get",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.36938150000000003,
+      "min_ms": 0.323653,
+      "max_ms": 1.096677
+    },
+    {
+      "size_bytes": 1,
+      "op": "remove",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.07716100000000001,
+      "min_ms": 0.074504,
+      "max_ms": 0.086664
+    },
+    {
+      "size_bytes": 4096,
+      "op": "remove",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.07362099999999999,
+      "min_ms": 0.056129,
+      "max_ms": 0.224284
+    },
+    {
+      "size_bytes": 65536,
+      "op": "remove",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.078519,
+      "min_ms": 0.07425,
+      "max_ms": 0.12168
+    },
+    {
+      "size_bytes": 1048576,
+      "op": "remove",
+      "planned": 10,
+      "failed": 0,
+      "valid": 10,
+      "median_ms": 0.0748075,
+      "min_ms": 0.073513,
+      "max_ms": 0.080182
+    }
+  ],
+  "duplicate_cases": [
+    {
+      "case": {
+        "id": "op-126",
+        "op": "put",
+        "client": "A",
+        "expected_kind": "code",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "initial",
+        "key": "exp24-formal-v2/duplicate",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-126",
+        "op": "put",
+        "complete": true,
+        "latency_ms": 0.189263,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "normal"
+      }
+    },
+    {
+      "case": {
+        "id": "op-127",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "bytes",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "initial",
+        "key": "exp24-formal-v2/duplicate",
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+      },
+      "observation": {
+        "id": "op-127",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.18378,
+        "kind": "bytes",
+        "size": 4096,
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82",
+        "client": "B",
+        "stage": "normal"
+      }
+    },
+    {
+      "case": {
+        "id": "op-128",
+        "op": "put",
+        "client": "A",
+        "expected_kind": "code",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "identical",
+        "key": "exp24-formal-v2/duplicate",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-128",
+        "op": "put",
+        "complete": true,
+        "latency_ms": 0.145018,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "normal"
+      }
+    },
+    {
+      "case": {
+        "id": "op-129",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "bytes",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "identical",
+        "key": "exp24-formal-v2/duplicate",
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+      },
+      "observation": {
+        "id": "op-129",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.147755,
+        "kind": "bytes",
+        "size": 4096,
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82",
+        "client": "B",
+        "stage": "normal"
+      }
+    },
+    {
+      "case": {
+        "id": "op-130",
+        "op": "put",
+        "client": "A",
+        "expected_kind": "code",
+        "size": 4096,
+        "seed": "different-content",
+        "duplicate_variant": "same-size",
+        "key": "exp24-formal-v2/duplicate",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-130",
+        "op": "put",
+        "complete": true,
+        "latency_ms": 0.09981,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "normal"
+      }
+    },
+    {
+      "case": {
+        "id": "op-131",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "bytes",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "same-size",
+        "key": "exp24-formal-v2/duplicate",
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+      },
+      "observation": {
+        "id": "op-131",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.145177,
+        "kind": "bytes",
+        "size": 4096,
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82",
+        "client": "B",
+        "stage": "normal"
+      }
+    },
+    {
+      "case": {
+        "id": "op-132",
+        "op": "put",
+        "client": "A",
+        "expected_kind": "code",
+        "size": 8192,
+        "seed": "other-length",
+        "duplicate_variant": "different-size",
+        "key": "exp24-formal-v2/duplicate",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-132",
+        "op": "put",
+        "complete": true,
+        "latency_ms": 0.093972,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "normal"
+      }
+    },
+    {
+      "case": {
+        "id": "op-133",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "bytes",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "different-size",
+        "key": "exp24-formal-v2/duplicate",
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+      },
+      "observation": {
+        "id": "op-133",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.181955,
+        "kind": "bytes",
+        "size": 4096,
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82",
+        "client": "B",
+        "stage": "normal"
+      }
+    }
+  ],
+  "lifecycle_observations": [
+    {
+      "case": {
+        "id": "op-218",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "bytes",
+        "size": 0,
+        "stage": "master-down",
+        "key": "exp24-formal-v2/survivor",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "observation": {
+        "id": "op-218",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.248214,
+        "kind": "bytes",
+        "size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "client": "B",
+        "stage": "master-down"
+      }
+    },
+    {
+      "case": {
+        "id": "op-219",
+        "op": "is_exist",
+        "client": "A",
+        "expected_kind": "observation",
+        "stage": "master-down",
+        "key": "exp24-formal-v2/survivor"
+      },
+      "observation": {
+        "id": "op-219",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 0.161331,
+        "kind": "code",
+        "value": -900,
+        "client": "A",
+        "stage": "master-down"
+      }
+    },
+    {
+      "case": {
+        "id": "op-220",
+        "op": "put",
+        "client": "A",
+        "expected_kind": "observation",
+        "size": 32,
+        "seed": "down",
+        "stage": "master-down",
+        "key": "exp24-formal-v2/down-write"
+      },
+      "observation": {
+        "id": "op-220",
+        "op": "put",
+        "complete": true,
+        "latency_ms": 0.22313,
+        "kind": "code",
+        "value": -900,
+        "client": "A",
+        "stage": "master-down"
+      }
+    },
+    {
+      "case": {
+        "id": "op-221",
+        "op": "is_exist",
+        "client": "A",
+        "expected_kind": "observation",
+        "stage": "restart-existing-client-immediate",
+        "key": "exp24-formal-v2/survivor"
+      },
+      "observation": {
+        "id": "op-221",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 0.267789,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "restart-existing-client-immediate"
+      }
+    },
+    {
+      "case": {
+        "id": "op-222",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "observation",
+        "stage": "restart-existing-client-immediate",
+        "key": "exp24-formal-v2/survivor"
+      },
+      "observation": {
+        "id": "op-222",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.332665,
+        "kind": "bytes",
+        "size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "client": "B",
+        "stage": "restart-existing-client-immediate"
+      }
+    },
+    {
+      "case": {
+        "id": "op-223",
+        "op": "is_exist",
+        "client": "A",
+        "expected_kind": "observation",
+        "stage": "restart-existing-client-after12s",
+        "key": "exp24-formal-v2/survivor"
+      },
+      "observation": {
+        "id": "op-223",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 0.629401,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "restart-existing-client-after12s"
+      }
+    },
+    {
+      "case": {
+        "id": "op-224",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "observation",
+        "stage": "restart-existing-client-after12s",
+        "key": "exp24-formal-v2/survivor"
+      },
+      "observation": {
+        "id": "op-224",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.31715,
+        "kind": "bytes",
+        "size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "client": "B",
+        "stage": "restart-existing-client-after12s"
+      }
+    },
+    {
+      "case": {
+        "id": "op-226",
+        "op": "is_exist",
+        "client": "C",
+        "expected_kind": "observation",
+        "stage": "restart-fresh-client",
+        "key": "exp24-formal-v2/survivor"
+      },
+      "observation": {
+        "id": "op-226",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 0.239477,
+        "kind": "code",
+        "value": 0,
+        "client": "C",
+        "stage": "restart-fresh-client"
+      }
+    },
+    {
+      "case": {
+        "id": "op-227",
+        "op": "get",
+        "client": "C",
+        "expected_kind": "observation",
+        "stage": "restart-fresh-client",
+        "key": "exp24-formal-v2/survivor"
+      },
+      "observation": {
+        "id": "op-227",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.07729,
+        "kind": "bytes",
+        "size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "client": "C",
+        "stage": "restart-fresh-client"
+      }
+    },
+    {
+      "case": {
+        "id": "op-232",
+        "op": "remove",
+        "client": "C",
+        "expected_kind": "observation",
+        "stage": "cleanup",
+        "key": "exp24-formal-v2/survivor"
+      },
+      "observation": {
+        "id": "op-232",
+        "op": "remove",
+        "complete": true,
+        "latency_ms": 0.060341,
+        "kind": "code",
+        "value": -704,
+        "client": "C",
+        "stage": "cleanup"
+      }
+    },
+    {
+      "case": {
+        "id": "op-233",
+        "op": "is_exist",
+        "client": "C",
+        "expected_kind": "code",
+        "stage": "cleanup",
+        "key": "exp24-formal-v2/survivor",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-233",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 0.056841,
+        "kind": "code",
+        "value": 0,
+        "client": "C",
+        "stage": "cleanup"
+      }
+    },
+    {
+      "case": {
+        "id": "op-234",
+        "op": "remove",
+        "client": "C",
+        "expected_kind": "observation",
+        "stage": "cleanup",
+        "key": "exp24-formal-v2/down-write"
+      },
+      "observation": {
+        "id": "op-234",
+        "op": "remove",
+        "complete": true,
+        "latency_ms": 0.055855,
+        "kind": "code",
+        "value": -704,
+        "client": "C",
+        "stage": "cleanup"
+      }
+    },
+    {
+      "case": {
+        "id": "op-235",
+        "op": "is_exist",
+        "client": "C",
+        "expected_kind": "code",
+        "stage": "cleanup",
+        "key": "exp24-formal-v2/down-write",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-235",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 0.080336,
+        "kind": "code",
+        "value": 0,
+        "client": "C",
+        "stage": "cleanup"
+      }
+    }
+  ]
+}

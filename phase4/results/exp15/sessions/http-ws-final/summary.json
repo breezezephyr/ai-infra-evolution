@@ -1,0 +1,3522 @@
+{
+  "ack_source": "python_synthetic_control_only",
+  "audio_played": false,
+  "browser_playback_latency": null,
+  "base_url": "http://127.0.0.1:18146",
+  "checks": [
+    {
+      "scenario": "startup",
+      "assertion": "dedicated port initially closed",
+      "passed": true
+    },
+    {
+      "scenario": "startup",
+      "assertion": "HTTP metadata identifies the exact PCM payload",
+      "passed": true
+    },
+    {
+      "scenario": "startup",
+      "assertion": "browser resource served with cross-origin access: session-client.js",
+      "passed": true
+    },
+    {
+      "scenario": "startup",
+      "assertion": "browser resource served with cross-origin access: worklet.js",
+      "passed": true
+    },
+    {
+      "scenario": "startup",
+      "assertion": "browser REST preflight accepted",
+      "passed": true
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "HTTP POST /sessions: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "explicit owner a",
+      "passed": true
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "HTTP POST /sessions: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "HTTP POST /sessions: 409",
+      "passed": true,
+      "actual_status": 409
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "wrong owner code",
+      "passed": true
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "WS attach rejected before upgrade",
+      "passed": true,
+      "expected_status": 409,
+      "actual_status": 409
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "WS attached to requested sticky owner",
+      "passed": true
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "WS attach rejected before upgrade",
+      "passed": true,
+      "expected_status": 409,
+      "actual_status": 409
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "received complete original PCM or exact resume suffix",
+      "passed": true,
+      "frames": 156,
+      "first_offset": 0,
+      "end": 149760,
+      "pcm_file": "sticky-turn-1-epoch1-complete.pcm"
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "received complete original PCM or exact resume suffix",
+      "passed": true,
+      "frames": 156,
+      "first_offset": 0,
+      "end": 149760,
+      "pcm_file": "sticky-turn-2-epoch1-complete.pcm"
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "HTTP GET /sessions/sticky: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "same owner and epoch across two turns",
+      "passed": true
+    },
+    {
+      "scenario": "sticky_multi_turn_and_wrong_owner",
+      "assertion": "second turn sent and producer_done without fake playback",
+      "passed": true
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "HTTP POST /workers/a/drain: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "a begins draining",
+      "passed": true
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "HTTP POST /sessions: 409",
+      "passed": true,
+      "actual_status": 409
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "draining owner rejects creation",
+      "passed": true
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "HTTP POST /sessions: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "automatic new session routes to b",
+      "passed": true
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "HTTP POST /sessions: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "existing session remains sticky during drain",
+      "passed": true
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "sent-complete release is refused without ACK",
+      "passed": true
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "HTTP GET /state: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "withheld ACK never marks drained",
+      "passed": true
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "HTTP GET /state: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "drain_rejects_new_and_waits_for_ack",
+      "assertion": "one release does not drain other retained session",
+      "passed": true
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "WS attached to requested sticky owner",
+      "passed": true
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "HTTP GET /sessions/resume: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "disconnect retains unfinished sent/played state",
+      "passed": true
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "WS attached to requested sticky owner",
+      "passed": true
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "reconnect advances epoch",
+      "passed": true,
+      "old_epoch": 1,
+      "new_epoch": 2
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "resume begins at played, not sent",
+      "passed": true,
+      "resume_from": 9600,
+      "old_sent": 24000
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "old epoch ACK is rejected over actual WS",
+      "passed": true
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "HTTP GET /sessions/resume: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "old ACK leaves playback offset unchanged",
+      "passed": true
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "received complete original PCM or exact resume suffix",
+      "passed": true,
+      "frames": 146,
+      "first_offset": 9600,
+      "end": 149760,
+      "pcm_file": "resume-resume-turn-epoch2-complete.pcm"
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "replay begins exactly at retained played offset",
+      "passed": true
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "HTTP GET /state: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "replay sent-complete still waits for ACK",
+      "passed": true
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "HTTP GET /state: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "disconnect_resume_epoch_and_stale_ack",
+      "assertion": "all playback ACKs and releases produce normal drained",
+      "passed": true
+    },
+    {
+      "scenario": "real_deadline_force_preserves_unplayed",
+      "assertion": "WS attached to requested sticky owner",
+      "passed": true
+    },
+    {
+      "scenario": "real_deadline_force_preserves_unplayed",
+      "assertion": "received complete original PCM or exact resume suffix",
+      "passed": true,
+      "frames": 156,
+      "first_offset": 0,
+      "end": 149760,
+      "pcm_file": "forced-force-turn-epoch1-complete.pcm"
+    },
+    {
+      "scenario": "real_deadline_force_preserves_unplayed",
+      "assertion": "HTTP POST /workers/b/drain: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "real_deadline_force_preserves_unplayed",
+      "assertion": "HTTP GET /state: 200",
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "scenario": "real_deadline_force_preserves_unplayed",
+      "assertion": "real deadline produces explicit forced, never normal drained",
+      "passed": true
+    },
+    {
+      "scenario": "real_deadline_force_preserves_unplayed",
+      "assertion": "force records exact unplayed and leaves played unchanged",
+      "passed": true,
+      "total_samples": 149760,
+      "played_samples": 24000,
+      "unplayed_samples": 125760
+    },
+    {
+      "scenario": "real_deadline_force_preserves_unplayed",
+      "assertion": "force invalidates old epoch",
+      "passed": true
+    },
+    {
+      "scenario": "real_deadline_force_preserves_unplayed",
+      "assertion": "WS attach rejected before upgrade",
+      "passed": true,
+      "expected_status": 409,
+      "actual_status": 409
+    },
+    {
+      "scenario": "real_deadline_force_preserves_unplayed",
+      "assertion": "deadline is a real monotonic-clock timer",
+      "passed": true,
+      "scheduled_ns": 108650677082583,
+      "fired_ns": 108650878347250,
+      "elapsed_ms": 201.264667
+    },
+    {
+      "scenario": "real_deadline_force_preserves_unplayed",
+      "assertion": "normal drain cancels its outstanding deadline",
+      "passed": true
+    }
+  ],
+  "audio": {
+    "sample_rate": 48000,
+    "total_samples": 149760,
+    "pcm_sha256": "609cc64ebfb196f74bdc390257c9b3cf9db1f3513b94a473555f26724211223c"
+  },
+  "owned_server_pid": 60567,
+  "health": {
+    "status": "ready",
+    "service": "session-http",
+    "audio": {
+      "sample_rate": 48000,
+      "channels": 1,
+      "sample_width": 2,
+      "total_samples": 149760,
+      "duration_seconds": 3.12,
+      "frame_samples": 960,
+      "header": "!III: seq, sample_offset, sample_count",
+      "pcm_format": "s16le",
+      "path": "phase4/exp15/audio/short.wav",
+      "wav_sha256": "bfeaf719c18cb1bd2e7aff28c0fbeb01805f9b8b529fae53ba120f541f9863d6",
+      "pcm_sha256": "609cc64ebfb196f74bdc390257c9b3cf9db1f3513b94a473555f26724211223c"
+    }
+  },
+  "final_state": {
+    "workers": {
+      "a": {
+        "owner": "a",
+        "status": "drained",
+        "active_sessions": 0,
+        "session_ids": [],
+        "drained": true,
+        "reason": null,
+        "unplayed_samples": 0
+      },
+      "b": {
+        "owner": "b",
+        "status": "forced",
+        "active_sessions": 0,
+        "session_ids": [],
+        "drained": false,
+        "reason": "drain_deadline_expired",
+        "unplayed_samples": 125760
+      }
+    },
+    "sessions": {
+      "sticky": {
+        "session_id": "sticky",
+        "owner": "a",
+        "epoch": 2,
+        "connected": false,
+        "status": "released",
+        "reason": null,
+        "resume_from": 149760,
+        "unplayed_samples": 0,
+        "sent_unplayed_samples": 0,
+        "turn": {
+          "generation": "turn-2",
+          "total_samples": 149760,
+          "epoch": 1,
+          "sent_samples": 149760,
+          "played_samples": 149760,
+          "epoch_sent_samples": 149760,
+          "producer_done": true
+        },
+        "history": [
+          {
+            "sequence": 194,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 30720
+          },
+          {
+            "sequence": 195,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 31680
+          },
+          {
+            "sequence": 196,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 32640
+          },
+          {
+            "sequence": 197,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 33600
+          },
+          {
+            "sequence": 198,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 34560
+          },
+          {
+            "sequence": 199,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 35520
+          },
+          {
+            "sequence": 200,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 36480
+          },
+          {
+            "sequence": 201,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 37440
+          },
+          {
+            "sequence": 202,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 38400
+          },
+          {
+            "sequence": 203,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 39360
+          },
+          {
+            "sequence": 204,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 40320
+          },
+          {
+            "sequence": 205,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 41280
+          },
+          {
+            "sequence": 206,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 42240
+          },
+          {
+            "sequence": 207,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 43200
+          },
+          {
+            "sequence": 208,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 44160
+          },
+          {
+            "sequence": 209,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 45120
+          },
+          {
+            "sequence": 210,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 46080
+          },
+          {
+            "sequence": 211,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 47040
+          },
+          {
+            "sequence": 212,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 48000
+          },
+          {
+            "sequence": 213,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 48960
+          },
+          {
+            "sequence": 214,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 49920
+          },
+          {
+            "sequence": 215,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 50880
+          },
+          {
+            "sequence": 216,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 51840
+          },
+          {
+            "sequence": 217,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 52800
+          },
+          {
+            "sequence": 218,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 53760
+          },
+          {
+            "sequence": 219,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 54720
+          },
+          {
+            "sequence": 220,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 55680
+          },
+          {
+            "sequence": 221,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 56640
+          },
+          {
+            "sequence": 222,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 57600
+          },
+          {
+            "sequence": 223,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 58560
+          },
+          {
+            "sequence": 224,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 59520
+          },
+          {
+            "sequence": 225,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 60480
+          },
+          {
+            "sequence": 226,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 61440
+          },
+          {
+            "sequence": 227,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 62400
+          },
+          {
+            "sequence": 228,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 63360
+          },
+          {
+            "sequence": 229,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 64320
+          },
+          {
+            "sequence": 230,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 65280
+          },
+          {
+            "sequence": 231,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 66240
+          },
+          {
+            "sequence": 232,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 67200
+          },
+          {
+            "sequence": 233,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 68160
+          },
+          {
+            "sequence": 234,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 69120
+          },
+          {
+            "sequence": 235,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 70080
+          },
+          {
+            "sequence": 236,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 71040
+          },
+          {
+            "sequence": 237,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 72000
+          },
+          {
+            "sequence": 238,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 72960
+          },
+          {
+            "sequence": 239,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 73920
+          },
+          {
+            "sequence": 240,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 74880
+          },
+          {
+            "sequence": 241,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 75840
+          },
+          {
+            "sequence": 242,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 76800
+          },
+          {
+            "sequence": 243,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 77760
+          },
+          {
+            "sequence": 244,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 78720
+          },
+          {
+            "sequence": 245,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 79680
+          },
+          {
+            "sequence": 246,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 80640
+          },
+          {
+            "sequence": 247,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 81600
+          },
+          {
+            "sequence": 248,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 82560
+          },
+          {
+            "sequence": 249,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 83520
+          },
+          {
+            "sequence": 250,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 84480
+          },
+          {
+            "sequence": 251,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 85440
+          },
+          {
+            "sequence": 252,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 86400
+          },
+          {
+            "sequence": 253,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 87360
+          },
+          {
+            "sequence": 254,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 88320
+          },
+          {
+            "sequence": 255,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 89280
+          },
+          {
+            "sequence": 256,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 90240
+          },
+          {
+            "sequence": 257,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 91200
+          },
+          {
+            "sequence": 258,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 92160
+          },
+          {
+            "sequence": 259,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 93120
+          },
+          {
+            "sequence": 260,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 94080
+          },
+          {
+            "sequence": 261,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 95040
+          },
+          {
+            "sequence": 262,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 96000
+          },
+          {
+            "sequence": 263,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 96960
+          },
+          {
+            "sequence": 264,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 97920
+          },
+          {
+            "sequence": 265,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 98880
+          },
+          {
+            "sequence": 266,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 99840
+          },
+          {
+            "sequence": 267,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 100800
+          },
+          {
+            "sequence": 268,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 101760
+          },
+          {
+            "sequence": 269,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 102720
+          },
+          {
+            "sequence": 270,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 103680
+          },
+          {
+            "sequence": 271,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 104640
+          },
+          {
+            "sequence": 272,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 105600
+          },
+          {
+            "sequence": 273,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 106560
+          },
+          {
+            "sequence": 274,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 107520
+          },
+          {
+            "sequence": 275,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 108480
+          },
+          {
+            "sequence": 276,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 109440
+          },
+          {
+            "sequence": 277,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 110400
+          },
+          {
+            "sequence": 278,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 111360
+          },
+          {
+            "sequence": 279,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 112320
+          },
+          {
+            "sequence": 280,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 113280
+          },
+          {
+            "sequence": 281,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 114240
+          },
+          {
+            "sequence": 282,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 115200
+          },
+          {
+            "sequence": 283,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 116160
+          },
+          {
+            "sequence": 284,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 117120
+          },
+          {
+            "sequence": 285,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 118080
+          },
+          {
+            "sequence": 286,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 119040
+          },
+          {
+            "sequence": 287,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 120000
+          },
+          {
+            "sequence": 288,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 120960
+          },
+          {
+            "sequence": 289,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 121920
+          },
+          {
+            "sequence": 290,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 122880
+          },
+          {
+            "sequence": 291,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 123840
+          },
+          {
+            "sequence": 292,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 124800
+          },
+          {
+            "sequence": 293,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 125760
+          },
+          {
+            "sequence": 294,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 126720
+          },
+          {
+            "sequence": 295,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 127680
+          },
+          {
+            "sequence": 296,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 128640
+          },
+          {
+            "sequence": 297,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 129600
+          },
+          {
+            "sequence": 298,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 130560
+          },
+          {
+            "sequence": 299,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 131520
+          },
+          {
+            "sequence": 300,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 132480
+          },
+          {
+            "sequence": 301,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 133440
+          },
+          {
+            "sequence": 302,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 134400
+          },
+          {
+            "sequence": 303,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 135360
+          },
+          {
+            "sequence": 304,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 136320
+          },
+          {
+            "sequence": 305,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 137280
+          },
+          {
+            "sequence": 306,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 138240
+          },
+          {
+            "sequence": 307,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 139200
+          },
+          {
+            "sequence": 308,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 140160
+          },
+          {
+            "sequence": 309,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 141120
+          },
+          {
+            "sequence": 310,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 142080
+          },
+          {
+            "sequence": 311,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 143040
+          },
+          {
+            "sequence": 312,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 144000
+          },
+          {
+            "sequence": 313,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 144960
+          },
+          {
+            "sequence": 314,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 145920
+          },
+          {
+            "sequence": 315,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 146880
+          },
+          {
+            "sequence": 316,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 147840
+          },
+          {
+            "sequence": 317,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 148800
+          },
+          {
+            "sequence": 318,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 149760
+          },
+          {
+            "sequence": 319,
+            "event": "producer_done",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2"
+          },
+          {
+            "sequence": 320,
+            "event": "acknowledge",
+            "epoch": 1,
+            "owner": "a",
+            "generation": "turn-2",
+            "samples": 149760
+          },
+          {
+            "sequence": 321,
+            "event": "release",
+            "epoch": 2,
+            "owner": "a"
+          }
+        ]
+      },
+      "resume": {
+        "session_id": "resume",
+        "owner": "a",
+        "epoch": 3,
+        "connected": false,
+        "status": "released",
+        "reason": null,
+        "resume_from": 149760,
+        "unplayed_samples": 0,
+        "sent_unplayed_samples": 0,
+        "turn": {
+          "generation": "resume-turn",
+          "total_samples": 149760,
+          "epoch": 2,
+          "sent_samples": 149760,
+          "played_samples": 149760,
+          "epoch_sent_samples": 149760,
+          "producer_done": true
+        },
+        "history": [
+          {
+            "sequence": 54,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 30720
+          },
+          {
+            "sequence": 55,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 31680
+          },
+          {
+            "sequence": 56,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 32640
+          },
+          {
+            "sequence": 57,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 33600
+          },
+          {
+            "sequence": 58,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 34560
+          },
+          {
+            "sequence": 59,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 35520
+          },
+          {
+            "sequence": 60,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 36480
+          },
+          {
+            "sequence": 61,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 37440
+          },
+          {
+            "sequence": 62,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 38400
+          },
+          {
+            "sequence": 63,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 39360
+          },
+          {
+            "sequence": 64,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 40320
+          },
+          {
+            "sequence": 65,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 41280
+          },
+          {
+            "sequence": 66,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 42240
+          },
+          {
+            "sequence": 67,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 43200
+          },
+          {
+            "sequence": 68,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 44160
+          },
+          {
+            "sequence": 69,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 45120
+          },
+          {
+            "sequence": 70,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 46080
+          },
+          {
+            "sequence": 71,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 47040
+          },
+          {
+            "sequence": 72,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 48000
+          },
+          {
+            "sequence": 73,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 48960
+          },
+          {
+            "sequence": 74,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 49920
+          },
+          {
+            "sequence": 75,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 50880
+          },
+          {
+            "sequence": 76,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 51840
+          },
+          {
+            "sequence": 77,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 52800
+          },
+          {
+            "sequence": 78,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 53760
+          },
+          {
+            "sequence": 79,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 54720
+          },
+          {
+            "sequence": 80,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 55680
+          },
+          {
+            "sequence": 81,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 56640
+          },
+          {
+            "sequence": 82,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 57600
+          },
+          {
+            "sequence": 83,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 58560
+          },
+          {
+            "sequence": 84,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 59520
+          },
+          {
+            "sequence": 85,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 60480
+          },
+          {
+            "sequence": 86,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 61440
+          },
+          {
+            "sequence": 87,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 62400
+          },
+          {
+            "sequence": 88,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 63360
+          },
+          {
+            "sequence": 89,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 64320
+          },
+          {
+            "sequence": 90,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 65280
+          },
+          {
+            "sequence": 91,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 66240
+          },
+          {
+            "sequence": 92,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 67200
+          },
+          {
+            "sequence": 93,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 68160
+          },
+          {
+            "sequence": 94,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 69120
+          },
+          {
+            "sequence": 95,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 70080
+          },
+          {
+            "sequence": 96,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 71040
+          },
+          {
+            "sequence": 97,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 72000
+          },
+          {
+            "sequence": 98,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 72960
+          },
+          {
+            "sequence": 99,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 73920
+          },
+          {
+            "sequence": 100,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 74880
+          },
+          {
+            "sequence": 101,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 75840
+          },
+          {
+            "sequence": 102,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 76800
+          },
+          {
+            "sequence": 103,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 77760
+          },
+          {
+            "sequence": 104,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 78720
+          },
+          {
+            "sequence": 105,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 79680
+          },
+          {
+            "sequence": 106,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 80640
+          },
+          {
+            "sequence": 107,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 81600
+          },
+          {
+            "sequence": 108,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 82560
+          },
+          {
+            "sequence": 109,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 83520
+          },
+          {
+            "sequence": 110,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 84480
+          },
+          {
+            "sequence": 111,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 85440
+          },
+          {
+            "sequence": 112,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 86400
+          },
+          {
+            "sequence": 113,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 87360
+          },
+          {
+            "sequence": 114,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 88320
+          },
+          {
+            "sequence": 115,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 89280
+          },
+          {
+            "sequence": 116,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 90240
+          },
+          {
+            "sequence": 117,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 91200
+          },
+          {
+            "sequence": 118,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 92160
+          },
+          {
+            "sequence": 119,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 93120
+          },
+          {
+            "sequence": 120,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 94080
+          },
+          {
+            "sequence": 121,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 95040
+          },
+          {
+            "sequence": 122,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 96000
+          },
+          {
+            "sequence": 123,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 96960
+          },
+          {
+            "sequence": 124,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 97920
+          },
+          {
+            "sequence": 125,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 98880
+          },
+          {
+            "sequence": 126,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 99840
+          },
+          {
+            "sequence": 127,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 100800
+          },
+          {
+            "sequence": 128,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 101760
+          },
+          {
+            "sequence": 129,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 102720
+          },
+          {
+            "sequence": 130,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 103680
+          },
+          {
+            "sequence": 131,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 104640
+          },
+          {
+            "sequence": 132,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 105600
+          },
+          {
+            "sequence": 133,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 106560
+          },
+          {
+            "sequence": 134,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 107520
+          },
+          {
+            "sequence": 135,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 108480
+          },
+          {
+            "sequence": 136,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 109440
+          },
+          {
+            "sequence": 137,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 110400
+          },
+          {
+            "sequence": 138,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 111360
+          },
+          {
+            "sequence": 139,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 112320
+          },
+          {
+            "sequence": 140,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 113280
+          },
+          {
+            "sequence": 141,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 114240
+          },
+          {
+            "sequence": 142,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 115200
+          },
+          {
+            "sequence": 143,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 116160
+          },
+          {
+            "sequence": 144,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 117120
+          },
+          {
+            "sequence": 145,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 118080
+          },
+          {
+            "sequence": 146,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 119040
+          },
+          {
+            "sequence": 147,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 120000
+          },
+          {
+            "sequence": 148,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 120960
+          },
+          {
+            "sequence": 149,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 121920
+          },
+          {
+            "sequence": 150,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 122880
+          },
+          {
+            "sequence": 151,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 123840
+          },
+          {
+            "sequence": 152,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 124800
+          },
+          {
+            "sequence": 153,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 125760
+          },
+          {
+            "sequence": 154,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 126720
+          },
+          {
+            "sequence": 155,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 127680
+          },
+          {
+            "sequence": 156,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 128640
+          },
+          {
+            "sequence": 157,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 129600
+          },
+          {
+            "sequence": 158,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 130560
+          },
+          {
+            "sequence": 159,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 131520
+          },
+          {
+            "sequence": 160,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 132480
+          },
+          {
+            "sequence": 161,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 133440
+          },
+          {
+            "sequence": 162,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 134400
+          },
+          {
+            "sequence": 163,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 135360
+          },
+          {
+            "sequence": 164,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 136320
+          },
+          {
+            "sequence": 165,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 137280
+          },
+          {
+            "sequence": 166,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 138240
+          },
+          {
+            "sequence": 167,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 139200
+          },
+          {
+            "sequence": 168,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 140160
+          },
+          {
+            "sequence": 169,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 141120
+          },
+          {
+            "sequence": 170,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 142080
+          },
+          {
+            "sequence": 171,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 143040
+          },
+          {
+            "sequence": 172,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 144000
+          },
+          {
+            "sequence": 173,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 144960
+          },
+          {
+            "sequence": 174,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 145920
+          },
+          {
+            "sequence": 175,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 146880
+          },
+          {
+            "sequence": 176,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 147840
+          },
+          {
+            "sequence": 177,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 148800
+          },
+          {
+            "sequence": 178,
+            "event": "sent",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 149760
+          },
+          {
+            "sequence": 179,
+            "event": "producer_done",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn"
+          },
+          {
+            "sequence": 180,
+            "event": "acknowledge",
+            "epoch": 2,
+            "owner": "a",
+            "generation": "resume-turn",
+            "samples": 149760
+          },
+          {
+            "sequence": 181,
+            "event": "release",
+            "epoch": 3,
+            "owner": "a"
+          }
+        ]
+      },
+      "forced": {
+        "session_id": "forced",
+        "owner": "b",
+        "epoch": 2,
+        "connected": false,
+        "status": "forced",
+        "reason": "drain_deadline_expired",
+        "resume_from": 24000,
+        "unplayed_samples": 125760,
+        "sent_unplayed_samples": 125760,
+        "turn": {
+          "generation": "force-turn",
+          "total_samples": 149760,
+          "epoch": 1,
+          "sent_samples": 149760,
+          "played_samples": 24000,
+          "epoch_sent_samples": 149760,
+          "producer_done": true
+        },
+        "history": [
+          {
+            "sequence": 35,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 30720
+          },
+          {
+            "sequence": 36,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 31680
+          },
+          {
+            "sequence": 37,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 32640
+          },
+          {
+            "sequence": 38,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 33600
+          },
+          {
+            "sequence": 39,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 34560
+          },
+          {
+            "sequence": 40,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 35520
+          },
+          {
+            "sequence": 41,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 36480
+          },
+          {
+            "sequence": 42,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 37440
+          },
+          {
+            "sequence": 43,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 38400
+          },
+          {
+            "sequence": 44,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 39360
+          },
+          {
+            "sequence": 45,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 40320
+          },
+          {
+            "sequence": 46,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 41280
+          },
+          {
+            "sequence": 47,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 42240
+          },
+          {
+            "sequence": 48,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 43200
+          },
+          {
+            "sequence": 49,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 44160
+          },
+          {
+            "sequence": 50,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 45120
+          },
+          {
+            "sequence": 51,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 46080
+          },
+          {
+            "sequence": 52,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 47040
+          },
+          {
+            "sequence": 53,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 48000
+          },
+          {
+            "sequence": 54,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 48960
+          },
+          {
+            "sequence": 55,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 49920
+          },
+          {
+            "sequence": 56,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 50880
+          },
+          {
+            "sequence": 57,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 51840
+          },
+          {
+            "sequence": 58,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 52800
+          },
+          {
+            "sequence": 59,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 53760
+          },
+          {
+            "sequence": 60,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 54720
+          },
+          {
+            "sequence": 61,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 55680
+          },
+          {
+            "sequence": 62,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 56640
+          },
+          {
+            "sequence": 63,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 57600
+          },
+          {
+            "sequence": 64,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 58560
+          },
+          {
+            "sequence": 65,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 59520
+          },
+          {
+            "sequence": 66,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 60480
+          },
+          {
+            "sequence": 67,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 61440
+          },
+          {
+            "sequence": 68,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 62400
+          },
+          {
+            "sequence": 69,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 63360
+          },
+          {
+            "sequence": 70,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 64320
+          },
+          {
+            "sequence": 71,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 65280
+          },
+          {
+            "sequence": 72,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 66240
+          },
+          {
+            "sequence": 73,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 67200
+          },
+          {
+            "sequence": 74,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 68160
+          },
+          {
+            "sequence": 75,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 69120
+          },
+          {
+            "sequence": 76,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 70080
+          },
+          {
+            "sequence": 77,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 71040
+          },
+          {
+            "sequence": 78,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 72000
+          },
+          {
+            "sequence": 79,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 72960
+          },
+          {
+            "sequence": 80,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 73920
+          },
+          {
+            "sequence": 81,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 74880
+          },
+          {
+            "sequence": 82,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 75840
+          },
+          {
+            "sequence": 83,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 76800
+          },
+          {
+            "sequence": 84,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 77760
+          },
+          {
+            "sequence": 85,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 78720
+          },
+          {
+            "sequence": 86,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 79680
+          },
+          {
+            "sequence": 87,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 80640
+          },
+          {
+            "sequence": 88,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 81600
+          },
+          {
+            "sequence": 89,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 82560
+          },
+          {
+            "sequence": 90,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 83520
+          },
+          {
+            "sequence": 91,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 84480
+          },
+          {
+            "sequence": 92,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 85440
+          },
+          {
+            "sequence": 93,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 86400
+          },
+          {
+            "sequence": 94,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 87360
+          },
+          {
+            "sequence": 95,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 88320
+          },
+          {
+            "sequence": 96,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 89280
+          },
+          {
+            "sequence": 97,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 90240
+          },
+          {
+            "sequence": 98,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 91200
+          },
+          {
+            "sequence": 99,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 92160
+          },
+          {
+            "sequence": 100,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 93120
+          },
+          {
+            "sequence": 101,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 94080
+          },
+          {
+            "sequence": 102,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 95040
+          },
+          {
+            "sequence": 103,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 96000
+          },
+          {
+            "sequence": 104,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 96960
+          },
+          {
+            "sequence": 105,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 97920
+          },
+          {
+            "sequence": 106,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 98880
+          },
+          {
+            "sequence": 107,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 99840
+          },
+          {
+            "sequence": 108,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 100800
+          },
+          {
+            "sequence": 109,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 101760
+          },
+          {
+            "sequence": 110,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 102720
+          },
+          {
+            "sequence": 111,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 103680
+          },
+          {
+            "sequence": 112,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 104640
+          },
+          {
+            "sequence": 113,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 105600
+          },
+          {
+            "sequence": 114,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 106560
+          },
+          {
+            "sequence": 115,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 107520
+          },
+          {
+            "sequence": 116,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 108480
+          },
+          {
+            "sequence": 117,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 109440
+          },
+          {
+            "sequence": 118,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 110400
+          },
+          {
+            "sequence": 119,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 111360
+          },
+          {
+            "sequence": 120,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 112320
+          },
+          {
+            "sequence": 121,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 113280
+          },
+          {
+            "sequence": 122,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 114240
+          },
+          {
+            "sequence": 123,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 115200
+          },
+          {
+            "sequence": 124,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 116160
+          },
+          {
+            "sequence": 125,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 117120
+          },
+          {
+            "sequence": 126,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 118080
+          },
+          {
+            "sequence": 127,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 119040
+          },
+          {
+            "sequence": 128,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 120000
+          },
+          {
+            "sequence": 129,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 120960
+          },
+          {
+            "sequence": 130,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 121920
+          },
+          {
+            "sequence": 131,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 122880
+          },
+          {
+            "sequence": 132,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 123840
+          },
+          {
+            "sequence": 133,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 124800
+          },
+          {
+            "sequence": 134,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 125760
+          },
+          {
+            "sequence": 135,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 126720
+          },
+          {
+            "sequence": 136,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 127680
+          },
+          {
+            "sequence": 137,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 128640
+          },
+          {
+            "sequence": 138,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 129600
+          },
+          {
+            "sequence": 139,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 130560
+          },
+          {
+            "sequence": 140,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 131520
+          },
+          {
+            "sequence": 141,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 132480
+          },
+          {
+            "sequence": 142,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 133440
+          },
+          {
+            "sequence": 143,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 134400
+          },
+          {
+            "sequence": 144,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 135360
+          },
+          {
+            "sequence": 145,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 136320
+          },
+          {
+            "sequence": 146,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 137280
+          },
+          {
+            "sequence": 147,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 138240
+          },
+          {
+            "sequence": 148,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 139200
+          },
+          {
+            "sequence": 149,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 140160
+          },
+          {
+            "sequence": 150,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 141120
+          },
+          {
+            "sequence": 151,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 142080
+          },
+          {
+            "sequence": 152,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 143040
+          },
+          {
+            "sequence": 153,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 144000
+          },
+          {
+            "sequence": 154,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 144960
+          },
+          {
+            "sequence": 155,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 145920
+          },
+          {
+            "sequence": 156,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 146880
+          },
+          {
+            "sequence": 157,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 147840
+          },
+          {
+            "sequence": 158,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 148800
+          },
+          {
+            "sequence": 159,
+            "event": "sent",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 149760
+          },
+          {
+            "sequence": 160,
+            "event": "producer_done",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn"
+          },
+          {
+            "sequence": 161,
+            "event": "acknowledge",
+            "epoch": 1,
+            "owner": "b",
+            "generation": "force-turn",
+            "samples": 24000
+          },
+          {
+            "sequence": 162,
+            "event": "force_drain",
+            "epoch": 2,
+            "owner": "b",
+            "reason": "drain_deadline_expired",
+            "unplayed_samples": 125760,
+            "sent_unplayed_samples": 125760
+          }
+        ]
+      }
+    }
+  },
+  "cleanup": {
+    "owned_server_exit_code": 0,
+    "port": 18146,
+    "port_closed": true,
+    "monotonic_ns": 108650907383000
+  },
+  "passed": true
+}

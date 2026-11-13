@@ -1,0 +1,18 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1026 14:46:16.044672 123470 client_metric.cpp:102] Client metrics enabled (default enabled)
+I1026 14:46:16.044699 123470 client_metric.cpp:103] Client bandwidth summary enabled via MC_STORE_CLIENT_METRIC_BANDWIDTH
+I1026 14:46:16.046109 123470 client_service.cpp:423] client_id=9821573859591001665-895470152359686321
+I1026 14:46:16.046118 123470 client_service.cpp:437] Client metrics enabled but reporting disabled (interval=0)
+I1026 14:46:16.047016 123470 client_service.cpp:1077] Storage root directory is not set. persisting data is disabled.
+I1026 14:46:16.047040 123470 transfer_engine_impl.cpp:1046] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I1026 14:46:16.047046 123470 transfer_engine_impl.cpp:116] Transfer Engine parseHostNameWithPort. server_name: 127.0.0.1 port: 50242
+I1026 14:46:16.047091 123470 transfer_engine_impl.cpp:183] Transfer Engine RPC using P2P handshake, listening on 127.0.0.1:16125
+I1026 14:46:16.047143 123470 client_service.cpp:872] Transfer engine auto discovery is disabled for protocol: tcp
+E1026 14:46:16.047155 123470 transfer_metadata.cpp:1098] Local segment descriptor not found
+I1026 14:46:16.047176 123470 tcp_transport.cpp:391] TcpTransport: listen on port 16607
+I1026 14:46:16.047623 123470 transfer_task.cpp:965] MC_STORE_MEMCPY not set, auto-detected: TCP-only environment, memcpy enabled
+I1026 14:46:16.049358 123470 real_client.cpp:884] Registering local memory: 33554432 bytes
+I1026 14:46:16.049377 123470 real_client.cpp:1088] Global segment size is 0, skip mounting segment
+E1026 14:46:16.995090 123479 master_client.cpp:370] RPC call failed: End of file
+E1026 14:46:16.995151 123470 real_client.cpp:2834] Query failed for key: exp24-formal-v2/survivor with error: RPC_FAIL
+I1026 14:46:36.697666 123470 transfer_metadata.cpp:616] removeSegmentDesc 127.0.0.1:16125 finish

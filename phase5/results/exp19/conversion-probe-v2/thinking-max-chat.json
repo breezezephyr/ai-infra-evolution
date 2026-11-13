@@ -1,0 +1,292 @@
+{
+  "id": "thinking-max-chat",
+  "protocol": "chat",
+  "family": "thinking_max",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "messages": [
+      {
+        "role": "user",
+        "content": "2+2等于几？"
+      },
+      {
+        "role": "assistant",
+        "content": "4。",
+        "reasoning_content": "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+      },
+      {
+        "role": "user",
+        "content": "再加1呢？"
+      }
+    ],
+    "thinking": {
+      "type": "enabled"
+    },
+    "reasoning_effort": "max",
+    "temperature": 0.25,
+    "top_p": 0.5
+  },
+  "options": {},
+  "input_sha256": "0e716404b3746f42760ca19ff16e63e96702a11830ea0214ab79f8b2f8622df5",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "unknown",
+      "evidence": {
+        "status": "unknown",
+        "reason": "matching tokenizer unavailable"
+      }
+    },
+    {
+      "name": "reasoning_join_protocol_difference",
+      "status": "pass",
+      "evidence": {
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": true,
+          "reasoning_effort": "max",
+          "roles": [
+            "user",
+            "assistant",
+            "user"
+          ],
+          "message_contents": [
+            "2+2等于几？",
+            "4。",
+            "再加1呢？"
+          ],
+          "assistant_reasoning_contents": [
+            "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+          ],
+          "tool_names": [],
+          "tool_parameter_schemas": [],
+          "tool_choice": "auto",
+          "max_tokens": null,
+          "temperature": 1.0,
+          "top_p": 0.949999988079071,
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "parse_tool_calls": false,
+          "starts_in_tool_calls": false
+        },
+        "differences": {}
+      }
+    },
+    {
+      "name": "family_compare",
+      "status": "pass",
+      "evidence": {
+        "family": "thinking_max",
+        "n": 3,
+        "ids": [
+          "thinking-max-chat",
+          "thinking-max-responses",
+          "thinking-max-messages"
+        ],
+        "invariant_fields": [
+          "max_tokens",
+          "message_contents",
+          "model_version",
+          "output_constraint_kind",
+          "reasoning_effort",
+          "roles",
+          "stop_sequences",
+          "temperature",
+          "thinking_mode",
+          "tool_choice",
+          "tool_names",
+          "top_p"
+        ],
+        "declared_protocol_differences": {
+          "assistant_reasoning_contents": [
+            [
+              "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+            ],
+            [
+              "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+            ],
+            [
+              "HISTORY_REASONING_A_19\n\nHISTORY_REASONING_B_19"
+            ]
+          ]
+        },
+        "passed": true,
+        "prompt_equality_required": false
+      }
+    },
+    {
+      "name": "resolve_default_max_effort_131072",
+      "status": "unknown",
+      "evidence": {
+        "reason": "prerequisite unavailable"
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "2+2等于几？",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "4。",
+          "reasoning_content": "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19",
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        },
+        {
+          "role": "user",
+          "content": "再加1呢？",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": true,
+      "reasoning_effort": "max",
+      "tools": [],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": null,
+      "temperature": 1.0,
+      "top_p": 0.949999988079071,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": null
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": false,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [],
+      "thinking_initial_stage": "ThinkingInitialStage.ReasoningStart"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": true,
+    "reasoning_effort": "max",
+    "roles": [
+      "user",
+      "assistant",
+      "user"
+    ],
+    "message_contents": [
+      "2+2等于几？",
+      "4。",
+      "再加1呢？"
+    ],
+    "assistant_reasoning_contents": [
+      "HISTORY_REASONING_A_19\nHISTORY_REASONING_B_19"
+    ],
+    "tool_names": [],
+    "tool_parameter_schemas": [],
+    "tool_choice": "auto",
+    "max_tokens": null,
+    "temperature": 1.0,
+    "top_p": 0.949999988079071,
+    "output_constraint_kind": null,
+    "stop_sequences": [],
+    "parse_tool_calls": false,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜System｜>Reasoning Effort: 100 (range 1-100, the higher the value, the more thorough the reasoning)\n\n<｜User｜>2+2等于几？<｜Assistant｜></think>4。<｜end▁of▁sentence｜><｜User｜>再加1呢？<｜Assistant｜><think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        31
+      ],
+      [
+        123,
+        131
+      ],
+      [
+        138,
+        151
+      ],
+      [
+        151,
+        159
+      ],
+      [
+        161,
+        180
+      ],
+      [
+        180,
+        188
+      ],
+      [
+        193,
+        206
+      ],
+      [
+        206,
+        213
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜System｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "</think>",
+      "<｜end▁of▁sentence｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "<think>"
+    ]
+  },
+  "encoding": {
+    "status": "unknown",
+    "reason": "matching tokenizer unavailable"
+  },
+  "elapsed_ms": 0.0625
+}

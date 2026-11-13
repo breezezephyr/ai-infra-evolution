@@ -1,0 +1,8 @@
+# P3 网关开关：改这里，然后 systemctl restart p2-gw（bench 脚本用 gw_set 改）
+GW_MODE=pass
+GW_BUDGET=12000
+GW_TTFT=0
+GW_QUEUE_WAIT=10
+GW_PRIORITY=0
+GW_LOG=/opt/p2/results/gw.jsonl
+GW_RESERVE=0

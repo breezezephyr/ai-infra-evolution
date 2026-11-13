@@ -1,0 +1,54 @@
+{
+  "id": "city-1--json_schema--seed17",
+  "contract": "0d5f530a5ec40fe91cf839fccb7191a46cb66c209e766a18bc1a039dcd4eb712",
+  "arm": "json_schema",
+  "case_id": "city-1",
+  "seed": 17,
+  "family": "extract",
+  "payload_sha256": "c12c3ff6bc5335537cd4dcacd67d8bd6e73bb366e67322d219acec2905d605a6",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-fc7e9b7efa524c06999bae57789f8e17",
+    "object": "chat.completion",
+    "created": 1792983624,
+    "model": "exp21-qwen3-0.6b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "{\"city\": \"杭州\", \"tickets\": 3}",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 134,
+      "total_tokens": 147,
+      "completion_tokens": 13,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  },
+  "accepted": true,
+  "content": "{\"city\": \"杭州\", \"tickets\": 3}",
+  "finish_reason": "stop",
+  "evaluation": {
+    "json_valid": true,
+    "schema_valid": true,
+    "business_correct": true,
+    "complete": true,
+    "deliverable": true,
+    "value": {
+      "city": "杭州",
+      "tickets": 3
+    },
+    "schema_errors": []
+  },
+  "client_elapsed_ms": 1027.011625,
+  "clock_domain": "client_process_monotonic_ns"
+}

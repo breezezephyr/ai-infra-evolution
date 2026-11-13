@@ -1,0 +1,24 @@
+[Unit]
+Description=P2 bench vLLM (Qwen3-1.7B, port 8003, metrics on)
+After=network.target
+# 与现网模型互斥：起本服务会停 embedding / Bonsai；实验完 systemctl start qwen3-embedding 恢复
+Conflicts=qwen3-embedding.service bonsai-llm.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/models/Qwen3-1.7B
+EnvironmentFile=-/etc/default/bench-vllm
+# 环境里 flashinfer 0.6.18 与 torch 2.6 ABI 不兼容；stub 包让 import 抛 ImportError，vLLM 走原生采样。只影响本服务
+Environment=PYTHONPATH=/opt/p2/stub
+ExecStart=/root/vllm-env/bin/vllm serve /opt/models/Qwen3-1.7B \
+  --served-model-name qwen3-1.7b --host 127.0.0.1 --port 8003 \
+  --dtype bfloat16 --max-model-len ${MAX_MODEL_LEN} \
+  --gpu-memory-utilization ${GPU_UTIL} \
+  --max-num-seqs ${MAX_NUM_SEQS} --max-num-batched-tokens ${MAX_BATCHED_TOKENS} \
+  $EXTRA_ARGS
+Restart=no
+TimeoutStartSec=10min
+
+[Install]
+WantedBy=multi-user.target

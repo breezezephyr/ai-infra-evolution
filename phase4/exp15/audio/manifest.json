@@ -1,0 +1,43 @@
+{
+  "purpose": "transport replay of exp14 GPU outputs with synthetic boundary probes",
+  "fixtures": [
+    {
+      "id": "short",
+      "file": "short.wav",
+      "source": "phase4/results/exp14/live-final-v1/live-final-v1-pause_02-r0-A-69.wav",
+      "source_sha256": "0eda0f73385f7cc1fe0955fe134d992e5b00866122cff15f05d88197527f0c3d",
+      "source_rate": 24000,
+      "source_samples": 57600,
+      "source_seconds": 2.4,
+      "rate": 48000,
+      "samples": 149760,
+      "seconds": 3.12,
+      "pcm_sha256": "609cc64ebfb196f74bdc390257c9b3cf9db1f3513b94a473555f26724211223c",
+      "wav_sha256": "bfeaf719c18cb1bd2e7aff28c0fbeb01805f9b8b529fae53ba120f541f9863d6",
+      "prefix_seconds": 0.2,
+      "start_probe_hz": 1000,
+      "end_probe_hz": 2000,
+      "end_probe_duration_seconds": 0.1,
+      "tail_guard_seconds": 0.3
+    },
+    {
+      "id": "long",
+      "file": "long.wav",
+      "source": "phase4/results/exp14/live-final-v1/live-final-v1-long_01-r2-C-91.wav",
+      "source_sha256": "c4e7c414aae8299ba7536b6238f0a6439c935ce336802e9a4dbf6e61d94d0edc",
+      "source_rate": 24000,
+      "source_samples": 358800,
+      "source_seconds": 14.95,
+      "rate": 48000,
+      "samples": 752640,
+      "seconds": 15.68,
+      "pcm_sha256": "02e80c0df679e0ca66826f3ea60499c72c564e02de1770efe16cb29b0fd7605e",
+      "wav_sha256": "14ec6c74e448fd0dfba199630a0bdf0aa0ca37353188bb82f3457ea7c9e3ac70",
+      "prefix_seconds": 0.2,
+      "start_probe_hz": 1000,
+      "end_probe_hz": 2000,
+      "end_probe_duration_seconds": 0.1,
+      "tail_guard_seconds": 0.3
+    }
+  ]
+}

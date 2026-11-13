@@ -1,0 +1,1002 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex independent local result and code review",
+  "review_date": "2026-10-26",
+  "working_directory": ".",
+  "scope": {
+    "mode": "Read only except this report",
+    "allowed_write": "phase5/results/exp22/independent-review.json",
+    "no_ssh": true,
+    "no_upload": true,
+    "no_credentials_read": true,
+    "no_remote_actions": true,
+    "independent_method": "Loaded local raw artifacts with Python stdlib, reconstructed all planned request bodies, joined exact IDs and compared actual prompt/output token arrays. No analyzer/runner entry point was run.",
+    "runtime_provenance": "GPU execution is supported by supplied local backend identity, request/engine audit records and per-token scheduler observations; no new GPU run or remote identity verification was performed.",
+    "inputs": "See recomputed.input_sha256. Article snapshot is separately identified.",
+    "existing_test_suite": "Attempted PYTHONDONTWRITEBYTECODE=1 python3 -B -m pytest -q -p no:cacheprovider phase5/exp22/test_measure.py; unavailable because local python has no pytest. Independent stdlib checks and in-memory mutation probes completed."
+  },
+  "verdict": {
+    "result_and_sequence_statistics": "PASS",
+    "article_statistics_and_real_examples": "PASS on inspected snapshot",
+    "existing_all_config_engine_timing_summary": "FAIL: 3 request duration observations contain approximately 2.3 seconds of backend wall-clock discontinuity",
+    "code_validation": "P2 evidence validation gap; current 144 rows pass stronger independent checks",
+    "causal_claim": "Supports an association with exposure to mixed CPU scheduler plans in this run. Does not identify a numerical kernel or establish general output inconsistency, throughput or production capacity."
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "priority": "P1",
+      "title": "Same-host wall-clock discontinuities contaminate engine timing despite no cross-host subtraction",
+      "locations": [
+        {
+          "file": "phase5/exp22/measure.py",
+          "line": 57,
+          "end_line": 65
+        },
+        {
+          "file": "phase5/exp22/analyze.py",
+          "line": 55,
+          "end_line": 56
+        },
+        {
+          "file": "phase5/exp22/analyze.py",
+          "line": 77,
+          "end_line": 79
+        },
+        {
+          "file": "phase5/exp22/backend_audit.py",
+          "line": 49,
+          "end_line": 54
+        }
+      ],
+      "observed": "Backend RequestMetrics epoch-valued finished-arrival and finished-first_scheduled intervals are trusted without checking against available backend monotonic audit events. Four wall-minus-monotonic offset increases of 2.280-2.395 seconds appear across the run; three occur within requests. No cause such as NTP, manual clock adjustment or suspend can be identified from these files alone.",
+      "evidence": "exp22-formal-v1-b10-i7 reports engine total 4339.154ms, but engine_request->engine_finished on the same backend monotonic clock is 2059.046ms, API ingress->finished is 2065.750ms and client complete response is 2378.437ms. b03-i5 and b15-i3 have the same contradiction. Detailed IDs and recomputation are in secondary.clock_anomalies.",
+      "impact": "Raw total_ms and scheduled_to_finish_ms for those 3 requests, plus their group summaries, are invalid duration evidence. direct/1 raw scheduled_to_finish p95 is 3990.848ms. The separately labelled existing-audit monotonic schedule-plan->engine-finished observation yields p95 2026.351ms for all 24 direct/1 requests. bounded/1 median changes from 1496.652ms raw to 953.476ms for the separately labelled monotonic observation.",
+      "unaffected": "144-request identity/output counts; local client/gateway monotonic spans; local batch makespans; the article's concurrency-4 table. No >2ms first-token monotonic-bound violation was found, but existing first-token wall timings do not have a direct monotonic first-token event.",
+      "minimal_fix": [
+        "Mark timing_issues separately from request/output validity; retain all 144 in request/output denominators.",
+        "Immediately stop publishing affected wall-duration aggregates. Existing scheduler_plan and engine_finished backend_monotonic_ns can provide observed_schedule_plan_to_engine_finished_ms under that explicit label, preserving all 144 observations.",
+        "If excluding the 3 affected legacy-duration observations instead, report n=22 for direct/1 and n=23 for bounded/1, and disclose the changed task/length mixture; do not silently substitute them as an unbiased corrected sample.",
+        "For exact queue/first-token/finished durations in a later run, instrument all boundaries with one backend monotonic clock and pair with wall time only for correlation; add clock-discontinuity sanity checks.",
+        "Do not silently subtract an inferred clock jump, clamp a duration or call any host interval pure GPU kernel time."
+      ],
+      "article_minimal_fix": "At the current article timing paragraph, disclose that 3 engine total/scheduled-to-finish observations contain wall-clock discontinuities and are excluded from performance conclusions. The current concurrency-4 table may remain."
+    },
+    {
+      "id": "F2",
+      "priority": "P2",
+      "title": "Analyzer's verification gate does not fully enforce the evidence contract and still compares invalid rows",
+      "locations": [
+        {
+          "file": "phase5/exp22/measure.py",
+          "line": 92,
+          "end_line": 103
+        },
+        {
+          "file": "phase5/exp22/analyze.py",
+          "line": 42,
+          "end_line": 66
+        },
+        {
+          "file": "phase5/exp22/analyze.py",
+          "line": 81,
+          "end_line": 89
+        }
+      ],
+      "observed": "reconcile validates gateway/API ingress/status/engine-finished cardinality and body hashes, but does not validate API response.id, engine_request count/settings/config, API-finished count, actual prompt-array hash, prompt/total usage or plan-derived body. analyze stores only the first effective_config and checks only completion usage/text. Rows with reconcile issues still flow into outputs, baselines and comparison.",
+      "mutation_evidence": "Six in-memory mutations (wrong response.id, wrong API prompt usage, wrong seed, wrong effective max_num_seqs, duplicate engine_request, missing api_finished) all return [] from reconcile. The actual dataset was independently checked for all these fields and passed.",
+      "impact": "verification_issues=[] and input_ids_stable=true alone are weaker than the planned identity/sampling/template evidence contract. Future mixed/corrupt logs can be reported as comparable or become an implicit baseline.",
+      "minimal_fix": [
+        "Build an exact expected ID->batch/task/body/settings map from plan and validate against all request layers and response.id.",
+        "Require one engine_request and one api_finished, recompute prompt-token hash from the full array, validate prompt/completion/total usage and all effective configs rather than retaining only the first.",
+        "Separate planned, HTTP accepted, evidence verified, timing eligible and sequence comparable denominators. Preserve failures in planned/accepted counts, but do not let invalid outputs seed a baseline or count as consistent.",
+        "Explicitly select the 8 batch-00 direct/concurrency-1 baselines and verify their observed singleton schedule exposure instead of using the first available output for each task."
+      ]
+    }
+  ],
+  "interpretation": {
+    "independent_counts": "8 singleton baselines, then 136 comparisons = 88 equal + 48 different; mixed-exposed 85 = 37 equal + 48 different; singleton-exposed 59 includes 8 baselines, leaving 51 singleton comparisons, all equal.",
+    "input_sampling_template": "For every task, all 18 formal requests have one body hash, identical full actual prompt-token arrays, identical recorded temperature/top_p/top_k/seed/max_tokens/n and one recorded effective configuration. Body reconstruction includes enable_thinking=false and stream=false. This excludes recorded input/template/sampling changes; not all unrecorded runtime factors have been isolated.",
+    "temperature_and_seed": "temperature=0 is greedy generation here. seed=17 records a frozen setting, not evidence about random-sampling reproducibility.",
+    "batch_definition": "Mixed exposure means at least one CPU scheduler plan for that request contained more than one sequence. This is not a CUDA trace or a persistent batch assignment.",
+    "first_divergence_caution": "Each request has one prefill and one scheduled group slot per returned output token, with 7822 weighted slots matching 7822 actual output IDs. Matching CPU step indices, 41 first divergences occur in a mixed plan and 7 in a singleton plan despite earlier mixed exposure; do not assert that the first differing token always occurs in a mixed plan or that a current-step kernel caused it. No cross-request KV/memory/hidden-state or teacher-forced logits probe was performed.",
+    "length_and_quality": "54 length finishes remain in the 144; 90 stop finishes. The comparison concerns emitted actual sequences to their cap, not complete-answer quality.",
+    "closed_loop": "Eight tasks submitted per batch to a 1/2/4-worker thread pool; later HTTP arrivals wait for a worker. No controlled open-loop offered rate. 24 requests per config, 3 batches per config, all HTTP 200. active=2/waiting=2 is not overflow-tested by a maximum four-client workload; 0 rejections cannot establish overload protection or production capacity.",
+    "admission_observation": "Backend API monotonic event overlap peaks are direct=1/2/4 and bounded=1/2/2 across concurrency=1/2/4. Bounds and waiting migration are supported in this run.",
+    "latency_definitions": "driver_wait uses local submitted->thread-start, client_response local thread-start->full nonstream JSON read, gateway_wait local arrival->dispatch. Engine queue is initial queue only. No complete response is used as client TTFT. Do not add separate medians or subtract absolute timestamps across hosts.",
+    "throughput_scope": "Output totals are direct 1/2/4:1323/1294/1300 and bounded 1/2/4:1323/1282/1300. Concurrency-4 totals are equal at 1300, while request-level sequences and lengths differ. No universal throughput ratio, equal per-request work comparison or causal production-capacity conclusion follows."
+  },
+  "recomputed": {
+    "method": "Independent stdlib reconstruction without importing gpu_run, backend_audit, measure or analyze; no project scripts executed.",
+    "event_counts_entire_backend": {
+      "api_ingress": 148,
+      "engine_request": 148,
+      "scheduler_plan": 6151,
+      "engine_finished": 148,
+      "api_response": 148,
+      "api_finished": 148
+    },
+    "formal_events": {
+      "api_ingress": 144,
+      "engine_request": 144,
+      "engine_finished": 144,
+      "api_response": 144,
+      "api_finished": 144
+    },
+    "checks_passed": {
+      "planned_144_unique_rows": 1,
+      "gateway_144_unique": 1,
+      "scheduler_ids_formal_only": 5882,
+      "api_ingress_count": 144,
+      "engine_request_count": 144,
+      "engine_finished_count": 144,
+      "api_response_count": 144,
+      "api_finished_count": 144,
+      "planned_metadata": 144,
+      "body_reconstruction_matches_3_boundaries": 144,
+      "status_200_at_3_boundaries": 144,
+      "response_request_id": 144,
+      "engine_sampling_matches_plan": 144,
+      "one_engine_output": 144,
+      "actual_token_id_arrays": 144,
+      "prompt_hash_recomputed": 144,
+      "api_full_output_binding": 144,
+      "usage_prompt_output_total": 144,
+      "length_finish_matches_cap": 144,
+      "scheduler_steps_match_tokens": 144,
+      "one_prefill_no_chunked": 144,
+      "local_timestamp_order": 144,
+      "gateway_wait_exact": 144,
+      "backend_epoch_timestamp_order": 144,
+      "backend_event_monotonic_order": 144,
+      "joined_exact_recomputed": 144,
+      "summary_group_exact": 6,
+      "batch_times_plan_tasks": 1,
+      "summary_sha256_plan.json": 1,
+      "summary_sha256_records.json": 1,
+      "summary_sha256_gateway.jsonl": 1
+    },
+    "failures": [],
+    "comparisons": {
+      "all": {
+        "n": 144,
+        "equal": 96,
+        "different": 48
+      },
+      "excluding_8_baselines": {
+        "n": 136,
+        "equal": 88,
+        "different": 48
+      },
+      "mixed": {
+        "n": 85,
+        "equal": 37,
+        "different": 48
+      },
+      "solo": {
+        "n": 59,
+        "equal": 59,
+        "different": 0
+      },
+      "solo_excluding_baselines": {
+        "n": 51,
+        "equal": 51,
+        "different": 0
+      }
+    },
+    "actual_token_id_totals": {
+      "prompt": 61758,
+      "output": 7822,
+      "requests_with_nonempty_actual_prompt_and_output_ids": 144
+    },
+    "task_stats": {
+      "long-batch-a": {
+        "requests": 18,
+        "unique_body": 1,
+        "unique_prompt_ids": 1,
+        "unique_settings": 1,
+        "unique_effective_configs": 1,
+        "prompt_tokens": 832,
+        "output_tokens": 1602,
+        "unique_output_sequences": 3,
+        "different": 8,
+        "mixed_n": 12
+      },
+      "long-batch-b": {
+        "requests": 18,
+        "unique_body": 1,
+        "unique_prompt_ids": 1,
+        "unique_settings": 1,
+        "unique_effective_configs": 1,
+        "prompt_tokens": 835,
+        "output_tokens": 1728,
+        "unique_output_sequences": 7,
+        "different": 10,
+        "mixed_n": 11
+      },
+      "long-interactive-a": {
+        "requests": 18,
+        "unique_body": 1,
+        "unique_prompt_ids": 1,
+        "unique_settings": 1,
+        "unique_effective_configs": 1,
+        "prompt_tokens": 832,
+        "output_tokens": 162,
+        "unique_output_sequences": 1,
+        "different": 0,
+        "mixed_n": 9
+      },
+      "long-interactive-b": {
+        "requests": 18,
+        "unique_body": 1,
+        "unique_prompt_ids": 1,
+        "unique_settings": 1,
+        "unique_effective_configs": 1,
+        "prompt_tokens": 834,
+        "output_tokens": 306,
+        "unique_output_sequences": 1,
+        "different": 0,
+        "mixed_n": 9
+      },
+      "short-batch-a": {
+        "requests": 18,
+        "unique_body": 1,
+        "unique_prompt_ids": 1,
+        "unique_settings": 1,
+        "unique_effective_configs": 1,
+        "prompt_tokens": 25,
+        "output_tokens": 1728,
+        "unique_output_sequences": 4,
+        "different": 9,
+        "mixed_n": 10
+      },
+      "short-batch-b": {
+        "requests": 18,
+        "unique_body": 1,
+        "unique_prompt_ids": 1,
+        "unique_settings": 1,
+        "unique_effective_configs": 1,
+        "prompt_tokens": 26,
+        "output_tokens": 1728,
+        "unique_output_sequences": 4,
+        "different": 9,
+        "mixed_n": 12
+      },
+      "short-interactive-a": {
+        "requests": 18,
+        "unique_body": 1,
+        "unique_prompt_ids": 1,
+        "unique_settings": 1,
+        "unique_effective_configs": 1,
+        "prompt_tokens": 20,
+        "output_tokens": 370,
+        "unique_output_sequences": 3,
+        "different": 12,
+        "mixed_n": 12
+      },
+      "short-interactive-b": {
+        "requests": 18,
+        "unique_body": 1,
+        "unique_prompt_ids": 1,
+        "unique_settings": 1,
+        "unique_effective_configs": 1,
+        "prompt_tokens": 27,
+        "output_tokens": 198,
+        "unique_output_sequences": 1,
+        "different": 0,
+        "mixed_n": 10
+      }
+    },
+    "scheduler": {
+      "plans": 5882,
+      "batch_size_histogram": {
+        "1": 4372,
+        "2": 1238,
+        "3": 114,
+        "4": 158
+      },
+      "weighted_group_slots": 7822,
+      "batch_size_at_first_differing_token_cpu_plan": {
+        "1": 7,
+        "2": 31,
+        "3": 3,
+        "4": 7
+      }
+    },
+    "finish_reasons": {
+      "stop": 90,
+      "length": 54
+    },
+    "effective_config_distinct": 1,
+    "effective_configs": [
+      "{\"chunked_prefill_enabled\": false, \"dtype\": \"torch.bfloat16\", \"enable_prefix_caching\": null, \"enforce_eager\": true, \"engine\": \"V0 AsyncLLMEngine\", \"max_num_batched_tokens\": 4096, \"max_num_seqs\": 4}"
+    ],
+    "backend_api_duration_ms_range": [
+      173.519901,
+      2436.944858
+    ],
+    "engine_monotonic_vs_epoch_duration_residual_ms": {
+      "min": -2357.473780184204,
+      "median": 0.2570436774292375,
+      "max": 0.922892700317334
+    },
+    "groups": [
+      {
+        "mode": "direct",
+        "concurrency": 1,
+        "planned": 24,
+        "accepted": 24,
+        "batch_makespan_median_ms": 13125.894417,
+        "generated_tokens": 1323,
+        "max_observed_batch": 1,
+        "driver_wait_ms": {
+          "n": 24,
+          "median": 6117.052312,
+          "p95_nearest_rank": 11341.585375
+        },
+        "gateway_wait_ms": {
+          "n": 24,
+          "median": 0.026917,
+          "p95_nearest_rank": 0.368959
+        },
+        "client_response_ms": {
+          "n": 24,
+          "median": 1619.1396250000003,
+          "p95_nearest_rank": 2576.825083
+        },
+        "queue_ms": {
+          "n": 24,
+          "median": 0.29718875885009766,
+          "p95_nearest_rank": 0.36406517028808594
+        },
+        "first_token_ms": {
+          "n": 24,
+          "median": 40.55345058441162,
+          "p95_nearest_rank": 62.822580337524414
+        },
+        "scheduled_to_finish_ms": {
+          "n": 24,
+          "median": 968.5059785842896,
+          "p95_nearest_rank": 3990.8483028411865
+        }
+      },
+      {
+        "mode": "direct",
+        "concurrency": 2,
+        "planned": 24,
+        "accepted": 24,
+        "batch_makespan_median_ms": 7863.724542,
+        "generated_tokens": 1294,
+        "max_observed_batch": 2,
+        "driver_wait_ms": {
+          "n": 24,
+          "median": 2853.1489375,
+          "p95_nearest_rank": 5748.909459
+        },
+        "gateway_wait_ms": {
+          "n": 24,
+          "median": 0.011958,
+          "p95_nearest_rank": 0.215292
+        },
+        "client_response_ms": {
+          "n": 24,
+          "median": 1883.8313334999998,
+          "p95_nearest_rank": 3245.831834
+        },
+        "queue_ms": {
+          "n": 24,
+          "median": 0.39374828338623047,
+          "p95_nearest_rank": 28.667211532592773
+        },
+        "first_token_ms": {
+          "n": 24,
+          "median": 48.4614372253418,
+          "p95_nearest_rank": 83.18686485290527
+        },
+        "scheduled_to_finish_ms": {
+          "n": 24,
+          "median": 1062.9279613494873,
+          "p95_nearest_rank": 2168.1549549102783
+        }
+      },
+      {
+        "mode": "direct",
+        "concurrency": 4,
+        "planned": 24,
+        "accepted": 24,
+        "batch_makespan_median_ms": 3691.257166,
+        "generated_tokens": 1300,
+        "max_observed_batch": 4,
+        "driver_wait_ms": {
+          "n": 24,
+          "median": 272.089062,
+          "p95_nearest_rank": 2526.30725
+        },
+        "gateway_wait_ms": {
+          "n": 24,
+          "median": 0.0121665,
+          "p95_nearest_rank": 0.157208
+        },
+        "client_response_ms": {
+          "n": 24,
+          "median": 1657.8940625,
+          "p95_nearest_rank": 2607.993541
+        },
+        "queue_ms": {
+          "n": 24,
+          "median": 13.84437084197998,
+          "p95_nearest_rank": 42.75846481323242
+        },
+        "first_token_ms": {
+          "n": 24,
+          "median": 47.79040813446045,
+          "p95_nearest_rank": 93.40643882751465
+        },
+        "scheduled_to_finish_ms": {
+          "n": 24,
+          "median": 922.2333431243896,
+          "p95_nearest_rank": 1713.4160995483398
+        }
+      },
+      {
+        "mode": "bounded",
+        "concurrency": 1,
+        "planned": 24,
+        "accepted": 24,
+        "batch_makespan_median_ms": 13648.711292,
+        "generated_tokens": 1323,
+        "max_observed_batch": 1,
+        "driver_wait_ms": {
+          "n": 24,
+          "median": 6341.483187,
+          "p95_nearest_rank": 12572.335291
+        },
+        "gateway_wait_ms": {
+          "n": 24,
+          "median": 0.0296665,
+          "p95_nearest_rank": 0.18125
+        },
+        "client_response_ms": {
+          "n": 24,
+          "median": 1845.0025839999998,
+          "p95_nearest_rank": 2973.076667
+        },
+        "queue_ms": {
+          "n": 24,
+          "median": 0.3027915954589844,
+          "p95_nearest_rank": 0.3521442413330078
+        },
+        "first_token_ms": {
+          "n": 24,
+          "median": 36.687254905700684,
+          "p95_nearest_rank": 79.74791526794434
+        },
+        "scheduled_to_finish_ms": {
+          "n": 24,
+          "median": 1496.6520071029663,
+          "p95_nearest_rank": 2381.8395137786865
+        }
+      },
+      {
+        "mode": "bounded",
+        "concurrency": 2,
+        "planned": 24,
+        "accepted": 24,
+        "batch_makespan_median_ms": 7444.937875,
+        "generated_tokens": 1282,
+        "max_observed_batch": 2,
+        "driver_wait_ms": {
+          "n": 24,
+          "median": 3309.504562,
+          "p95_nearest_rank": 6363.212166
+        },
+        "gateway_wait_ms": {
+          "n": 24,
+          "median": 0.060395500000000005,
+          "p95_nearest_rank": 0.272
+        },
+        "client_response_ms": {
+          "n": 24,
+          "median": 2006.3344585,
+          "p95_nearest_rank": 3290.76775
+        },
+        "queue_ms": {
+          "n": 24,
+          "median": 5.48243522644043,
+          "p95_nearest_rank": 44.44408416748047
+        },
+        "first_token_ms": {
+          "n": 24,
+          "median": 41.04149341583252,
+          "p95_nearest_rank": 88.65022659301758
+        },
+        "scheduled_to_finish_ms": {
+          "n": 24,
+          "median": 924.9567985534668,
+          "p95_nearest_rank": 2153.244733810425
+        }
+      },
+      {
+        "mode": "bounded",
+        "concurrency": 4,
+        "planned": 24,
+        "accepted": 24,
+        "batch_makespan_median_ms": 7243.469083,
+        "generated_tokens": 1300,
+        "max_observed_batch": 2,
+        "driver_wait_ms": {
+          "n": 24,
+          "median": 242.4473335,
+          "p95_nearest_rank": 3567.09
+        },
+        "gateway_wait_ms": {
+          "n": 24,
+          "median": 1013.754771,
+          "p95_nearest_rank": 2556.351583
+        },
+        "client_response_ms": {
+          "n": 24,
+          "median": 3176.5964375000003,
+          "p95_nearest_rank": 4736.221834
+        },
+        "queue_ms": {
+          "n": 24,
+          "median": 1.7347335815429688,
+          "p95_nearest_rank": 40.158987045288086
+        },
+        "first_token_ms": {
+          "n": 24,
+          "median": 40.660977363586426,
+          "p95_nearest_rank": 80.5814266204834
+        },
+        "scheduled_to_finish_ms": {
+          "n": 24,
+          "median": 969.5286750793457,
+          "p95_nearest_rank": 1856.1935424804688
+        }
+      }
+    ],
+    "input_sha256": {
+      "phase5/results/exp22/formal-v1/plan.json": "ad1bf302803e0667e7f9b4edc30257ccb9af5d331d1060b37bf33fc1de52b5fe",
+      "phase5/results/exp22/formal-v1/records.json": "ef56febb4120bdeb99b02e027071f6703cbf0bf5d7d531fa0959cfa6f9564c05",
+      "phase5/results/exp22/formal-v1/joined.json": "be8033ab80ba0285867cdf39157df59225f15a346a6487dfaf123a3c77fdc811",
+      "phase5/results/exp22/formal-v1/summary.json": "71560827e06b6702a4501a9d07bf34f3e4996c3bcbed8f550fbf85c71c29f90a",
+      "phase5/results/exp22/formal-v1/gateway.jsonl": "e648f5b7dc17df78402c482f6088c29d51c0eb26c80ed7139f55bf60ccc32c78",
+      "phase5/results/exp22/formal-v1/batch-times.json": "92a23774030ff55ba3485ea2f3bbb399e7be8c8d584362c3a2df57c2898b8039",
+      "phase5/results/exp22/backend.jsonl": "8a9e75c5a6480b0de03d3c343209ccf1fc0e42253d47fc443e83865786afa2e9",
+      "phase5/results/exp22/backend-identity.json": "841f4effba9a5e53e95a8f9024d440fae814383d3c631540321e9638e0684b62",
+      "phase5/exp22/gpu_run.py": "34ddc95cd78f92b2ab843de228c86d194aba316b9eb2d847b8c3f6a54f69dd78",
+      "phase5/exp22/backend_audit.py": "2d010fad08605d4c2ca4ba0c50793367fc682ba1347b2506402a7e425aacea1a",
+      "phase5/exp22/measure.py": "d8264959e7e136d4637a49c2c457bd30022c39619d770f9a98a3fff627a696fb",
+      "phase5/exp22/analyze.py": "e059d3130a472a4a55250196872fb3853870ac49eed4f0d567226f1679205d2e",
+      "phase5/exp22/test_measure.py": "121959a0c7a3f8fd15b170d80ed252b2317e8127d0c2f9d20ef987cffe4c8d8e",
+      "phase5/exp22/设计.md": "ab58b09763397e74e7f4caea542b61a751686caf48c8b4a8cabaaec8bb0ced8c",
+      "phase5/exp22/源码笔记.md": "2f4aefd3e06ccff83ffcc9ab955ac4194d885265149e4698e8e4feca0591bb7f",
+      "phase5/exp22/执行记录.md": "24687eb3a86443a54adbcefeb2b5f3a1c71a58640744feef2e079ab9f5dcba09"
+    }
+  },
+  "secondary": {
+    "clock_anomalies": [
+      {
+        "id": "exp22-formal-v1-b03-i5",
+        "mode": "bounded",
+        "concurrency": 1,
+        "engine_metric_total_ms": 2550.288677215576,
+        "engine_call_monotonic_ms": 254.05221,
+        "wall_excess_ms": 2296.2364672155763,
+        "backend_api_monotonic_ms": 261.146278,
+        "client_response_ms": 999.406625,
+        "schedule_plan_to_engine_finished_monotonic_ms": 253.66789,
+        "finished_monotonic_ns": 709918786107602,
+        "wall_minus_monotonic_at_finish_sec": 1792277273.5909746,
+        "engine_first_token_ms": 89.45846557617188,
+        "first_token_monotonic_upper_ms": 89.930663
+      },
+      {
+        "id": "exp22-formal-v1-b10-i7",
+        "mode": "direct",
+        "concurrency": 1,
+        "engine_metric_total_ms": 4339.154243469238,
+        "engine_call_monotonic_ms": 2059.046269,
+        "wall_excess_ms": 2280.1079744692383,
+        "backend_api_monotonic_ms": 2065.749615,
+        "client_response_ms": 2378.437,
+        "schedule_plan_to_engine_finished_monotonic_ms": 2058.567202,
+        "finished_monotonic_ns": 709984688436895,
+        "wall_minus_monotonic_at_finish_sec": 1792277278.266918,
+        "engine_first_token_ms": 22.826433181762695,
+        "first_token_monotonic_upper_ms": 23.271451
+      },
+      {
+        "id": "exp22-formal-v1-b15-i3",
+        "mode": "direct",
+        "concurrency": 1,
+        "engine_metric_total_ms": 3991.119623184204,
+        "engine_call_monotonic_ms": 1633.645843,
+        "wall_excess_ms": 2357.473780184204,
+        "backend_api_monotonic_ms": 1638.683111,
+        "client_response_ms": 2100.172875,
+        "schedule_plan_to_engine_finished_monotonic_ms": 1633.276337,
+        "finished_monotonic_ns": 710017659279771,
+        "wall_minus_monotonic_at_finish_sec": 1792277280.6246717,
+        "engine_first_token_ms": 19.661664962768555,
+        "first_token_monotonic_upper_ms": 20.152072
+      }
+    ],
+    "backend_clock_offset_jumps": [
+      {
+        "previous_request_id": "exp22-formal-v1-b03-i4",
+        "current_request_id": "exp22-formal-v1-b03-i5",
+        "wall_minus_monotonic_jump_ms": 2296.4491844177246
+      },
+      {
+        "previous_request_id": "exp22-formal-v1-b06-i3",
+        "current_request_id": "exp22-formal-v1-b06-i4",
+        "wall_minus_monotonic_jump_ms": 2395.4858779907227
+      },
+      {
+        "previous_request_id": "exp22-formal-v1-b10-i6",
+        "current_request_id": "exp22-formal-v1-b10-i7",
+        "wall_minus_monotonic_jump_ms": 2280.4720401763916
+      },
+      {
+        "previous_request_id": "exp22-formal-v1-b15-i2",
+        "current_request_id": "exp22-formal-v1-b15-i3",
+        "wall_minus_monotonic_jump_ms": 2357.7003479003906
+      }
+    ],
+    "first_token_monotonic_bound_violations_gt_2ms": 0,
+    "per_config": [
+      {
+        "mode": "direct",
+        "concurrency": 1,
+        "requests": 24,
+        "output_tokens_total": 1323,
+        "output_lengths": {
+          "9": 3,
+          "11": 3,
+          "17": 3,
+          "23": 3,
+          "93": 3,
+          "96": 9
+        },
+        "peak_backend_api_inflight": 1,
+        "scheduled_to_finish_raw": {
+          "n": 24,
+          "median_ms": 968.5059785842896,
+          "p95_nearest_rank_ms": 3990.8483028411865
+        },
+        "scheduled_to_finish_excluding_3_clock_anomalies": {
+          "n": 22,
+          "median_ms": 425.94194412231445,
+          "p95_nearest_rank_ms": 1921.8823909759521
+        },
+        "observed_schedule_plan_to_engine_finished_monotonic": {
+          "n": 24,
+          "median_ms": 968.734101,
+          "p95_nearest_rank_ms": 2026.350761
+        }
+      },
+      {
+        "mode": "direct",
+        "concurrency": 2,
+        "requests": 24,
+        "output_tokens_total": 1294,
+        "output_lengths": {
+          "9": 3,
+          "11": 3,
+          "17": 3,
+          "20": 3,
+          "83": 2,
+          "93": 1,
+          "96": 9
+        },
+        "peak_backend_api_inflight": 2,
+        "scheduled_to_finish_raw": {
+          "n": 24,
+          "median_ms": 1062.9279613494873,
+          "p95_nearest_rank_ms": 2168.1549549102783
+        },
+        "scheduled_to_finish_excluding_3_clock_anomalies": {
+          "n": 24,
+          "median_ms": 1062.9279613494873,
+          "p95_nearest_rank_ms": 2168.1549549102783
+        },
+        "observed_schedule_plan_to_engine_finished_monotonic": {
+          "n": 24,
+          "median_ms": 1063.0695685,
+          "p95_nearest_rank_ms": 2168.277786
+        }
+      },
+      {
+        "mode": "direct",
+        "concurrency": 4,
+        "requests": 24,
+        "output_tokens_total": 1300,
+        "output_lengths": {
+          "9": 3,
+          "11": 3,
+          "17": 3,
+          "18": 1,
+          "20": 2,
+          "83": 1,
+          "91": 1,
+          "93": 1,
+          "96": 9
+        },
+        "peak_backend_api_inflight": 4,
+        "scheduled_to_finish_raw": {
+          "n": 24,
+          "median_ms": 922.2333431243896,
+          "p95_nearest_rank_ms": 1713.4160995483398
+        },
+        "scheduled_to_finish_excluding_3_clock_anomalies": {
+          "n": 24,
+          "median_ms": 922.2333431243896,
+          "p95_nearest_rank_ms": 1713.4160995483398
+        },
+        "observed_schedule_plan_to_engine_finished_monotonic": {
+          "n": 24,
+          "median_ms": 922.377628,
+          "p95_nearest_rank_ms": 1713.565041
+        }
+      },
+      {
+        "mode": "bounded",
+        "concurrency": 1,
+        "requests": 24,
+        "output_tokens_total": 1323,
+        "output_lengths": {
+          "9": 3,
+          "11": 3,
+          "17": 3,
+          "23": 3,
+          "93": 3,
+          "96": 9
+        },
+        "peak_backend_api_inflight": 1,
+        "scheduled_to_finish_raw": {
+          "n": 24,
+          "median_ms": 1496.6520071029663,
+          "p95_nearest_rank_ms": 2381.8395137786865
+        },
+        "scheduled_to_finish_excluding_3_clock_anomalies": {
+          "n": 23,
+          "median_ms": 1493.3140277862549,
+          "p95_nearest_rank_ms": 2128.880262374878
+        },
+        "observed_schedule_plan_to_engine_finished_monotonic": {
+          "n": 24,
+          "median_ms": 953.476216,
+          "p95_nearest_rank_ms": 2129.013124
+        }
+      },
+      {
+        "mode": "bounded",
+        "concurrency": 2,
+        "requests": 24,
+        "output_tokens_total": 1282,
+        "output_lengths": {
+          "9": 3,
+          "11": 3,
+          "17": 3,
+          "18": 1,
+          "20": 2,
+          "83": 3,
+          "96": 9
+        },
+        "peak_backend_api_inflight": 2,
+        "scheduled_to_finish_raw": {
+          "n": 24,
+          "median_ms": 924.9567985534668,
+          "p95_nearest_rank_ms": 2153.244733810425
+        },
+        "scheduled_to_finish_excluding_3_clock_anomalies": {
+          "n": 24,
+          "median_ms": 924.9567985534668,
+          "p95_nearest_rank_ms": 2153.244733810425
+        },
+        "observed_schedule_plan_to_engine_finished_monotonic": {
+          "n": 24,
+          "median_ms": 925.118185,
+          "p95_nearest_rank_ms": 2153.425232
+        }
+      },
+      {
+        "mode": "bounded",
+        "concurrency": 4,
+        "requests": 24,
+        "output_tokens_total": 1300,
+        "output_lengths": {
+          "9": 3,
+          "11": 3,
+          "17": 3,
+          "18": 2,
+          "20": 1,
+          "83": 1,
+          "93": 2,
+          "96": 9
+        },
+        "peak_backend_api_inflight": 2,
+        "scheduled_to_finish_raw": {
+          "n": 24,
+          "median_ms": 969.5286750793457,
+          "p95_nearest_rank_ms": 1856.1935424804688
+        },
+        "scheduled_to_finish_excluding_3_clock_anomalies": {
+          "n": 24,
+          "median_ms": 969.5286750793457,
+          "p95_nearest_rank_ms": 1856.1935424804688
+        },
+        "observed_schedule_plan_to_engine_finished_monotonic": {
+          "n": 24,
+          "median_ms": 969.6919409999999,
+          "p95_nearest_rank_ms": 1856.340275
+        }
+      }
+    ],
+    "verified_real_different_output_examples": [
+      {
+        "task": "short-interactive-a",
+        "baseline_id": "exp22-formal-v1-b00-i6",
+        "different_id": "exp22-formal-v1-b01-i0",
+        "baseline_text": "公交专用道是为公交车行驶而设置的专用道路，以提高公交车的通行效率和安全性。",
+        "different_text": "公交专用道是为公交车提供专用道路，以提高通行效率和安全性。",
+        "baseline_token_count": 23,
+        "different_token_count": 18,
+        "first_different_token_index_zero_based": 6,
+        "first_different_token_ids": {
+          "baseline": 106019,
+          "different": 99553
+        },
+        "finish_reasons": [
+          "stop",
+          "stop"
+        ],
+        "max_observed_batch": 2,
+        "cpu_plan_size_at_first_differing_token": 2,
+        "body_sha256": "5efc5e52be47611756dabb1ca5db0fe94b61ec8569a90f7f3dd2563fd7fadca8",
+        "body_matches_baseline": true
+      },
+      {
+        "task": "long-batch-a",
+        "baseline_id": "exp22-formal-v1-b00-i0",
+        "different_id": "exp22-formal-v1-b02-i3",
+        "baseline_text": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划有序发车，运行稳定，无异常情况。本次班次运行体现了青山至河湾之间的高效、连续服务，为乘客提供了稳定的出行保障。",
+        "different_text": "根据提供的班次记录，从班次01到班次30，所有班次均从始发站青山至终点站河湾运行，计划发车时间为08:01至08:30，状态均正常。各班次均按计划发车，运行稳定，无异常情况。本次班次运行顺利，为后续运营提供了可靠基础。",
+        "baseline_token_count": 93,
+        "different_token_count": 83,
+        "first_different_token_index_zero_based": 59,
+        "first_different_token_ids": {
+          "baseline": 102619,
+          "different": 28291
+        },
+        "finish_reasons": [
+          "stop",
+          "stop"
+        ],
+        "max_observed_batch": 4,
+        "cpu_plan_size_at_first_differing_token": 4,
+        "body_sha256": "c016f48069ac5705d8ac3f44fa9eeb699579931f5571c98c1462d1a514230f8b",
+        "body_matches_baseline": true
+      },
+      {
+        "task": "short-batch-a",
+        "baseline_id": "exp22-formal-v1-b00-i4",
+        "different_id": "exp22-formal-v1-b07-i4",
+        "baseline_text": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和顺畅运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路合理且覆盖主要区域。\n   - 分析线路的长度和密度，避免线路过长或过短。\n\n2. **车辆调度**  \n   - 根据乘客需求和高峰时段调整车辆数量，避免",
+        "different_text": "在公交调度员安排车辆时，需要考虑以下因素，以确保公交线路的高效、安全和合理运行：\n\n1. **线路规划**  \n   - 确定公交线路的起点、终点和关键节点，确保线路连通性。\n   - 分析线路的长度和密度，合理分配车辆数量。\n\n2. **车辆调度**  \n   - 根据乘客需求和车辆容量，合理安排车辆的发车时间和班次",
+        "baseline_token_count": 96,
+        "different_token_count": 96,
+        "first_different_token_index_zero_based": 22,
+        "first_different_token_ids": {
+          "baseline": 110699,
+          "different": 100745
+        },
+        "finish_reasons": [
+          "length",
+          "length"
+        ],
+        "max_observed_batch": 2,
+        "cpu_plan_size_at_first_differing_token": 2,
+        "body_sha256": "3cc87a62868d29f060ce648a1880f5d1d43ac307a1e4502ee21285ad1967eab4",
+        "body_matches_baseline": true
+      },
+      {
+        "task": "long-batch-b",
+        "baseline_id": "exp22-formal-v1-b00-i2",
+        "different_id": "exp22-formal-v1-b01-i3",
+        "baseline_text": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间信息。\n\n2. **出发站和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态正常，说明该班次已经",
+        "different_text": "在查阅这些班次时，乘客应关注以下几点：\n\n1. **发车时间**：班次的计划发车时间（如08:01、08:02等），这是乘客最关心的时间点。\n\n2. **起点和终点站**：班次的起点和终点站（青山和河湾），帮助乘客了解出行的具体地点。\n\n3. **状态**：班次的状态（如“状态正常”），说明",
+        "baseline_token_count": 96,
+        "different_token_count": 96,
+        "first_different_token_index_zero_based": 48,
+        "first_different_token_ids": {
+          "baseline": 27369,
+          "different": 27442
+        },
+        "finish_reasons": [
+          "length",
+          "length"
+        ],
+        "max_observed_batch": 2,
+        "cpu_plan_size_at_first_differing_token": 2,
+        "body_sha256": "1a6e135f0ae53c04d4f7ee38bf0eed943e69d45a162df3fc0ed8792a2f3349e7",
+        "body_matches_baseline": true
+      }
+    ],
+    "reconcile_in_memory_mutations_returned_issues": {
+      "wrong_response_id": [],
+      "wrong_prompt_usage": [],
+      "wrong_sampling_seed": [],
+      "wrong_engine_config": [],
+      "duplicate_engine_request": [],
+      "missing_api_finished": []
+    }
+  },
+  "article_review": {
+    "path": "23-Phase5·4-班次表藏在哪里/正文.md",
+    "read_snapshot_line_count": 129,
+    "checked_items": [
+      {
+        "lines": [
+          10,
+          16
+        ],
+        "result": "PASS",
+        "detail": "Both quoted real answers exactly match saved HTTP and engine text. Baseline b00-i6=23 tokens; mixed b01-i0=18. First difference is zero-based index6, hence the seventh token, IDs106019 vs99553."
+      },
+      {
+        "lines": [
+          62,
+          62
+        ],
+        "result": "PASS",
+        "detail": "Greedy generation and seed not framed as random-sampling experiment."
+      },
+      {
+        "lines": [
+          72,
+          84
+        ],
+        "result": "PASS",
+        "detail": "144 formal, 4 preflight separate; exact all layers and output counts; 136/88/48, 85/37/48 and 59 includes8->51 correctly stated; 54 length and90 stop."
+      },
+      {
+        "lines": [
+          82,
+          82
+        ],
+        "result": "PASS",
+        "detail": "Association with batch changes is bounded; no concrete numerical-kernel or general model inconsistency claim."
+      },
+      {
+        "lines": [
+          90,
+          104
+        ],
+        "result": "PASS",
+        "detail": "Each mode concurrency4 n24; gateway median0.0121665ms vs1013.754771ms; initial engine queue13.844371ms vs1.734734ms; full client response1657.894063ms vs3176.596438ms; makespan medians3691.257166ms vs7243.469083ms. Actual totals range1282-1323 and both concurrency4 totals1300."
+      },
+      {
+        "lines": [
+          106,
+          106
+        ],
+        "result": "NEEDS_DISCLOSURE",
+        "detail": "No TTFT/median-addition/cross-host subtraction error. Add the backend wall-clock discontinuity limitation. Existing all-config engine total/scheduled duration summaries must not be treated as clean."
+      }
+    ],
+    "deepinfer_scope": "This independent pass audited the requested experiment code/results and article statistical claims. The supplied DeepInfer notes were read for context; the entire vendored DeepInfer implementation was not independently re-reviewed.",
+    "sha256": "db74b59c58c5961dcb6da7b81f7a06e8d1a0f9eac90774b2b406c147ddfd13e1",
+    "snapshot_line_count": 129
+  },
+  "verification_at_save": {
+    "input_fingerprints_unchanged": true,
+    "input_file_count": 16,
+    "independent_raw_checks_failed": 0,
+    "all_144_joined_rows_exactly_recomputed": true,
+    "all_6_group_summaries_arithmetically_reproduced": true,
+    "note": "Arithmetic reproduction of an existing summary is not validation of its wall-clock timing semantics. F1 remains blocking for affected timing claims."
+  }
+}

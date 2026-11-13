@@ -1,0 +1,193 @@
+{
+  "scope": "GPU preflight controls, separate from formal dataset",
+  "records": [
+    {
+      "id": "prompt_only",
+      "payload": {
+        "model": "exp21-qwen3-0.6b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "只输出单词FREE，不要输出其他内容。"
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 128,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "status": 200,
+      "response": {
+        "id": "chatcmpl-9f1405b9c3d4483bb93536faae230d10",
+        "object": "chat.completion",
+        "created": 1792983232,
+        "model": "exp21-qwen3-0.6b",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "reasoning_content": null,
+              "content": "FREE",
+              "tool_calls": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 22,
+          "total_tokens": 24,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null
+      }
+    },
+    {
+      "id": "json_object",
+      "payload": {
+        "model": "exp21-qwen3-0.6b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "只输出单词FREE，不要输出其他内容。"
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 128,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "status": 200,
+      "response": {
+        "id": "chatcmpl-271fc96fac9f42e48d4bac051f9f64d7",
+        "object": "chat.completion",
+        "created": 1792983232,
+        "model": "exp21-qwen3-0.6b",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "reasoning_content": null,
+              "content": "{}",
+              "tool_calls": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 22,
+          "total_tokens": 24,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null
+      }
+    },
+    {
+      "id": "schema_control",
+      "payload": {
+        "model": "exp21-qwen3-0.6b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "只输出单词FREE，不要输出其他内容。"
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 128,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "control",
+            "strict": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "flag": {
+                  "type": "string",
+                  "enum": [
+                    "CONSTRAINED21"
+                  ]
+                }
+              },
+              "required": [
+                "flag"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "status": 200,
+      "response": {
+        "id": "chatcmpl-42cc15029e6946828ef8821128b31cc6",
+        "object": "chat.completion",
+        "created": 1792983234,
+        "model": "exp21-qwen3-0.6b",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "reasoning_content": null,
+              "content": "{\"flag\": \"CONSTRAINED21\"}",
+              "tool_calls": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 22,
+          "total_tokens": 37,
+          "completion_tokens": 15,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null
+      }
+    },
+    {
+      "id": "invalid_schema",
+      "payload": {
+        "model": "exp21-qwen3-0.6b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "只输出单词FREE，不要输出其他内容。"
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 128,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "invalid",
+            "schema": {
+              "type": "invented"
+            }
+          }
+        }
+      },
+      "status": 400,
+      "error": "{\"object\":\"error\",\"message\":\"[10:53:55] /project/cpp/json_schema_converter.cc:637: Unsupported type \\\"invented\\\"\\n\",\"type\":\"BadRequestError\",\"param\":null,\"code\":400}"
+    }
+  ]
+}

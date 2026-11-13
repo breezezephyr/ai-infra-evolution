@@ -1,0 +1,657 @@
+{
+  "date": "2026-10-26",
+  "scope": "20 synthetic tasks; native small-model chat template; same content instructions in all arms; schema contains shape and bounds, not task answers",
+  "seeds": [
+    17,
+    29
+  ],
+  "generation": {
+    "temperature": 0.6,
+    "top_p": 0.9,
+    "max_tokens": 192
+  },
+  "cases": [
+    {
+      "id": "city-1",
+      "family": "extract",
+      "task": "订单目的地是杭州，购买3张车票。提取city和tickets。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "enum": [
+              "杭州",
+              "南京",
+              "苏州"
+            ]
+          },
+          "tickets": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9
+          }
+        },
+        "required": [
+          "city",
+          "tickets"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "city": "杭州",
+        "tickets": 3
+      }
+    },
+    {
+      "id": "city-2",
+      "family": "extract",
+      "task": "订单目的地是南京，购买7张车票。提取city和tickets。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "enum": [
+              "杭州",
+              "南京",
+              "苏州"
+            ]
+          },
+          "tickets": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9
+          }
+        },
+        "required": [
+          "city",
+          "tickets"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "city": "南京",
+        "tickets": 7
+      }
+    },
+    {
+      "id": "city-3",
+      "family": "extract",
+      "task": "订单目的地是苏州，购买1张车票。提取city和tickets。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "enum": [
+              "杭州",
+              "南京",
+              "苏州"
+            ]
+          },
+          "tickets": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9
+          }
+        },
+        "required": [
+          "city",
+          "tickets"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "city": "苏州",
+        "tickets": 1
+      }
+    },
+    {
+      "id": "city-4",
+      "family": "extract",
+      "task": "订单目的地是杭州，购买9张车票。提取city和tickets。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "enum": [
+              "杭州",
+              "南京",
+              "苏州"
+            ]
+          },
+          "tickets": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9
+          }
+        },
+        "required": [
+          "city",
+          "tickets"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "city": "杭州",
+        "tickets": 9
+      }
+    },
+    {
+      "id": "city-5",
+      "family": "extract",
+      "task": "订单目的地是南京，购买2张车票。提取city和tickets。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "enum": [
+              "杭州",
+              "南京",
+              "苏州"
+            ]
+          },
+          "tickets": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9
+          }
+        },
+        "required": [
+          "city",
+          "tickets"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "city": "南京",
+        "tickets": 2
+      }
+    },
+    {
+      "id": "intent-1",
+      "family": "classify",
+      "task": "查一下车次，不着急。提取kind和urgent，只有明确紧急才标urgent=true。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "查询",
+              "改签",
+              "退票"
+            ]
+          },
+          "urgent": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "urgent"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "kind": "查询",
+        "urgent": false
+      }
+    },
+    {
+      "id": "intent-2",
+      "family": "classify",
+      "task": "现在马上把车票改到明天。提取kind和urgent，只有明确紧急才标urgent=true。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "查询",
+              "改签",
+              "退票"
+            ]
+          },
+          "urgent": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "urgent"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "kind": "改签",
+        "urgent": true
+      }
+    },
+    {
+      "id": "intent-3",
+      "family": "classify",
+      "task": "帮我退掉车票，可以晚点处理。提取kind和urgent，只有明确紧急才标urgent=true。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "查询",
+              "改签",
+              "退票"
+            ]
+          },
+          "urgent": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "urgent"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "kind": "退票",
+        "urgent": false
+      }
+    },
+    {
+      "id": "intent-4",
+      "family": "classify",
+      "task": "立刻查下下一班车。提取kind和urgent，只有明确紧急才标urgent=true。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "查询",
+              "改签",
+              "退票"
+            ]
+          },
+          "urgent": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "urgent"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "kind": "查询",
+        "urgent": true
+      }
+    },
+    {
+      "id": "intent-5",
+      "family": "classify",
+      "task": "我想改签，没有时间要求。提取kind和urgent，只有明确紧急才标urgent=true。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "查询",
+              "改签",
+              "退票"
+            ]
+          },
+          "urgent": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "urgent"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "kind": "改签",
+        "urgent": false
+      }
+    },
+    {
+      "id": "calc-1",
+      "family": "arithmetic",
+      "task": "票价17元，买13张，再减19元。计算实付total和是否有优惠has_discount。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+          },
+          "has_discount": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "total",
+          "has_discount"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "total": 202,
+        "has_discount": true
+      }
+    },
+    {
+      "id": "calc-2",
+      "family": "arithmetic",
+      "task": "票价28元，买7张，再减33元。计算实付total和是否有优惠has_discount。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+          },
+          "has_discount": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "total",
+          "has_discount"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "total": 163,
+        "has_discount": true
+      }
+    },
+    {
+      "id": "calc-3",
+      "family": "arithmetic",
+      "task": "票价9元，买14张，无优惠。计算实付total和是否有优惠has_discount。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+          },
+          "has_discount": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "total",
+          "has_discount"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "total": 126,
+        "has_discount": false
+      }
+    },
+    {
+      "id": "calc-4",
+      "family": "arithmetic",
+      "task": "票价37元，买8张，按原总价打75折。计算实付total和是否有优惠has_discount。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+          },
+          "has_discount": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "total",
+          "has_discount"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "total": 222,
+        "has_discount": true
+      }
+    },
+    {
+      "id": "calc-5",
+      "family": "arithmetic",
+      "task": "票价23元，买11张，无优惠。计算实付total和是否有优惠has_discount。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+          },
+          "has_discount": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "total",
+          "has_discount"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "total": 253,
+        "has_discount": false
+      }
+    },
+    {
+      "id": "order-1",
+      "family": "ordered_selection",
+      "task": "站点依次为杭州、南京、苏州。只取前2个，按原顺序填stops，并填写count。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "stops": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "杭州",
+                "南京",
+                "苏州"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 3
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          }
+        },
+        "required": [
+          "stops",
+          "count"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "stops": [
+          "杭州",
+          "南京"
+        ],
+        "count": 2
+      }
+    },
+    {
+      "id": "order-2",
+      "family": "ordered_selection",
+      "task": "站点依次为苏州、杭州、南京。只取前1个，按原顺序填stops，并填写count。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "stops": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "杭州",
+                "南京",
+                "苏州"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 3
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          }
+        },
+        "required": [
+          "stops",
+          "count"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "stops": [
+          "苏州"
+        ],
+        "count": 1
+      }
+    },
+    {
+      "id": "order-3",
+      "family": "ordered_selection",
+      "task": "站点依次为南京、苏州、杭州。只取前3个，按原顺序填stops，并填写count。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "stops": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "杭州",
+                "南京",
+                "苏州"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 3
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          }
+        },
+        "required": [
+          "stops",
+          "count"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "stops": [
+          "南京",
+          "苏州",
+          "杭州"
+        ],
+        "count": 3
+      }
+    },
+    {
+      "id": "order-4",
+      "family": "ordered_selection",
+      "task": "站点依次为杭州、苏州、南京。只取前0个，按原顺序填stops，并填写count。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "stops": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "杭州",
+                "南京",
+                "苏州"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 3
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          }
+        },
+        "required": [
+          "stops",
+          "count"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "stops": [],
+        "count": 0
+      }
+    },
+    {
+      "id": "order-5",
+      "family": "ordered_selection",
+      "task": "站点依次为南京、杭州、苏州。只取前2个，按原顺序填stops，并填写count。",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "stops": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "杭州",
+                "南京",
+                "苏州"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 3
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          }
+        },
+        "required": [
+          "stops",
+          "count"
+        ],
+        "additionalProperties": false
+      },
+      "expected": {
+        "stops": [
+          "南京",
+          "杭州"
+        ],
+        "count": 2
+      }
+    }
+  ]
+}

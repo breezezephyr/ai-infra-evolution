@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 2s
+  evaluation_interval: 10s
+scrape_configs:
+  - job_name: vllm-embed        # 现网 embedding（链路验通用），经 ssh 隧道 localhost:18001
+    static_configs: [{ targets: ["127.0.0.1:18001"], labels: { role: embed } }]
+  - job_name: vllm-bench        # 实验模型 Qwen3-1.7B，经 ssh 隧道 localhost:18003
+    static_configs: [{ targets: ["127.0.0.1:18003"], labels: { role: bench } }]
+  - job_name: prometheus
+    static_configs: [{ targets: ["127.0.0.1:9090"] }]

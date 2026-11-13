@@ -1,0 +1,107 @@
+{
+  "run_id": "exp29-kaggle-20261110-a74160a0",
+  "cases": [
+    {
+      "case_id": "missing-model",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:missing-model",
+      "expected_status": 404,
+      "body": {
+        "model": "qwen3-4b-nonexistent",
+        "messages": [
+          {
+            "role": "user",
+            "content": "请用一句简短的中文解释天空为什么通常是蓝色的。"
+          }
+        ],
+        "max_tokens": 32,
+        "stream": false,
+        "temperature": 0,
+        "seed": 29
+      },
+      "body_sha256": "405483f632a5d86132db76ed5a3750cf2b2d3a3c1afca9cb69c1062806496bfe"
+    },
+    {
+      "case_id": "over-limit",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:over-limit",
+      "expected_status": 422,
+      "body": {
+        "model": "qwen3-4b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "请用一句简短的中文解释天空为什么通常是蓝色的。"
+          }
+        ],
+        "max_tokens": 65,
+        "stream": false,
+        "temperature": 0,
+        "seed": 29
+      },
+      "body_sha256": "d7740ea0f352336b731496307207afc019435e70ab9eac9120578a529ae2991f"
+    },
+    {
+      "case_id": "nonstream",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:nonstream",
+      "expected_status": 200,
+      "body": {
+        "model": "qwen3-4b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "请用一句简短的中文解释天空为什么通常是蓝色的。"
+          }
+        ],
+        "max_tokens": 32,
+        "stream": false,
+        "temperature": 0,
+        "seed": 29
+      },
+      "body_sha256": "8862a50ed63f5ac5eb9575cea684c5f8586327cd3fb3b27a9355914977cfa00f"
+    },
+    {
+      "case_id": "stream",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:stream",
+      "expected_status": 200,
+      "body": {
+        "model": "qwen3-4b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "请用一句简短的中文解释天空为什么通常是蓝色的。"
+          }
+        ],
+        "max_tokens": 32,
+        "stream": true,
+        "temperature": 0,
+        "seed": 29,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "body_sha256": "a1dd9f15208374db8ccfa9eba08eef1a40ad20ecd50926fb97275554c2fca27b"
+    },
+    {
+      "case_id": "one-token",
+      "client_request_id": "exp29-kaggle-20261110-a74160a0:one-token",
+      "expected_status": 200,
+      "body": {
+        "model": "qwen3-4b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "请用一句简短的中文解释天空为什么通常是蓝色的。"
+          }
+        ],
+        "max_tokens": 1,
+        "stream": false,
+        "temperature": 0,
+        "seed": 29
+      },
+      "body_sha256": "76dd84d6db48bde753f232977018da34dead611f36b92801bd869d48d7c94dda"
+    }
+  ],
+  "retry_count": 0,
+  "serial": true,
+  "max_generate_calls": 3,
+  "max_reserved_output_tokens": 65
+}

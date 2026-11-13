@@ -1,0 +1,146 @@
+....FF....FFFFFF                                                         [100%]
+=================================== FAILURES ===================================
+_ test_conflicting_or_post_finish_backend_data_never_becomes_complete[length_then_stop] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1095cecf0>
+fault = 'length_then_stop'
+
+    @pytest.mark.parametrize('fault',['length_then_stop','content_after_finish'])
+    def test_conflicting_or_post_finish_backend_data_never_becomes_complete(monkeypatch,fault):
+     original=httpx.AsyncClient
+     if fault=='length_then_stop':
+      bad=RAW.replace(b'"finish_reason":"stop"',b'"finish_reason":"length"').replace(b'data: [DONE]',b'data: {"choices":[{"delta":{},"finish_reason":"stop"}]}\n\ndata: [DONE]')
+     else:
+      bad=RAW.replace(b'data: [DONE]',b'data: {"choices":[{"delta":{"content":"LATE"},"finish_reason":null}]}\n\ndata: [DONE]')
+     monkeypatch.setattr(gateway.httpx,'AsyncClient',lambda **kwargs:original(transport=httpx.MockTransport(lambda req:httpx.Response(200,content=bad)),**kwargs))
+>    with pytest.raises(ProtocolError):asyncio.run(HTTPBackend('http://fixture').generate({},'r','a',lambda *a,**k:None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    Failed: DID NOT RAISE <class 'gateway.ProtocolError'>
+
+phase5/exp25/test_http_backend.py:41: Failed
+_ test_conflicting_or_post_finish_backend_data_never_becomes_complete[content_after_finish] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108c3da90>
+fault = 'content_after_finish'
+
+    @pytest.mark.parametrize('fault',['length_then_stop','content_after_finish'])
+    def test_conflicting_or_post_finish_backend_data_never_becomes_complete(monkeypatch,fault):
+     original=httpx.AsyncClient
+     if fault=='length_then_stop':
+      bad=RAW.replace(b'"finish_reason":"stop"',b'"finish_reason":"length"').replace(b'data: [DONE]',b'data: {"choices":[{"delta":{},"finish_reason":"stop"}]}\n\ndata: [DONE]')
+     else:
+      bad=RAW.replace(b'data: [DONE]',b'data: {"choices":[{"delta":{"content":"LATE"},"finish_reason":null}]}\n\ndata: [DONE]')
+     monkeypatch.setattr(gateway.httpx,'AsyncClient',lambda **kwargs:original(transport=httpx.MockTransport(lambda req:httpx.Response(200,content=bad)),**kwargs))
+>    with pytest.raises(ProtocolError):asyncio.run(HTTPBackend('http://fixture').generate({},'r','a',lambda *a,**k:None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    Failed: DID NOT RAISE <class 'gateway.ProtocolError'>
+
+phase5/exp25/test_http_backend.py:41: Failed
+_ test_erased_blocked_generation_or_delivered_miss_cannot_settle_zero[blocked-cost-erased] _
+
+names = ['review-0', 'review-1']
+
+    @pytest.mark.parametrize('names',[['review-0','review-1'],['burst-0-0']],ids=['blocked-cost-erased','delivered-source-erased'])
+    def test_erased_blocked_generation_or_delivered_miss_cannot_settle_zero(names):
+     p,c,g,b=real_fixture();removed=set()
+     for row in g:
+      if row['case_id'] in names:
+       removed.update(a['attempt_id'] for a in row['attempts']);row.update(attempts=[],generation_usage={'prompt_tokens':0,'completion_tokens':0,'total_tokens':0},usage_source='no_generation_attempt')
+     b=[row for row in b if row['attempt_id'] not in removed]
+     result=analyze.audit(p,c,g,b)
+>    assert not result['accepted'] and result['planned']==42 and result['known_total_tokens'] is None
+E    assert (not True)
+
+phase5/exp25/test_analyze.py:76: AssertionError
+_ test_erased_blocked_generation_or_delivered_miss_cannot_settle_zero[delivered-source-erased] _
+
+names = ['burst-0-0']
+
+    @pytest.mark.parametrize('names',[['review-0','review-1'],['burst-0-0']],ids=['blocked-cost-erased','delivered-source-erased'])
+    def test_erased_blocked_generation_or_delivered_miss_cannot_settle_zero(names):
+     p,c,g,b=real_fixture();removed=set()
+     for row in g:
+      if row['case_id'] in names:
+       removed.update(a['attempt_id'] for a in row['attempts']);row.update(attempts=[],generation_usage={'prompt_tokens':0,'completion_tokens':0,'total_tokens':0},usage_source='no_generation_attempt')
+     b=[row for row in b if row['attempt_id'] not in removed]
+     result=analyze.audit(p,c,g,b)
+>    assert not result['accepted'] and result['planned']==42 and result['known_total_tokens'] is None
+E    assert (not True)
+
+phase5/exp25/test_analyze.py:76: AssertionError
+____ test_client_usage_id_and_finish_each_must_match_the_real_trace[usage] _____
+
+fault = 'usage'
+
+    @pytest.mark.parametrize('fault',['usage','request_id','finish'])
+    def test_client_usage_id_and_finish_each_must_match_the_real_trace(fault):
+     p,c,g,b=real_fixture()
+     row=next(r for r in c if r['case_id']==('burst-0-0' if fault=='finish' else 'a-repeat'))
+     if fault=='usage':row['raw']=row['raw'].replace('"total_tokens": 0','"total_tokens": 999')
+     elif fault=='request_id':row['raw']=row['raw'].replace(row['request_id'],'wrong-request')
+     else:row['raw']=row['raw'].replace('"finish_reason": "length"','"finish_reason": "stop"')
+     result=analyze.audit(p,c,g,b)
+>    assert not result['accepted'] and result['known_total_tokens'] is None
+E    assert (not True)
+
+phase5/exp25/test_analyze.py:87: AssertionError
+__ test_client_usage_id_and_finish_each_must_match_the_real_trace[request_id] __
+
+fault = 'request_id'
+
+    @pytest.mark.parametrize('fault',['usage','request_id','finish'])
+    def test_client_usage_id_and_finish_each_must_match_the_real_trace(fault):
+     p,c,g,b=real_fixture()
+     row=next(r for r in c if r['case_id']==('burst-0-0' if fault=='finish' else 'a-repeat'))
+     if fault=='usage':row['raw']=row['raw'].replace('"total_tokens": 0','"total_tokens": 999')
+     elif fault=='request_id':row['raw']=row['raw'].replace(row['request_id'],'wrong-request')
+     else:row['raw']=row['raw'].replace('"finish_reason": "length"','"finish_reason": "stop"')
+     result=analyze.audit(p,c,g,b)
+>    assert not result['accepted'] and result['known_total_tokens'] is None
+E    assert (not True)
+
+phase5/exp25/test_analyze.py:87: AssertionError
+____ test_client_usage_id_and_finish_each_must_match_the_real_trace[finish] ____
+
+fault = 'finish'
+
+    @pytest.mark.parametrize('fault',['usage','request_id','finish'])
+    def test_client_usage_id_and_finish_each_must_match_the_real_trace(fault):
+     p,c,g,b=real_fixture()
+     row=next(r for r in c if r['case_id']==('burst-0-0' if fault=='finish' else 'a-repeat'))
+     if fault=='usage':row['raw']=row['raw'].replace('"total_tokens": 0','"total_tokens": 999')
+     elif fault=='request_id':row['raw']=row['raw'].replace(row['request_id'],'wrong-request')
+     else:row['raw']=row['raw'].replace('"finish_reason": "length"','"finish_reason": "stop"')
+     result=analyze.audit(p,c,g,b)
+>    assert not result['accepted'] and result['known_total_tokens'] is None
+E    assert (not True)
+
+phase5/exp25/test_analyze.py:87: AssertionError
+________ test_request_id_reuse_cannot_silently_overwrite_a_request_join ________
+
+    def test_request_id_reuse_cannot_silently_overwrite_a_request_join():
+     p,c,g,b=real_fixture()
+     old=next(r['request_id'] for r in g if r['case_id']=='length-1');duplicate=next(r['request_id'] for r in g if r['case_id']=='length-0')
+     for row in c:
+      if row['request_id']==old:row['request_id']=duplicate;row['raw']=row['raw'].replace(old,duplicate)
+     for row in g:
+      if row['request_id']==old:
+       row['request_id']=duplicate
+       for attempt in row['attempts']:attempt['request_id']=duplicate
+     for row in b:
+      if row['request_id']==old:row['request_id']=duplicate
+     result=analyze.audit(p,c,g,b)
+>    assert not result['accepted'] and result['known_total_tokens'] is None
+E    assert (not True)
+
+phase5/exp25/test_analyze.py:102: AssertionError
+=========================== short test summary info ============================
+FAILED phase5/exp25/test_http_backend.py::test_conflicting_or_post_finish_backend_data_never_becomes_complete[length_then_stop]
+FAILED phase5/exp25/test_http_backend.py::test_conflicting_or_post_finish_backend_data_never_becomes_complete[content_after_finish]
+FAILED phase5/exp25/test_analyze.py::test_erased_blocked_generation_or_delivered_miss_cannot_settle_zero[blocked-cost-erased]
+FAILED phase5/exp25/test_analyze.py::test_erased_blocked_generation_or_delivered_miss_cannot_settle_zero[delivered-source-erased]
+FAILED phase5/exp25/test_analyze.py::test_client_usage_id_and_finish_each_must_match_the_real_trace[usage]
+FAILED phase5/exp25/test_analyze.py::test_client_usage_id_and_finish_each_must_match_the_real_trace[request_id]
+FAILED phase5/exp25/test_analyze.py::test_client_usage_id_and_finish_each_must_match_the_real_trace[finish]
+FAILED phase5/exp25/test_analyze.py::test_request_id_reuse_cannot_silently_overwrite_a_request_join
+8 failed, 8 passed in 0.38s

@@ -1,0 +1,236 @@
+{
+  "fixture": {
+    "id": "no_tokenizer",
+    "raw": "说完了",
+    "thinking": false,
+    "action": "no_tokenizer",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "",
+        "reasoning": "",
+        "tools": [],
+        "finish": null,
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "",
+        "reasoning": "",
+        "tools": [],
+        "finish": "in_progress",
+        "status": "in_progress",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "",
+        "reasoning": "",
+        "tools": [],
+        "finish": null,
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "stream_error",
+    "expect_native_finished": false,
+    "modes": [
+      "text"
+    ],
+    "patterns": [
+      "whole"
+    ],
+    "expect_error": "without a tokenizer"
+  },
+  "protocol": "messages",
+  "mode": "text",
+  "pattern": "whole",
+  "events": [
+    {
+      "event": "message_start",
+      "data": "{\"type\":\"message_start\",\"message\":{\"id\":\"exp20\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"DeepSeek-V4.1-Flash\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":0,\"service_tier\":\"standard\"}}}"
+    }
+  ],
+  "backend_finish_seen": false,
+  "native_finished": false,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "stream_error",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "请继续报站"
+      }
+    ],
+    "max_tokens": 128,
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "None"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "unmeasured text token_count=0",
+    "processor_has_tokenizer": false
+  },
+  "native_error": {
+    "type": "RuntimeError",
+    "message": "token chunk received without a tokenizer",
+    "stage": "native push: no_tokenizer"
+  },
+  "native_errors": [
+    {
+      "type": "RuntimeError",
+      "message": "token chunk received without a tokenizer",
+      "stage": "native push: no_tokenizer"
+    }
+  ],
+  "probe_error": {
+    "type": "RuntimeError",
+    "message": "token chunk received without a tokenizer",
+    "stage": "native push: no_tokenizer"
+  },
+  "response": {
+    "id": "exp20",
+    "type": "message",
+    "role": "assistant",
+    "model": "DeepSeek-V4.1-Flash",
+    "content": [],
+    "stop_reason": null,
+    "stop_sequence": null,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3,
+      "output_tokens": 0,
+      "service_tier": "standard"
+    }
+  },
+  "semantic": {
+    "text": "",
+    "reasoning": "",
+    "tools": [],
+    "finish": null,
+    "status": null,
+    "stop_sequence": null
+  },
+  "id": "no_tokenizer--messages--text--whole",
+  "contract": "38a57b7fc10b29e7ab950e219271f9f50c098e5255822d18d357e7a7798a2408",
+  "sse": {
+    "bytes": 329,
+    "sha256": "fa6dd26e23b3dba8bc5cfaad192f24f8437f82e6a7b53829d3ca1c73b9b98148",
+    "done_data": null,
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 1
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 1
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 1
+      }
+    ],
+    "expected_events": 1,
+    "incomplete_eof_count": 0,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "",
+          "reasoning": "",
+          "tools": [],
+          "finish": null,
+          "status": null,
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "stream_error"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": false
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": {
+        "type": "RuntimeError",
+        "message": "token chunk received without a tokenizer",
+        "stage": "native push: no_tokenizer"
+      }
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 1
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 1
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 1
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 0
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "no_tokenizer--messages--text--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

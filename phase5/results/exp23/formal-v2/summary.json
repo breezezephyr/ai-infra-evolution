@@ -1,0 +1,56 @@
+{
+  "scope": "synthetic CPU teaching replay; no inference, no DSpark implementation, no DeepInfer speed/quality measurement",
+  "revision": "formal-v2: explicit snapshot execution and independent audit; same synthetic inputs as v1",
+  "a": {
+    "planned": 240,
+    "statuses": {
+      "conformant": 240
+    },
+    "declared_checks_passed": 1920,
+    "candidate_vs_fixed5": [
+      {
+        "cost": "setup_heavy",
+        "planned_pairs": 16,
+        "valid_pairs": 16,
+        "unavailable_pairs": 0,
+        "candidate_lower_work": 8,
+        "equal_work": 4,
+        "candidate_higher_work": 4
+      },
+      {
+        "cost": "draft_expensive",
+        "planned_pairs": 16,
+        "valid_pairs": 16,
+        "unavailable_pairs": 0,
+        "candidate_lower_work": 12,
+        "equal_work": 4,
+        "candidate_higher_work": 0
+      },
+      {
+        "cost": "linear_verify",
+        "planned_pairs": 16,
+        "valid_pairs": 16,
+        "unavailable_pairs": 0,
+        "candidate_lower_work": 12,
+        "equal_work": 4,
+        "candidate_higher_work": 0
+      }
+    ]
+  },
+  "b_toy": {
+    "planned": 99,
+    "statuses": {
+      "conformant": 99
+    },
+    "conformant": 99,
+    "representation_equal": 99,
+    "full_equal": 54,
+    "single_window_covered_but_full_differs": 18
+  },
+  "artifact_sha256": {
+    "plan.json": "388a210b9b34dda0b83f5c9ce2ba2c26ed43a04f06330e1023a6fed124f7e8a3",
+    "replays.json": "4bb29f148474b6059d2e0eaeb7e63f1a21ef6ea2af2f63a4d02f6aff5fa42302",
+    "window-cases.json": "4a6ef16489dd02941a51b11bc065b9e1be0df290d256a8c8d444d19c6a822e1e",
+    "replay-matrix.csv": "46f3f00bcb65f9aec893712d7075c08ab5fc623a52869fb116f05eef0a5b0c3f"
+  }
+}

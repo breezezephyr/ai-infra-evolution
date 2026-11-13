@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-26",
+  "original_review": "recorder-review.json",
+  "final_evidence": "formal-v3",
+  "old_evidence_retained": [
+    "formal-v1",
+    "formal-v2"
+  ],
+  "denominator_policy": "Final article uses only v3's 40 primary objects and 238 API operations; revisions are not pooled",
+  "fixes": [
+    {
+      "finding": "R1",
+      "resolution": "Narrowed to TCP-configured cross-process local Store API. No per-payload branch/socket trace, no pure TCP latency or bandwidth claim. Added fixed-source memcpy/TCP predicate analysis without claiming wheel branch identity."
+    },
+    {
+      "finding": "R2",
+      "resolution": "Worker reads frozen plan; receives correlated request digest/plan hash; echoes key/client/stage/PID/request/plan/worker hash. Auditor checks correlation, lifecycle PID and code binding. Summary derives reader labels from validated raw observations. Mutation regressions added; v3 executed archived code."
+    },
+    {
+      "finding": "R3",
+      "resolution": "Failed audit raises nonzero after writing raw/audit, finally writes cleanup. Synthetic missing-case integration verifies raised failure and saved cleanup without Store."
+    },
+    {
+      "finding": "R4",
+      "resolution": "Auditor/summarizer share finite nonnegative non-boolean latency predicate; invalid timing stays separate from operation and plan denominators. Null/bool/negative/infinity/NaN regressions added."
+    }
+  ],
+  "regressions": {
+    "passed": 197,
+    "evidence": "tests.txt"
+  },
+  "formal_v3": {
+    "planned": 238,
+    "assertion_pass": 228,
+    "observed_only": 10,
+    "failed": 0,
+    "missing": 0,
+    "primary_objects": 40,
+    "hash_matches": 40,
+    "valid_timing_samples": 120,
+    "invalid_timing_samples": 0
+  },
+  "rereview": "recorder-rereview.json",
+  "article_review": "article-review.json",
+  "scope": "Repair evidence; not a replacement for independently retained review reports"
+}

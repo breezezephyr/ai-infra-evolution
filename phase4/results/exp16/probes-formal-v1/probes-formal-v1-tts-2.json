@@ -1,0 +1,282 @@
+{
+  "run_id": "probes-formal-v1-tts-2",
+  "kind": "tts",
+  "state": {
+    "text": "出门前先查好路线，带上相机",
+    "llm": {
+      "thread_stopped": true,
+      "generated_tokens": 10,
+      "token_steps": [
+        {
+          "monotonic_ns": 410559429313944,
+          "tokens": 1,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410559459830175,
+          "tokens": 2,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410559496168849,
+          "tokens": 3,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410559525733708,
+          "tokens": 4,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410559550389387,
+          "tokens": 5,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410559576228105,
+          "tokens": 6,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410559601815860,
+          "tokens": 7,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410559625861475,
+          "tokens": 8,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410559653032617,
+          "tokens": 9,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410559719045557,
+          "tokens": 10,
+          "stop": true
+        }
+      ],
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "你是中文语音助手。请用自然口语回答，用六到八个完整句子，不要标题、列表、编号或思考过程。"
+        },
+        {
+          "role": "user",
+          "content": "请介绍如何安排一次周末城市散步，从出门准备一直说到回家，详细一些。"
+        }
+      ],
+      "finish_reason": "cancelled",
+      "generate_return_ns": 410559719344058
+    },
+    "computed_samples": 92400,
+    "discarded_after_stop_samples": 92400,
+    "queued_samples": 0,
+    "llm_thread_stopped": true,
+    "tts_thread_stopped": true
+  },
+  "events": [
+    {
+      "event": "generation_start",
+      "component": "generation",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559393513827,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "llm_start",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559393913434,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559429098676,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "出门"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559459519713,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "前"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559495989957,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "先"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559525522129,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "查"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559550283260,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "好"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559576118447,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "路线"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559625743327,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "，带上"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559651651893,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "相机"
+    },
+    {
+      "event": "tts_call_start",
+      "component": "tts",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559651713996,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "segment": 0,
+      "text": "出门前先查好路线，带上相"
+    },
+    {
+      "event": "probe_detection",
+      "component": "probe",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559703158361,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "kind": "tts"
+    },
+    {
+      "event": "cancel_received",
+      "component": "cancel",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559703161834,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "stop_signal_set",
+      "component": "stop",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559703168642,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "server_queue_cleared",
+      "component": "server",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559703174389,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "discarded_samples": 0
+    },
+    {
+      "event": "llm_worker_returned",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559719443065,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "tts_call_return",
+      "component": "tts",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559752703192,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "segment": 0,
+      "samples": 0,
+      "stop": true
+    },
+    {
+      "event": "tts_worker_returned",
+      "component": "tts",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559752706128,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "post_join_queue_cleared",
+      "component": "post",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559752775276,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "discarded_samples": 0
+    },
+    {
+      "event": "workers_joined",
+      "component": "workers",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410559752778265,
+      "session_id": "probes-formal-v1-tts-2",
+      "turn_id": 1,
+      "generation_id": 1,
+      "llm_stopped": true,
+      "tts_stopped": true
+    }
+  ],
+  "segments": [],
+  "source": "actual CUDA; synthetic boundary control"
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=P3 experiment gateway (:8010 -> bench-vllm :8003)
+After=network.target
+# 只在实验窗口里跟 bench-vllm 一起起；不开机自启
+BindsTo=bench-vllm.service
+After=bench-vllm.service
+
+[Service]
+Type=simple
+User=root
+EnvironmentFile=-/etc/default/p2-gw
+ExecStart=/usr/bin/python3 /opt/p2/gateway/gw.py
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

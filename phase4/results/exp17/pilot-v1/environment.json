@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-23",
+  "models": {
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cudnn": 90100,
+    "asr": {
+      "device": "cuda",
+      "compute_type": "int8_float16"
+    },
+    "llm": {
+      "device": "cuda:0",
+      "dtype": "torch.bfloat16"
+    }
+  },
+  "source_sha256": {
+    "exp17/run_gpu.py": "f6d18b46445b1eacc2bddb6c412af6798472344b025a55f47b662610641f53e9",
+    "exp17/revision.py": "45753d6dc8970abe40927182c147a34fa1812b32f9b56971232624b0e8e23e52",
+    "exp14/models.py": "cb662829bae6d45ea5bd902f9df362f3a97d90e57d10c2df0fc9c6b3337960c6",
+    "exp14/logic.py": "004cfc81290e60f3021922ba4de64e79ad3347abf4699cb72c02e73398ccc7ed"
+  },
+  "packages": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.3"
+  },
+  "config": {
+    "output": "/opt/p4/exp17/results/pilot-v1",
+    "repeat": 1,
+    "cadence_ms": 800,
+    "cases": [
+      "short_03"
+    ],
+    "policies": [
+      "endpoint",
+      "eager",
+      "stable2"
+    ]
+  },
+  "inputs": {
+    "short_03": {
+      "wav_sha256": "785752cd1c9e13505159fae7768db90eba2879840fc7a452874495c88d424091",
+      "pcm_sha256": "3da129c8223978b81bfd51c81d83e8e9bff5f869f9506a341a004ded55cf456f",
+      "samples": 42880
+    }
+  },
+  "scope": "paced frozen audio, prefix re-recognition, gated LLM text; no TTS/microphone/VAD"
+}

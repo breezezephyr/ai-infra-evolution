@@ -1,0 +1,313 @@
+mooncake_master: Warning: SetUsageMessage() never called
+
+  Flags from /__w/Mooncake/Mooncake/mooncake-store/src/master.cpp:
+    -allocation_strategy (Allocation strategy for segments, random |
+      free_ratio_first | cxl | ssd_free_ratio_first | local_first) type: string
+      default: "random"
+    -allow_evict_soft_pinned_objects (Whether to allow eviction of soft pinned
+      objects during eviction) type: bool default: true
+    -batch_oplog_retry_timeout_sec (Maximum time to retry transient batch OpLog
+      standby errors.) type: uint32 default: 180
+    -client_ttl (Seconds a client stays considered alive after the last
+      heartbeat. If this TTL elapses without a refresh, the master treats the
+      client as disconnected and may unmount its segments) type: int64
+      default: 10
+    -cluster_id (Cluster ID for the master service, used for kvcache
+      persistence in HA mode) type: string default: "mooncake_cluster"
+    -config_path (master service config file path) type: string default: ""
+    -cxl_path (DAX device path for CXL memory) type: string
+      default: "/dev/dax0.0"
+    -cxl_size (CXL memory size in bytes) type: uint64 default: 8589934592
+    -default_kv_lease_ttl (Default lease time for kv objects. Supports raw
+      milliseconds or duration strings with ms, s, m, or h suffixes)
+      type: string default: "10000"
+    -default_kv_soft_pin_ttl (Default soft pin TTL for kv objects. Supports raw
+      milliseconds or duration strings with ms, s, m, or h suffixes)
+      type: string default: "1800000"
+    -dynamic_replication_admission_qps_threshold (Per-key access frequency
+      threshold for dynamic MEMORY replication) type: double
+      default: 0.80000000000000004
+    -dynamic_replication_heat_window_seconds (Heat observation window for
+      dynamic MEMORY replication) type: uint32 default: 10
+    -dynamic_replication_max_memory_replicas (Maximum MEMORY replicas allowed
+      for one dynamically replicated key) type: uint64 default: 2
+    -dynamic_replication_mode (Dynamic MEMORY replica fanout mode: off,
+      observe, or enforce) type: string default: "off"
+    -enable_cxl (Whether to enable CXL memory support) type: bool
+      default: false
+    -enable_disk_eviction (Enable disk eviction feature for storage backend
+      (default: true)) type: bool default: true
+    -enable_ha (Enable high availability using the configured HA backend)
+      type: bool default: false
+    -enable_http_metadata_server (Enable HTTP metadata server instead of etcd)
+      type: bool default: false
+    -enable_kv_events (Enable RFC #1527 KV cache event publisher over ZMQ)
+      type: bool default: false
+    -enable_metadata_cleanup_on_timeout (Enable cleanup of HTTP metadata
+      (mooncake/ram/*, mooncake/rpc_meta/*) when client heartbeat times out.
+      Works in two modes: (1) co-located (enable_http_metadata_server=true) via
+      in-process removal, or (2) separately-deployed metadata server via async
+      HTTP DELETE.) type: bool default: false
+    -enable_metric_reporting (Enable periodic metric reporting) type: bool
+      default: true
+    -enable_multi_tenants (Enable strict multi-tenant namespace and quota
+      admission) type: bool default: false
+    -enable_offload (Enable offload availability) type: bool default: false
+    -enable_oplog (Enable HA metadata replication through batch-record OpLog)
+      type: bool default: false
+    -enable_snapshot (Enable periodic snapshot of master data) type: bool
+      default: false
+    -enable_snapshot_restore (enable restore from snapshot) type: bool
+      default: false
+    -etcd_endpoints (Endpoints of ETCD server, separated by semicolon, required
+      in HA mode) type: string default: ""
+    -eviction_high_watermark_ratio (Ratio of high watermark trigger eviction in
+      Memory) type: double default: 0.90000000000000002
+    -eviction_ratio (Ratio of objects to evict when Memory space is full)
+      type: double default: 0.050000000000000003
+    -global_file_segment_size (Size of global NFS/3FS segment in bytes)
+      type: int64 default: 9223372036854775807
+    -ha_backend_connstring (HA backend connection string. If unset, only
+      backend_type=etcd falls back to etcd_endpoints for backward
+      compatibility) type: string default: ""
+    -ha_backend_type (HA backend type, e.g. etcd | redis | k8s) type: string
+      default: "etcd"
+    -http_metadata_server_host (Host for HTTP metadata server to bind to)
+      type: string default: "0.0.0.0"
+    -http_metadata_server_port (Port for HTTP metadata server to listen on)
+      type: int32 default: 8080
+    -kv_events_additional_salt (Deprecated: not emitted on events; use indexer
+      POST /register) type: string default: ""
+    -kv_events_backend_id (backend_id for published KV events (cache owner
+      identity)) type: string default: ""
+    -kv_events_bind_endpoint (ZMQ PUB bind endpoint for KV events, e.g.
+      tcp://0.0.0.0:5557) type: string default: ""
+    -kv_events_block_size (Deprecated: not emitted on events; use indexer POST
+      /register) type: uint32 default: 0
+    -kv_events_dp_rank (Deprecated: not emitted on events; use indexer POST
+      /register) type: uint32 default: 0
+    -kv_events_emit_legacy_compat (Include vLLM/SGLang-compatible
+      type/block_hashes fields) type: bool default: true
+    -kv_events_emit_object_key (Include Mooncake object_key in published KV
+      events) type: bool default: true
+    -kv_events_lora_name (Deprecated: not emitted on events (no LoRA context in
+      master)) type: string default: ""
+    -kv_events_model_name (Deprecated: not emitted on events; use indexer POST
+      /register) type: string default: ""
+    -kv_events_queue_capacity (Maximum pending KV events; oldest events are
+      dropped when the queue is full (0 = unbounded)) type: uint32
+      default: 65536
+    -kv_events_tenant_id (Deprecated: tenant_id comes from each object on
+      events) type: string default: "default"
+    -max_kv_soft_pin_ttl (Maximum request-level soft pin TTL for kv objects.
+      Supports raw milliseconds or duration strings with ms, s, m, or h
+      suffixes) type: string default: "86400000"
+    -max_retry_attempts (Maximum number of retry attempts for failed tasks)
+      type: uint32 default: 10
+    -max_threads (Maximum number of threads to use (deprecated, use
+      rpc_thread_num)) type: int32 default: 16
+    -max_total_finished_tasks (Maximum number of finished tasks to keep in
+      memory) type: uint32 default: 10000
+    -max_total_pending_tasks (Maximum number of pending tasks to keep in
+      memory) type: uint32 default: 10000
+    -max_total_processing_tasks (Maximum number of processing tasks to keep in
+      memory) type: uint32 default: 10000
+    -memory_allocator (Memory allocator for global segments, cachelib | offset)
+      type: string default: "offset"
+    -metrics_host (Address for the HTTP metrics/admin server to listen on. Use
+      "::" to listen on IPv6 (and IPv4 on dual-stack hosts)) type: string
+      default: "0.0.0.0"
+    -metrics_port (Port for HTTP metrics server to listen on) type: int32
+      default: 9003
+    -nof_eviction_high_watermark_ratio (Ratio of high watermark trigger
+      eviction in NoF SSD) type: double default: 0.90000000000000002
+    -nof_eviction_ratio (Ratio of objects to evict when NoF SSD space is full)
+      type: double default: 0.050000000000000003
+    -nof_heartbeat_failures_threshold (Consecutive NoF heartbeat failures
+      required before unmounting a NoF segment) type: uint32 default: 3
+    -nof_heartbeat_interval_sec (How often master probes each mounted NoF
+      segment) type: int64 default: 10
+    -nof_heartbeat_probe_timeout_ms (Timeout in milliseconds for a single NoF
+      heartbeat probe) type: uint32 default: 1000
+    -offload_cap_ratio (Per-cycle offload cap as a fraction of
+      offloading_queue_limit. Controls how many objects can be queued for
+      offload in a single eviction cycle before falling back to force-evict)
+      type: double default: 0.5
+    -offload_force_evict (Force-evict objects exceeding offload cap without
+      disk offload) type: bool default: false
+    -offload_on_evict (Defer LOCAL_DISK offload to eviction time instead of
+      PutEnd) type: bool default: false
+    -offloading_queue_limit (Maximum number of objects allowed in the
+      offloading queue per local disk segment. Increase to allow more objects
+      to be offloaded to SSD before force-eviction kicks in) type: uint64
+      default: 50000
+    -oplog_batch_max_entries (Maximum number of committed/reserved entries in
+      the open batch-record OpLog waiting batch.) type: uint32 default: 1024
+    -oplog_poll_interval_ms (Batch-record standby poll interval.) type: int32
+      default: 1000
+    -pending_task_timeout_sec (Timeout in seconds for pending tasks (0 = no
+      timeout)) type: uint64 default: 300
+    -pod_name (Pod name for K8s label-based routing (default: $POD_NAME))
+      type: string default: ""
+    -pod_namespace (Pod namespace for K8s label-based routing (default:
+      $POD_NAMESPACE)) type: string default: ""
+    -port (Port for master service to listen on (deprecated, use rpc_port))
+      type: int32 default: 50051
+    -processing_task_timeout_sec (Timeout in seconds for processing tasks (0 =
+      no timeout)) type: uint64 default: 300
+    -promotion_admission_threshold (Min CountMinSketch count for a key before
+      promotion fires (set 1 to disable second-touch gating)) type: uint32
+      default: 2
+    -promotion_max_per_heartbeat (Max promotion tasks returned to a single
+      client per PromotionObjectHeartbeat call. Each task is a synchronous
+      SSD-read + RDMA-write on the client; serializing them avoids blocking
+      past the client-liveness window. Default 1 is conservative.) type: uint32
+      default: 1
+    -promotion_on_hit (Promote LOCAL_DISK-only keys to MEMORY on read access
+      (mirror of offload_on_evict)) type: bool default: false
+    -promotion_queue_limit (Max in-flight promotion tasks across all shards)
+      type: uint32 default: 50000
+    -put_start_discard_timeout_sec (Timeout for discarding uncompleted PutStart
+      operations) type: uint64 default: 30
+    -put_start_release_timeout_sec (Timeout for releasing space allocated in
+      uncompleted PutStart operations) type: uint64 default: 600
+    -quota_bytes (Quota for storage backend in bytes (0 = use default 90% of
+      capacity)) type: uint64 default: 0
+    -root_fs_dir (Root directory for storage backend, used in HA mode)
+      type: string default: ""
+    -rpc_address (Address for RPC server to bind to, required in HA mode)
+      type: string default: "0.0.0.0"
+    -rpc_conn_timeout_seconds (Connection timeout in seconds (0 = no timeout))
+      type: int32 default: 0
+    -rpc_enable_tcp_no_delay (Enable TCP_NODELAY for RPC connections)
+      type: bool default: true
+    -rpc_interface (Network interface name for RPC server address resolution.
+      When set, its IPv4 address overrides rpc_address) type: string
+      default: ""
+    -rpc_port (Port for RPC server to listen on (0 = use port, preferred over
+      port)) type: int32 default: 0
+    -rpc_thread_num (Number of threads for RPC server (0 = use max_threads,
+      preferred over max_threads)) type: int32 default: 0
+    -snapshot_backup_dir (Optional local directory for snapshot and restore
+      backup. If empty, local backup is disabled) type: string default: ""
+    -snapshot_catalog_backend_connstring (Deprecated alias of
+      --snapshot_catalog_store_connstring) type: string default: ""
+    -snapshot_catalog_backend_type (Deprecated alias of
+      --snapshot_catalog_store_type) type: string default: ""
+    -snapshot_catalog_store_connstring (Optional connection string for snapshot
+      catalog store) type: string default: ""
+    -snapshot_catalog_store_type (Snapshot catalog store type: ''/'embedded' or
+      'redis' ('payload' is kept as a deprecated alias)) type: string
+      default: ""
+    -snapshot_child_timeout_seconds (Timeout for snapshot child process in
+      seconds) type: uint64 default: 300
+    -snapshot_interval_seconds (Interval in second between periodic snapshots
+      of master data) type: uint64 default: 600
+    -snapshot_object_store_type (Snapshot object store type: 'local' for local
+      filesystem, 's3' for S3 storage) type: string default: ""
+    -snapshot_payload_backend_type (Deprecated alias of
+      --snapshot_object_store_type) type: string default: ""
+    -snapshot_payload_store_type (Deprecated alias of
+      --snapshot_object_store_type) type: string default: ""
+    -snapshot_retention_count (Number of recent snapshots to keep (older
+      snapshots will be automatically deleted)) type: uint32 default: 2
+    -tenant_quota_connector_type (Tenant quota policy connector type)
+      type: string default: "file"
+    -tenant_quota_connector_uri (Tenant quota policy connector URI)
+      type: string default: ""
+
+  Flags from /__w/Mooncake/Mooncake/mooncake-store/src/utils.cpp:
+    -mmap_arena_pool_size (Arena allocator pool size in bytes) type: uint64
+      default: 8589934592
+    -use_mmap_arena_allocator (Enable the lock-free mmap arena allocator for
+      mmap buffers) type: bool default: false
+
+
+
+  Flags from /builddir/build/BUILD/gflags-2.1.2/src/gflags.cc:
+    -flagfile (load flags from file) type: string default: ""
+    -fromenv (set flags from the environment [use 'export FLAGS_flag1=value'])
+      type: string default: ""
+    -tryfromenv (set flags from the environment if present) type: string
+      default: ""
+    -undefok (comma-separated list of flag names that it is okay to specify on
+      the command line even if the program does not define a flag with that
+      name.  IMPORTANT: flags in this list that have arguments MUST use the
+      flag=value format) type: string default: ""
+
+  Flags from /builddir/build/BUILD/gflags-2.1.2/src/gflags_completions.cc:
+    -tab_completion_columns (Number of columns to use in output for tab
+      completion) type: int32 default: 80
+    -tab_completion_word (If non-empty, HandleCommandLineCompletions() will
+      hijack the process and attempt to do bash-style command line flag
+      completion on this value.) type: string default: ""
+
+  Flags from /builddir/build/BUILD/gflags-2.1.2/src/gflags_reporting.cc:
+    -help (show help on all flags [tip: all flags can have two dashes])
+      type: bool default: false currently: true
+    -helpfull (show help on all flags -- same as -help) type: bool
+      default: false
+    -helpmatch (show help on modules whose name contains the specified substr)
+      type: string default: ""
+    -helpon (show help on the modules named by this flag value) type: string
+      default: ""
+    -helppackage (show help on all modules in the main package) type: bool
+      default: false
+    -helpshort (show help on only the main module for this program) type: bool
+      default: false
+    -helpxml (produce an xml version of help) type: bool default: false
+    -version (show version and build info and exit) type: bool default: false
+
+
+
+  Flags from src/logging.cc:
+    -alsologtoemail (log messages go to these email addresses in addition to
+      logfiles) type: string default: ""
+    -alsologtostderr (log messages go to stderr in addition to logfiles)
+      type: bool default: false
+    -colorlogtostderr (color messages logged to stderr (if supported by
+      terminal)) type: bool default: false
+    -drop_log_memory (Drop in-memory buffers of log contents. Logs can grow
+      very quickly and they are rarely read before they need to be evicted from
+      memory. Instead, drop them from memory as soon as they are flushed to
+      disk.) type: bool default: true
+    -log_backtrace_at (Emit a backtrace when logging at file:linenum.)
+      type: string default: ""
+    -log_dir (If specified, logfiles are written into this directory instead of
+      the default logging directory.) type: string default: ""
+    -log_link (Put additional links to the log files in this directory)
+      type: string default: ""
+    -log_prefix (Prepend the log prefix to the start of each log line)
+      type: bool default: true
+    -logbuflevel (Buffer log messages logged at this level or lower (-1 means
+      don't buffer; 0 means buffer INFO only; ...)) type: int32 default: 0
+    -logbufsecs (Buffer log messages for at most this many seconds) type: int32
+      default: 30
+    -logemaillevel (Email log messages logged at this level or higher (0 means
+      email all; 3 means email FATAL only; ...)) type: int32 default: 999
+    -logfile_mode (Log file mode/permissions.) type: int32 default: 436
+    -logmailer (Mailer used to send logging email) type: string
+      default: "/bin/mail"
+    -logtostderr (log messages go to stderr instead of logfiles) type: bool
+      default: false
+    -max_log_size (approx. maximum log file size (in MB). A value of 0 will be
+      silently overridden to 1.) type: int32 default: 1800
+    -minloglevel (Messages logged at a lower level than this don't actually get
+      logged anywhere) type: int32 default: 0
+    -stderrthreshold (log messages at or above this level are copied to stderr
+      in addition to logfiles.  This flag obsoletes --alsologtostderr.)
+      type: int32 default: 2
+    -stop_logging_if_full_disk (Stop attempting to log to disk if the disk is
+      full.) type: bool default: false
+
+  Flags from src/utilities.cc:
+    -symbolize_stacktrace (Symbolize the stack trace in the tombstone)
+      type: bool default: true
+
+  Flags from src/vlog_is_on.cc:
+    -v (Show all VLOG(m) messages for m <= this. Overridable by --vmodule.)
+      type: int32 default: 0
+    -vmodule (per-module verbose level. Argument is a comma-separated list of
+      <module name>=<log level>. <module name> is a glob pattern, matched
+      against the filename base (that is, name ignoring .cc/.h./-inl.h). <log
+      level> overrides any value given by --v.) type: string default: ""

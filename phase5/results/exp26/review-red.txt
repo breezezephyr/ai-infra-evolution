@@ -1,0 +1,220 @@
+.FFF...........................F......FF................                 [100%]
+=================================== FAILURES ===================================
+_ test_bad_or_conflicting_usage_cannot_be_published_as_completed[usages0-None] _
+
+usages = [{'completion_tokens': 2, 'prompt_tokens': 3, 'total_tokens': -5}]
+known = None
+
+    @pytest.mark.parametrize('usages,known',[
+     ([{'prompt_tokens':3,'completion_tokens':2,'total_tokens':-5}],None),
+     ([{'prompt_tokens':True,'completion_tokens':2,'total_tokens':3}],None),
+     ([{'prompt_tokens':3,'completion_tokens':2,'total_tokens':5},{'prompt_tokens':0,'completion_tokens':0,'total_tokens':0}],{'prompt_tokens':3,'completion_tokens':2,'total_tokens':5}),
+    ])
+    def test_bad_or_conflicting_usage_cannot_be_published_as_completed(usages,known):
+     async def run():
+      g=Gateway(make_plan()['cases']);messages=[];rx=asyncio.Queue()
+      await rx.put({'type':'http.request','body':b'{"case_id":"gpu-normal"}','more_body':False})
+      raw='data: '+json.dumps({'choices':[{'delta':{'content':'OK'},'finish_reason':'stop'}]})+'\n\n'
+      raw+=''.join('data: '+json.dumps({'choices':[],'usage':u})+'\n\n' for u in usages)+'data: [DONE]\n\n'
+      original=httpx.AsyncClient
+      from unittest.mock import patch
+      async def send(m):messages.append(m)
+      with patch('gateway.httpx.AsyncClient',lambda **kw:original(**kw,transport=httpx.MockTransport(lambda req:httpx.Response(200,content=raw)))):
+       await g({'type':'http','path':'/generate','method':'POST'},rx.get,send)
+      r=g.records[0];assert r['terminal']=='backend_error'
+      assert r['attempts'][0]['usage']==r['settlements'][0]['usage']==known
+      assert r['attempts'][0]['usage_frames']==usages
+      assert not g.active and not g.worker_count
+>    asyncio.run(run())
+
+phase5/exp26/test_transport.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def run():
+     g=Gateway(make_plan()['cases']);messages=[];rx=asyncio.Queue()
+     await rx.put({'type':'http.request','body':b'{"case_id":"gpu-normal"}','more_body':False})
+     raw='data: '+json.dumps({'choices':[{'delta':{'content':'OK'},'finish_reason':'stop'}]})+'\n\n'
+     raw+=''.join('data: '+json.dumps({'choices':[],'usage':u})+'\n\n' for u in usages)+'data: [DONE]\n\n'
+     original=httpx.AsyncClient
+     from unittest.mock import patch
+     async def send(m):messages.append(m)
+     with patch('gateway.httpx.AsyncClient',lambda **kw:original(**kw,transport=httpx.MockTransport(lambda req:httpx.Response(200,content=raw)))):
+      await g({'type':'http','path':'/generate','method':'POST'},rx.get,send)
+>    r=g.records[0];assert r['terminal']=='backend_error'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    AssertionError: assert 'completed' == 'backend_error'
+E      
+E      - backend_error
+E      + completed
+
+phase5/exp26/test_transport.py:38: AssertionError
+_ test_bad_or_conflicting_usage_cannot_be_published_as_completed[usages1-None] _
+
+usages = [{'completion_tokens': 2, 'prompt_tokens': True, 'total_tokens': 3}]
+known = None
+
+    @pytest.mark.parametrize('usages,known',[
+     ([{'prompt_tokens':3,'completion_tokens':2,'total_tokens':-5}],None),
+     ([{'prompt_tokens':True,'completion_tokens':2,'total_tokens':3}],None),
+     ([{'prompt_tokens':3,'completion_tokens':2,'total_tokens':5},{'prompt_tokens':0,'completion_tokens':0,'total_tokens':0}],{'prompt_tokens':3,'completion_tokens':2,'total_tokens':5}),
+    ])
+    def test_bad_or_conflicting_usage_cannot_be_published_as_completed(usages,known):
+     async def run():
+      g=Gateway(make_plan()['cases']);messages=[];rx=asyncio.Queue()
+      await rx.put({'type':'http.request','body':b'{"case_id":"gpu-normal"}','more_body':False})
+      raw='data: '+json.dumps({'choices':[{'delta':{'content':'OK'},'finish_reason':'stop'}]})+'\n\n'
+      raw+=''.join('data: '+json.dumps({'choices':[],'usage':u})+'\n\n' for u in usages)+'data: [DONE]\n\n'
+      original=httpx.AsyncClient
+      from unittest.mock import patch
+      async def send(m):messages.append(m)
+      with patch('gateway.httpx.AsyncClient',lambda **kw:original(**kw,transport=httpx.MockTransport(lambda req:httpx.Response(200,content=raw)))):
+       await g({'type':'http','path':'/generate','method':'POST'},rx.get,send)
+      r=g.records[0];assert r['terminal']=='backend_error'
+      assert r['attempts'][0]['usage']==r['settlements'][0]['usage']==known
+      assert r['attempts'][0]['usage_frames']==usages
+      assert not g.active and not g.worker_count
+>    asyncio.run(run())
+
+phase5/exp26/test_transport.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def run():
+     g=Gateway(make_plan()['cases']);messages=[];rx=asyncio.Queue()
+     await rx.put({'type':'http.request','body':b'{"case_id":"gpu-normal"}','more_body':False})
+     raw='data: '+json.dumps({'choices':[{'delta':{'content':'OK'},'finish_reason':'stop'}]})+'\n\n'
+     raw+=''.join('data: '+json.dumps({'choices':[],'usage':u})+'\n\n' for u in usages)+'data: [DONE]\n\n'
+     original=httpx.AsyncClient
+     from unittest.mock import patch
+     async def send(m):messages.append(m)
+     with patch('gateway.httpx.AsyncClient',lambda **kw:original(**kw,transport=httpx.MockTransport(lambda req:httpx.Response(200,content=raw)))):
+      await g({'type':'http','path':'/generate','method':'POST'},rx.get,send)
+>    r=g.records[0];assert r['terminal']=='backend_error'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    AssertionError: assert 'completed' == 'backend_error'
+E      
+E      - backend_error
+E      + completed
+
+phase5/exp26/test_transport.py:38: AssertionError
+_ test_bad_or_conflicting_usage_cannot_be_published_as_completed[usages2-known2] _
+
+usages = [{'completion_tokens': 2, 'prompt_tokens': 3, 'total_tokens': 5}, {'completion_tokens': 0, 'prompt_tokens': 0, 'total_tokens': 0}]
+known = {'completion_tokens': 2, 'prompt_tokens': 3, 'total_tokens': 5}
+
+    @pytest.mark.parametrize('usages,known',[
+     ([{'prompt_tokens':3,'completion_tokens':2,'total_tokens':-5}],None),
+     ([{'prompt_tokens':True,'completion_tokens':2,'total_tokens':3}],None),
+     ([{'prompt_tokens':3,'completion_tokens':2,'total_tokens':5},{'prompt_tokens':0,'completion_tokens':0,'total_tokens':0}],{'prompt_tokens':3,'completion_tokens':2,'total_tokens':5}),
+    ])
+    def test_bad_or_conflicting_usage_cannot_be_published_as_completed(usages,known):
+     async def run():
+      g=Gateway(make_plan()['cases']);messages=[];rx=asyncio.Queue()
+      await rx.put({'type':'http.request','body':b'{"case_id":"gpu-normal"}','more_body':False})
+      raw='data: '+json.dumps({'choices':[{'delta':{'content':'OK'},'finish_reason':'stop'}]})+'\n\n'
+      raw+=''.join('data: '+json.dumps({'choices':[],'usage':u})+'\n\n' for u in usages)+'data: [DONE]\n\n'
+      original=httpx.AsyncClient
+      from unittest.mock import patch
+      async def send(m):messages.append(m)
+      with patch('gateway.httpx.AsyncClient',lambda **kw:original(**kw,transport=httpx.MockTransport(lambda req:httpx.Response(200,content=raw)))):
+       await g({'type':'http','path':'/generate','method':'POST'},rx.get,send)
+      r=g.records[0];assert r['terminal']=='backend_error'
+      assert r['attempts'][0]['usage']==r['settlements'][0]['usage']==known
+      assert r['attempts'][0]['usage_frames']==usages
+      assert not g.active and not g.worker_count
+>    asyncio.run(run())
+
+phase5/exp26/test_transport.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def run():
+     g=Gateway(make_plan()['cases']);messages=[];rx=asyncio.Queue()
+     await rx.put({'type':'http.request','body':b'{"case_id":"gpu-normal"}','more_body':False})
+     raw='data: '+json.dumps({'choices':[{'delta':{'content':'OK'},'finish_reason':'stop'}]})+'\n\n'
+     raw+=''.join('data: '+json.dumps({'choices':[],'usage':u})+'\n\n' for u in usages)+'data: [DONE]\n\n'
+     original=httpx.AsyncClient
+     from unittest.mock import patch
+     async def send(m):messages.append(m)
+     with patch('gateway.httpx.AsyncClient',lambda **kw:original(**kw,transport=httpx.MockTransport(lambda req:httpx.Response(200,content=raw)))):
+      await g({'type':'http','path':'/generate','method':'POST'},rx.get,send)
+>    r=g.records[0];assert r['terminal']=='backend_error'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    AssertionError: assert 'completed' == 'backend_error'
+E      
+E      - backend_error
+E      + completed
+
+phase5/exp26/test_transport.py:38: AssertionError
+_ ReviewRegressions.test_backend_known_usage_missing_at_gateway_is_retained_and_blocks_acceptance _
+
+self = <test_analyze.ReviewRegressions testMethod=test_backend_known_usage_missing_at_gateway_is_retained_and_blocks_acceptance>
+
+    def test_backend_known_usage_missing_at_gateway_is_retained_and_blocks_acceptance(self):
+        rows=self.read('backend.jsonl');r=next(x for x in rows if x['attempt_id']=='exp26-gpu-post-break/a1')
+        r['sse']+=wire({'choices':[{'delta':{},'finish_reason':'stop'}]})+wire({'choices':[],'usage':USAGE})+'data: [DONE]\n\n'
+        r['response_sha256']=sha(r['sse']);self.write('backend.jsonl',rows)
+>       report=self.module.analyze(self.out,evidence_profile='http_fixture')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: analyze() got an unexpected keyword argument 'evidence_profile'
+
+phase5/exp26/test_analyze.py:413: TypeError
+___ ReviewRegressions.test_formal_empty_backend_cannot_downgrade_to_optional ___
+
+self = <test_analyze.ReviewRegressions testMethod=test_formal_empty_backend_cannot_downgrade_to_optional>
+
+    def test_formal_empty_backend_cannot_downgrade_to_optional(self):
+        self.write('backend.jsonl', [])
+        r=self.module.analyze(self.out)
+>       self.assertFalse(r['accepted']);self.assertIsNone(r['metrics'])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: True is not false
+
+phase5/exp26/test_analyze.py:403: AssertionError
+_ ReviewRegressions.test_formal_http_only_evidence_cannot_replace_native_hooks _
+
+self = <test_analyze.ReviewRegressions testMethod=test_formal_http_only_evidence_cannot_replace_native_hooks>
+
+    def test_formal_http_only_evidence_cannot_replace_native_hooks(self):
+        r=self.module.analyze(self.out)
+>       self.assertFalse(r['accepted']);self.assertIsNone(r['metrics'])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: True is not false
+
+phase5/exp26/test_analyze.py:407: AssertionError
+=========================== short test summary info ============================
+FAILED phase5/exp26/test_transport.py::test_bad_or_conflicting_usage_cannot_be_published_as_completed[usages0-None]
+FAILED phase5/exp26/test_transport.py::test_bad_or_conflicting_usage_cannot_be_published_as_completed[usages1-None]
+FAILED phase5/exp26/test_transport.py::test_bad_or_conflicting_usage_cannot_be_published_as_completed[usages2-known2]
+FAILED phase5/exp26/test_analyze.py::ReviewRegressions::test_backend_known_usage_missing_at_gateway_is_retained_and_blocks_acceptance
+FAILED phase5/exp26/test_analyze.py::ReviewRegressions::test_formal_empty_backend_cannot_downgrade_to_optional
+FAILED phase5/exp26/test_analyze.py::ReviewRegressions::test_formal_http_only_evidence_cannot_replace_native_hooks
+6 failed, 50 passed in 0.74s

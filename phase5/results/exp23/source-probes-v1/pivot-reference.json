@@ -1,0 +1,64 @@
+[
+  {
+    "row": [
+      1100,
+      2,
+      2003,
+      2
+    ],
+    "sec1_start": 1000,
+    "sec2_start": 2000,
+    "base": 1900,
+    "expected": [
+      1872,
+      1873,
+      1903,
+      1904
+    ],
+    "actual": [
+      1872,
+      1873,
+      1903,
+      1904
+    ],
+    "conformant": true
+  },
+  {
+    "row": [
+      1100,
+      2,
+      2003,
+      2
+    ],
+    "sec1_start": 1000,
+    "sec2_start": 2000,
+    "base": 1960,
+    "expected": [
+      1872,
+      1873,
+      1963,
+      1964
+    ],
+    "actual": [
+      1872,
+      1873,
+      1963,
+      1964
+    ],
+    "conformant": true
+  },
+  {
+    "row": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sec1_start": 1000,
+    "sec2_start": 2000,
+    "base": 1900,
+    "expected": [],
+    "actual": [],
+    "conformant": true
+  }
+]

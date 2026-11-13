@@ -1,0 +1,119 @@
+{
+  "status": "observed",
+  "recipe_version": "0.2.0",
+  "python": "3.12.10 (main, Apr  8 2025, 11:35:47) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "executable": "phase5/.venv-exp19/bin/python",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "messages": [
+      {
+        "role": "user",
+        "content": "你好，请原样返回 TEXT_OK_19。"
+      }
+    ]
+  },
+  "tokenizer_path": "phase5/vendor/minimal/static/tokenizers/v41/tokenizer.json",
+  "tokenizer_sha256": "81f64d1248a68ce3663e07ab3ee48b851e5df0e32d27cb98e4c9a268151e8d99",
+  "token_ids": [
+    0,
+    128799,
+    77666,
+    288,
+    9504,
+    482,
+    28,
+    223,
+    2402,
+    343,
+    16801,
+    223,
+    19,
+    15,
+    1457,
+    14,
+    270,
+    4077,
+    270,
+    1990,
+    14,
+    270,
+    850,
+    15146,
+    270,
+    22805,
+    868,
+    128803,
+    30594,
+    303,
+    2788,
+    1532,
+    1295,
+    13199,
+    66427,
+    110393,
+    65,
+    511,
+    320,
+    128804,
+    128821
+  ],
+  "input_kind": "real_native_conversion_and_encoding; synthetic_context_limits",
+  "model_calls": 0,
+  "backend_dispatched": false,
+  "rows": [
+    {
+      "requested_max_tokens": null,
+      "prompt_tokens": 41,
+      "context_limit": 40,
+      "remaining": -1,
+      "outcome": "ConversionError",
+      "status_code": 400,
+      "error": "This model's maximum context length is 40 tokens. However, you requested 41 tokens (41 in the messages, 0 in the completion). Please reduce the length of the messages or completion.",
+      "error_body": "{\"error\":{\"message\":\"This model's maximum context length is 40 tokens. However, you requested 41 tokens (41 in the messages, 0 in the completion). Please reduce the length of the messages or completion.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+    },
+    {
+      "requested_max_tokens": null,
+      "prompt_tokens": 41,
+      "context_limit": 41,
+      "remaining": 0,
+      "outcome": "returned",
+      "value": 1
+    },
+    {
+      "requested_max_tokens": null,
+      "prompt_tokens": 41,
+      "context_limit": 42,
+      "remaining": 1,
+      "outcome": "returned",
+      "value": 1
+    },
+    {
+      "requested_max_tokens": 1,
+      "prompt_tokens": 41,
+      "context_limit": 40,
+      "remaining": -1,
+      "outcome": "ConversionError",
+      "status_code": 400,
+      "error": "This model's maximum context length is 40 tokens. However, you requested 42 tokens (41 in the messages, 1 in the completion). Please reduce the length of the messages or completion.",
+      "error_body": "{\"error\":{\"message\":\"This model's maximum context length is 40 tokens. However, you requested 42 tokens (41 in the messages, 1 in the completion). Please reduce the length of the messages or completion.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+    },
+    {
+      "requested_max_tokens": 1,
+      "prompt_tokens": 41,
+      "context_limit": 41,
+      "remaining": 0,
+      "outcome": "ConversionError",
+      "status_code": 400,
+      "error": "This model's maximum context length is 41 tokens. However, you requested 42 tokens (41 in the messages, 1 in the completion). Please reduce the length of the messages or completion.",
+      "error_body": "{\"error\":{\"message\":\"This model's maximum context length is 41 tokens. However, you requested 42 tokens (41 in the messages, 1 in the completion). Please reduce the length of the messages or completion.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+    },
+    {
+      "requested_max_tokens": 1,
+      "prompt_tokens": 41,
+      "context_limit": 42,
+      "remaining": 1,
+      "outcome": "returned",
+      "value": 1
+    }
+  ]
+}

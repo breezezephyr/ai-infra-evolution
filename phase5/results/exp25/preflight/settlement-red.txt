@@ -1,0 +1,15 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_unreconciled_evidence_cannot_publish_success_totals ___________
+
+    def test_unreconciled_evidence_cannot_publish_success_totals():
+     p,c,g,b=fixture();b[0]['request_sha256']='wrong'
+     r=analyze.audit(p,c,g,b)
+     assert r['matched_requests']+r['failed_requests']==r['planned']
+>    assert r['known_total_tokens'] is None and r['tenant_usage']=={}
+E    assert (9 is None)
+
+phase5/exp25/test_analyze.py:54: AssertionError
+=========================== short test summary info ============================
+FAILED phase5/exp25/test_analyze.py::test_unreconciled_evidence_cannot_publish_success_totals
+1 failed in 0.03s

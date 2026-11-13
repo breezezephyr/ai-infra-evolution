@@ -1,0 +1,7028 @@
+{
+  "kind": "controlled_loopback_SSE_replay",
+  "reviewer_device": "cpu",
+  "reviewer_latency_p50_ms": {
+    "embedding": 72.91908646584488,
+    "classifier": 297.05130352522247
+  },
+  "records": [
+    {
+      "request_id": "r0-safeTrue-0",
+      "repeat": 0,
+      "safe": true,
+      "mode": "pass",
+      "review_ms_replayed": 0,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 13.851189985871315,
+      "max_visible_gap_ms": 14.512222027406096,
+      "observed_including_cleanup_ms": 1041.972305974923,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": []
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 13.851189985871315,
+          "chars": 1
+        },
+        {
+          "ms": 26.496938022319227,
+          "chars": 1
+        },
+        {
+          "ms": 39.70257600303739,
+          "chars": 1
+        },
+        {
+          "ms": 53.18778398213908,
+          "chars": 1
+        },
+        {
+          "ms": 66.70401297742501,
+          "chars": 1
+        },
+        {
+          "ms": 80.03122301306576,
+          "chars": 1
+        },
+        {
+          "ms": 93.08782400330529,
+          "chars": 1
+        },
+        {
+          "ms": 106.42738296883181,
+          "chars": 1
+        },
+        {
+          "ms": 119.45722700329497,
+          "chars": 1
+        },
+        {
+          "ms": 132.7793090022169,
+          "chars": 1
+        },
+        {
+          "ms": 146.13970898790285,
+          "chars": 1
+        },
+        {
+          "ms": 159.7196870134212,
+          "chars": 1
+        },
+        {
+          "ms": 172.79214499285445,
+          "chars": 1
+        },
+        {
+          "ms": 185.93535700347275,
+          "chars": 1
+        },
+        {
+          "ms": 198.9014169666916,
+          "chars": 1
+        },
+        {
+          "ms": 211.95651299785823,
+          "chars": 1
+        },
+        {
+          "ms": 225.17358098411933,
+          "chars": 1
+        },
+        {
+          "ms": 237.99289402086288,
+          "chars": 1
+        },
+        {
+          "ms": 250.55156199960038,
+          "chars": 1
+        },
+        {
+          "ms": 262.8893479704857,
+          "chars": 1
+        },
+        {
+          "ms": 275.4560320172459,
+          "chars": 1
+        },
+        {
+          "ms": 287.9872510093264,
+          "chars": 1
+        },
+        {
+          "ms": 300.34759402042255,
+          "chars": 1
+        },
+        {
+          "ms": 312.6095879706554,
+          "chars": 1
+        },
+        {
+          "ms": 325.13240701518953,
+          "chars": 1
+        },
+        {
+          "ms": 337.70029799779877,
+          "chars": 1
+        },
+        {
+          "ms": 350.18196201417595,
+          "chars": 1
+        },
+        {
+          "ms": 362.5410000095144,
+          "chars": 1
+        },
+        {
+          "ms": 375.02993701491505,
+          "chars": 1
+        },
+        {
+          "ms": 387.38505297806114,
+          "chars": 1
+        },
+        {
+          "ms": 399.8853159719147,
+          "chars": 1
+        },
+        {
+          "ms": 412.30722301406786,
+          "chars": 1
+        },
+        {
+          "ms": 425.1529879984446,
+          "chars": 1
+        },
+        {
+          "ms": 437.8753529745154,
+          "chars": 1
+        },
+        {
+          "ms": 450.93146699946374,
+          "chars": 1
+        },
+        {
+          "ms": 464.24271998694167,
+          "chars": 1
+        },
+        {
+          "ms": 477.05990698887035,
+          "chars": 1
+        },
+        {
+          "ms": 490.0920980144292,
+          "chars": 1
+        },
+        {
+          "ms": 503.3218669705093,
+          "chars": 1
+        },
+        {
+          "ms": 517.1298799687065,
+          "chars": 1
+        },
+        {
+          "ms": 530.240259016864,
+          "chars": 1
+        },
+        {
+          "ms": 543.4083910076879,
+          "chars": 1
+        },
+        {
+          "ms": 556.6379979718477,
+          "chars": 1
+        },
+        {
+          "ms": 569.9063860229217,
+          "chars": 1
+        },
+        {
+          "ms": 583.6358760134317,
+          "chars": 1
+        },
+        {
+          "ms": 597.4171559792012,
+          "chars": 1
+        },
+        {
+          "ms": 610.9897900023498,
+          "chars": 1
+        },
+        {
+          "ms": 624.9437549849972,
+          "chars": 1
+        },
+        {
+          "ms": 637.3906739754602,
+          "chars": 1
+        },
+        {
+          "ms": 650.8310249773785,
+          "chars": 1
+        },
+        {
+          "ms": 665.24959000526,
+          "chars": 1
+        },
+        {
+          "ms": 677.3467430029996,
+          "chars": 1
+        },
+        {
+          "ms": 690.571139974054,
+          "chars": 1
+        },
+        {
+          "ms": 704.204267996829,
+          "chars": 1
+        },
+        {
+          "ms": 718.1850289925933,
+          "chars": 1
+        },
+        {
+          "ms": 730.7922709733248,
+          "chars": 1
+        },
+        {
+          "ms": 744.2414480028674,
+          "chars": 1
+        },
+        {
+          "ms": 757.3555620037951,
+          "chars": 1
+        },
+        {
+          "ms": 770.4517390229739,
+          "chars": 1
+        },
+        {
+          "ms": 783.5912340087816,
+          "chars": 1
+        },
+        {
+          "ms": 797.669276013039,
+          "chars": 1
+        },
+        {
+          "ms": 810.8215240063146,
+          "chars": 1
+        },
+        {
+          "ms": 823.5665449756198,
+          "chars": 1
+        },
+        {
+          "ms": 836.9105589808896,
+          "chars": 1
+        },
+        {
+          "ms": 850.3449289710261,
+          "chars": 1
+        },
+        {
+          "ms": 864.8571509984322,
+          "chars": 1
+        },
+        {
+          "ms": 877.5793749955483,
+          "chars": 1
+        },
+        {
+          "ms": 891.4052589680068,
+          "chars": 1
+        },
+        {
+          "ms": 903.4173709806055,
+          "chars": 1
+        },
+        {
+          "ms": 917.2534560202621,
+          "chars": 1
+        },
+        {
+          "ms": 929.2234670137987,
+          "chars": 1
+        },
+        {
+          "ms": 941.9637320097536,
+          "chars": 1
+        },
+        {
+          "ms": 954.3072250089608,
+          "chars": 1
+        },
+        {
+          "ms": 966.5743350051343,
+          "chars": 1
+        },
+        {
+          "ms": 979.2794529930688,
+          "chars": 1
+        },
+        {
+          "ms": 991.6822590166703,
+          "chars": 1
+        },
+        {
+          "ms": 1004.3144800001755,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r0-safeTrue-1",
+      "repeat": 0,
+      "safe": true,
+      "mode": "sync",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 213.0320779979229,
+      "max_visible_gap_ms": 258.086521003861,
+      "observed_including_cleanup_ms": 1101.319829991553,
+      "finish_reason": "stop",
+      "max_burst_chars": 20,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 74.09823400666937
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 73.95477098179981
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 73.75548500567675
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 73.31711699953303
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 75.11943497229367
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 73.83817801019177
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 213.0320779979229,
+          "chars": 11
+        },
+        {
+          "ms": 384.5666309935041,
+          "chars": 13
+        },
+        {
+          "ms": 642.6531519973651,
+          "chars": 20
+        },
+        {
+          "ms": 780.8748919633217,
+          "chars": 11
+        },
+        {
+          "ms": 920.1427819789387,
+          "chars": 11
+        },
+        {
+          "ms": 1063.0488769966178,
+          "chars": 11
+        }
+      ]
+    },
+    {
+      "request_id": "r0-safeTrue-2",
+      "repeat": 0,
+      "safe": true,
+      "mode": "async",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 15.387276012916118,
+      "max_visible_gap_ms": 14.051380974706262,
+      "observed_including_cleanup_ms": 1115.655007015448,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 73.91112402547151
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 73.53878300637007
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 73.33741802722216
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 73.64035700447857
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 73.66350700613111
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 73.33626400213689
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 15.387276012916118,
+          "chars": 1
+        },
+        {
+          "ms": 29.43865698762238,
+          "chars": 1
+        },
+        {
+          "ms": 42.75370901450515,
+          "chars": 1
+        },
+        {
+          "ms": 55.49151997547597,
+          "chars": 1
+        },
+        {
+          "ms": 69.17747698025778,
+          "chars": 1
+        },
+        {
+          "ms": 82.796384987887,
+          "chars": 1
+        },
+        {
+          "ms": 95.98376200301573,
+          "chars": 1
+        },
+        {
+          "ms": 109.17819797759876,
+          "chars": 1
+        },
+        {
+          "ms": 122.97650397522375,
+          "chars": 1
+        },
+        {
+          "ms": 135.61127899447456,
+          "chars": 1
+        },
+        {
+          "ms": 148.98326701950282,
+          "chars": 1
+        },
+        {
+          "ms": 162.08427300443873,
+          "chars": 1
+        },
+        {
+          "ms": 175.360451976303,
+          "chars": 1
+        },
+        {
+          "ms": 188.45378200057894,
+          "chars": 1
+        },
+        {
+          "ms": 201.8530719797127,
+          "chars": 1
+        },
+        {
+          "ms": 215.37281898781657,
+          "chars": 1
+        },
+        {
+          "ms": 228.05647499626502,
+          "chars": 1
+        },
+        {
+          "ms": 241.47244897903875,
+          "chars": 1
+        },
+        {
+          "ms": 254.21246100449935,
+          "chars": 1
+        },
+        {
+          "ms": 266.92901202477515,
+          "chars": 1
+        },
+        {
+          "ms": 279.4642070075497,
+          "chars": 1
+        },
+        {
+          "ms": 292.11499402299523,
+          "chars": 1
+        },
+        {
+          "ms": 304.4000720256008,
+          "chars": 1
+        },
+        {
+          "ms": 317.18811101745814,
+          "chars": 1
+        },
+        {
+          "ms": 329.57846601493657,
+          "chars": 1
+        },
+        {
+          "ms": 342.17894298490137,
+          "chars": 1
+        },
+        {
+          "ms": 354.61886500706896,
+          "chars": 1
+        },
+        {
+          "ms": 367.0395759982057,
+          "chars": 1
+        },
+        {
+          "ms": 379.50617098249495,
+          "chars": 1
+        },
+        {
+          "ms": 392.0989310136065,
+          "chars": 1
+        },
+        {
+          "ms": 404.64608499314636,
+          "chars": 1
+        },
+        {
+          "ms": 417.30838001240045,
+          "chars": 1
+        },
+        {
+          "ms": 429.61817601462826,
+          "chars": 1
+        },
+        {
+          "ms": 441.925277991686,
+          "chars": 1
+        },
+        {
+          "ms": 454.8752090195194,
+          "chars": 1
+        },
+        {
+          "ms": 468.0308739771135,
+          "chars": 1
+        },
+        {
+          "ms": 481.0803849832155,
+          "chars": 1
+        },
+        {
+          "ms": 494.1632929840125,
+          "chars": 1
+        },
+        {
+          "ms": 507.71851401077583,
+          "chars": 1
+        },
+        {
+          "ms": 521.0882790270261,
+          "chars": 1
+        },
+        {
+          "ms": 534.2597760027274,
+          "chars": 1
+        },
+        {
+          "ms": 547.3258729907684,
+          "chars": 1
+        },
+        {
+          "ms": 560.962239978835,
+          "chars": 1
+        },
+        {
+          "ms": 573.6724340240471,
+          "chars": 1
+        },
+        {
+          "ms": 586.7156879976392,
+          "chars": 1
+        },
+        {
+          "ms": 599.5516430120915,
+          "chars": 1
+        },
+        {
+          "ms": 612.6800419879146,
+          "chars": 1
+        },
+        {
+          "ms": 626.158126979135,
+          "chars": 1
+        },
+        {
+          "ms": 639.520275988616,
+          "chars": 1
+        },
+        {
+          "ms": 653.5090000252239,
+          "chars": 1
+        },
+        {
+          "ms": 666.2612929940224,
+          "chars": 1
+        },
+        {
+          "ms": 679.4906930299476,
+          "chars": 1
+        },
+        {
+          "ms": 692.8973760223016,
+          "chars": 1
+        },
+        {
+          "ms": 705.9590140124783,
+          "chars": 1
+        },
+        {
+          "ms": 718.8039079774171,
+          "chars": 1
+        },
+        {
+          "ms": 731.7228650208563,
+          "chars": 1
+        },
+        {
+          "ms": 744.6867059916258,
+          "chars": 1
+        },
+        {
+          "ms": 758.5789239965379,
+          "chars": 1
+        },
+        {
+          "ms": 770.8661979995668,
+          "chars": 1
+        },
+        {
+          "ms": 783.9539219858125,
+          "chars": 1
+        },
+        {
+          "ms": 797.3026940017007,
+          "chars": 1
+        },
+        {
+          "ms": 809.9454150069505,
+          "chars": 1
+        },
+        {
+          "ms": 822.7189619792625,
+          "chars": 1
+        },
+        {
+          "ms": 835.6901049846783,
+          "chars": 1
+        },
+        {
+          "ms": 848.7063570064493,
+          "chars": 1
+        },
+        {
+          "ms": 861.8397419922985,
+          "chars": 1
+        },
+        {
+          "ms": 875.4834979772568,
+          "chars": 1
+        },
+        {
+          "ms": 889.2376130097546,
+          "chars": 1
+        },
+        {
+          "ms": 902.7822670177557,
+          "chars": 1
+        },
+        {
+          "ms": 916.3962519960478,
+          "chars": 1
+        },
+        {
+          "ms": 929.8814840149134,
+          "chars": 1
+        },
+        {
+          "ms": 942.6176879787818,
+          "chars": 1
+        },
+        {
+          "ms": 954.9990040250123,
+          "chars": 1
+        },
+        {
+          "ms": 967.3945929971524,
+          "chars": 1
+        },
+        {
+          "ms": 979.7521739965305,
+          "chars": 1
+        },
+        {
+          "ms": 992.2674580011517,
+          "chars": 1
+        },
+        {
+          "ms": 1004.6252469765022,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r0-safeTrue-3",
+      "repeat": 0,
+      "safe": true,
+      "mode": "sync",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 439.83240600209683,
+      "max_visible_gap_ms": 299.6825249865651,
+      "observed_including_cleanup_ms": 1972.3638679715805,
+      "finish_reason": "stop",
+      "max_burst_chars": 20,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 297.91148798540235
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 297.3501840024255
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 298.32934302976355
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 297.5311009795405
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 298.5888500115834
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 298.78354899119586
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 439.83240600209683,
+          "chars": 11
+        },
+        {
+          "ms": 737.5983030069619,
+          "chars": 13
+        },
+        {
+          "ms": 1037.0511200162582,
+          "chars": 20
+        },
+        {
+          "ms": 1335.3982419939712,
+          "chars": 11
+        },
+        {
+          "ms": 1634.4184720073827,
+          "chars": 11
+        },
+        {
+          "ms": 1934.1009969939478,
+          "chars": 11
+        }
+      ]
+    },
+    {
+      "request_id": "r0-safeTrue-4",
+      "repeat": 0,
+      "safe": true,
+      "mode": "async",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 13.323103019502014,
+      "max_visible_gap_ms": 13.721118972171098,
+      "observed_including_cleanup_ms": 1964.0750280232169,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 297.1282660146244
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 430.08578900480643
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 465.5261680018157
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 620.7802999997512
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 780.8963980060071
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 939.9973939871415
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 13.323103019502014,
+          "chars": 1
+        },
+        {
+          "ms": 25.722933001816273,
+          "chars": 1
+        },
+        {
+          "ms": 38.12363703036681,
+          "chars": 1
+        },
+        {
+          "ms": 50.48670101677999,
+          "chars": 1
+        },
+        {
+          "ms": 62.7417640062049,
+          "chars": 1
+        },
+        {
+          "ms": 75.25447104126215,
+          "chars": 1
+        },
+        {
+          "ms": 87.75395003613085,
+          "chars": 1
+        },
+        {
+          "ms": 100.23570101475343,
+          "chars": 1
+        },
+        {
+          "ms": 112.5620219972916,
+          "chars": 1
+        },
+        {
+          "ms": 125.06368104368448,
+          "chars": 1
+        },
+        {
+          "ms": 137.62691599549726,
+          "chars": 1
+        },
+        {
+          "ms": 150.08389099966735,
+          "chars": 1
+        },
+        {
+          "ms": 162.44143701624125,
+          "chars": 1
+        },
+        {
+          "ms": 174.86368800746277,
+          "chars": 1
+        },
+        {
+          "ms": 187.30556702939793,
+          "chars": 1
+        },
+        {
+          "ms": 199.75409499602392,
+          "chars": 1
+        },
+        {
+          "ms": 212.45239803101867,
+          "chars": 1
+        },
+        {
+          "ms": 225.21293902536854,
+          "chars": 1
+        },
+        {
+          "ms": 238.03044203668833,
+          "chars": 1
+        },
+        {
+          "ms": 250.62134204199538,
+          "chars": 1
+        },
+        {
+          "ms": 263.4564470499754,
+          "chars": 1
+        },
+        {
+          "ms": 277.1775660221465,
+          "chars": 1
+        },
+        {
+          "ms": 290.2240180410445,
+          "chars": 1
+        },
+        {
+          "ms": 302.59907204890624,
+          "chars": 1
+        },
+        {
+          "ms": 315.93587703537196,
+          "chars": 1
+        },
+        {
+          "ms": 329.4577070046216,
+          "chars": 1
+        },
+        {
+          "ms": 342.706244031433,
+          "chars": 1
+        },
+        {
+          "ms": 355.4488450172357,
+          "chars": 1
+        },
+        {
+          "ms": 368.24618704849854,
+          "chars": 1
+        },
+        {
+          "ms": 381.67899299878627,
+          "chars": 1
+        },
+        {
+          "ms": 395.08937002392486,
+          "chars": 1
+        },
+        {
+          "ms": 408.67683599935845,
+          "chars": 1
+        },
+        {
+          "ms": 421.87799501698464,
+          "chars": 1
+        },
+        {
+          "ms": 434.6446130075492,
+          "chars": 1
+        },
+        {
+          "ms": 447.76600500335917,
+          "chars": 1
+        },
+        {
+          "ms": 461.0383050167002,
+          "chars": 1
+        },
+        {
+          "ms": 474.5891180355102,
+          "chars": 1
+        },
+        {
+          "ms": 486.89629504224285,
+          "chars": 1
+        },
+        {
+          "ms": 500.1326000201516,
+          "chars": 1
+        },
+        {
+          "ms": 513.1609810050577,
+          "chars": 1
+        },
+        {
+          "ms": 526.1858080048114,
+          "chars": 1
+        },
+        {
+          "ms": 539.2292190226726,
+          "chars": 1
+        },
+        {
+          "ms": 552.3332810262218,
+          "chars": 1
+        },
+        {
+          "ms": 565.4742360347882,
+          "chars": 1
+        },
+        {
+          "ms": 578.6278590094298,
+          "chars": 1
+        },
+        {
+          "ms": 591.5466020232998,
+          "chars": 1
+        },
+        {
+          "ms": 604.594859003555,
+          "chars": 1
+        },
+        {
+          "ms": 617.5303290365264,
+          "chars": 1
+        },
+        {
+          "ms": 630.7100940030068,
+          "chars": 1
+        },
+        {
+          "ms": 643.4257820365019,
+          "chars": 1
+        },
+        {
+          "ms": 656.3325410243124,
+          "chars": 1
+        },
+        {
+          "ms": 669.5025180233642,
+          "chars": 1
+        },
+        {
+          "ms": 682.5449710013345,
+          "chars": 1
+        },
+        {
+          "ms": 695.4280000063591,
+          "chars": 1
+        },
+        {
+          "ms": 707.9795980243944,
+          "chars": 1
+        },
+        {
+          "ms": 720.3845190233551,
+          "chars": 1
+        },
+        {
+          "ms": 732.9634830239229,
+          "chars": 1
+        },
+        {
+          "ms": 745.4552390263416,
+          "chars": 1
+        },
+        {
+          "ms": 758.0297690001316,
+          "chars": 1
+        },
+        {
+          "ms": 770.6485110102221,
+          "chars": 1
+        },
+        {
+          "ms": 782.9876480391249,
+          "chars": 1
+        },
+        {
+          "ms": 795.2877260395326,
+          "chars": 1
+        },
+        {
+          "ms": 807.8847120050341,
+          "chars": 1
+        },
+        {
+          "ms": 820.2737910323776,
+          "chars": 1
+        },
+        {
+          "ms": 833.0604250077158,
+          "chars": 1
+        },
+        {
+          "ms": 845.7655149977654,
+          "chars": 1
+        },
+        {
+          "ms": 858.1591130350716,
+          "chars": 1
+        },
+        {
+          "ms": 870.4644850222394,
+          "chars": 1
+        },
+        {
+          "ms": 882.7944790245965,
+          "chars": 1
+        },
+        {
+          "ms": 895.3839230234735,
+          "chars": 1
+        },
+        {
+          "ms": 907.9216750105843,
+          "chars": 1
+        },
+        {
+          "ms": 920.3179909964092,
+          "chars": 1
+        },
+        {
+          "ms": 932.8618610161357,
+          "chars": 1
+        },
+        {
+          "ms": 945.6909560249187,
+          "chars": 1
+        },
+        {
+          "ms": 958.8558030081913,
+          "chars": 1
+        },
+        {
+          "ms": 971.9912970322184,
+          "chars": 1
+        },
+        {
+          "ms": 985.4102240060456,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r0-safeFalse-0",
+      "repeat": 0,
+      "safe": false,
+      "mode": "pass",
+      "review_ms_replayed": 0,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 74,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 17,
+      "after_bad_chars": 33,
+      "first_visible_ms": 14.379061991348863,
+      "max_visible_gap_ms": 13.674930960405618,
+      "observed_including_cleanup_ms": 995.4520669998601,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "bfed3664f9a154e66182d34bd9b6e7407969f9f2568a2052130bf1d302e05e46",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 74,
+        "consumed_chars": 74,
+        "checks": []
+      },
+      "source": {
+        "emitted_chars": 74,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 14.379061991348863,
+          "chars": 1
+        },
+        {
+          "ms": 27.64259302057326,
+          "chars": 1
+        },
+        {
+          "ms": 41.10950301401317,
+          "chars": 1
+        },
+        {
+          "ms": 54.12272899411619,
+          "chars": 1
+        },
+        {
+          "ms": 66.98851101100445,
+          "chars": 1
+        },
+        {
+          "ms": 80.18674299819395,
+          "chars": 1
+        },
+        {
+          "ms": 93.42354198452085,
+          "chars": 1
+        },
+        {
+          "ms": 106.80625902023166,
+          "chars": 1
+        },
+        {
+          "ms": 120.00891502248123,
+          "chars": 1
+        },
+        {
+          "ms": 133.6691670003347,
+          "chars": 1
+        },
+        {
+          "ms": 147.2924629924819,
+          "chars": 1
+        },
+        {
+          "ms": 159.8834850010462,
+          "chars": 1
+        },
+        {
+          "ms": 172.30793501948938,
+          "chars": 1
+        },
+        {
+          "ms": 184.62192901642993,
+          "chars": 1
+        },
+        {
+          "ms": 197.10311299422756,
+          "chars": 1
+        },
+        {
+          "ms": 209.5254309824668,
+          "chars": 1
+        },
+        {
+          "ms": 222.36384998541325,
+          "chars": 1
+        },
+        {
+          "ms": 234.90448301890865,
+          "chars": 1
+        },
+        {
+          "ms": 247.29245499474928,
+          "chars": 1
+        },
+        {
+          "ms": 259.6274960087612,
+          "chars": 1
+        },
+        {
+          "ms": 272.48288900591433,
+          "chars": 1
+        },
+        {
+          "ms": 285.0405360222794,
+          "chars": 1
+        },
+        {
+          "ms": 297.5687939906493,
+          "chars": 1
+        },
+        {
+          "ms": 310.1386970374733,
+          "chars": 1
+        },
+        {
+          "ms": 322.5114410161041,
+          "chars": 1
+        },
+        {
+          "ms": 334.9568560370244,
+          "chars": 1
+        },
+        {
+          "ms": 347.46584901586175,
+          "chars": 1
+        },
+        {
+          "ms": 359.92332303430885,
+          "chars": 1
+        },
+        {
+          "ms": 372.9939610348083,
+          "chars": 1
+        },
+        {
+          "ms": 385.7638160116039,
+          "chars": 1
+        },
+        {
+          "ms": 398.6158160259947,
+          "chars": 1
+        },
+        {
+          "ms": 411.5852420218289,
+          "chars": 1
+        },
+        {
+          "ms": 424.7772400267422,
+          "chars": 1
+        },
+        {
+          "ms": 437.9470880376175,
+          "chars": 1
+        },
+        {
+          "ms": 451.0564720258117,
+          "chars": 1
+        },
+        {
+          "ms": 464.01476801838726,
+          "chars": 1
+        },
+        {
+          "ms": 477.14932198869064,
+          "chars": 1
+        },
+        {
+          "ms": 490.26925599901006,
+          "chars": 1
+        },
+        {
+          "ms": 503.4707569866441,
+          "chars": 1
+        },
+        {
+          "ms": 516.6044440120459,
+          "chars": 1
+        },
+        {
+          "ms": 529.7394330264069,
+          "chars": 1
+        },
+        {
+          "ms": 543.1622540345415,
+          "chars": 1
+        },
+        {
+          "ms": 556.157897983212,
+          "chars": 1
+        },
+        {
+          "ms": 569.1714260028675,
+          "chars": 1
+        },
+        {
+          "ms": 582.3288289830089,
+          "chars": 1
+        },
+        {
+          "ms": 595.5498929833993,
+          "chars": 1
+        },
+        {
+          "ms": 608.7017910322174,
+          "chars": 1
+        },
+        {
+          "ms": 621.6635479941033,
+          "chars": 1
+        },
+        {
+          "ms": 634.6702600130811,
+          "chars": 1
+        },
+        {
+          "ms": 647.8545980062336,
+          "chars": 1
+        },
+        {
+          "ms": 661.1480769934133,
+          "chars": 1
+        },
+        {
+          "ms": 674.3246089899912,
+          "chars": 1
+        },
+        {
+          "ms": 687.5404540332966,
+          "chars": 1
+        },
+        {
+          "ms": 700.6327229901217,
+          "chars": 1
+        },
+        {
+          "ms": 713.5277100023814,
+          "chars": 1
+        },
+        {
+          "ms": 726.7300190287642,
+          "chars": 1
+        },
+        {
+          "ms": 740.4049499891698,
+          "chars": 1
+        },
+        {
+          "ms": 752.6016010087915,
+          "chars": 1
+        },
+        {
+          "ms": 765.7235210062936,
+          "chars": 1
+        },
+        {
+          "ms": 778.2618909841403,
+          "chars": 1
+        },
+        {
+          "ms": 791.0532979876734,
+          "chars": 1
+        },
+        {
+          "ms": 803.9973900304176,
+          "chars": 1
+        },
+        {
+          "ms": 817.3518140101805,
+          "chars": 1
+        },
+        {
+          "ms": 830.4473210009746,
+          "chars": 1
+        },
+        {
+          "ms": 843.5777780250646,
+          "chars": 1
+        },
+        {
+          "ms": 856.7751420196146,
+          "chars": 1
+        },
+        {
+          "ms": 869.7362309903838,
+          "chars": 1
+        },
+        {
+          "ms": 882.5472079915926,
+          "chars": 1
+        },
+        {
+          "ms": 895.1804949901998,
+          "chars": 1
+        },
+        {
+          "ms": 908.1268649897538,
+          "chars": 1
+        },
+        {
+          "ms": 920.5133399809711,
+          "chars": 1
+        },
+        {
+          "ms": 933.0588930170052,
+          "chars": 1
+        },
+        {
+          "ms": 945.7941700238734,
+          "chars": 1
+        },
+        {
+          "ms": 958.1886010128073,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r0-safeFalse-1",
+      "repeat": 0,
+      "safe": false,
+      "mode": "sync",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 24,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 215.92202404281124,
+      "max_visible_gap_ms": 168.64280495792627,
+      "observed_including_cleanup_ms": 638.3193510118872,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 13,
+      "output_sha256": "2bae58cdbe7209b1a0b6e42baba8329a4f2138c145c6b195527f91d1fc0b30cd",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 24,
+        "consumed_chars": 41,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 75.0741470255889
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 75.05117903929204
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 73.67560104466975
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 46,
+        "closed": true,
+        "disconnected": true
+      },
+      "events": [
+        {
+          "ms": 215.92202404281124,
+          "chars": 11
+        },
+        {
+          "ms": 384.5648290007375,
+          "chars": 13
+        }
+      ]
+    },
+    {
+      "request_id": "r0-safeFalse-2",
+      "repeat": 0,
+      "safe": false,
+      "mode": "async",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 46,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 17,
+      "after_bad_chars": 5,
+      "first_visible_ms": 13.571545016020536,
+      "max_visible_gap_ms": 14.097589999437332,
+      "observed_including_cleanup_ms": 643.6832000035793,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 1,
+      "output_sha256": "da8b30bc239c2ea0cfabf86581fda68abac370267e41a315fe27d516e7f7bf58",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 46,
+        "consumed_chars": 46,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 74.50450101168826
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 75.21076599368826
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 75.13335504336283
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 46,
+        "closed": true,
+        "disconnected": true
+      },
+      "events": [
+        {
+          "ms": 13.571545016020536,
+          "chars": 1
+        },
+        {
+          "ms": 25.91117302654311,
+          "chars": 1
+        },
+        {
+          "ms": 38.46951201558113,
+          "chars": 1
+        },
+        {
+          "ms": 50.77161901863292,
+          "chars": 1
+        },
+        {
+          "ms": 63.13066801521927,
+          "chars": 1
+        },
+        {
+          "ms": 75.60967199970037,
+          "chars": 1
+        },
+        {
+          "ms": 88.17628904944286,
+          "chars": 1
+        },
+        {
+          "ms": 100.67441000137478,
+          "chars": 1
+        },
+        {
+          "ms": 112.95720300404355,
+          "chars": 1
+        },
+        {
+          "ms": 125.40446000639349,
+          "chars": 1
+        },
+        {
+          "ms": 137.9933200078085,
+          "chars": 1
+        },
+        {
+          "ms": 150.20950802136213,
+          "chars": 1
+        },
+        {
+          "ms": 162.9389559966512,
+          "chars": 1
+        },
+        {
+          "ms": 175.8122169994749,
+          "chars": 1
+        },
+        {
+          "ms": 189.66300605097786,
+          "chars": 1
+        },
+        {
+          "ms": 202.0818400196731,
+          "chars": 1
+        },
+        {
+          "ms": 214.46939604356885,
+          "chars": 1
+        },
+        {
+          "ms": 227.55866299849004,
+          "chars": 1
+        },
+        {
+          "ms": 240.47670204890892,
+          "chars": 1
+        },
+        {
+          "ms": 253.2472430029884,
+          "chars": 1
+        },
+        {
+          "ms": 266.1176760448143,
+          "chars": 1
+        },
+        {
+          "ms": 279.25402304390445,
+          "chars": 1
+        },
+        {
+          "ms": 292.4148250021972,
+          "chars": 1
+        },
+        {
+          "ms": 306.16170301800594,
+          "chars": 1
+        },
+        {
+          "ms": 318.39381699683145,
+          "chars": 1
+        },
+        {
+          "ms": 331.91530901240185,
+          "chars": 1
+        },
+        {
+          "ms": 344.82482803286985,
+          "chars": 1
+        },
+        {
+          "ms": 357.5716440100223,
+          "chars": 1
+        },
+        {
+          "ms": 370.7561460323632,
+          "chars": 1
+        },
+        {
+          "ms": 384.1285670059733,
+          "chars": 1
+        },
+        {
+          "ms": 396.3902410469018,
+          "chars": 1
+        },
+        {
+          "ms": 409.7521370276809,
+          "chars": 1
+        },
+        {
+          "ms": 423.0747999972664,
+          "chars": 1
+        },
+        {
+          "ms": 436.1635960522108,
+          "chars": 1
+        },
+        {
+          "ms": 449.03560902457684,
+          "chars": 1
+        },
+        {
+          "ms": 462.29767304612324,
+          "chars": 1
+        },
+        {
+          "ms": 475.55471799569204,
+          "chars": 1
+        },
+        {
+          "ms": 488.76707104500383,
+          "chars": 1
+        },
+        {
+          "ms": 502.566276001744,
+          "chars": 1
+        },
+        {
+          "ms": 516.1383440135978,
+          "chars": 1
+        },
+        {
+          "ms": 529.9763990333304,
+          "chars": 1
+        },
+        {
+          "ms": 542.1180429984815,
+          "chars": 1
+        },
+        {
+          "ms": 556.2156329979189,
+          "chars": 1
+        },
+        {
+          "ms": 568.2340000057593,
+          "chars": 1
+        },
+        {
+          "ms": 581.2787110335194,
+          "chars": 1
+        },
+        {
+          "ms": 594.43859703606,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r0-safeFalse-3",
+      "repeat": 0,
+      "safe": false,
+      "mode": "sync",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 24,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 436.1623680451885,
+      "max_visible_gap_ms": 299.12433499703184,
+      "observed_including_cleanup_ms": 1071.4355770032853,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 13,
+      "output_sha256": "2bae58cdbe7209b1a0b6e42baba8329a4f2138c145c6b195527f91d1fc0b30cd",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 24,
+        "consumed_chars": 41,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 298.03125601029024
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 298.07393002556637
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 297.76341101387516
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 74,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 436.1623680451885,
+          "chars": 11
+        },
+        {
+          "ms": 735.2867030422203,
+          "chars": 13
+        }
+      ]
+    },
+    {
+      "request_id": "r0-safeFalse-4",
+      "repeat": 0,
+      "safe": false,
+      "mode": "async",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 74,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 17,
+      "after_bad_chars": 33,
+      "first_visible_ms": 13.653145055286586,
+      "max_visible_gap_ms": 13.61173199256882,
+      "observed_including_cleanup_ms": 1075.623857032042,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 1,
+      "output_sha256": "bfed3664f9a154e66182d34bd9b6e7407969f9f2568a2052130bf1d302e05e46",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 74,
+        "consumed_chars": 74,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 298.16736903740093
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 424.7657419764437
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 511.18621201021597
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 74,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 13.653145055286586,
+          "chars": 1
+        },
+        {
+          "ms": 26.401224022265524,
+          "chars": 1
+        },
+        {
+          "ms": 39.72352802520618,
+          "chars": 1
+        },
+        {
+          "ms": 52.85699700471014,
+          "chars": 1
+        },
+        {
+          "ms": 66.03508803527802,
+          "chars": 1
+        },
+        {
+          "ms": 79.24080302473158,
+          "chars": 1
+        },
+        {
+          "ms": 92.27501205168664,
+          "chars": 1
+        },
+        {
+          "ms": 105.4096880252473,
+          "chars": 1
+        },
+        {
+          "ms": 118.23857401032001,
+          "chars": 1
+        },
+        {
+          "ms": 131.0953520005569,
+          "chars": 1
+        },
+        {
+          "ms": 144.35925503494218,
+          "chars": 1
+        },
+        {
+          "ms": 157.6872980222106,
+          "chars": 1
+        },
+        {
+          "ms": 171.16717400494963,
+          "chars": 1
+        },
+        {
+          "ms": 184.44104900117964,
+          "chars": 1
+        },
+        {
+          "ms": 197.73360702674836,
+          "chars": 1
+        },
+        {
+          "ms": 210.88883304037154,
+          "chars": 1
+        },
+        {
+          "ms": 223.8914420013316,
+          "chars": 1
+        },
+        {
+          "ms": 237.3197470442392,
+          "chars": 1
+        },
+        {
+          "ms": 250.82238903269172,
+          "chars": 1
+        },
+        {
+          "ms": 264.43412102526054,
+          "chars": 1
+        },
+        {
+          "ms": 276.7401820165105,
+          "chars": 1
+        },
+        {
+          "ms": 289.7313190042041,
+          "chars": 1
+        },
+        {
+          "ms": 302.4059970048256,
+          "chars": 1
+        },
+        {
+          "ms": 315.2420790283941,
+          "chars": 1
+        },
+        {
+          "ms": 327.5698420475237,
+          "chars": 1
+        },
+        {
+          "ms": 339.8981170030311,
+          "chars": 1
+        },
+        {
+          "ms": 352.3392860079184,
+          "chars": 1
+        },
+        {
+          "ms": 364.67244604136795,
+          "chars": 1
+        },
+        {
+          "ms": 377.13879003422335,
+          "chars": 1
+        },
+        {
+          "ms": 389.5983010297641,
+          "chars": 1
+        },
+        {
+          "ms": 402.03941002255306,
+          "chars": 1
+        },
+        {
+          "ms": 414.51251303078607,
+          "chars": 1
+        },
+        {
+          "ms": 426.8024310003966,
+          "chars": 1
+        },
+        {
+          "ms": 439.18153003323823,
+          "chars": 1
+        },
+        {
+          "ms": 452.7799060451798,
+          "chars": 1
+        },
+        {
+          "ms": 465.15009802533314,
+          "chars": 1
+        },
+        {
+          "ms": 477.41782100638375,
+          "chars": 1
+        },
+        {
+          "ms": 489.72472100285813,
+          "chars": 1
+        },
+        {
+          "ms": 502.04893900081515,
+          "chars": 1
+        },
+        {
+          "ms": 514.3791490118019,
+          "chars": 1
+        },
+        {
+          "ms": 526.6644040239044,
+          "chars": 1
+        },
+        {
+          "ms": 538.9212830341421,
+          "chars": 1
+        },
+        {
+          "ms": 551.1401640251279,
+          "chars": 1
+        },
+        {
+          "ms": 563.3721860358492,
+          "chars": 1
+        },
+        {
+          "ms": 575.6688880501315,
+          "chars": 1
+        },
+        {
+          "ms": 587.9430380300619,
+          "chars": 1
+        },
+        {
+          "ms": 600.2083230414428,
+          "chars": 1
+        },
+        {
+          "ms": 612.5161200179718,
+          "chars": 1
+        },
+        {
+          "ms": 624.8472980223596,
+          "chars": 1
+        },
+        {
+          "ms": 637.1597070246935,
+          "chars": 1
+        },
+        {
+          "ms": 649.5327590382658,
+          "chars": 1
+        },
+        {
+          "ms": 661.899748025462,
+          "chars": 1
+        },
+        {
+          "ms": 674.294724012725,
+          "chars": 1
+        },
+        {
+          "ms": 686.6080920444801,
+          "chars": 1
+        },
+        {
+          "ms": 698.9260330446996,
+          "chars": 1
+        },
+        {
+          "ms": 711.207976040896,
+          "chars": 1
+        },
+        {
+          "ms": 723.5515680513345,
+          "chars": 1
+        },
+        {
+          "ms": 735.817285021767,
+          "chars": 1
+        },
+        {
+          "ms": 748.2264999998733,
+          "chars": 1
+        },
+        {
+          "ms": 760.4994520079345,
+          "chars": 1
+        },
+        {
+          "ms": 772.7714820066467,
+          "chars": 1
+        },
+        {
+          "ms": 785.0308930501342,
+          "chars": 1
+        },
+        {
+          "ms": 797.3022480146028,
+          "chars": 1
+        },
+        {
+          "ms": 809.5726810279302,
+          "chars": 1
+        },
+        {
+          "ms": 821.8352560070343,
+          "chars": 1
+        },
+        {
+          "ms": 834.1215580003336,
+          "chars": 1
+        },
+        {
+          "ms": 846.4665690553375,
+          "chars": 1
+        },
+        {
+          "ms": 858.7378380470909,
+          "chars": 1
+        },
+        {
+          "ms": 870.9477460361086,
+          "chars": 1
+        },
+        {
+          "ms": 883.2286440301687,
+          "chars": 1
+        },
+        {
+          "ms": 895.5335460486822,
+          "chars": 1
+        },
+        {
+          "ms": 907.8300820547156,
+          "chars": 1
+        },
+        {
+          "ms": 920.1402480248362,
+          "chars": 1
+        },
+        {
+          "ms": 932.4952800525352,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r1-safeTrue-0",
+      "repeat": 1,
+      "safe": true,
+      "mode": "pass",
+      "review_ms_replayed": 0,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 13.32488702610135,
+      "max_visible_gap_ms": 12.81509199179709,
+      "observed_including_cleanup_ms": 998.287711001467,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": []
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 13.32488702610135,
+          "chars": 1
+        },
+        {
+          "ms": 25.62877000309527,
+          "chars": 1
+        },
+        {
+          "ms": 38.36749697802588,
+          "chars": 1
+        },
+        {
+          "ms": 50.76282302616164,
+          "chars": 1
+        },
+        {
+          "ms": 63.232044980395585,
+          "chars": 1
+        },
+        {
+          "ms": 75.91087801847607,
+          "chars": 1
+        },
+        {
+          "ms": 88.71404197998345,
+          "chars": 1
+        },
+        {
+          "ms": 100.9546639979817,
+          "chars": 1
+        },
+        {
+          "ms": 113.18038200261071,
+          "chars": 1
+        },
+        {
+          "ms": 125.6303419941105,
+          "chars": 1
+        },
+        {
+          "ms": 138.21135001489893,
+          "chars": 1
+        },
+        {
+          "ms": 150.81209898926318,
+          "chars": 1
+        },
+        {
+          "ms": 163.3420569705777,
+          "chars": 1
+        },
+        {
+          "ms": 175.87499698856845,
+          "chars": 1
+        },
+        {
+          "ms": 188.11457697302103,
+          "chars": 1
+        },
+        {
+          "ms": 200.45496796956286,
+          "chars": 1
+        },
+        {
+          "ms": 212.66608097357675,
+          "chars": 1
+        },
+        {
+          "ms": 224.89291400415823,
+          "chars": 1
+        },
+        {
+          "ms": 237.22311202436686,
+          "chars": 1
+        },
+        {
+          "ms": 249.61441999766976,
+          "chars": 1
+        },
+        {
+          "ms": 261.80870400276035,
+          "chars": 1
+        },
+        {
+          "ms": 274.0091159939766,
+          "chars": 1
+        },
+        {
+          "ms": 286.39508702326566,
+          "chars": 1
+        },
+        {
+          "ms": 298.9429670269601,
+          "chars": 1
+        },
+        {
+          "ms": 311.47313700057566,
+          "chars": 1
+        },
+        {
+          "ms": 324.065953027457,
+          "chars": 1
+        },
+        {
+          "ms": 336.8810450192541,
+          "chars": 1
+        },
+        {
+          "ms": 349.50493299402297,
+          "chars": 1
+        },
+        {
+          "ms": 362.0706570218317,
+          "chars": 1
+        },
+        {
+          "ms": 374.4684070115909,
+          "chars": 1
+        },
+        {
+          "ms": 386.894065013621,
+          "chars": 1
+        },
+        {
+          "ms": 399.43888498237357,
+          "chars": 1
+        },
+        {
+          "ms": 411.98969999095425,
+          "chars": 1
+        },
+        {
+          "ms": 424.6370950131677,
+          "chars": 1
+        },
+        {
+          "ms": 437.17539799399674,
+          "chars": 1
+        },
+        {
+          "ms": 449.66504600597546,
+          "chars": 1
+        },
+        {
+          "ms": 462.1490950230509,
+          "chars": 1
+        },
+        {
+          "ms": 474.62856699712574,
+          "chars": 1
+        },
+        {
+          "ms": 487.1150219696574,
+          "chars": 1
+        },
+        {
+          "ms": 499.643785005901,
+          "chars": 1
+        },
+        {
+          "ms": 512.1798029867932,
+          "chars": 1
+        },
+        {
+          "ms": 524.7921840054914,
+          "chars": 1
+        },
+        {
+          "ms": 537.339158996474,
+          "chars": 1
+        },
+        {
+          "ms": 549.7470260015689,
+          "chars": 1
+        },
+        {
+          "ms": 561.9376869872212,
+          "chars": 1
+        },
+        {
+          "ms": 574.3448850116692,
+          "chars": 1
+        },
+        {
+          "ms": 586.8462799699046,
+          "chars": 1
+        },
+        {
+          "ms": 599.322131020017,
+          "chars": 1
+        },
+        {
+          "ms": 611.8693500175141,
+          "chars": 1
+        },
+        {
+          "ms": 624.5249769999646,
+          "chars": 1
+        },
+        {
+          "ms": 637.0893670246005,
+          "chars": 1
+        },
+        {
+          "ms": 649.6261340216734,
+          "chars": 1
+        },
+        {
+          "ms": 661.9026680127718,
+          "chars": 1
+        },
+        {
+          "ms": 674.405351979658,
+          "chars": 1
+        },
+        {
+          "ms": 686.9636789779179,
+          "chars": 1
+        },
+        {
+          "ms": 699.5806809864007,
+          "chars": 1
+        },
+        {
+          "ms": 712.2177570126951,
+          "chars": 1
+        },
+        {
+          "ms": 724.8294819728471,
+          "chars": 1
+        },
+        {
+          "ms": 737.3592340154573,
+          "chars": 1
+        },
+        {
+          "ms": 749.9602849711664,
+          "chars": 1
+        },
+        {
+          "ms": 762.487891013734,
+          "chars": 1
+        },
+        {
+          "ms": 775.0407819985412,
+          "chars": 1
+        },
+        {
+          "ms": 787.62941097375,
+          "chars": 1
+        },
+        {
+          "ms": 799.8643669998273,
+          "chars": 1
+        },
+        {
+          "ms": 812.1673919958994,
+          "chars": 1
+        },
+        {
+          "ms": 824.7629139805213,
+          "chars": 1
+        },
+        {
+          "ms": 837.4984069960192,
+          "chars": 1
+        },
+        {
+          "ms": 850.0868909759447,
+          "chars": 1
+        },
+        {
+          "ms": 862.3410299769603,
+          "chars": 1
+        },
+        {
+          "ms": 874.6392229804769,
+          "chars": 1
+        },
+        {
+          "ms": 887.1859110076912,
+          "chars": 1
+        },
+        {
+          "ms": 899.4404639815912,
+          "chars": 1
+        },
+        {
+          "ms": 911.7275589960627,
+          "chars": 1
+        },
+        {
+          "ms": 923.9324909867719,
+          "chars": 1
+        },
+        {
+          "ms": 936.2161260214634,
+          "chars": 1
+        },
+        {
+          "ms": 948.4484900021926,
+          "chars": 1
+        },
+        {
+          "ms": 960.979680006858,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r1-safeTrue-1",
+      "repeat": 1,
+      "safe": true,
+      "mode": "sync",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 210.38003399735317,
+      "max_visible_gap_ms": 245.85501902038231,
+      "observed_including_cleanup_ms": 1059.750332031399,
+      "finish_reason": "stop",
+      "max_burst_chars": 20,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 73.57310398947448
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 73.73228197684512
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 73.43877101084217
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 73.55689903488383
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 73.47861002199352
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 73.22662597289309
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 210.38003399735317,
+          "chars": 11
+        },
+        {
+          "ms": 371.02494499413297,
+          "chars": 13
+        },
+        {
+          "ms": 616.8799640145153,
+          "chars": 20
+        },
+        {
+          "ms": 752.2642519907095,
+          "chars": 11
+        },
+        {
+          "ms": 887.4952510232106,
+          "chars": 11
+        },
+        {
+          "ms": 1022.4057380110025,
+          "chars": 11
+        }
+      ]
+    },
+    {
+      "request_id": "r1-safeTrue-2",
+      "repeat": 1,
+      "safe": true,
+      "mode": "async",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 12.967776041477919,
+      "max_visible_gap_ms": 12.741114012897015,
+      "observed_including_cleanup_ms": 1067.122824024409,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 74.03516897466034
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 73.68890201905742
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 73.96092300768942
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 73.79626901820302
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 73.17271799547598
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 73.31074099056423
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 12.967776041477919,
+          "chars": 1
+        },
+        {
+          "ms": 25.261733040679246,
+          "chars": 1
+        },
+        {
+          "ms": 37.63264900771901,
+          "chars": 1
+        },
+        {
+          "ms": 49.98897999757901,
+          "chars": 1
+        },
+        {
+          "ms": 62.38433299586177,
+          "chars": 1
+        },
+        {
+          "ms": 74.69740702072158,
+          "chars": 1
+        },
+        {
+          "ms": 86.97796904016286,
+          "chars": 1
+        },
+        {
+          "ms": 99.35950004728511,
+          "chars": 1
+        },
+        {
+          "ms": 111.64787999587134,
+          "chars": 1
+        },
+        {
+          "ms": 123.91841202042997,
+          "chars": 1
+        },
+        {
+          "ms": 136.21157902525738,
+          "chars": 1
+        },
+        {
+          "ms": 148.75657303491607,
+          "chars": 1
+        },
+        {
+          "ms": 161.033466050867,
+          "chars": 1
+        },
+        {
+          "ms": 173.3560090069659,
+          "chars": 1
+        },
+        {
+          "ms": 185.7527180109173,
+          "chars": 1
+        },
+        {
+          "ms": 198.05963104590774,
+          "chars": 1
+        },
+        {
+          "ms": 210.37103299750015,
+          "chars": 1
+        },
+        {
+          "ms": 222.69179404247552,
+          "chars": 1
+        },
+        {
+          "ms": 234.93281699484214,
+          "chars": 1
+        },
+        {
+          "ms": 247.29930300964043,
+          "chars": 1
+        },
+        {
+          "ms": 259.85682499594986,
+          "chars": 1
+        },
+        {
+          "ms": 272.16589800082147,
+          "chars": 1
+        },
+        {
+          "ms": 284.65963702183217,
+          "chars": 1
+        },
+        {
+          "ms": 297.24459804128855,
+          "chars": 1
+        },
+        {
+          "ms": 309.51561604160815,
+          "chars": 1
+        },
+        {
+          "ms": 322.0356200472452,
+          "chars": 1
+        },
+        {
+          "ms": 334.2674360028468,
+          "chars": 1
+        },
+        {
+          "ms": 346.51028900407255,
+          "chars": 1
+        },
+        {
+          "ms": 358.71605202555656,
+          "chars": 1
+        },
+        {
+          "ms": 371.2081570411101,
+          "chars": 1
+        },
+        {
+          "ms": 383.784108038526,
+          "chars": 1
+        },
+        {
+          "ms": 396.2585190311074,
+          "chars": 1
+        },
+        {
+          "ms": 408.79521501483396,
+          "chars": 1
+        },
+        {
+          "ms": 421.421128034126,
+          "chars": 1
+        },
+        {
+          "ms": 433.67519101593643,
+          "chars": 1
+        },
+        {
+          "ms": 446.0569740040228,
+          "chars": 1
+        },
+        {
+          "ms": 458.6374090285972,
+          "chars": 1
+        },
+        {
+          "ms": 471.1876590154134,
+          "chars": 1
+        },
+        {
+          "ms": 483.4296450135298,
+          "chars": 1
+        },
+        {
+          "ms": 495.88315503206104,
+          "chars": 1
+        },
+        {
+          "ms": 508.4927220013924,
+          "chars": 1
+        },
+        {
+          "ms": 520.8850410417654,
+          "chars": 1
+        },
+        {
+          "ms": 533.4168500266969,
+          "chars": 1
+        },
+        {
+          "ms": 545.9855810040608,
+          "chars": 1
+        },
+        {
+          "ms": 558.5159860202111,
+          "chars": 1
+        },
+        {
+          "ms": 571.047391043976,
+          "chars": 1
+        },
+        {
+          "ms": 583.6679420317523,
+          "chars": 1
+        },
+        {
+          "ms": 596.2158250040375,
+          "chars": 1
+        },
+        {
+          "ms": 608.7112330133095,
+          "chars": 1
+        },
+        {
+          "ms": 621.4523470262066,
+          "chars": 1
+        },
+        {
+          "ms": 633.6710540344939,
+          "chars": 1
+        },
+        {
+          "ms": 646.1549469968304,
+          "chars": 1
+        },
+        {
+          "ms": 658.6996920523234,
+          "chars": 1
+        },
+        {
+          "ms": 670.9369780146517,
+          "chars": 1
+        },
+        {
+          "ms": 683.309474028647,
+          "chars": 1
+        },
+        {
+          "ms": 695.9391499985941,
+          "chars": 1
+        },
+        {
+          "ms": 708.2609390490688,
+          "chars": 1
+        },
+        {
+          "ms": 720.7403940265067,
+          "chars": 1
+        },
+        {
+          "ms": 733.2221150281839,
+          "chars": 1
+        },
+        {
+          "ms": 745.8090510335751,
+          "chars": 1
+        },
+        {
+          "ms": 758.3475700230338,
+          "chars": 1
+        },
+        {
+          "ms": 770.5786200240254,
+          "chars": 1
+        },
+        {
+          "ms": 782.9050050349906,
+          "chars": 1
+        },
+        {
+          "ms": 795.36921804538,
+          "chars": 1
+        },
+        {
+          "ms": 807.9518120503053,
+          "chars": 1
+        },
+        {
+          "ms": 820.2817810233682,
+          "chars": 1
+        },
+        {
+          "ms": 832.5037290342152,
+          "chars": 1
+        },
+        {
+          "ms": 845.0449530500919,
+          "chars": 1
+        },
+        {
+          "ms": 857.6286340248771,
+          "chars": 1
+        },
+        {
+          "ms": 869.9449840351008,
+          "chars": 1
+        },
+        {
+          "ms": 882.2297140141018,
+          "chars": 1
+        },
+        {
+          "ms": 894.8965060408227,
+          "chars": 1
+        },
+        {
+          "ms": 907.1293620509095,
+          "chars": 1
+        },
+        {
+          "ms": 919.4423000444658,
+          "chars": 1
+        },
+        {
+          "ms": 931.6814980120398,
+          "chars": 1
+        },
+        {
+          "ms": 943.9773530466482,
+          "chars": 1
+        },
+        {
+          "ms": 956.2670480227098,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r1-safeTrue-3",
+      "repeat": 1,
+      "safe": true,
+      "mode": "sync",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 435.2893069735728,
+      "max_visible_gap_ms": 298.99501003092155,
+      "observed_including_cleanup_ms": 1966.1099439836107,
+      "finish_reason": "stop",
+      "max_burst_chars": 20,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 297.5263820262626
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 297.946717008017
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 298.05793601553887
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 298.4869270003401
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 298.56379301054403
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 298.5207929741591
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 435.2893069735728,
+          "chars": 11
+        },
+        {
+          "ms": 733.4552349639125,
+          "chars": 13
+        },
+        {
+          "ms": 1031.7928289878182,
+          "chars": 20
+        },
+        {
+          "ms": 1330.6381679722108,
+          "chars": 11
+        },
+        {
+          "ms": 1629.6331780031323,
+          "chars": 11
+        },
+        {
+          "ms": 1928.5945000010543,
+          "chars": 11
+        }
+      ]
+    },
+    {
+      "request_id": "r1-safeTrue-4",
+      "repeat": 1,
+      "safe": true,
+      "mode": "async",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 12.953957018908113,
+      "max_visible_gap_ms": 13.771088037174195,
+      "observed_including_cleanup_ms": 1960.8849710202776,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 297.8052169783041
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 428.7481409846805
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 471.77153802476823
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 631.2074650195427
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 791.0701329819858
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 948.5189859988168
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 12.953957018908113,
+          "chars": 1
+        },
+        {
+          "ms": 25.250362989027053,
+          "chars": 1
+        },
+        {
+          "ms": 37.48686600010842,
+          "chars": 1
+        },
+        {
+          "ms": 49.74118998507038,
+          "chars": 1
+        },
+        {
+          "ms": 62.065042031463236,
+          "chars": 1
+        },
+        {
+          "ms": 74.41182900220156,
+          "chars": 1
+        },
+        {
+          "ms": 87.0797160314396,
+          "chars": 1
+        },
+        {
+          "ms": 99.34037999482825,
+          "chars": 1
+        },
+        {
+          "ms": 111.5423470037058,
+          "chars": 1
+        },
+        {
+          "ms": 123.79576702369377,
+          "chars": 1
+        },
+        {
+          "ms": 136.07902702642605,
+          "chars": 1
+        },
+        {
+          "ms": 148.4992760233581,
+          "chars": 1
+        },
+        {
+          "ms": 160.84214998409152,
+          "chars": 1
+        },
+        {
+          "ms": 173.10577898751944,
+          "chars": 1
+        },
+        {
+          "ms": 185.59618800645694,
+          "chars": 1
+        },
+        {
+          "ms": 198.2177710160613,
+          "chars": 1
+        },
+        {
+          "ms": 211.14424098050222,
+          "chars": 1
+        },
+        {
+          "ms": 224.393715034239,
+          "chars": 1
+        },
+        {
+          "ms": 237.31418000534177,
+          "chars": 1
+        },
+        {
+          "ms": 250.41877501644194,
+          "chars": 1
+        },
+        {
+          "ms": 263.43169203028083,
+          "chars": 1
+        },
+        {
+          "ms": 276.53060102602467,
+          "chars": 1
+        },
+        {
+          "ms": 289.9860760080628,
+          "chars": 1
+        },
+        {
+          "ms": 302.3758149938658,
+          "chars": 1
+        },
+        {
+          "ms": 314.6815929794684,
+          "chars": 1
+        },
+        {
+          "ms": 326.9426850019954,
+          "chars": 1
+        },
+        {
+          "ms": 339.1801050165668,
+          "chars": 1
+        },
+        {
+          "ms": 351.4126500231214,
+          "chars": 1
+        },
+        {
+          "ms": 363.81608800729737,
+          "chars": 1
+        },
+        {
+          "ms": 376.39929400756955,
+          "chars": 1
+        },
+        {
+          "ms": 388.7091900105588,
+          "chars": 1
+        },
+        {
+          "ms": 401.18393499869853,
+          "chars": 1
+        },
+        {
+          "ms": 413.6081379838288,
+          "chars": 1
+        },
+        {
+          "ms": 426.51113303145394,
+          "chars": 1
+        },
+        {
+          "ms": 439.8779590264894,
+          "chars": 1
+        },
+        {
+          "ms": 452.6536490302533,
+          "chars": 1
+        },
+        {
+          "ms": 465.6593760009855,
+          "chars": 1
+        },
+        {
+          "ms": 478.97734900470823,
+          "chars": 1
+        },
+        {
+          "ms": 492.5086550065316,
+          "chars": 1
+        },
+        {
+          "ms": 505.7197830174118,
+          "chars": 1
+        },
+        {
+          "ms": 518.7749179895036,
+          "chars": 1
+        },
+        {
+          "ms": 531.6097770119086,
+          "chars": 1
+        },
+        {
+          "ms": 544.5361860329285,
+          "chars": 1
+        },
+        {
+          "ms": 557.1773090050556,
+          "chars": 1
+        },
+        {
+          "ms": 569.7819269844331,
+          "chars": 1
+        },
+        {
+          "ms": 582.529092032928,
+          "chars": 1
+        },
+        {
+          "ms": 595.3692630282603,
+          "chars": 1
+        },
+        {
+          "ms": 608.3180010318756,
+          "chars": 1
+        },
+        {
+          "ms": 620.8944389945827,
+          "chars": 1
+        },
+        {
+          "ms": 633.2987420028076,
+          "chars": 1
+        },
+        {
+          "ms": 645.9124130196869,
+          "chars": 1
+        },
+        {
+          "ms": 658.1554129952565,
+          "chars": 1
+        },
+        {
+          "ms": 670.6818100064993,
+          "chars": 1
+        },
+        {
+          "ms": 683.0920180073008,
+          "chars": 1
+        },
+        {
+          "ms": 695.4810519819148,
+          "chars": 1
+        },
+        {
+          "ms": 707.8116220072843,
+          "chars": 1
+        },
+        {
+          "ms": 720.0149039854296,
+          "chars": 1
+        },
+        {
+          "ms": 732.6794069958851,
+          "chars": 1
+        },
+        {
+          "ms": 745.4127020318992,
+          "chars": 1
+        },
+        {
+          "ms": 757.7779029961675,
+          "chars": 1
+        },
+        {
+          "ms": 770.5219039926305,
+          "chars": 1
+        },
+        {
+          "ms": 783.0550119979307,
+          "chars": 1
+        },
+        {
+          "ms": 795.5586460302584,
+          "chars": 1
+        },
+        {
+          "ms": 808.1759380293079,
+          "chars": 1
+        },
+        {
+          "ms": 820.7547119818628,
+          "chars": 1
+        },
+        {
+          "ms": 833.3688210113905,
+          "chars": 1
+        },
+        {
+          "ms": 845.6774990190752,
+          "chars": 1
+        },
+        {
+          "ms": 858.04104199633,
+          "chars": 1
+        },
+        {
+          "ms": 870.5555010237731,
+          "chars": 1
+        },
+        {
+          "ms": 883.0517220194452,
+          "chars": 1
+        },
+        {
+          "ms": 895.5912450328469,
+          "chars": 1
+        },
+        {
+          "ms": 908.1173830199987,
+          "chars": 1
+        },
+        {
+          "ms": 921.5164679917507,
+          "chars": 1
+        },
+        {
+          "ms": 934.6300240140408,
+          "chars": 1
+        },
+        {
+          "ms": 947.6044669863768,
+          "chars": 1
+        },
+        {
+          "ms": 960.685679980088,
+          "chars": 1
+        },
+        {
+          "ms": 974.4567680172622,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r1-safeFalse-0",
+      "repeat": 1,
+      "safe": false,
+      "mode": "pass",
+      "review_ms_replayed": 0,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 74,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 17,
+      "after_bad_chars": 33,
+      "first_visible_ms": 13.148544006980956,
+      "max_visible_gap_ms": 14.039358997251838,
+      "observed_including_cleanup_ms": 997.3694330547005,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "bfed3664f9a154e66182d34bd9b6e7407969f9f2568a2052130bf1d302e05e46",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 74,
+        "consumed_chars": 74,
+        "checks": []
+      },
+      "source": {
+        "emitted_chars": 74,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 13.148544006980956,
+          "chars": 1
+        },
+        {
+          "ms": 25.720135017763823,
+          "chars": 1
+        },
+        {
+          "ms": 38.426936022005975,
+          "chars": 1
+        },
+        {
+          "ms": 51.11039703479037,
+          "chars": 1
+        },
+        {
+          "ms": 63.978439022321254,
+          "chars": 1
+        },
+        {
+          "ms": 77.55954202730209,
+          "chars": 1
+        },
+        {
+          "ms": 89.95976101141423,
+          "chars": 1
+        },
+        {
+          "ms": 103.60206704353914,
+          "chars": 1
+        },
+        {
+          "ms": 116.61157803609967,
+          "chars": 1
+        },
+        {
+          "ms": 129.4418330071494,
+          "chars": 1
+        },
+        {
+          "ms": 142.5036770524457,
+          "chars": 1
+        },
+        {
+          "ms": 155.47403501113877,
+          "chars": 1
+        },
+        {
+          "ms": 168.1653640116565,
+          "chars": 1
+        },
+        {
+          "ms": 181.14606104791164,
+          "chars": 1
+        },
+        {
+          "ms": 194.00425802450627,
+          "chars": 1
+        },
+        {
+          "ms": 207.00431702425703,
+          "chars": 1
+        },
+        {
+          "ms": 219.63319403585047,
+          "chars": 1
+        },
+        {
+          "ms": 232.74355003377423,
+          "chars": 1
+        },
+        {
+          "ms": 245.41258305544034,
+          "chars": 1
+        },
+        {
+          "ms": 257.9482900328003,
+          "chars": 1
+        },
+        {
+          "ms": 270.3993280301802,
+          "chars": 1
+        },
+        {
+          "ms": 282.9550430178642,
+          "chars": 1
+        },
+        {
+          "ms": 295.46568903606385,
+          "chars": 1
+        },
+        {
+          "ms": 308.0003400100395,
+          "chars": 1
+        },
+        {
+          "ms": 320.5987700494006,
+          "chars": 1
+        },
+        {
+          "ms": 333.0567500088364,
+          "chars": 1
+        },
+        {
+          "ms": 345.6424770411104,
+          "chars": 1
+        },
+        {
+          "ms": 358.15209802240133,
+          "chars": 1
+        },
+        {
+          "ms": 370.6453450140543,
+          "chars": 1
+        },
+        {
+          "ms": 383.11215804424137,
+          "chars": 1
+        },
+        {
+          "ms": 395.64006100408733,
+          "chars": 1
+        },
+        {
+          "ms": 408.1729670288041,
+          "chars": 1
+        },
+        {
+          "ms": 420.5303890048526,
+          "chars": 1
+        },
+        {
+          "ms": 432.9408699995838,
+          "chars": 1
+        },
+        {
+          "ms": 445.524386013858,
+          "chars": 1
+        },
+        {
+          "ms": 457.9328710096888,
+          "chars": 1
+        },
+        {
+          "ms": 471.32533602416515,
+          "chars": 1
+        },
+        {
+          "ms": 484.8862810176797,
+          "chars": 1
+        },
+        {
+          "ms": 498.19510499946773,
+          "chars": 1
+        },
+        {
+          "ms": 511.0415530507453,
+          "chars": 1
+        },
+        {
+          "ms": 524.0799840539694,
+          "chars": 1
+        },
+        {
+          "ms": 537.5109700253233,
+          "chars": 1
+        },
+        {
+          "ms": 550.8291680016555,
+          "chars": 1
+        },
+        {
+          "ms": 563.8521720538847,
+          "chars": 1
+        },
+        {
+          "ms": 577.3033890291117,
+          "chars": 1
+        },
+        {
+          "ms": 590.7344830338843,
+          "chars": 1
+        },
+        {
+          "ms": 604.1560130543076,
+          "chars": 1
+        },
+        {
+          "ms": 617.6914160023443,
+          "chars": 1
+        },
+        {
+          "ms": 631.4707690034993,
+          "chars": 1
+        },
+        {
+          "ms": 644.9257750064135,
+          "chars": 1
+        },
+        {
+          "ms": 658.6290230043232,
+          "chars": 1
+        },
+        {
+          "ms": 671.104577020742,
+          "chars": 1
+        },
+        {
+          "ms": 684.6380630158819,
+          "chars": 1
+        },
+        {
+          "ms": 697.6633260492235,
+          "chars": 1
+        },
+        {
+          "ms": 710.9495460172184,
+          "chars": 1
+        },
+        {
+          "ms": 723.8612610381097,
+          "chars": 1
+        },
+        {
+          "ms": 736.5906170452945,
+          "chars": 1
+        },
+        {
+          "ms": 749.4946920196526,
+          "chars": 1
+        },
+        {
+          "ms": 762.632473022677,
+          "chars": 1
+        },
+        {
+          "ms": 775.4548020311631,
+          "chars": 1
+        },
+        {
+          "ms": 788.3696520002559,
+          "chars": 1
+        },
+        {
+          "ms": 801.7458360409364,
+          "chars": 1
+        },
+        {
+          "ms": 814.9371150066145,
+          "chars": 1
+        },
+        {
+          "ms": 828.3659410080872,
+          "chars": 1
+        },
+        {
+          "ms": 842.4053000053391,
+          "chars": 1
+        },
+        {
+          "ms": 854.8555060406215,
+          "chars": 1
+        },
+        {
+          "ms": 868.265274039004,
+          "chars": 1
+        },
+        {
+          "ms": 881.3066930160858,
+          "chars": 1
+        },
+        {
+          "ms": 894.2666590446606,
+          "chars": 1
+        },
+        {
+          "ms": 907.5618360075168,
+          "chars": 1
+        },
+        {
+          "ms": 920.8779280306771,
+          "chars": 1
+        },
+        {
+          "ms": 933.7587890331633,
+          "chars": 1
+        },
+        {
+          "ms": 947.6864930475131,
+          "chars": 1
+        },
+        {
+          "ms": 960.013764037285,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r1-safeFalse-1",
+      "repeat": 1,
+      "safe": false,
+      "mode": "sync",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 24,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 210.7898080139421,
+      "max_visible_gap_ms": 165.89184995973483,
+      "observed_including_cleanup_ms": 635.7292900211178,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 13,
+      "output_sha256": "2bae58cdbe7209b1a0b6e42baba8329a4f2138c145c6b195527f91d1fc0b30cd",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 24,
+        "consumed_chars": 41,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 74.03480896027759
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 74.72704199608415
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 74.0453299949877
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 46,
+        "closed": true,
+        "disconnected": true
+      },
+      "events": [
+        {
+          "ms": 210.7898080139421,
+          "chars": 11
+        },
+        {
+          "ms": 376.6816579736769,
+          "chars": 13
+        }
+      ]
+    },
+    {
+      "request_id": "r1-safeFalse-2",
+      "repeat": 1,
+      "safe": false,
+      "mode": "async",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 46,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 17,
+      "after_bad_chars": 5,
+      "first_visible_ms": 13.279964041430503,
+      "max_visible_gap_ms": 14.148589980322868,
+      "observed_including_cleanup_ms": 639.9583390448242,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 1,
+      "output_sha256": "da8b30bc239c2ea0cfabf86581fda68abac370267e41a315fe27d516e7f7bf58",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 46,
+        "consumed_chars": 46,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 73.49652401171625
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 73.99185502436012
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 74.57134104333818
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 46,
+        "closed": true,
+        "disconnected": true
+      },
+      "events": [
+        {
+          "ms": 13.279964041430503,
+          "chars": 1
+        },
+        {
+          "ms": 25.908622017595917,
+          "chars": 1
+        },
+        {
+          "ms": 38.91957603627816,
+          "chars": 1
+        },
+        {
+          "ms": 51.691715023480356,
+          "chars": 1
+        },
+        {
+          "ms": 64.31177700869739,
+          "chars": 1
+        },
+        {
+          "ms": 76.98516105301678,
+          "chars": 1
+        },
+        {
+          "ms": 89.47869500843808,
+          "chars": 1
+        },
+        {
+          "ms": 102.13319101603702,
+          "chars": 1
+        },
+        {
+          "ms": 114.80977601604536,
+          "chars": 1
+        },
+        {
+          "ms": 127.3892960161902,
+          "chars": 1
+        },
+        {
+          "ms": 139.6514190128073,
+          "chars": 1
+        },
+        {
+          "ms": 152.1896090125665,
+          "chars": 1
+        },
+        {
+          "ms": 164.39901402918622,
+          "chars": 1
+        },
+        {
+          "ms": 176.86179402517155,
+          "chars": 1
+        },
+        {
+          "ms": 189.40386304166168,
+          "chars": 1
+        },
+        {
+          "ms": 202.0218550460413,
+          "chars": 1
+        },
+        {
+          "ms": 214.80588900158182,
+          "chars": 1
+        },
+        {
+          "ms": 227.3797300294973,
+          "chars": 1
+        },
+        {
+          "ms": 239.93588000303134,
+          "chars": 1
+        },
+        {
+          "ms": 252.39006703486666,
+          "chars": 1
+        },
+        {
+          "ms": 264.9940850096755,
+          "chars": 1
+        },
+        {
+          "ms": 277.5716879987158,
+          "chars": 1
+        },
+        {
+          "ms": 290.15023104147986,
+          "chars": 1
+        },
+        {
+          "ms": 303.0276580248028,
+          "chars": 1
+        },
+        {
+          "ms": 316.1117080016993,
+          "chars": 1
+        },
+        {
+          "ms": 329.79661400895566,
+          "chars": 1
+        },
+        {
+          "ms": 343.03786599775776,
+          "chars": 1
+        },
+        {
+          "ms": 356.4222429995425,
+          "chars": 1
+        },
+        {
+          "ms": 369.4755980395712,
+          "chars": 1
+        },
+        {
+          "ms": 382.02392001403496,
+          "chars": 1
+        },
+        {
+          "ms": 395.22379904519767,
+          "chars": 1
+        },
+        {
+          "ms": 408.94963103346527,
+          "chars": 1
+        },
+        {
+          "ms": 422.44818300241604,
+          "chars": 1
+        },
+        {
+          "ms": 435.6952050002292,
+          "chars": 1
+        },
+        {
+          "ms": 448.5265880357474,
+          "chars": 1
+        },
+        {
+          "ms": 462.00153505196795,
+          "chars": 1
+        },
+        {
+          "ms": 475.3754660487175,
+          "chars": 1
+        },
+        {
+          "ms": 488.6633950518444,
+          "chars": 1
+        },
+        {
+          "ms": 501.6633320483379,
+          "chars": 1
+        },
+        {
+          "ms": 514.6410110173747,
+          "chars": 1
+        },
+        {
+          "ms": 528.0857580364682,
+          "chars": 1
+        },
+        {
+          "ms": 541.2162330467254,
+          "chars": 1
+        },
+        {
+          "ms": 554.2090000235476,
+          "chars": 1
+        },
+        {
+          "ms": 568.3575900038704,
+          "chars": 1
+        },
+        {
+          "ms": 579.7651930479333,
+          "chars": 1
+        },
+        {
+          "ms": 592.2284970292822,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r1-safeFalse-3",
+      "repeat": 1,
+      "safe": false,
+      "mode": "sync",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 24,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 441.9638850376941,
+      "max_visible_gap_ms": 298.33321197656915,
+      "observed_including_cleanup_ms": 1075.7590630091727,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 13,
+      "output_sha256": "2bae58cdbe7209b1a0b6e42baba8329a4f2138c145c6b195527f91d1fc0b30cd",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 24,
+        "consumed_chars": 41,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 297.965785022825
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 297.69799899077043
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 297.643675992731
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 74,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 441.9638850376941,
+          "chars": 11
+        },
+        {
+          "ms": 740.2970970142633,
+          "chars": 13
+        }
+      ]
+    },
+    {
+      "request_id": "r1-safeFalse-4",
+      "repeat": 1,
+      "safe": false,
+      "mode": "async",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 74,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 17,
+      "after_bad_chars": 33,
+      "first_visible_ms": 12.91468896670267,
+      "max_visible_gap_ms": 14.403818000573665,
+      "observed_including_cleanup_ms": 1076.7393269925378,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 1,
+      "output_sha256": "bfed3664f9a154e66182d34bd9b6e7407969f9f2568a2052130bf1d302e05e46",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 74,
+        "consumed_chars": 74,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 297.76448401389644
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 423.62377798417583
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 501.1890640016645
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 74,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 12.91468896670267,
+          "chars": 1
+        },
+        {
+          "ms": 25.551130005624145,
+          "chars": 1
+        },
+        {
+          "ms": 39.0186159638688,
+          "chars": 1
+        },
+        {
+          "ms": 51.80543300230056,
+          "chars": 1
+        },
+        {
+          "ms": 64.73688199184835,
+          "chars": 1
+        },
+        {
+          "ms": 77.78843998676166,
+          "chars": 1
+        },
+        {
+          "ms": 91.06026298832148,
+          "chars": 1
+        },
+        {
+          "ms": 104.49278098531067,
+          "chars": 1
+        },
+        {
+          "ms": 117.85375699400902,
+          "chars": 1
+        },
+        {
+          "ms": 131.49320799857378,
+          "chars": 1
+        },
+        {
+          "ms": 144.26633098628372,
+          "chars": 1
+        },
+        {
+          "ms": 157.29307295987383,
+          "chars": 1
+        },
+        {
+          "ms": 170.07764999289066,
+          "chars": 1
+        },
+        {
+          "ms": 183.04778198944405,
+          "chars": 1
+        },
+        {
+          "ms": 196.64479396305978,
+          "chars": 1
+        },
+        {
+          "ms": 211.04861196363345,
+          "chars": 1
+        },
+        {
+          "ms": 223.2783879735507,
+          "chars": 1
+        },
+        {
+          "ms": 236.38014600146562,
+          "chars": 1
+        },
+        {
+          "ms": 249.68675599666312,
+          "chars": 1
+        },
+        {
+          "ms": 262.5764510012232,
+          "chars": 1
+        },
+        {
+          "ms": 275.3514819778502,
+          "chars": 1
+        },
+        {
+          "ms": 288.41257095336914,
+          "chars": 1
+        },
+        {
+          "ms": 301.9066599663347,
+          "chars": 1
+        },
+        {
+          "ms": 315.8696349710226,
+          "chars": 1
+        },
+        {
+          "ms": 327.8837520047091,
+          "chars": 1
+        },
+        {
+          "ms": 340.9147749771364,
+          "chars": 1
+        },
+        {
+          "ms": 353.4395629540086,
+          "chars": 1
+        },
+        {
+          "ms": 366.1011579679325,
+          "chars": 1
+        },
+        {
+          "ms": 379.14771999930963,
+          "chars": 1
+        },
+        {
+          "ms": 392.4337039934471,
+          "chars": 1
+        },
+        {
+          "ms": 405.85604397347197,
+          "chars": 1
+        },
+        {
+          "ms": 419.301216956228,
+          "chars": 1
+        },
+        {
+          "ms": 433.3304439787753,
+          "chars": 1
+        },
+        {
+          "ms": 446.0257419850677,
+          "chars": 1
+        },
+        {
+          "ms": 459.2738359933719,
+          "chars": 1
+        },
+        {
+          "ms": 471.9168290030211,
+          "chars": 1
+        },
+        {
+          "ms": 484.86712598241866,
+          "chars": 1
+        },
+        {
+          "ms": 498.17984795663506,
+          "chars": 1
+        },
+        {
+          "ms": 511.32709096418694,
+          "chars": 1
+        },
+        {
+          "ms": 524.1320239729248,
+          "chars": 1
+        },
+        {
+          "ms": 536.5041709737852,
+          "chars": 1
+        },
+        {
+          "ms": 548.709628987126,
+          "chars": 1
+        },
+        {
+          "ms": 561.2678999896161,
+          "chars": 1
+        },
+        {
+          "ms": 573.7934240023606,
+          "chars": 1
+        },
+        {
+          "ms": 586.3170499796979,
+          "chars": 1
+        },
+        {
+          "ms": 598.9634039578959,
+          "chars": 1
+        },
+        {
+          "ms": 611.2497199792415,
+          "chars": 1
+        },
+        {
+          "ms": 623.486274969764,
+          "chars": 1
+        },
+        {
+          "ms": 635.9788950067014,
+          "chars": 1
+        },
+        {
+          "ms": 648.4429009724408,
+          "chars": 1
+        },
+        {
+          "ms": 660.9732389915735,
+          "chars": 1
+        },
+        {
+          "ms": 673.2997169601731,
+          "chars": 1
+        },
+        {
+          "ms": 685.5580160045065,
+          "chars": 1
+        },
+        {
+          "ms": 697.9243339737877,
+          "chars": 1
+        },
+        {
+          "ms": 710.273923992645,
+          "chars": 1
+        },
+        {
+          "ms": 722.5509510026313,
+          "chars": 1
+        },
+        {
+          "ms": 735.1606779848225,
+          "chars": 1
+        },
+        {
+          "ms": 747.957432991825,
+          "chars": 1
+        },
+        {
+          "ms": 760.5259019765072,
+          "chars": 1
+        },
+        {
+          "ms": 773.0395459802821,
+          "chars": 1
+        },
+        {
+          "ms": 785.6348889763467,
+          "chars": 1
+        },
+        {
+          "ms": 798.148121975828,
+          "chars": 1
+        },
+        {
+          "ms": 810.8047259738669,
+          "chars": 1
+        },
+        {
+          "ms": 823.8558419980109,
+          "chars": 1
+        },
+        {
+          "ms": 836.8983119726181,
+          "chars": 1
+        },
+        {
+          "ms": 850.2406000043266,
+          "chars": 1
+        },
+        {
+          "ms": 862.8699399996549,
+          "chars": 1
+        },
+        {
+          "ms": 875.7740999571979,
+          "chars": 1
+        },
+        {
+          "ms": 888.6164749856107,
+          "chars": 1
+        },
+        {
+          "ms": 901.5192239894532,
+          "chars": 1
+        },
+        {
+          "ms": 915.1068659848534,
+          "chars": 1
+        },
+        {
+          "ms": 928.3935829880647,
+          "chars": 1
+        },
+        {
+          "ms": 941.9645749730989,
+          "chars": 1
+        },
+        {
+          "ms": 956.0604440048337,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r2-safeTrue-0",
+      "repeat": 2,
+      "safe": true,
+      "mode": "pass",
+      "review_ms_replayed": 0,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 13.331064954400063,
+      "max_visible_gap_ms": 14.002865005750209,
+      "observed_including_cleanup_ms": 1024.3828059756197,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": []
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 13.331064954400063,
+          "chars": 1
+        },
+        {
+          "ms": 25.93902195803821,
+          "chars": 1
+        },
+        {
+          "ms": 38.77036296762526,
+          "chars": 1
+        },
+        {
+          "ms": 52.08477098494768,
+          "chars": 1
+        },
+        {
+          "ms": 65.09557500248775,
+          "chars": 1
+        },
+        {
+          "ms": 78.51047400617972,
+          "chars": 1
+        },
+        {
+          "ms": 91.07613895321265,
+          "chars": 1
+        },
+        {
+          "ms": 103.42841799138114,
+          "chars": 1
+        },
+        {
+          "ms": 115.84220896475017,
+          "chars": 1
+        },
+        {
+          "ms": 129.09129197942093,
+          "chars": 1
+        },
+        {
+          "ms": 142.43126596556976,
+          "chars": 1
+        },
+        {
+          "ms": 155.93090595211834,
+          "chars": 1
+        },
+        {
+          "ms": 168.8901519519277,
+          "chars": 1
+        },
+        {
+          "ms": 182.16353096067905,
+          "chars": 1
+        },
+        {
+          "ms": 195.9239249699749,
+          "chars": 1
+        },
+        {
+          "ms": 208.62803398631513,
+          "chars": 1
+        },
+        {
+          "ms": 221.1095139500685,
+          "chars": 1
+        },
+        {
+          "ms": 233.36211097193882,
+          "chars": 1
+        },
+        {
+          "ms": 245.67555595422164,
+          "chars": 1
+        },
+        {
+          "ms": 257.91507598478347,
+          "chars": 1
+        },
+        {
+          "ms": 270.4312189598568,
+          "chars": 1
+        },
+        {
+          "ms": 282.6831419952214,
+          "chars": 1
+        },
+        {
+          "ms": 295.22463999455795,
+          "chars": 1
+        },
+        {
+          "ms": 307.55449598655105,
+          "chars": 1
+        },
+        {
+          "ms": 320.0853900052607,
+          "chars": 1
+        },
+        {
+          "ms": 332.6593069941737,
+          "chars": 1
+        },
+        {
+          "ms": 345.1780359609984,
+          "chars": 1
+        },
+        {
+          "ms": 357.50175797147676,
+          "chars": 1
+        },
+        {
+          "ms": 369.7734199813567,
+          "chars": 1
+        },
+        {
+          "ms": 382.0373449707404,
+          "chars": 1
+        },
+        {
+          "ms": 394.2547899787314,
+          "chars": 1
+        },
+        {
+          "ms": 406.61594399716705,
+          "chars": 1
+        },
+        {
+          "ms": 419.1082929610275,
+          "chars": 1
+        },
+        {
+          "ms": 431.5558269736357,
+          "chars": 1
+        },
+        {
+          "ms": 444.2633029539138,
+          "chars": 1
+        },
+        {
+          "ms": 457.07291399594396,
+          "chars": 1
+        },
+        {
+          "ms": 470.23862099740654,
+          "chars": 1
+        },
+        {
+          "ms": 483.43909898540005,
+          "chars": 1
+        },
+        {
+          "ms": 496.7596390051767,
+          "chars": 1
+        },
+        {
+          "ms": 510.0380459916778,
+          "chars": 1
+        },
+        {
+          "ms": 522.9359659715556,
+          "chars": 1
+        },
+        {
+          "ms": 535.7390999561176,
+          "chars": 1
+        },
+        {
+          "ms": 548.4096820000559,
+          "chars": 1
+        },
+        {
+          "ms": 561.2928899936378,
+          "chars": 1
+        },
+        {
+          "ms": 575.105772993993,
+          "chars": 1
+        },
+        {
+          "ms": 587.7900619525462,
+          "chars": 1
+        },
+        {
+          "ms": 600.7859119563363,
+          "chars": 1
+        },
+        {
+          "ms": 613.3136519929394,
+          "chars": 1
+        },
+        {
+          "ms": 625.8560289861634,
+          "chars": 1
+        },
+        {
+          "ms": 638.4963809978217,
+          "chars": 1
+        },
+        {
+          "ms": 651.6770260059275,
+          "chars": 1
+        },
+        {
+          "ms": 664.6400699974038,
+          "chars": 1
+        },
+        {
+          "ms": 677.6113069499843,
+          "chars": 1
+        },
+        {
+          "ms": 691.2641149829142,
+          "chars": 1
+        },
+        {
+          "ms": 703.5023679491132,
+          "chars": 1
+        },
+        {
+          "ms": 716.329914983362,
+          "chars": 1
+        },
+        {
+          "ms": 729.3900699587539,
+          "chars": 1
+        },
+        {
+          "ms": 743.3929349645041,
+          "chars": 1
+        },
+        {
+          "ms": 755.9596479986794,
+          "chars": 1
+        },
+        {
+          "ms": 769.4356999709271,
+          "chars": 1
+        },
+        {
+          "ms": 782.0947489817627,
+          "chars": 1
+        },
+        {
+          "ms": 795.2472869656049,
+          "chars": 1
+        },
+        {
+          "ms": 808.0704569583759,
+          "chars": 1
+        },
+        {
+          "ms": 821.0575639968738,
+          "chars": 1
+        },
+        {
+          "ms": 834.1524949646555,
+          "chars": 1
+        },
+        {
+          "ms": 847.4427039618604,
+          "chars": 1
+        },
+        {
+          "ms": 860.3925969800912,
+          "chars": 1
+        },
+        {
+          "ms": 873.7093409872614,
+          "chars": 1
+        },
+        {
+          "ms": 887.0892359991558,
+          "chars": 1
+        },
+        {
+          "ms": 899.9420629697852,
+          "chars": 1
+        },
+        {
+          "ms": 912.6141179585829,
+          "chars": 1
+        },
+        {
+          "ms": 924.8144729644991,
+          "chars": 1
+        },
+        {
+          "ms": 937.3046729597263,
+          "chars": 1
+        },
+        {
+          "ms": 949.8186959535815,
+          "chars": 1
+        },
+        {
+          "ms": 962.379794975277,
+          "chars": 1
+        },
+        {
+          "ms": 974.6294879587367,
+          "chars": 1
+        },
+        {
+          "ms": 987.1168579556979,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r2-safeTrue-1",
+      "repeat": 2,
+      "safe": true,
+      "mode": "sync",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 213.71918299701065,
+      "max_visible_gap_ms": 256.77616597386077,
+      "observed_including_cleanup_ms": 1094.4365479517728,
+      "finish_reason": "stop",
+      "max_burst_chars": 20,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 73.93326598685235
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 75.09204896632582
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 74.07939695985988
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 73.73270997777581
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 75.29670000076294
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 73.63355497363955
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 213.71918299701065,
+          "chars": 11
+        },
+        {
+          "ms": 381.8325879983604,
+          "chars": 13
+        },
+        {
+          "ms": 638.6087539722212,
+          "chars": 20
+        },
+        {
+          "ms": 774.7505219886079,
+          "chars": 11
+        },
+        {
+          "ms": 913.5469030006789,
+          "chars": 11
+        },
+        {
+          "ms": 1055.4701759829186,
+          "chars": 11
+        }
+      ]
+    },
+    {
+      "request_id": "r2-safeTrue-2",
+      "repeat": 2,
+      "safe": true,
+      "mode": "async",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 13.15334701212123,
+      "max_visible_gap_ms": 13.80192895885557,
+      "observed_including_cleanup_ms": 1103.001382027287,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 74.14219400379807
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 73.27979296678677
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 74.01225797366351
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 73.4090079786256
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 73.48181802080944
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 73.33399198250845
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 13.15334701212123,
+          "chars": 1
+        },
+        {
+          "ms": 25.79131501261145,
+          "chars": 1
+        },
+        {
+          "ms": 38.51389099145308,
+          "chars": 1
+        },
+        {
+          "ms": 51.157851004973054,
+          "chars": 1
+        },
+        {
+          "ms": 64.1413860139437,
+          "chars": 1
+        },
+        {
+          "ms": 77.31668598717079,
+          "chars": 1
+        },
+        {
+          "ms": 90.86050902260467,
+          "chars": 1
+        },
+        {
+          "ms": 104.19904702575877,
+          "chars": 1
+        },
+        {
+          "ms": 117.63175198575482,
+          "chars": 1
+        },
+        {
+          "ms": 131.408489018213,
+          "chars": 1
+        },
+        {
+          "ms": 145.08329099044204,
+          "chars": 1
+        },
+        {
+          "ms": 157.60808298364282,
+          "chars": 1
+        },
+        {
+          "ms": 170.2434360049665,
+          "chars": 1
+        },
+        {
+          "ms": 183.35366901010275,
+          "chars": 1
+        },
+        {
+          "ms": 197.08792300662026,
+          "chars": 1
+        },
+        {
+          "ms": 208.8975920341909,
+          "chars": 1
+        },
+        {
+          "ms": 221.72938397852704,
+          "chars": 1
+        },
+        {
+          "ms": 233.93699299776927,
+          "chars": 1
+        },
+        {
+          "ms": 246.3200250058435,
+          "chars": 1
+        },
+        {
+          "ms": 258.84810101706535,
+          "chars": 1
+        },
+        {
+          "ms": 271.3912639883347,
+          "chars": 1
+        },
+        {
+          "ms": 283.9496280066669,
+          "chars": 1
+        },
+        {
+          "ms": 296.5348800062202,
+          "chars": 1
+        },
+        {
+          "ms": 309.1951190144755,
+          "chars": 1
+        },
+        {
+          "ms": 321.76128099672496,
+          "chars": 1
+        },
+        {
+          "ms": 334.01884097838774,
+          "chars": 1
+        },
+        {
+          "ms": 346.40634700190276,
+          "chars": 1
+        },
+        {
+          "ms": 358.90885099070147,
+          "chars": 1
+        },
+        {
+          "ms": 371.18437298340723,
+          "chars": 1
+        },
+        {
+          "ms": 383.74264701269567,
+          "chars": 1
+        },
+        {
+          "ms": 396.3391319848597,
+          "chars": 1
+        },
+        {
+          "ms": 409.0645120013505,
+          "chars": 1
+        },
+        {
+          "ms": 421.44233302678913,
+          "chars": 1
+        },
+        {
+          "ms": 434.0899100061506,
+          "chars": 1
+        },
+        {
+          "ms": 446.9324430101551,
+          "chars": 1
+        },
+        {
+          "ms": 460.02535201841965,
+          "chars": 1
+        },
+        {
+          "ms": 473.6044480232522,
+          "chars": 1
+        },
+        {
+          "ms": 486.6172629990615,
+          "chars": 1
+        },
+        {
+          "ms": 499.524224025663,
+          "chars": 1
+        },
+        {
+          "ms": 511.99975301278755,
+          "chars": 1
+        },
+        {
+          "ms": 524.5272379834205,
+          "chars": 1
+        },
+        {
+          "ms": 537.2793599963188,
+          "chars": 1
+        },
+        {
+          "ms": 550.1328890095465,
+          "chars": 1
+        },
+        {
+          "ms": 563.4313939954154,
+          "chars": 1
+        },
+        {
+          "ms": 576.4599100220948,
+          "chars": 1
+        },
+        {
+          "ms": 589.834057027474,
+          "chars": 1
+        },
+        {
+          "ms": 602.9745350242592,
+          "chars": 1
+        },
+        {
+          "ms": 615.9428820246831,
+          "chars": 1
+        },
+        {
+          "ms": 628.894655033946,
+          "chars": 1
+        },
+        {
+          "ms": 641.8977670255117,
+          "chars": 1
+        },
+        {
+          "ms": 655.0638700136915,
+          "chars": 1
+        },
+        {
+          "ms": 667.6407050108537,
+          "chars": 1
+        },
+        {
+          "ms": 680.3854120080359,
+          "chars": 1
+        },
+        {
+          "ms": 693.2728160172701,
+          "chars": 1
+        },
+        {
+          "ms": 706.4501959830523,
+          "chars": 1
+        },
+        {
+          "ms": 719.639285991434,
+          "chars": 1
+        },
+        {
+          "ms": 733.0851280130446,
+          "chars": 1
+        },
+        {
+          "ms": 746.1093229940161,
+          "chars": 1
+        },
+        {
+          "ms": 759.4859580276534,
+          "chars": 1
+        },
+        {
+          "ms": 773.287886986509,
+          "chars": 1
+        },
+        {
+          "ms": 786.1715059843846,
+          "chars": 1
+        },
+        {
+          "ms": 799.7946550021879,
+          "chars": 1
+        },
+        {
+          "ms": 812.6878030016087,
+          "chars": 1
+        },
+        {
+          "ms": 825.5602460121736,
+          "chars": 1
+        },
+        {
+          "ms": 838.2314210175537,
+          "chars": 1
+        },
+        {
+          "ms": 851.2657490209676,
+          "chars": 1
+        },
+        {
+          "ms": 865.0153710041195,
+          "chars": 1
+        },
+        {
+          "ms": 877.7378619997762,
+          "chars": 1
+        },
+        {
+          "ms": 890.9301509847865,
+          "chars": 1
+        },
+        {
+          "ms": 904.1960050235502,
+          "chars": 1
+        },
+        {
+          "ms": 917.2590280068107,
+          "chars": 1
+        },
+        {
+          "ms": 929.8761279787868,
+          "chars": 1
+        },
+        {
+          "ms": 942.4374310183339,
+          "chars": 1
+        },
+        {
+          "ms": 954.8391309799626,
+          "chars": 1
+        },
+        {
+          "ms": 967.4830500152893,
+          "chars": 1
+        },
+        {
+          "ms": 979.7107600024901,
+          "chars": 1
+        },
+        {
+          "ms": 992.2229389776476,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r2-safeTrue-3",
+      "repeat": 2,
+      "safe": true,
+      "mode": "sync",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 436.91530800424516,
+      "max_visible_gap_ms": 300.3071270068176,
+      "observed_including_cleanup_ms": 1971.7103900038637,
+      "finish_reason": "stop",
+      "max_burst_chars": 20,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 297.72199102444574
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 297.5906019564718
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 297.7703569922596
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 298.56074700364843
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 298.8150719902478
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 298.9688719972037
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 436.91530800424516,
+          "chars": 11
+        },
+        {
+          "ms": 735.1230810163543,
+          "chars": 13
+        },
+        {
+          "ms": 1033.6963420268148,
+          "chars": 20
+        },
+        {
+          "ms": 1332.8773500397801,
+          "chars": 11
+        },
+        {
+          "ms": 1632.7651180326939,
+          "chars": 11
+        },
+        {
+          "ms": 1933.0722450395115,
+          "chars": 11
+        }
+      ]
+    },
+    {
+      "request_id": "r2-safeTrue-4",
+      "repeat": 2,
+      "safe": true,
+      "mode": "async",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 77,
+      "visible_chars": 77,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 13.20244005182758,
+      "max_visible_gap_ms": 13.748184952419251,
+      "observed_including_cleanup_ms": 1966.8861540267244,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "fc97081e500001a7b6941343964093e7494ccf9102b9f449a15439cd41ef150b",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 77,
+        "consumed_chars": 77,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 298.4691620222293
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 432.5306529644877
+          },
+          {
+            "start": 24,
+            "end": 44,
+            "reason": "allow",
+            "ms": 468.51949498523027
+          },
+          {
+            "start": 44,
+            "end": 55,
+            "reason": "allow",
+            "ms": 623.4797380166128
+          },
+          {
+            "start": 55,
+            "end": 66,
+            "reason": "allow",
+            "ms": 782.4327549897134
+          },
+          {
+            "start": 66,
+            "end": 77,
+            "reason": "allow",
+            "ms": 943.7807900249027
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 77,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 13.20244005182758,
+          "chars": 1
+        },
+        {
+          "ms": 25.90499701909721,
+          "chars": 1
+        },
+        {
+          "ms": 38.759008049964905,
+          "chars": 1
+        },
+        {
+          "ms": 51.615637028589845,
+          "chars": 1
+        },
+        {
+          "ms": 64.6828570170328,
+          "chars": 1
+        },
+        {
+          "ms": 77.03923003282398,
+          "chars": 1
+        },
+        {
+          "ms": 89.39642301993445,
+          "chars": 1
+        },
+        {
+          "ms": 101.61115601658821,
+          "chars": 1
+        },
+        {
+          "ms": 114.03477605199441,
+          "chars": 1
+        },
+        {
+          "ms": 126.23601802624762,
+          "chars": 1
+        },
+        {
+          "ms": 138.52837501326576,
+          "chars": 1
+        },
+        {
+          "ms": 150.90500400401652,
+          "chars": 1
+        },
+        {
+          "ms": 163.41870301403105,
+          "chars": 1
+        },
+        {
+          "ms": 176.0151470080018,
+          "chars": 1
+        },
+        {
+          "ms": 188.58422205084935,
+          "chars": 1
+        },
+        {
+          "ms": 201.14233501954004,
+          "chars": 1
+        },
+        {
+          "ms": 213.46699201967567,
+          "chars": 1
+        },
+        {
+          "ms": 225.89249903103337,
+          "chars": 1
+        },
+        {
+          "ms": 238.15013602143154,
+          "chars": 1
+        },
+        {
+          "ms": 250.47764199553058,
+          "chars": 1
+        },
+        {
+          "ms": 263.1608620285988,
+          "chars": 1
+        },
+        {
+          "ms": 276.0045659961179,
+          "chars": 1
+        },
+        {
+          "ms": 289.02876004576683,
+          "chars": 1
+        },
+        {
+          "ms": 302.7769449981861,
+          "chars": 1
+        },
+        {
+          "ms": 314.9841340491548,
+          "chars": 1
+        },
+        {
+          "ms": 327.80292100505903,
+          "chars": 1
+        },
+        {
+          "ms": 341.26643202034757,
+          "chars": 1
+        },
+        {
+          "ms": 354.9063270329498,
+          "chars": 1
+        },
+        {
+          "ms": 368.50173905259,
+          "chars": 1
+        },
+        {
+          "ms": 381.39228901127353,
+          "chars": 1
+        },
+        {
+          "ms": 394.81384301325306,
+          "chars": 1
+        },
+        {
+          "ms": 408.37050502886996,
+          "chars": 1
+        },
+        {
+          "ms": 421.84114502742887,
+          "chars": 1
+        },
+        {
+          "ms": 435.40894001489505,
+          "chars": 1
+        },
+        {
+          "ms": 447.94966699555516,
+          "chars": 1
+        },
+        {
+          "ms": 460.90645203366876,
+          "chars": 1
+        },
+        {
+          "ms": 473.9543120376766,
+          "chars": 1
+        },
+        {
+          "ms": 486.75495805218816,
+          "chars": 1
+        },
+        {
+          "ms": 500.07049599662423,
+          "chars": 1
+        },
+        {
+          "ms": 513.3276960114017,
+          "chars": 1
+        },
+        {
+          "ms": 526.2941720429808,
+          "chars": 1
+        },
+        {
+          "ms": 539.2215890460648,
+          "chars": 1
+        },
+        {
+          "ms": 552.0290400017984,
+          "chars": 1
+        },
+        {
+          "ms": 565.0530570419505,
+          "chars": 1
+        },
+        {
+          "ms": 578.0951220076531,
+          "chars": 1
+        },
+        {
+          "ms": 591.5475650108419,
+          "chars": 1
+        },
+        {
+          "ms": 604.064064042177,
+          "chars": 1
+        },
+        {
+          "ms": 616.9233890250325,
+          "chars": 1
+        },
+        {
+          "ms": 630.4433260229416,
+          "chars": 1
+        },
+        {
+          "ms": 643.6222740449011,
+          "chars": 1
+        },
+        {
+          "ms": 656.8144680350088,
+          "chars": 1
+        },
+        {
+          "ms": 669.5049620466307,
+          "chars": 1
+        },
+        {
+          "ms": 682.3041530442424,
+          "chars": 1
+        },
+        {
+          "ms": 696.0070700151846,
+          "chars": 1
+        },
+        {
+          "ms": 707.8381470055319,
+          "chars": 1
+        },
+        {
+          "ms": 720.6980460323393,
+          "chars": 1
+        },
+        {
+          "ms": 733.6246580234729,
+          "chars": 1
+        },
+        {
+          "ms": 747.0472590066493,
+          "chars": 1
+        },
+        {
+          "ms": 759.2771030031145,
+          "chars": 1
+        },
+        {
+          "ms": 771.8285840237513,
+          "chars": 1
+        },
+        {
+          "ms": 784.4752390519716,
+          "chars": 1
+        },
+        {
+          "ms": 796.7662830487825,
+          "chars": 1
+        },
+        {
+          "ms": 809.0221260208637,
+          "chars": 1
+        },
+        {
+          "ms": 821.5413590078242,
+          "chars": 1
+        },
+        {
+          "ms": 834.0122930239886,
+          "chars": 1
+        },
+        {
+          "ms": 846.4467160520144,
+          "chars": 1
+        },
+        {
+          "ms": 858.9288070215844,
+          "chars": 1
+        },
+        {
+          "ms": 871.4758870191872,
+          "chars": 1
+        },
+        {
+          "ms": 883.7072330061346,
+          "chars": 1
+        },
+        {
+          "ms": 896.0793100413866,
+          "chars": 1
+        },
+        {
+          "ms": 908.694590034429,
+          "chars": 1
+        },
+        {
+          "ms": 920.9736830089241,
+          "chars": 1
+        },
+        {
+          "ms": 933.4743920480832,
+          "chars": 1
+        },
+        {
+          "ms": 946.0010150214657,
+          "chars": 1
+        },
+        {
+          "ms": 958.589734043926,
+          "chars": 1
+        },
+        {
+          "ms": 971.0122480173595,
+          "chars": 1
+        },
+        {
+          "ms": 983.825795003213,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r2-safeFalse-0",
+      "repeat": 2,
+      "safe": false,
+      "mode": "pass",
+      "review_ms_replayed": 0,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 74,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 17,
+      "after_bad_chars": 33,
+      "first_visible_ms": 13.173146988265216,
+      "max_visible_gap_ms": 13.827685033902526,
+      "observed_including_cleanup_ms": 989.5412090118043,
+      "finish_reason": "stop",
+      "max_burst_chars": 1,
+      "output_sha256": "bfed3664f9a154e66182d34bd9b6e7407969f9f2568a2052130bf1d302e05e46",
+      "gate": {
+        "finish_reason": "stop",
+        "blocked_start": null,
+        "blocked_end": null,
+        "emitted_chars": 74,
+        "consumed_chars": 74,
+        "checks": []
+      },
+      "source": {
+        "emitted_chars": 74,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 13.173146988265216,
+          "chars": 1
+        },
+        {
+          "ms": 25.943892018403858,
+          "chars": 1
+        },
+        {
+          "ms": 39.02025998104364,
+          "chars": 1
+        },
+        {
+          "ms": 51.758683985099196,
+          "chars": 1
+        },
+        {
+          "ms": 64.86630399012938,
+          "chars": 1
+        },
+        {
+          "ms": 78.69398902403191,
+          "chars": 1
+        },
+        {
+          "ms": 91.80731099331751,
+          "chars": 1
+        },
+        {
+          "ms": 105.41919199749827,
+          "chars": 1
+        },
+        {
+          "ms": 118.8724740059115,
+          "chars": 1
+        },
+        {
+          "ms": 131.43750600283965,
+          "chars": 1
+        },
+        {
+          "ms": 144.05103801982477,
+          "chars": 1
+        },
+        {
+          "ms": 156.7904389812611,
+          "chars": 1
+        },
+        {
+          "ms": 169.65119598899037,
+          "chars": 1
+        },
+        {
+          "ms": 182.31764098163694,
+          "chars": 1
+        },
+        {
+          "ms": 194.67996997991577,
+          "chars": 1
+        },
+        {
+          "ms": 207.05963199725375,
+          "chars": 1
+        },
+        {
+          "ms": 219.29608401842415,
+          "chars": 1
+        },
+        {
+          "ms": 231.8415169720538,
+          "chars": 1
+        },
+        {
+          "ms": 244.44705701898783,
+          "chars": 1
+        },
+        {
+          "ms": 256.82572001824155,
+          "chars": 1
+        },
+        {
+          "ms": 269.01438797358423,
+          "chars": 1
+        },
+        {
+          "ms": 281.61661798367277,
+          "chars": 1
+        },
+        {
+          "ms": 294.0981889842078,
+          "chars": 1
+        },
+        {
+          "ms": 306.5892069716938,
+          "chars": 1
+        },
+        {
+          "ms": 319.00585698895156,
+          "chars": 1
+        },
+        {
+          "ms": 331.28942298935726,
+          "chars": 1
+        },
+        {
+          "ms": 343.5450899996795,
+          "chars": 1
+        },
+        {
+          "ms": 355.9501299750991,
+          "chars": 1
+        },
+        {
+          "ms": 368.53152699768543,
+          "chars": 1
+        },
+        {
+          "ms": 380.8459300198592,
+          "chars": 1
+        },
+        {
+          "ms": 393.16875801887363,
+          "chars": 1
+        },
+        {
+          "ms": 405.34839901374653,
+          "chars": 1
+        },
+        {
+          "ms": 417.5674300058745,
+          "chars": 1
+        },
+        {
+          "ms": 430.05612900014967,
+          "chars": 1
+        },
+        {
+          "ms": 442.50783597817644,
+          "chars": 1
+        },
+        {
+          "ms": 455.04868001444265,
+          "chars": 1
+        },
+        {
+          "ms": 467.62390597723424,
+          "chars": 1
+        },
+        {
+          "ms": 480.59518897207454,
+          "chars": 1
+        },
+        {
+          "ms": 493.87164000654593,
+          "chars": 1
+        },
+        {
+          "ms": 506.87026901869103,
+          "chars": 1
+        },
+        {
+          "ms": 519.7929419809952,
+          "chars": 1
+        },
+        {
+          "ms": 532.4007999734022,
+          "chars": 1
+        },
+        {
+          "ms": 544.993967982009,
+          "chars": 1
+        },
+        {
+          "ms": 557.7855359879322,
+          "chars": 1
+        },
+        {
+          "ms": 570.7621109904721,
+          "chars": 1
+        },
+        {
+          "ms": 583.7603660183959,
+          "chars": 1
+        },
+        {
+          "ms": 597.5093750166707,
+          "chars": 1
+        },
+        {
+          "ms": 609.9364319816232,
+          "chars": 1
+        },
+        {
+          "ms": 623.4100110013969,
+          "chars": 1
+        },
+        {
+          "ms": 636.2653030082583,
+          "chars": 1
+        },
+        {
+          "ms": 648.6938819871284,
+          "chars": 1
+        },
+        {
+          "ms": 661.5130869904533,
+          "chars": 1
+        },
+        {
+          "ms": 674.8697459697723,
+          "chars": 1
+        },
+        {
+          "ms": 688.4263789979741,
+          "chars": 1
+        },
+        {
+          "ms": 701.7990419990383,
+          "chars": 1
+        },
+        {
+          "ms": 715.5569500173442,
+          "chars": 1
+        },
+        {
+          "ms": 727.9416979872622,
+          "chars": 1
+        },
+        {
+          "ms": 740.743318980094,
+          "chars": 1
+        },
+        {
+          "ms": 753.6423670244403,
+          "chars": 1
+        },
+        {
+          "ms": 766.369960969314,
+          "chars": 1
+        },
+        {
+          "ms": 779.7151359845884,
+          "chars": 1
+        },
+        {
+          "ms": 793.0518569773994,
+          "chars": 1
+        },
+        {
+          "ms": 806.5661580185406,
+          "chars": 1
+        },
+        {
+          "ms": 820.0387869728729,
+          "chars": 1
+        },
+        {
+          "ms": 832.9291960108094,
+          "chars": 1
+        },
+        {
+          "ms": 845.7883300143294,
+          "chars": 1
+        },
+        {
+          "ms": 859.4833710230887,
+          "chars": 1
+        },
+        {
+          "ms": 873.0438760248944,
+          "chars": 1
+        },
+        {
+          "ms": 886.4483310026117,
+          "chars": 1
+        },
+        {
+          "ms": 899.8882410232909,
+          "chars": 1
+        },
+        {
+          "ms": 913.1225799792446,
+          "chars": 1
+        },
+        {
+          "ms": 926.3214999809861,
+          "chars": 1
+        },
+        {
+          "ms": 939.2950020264834,
+          "chars": 1
+        },
+        {
+          "ms": 951.9257890060544,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r2-safeFalse-1",
+      "repeat": 2,
+      "safe": false,
+      "mode": "sync",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 24,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 209.75962496595457,
+      "max_visible_gap_ms": 165.79837899189442,
+      "observed_including_cleanup_ms": 635.3953829966486,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 13,
+      "output_sha256": "2bae58cdbe7209b1a0b6e42baba8329a4f2138c145c6b195527f91d1fc0b30cd",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 24,
+        "consumed_chars": 41,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 73.44219804508612
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 73.48798302700743
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 73.89869302278385
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 46,
+        "closed": true,
+        "disconnected": true
+      },
+      "events": [
+        {
+          "ms": 209.75962496595457,
+          "chars": 11
+        },
+        {
+          "ms": 375.558003957849,
+          "chars": 13
+        }
+      ]
+    },
+    {
+      "request_id": "r2-safeFalse-2",
+      "repeat": 2,
+      "safe": false,
+      "mode": "async",
+      "review_ms_replayed": 72.91908646584488,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 46,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 17,
+      "after_bad_chars": 5,
+      "first_visible_ms": 13.09790596133098,
+      "max_visible_gap_ms": 13.877145014703274,
+      "observed_including_cleanup_ms": 637.1564859873615,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 1,
+      "output_sha256": "da8b30bc239c2ea0cfabf86581fda68abac370267e41a315fe27d516e7f7bf58",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 46,
+        "consumed_chars": 46,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 73.90869403025135
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 73.78362701274455
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 74.07819601939991
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 46,
+        "closed": true,
+        "disconnected": true
+      },
+      "events": [
+        {
+          "ms": 13.09790596133098,
+          "chars": 1
+        },
+        {
+          "ms": 25.89679998345673,
+          "chars": 1
+        },
+        {
+          "ms": 38.35503396112472,
+          "chars": 1
+        },
+        {
+          "ms": 50.81954295746982,
+          "chars": 1
+        },
+        {
+          "ms": 63.11719899531454,
+          "chars": 1
+        },
+        {
+          "ms": 75.74817899148911,
+          "chars": 1
+        },
+        {
+          "ms": 88.15646497532725,
+          "chars": 1
+        },
+        {
+          "ms": 100.81004799576476,
+          "chars": 1
+        },
+        {
+          "ms": 113.1771169602871,
+          "chars": 1
+        },
+        {
+          "ms": 125.40953495772555,
+          "chars": 1
+        },
+        {
+          "ms": 137.99751398619264,
+          "chars": 1
+        },
+        {
+          "ms": 150.52121097687632,
+          "chars": 1
+        },
+        {
+          "ms": 162.99893497489393,
+          "chars": 1
+        },
+        {
+          "ms": 175.24469597265124,
+          "chars": 1
+        },
+        {
+          "ms": 187.47175397584215,
+          "chars": 1
+        },
+        {
+          "ms": 199.73419094458222,
+          "chars": 1
+        },
+        {
+          "ms": 211.97358798235655,
+          "chars": 1
+        },
+        {
+          "ms": 224.53398298239335,
+          "chars": 1
+        },
+        {
+          "ms": 237.7911979565397,
+          "chars": 1
+        },
+        {
+          "ms": 250.82387594738975,
+          "chars": 1
+        },
+        {
+          "ms": 263.91933794366196,
+          "chars": 1
+        },
+        {
+          "ms": 276.4841529424302,
+          "chars": 1
+        },
+        {
+          "ms": 289.11610395880416,
+          "chars": 1
+        },
+        {
+          "ms": 301.9621649873443,
+          "chars": 1
+        },
+        {
+          "ms": 315.12763898354024,
+          "chars": 1
+        },
+        {
+          "ms": 328.1251899898052,
+          "chars": 1
+        },
+        {
+          "ms": 341.34188294410706,
+          "chars": 1
+        },
+        {
+          "ms": 354.4777639908716,
+          "chars": 1
+        },
+        {
+          "ms": 367.4508219701238,
+          "chars": 1
+        },
+        {
+          "ms": 380.6682279682718,
+          "chars": 1
+        },
+        {
+          "ms": 394.2073159851134,
+          "chars": 1
+        },
+        {
+          "ms": 407.3484229738824,
+          "chars": 1
+        },
+        {
+          "ms": 421.2255679885857,
+          "chars": 1
+        },
+        {
+          "ms": 434.3764989753254,
+          "chars": 1
+        },
+        {
+          "ms": 447.1588359447196,
+          "chars": 1
+        },
+        {
+          "ms": 460.7691379496828,
+          "chars": 1
+        },
+        {
+          "ms": 473.9481079741381,
+          "chars": 1
+        },
+        {
+          "ms": 487.7682679798454,
+          "chars": 1
+        },
+        {
+          "ms": 499.3368999566883,
+          "chars": 1
+        },
+        {
+          "ms": 511.99301599990577,
+          "chars": 1
+        },
+        {
+          "ms": 524.842036946211,
+          "chars": 1
+        },
+        {
+          "ms": 537.7800749847665,
+          "chars": 1
+        },
+        {
+          "ms": 550.836268987041,
+          "chars": 1
+        },
+        {
+          "ms": 564.3303209799342,
+          "chars": 1
+        },
+        {
+          "ms": 577.8152149869129,
+          "chars": 1
+        },
+        {
+          "ms": 591.1895329481922,
+          "chars": 1
+        }
+      ]
+    },
+    {
+      "request_id": "r2-safeFalse-3",
+      "repeat": 2,
+      "safe": false,
+      "mode": "sync",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 24,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 0,
+      "after_bad_chars": 0,
+      "first_visible_ms": 437.30238103307784,
+      "max_visible_gap_ms": 299.50568499043584,
+      "observed_including_cleanup_ms": 1073.1610460206866,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 13,
+      "output_sha256": "2bae58cdbe7209b1a0b6e42baba8329a4f2138c145c6b195527f91d1fc0b30cd",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 24,
+        "consumed_chars": 41,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 297.97229898395017
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 297.7092729997821
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 297.5947940140031
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 74,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 437.30238103307784,
+          "chars": 11
+        },
+        {
+          "ms": 736.8080660235137,
+          "chars": 13
+        }
+      ]
+    },
+    {
+      "request_id": "r2-safeFalse-4",
+      "repeat": 2,
+      "safe": false,
+      "mode": "async",
+      "review_ms_replayed": 297.05130352522247,
+      "review_source": "oracle_decisions_plus_measured_CPU_p50",
+      "interval_ms_config": 12.0,
+      "input_chars": 74,
+      "visible_chars": 74,
+      "bad_sentence_chars": 17,
+      "leaked_bad_chars": 17,
+      "after_bad_chars": 33,
+      "first_visible_ms": 12.996999023016542,
+      "max_visible_gap_ms": 14.436464000027627,
+      "observed_including_cleanup_ms": 1078.4778880188242,
+      "finish_reason": "content_filter",
+      "max_burst_chars": 1,
+      "output_sha256": "bfed3664f9a154e66182d34bd9b6e7407969f9f2568a2052130bf1d302e05e46",
+      "gate": {
+        "finish_reason": "content_filter",
+        "blocked_start": 24,
+        "blocked_end": 41,
+        "emitted_chars": 74,
+        "consumed_chars": 74,
+        "checks": [
+          {
+            "start": 0,
+            "end": 11,
+            "reason": "allow",
+            "ms": 298.99748699972406
+          },
+          {
+            "start": 11,
+            "end": 24,
+            "reason": "allow",
+            "ms": 428.0946360086091
+          },
+          {
+            "start": 24,
+            "end": 41,
+            "reason": "content_filter",
+            "ms": 505.2541160257533
+          }
+        ]
+      },
+      "source": {
+        "emitted_chars": 74,
+        "closed": true,
+        "disconnected": false
+      },
+      "events": [
+        {
+          "ms": 12.996999023016542,
+          "chars": 1
+        },
+        {
+          "ms": 25.560067035257816,
+          "chars": 1
+        },
+        {
+          "ms": 38.41755504254252,
+          "chars": 1
+        },
+        {
+          "ms": 51.3833420118317,
+          "chars": 1
+        },
+        {
+          "ms": 64.72644302994013,
+          "chars": 1
+        },
+        {
+          "ms": 77.81573705142364,
+          "chars": 1
+        },
+        {
+          "ms": 90.80010000616312,
+          "chars": 1
+        },
+        {
+          "ms": 104.59080402506515,
+          "chars": 1
+        },
+        {
+          "ms": 117.49572702683508,
+          "chars": 1
+        },
+        {
+          "ms": 130.3008960094303,
+          "chars": 1
+        },
+        {
+          "ms": 143.848825013265,
+          "chars": 1
+        },
+        {
+          "ms": 156.9208750152029,
+          "chars": 1
+        },
+        {
+          "ms": 170.1334620011039,
+          "chars": 1
+        },
+        {
+          "ms": 183.48971102386713,
+          "chars": 1
+        },
+        {
+          "ms": 197.2372200107202,
+          "chars": 1
+        },
+        {
+          "ms": 209.77399504045025,
+          "chars": 1
+        },
+        {
+          "ms": 222.28762303711846,
+          "chars": 1
+        },
+        {
+          "ms": 235.1342160254717,
+          "chars": 1
+        },
+        {
+          "ms": 248.3787460369058,
+          "chars": 1
+        },
+        {
+          "ms": 261.45354099571705,
+          "chars": 1
+        },
+        {
+          "ms": 274.64445005171,
+          "chars": 1
+        },
+        {
+          "ms": 287.1161090442911,
+          "chars": 1
+        },
+        {
+          "ms": 299.9860970303416,
+          "chars": 1
+        },
+        {
+          "ms": 313.02740704268217,
+          "chars": 1
+        },
+        {
+          "ms": 326.37361803790554,
+          "chars": 1
+        },
+        {
+          "ms": 339.8627410060726,
+          "chars": 1
+        },
+        {
+          "ms": 353.30797400092706,
+          "chars": 1
+        },
+        {
+          "ms": 366.3559650303796,
+          "chars": 1
+        },
+        {
+          "ms": 379.47847601026297,
+          "chars": 1
+        },
+        {
+          "ms": 392.5084270304069,
+          "chars": 1
+        },
+        {
+          "ms": 405.6586820515804,
+          "chars": 1
+        },
+        {
+          "ms": 418.9042950165458,
+          "chars": 1
+        },
+        {
+          "ms": 432.2255720035173,
+          "chars": 1
+        },
+        {
+          "ms": 445.29497204348445,
+          "chars": 1
+        },
+        {
+          "ms": 458.51450104964897,
+          "chars": 1
+        },
+        {
+          "ms": 471.7010880121961,
+          "chars": 1
+        },
+        {
+          "ms": 484.52211800031364,
+          "chars": 1
+        },
+        {
+          "ms": 496.76046503009275,
+          "chars": 1
+        },
+        {
+          "ms": 509.3332280521281,
+          "chars": 1
+        },
+        {
+          "ms": 521.6882840031758,
+          "chars": 1
+        },
+        {
+          "ms": 534.2453760094941,
+          "chars": 1
+        },
+        {
+          "ms": 546.8034420046024,
+          "chars": 1
+        },
+        {
+          "ms": 558.9943920494989,
+          "chars": 1
+        },
+        {
+          "ms": 571.4104220387526,
+          "chars": 1
+        },
+        {
+          "ms": 584.0240160468966,
+          "chars": 1
+        },
+        {
+          "ms": 596.5930770034902,
+          "chars": 1
+        },
+        {
+          "ms": 609.0585350175388,
+          "chars": 1
+        },
+        {
+          "ms": 621.6623420477845,
+          "chars": 1
+        },
+        {
+          "ms": 633.9247520081699,
+          "chars": 1
+        },
+        {
+          "ms": 646.1870890343562,
+          "chars": 1
+        },
+        {
+          "ms": 658.3963620360009,
+          "chars": 1
+        },
+        {
+          "ms": 670.6836850498803,
+          "chars": 1
+        },
+        {
+          "ms": 682.8895270009525,
+          "chars": 1
+        },
+        {
+          "ms": 695.1473220251501,
+          "chars": 1
+        },
+        {
+          "ms": 707.9932110500522,
+          "chars": 1
+        },
+        {
+          "ms": 720.6135700107552,
+          "chars": 1
+        },
+        {
+          "ms": 733.719939016737,
+          "chars": 1
+        },
+        {
+          "ms": 747.5509740179405,
+          "chars": 1
+        },
+        {
+          "ms": 761.0367020242848,
+          "chars": 1
+        },
+        {
+          "ms": 774.2164049996063,
+          "chars": 1
+        },
+        {
+          "ms": 787.2645659954287,
+          "chars": 1
+        },
+        {
+          "ms": 799.8467120341957,
+          "chars": 1
+        },
+        {
+          "ms": 812.701646995265,
+          "chars": 1
+        },
+        {
+          "ms": 826.1926069972105,
+          "chars": 1
+        },
+        {
+          "ms": 839.62127804989,
+          "chars": 1
+        },
+        {
+          "ms": 854.0577420499176,
+          "chars": 1
+        },
+        {
+          "ms": 866.3894290220924,
+          "chars": 1
+        },
+        {
+          "ms": 879.9756030202843,
+          "chars": 1
+        },
+        {
+          "ms": 893.4174540336244,
+          "chars": 1
+        },
+        {
+          "ms": 906.7307990044355,
+          "chars": 1
+        },
+        {
+          "ms": 920.5450490117073,
+          "chars": 1
+        },
+        {
+          "ms": 933.2182329962961,
+          "chars": 1
+        },
+        {
+          "ms": 945.3826370299794,
+          "chars": 1
+        },
+        {
+          "ms": 958.6968880030327,
+          "chars": 1
+        }
+      ]
+    }
+  ],
+  "http_smoke": {
+    "client_disconnect_upstream_closed": true,
+    "upstream_chars_after_disconnect": 2
+  }
+}

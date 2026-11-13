@@ -1,0 +1,766 @@
+{
+  "scope": "real non-CUDA Mooncake TCP-configured cross-process local Store API; payload branch untraced; no model/GPU/RDMA/HA",
+  "revision": "formal-v3 cross-process reader; v1 same-process and v2 cross-process retained separately",
+  "audit": {
+    "planned": 238,
+    "pass": 228,
+    "observed": 10,
+    "fail": 0,
+    "ambiguous": 0,
+    "missing": 0,
+    "accepted": true,
+    "valid_latency_samples": 120,
+    "invalid_timing_samples": 0
+  },
+  "data_objects": 40,
+  "hash_matches": 40,
+  "primary_data_get_clients": [
+    "B"
+  ],
+  "timing_scope": "worker perf_counter_ns Store call only; put payload generated before timer; hash after timer; formal-v3 only",
+  "timing_samples_per_size_op": 10,
+  "descriptive_only": true,
+  "timings": [
+    {
+      "size_bytes": 1,
+      "op": "put",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.1849985,
+      "min_ms": 0.178237,
+      "max_ms": 0.224062
+    },
+    {
+      "size_bytes": 1,
+      "op": "get",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.13895649999999998,
+      "min_ms": 0.133663,
+      "max_ms": 0.568758
+    },
+    {
+      "size_bytes": 4096,
+      "op": "put",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.1866365,
+      "min_ms": 0.178111,
+      "max_ms": 0.225459
+    },
+    {
+      "size_bytes": 4096,
+      "op": "get",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.1370205,
+      "min_ms": 0.123741,
+      "max_ms": 0.170036
+    },
+    {
+      "size_bytes": 65536,
+      "op": "put",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.23209849999999999,
+      "min_ms": 0.207147,
+      "max_ms": 0.290296
+    },
+    {
+      "size_bytes": 65536,
+      "op": "get",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.159568,
+      "min_ms": 0.151451,
+      "max_ms": 0.212777
+    },
+    {
+      "size_bytes": 1048576,
+      "op": "put",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.6984159999999999,
+      "min_ms": 0.629237,
+      "max_ms": 1.020859
+    },
+    {
+      "size_bytes": 1048576,
+      "op": "get",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.5400855,
+      "min_ms": 0.305261,
+      "max_ms": 1.062833
+    },
+    {
+      "size_bytes": 1,
+      "op": "remove",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.07958,
+      "min_ms": 0.075325,
+      "max_ms": 0.093587
+    },
+    {
+      "size_bytes": 4096,
+      "op": "remove",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.0802445,
+      "min_ms": 0.07491,
+      "max_ms": 0.127684
+    },
+    {
+      "size_bytes": 65536,
+      "op": "remove",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.075862,
+      "min_ms": 0.074629,
+      "max_ms": 0.098272
+    },
+    {
+      "size_bytes": 1048576,
+      "op": "remove",
+      "planned": 10,
+      "failed": 0,
+      "invalid_timing": 0,
+      "valid": 10,
+      "median_ms": 0.0750175,
+      "min_ms": 0.072631,
+      "max_ms": 0.084238
+    }
+  ],
+  "duplicate_cases": [
+    {
+      "case": {
+        "id": "op-126",
+        "op": "put",
+        "client": "A",
+        "expected_kind": "code",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "initial",
+        "key": "exp24-formal-v3/duplicate",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-126",
+        "op": "put",
+        "complete": true,
+        "latency_ms": 0.163361,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "normal",
+        "key": "exp24-formal-v3/duplicate",
+        "pid": 123880,
+        "request_sha256": "64c3cc830ce140c54482f8568a2d565b655c3f73b4fa7f414120a074e3a5ce01",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720213378862722,
+        "finished_perf_ns": 720213379042755
+      }
+    },
+    {
+      "case": {
+        "id": "op-127",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "bytes",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "initial",
+        "key": "exp24-formal-v3/duplicate",
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+      },
+      "observation": {
+        "id": "op-127",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.155634,
+        "kind": "bytes",
+        "size": 4096,
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82",
+        "client": "B",
+        "stage": "normal",
+        "key": "exp24-formal-v3/duplicate",
+        "pid": 123927,
+        "request_sha256": "53d02931557cc158b81ce7ac567fa69c2b0530f43611fad213c4c0e4ca15cd58",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720213379201837,
+        "finished_perf_ns": 720213379377034
+      }
+    },
+    {
+      "case": {
+        "id": "op-128",
+        "op": "put",
+        "client": "A",
+        "expected_kind": "code",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "identical",
+        "key": "exp24-formal-v3/duplicate",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-128",
+        "op": "put",
+        "complete": true,
+        "latency_ms": 0.104076,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "normal",
+        "key": "exp24-formal-v3/duplicate",
+        "pid": 123880,
+        "request_sha256": "6346c55c58e8a41233fa29de8e4fffc9af37d0da84fe22f0f8c9266423151c00",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720213379548664,
+        "finished_perf_ns": 720213379670546
+      }
+    },
+    {
+      "case": {
+        "id": "op-129",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "bytes",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "identical",
+        "key": "exp24-formal-v3/duplicate",
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+      },
+      "observation": {
+        "id": "op-129",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.211798,
+        "kind": "bytes",
+        "size": 4096,
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82",
+        "client": "B",
+        "stage": "normal",
+        "key": "exp24-formal-v3/duplicate",
+        "pid": 123927,
+        "request_sha256": "76cce5e00c45ed207a050754df825b40b29bd62af4dac907cd3a9ee60814735f",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720213379906056,
+        "finished_perf_ns": 720213380140307
+      }
+    },
+    {
+      "case": {
+        "id": "op-130",
+        "op": "put",
+        "client": "A",
+        "expected_kind": "code",
+        "size": 4096,
+        "seed": "different-content",
+        "duplicate_variant": "same-size",
+        "key": "exp24-formal-v3/duplicate",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-130",
+        "op": "put",
+        "complete": true,
+        "latency_ms": 0.098243,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "normal",
+        "key": "exp24-formal-v3/duplicate",
+        "pid": 123880,
+        "request_sha256": "ad0c94cbf332d561f453d1ed68a5ca31583ddff0d45e59e45eef5ffe114b5844",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720213380347423,
+        "finished_perf_ns": 720213380463911
+      }
+    },
+    {
+      "case": {
+        "id": "op-131",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "bytes",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "same-size",
+        "key": "exp24-formal-v3/duplicate",
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+      },
+      "observation": {
+        "id": "op-131",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.15535,
+        "kind": "bytes",
+        "size": 4096,
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82",
+        "client": "B",
+        "stage": "normal",
+        "key": "exp24-formal-v3/duplicate",
+        "pid": 123927,
+        "request_sha256": "70a6c8ce08bf65a4a55f4e208020331fa3167a4ee8c22e20c43bf44f38ce8d2c",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720213380631506,
+        "finished_perf_ns": 720213380802682
+      }
+    },
+    {
+      "case": {
+        "id": "op-132",
+        "op": "put",
+        "client": "A",
+        "expected_kind": "code",
+        "size": 8192,
+        "seed": "other-length",
+        "duplicate_variant": "different-size",
+        "key": "exp24-formal-v3/duplicate",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-132",
+        "op": "put",
+        "complete": true,
+        "latency_ms": 0.096273,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "normal",
+        "key": "exp24-formal-v3/duplicate",
+        "pid": 123880,
+        "request_sha256": "326afadfc895e9961188363d64935a1d8431fe510049e424b9b1361a179d3d8b",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720213380970805,
+        "finished_perf_ns": 720213381085456
+      }
+    },
+    {
+      "case": {
+        "id": "op-133",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "bytes",
+        "size": 4096,
+        "seed": "duplicate-original",
+        "duplicate_variant": "different-size",
+        "key": "exp24-formal-v3/duplicate",
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+      },
+      "observation": {
+        "id": "op-133",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.155045,
+        "kind": "bytes",
+        "size": 4096,
+        "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82",
+        "client": "B",
+        "stage": "normal",
+        "key": "exp24-formal-v3/duplicate",
+        "pid": 123927,
+        "request_sha256": "3f8abdf6efae6cb91178242b0ad6da0833a98bbea9b00d296a7bc2d897bc3b85",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720213381247429,
+        "finished_perf_ns": 720213381421870
+      }
+    }
+  ],
+  "lifecycle_observations": [
+    {
+      "case": {
+        "id": "op-218",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "bytes",
+        "size": 0,
+        "stage": "master-down",
+        "key": "exp24-formal-v3/survivor",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "observation": {
+        "id": "op-218",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.261075,
+        "kind": "bytes",
+        "size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "client": "B",
+        "stage": "master-down",
+        "key": "exp24-formal-v3/survivor",
+        "pid": 123927,
+        "request_sha256": "d387b44ed59c384376fb0ada466a46e2126498afcf2a615c18ca69ecfa6141dc",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720214269900990,
+        "finished_perf_ns": 720214270186852
+      }
+    },
+    {
+      "case": {
+        "id": "op-219",
+        "op": "is_exist",
+        "client": "A",
+        "expected_kind": "observation",
+        "stage": "master-down",
+        "key": "exp24-formal-v3/survivor"
+      },
+      "observation": {
+        "id": "op-219",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 4270.062373,
+        "kind": "code",
+        "value": -900,
+        "client": "A",
+        "stage": "master-down",
+        "key": "exp24-formal-v3/survivor",
+        "pid": 123880,
+        "request_sha256": "38019d1f691b61cc8ed9aae60a3e951dfad8ee14b06e469a29aed805e0771cf8",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720214270410614,
+        "finished_perf_ns": 720218540553196
+      }
+    },
+    {
+      "case": {
+        "id": "op-220",
+        "op": "put",
+        "client": "A",
+        "expected_kind": "observation",
+        "size": 32,
+        "seed": "down",
+        "stage": "master-down",
+        "key": "exp24-formal-v3/down-write"
+      },
+      "observation": {
+        "id": "op-220",
+        "op": "put",
+        "complete": true,
+        "latency_ms": 4270.819065,
+        "kind": "code",
+        "value": -900,
+        "client": "A",
+        "stage": "master-down",
+        "key": "exp24-formal-v3/down-write",
+        "pid": 123880,
+        "request_sha256": "0acbd298b983a2da02553f9da5f99448d5c4825d3b96b8f78fca357126e30791",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720218540974069,
+        "finished_perf_ns": 720222811939914
+      }
+    },
+    {
+      "case": {
+        "id": "op-221",
+        "op": "is_exist",
+        "client": "A",
+        "expected_kind": "observation",
+        "stage": "restart-existing-client-immediate",
+        "key": "exp24-formal-v3/survivor"
+      },
+      "observation": {
+        "id": "op-221",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 0.264699,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "restart-existing-client-immediate",
+        "key": "exp24-formal-v3/survivor",
+        "pid": 123880,
+        "request_sha256": "d4229d2a16106e3c1843c1126dae3ff3e799f9324aaeccf011aa8f881a22ebe9",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720225866456443,
+        "finished_perf_ns": 720225866752813
+      }
+    },
+    {
+      "case": {
+        "id": "op-222",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "observation",
+        "stage": "restart-existing-client-immediate",
+        "key": "exp24-formal-v3/survivor"
+      },
+      "observation": {
+        "id": "op-222",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.400938,
+        "kind": "bytes",
+        "size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "client": "B",
+        "stage": "restart-existing-client-immediate",
+        "key": "exp24-formal-v3/survivor",
+        "pid": 123927,
+        "request_sha256": "aa663003338ca14149669eccf2c43d65157be0e84b3e8f736749f859b905bdcc",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720225867051196,
+        "finished_perf_ns": 720225867487253
+      }
+    },
+    {
+      "case": {
+        "id": "op-223",
+        "op": "is_exist",
+        "client": "A",
+        "expected_kind": "observation",
+        "stage": "restart-existing-client-after12s",
+        "key": "exp24-formal-v3/survivor"
+      },
+      "observation": {
+        "id": "op-223",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 0.223209,
+        "kind": "code",
+        "value": 0,
+        "client": "A",
+        "stage": "restart-existing-client-after12s",
+        "key": "exp24-formal-v3/survivor",
+        "pid": 123880,
+        "request_sha256": "bee036d57f1787e5f9dc02836e6b1793da79bff8094ce53f3dbacf46d0fee9d1",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720237868060829,
+        "finished_perf_ns": 720237868332354
+      }
+    },
+    {
+      "case": {
+        "id": "op-224",
+        "op": "get",
+        "client": "B",
+        "expected_kind": "observation",
+        "stage": "restart-existing-client-after12s",
+        "key": "exp24-formal-v3/survivor"
+      },
+      "observation": {
+        "id": "op-224",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.153106,
+        "kind": "bytes",
+        "size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "client": "B",
+        "stage": "restart-existing-client-after12s",
+        "key": "exp24-formal-v3/survivor",
+        "pid": 123927,
+        "request_sha256": "d357193ffe4d76130c5b57d170d8c4c49d90b7877e27ff43522c4f3c16f4f50d",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720237868595550,
+        "finished_perf_ns": 720237868775351
+      }
+    },
+    {
+      "case": {
+        "id": "op-226",
+        "op": "is_exist",
+        "client": "C",
+        "expected_kind": "observation",
+        "stage": "restart-fresh-client",
+        "key": "exp24-formal-v3/survivor"
+      },
+      "observation": {
+        "id": "op-226",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 0.177282,
+        "kind": "code",
+        "value": 0,
+        "client": "C",
+        "stage": "restart-fresh-client",
+        "key": "exp24-formal-v3/survivor",
+        "pid": 124022,
+        "request_sha256": "0934b7c487fd1d9af53e39b88bad70a72144aff72fcb43dd2b3f6d44a5a1daf4",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720237903263787,
+        "finished_perf_ns": 720237903464446
+      }
+    },
+    {
+      "case": {
+        "id": "op-227",
+        "op": "get",
+        "client": "C",
+        "expected_kind": "observation",
+        "stage": "restart-fresh-client",
+        "key": "exp24-formal-v3/survivor"
+      },
+      "observation": {
+        "id": "op-227",
+        "op": "get",
+        "complete": true,
+        "latency_ms": 0.103896,
+        "kind": "bytes",
+        "size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "client": "C",
+        "stage": "restart-fresh-client",
+        "key": "exp24-formal-v3/survivor",
+        "pid": 124022,
+        "request_sha256": "12050e8e9ed26a5aa404e9a6d5c916168db12b144cdf94a9ac3441d101ce3345",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720237903693379,
+        "finished_perf_ns": 720237903815741
+      }
+    },
+    {
+      "case": {
+        "id": "op-232",
+        "op": "remove",
+        "client": "C",
+        "expected_kind": "observation",
+        "stage": "cleanup",
+        "key": "exp24-formal-v3/survivor"
+      },
+      "observation": {
+        "id": "op-232",
+        "op": "remove",
+        "complete": true,
+        "latency_ms": 0.080561,
+        "kind": "code",
+        "value": -704,
+        "client": "C",
+        "stage": "cleanup",
+        "key": "exp24-formal-v3/survivor",
+        "pid": 124022,
+        "request_sha256": "a9398c0092abc0cd80e0abe26575fcb4463c9774fe090ee52eb79b77e6632ce5",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720237906136413,
+        "finished_perf_ns": 720237906234486
+      }
+    },
+    {
+      "case": {
+        "id": "op-233",
+        "op": "is_exist",
+        "client": "C",
+        "expected_kind": "code",
+        "stage": "cleanup",
+        "key": "exp24-formal-v3/survivor",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-233",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 0.07206,
+        "kind": "code",
+        "value": 0,
+        "client": "C",
+        "stage": "cleanup",
+        "key": "exp24-formal-v3/survivor",
+        "pid": 124022,
+        "request_sha256": "9f14e22089a5eecc81c8b45ca5c197ff6a55364a3f1371598525ad2125304a87",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720237906373850,
+        "finished_perf_ns": 720237906461212
+      }
+    },
+    {
+      "case": {
+        "id": "op-234",
+        "op": "remove",
+        "client": "C",
+        "expected_kind": "observation",
+        "stage": "cleanup",
+        "key": "exp24-formal-v3/down-write"
+      },
+      "observation": {
+        "id": "op-234",
+        "op": "remove",
+        "complete": true,
+        "latency_ms": 0.071522,
+        "kind": "code",
+        "value": -704,
+        "client": "C",
+        "stage": "cleanup",
+        "key": "exp24-formal-v3/down-write",
+        "pid": 124022,
+        "request_sha256": "21859dc7c2d20b32ec593939644765ac715dd21f82174a1aed7d76fb7bbc35b8",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720237906608699,
+        "finished_perf_ns": 720237906696268
+      }
+    },
+    {
+      "case": {
+        "id": "op-235",
+        "op": "is_exist",
+        "client": "C",
+        "expected_kind": "code",
+        "stage": "cleanup",
+        "key": "exp24-formal-v3/down-write",
+        "code": 0
+      },
+      "observation": {
+        "id": "op-235",
+        "op": "is_exist",
+        "complete": true,
+        "latency_ms": 0.070974,
+        "kind": "code",
+        "value": 0,
+        "client": "C",
+        "stage": "cleanup",
+        "key": "exp24-formal-v3/down-write",
+        "pid": 124022,
+        "request_sha256": "b257d24ee6d08a51da3d0a1984f5d0f4f4045558f165d5e929c47fae3e1fe364",
+        "plan_sha256": "a670e294a11ee9425766edf4127a1dcff81182b27fab9860b0c2526295694b75",
+        "worker_sha256": "e20b78969897ba93f6f86cb18ca3a620fa2bc845ba86a9c5190e9618ad67b832",
+        "started_perf_ns": 720237906833877,
+        "finished_perf_ns": 720237906920318
+      }
+    }
+  ]
+}

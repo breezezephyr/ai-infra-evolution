@@ -1,0 +1,191 @@
+{
+  "commit": "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+  "repository": "https://github.com/deepseek-ai/DeepInfer",
+  "scope": "SWA bounded replay read-only source audit",
+  "full_git_checkout": false,
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/README.md",
+      "sha256": "b55624158ada4dc21b882d24ded06bf82f65350b44d170877b68395712cd670d",
+      "bytes": 4660,
+      "acquisition": "verified exp22 fixed-commit cache"
+    },
+    {
+      "path": "csrc/engine/input_metadata/prepare_tensor_input.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/input_metadata/prepare_tensor_input.hpp",
+      "sha256": "ceceefb7639b90e10379c2cc15cd5e00f8efc84fe238058c5b19498bb2d6caa8",
+      "bytes": 2629,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "csrc/engine/input_metadata/prepare_tensor_input_v4.cpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/input_metadata/prepare_tensor_input_v4.cpp",
+      "sha256": "93a6b1dd533db116d2f7540c78d6bb5419bdb8c1d2063b031ab8b1a8cc138fe2",
+      "bytes": 32119,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "csrc/engine/mtp_varlen.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/mtp_varlen.hpp",
+      "sha256": "164f45db4cccd6d6909dd2846e7dfffb57754b108af679443bf4bd71ec33785a",
+      "bytes": 12151,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "csrc/engine/prepare_sample.cpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/prepare_sample.cpp",
+      "sha256": "277a53eeed3295dd7b4467272ed4fc44bd2220586f2fd771cbbfca3edffda523",
+      "bytes": 15967,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "csrc/engine/pybind_scheduler.cpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/pybind_scheduler.cpp",
+      "sha256": "a81d71dbfe5a0d7ad5c0c79c104abd65ada2ab57b8073f339e0c13a5cb74a438",
+      "bytes": 9517,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "csrc/engine/pybind_sequence.cpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/pybind_sequence.cpp",
+      "sha256": "872775774022bb27fd4b1fade37ec9f6fe9ec4c3051844206e3ec36c8103a9ce",
+      "bytes": 11935,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "csrc/engine/scheduler.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/scheduler.hpp",
+      "sha256": "c14de4d5341170227b82ddf2d146d9c6a337937885a6886237aab5a7238da5db",
+      "bytes": 66347,
+      "acquisition": "verified exp22 fixed-commit cache"
+    },
+    {
+      "path": "csrc/engine/sequence.hpp",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/csrc/engine/sequence.hpp",
+      "sha256": "67ef6ea70ee31a519fd632ee2d7be4710a6d796f786cf336dd3d3f06f7fbe16b",
+      "bytes": 17396,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "deepinfer/_C/engine.pyi",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/_C/engine.pyi",
+      "sha256": "fbcb1e99b66b14cf4cbb1a92291bd1fca1aae38ddb9077b0db4e5cd55ae05ffe",
+      "bytes": 30725,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "deepinfer/__init__.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/__init__.py",
+      "sha256": "049d7fa1492d4b0c3f6947b7150946ec92a57e74b4ae25415392de7aed5ec7a4",
+      "bytes": 2369,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "deepinfer/engine/llm_engine.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/engine/llm_engine.py",
+      "sha256": "a636d60ca5711f6b7c21e68370c3bd9c2de6fc3f4439a7429ca4f572f0edeebe",
+      "bytes": 45489,
+      "acquisition": "verified exp22 fixed-commit cache"
+    },
+    {
+      "path": "deepinfer/entrypoints/llm.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/entrypoints/llm.py",
+      "sha256": "069a5333d9f47047ccc87584792627dfa6eee9cf93bdc046107cbd0218a6bada",
+      "bytes": 8807,
+      "acquisition": "verified exp22 fixed-commit cache"
+    },
+    {
+      "path": "deepinfer/environ.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/environ.py",
+      "sha256": "fe2c531989c419f0b51b169a07f5ed826dcec7f95c0c5bc3a351805923c4f218",
+      "bytes": 8738,
+      "acquisition": "verified exp22 fixed-commit cache"
+    },
+    {
+      "path": "deepinfer/model_executor/input_metadata/yoco.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/input_metadata/yoco.py",
+      "sha256": "882a33de3da0fba81644adde9e9e1a90ec3d3ff34a8f3ad4dda18faafebd6460",
+      "bytes": 10478,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "deepinfer/model_executor/model_metadata_utils.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/model_metadata_utils.py",
+      "sha256": "1ef7803d2b0083d025de676c841db9a317235b881fb9ebf6781ec76d49d7b22c",
+      "bytes": 9821,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "deepinfer/model_executor/models/deepseek.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/models/deepseek.py",
+      "sha256": "881fe2839b34d191ffd50ca6d5b7b57443b43ed8d811e204e4d48164f31f613a",
+      "bytes": 24852,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/yoco.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/model_executor/models/v4_modules/yoco.py",
+      "sha256": "7dc8ad7b6ca4902bcef67b1cbc4804592995c5b6af9ebaa00b59cc338c1aa6ec",
+      "bytes": 6540,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "deepinfer/sequence.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/sequence.py",
+      "sha256": "ba8973ff5dbb681a1af0533b8ca1ade85a10204c891cc944a795e72dc89419f9",
+      "bytes": 11248,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "deepinfer/worker/cache_engine.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/worker/cache_engine.py",
+      "sha256": "ca3d80120fe6bc50971b180278dd575d585e1a6c7a3c2174a8a6fd6213454161",
+      "bytes": 49243,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "deepinfer/worker/model_runner.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/deepinfer/worker/model_runner.py",
+      "sha256": "9e2e18d136c9e0c9f23905ff994e9d23afaa94aa7a133d425e7fc1fc069033ef",
+      "bytes": 29533,
+      "acquisition": "verified exp22 fixed-commit cache"
+    },
+    {
+      "path": "doc/inference_deployment_qa.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/doc/inference_deployment_qa.md",
+      "sha256": "55d428d9958aa35ac863d7f5a2eb21528e683226784b1ac334e8068e21f2326f",
+      "bytes": 28865,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "examples/yoco/README.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/examples/yoco/README.md",
+      "sha256": "ac84c1fdf99a75ef04db3184b8c81d0774f377152abf9ce32a40145e2f4c8d79",
+      "bytes": 2267,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "examples/yoco/run_yoco_equiv_l2.sh",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/examples/yoco/run_yoco_equiv_l2.sh",
+      "sha256": "217004ee05e91ef59284b4cafc84f7978ddcc1b675007fa966527fa4fea6b6cc",
+      "bytes": 421,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "examples/yoco/yoco_equiv.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/examples/yoco/yoco_equiv.py",
+      "sha256": "4abe933e510b7797ada8835d57d7504dcc049834c990429316e34e937f6c0032",
+      "bytes": 51830,
+      "acquisition": "fixed-commit official raw"
+    },
+    {
+      "path": "tests/engine/test_sequence.py",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/tests/engine/test_sequence.py",
+      "sha256": "387e70015fbedd6a791064dd134d8cc338c3b6fc2f35089431f07495e99b22e1",
+      "bytes": 5573,
+      "acquisition": "fixed-commit official raw"
+    }
+  ],
+  "updated_at_utc": "2026-10-26T05:56:50.164205+00:00"
+}

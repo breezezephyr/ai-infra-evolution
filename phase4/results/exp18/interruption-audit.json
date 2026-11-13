@@ -1,0 +1,1287 @@
+{
+  "schema_version": "exp18.interruption.v1",
+  "source_root": "phase4",
+  "sources": [
+    {
+      "path": "results/exp16/browser-formal-v1/records.json",
+      "sha256": "340dadd083a9f58aad512422efd7747a69fe07d154cffc17578fc343c6ff68d0",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-0-1792668660424.json",
+      "sha256": "4fed38c779e154b446371c90aeefb5ced93f49d78b6d1d2a37d85f50e47d6310",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-1-1792668668080.json",
+      "sha256": "3f33def30b56f36cd78f957ac5b843257821f6fccff980e7b829297c4feb19a5",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-2-1792668675316.json",
+      "sha256": "5896653dd667ab0de2061fc1cebbc1b58438f9bd5ccb473629926facdf564fc0",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-3-1792668682526.json",
+      "sha256": "30c9ea0389c6c727edb687dee8097fe975d39954e140906aeadedfbb8cf2265b",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-4-1792668690708.json",
+      "sha256": "1ab2664ed9d94f62990017a2ac26912703e8472d144569a61541c5af11d9867e",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-5-1792668698491.json",
+      "sha256": "3ca69a6eb59ff019d64ee37e8b05a7576958e0a1fb428a02bec451da12887f38",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-6-1792668706487.json",
+      "sha256": "4b29ee521a14db5897f3b51fe21df5ed6b0e11684edd5ea6b1004b1a0188a269",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-7-1792668717637.json",
+      "sha256": "8da33c959a4d8b311fbe1987037046079756bc8083f531b1afbfb111e9fbea5e",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-8-1792668728627.json",
+      "sha256": "5bf19e4c54d390b505458bebca9c4264c396aab887e488aa769feb331224d36e",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-9-1792668739682.json",
+      "sha256": "970c9a7b8a2b5c15995ded37c6fbe8272ae712ef7eb07b1184b4d69169b9a57f",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-10-1792668744854.json",
+      "sha256": "36f693c07728693f572333ca2711e20a6e99a283ce4fe7434eeb0a064889027f",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-11-1792668749941.json",
+      "sha256": "1a3975179a06c5008ddc0696f8209dfaa3faf5c1ed70561ee3a36f38da670257",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-12-1792668755147.json",
+      "sha256": "9f111d8e65e7f293fbe658849c47b9fd0615fca8ba386cadcc634fb2c96f63c2",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-13-1792668761005.json",
+      "sha256": "5666162cf5ecdbc246d7345297afd45b2de11c2f66f59a6270eff289bb25e421",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-14-1792668766708.json",
+      "sha256": "210ec25209b83c2c5d8f0bf932abda4e7726a9f80fbd3169db44126d50ed0b7f",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-15-1792668772588.json",
+      "sha256": "ca53410f31488811d623cf74027fd013a5b6e7cb5bef2e2e7ca9dd6660b39c7c",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-16-1792668781704.json",
+      "sha256": "fc48b6adb0403117a759c2cdf2efbd2f432caf210a789bd24bbad6cb1c87c058",
+      "status": "ok"
+    },
+    {
+      "path": "results/exp16/server/final-v1/server-exp16-formal-17-1792668790840.json",
+      "sha256": "a3763d48e8389766d3401c53a8803d80da8e01af8b2b3264bea62e3528c6bc96",
+      "status": "ok"
+    }
+  ],
+  "issues": [],
+  "definitions": {
+    "render_tail_ms": "(g1.last_render_end_frame - trigger.frame) * 1000 / context_rate; exclusive AudioContext frame boundaries",
+    "server_stop_to_workers_joined_ms": "(g1.workers_joined.monotonic_ns - g1.stop_signal_set.monotonic_ns) / 1e6; server_monotonic only",
+    "controlled_stale_probe": "full cases only; controlled receive matched to worklet stale_probe generation_fence by generation/offset/samples; ordinary late frames excluded",
+    "new_generation": "generation 2 positive played=sent=received=accepted=server.sent=server.playback, done=true, queued=discarded=0",
+    "assistant_history": "server g1 segments with end <= reported playback; compare their concatenated text to actual g2 assistant prompt messages",
+    "quantiles": "linear interpolation at (n-1)*q; values_ms contains every measured case",
+    "scope": "explicit playback-position trigger; render consumption proxy, no microphone onset, VAD, acoustic stop, or client/server clock subtraction"
+  },
+  "coverage": {
+    "expected_cases": 18,
+    "browser_records": 18,
+    "unique_browser_cases": 18,
+    "server_pairs": 18,
+    "complete_design": true
+  },
+  "overall": {
+    "n": 18,
+    "expected_n": 18,
+    "render_tail_ms": {
+      "n": 18,
+      "denominator": 18,
+      "missing": 0,
+      "values_ms": [
+        0.0,
+        0.0,
+        0.0,
+        2.6666666666666665,
+        2.6666666666666665,
+        2.6666666666666665,
+        2.6666666666666665,
+        2.6666666666666665,
+        2.6666666666666665,
+        1890.0,
+        1890.0,
+        1910.0,
+        1920.0,
+        1920.0,
+        1920.0,
+        1940.0,
+        1940.0,
+        1980.0
+      ],
+      "min_ms": 0.0,
+      "p50_ms": 946.3333333333333,
+      "p95_ms": 1946.0,
+      "max_ms": 1980.0,
+      "mean_ms": 962.5555555555555
+    },
+    "server_stop_to_workers_joined_ms": {
+      "n": 18,
+      "denominator": 18,
+      "missing": 0,
+      "values_ms": [
+        9.347302,
+        11.21081,
+        12.129562,
+        12.748821,
+        13.816655,
+        16.688521,
+        16.865808,
+        18.171727,
+        18.199773,
+        18.323537,
+        23.330598,
+        24.657805,
+        29.830023,
+        43.112684,
+        47.687254,
+        58.075269,
+        116.750191,
+        230.926365
+      ],
+      "min_ms": 9.347302,
+      "p50_ms": 18.261655,
+      "p95_ms": 133.87661709999983,
+      "max_ms": 230.926365,
+      "mean_ms": 40.10403916666667
+    },
+    "controlled_stale_probe": {
+      "denominator": 9,
+      "expected_n": 9,
+      "missing": 0,
+      "received_cases": 9,
+      "received_events": 9,
+      "generation_fence_cases": 9,
+      "generation_fence_events": 9,
+      "accepted_events": 0,
+      "all_fenced": true
+    },
+    "new_generation": {
+      "denominator": 18,
+      "expected_n": 18,
+      "fully_played_cases": 18,
+      "not_fully_played_cases": 0,
+      "missing": 0,
+      "all_fully_played": true
+    },
+    "assistant_history": {
+      "denominator": 18,
+      "expected_n": 18,
+      "missing": 0,
+      "complete_segment_cases": 6,
+      "complete_segments": 6,
+      "empty_cases": 12,
+      "mismatch_cases": 0
+    }
+  },
+  "by_policy": {
+    "server_only": {
+      "n": 9,
+      "expected_n": 9,
+      "render_tail_ms": {
+        "n": 9,
+        "denominator": 9,
+        "missing": 0,
+        "values_ms": [
+          1890.0,
+          1890.0,
+          1910.0,
+          1920.0,
+          1920.0,
+          1920.0,
+          1940.0,
+          1940.0,
+          1980.0
+        ],
+        "min_ms": 1890.0,
+        "p50_ms": 1920.0,
+        "p95_ms": 1964.0,
+        "max_ms": 1980.0,
+        "mean_ms": 1923.3333333333333
+      },
+      "server_stop_to_workers_joined_ms": {
+        "n": 9,
+        "denominator": 9,
+        "missing": 0,
+        "values_ms": [
+          9.347302,
+          11.21081,
+          16.688521,
+          16.865808,
+          18.323537,
+          23.330598,
+          43.112684,
+          116.750191,
+          230.926365
+        ],
+        "min_ms": 9.347302,
+        "p50_ms": 18.323537,
+        "p95_ms": 185.25589539999996,
+        "max_ms": 230.926365,
+        "mean_ms": 54.06175733333333
+      },
+      "controlled_stale_probe": {
+        "denominator": 0,
+        "expected_n": 0,
+        "missing": 0,
+        "received_cases": 0,
+        "received_events": 0,
+        "generation_fence_cases": 0,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "all_fenced": null
+      },
+      "new_generation": {
+        "denominator": 9,
+        "expected_n": 9,
+        "fully_played_cases": 9,
+        "not_fully_played_cases": 0,
+        "missing": 0,
+        "all_fully_played": true
+      },
+      "assistant_history": {
+        "denominator": 9,
+        "expected_n": 9,
+        "missing": 0,
+        "complete_segment_cases": 3,
+        "complete_segments": 3,
+        "empty_cases": 6,
+        "mismatch_cases": 0
+      }
+    },
+    "full": {
+      "n": 9,
+      "expected_n": 9,
+      "render_tail_ms": {
+        "n": 9,
+        "denominator": 9,
+        "missing": 0,
+        "values_ms": [
+          0.0,
+          0.0,
+          0.0,
+          2.6666666666666665,
+          2.6666666666666665,
+          2.6666666666666665,
+          2.6666666666666665,
+          2.6666666666666665,
+          2.6666666666666665
+        ],
+        "min_ms": 0.0,
+        "p50_ms": 2.6666666666666665,
+        "p95_ms": 2.6666666666666665,
+        "max_ms": 2.6666666666666665,
+        "mean_ms": 1.7777777777777777
+      },
+      "server_stop_to_workers_joined_ms": {
+        "n": 9,
+        "denominator": 9,
+        "missing": 0,
+        "values_ms": [
+          12.129562,
+          12.748821,
+          13.816655,
+          18.171727,
+          18.199773,
+          24.657805,
+          29.830023,
+          47.687254,
+          58.075269
+        ],
+        "min_ms": 12.129562,
+        "p50_ms": 18.199773,
+        "p95_ms": 53.920063,
+        "max_ms": 58.075269,
+        "mean_ms": 26.146321
+      },
+      "controlled_stale_probe": {
+        "denominator": 9,
+        "expected_n": 9,
+        "missing": 0,
+        "received_cases": 9,
+        "received_events": 9,
+        "generation_fence_cases": 9,
+        "generation_fence_events": 9,
+        "accepted_events": 0,
+        "all_fenced": true
+      },
+      "new_generation": {
+        "denominator": 9,
+        "expected_n": 9,
+        "fully_played_cases": 9,
+        "not_fully_played_cases": 0,
+        "missing": 0,
+        "all_fully_played": true
+      },
+      "assistant_history": {
+        "denominator": 9,
+        "expected_n": 9,
+        "missing": 0,
+        "complete_segment_cases": 3,
+        "complete_segments": 3,
+        "empty_cases": 6,
+        "mismatch_cases": 0
+      }
+    }
+  },
+  "by_policy_and_point": [
+    {
+      "policy": "server_only",
+      "point_ms": 200,
+      "n": 3,
+      "expected_n": 3,
+      "render_tail_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          1920.0,
+          1920.0,
+          1940.0
+        ],
+        "min_ms": 1920.0,
+        "p50_ms": 1920.0,
+        "p95_ms": 1938.0,
+        "max_ms": 1940.0,
+        "mean_ms": 1926.6666666666667
+      },
+      "server_stop_to_workers_joined_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          23.330598,
+          43.112684,
+          116.750191
+        ],
+        "min_ms": 23.330598,
+        "p50_ms": 43.112684,
+        "p95_ms": 109.38644029999999,
+        "max_ms": 116.750191,
+        "mean_ms": 61.064491000000004
+      },
+      "controlled_stale_probe": {
+        "denominator": 0,
+        "expected_n": 0,
+        "missing": 0,
+        "received_cases": 0,
+        "received_events": 0,
+        "generation_fence_cases": 0,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "all_fenced": null
+      },
+      "new_generation": {
+        "denominator": 3,
+        "expected_n": 3,
+        "fully_played_cases": 3,
+        "not_fully_played_cases": 0,
+        "missing": 0,
+        "all_fully_played": true
+      },
+      "assistant_history": {
+        "denominator": 3,
+        "expected_n": 3,
+        "missing": 0,
+        "complete_segment_cases": 0,
+        "complete_segments": 0,
+        "empty_cases": 3,
+        "mismatch_cases": 0
+      }
+    },
+    {
+      "policy": "server_only",
+      "point_ms": 1000,
+      "n": 3,
+      "expected_n": 3,
+      "render_tail_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          1920.0,
+          1940.0,
+          1980.0
+        ],
+        "min_ms": 1920.0,
+        "p50_ms": 1940.0,
+        "p95_ms": 1976.0,
+        "max_ms": 1980.0,
+        "mean_ms": 1946.6666666666667
+      },
+      "server_stop_to_workers_joined_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          16.865808,
+          18.323537,
+          230.926365
+        ],
+        "min_ms": 16.865808,
+        "p50_ms": 18.323537,
+        "p95_ms": 209.66608219999995,
+        "max_ms": 230.926365,
+        "mean_ms": 88.70523666666668
+      },
+      "controlled_stale_probe": {
+        "denominator": 0,
+        "expected_n": 0,
+        "missing": 0,
+        "received_cases": 0,
+        "received_events": 0,
+        "generation_fence_cases": 0,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "all_fenced": null
+      },
+      "new_generation": {
+        "denominator": 3,
+        "expected_n": 3,
+        "fully_played_cases": 3,
+        "not_fully_played_cases": 0,
+        "missing": 0,
+        "all_fully_played": true
+      },
+      "assistant_history": {
+        "denominator": 3,
+        "expected_n": 3,
+        "missing": 0,
+        "complete_segment_cases": 0,
+        "complete_segments": 0,
+        "empty_cases": 3,
+        "mismatch_cases": 0
+      }
+    },
+    {
+      "policy": "server_only",
+      "point_ms": 4000,
+      "n": 3,
+      "expected_n": 3,
+      "render_tail_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          1890.0,
+          1890.0,
+          1910.0
+        ],
+        "min_ms": 1890.0,
+        "p50_ms": 1890.0,
+        "p95_ms": 1908.0,
+        "max_ms": 1910.0,
+        "mean_ms": 1896.6666666666667
+      },
+      "server_stop_to_workers_joined_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          9.347302,
+          11.21081,
+          16.688521
+        ],
+        "min_ms": 9.347302,
+        "p50_ms": 11.21081,
+        "p95_ms": 16.140749900000003,
+        "max_ms": 16.688521,
+        "mean_ms": 12.415544333333335
+      },
+      "controlled_stale_probe": {
+        "denominator": 0,
+        "expected_n": 0,
+        "missing": 0,
+        "received_cases": 0,
+        "received_events": 0,
+        "generation_fence_cases": 0,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "all_fenced": null
+      },
+      "new_generation": {
+        "denominator": 3,
+        "expected_n": 3,
+        "fully_played_cases": 3,
+        "not_fully_played_cases": 0,
+        "missing": 0,
+        "all_fully_played": true
+      },
+      "assistant_history": {
+        "denominator": 3,
+        "expected_n": 3,
+        "missing": 0,
+        "complete_segment_cases": 3,
+        "complete_segments": 3,
+        "empty_cases": 0,
+        "mismatch_cases": 0
+      }
+    },
+    {
+      "policy": "full",
+      "point_ms": 200,
+      "n": 3,
+      "expected_n": 3,
+      "render_tail_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          2.6666666666666665,
+          2.6666666666666665,
+          2.6666666666666665
+        ],
+        "min_ms": 2.6666666666666665,
+        "p50_ms": 2.6666666666666665,
+        "p95_ms": 2.6666666666666665,
+        "max_ms": 2.6666666666666665,
+        "mean_ms": 2.6666666666666665
+      },
+      "server_stop_to_workers_joined_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          29.830023,
+          47.687254,
+          58.075269
+        ],
+        "min_ms": 29.830023,
+        "p50_ms": 47.687254,
+        "p95_ms": 57.0364675,
+        "max_ms": 58.075269,
+        "mean_ms": 45.197515333333335
+      },
+      "controlled_stale_probe": {
+        "denominator": 3,
+        "expected_n": 3,
+        "missing": 0,
+        "received_cases": 3,
+        "received_events": 3,
+        "generation_fence_cases": 3,
+        "generation_fence_events": 3,
+        "accepted_events": 0,
+        "all_fenced": true
+      },
+      "new_generation": {
+        "denominator": 3,
+        "expected_n": 3,
+        "fully_played_cases": 3,
+        "not_fully_played_cases": 0,
+        "missing": 0,
+        "all_fully_played": true
+      },
+      "assistant_history": {
+        "denominator": 3,
+        "expected_n": 3,
+        "missing": 0,
+        "complete_segment_cases": 0,
+        "complete_segments": 0,
+        "empty_cases": 3,
+        "mismatch_cases": 0
+      }
+    },
+    {
+      "policy": "full",
+      "point_ms": 1000,
+      "n": 3,
+      "expected_n": 3,
+      "render_tail_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          2.6666666666666665,
+          2.6666666666666665,
+          2.6666666666666665
+        ],
+        "min_ms": 2.6666666666666665,
+        "p50_ms": 2.6666666666666665,
+        "p95_ms": 2.6666666666666665,
+        "max_ms": 2.6666666666666665,
+        "mean_ms": 2.6666666666666665
+      },
+      "server_stop_to_workers_joined_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          12.748821,
+          13.816655,
+          24.657805
+        ],
+        "min_ms": 12.748821,
+        "p50_ms": 13.816655,
+        "p95_ms": 23.57369,
+        "max_ms": 24.657805,
+        "mean_ms": 17.074427
+      },
+      "controlled_stale_probe": {
+        "denominator": 3,
+        "expected_n": 3,
+        "missing": 0,
+        "received_cases": 3,
+        "received_events": 3,
+        "generation_fence_cases": 3,
+        "generation_fence_events": 3,
+        "accepted_events": 0,
+        "all_fenced": true
+      },
+      "new_generation": {
+        "denominator": 3,
+        "expected_n": 3,
+        "fully_played_cases": 3,
+        "not_fully_played_cases": 0,
+        "missing": 0,
+        "all_fully_played": true
+      },
+      "assistant_history": {
+        "denominator": 3,
+        "expected_n": 3,
+        "missing": 0,
+        "complete_segment_cases": 0,
+        "complete_segments": 0,
+        "empty_cases": 3,
+        "mismatch_cases": 0
+      }
+    },
+    {
+      "policy": "full",
+      "point_ms": 4000,
+      "n": 3,
+      "expected_n": 3,
+      "render_tail_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "min_ms": 0.0,
+        "p50_ms": 0.0,
+        "p95_ms": 0.0,
+        "max_ms": 0.0,
+        "mean_ms": 0.0
+      },
+      "server_stop_to_workers_joined_ms": {
+        "n": 3,
+        "denominator": 3,
+        "missing": 0,
+        "values_ms": [
+          12.129562,
+          18.171727,
+          18.199773
+        ],
+        "min_ms": 12.129562,
+        "p50_ms": 18.171727,
+        "p95_ms": 18.1969684,
+        "max_ms": 18.199773,
+        "mean_ms": 16.16702066666667
+      },
+      "controlled_stale_probe": {
+        "denominator": 3,
+        "expected_n": 3,
+        "missing": 0,
+        "received_cases": 3,
+        "received_events": 3,
+        "generation_fence_cases": 3,
+        "generation_fence_events": 3,
+        "accepted_events": 0,
+        "all_fenced": true
+      },
+      "new_generation": {
+        "denominator": 3,
+        "expected_n": 3,
+        "fully_played_cases": 3,
+        "not_fully_played_cases": 0,
+        "missing": 0,
+        "all_fully_played": true
+      },
+      "assistant_history": {
+        "denominator": 3,
+        "expected_n": 3,
+        "missing": 0,
+        "complete_segment_cases": 3,
+        "complete_segments": 3,
+        "empty_cases": 0,
+        "mismatch_cases": 0
+      }
+    }
+  ],
+  "cases": [
+    {
+      "run_id": "exp16-formal-0-1792668660424",
+      "policy": "server_only",
+      "point_ms": 200,
+      "trigger_samples": 4800,
+      "context_rate": 24000,
+      "trigger_frame": 32832,
+      "g1_last_render_end_frame": 79392,
+      "render_tail_ms": 1940.0,
+      "server_stop_to_workers_joined_ms": 116.750191,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-0-1792668660424.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "ignored_events": 1,
+        "all_fenced": false
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 51360,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-1-1792668668080",
+      "policy": "server_only",
+      "point_ms": 200,
+      "trigger_samples": 4800,
+      "context_rate": 24000,
+      "trigger_frame": 31936,
+      "g1_last_render_end_frame": 78016,
+      "render_tail_ms": 1920.0,
+      "server_stop_to_workers_joined_ms": 23.330598,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-1-1792668668080.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "ignored_events": 1,
+        "all_fenced": false
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 50880,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-2-1792668675316",
+      "policy": "server_only",
+      "point_ms": 200,
+      "trigger_samples": 4800,
+      "context_rate": 24000,
+      "trigger_frame": 34112,
+      "g1_last_render_end_frame": 80192,
+      "render_tail_ms": 1920.0,
+      "server_stop_to_workers_joined_ms": 43.112684,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-2-1792668675316.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "ignored_events": 1,
+        "all_fenced": false
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 50880,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-3-1792668682526",
+      "policy": "server_only",
+      "point_ms": 1000,
+      "trigger_samples": 24000,
+      "context_rate": 24000,
+      "trigger_frame": 50880,
+      "g1_last_render_end_frame": 97440,
+      "render_tail_ms": 1940.0,
+      "server_stop_to_workers_joined_ms": 18.323537,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-3-1792668682526.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "ignored_events": 1,
+        "all_fenced": false
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 70560,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-4-1792668690708",
+      "policy": "server_only",
+      "point_ms": 1000,
+      "trigger_samples": 24000,
+      "context_rate": 24000,
+      "trigger_frame": 44736,
+      "g1_last_render_end_frame": 92256,
+      "render_tail_ms": 1980.0,
+      "server_stop_to_workers_joined_ms": 230.926365,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-4-1792668690708.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "ignored_events": 1,
+        "all_fenced": false
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 71520,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-5-1792668698491",
+      "policy": "server_only",
+      "point_ms": 1000,
+      "trigger_samples": 24000,
+      "context_rate": 24000,
+      "trigger_frame": 51520,
+      "g1_last_render_end_frame": 97600,
+      "render_tail_ms": 1920.0,
+      "server_stop_to_workers_joined_ms": 16.865808,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-5-1792668698491.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "ignored_events": 1,
+        "all_fenced": false
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 70080,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-6-1792668706487",
+      "policy": "server_only",
+      "point_ms": 4000,
+      "trigger_samples": 96000,
+      "context_rate": 24000,
+      "trigger_frame": 118784,
+      "g1_last_render_end_frame": 164144,
+      "render_tail_ms": 1890.0,
+      "server_stop_to_workers_joined_ms": 16.688521,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-6-1792668706487.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "ignored_events": 1,
+        "all_fenced": false
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 141360,
+        "complete_segments": 1,
+        "expected_text": "出门前先查好路线，带上相",
+        "assistant_messages": [
+          "出门前先查好路线，带上相"
+        ],
+        "status": "complete_segments"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-7-1792668717637",
+      "policy": "server_only",
+      "point_ms": 4000,
+      "trigger_samples": 96000,
+      "context_rate": 24000,
+      "trigger_frame": 118144,
+      "g1_last_render_end_frame": 163984,
+      "render_tail_ms": 1910.0,
+      "server_stop_to_workers_joined_ms": 9.347302,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-7-1792668717637.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "ignored_events": 1,
+        "all_fenced": false
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 141840,
+        "complete_segments": 1,
+        "expected_text": "出门前先查好路线，带上相",
+        "assistant_messages": [
+          "出门前先查好路线，带上相"
+        ],
+        "status": "complete_segments"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-8-1792668728627",
+      "policy": "server_only",
+      "point_ms": 4000,
+      "trigger_samples": 96000,
+      "context_rate": 24000,
+      "trigger_frame": 117376,
+      "g1_last_render_end_frame": 162736,
+      "render_tail_ms": 1890.0,
+      "server_stop_to_workers_joined_ms": 11.21081,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-8-1792668728627.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 0,
+        "accepted_events": 0,
+        "ignored_events": 1,
+        "all_fenced": false
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 141360,
+        "complete_segments": 1,
+        "expected_text": "出门前先查好路线，带上相",
+        "assistant_messages": [
+          "出门前先查好路线，带上相"
+        ],
+        "status": "complete_segments"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-9-1792668739682",
+      "policy": "full",
+      "point_ms": 200,
+      "trigger_samples": 4800,
+      "context_rate": 24000,
+      "trigger_frame": 31936,
+      "g1_last_render_end_frame": 32000,
+      "render_tail_ms": 2.6666666666666665,
+      "server_stop_to_workers_joined_ms": 47.687254,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-9-1792668739682.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 1,
+        "accepted_events": 0,
+        "ignored_events": 0,
+        "all_fenced": true
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 4864,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-10-1792668744854",
+      "policy": "full",
+      "point_ms": 200,
+      "trigger_samples": 4800,
+      "context_rate": 24000,
+      "trigger_frame": 27712,
+      "g1_last_render_end_frame": 27776,
+      "render_tail_ms": 2.6666666666666665,
+      "server_stop_to_workers_joined_ms": 29.830023,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-10-1792668744854.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 1,
+        "accepted_events": 0,
+        "ignored_events": 0,
+        "all_fenced": true
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 4864,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-11-1792668749941",
+      "policy": "full",
+      "point_ms": 200,
+      "trigger_samples": 4800,
+      "context_rate": 24000,
+      "trigger_frame": 29376,
+      "g1_last_render_end_frame": 29440,
+      "render_tail_ms": 2.6666666666666665,
+      "server_stop_to_workers_joined_ms": 58.075269,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-11-1792668749941.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 1,
+        "accepted_events": 0,
+        "ignored_events": 0,
+        "all_fenced": true
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 4864,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-12-1792668755147",
+      "policy": "full",
+      "point_ms": 1000,
+      "trigger_samples": 24000,
+      "context_rate": 24000,
+      "trigger_frame": 46912,
+      "g1_last_render_end_frame": 46976,
+      "render_tail_ms": 2.6666666666666665,
+      "server_stop_to_workers_joined_ms": 24.657805,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-12-1792668755147.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 1,
+        "accepted_events": 0,
+        "ignored_events": 0,
+        "all_fenced": true
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 24064,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-13-1792668761005",
+      "policy": "full",
+      "point_ms": 1000,
+      "trigger_samples": 24000,
+      "context_rate": 24000,
+      "trigger_frame": 44224,
+      "g1_last_render_end_frame": 44288,
+      "render_tail_ms": 2.6666666666666665,
+      "server_stop_to_workers_joined_ms": 13.816655,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-13-1792668761005.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 1,
+        "accepted_events": 0,
+        "ignored_events": 0,
+        "all_fenced": true
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 24064,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-14-1792668766708",
+      "policy": "full",
+      "point_ms": 1000,
+      "trigger_samples": 24000,
+      "context_rate": 24000,
+      "trigger_frame": 46912,
+      "g1_last_render_end_frame": 46976,
+      "render_tail_ms": 2.6666666666666665,
+      "server_stop_to_workers_joined_ms": 12.748821,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-14-1792668766708.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 1,
+        "accepted_events": 0,
+        "ignored_events": 0,
+        "all_fenced": true
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 24064,
+        "complete_segments": 0,
+        "expected_text": "",
+        "assistant_messages": [],
+        "status": "empty"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-15-1792668772588",
+      "policy": "full",
+      "point_ms": 4000,
+      "trigger_samples": 96000,
+      "context_rate": 24000,
+      "trigger_frame": 118528,
+      "g1_last_render_end_frame": 118528,
+      "render_tail_ms": 0.0,
+      "server_stop_to_workers_joined_ms": 18.199773,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-15-1792668772588.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 1,
+        "accepted_events": 0,
+        "ignored_events": 0,
+        "all_fenced": true
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 96000,
+        "complete_segments": 1,
+        "expected_text": "出门前先查好路线，带上相",
+        "assistant_messages": [
+          "出门前先查好路线，带上相"
+        ],
+        "status": "complete_segments"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-16-1792668781704",
+      "policy": "full",
+      "point_ms": 4000,
+      "trigger_samples": 96000,
+      "context_rate": 24000,
+      "trigger_frame": 120576,
+      "g1_last_render_end_frame": 120576,
+      "render_tail_ms": 0.0,
+      "server_stop_to_workers_joined_ms": 18.171727,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-16-1792668781704.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 1,
+        "accepted_events": 0,
+        "ignored_events": 0,
+        "all_fenced": true
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 96000,
+        "complete_segments": 1,
+        "expected_text": "出门前先查好路线，带上相",
+        "assistant_messages": [
+          "出门前先查好路线，带上相"
+        ],
+        "status": "complete_segments"
+      },
+      "issues": []
+    },
+    {
+      "run_id": "exp16-formal-17-1792668790840",
+      "policy": "full",
+      "point_ms": 4000,
+      "trigger_samples": 96000,
+      "context_rate": 24000,
+      "trigger_frame": 116224,
+      "g1_last_render_end_frame": 116224,
+      "render_tail_ms": 0.0,
+      "server_stop_to_workers_joined_ms": 12.129562,
+      "server_source": "results/exp16/server/final-v1/server-exp16-formal-17-1792668790840.json",
+      "server_paired": true,
+      "controlled_stale_probe": {
+        "received_events": 1,
+        "generation_fence_events": 1,
+        "accepted_events": 0,
+        "ignored_events": 0,
+        "all_fenced": true
+      },
+      "new_generation_fully_played": true,
+      "assistant_history": {
+        "played_samples": 96000,
+        "complete_segments": 1,
+        "expected_text": "出门前先查好路线，带上相",
+        "assistant_messages": [
+          "出门前先查好路线，带上相"
+        ],
+        "status": "complete_segments"
+      },
+      "issues": []
+    }
+  ],
+  "unmeasured": {
+    "microphone_onset_ms": null,
+    "vad_latency_ms": null,
+    "acoustic_stop_latency_ms": null
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "package": "mooncake-transfer-engine-non-cuda",
+  "version": "0.3.13.post1",
+  "wheel_sha256": "892fd0ee77d736fc8d625981c485a43282dbdbc0926b95f05c1cadd8b0debe51",
+  "wheel_url": "https://files.pythonhosted.org/packages/3b/4a/2a9a6a0d719eaf74fd4f1f7ad832d4ec4d9a9faa9f52d1b2fa28499968b1/mooncake_transfer_engine_non_cuda-0.3.13.post1-cp312-cp312-manylinux_2_28_x86_64.whl",
+  "filename": "mooncake_transfer_engine_non_cuda-0.3.13.post1-cp312-cp312-manylinux_2_28_x86_64.whl",
+  "native_file_checks": [
+    {
+      "path": "mooncake/_fast_copy.cpython-312-x86_64-linux-gnu.so",
+      "wheel_sha256": "29bfec0f3b0f59f9cb1b50f79524656bc5f410ceee8e0cfbc4a2cbc46a9708f4",
+      "installed_sha256": "29bfec0f3b0f59f9cb1b50f79524656bc5f410ceee8e0cfbc4a2cbc46a9708f4"
+    },
+    {
+      "path": "mooncake/engine.so",
+      "wheel_sha256": "e7df1afd9001a6a5d6b72740c7e50231e1ded2202826e377b77f5072cf458cee",
+      "installed_sha256": "e7df1afd9001a6a5d6b72740c7e50231e1ded2202826e377b77f5072cf458cee"
+    },
+    {
+      "path": "mooncake/libasio.so",
+      "wheel_sha256": "d08c9e243267fc1d78fac126dc9337bfbf0cd08b20573006ee6a6e0223920286",
+      "installed_sha256": "d08c9e243267fc1d78fac126dc9337bfbf0cd08b20573006ee6a6e0223920286"
+    },
+    {
+      "path": "mooncake/libetcd_wrapper.so",
+      "wheel_sha256": "0b032a94ba2963939bc412b9afd659354894bb3b434654e97aff0f9ad78f6bfd",
+      "installed_sha256": "0b032a94ba2963939bc412b9afd659354894bb3b434654e97aff0f9ad78f6bfd"
+    },
+    {
+      "path": "mooncake/mooncake_master",
+      "wheel_sha256": "23da0d0894238bb5ac669c11bcd932d4634c9c23c982615863471e74ebd82656",
+      "installed_sha256": "23da0d0894238bb5ac669c11bcd932d4634c9c23c982615863471e74ebd82656"
+    },
+    {
+      "path": "mooncake/store.so",
+      "wheel_sha256": "ec8c21b9a1e86b3a0fefae5af5ded8381f1ed3201c5ae3028586518d97eb0270",
+      "installed_sha256": "ec8c21b9a1e86b3a0fefae5af5ded8381f1ed3201c5ae3028586518d97eb0270"
+    }
+  ],
+  "source_read_commit": "c67a88f381f69e869045f353539e90c76e738830",
+  "binary_build_commit_verified": false,
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "uname": {
+    "system": "Linux",
+    "node": "DARYU",
+    "release": "192.0.2.10-microsoft-standard-WSL2",
+    "version": "#1 SMP PREEMPT_DYNAMIC Mon Dec  1 20:46:23 UTC 2025",
+    "machine": "x86_64",
+    "processor": "x86_64"
+  },
+  "runtime_debs": [
+    {
+      "name": "libibverbs1_50.0-2ubuntu0.2_amd64.deb",
+      "sha256": "8489558105ee1d1c65ae6e0f1bac0e9b15f314a68f106ee9a63c89821242bd8e"
+    },
+    {
+      "name": "libnl-3-200_3.7.0-0.3build1.1_amd64.deb",
+      "sha256": "15b3f61db753dc3db6f62f4259f8b822299343e500886776486612a13a2ed247"
+    },
+    {
+      "name": "libnl-route-3-200_3.7.0-0.3build1.1_amd64.deb",
+      "sha256": "c9dbd29cb7fdcf1a0587726cbc5432a7d3e81242108dfcfa2dd6716c44c74d4d"
+    }
+  ]
+}

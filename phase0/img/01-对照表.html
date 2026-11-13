@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;background:#f8f5ee;color:#1c1a17;font-family:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:72px 76px;display:flex;flex-direction:column}
+.eyebrow{display:flex;align-items:center;gap:14px;color:#8a8378;font-size:26px;letter-spacing:.04em;font-family:Menlo,"SF Mono",monospace}
+.eyebrow::before{content:"";width:34px;height:5px;background:#2f5f8a;border-radius:3px}
+h1{font-size:74px;line-height:1.18;font-weight:800;letter-spacing:-.01em;margin-top:34px}
+.sub{color:#6f695f;font-size:32px;margin-top:22px;line-height:1.5}
+.card{background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:34px 38px;margin-top:44px}
+.callout{background:#fbf1e6;border:2px solid #f0dcc4;border-radius:18px;padding:32px 36px;font-size:32px;line-height:1.6;margin-top:40px;color:#2a2620}
+.callout b{color:#1c1a17}
+.note{color:#9a9386;font-size:24px;margin-top:auto;padding-top:36px;line-height:1.5}
+.blue{color:#2f5f8a}.orange{color:#c4763a}.green{color:#4f7a52}.gray{color:#9a9386}.red{color:#a84d3a}
+.mono{font-family:Menlo,"SF Mono",monospace}
+.row{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:2px solid #eee8dc;font-size:32px}
+.row:last-child{border-bottom:0}
+.card>div:last-child{border-bottom:0!important}
+.row .k{font-weight:600}.row .v{font-weight:700}
+.strike{text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:#a84d3a;color:#9a9386}
+.tag{display:inline-block;font-size:22px;padding:4px 14px;border-radius:8px;background:#eee8dc;color:#6f695f;margin-left:12px;vertical-align:middle;font-weight:600}
+
+.seats{display:grid;grid-template-columns:repeat(12,1fr);gap:8px;margin-top:14px}
+.seat{aspect-ratio:1;border-radius:8px;background:#e6e0d4;position:relative}
+.seat.p{background:#2f5f8a}
+.seat.l{background:#c4763a}
+.seat.p::after{content:"";position:absolute;inset:30%;border-radius:50%;background:#fff;opacity:.9}
+.lane{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px}
+.lane .box{background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:30px 34px}
+.lane h3{font-size:34px;font-weight:800;margin-bottom:6px}
+.lane .cap{font-size:24px;color:#6f695f;line-height:1.45}
+.big{font-size:86px;font-weight:800;line-height:1;letter-spacing:-.02em}
+.formula{font-family:Menlo,monospace;font-size:30px;background:#fff;border:2px solid #e6e0d4;border-radius:18px;padding:26px 30px;margin-top:36px;line-height:1.6}
+.formula b{color:#c4763a}
+.bus{display:flex;gap:6px;margin-top:30px}
+.bus .car{flex:1;height:120px;border-radius:14px;background:#2f5f8a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;position:relative}
+.bus .car::after{content:"";position:absolute;right:-6px;top:50%;width:6px;height:16px;background:#9a9386;transform:translateY(-50%)}
+.bus .car:last-child::after{display:none}
+html,body{height:1700px}</style></head><body><div class="eyebrow">个人进化 · Phase 0 复习</div><h1>一辆公交车，<br>讲完三篇的账</h1><div class="sub">全篇一个比喻。一个乘客 = 一次请求。</div>
+<div class="card" style="padding:6px 38px"><div class="row"><span class="k mono" style="font-size:28px">模型权重 140 GB</span><span style="color:#2f5f8a;font-weight:600">跑一圈的固定油钱</span></div><div class="row"><span class="k mono" style="font-size:28px">decode 一个 token</span><span style="color:#2f5f8a;font-weight:600">车跑一圈，每位乘客拿到一个字</span></div><div class="row"><span class="k mono" style="font-size:28px">prompt / prefill</span><span style="color:#2f5f8a;font-weight:600">上车带的行李 / 上车前一次搬上车</span></div><div class="row"><span class="k mono" style="font-size:28px">KV cache</span><span style="color:#2f5f8a;font-weight:600">行李架：上车的行李 + 每圈多出的一件</span></div><div class="row"><span class="k mono" style="font-size:28px">batch</span><span style="color:#2f5f8a;font-weight:600">车上同时坐几人</span></div><div class="row"><span class="k mono" style="font-size:28px">KV 预算 59 GB</span><span style="color:#2f5f8a;font-weight:600">座位 + 行李架的总容量</span></div><div class="row"><span class="k mono" style="font-size:28px">prefix cache</span><span style="color:#2f5f8a;font-weight:600">常客的行李已按箱寄存</span></div><div class="row"><span class="k mono" style="font-size:28px">TP=8</span><span style="color:#2f5f8a;font-weight:600">8 节车厢并排跑，每圈对一次表</span></div><div class="row"><span class="k mono" style="font-size:28px">扩容</span><span style="color:#2f5f8a;font-weight:600">从车库开新车，1–2 分钟</span></div></div>
+<div class="callout">乘客上车时带的行李是 <b>prompt</b>；之后每跑一圈，行李架上多一件——那是他刚拿到的字。</div></body></html>

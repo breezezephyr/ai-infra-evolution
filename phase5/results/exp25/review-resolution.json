@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-26",
+  "original_review": "independent-review.json",
+  "original_findings": {
+    "blocking": 0,
+    "important": 3,
+    "minor": 1
+  },
+  "unresolved_important": 0,
+  "deferred_minors": [],
+  "rereview_performed": false,
+  "verification": "one TDD fix pass; 8 new regressions observed RED then GREEN; full exp25 suite 31 passed",
+  "red_evidence": "review-red.txt",
+  "green_evidence": "tests.txt",
+  "fixes": [
+    {
+      "id": "R1",
+      "resolution": "HTTPBackend rejects duplicate/conflicting finish and post-finish content while allowing legal trailing usage. Invalid streams cannot become complete cache entries.",
+      "tests": [
+        "test_conflicting_or_post_finish_backend_data_never_becomes_complete[length_then_stop]",
+        "test_conflicting_or_post_finish_backend_data_never_becomes_complete[content_after_finish]"
+      ]
+    },
+    {
+      "id": "R2",
+      "resolution": "Audit requires exactly one attempt for reviewed rejection and delivered cache miss, zero for cache hits/pre-generation refusals; generation events cannot survive without their attempt. Missing evidence blocks acceptance and suppresses successful totals.",
+      "tests": [
+        "test_erased_blocked_generation_or_delivered_miss_cannot_settle_zero[blocked-cost-erased]",
+        "test_erased_blocked_generation_or_delivered_miss_cannot_settle_zero[delivered-source-erased]"
+      ]
+    },
+    {
+      "id": "R3",
+      "resolution": "Audit checks every frontend frame ID, exactly one gateway_usage/cache settlement, and finish against native attempt/cache origin, in addition to content bytes.",
+      "tests": [
+        "test_client_usage_id_and_finish_each_must_match_the_real_trace[usage]",
+        "test_client_usage_id_and_finish_each_must_match_the_real_trace[request_id]",
+        "test_client_usage_id_and_finish_each_must_match_the_real_trace[finish]"
+      ]
+    },
+    {
+      "id": "R4",
+      "original_severity": "minor",
+      "main_severity": "important for unique-ID accounting contract",
+      "resolution": "Duplicate/missing request IDs are rejected before request-origin indexing; no silent overwrite.",
+      "tests": [
+        "test_request_id_reuse_cannot_silently_overwrite_a_request_join"
+      ]
+    }
+  ],
+  "original_gpu_run_affected": false,
+  "new_gpu_calls": 0,
+  "native_stream_cpu_replay": "review-native-stream-replay.json",
+  "native_streams_matched": 12,
+  "execution_and_revised_summary_byte_equal": true,
+  "final_analysis_code": "formal-v1/analysis-revision1",
+  "original_execution_code": "formal-v1/code",
+  "original_execution_summary": "formal-v1/summary-execution.json",
+  "final_summary": "formal-v1/summary.json",
+  "declined_to_judge": []
+}

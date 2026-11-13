@@ -1,0 +1,110 @@
+[
+  {
+    "id": "integer_bounds",
+    "payload": {
+      "model": "exp21-qwen3-0.6b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "输出JSON。"
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 48,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "guided_decoding_backend": "xgrammar:no-fallback",
+      "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "integer_bounds",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "n": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              }
+            },
+            "required": [
+              "n"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "status": 200,
+    "response": {
+      "id": "chatcmpl-c58d03bbaab741db97dc133e13e0b265",
+      "object": "chat.completion",
+      "created": 1792983491,
+      "model": "exp21-qwen3-0.6b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": null,
+            "content": "{\n  \"n\": 100\n}",
+            "tool_calls": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 15,
+        "total_tokens": 27,
+        "completion_tokens": 12,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null
+    }
+  },
+  {
+    "id": "array_bounds",
+    "payload": {
+      "model": "exp21-qwen3-0.6b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "输出JSON。"
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 48,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "guided_decoding_backend": "xgrammar:no-fallback",
+      "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "array_bounds",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 3
+              }
+            },
+            "required": [
+              "a"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "status": 400,
+    "error": "{\"object\":\"error\",\"message\":\"xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds.\",\"type\":\"BadRequestError\",\"param\":null,\"code\":400}"
+  }
+]

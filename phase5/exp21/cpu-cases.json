@@ -1,0 +1,5644 @@
+{
+  "experiment": "exp21-cpu",
+  "fixture_version": 2,
+  "frozen_before_first_matrix_run_utc": "2026-10-26T02:43:24.895608+00:00",
+  "recipe_version": "0.2.0",
+  "recipe_source_commit": "935817c66f5d6e64838f419692545f06787e485f",
+  "expectation_basis": "Fixed Rust protocol/constraint/schema source; CPU acceptance only. Messages required semantic probe is native tool_choice any, intentionally auto. No expected GPU behavior.",
+  "schema_notes": "JSON Schema strings are decoded for value comparison, not used as instance validation.",
+  "cases": [
+    {
+      "id": "chat-no-tools",
+      "protocol": "chat",
+      "family": "baseline",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {}
+      }
+    },
+    {
+      "id": "chat-text",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "text"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "chat-json-object",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {
+          "response_format": "json_object",
+          "output_constraint.schema": "",
+          "parsing_options.parse_json_output": true
+        }
+      }
+    },
+    {
+      "id": "chat-schema-valid",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {
+          "response_format": "json_schema",
+          "response_schema": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            }
+          },
+          "constraint_schema_json": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "chat-schema-strict",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {
+          "response_format": "json_schema",
+          "response_schema": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            }
+          },
+          "constraint_schema_json": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "id": "chat-schema-invalid-type",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "answer",
+            "schema": {
+              "type": "not-a-type"
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Invalid json schema"
+      }
+    },
+    {
+      "id": "chat-schema-invalid-properties",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": []
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Invalid json schema"
+      }
+    },
+    {
+      "id": "chat-schema-scalar",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "answer",
+            "schema": {
+              "type": "integer"
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {
+          "response_format": "json_schema",
+          "response_schema": {
+            "type": "integer"
+          },
+          "constraint_schema_json": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    {
+      "id": "chat-schema-strict-scalar",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "answer",
+            "schema": {
+              "type": "integer"
+            },
+            "strict": true
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "top level"
+      }
+    },
+    {
+      "id": "chat-schema-strict-empty",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "answer",
+            "schema": {
+              "type": "object"
+            },
+            "strict": true
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "no properties"
+      }
+    },
+    {
+      "id": "chat-schema-bool-true",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "answer",
+            "schema": true,
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {
+          "response_format": "json_schema",
+          "response_schema": true,
+          "constraint_schema_json": true
+        }
+      }
+    },
+    {
+      "id": "chat-regex-valid",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "regex",
+          "regex": "[A-Z]{2}-[0-9]{3}"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "regex",
+        "facts": {
+          "response_format": "regex",
+          "output_constraint.schema": "[A-Z]{2}-[0-9]{3}"
+        }
+      }
+    },
+    {
+      "id": "chat-regex-invalid",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "regex",
+          "regex": "["
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "regex",
+        "facts": {
+          "response_format": "regex",
+          "output_constraint.schema": "["
+        }
+      }
+    },
+    {
+      "id": "chat-regex-empty",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "regex",
+          "regex": ""
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "regex",
+        "facts": {
+          "response_format": "regex",
+          "output_constraint.schema": ""
+        }
+      }
+    },
+    {
+      "id": "chat-ebnf-unsupported",
+      "protocol": "chat",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "ebnf"
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "parse",
+        "error_type": "ValueError",
+        "message_contains": "unknown variant"
+      }
+    },
+    {
+      "id": "chat-json-object-no-hint",
+      "protocol": "chat",
+      "family": "json-hint",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hello"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "word 'json'"
+      }
+    },
+    {
+      "id": "chat-tools-True-auto",
+      "protocol": "chat",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": "auto",
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": true,
+          "parsing_options.starts_in_tool_calls": false
+        }
+      }
+    },
+    {
+      "id": "chat-tools-True-required",
+      "protocol": "chat",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": "required",
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call_required",
+        "facts": {
+          "tool_choice": "required",
+          "parsing_options.parse_tool_calls": true,
+          "parsing_options.starts_in_tool_calls": true
+        }
+      }
+    },
+    {
+      "id": "chat-tools-True-named",
+      "protocol": "chat",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "lookup"
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call_required",
+        "facts": {
+          "tool_choice": "required",
+          "parsing_options.parse_tool_calls": true,
+          "parsing_options.starts_in_tool_calls": true,
+          "tools.0.name": "lookup"
+        }
+      }
+    },
+    {
+      "id": "chat-tools-True-none",
+      "protocol": "chat",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": "none",
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "none",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "chat-tools-False-auto",
+      "protocol": "chat",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "chat-tools-False-required",
+      "protocol": "chat",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": "required"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "chat-tools-False-named",
+      "protocol": "chat",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "lookup"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "chat-tools-False-none",
+      "protocol": "chat",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": "none"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "none",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "chat-thinking-auto",
+      "protocol": "chat",
+      "family": "thinking-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "enabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "chat-thinking-required",
+      "protocol": "chat",
+      "family": "thinking-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "enabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "required"
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Thinking mode does not support"
+      }
+    },
+    {
+      "id": "chat-thinking-named",
+      "protocol": "chat",
+      "family": "thinking-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "enabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "lookup"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Thinking mode does not support"
+      }
+    },
+    {
+      "id": "chat-bad-tool-schema-auto",
+      "protocol": "chat",
+      "family": "tool-schema",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "not-a-type"
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "not-a-type"
+              }
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Invalid schema for function"
+      }
+    },
+    {
+      "id": "chat-bad-tool-schema-none",
+      "protocol": "chat",
+      "family": "tool-schema",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "not-a-type"
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "not-a-type"
+              }
+            }
+          }
+        ],
+        "tool_choice": "none"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "chat-named-unknown",
+      "protocol": "chat",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "absent"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "no function named 'absent'"
+      }
+    },
+    {
+      "id": "chat-tools-auto-format-text",
+      "protocol": "chat",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "text"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "chat-tools-auto-format-json_object",
+      "protocol": "chat",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_object"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "chat-tools-auto-format-json_schema",
+      "protocol": "chat",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "chat-tools-auto-format-regex",
+      "protocol": "chat",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "regex",
+          "regex": "[A-Z]+"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "chat-tools-none-format-text",
+      "protocol": "chat",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "text"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "none"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {}
+      }
+    },
+    {
+      "id": "chat-tools-none-format-json_object",
+      "protocol": "chat",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_object"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "none"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {}
+      }
+    },
+    {
+      "id": "chat-tools-none-format-json_schema",
+      "protocol": "chat",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "none"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {}
+      }
+    },
+    {
+      "id": "chat-tools-none-format-regex",
+      "protocol": "chat",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "regex",
+          "regex": "[A-Z]+"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "none"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "regex",
+        "facts": {}
+      }
+    },
+    {
+      "id": "chat-strict-tool-normalized",
+      "protocol": "chat",
+      "family": "strict-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": true
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": true
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {
+          "tools.0.parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "id": "chat-strict-tool-format-text",
+      "protocol": "chat",
+      "family": "strict-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "text"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": true
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": true
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "response_format should not be used with tools"
+      }
+    },
+    {
+      "id": "chat-strict-tool-format-json_object",
+      "protocol": "chat",
+      "family": "strict-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_object"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": true
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": true
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "response_format should not be used with tools"
+      }
+    },
+    {
+      "id": "chat-strict-tool-format-json_schema",
+      "protocol": "chat",
+      "family": "strict-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": true
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": true
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "response_format should not be used with tools"
+      }
+    },
+    {
+      "id": "chat-mixed-strict-tools",
+      "protocol": "chat",
+      "family": "strict-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "lookup",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": true
+            }
+          },
+          {
+            "type": "function",
+            "function": {
+              "name": "other",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": false
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Cannot use strict tool with non-strict tool"
+      }
+    },
+    {
+      "id": "chat-malformed-envelope",
+      "protocol": "chat",
+      "family": "parse-error",
+      "input": {
+        "model": 42,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "parse",
+        "error_type": "ValueError",
+        "message_contains": "expected a string"
+      }
+    },
+    {
+      "id": "responses-no-tools",
+      "protocol": "responses",
+      "family": "baseline",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {}
+      }
+    },
+    {
+      "id": "responses-text",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "text"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "responses-json-object",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_object"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {
+          "response_format": "json_object",
+          "output_constraint.schema": "",
+          "parsing_options.parse_json_output": true
+        }
+      }
+    },
+    {
+      "id": "responses-schema-valid",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {
+          "response_format": "json_schema",
+          "response_schema": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            }
+          },
+          "constraint_schema_json": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "responses-schema-strict",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {
+          "response_format": "json_schema",
+          "response_schema": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            }
+          },
+          "constraint_schema_json": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "id": "responses-schema-invalid-type",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "not-a-type"
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Invalid json schema"
+      }
+    },
+    {
+      "id": "responses-schema-invalid-properties",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": []
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Invalid json schema"
+      }
+    },
+    {
+      "id": "responses-schema-scalar",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "integer"
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {
+          "response_format": "json_schema",
+          "response_schema": {
+            "type": "integer"
+          },
+          "constraint_schema_json": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    {
+      "id": "responses-schema-strict-scalar",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "integer"
+            },
+            "strict": true
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "top level"
+      }
+    },
+    {
+      "id": "responses-schema-strict-empty",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object"
+            },
+            "strict": true
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "no properties"
+      }
+    },
+    {
+      "id": "responses-schema-bool-true",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": true,
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {
+          "response_format": "json_schema",
+          "response_schema": true,
+          "constraint_schema_json": true
+        }
+      }
+    },
+    {
+      "id": "responses-regex-valid",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "regex",
+            "regex": "[A-Z]{2}-[0-9]{3}"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "parse",
+        "error_type": "ValueError",
+        "message_contains": "unknown variant"
+      }
+    },
+    {
+      "id": "responses-regex-invalid",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "regex",
+            "regex": "["
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "parse",
+        "error_type": "ValueError",
+        "message_contains": "unknown variant"
+      }
+    },
+    {
+      "id": "responses-regex-empty",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "regex",
+            "regex": ""
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "parse",
+        "error_type": "ValueError",
+        "message_contains": "unknown variant"
+      }
+    },
+    {
+      "id": "responses-ebnf-unsupported",
+      "protocol": "responses",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "ebnf"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "parse",
+        "error_type": "ValueError",
+        "message_contains": "unknown variant"
+      }
+    },
+    {
+      "id": "responses-json-object-no-hint",
+      "protocol": "responses",
+      "family": "json-hint",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Hello",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_object"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "word 'json'"
+      }
+    },
+    {
+      "id": "responses-tools-True-auto",
+      "protocol": "responses",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tool_choice": "auto",
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": true,
+          "parsing_options.starts_in_tool_calls": false
+        }
+      }
+    },
+    {
+      "id": "responses-tools-True-required",
+      "protocol": "responses",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tool_choice": "required",
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call_required",
+        "facts": {
+          "tool_choice": "required",
+          "parsing_options.parse_tool_calls": true,
+          "parsing_options.starts_in_tool_calls": true
+        }
+      }
+    },
+    {
+      "id": "responses-tools-True-named",
+      "protocol": "responses",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tool_choice": {
+          "type": "function",
+          "name": "lookup"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call_required",
+        "facts": {
+          "tool_choice": "required",
+          "parsing_options.parse_tool_calls": true,
+          "parsing_options.starts_in_tool_calls": true,
+          "tools.0.name": "lookup"
+        }
+      }
+    },
+    {
+      "id": "responses-tools-True-none",
+      "protocol": "responses",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tool_choice": "none",
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "none",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "responses-tools-False-auto",
+      "protocol": "responses",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "responses-tools-False-required",
+      "protocol": "responses",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tool_choice": "required"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "responses-tools-False-named",
+      "protocol": "responses",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tool_choice": {
+          "type": "function",
+          "name": "lookup"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "responses-tools-False-none",
+      "protocol": "responses",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tool_choice": "none"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "none",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "responses-thinking-auto",
+      "protocol": "responses",
+      "family": "thinking-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "high"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "responses-thinking-required",
+      "protocol": "responses",
+      "family": "thinking-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "high"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "required"
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Thinking mode does not support"
+      }
+    },
+    {
+      "id": "responses-thinking-named",
+      "protocol": "responses",
+      "family": "thinking-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "high"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "name": "lookup"
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Thinking mode does not support"
+      }
+    },
+    {
+      "id": "responses-bad-tool-schema-auto",
+      "protocol": "responses",
+      "family": "tool-schema",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "not-a-type"
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "not-a-type"
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Invalid schema for function"
+      }
+    },
+    {
+      "id": "responses-bad-tool-schema-none",
+      "protocol": "responses",
+      "family": "tool-schema",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "not-a-type"
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "not-a-type"
+            }
+          }
+        ],
+        "tool_choice": "none"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "responses-named-unknown",
+      "protocol": "responses",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "name": "absent"
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "no function named 'absent'"
+      }
+    },
+    {
+      "id": "responses-tools-auto-format-text",
+      "protocol": "responses",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "text"
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "responses-tools-auto-format-json_object",
+      "protocol": "responses",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_object"
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "responses-tools-auto-format-json_schema",
+      "protocol": "responses",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "auto"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "responses-tools-none-format-text",
+      "protocol": "responses",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "text"
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "none"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {}
+      }
+    },
+    {
+      "id": "responses-tools-none-format-json_object",
+      "protocol": "responses",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_object"
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "none"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {}
+      }
+    },
+    {
+      "id": "responses-tools-none-format-json_schema",
+      "protocol": "responses",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": "none"
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "json",
+        "facts": {}
+      }
+    },
+    {
+      "id": "responses-strict-tool-normalized",
+      "protocol": "responses",
+      "family": "strict-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {
+          "tools.0.parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "id": "responses-strict-tool-format-text",
+      "protocol": "responses",
+      "family": "strict-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "text"
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call"
+      }
+    },
+    {
+      "id": "responses-strict-tool-format-json_object",
+      "protocol": "responses",
+      "family": "strict-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_object"
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "response_format should not be used with tools"
+      }
+    },
+    {
+      "id": "responses-strict-tool-format-json_schema",
+      "protocol": "responses",
+      "family": "strict-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "text": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "response_format should not be used with tools"
+      }
+    },
+    {
+      "id": "responses-mixed-strict-tools",
+      "protocol": "responses",
+      "family": "strict-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        },
+        "tools": [
+          {
+            "type": "function",
+            "name": "lookup",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          },
+          {
+            "type": "function",
+            "name": "other",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Cannot use strict tool with non-strict tool"
+      }
+    },
+    {
+      "id": "responses-malformed-envelope",
+      "protocol": "responses",
+      "family": "parse-error",
+      "input": {
+        "model": 42,
+        "input": "Return JSON for Beijing.",
+        "reasoning": {
+          "effort": "none"
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "parse",
+        "error_type": "ValueError",
+        "message_contains": "expected a string"
+      }
+    },
+    {
+      "id": "messages-no-tools",
+      "protocol": "messages",
+      "family": "baseline",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {}
+      }
+    },
+    {
+      "id": "messages-text",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "text"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-json-object",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_object"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-schema-valid",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-schema-strict",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": true
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-schema-invalid-type",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "not-a-type"
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-schema-invalid-properties",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": []
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-schema-scalar",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "integer"
+            },
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-schema-strict-scalar",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "integer"
+            },
+            "strict": true
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-schema-strict-empty",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object"
+            },
+            "strict": true
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-schema-bool-true",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": true,
+            "strict": false
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-regex-valid",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "regex",
+            "regex": "[A-Z]{2}-[0-9]{3}"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-regex-invalid",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "regex",
+            "regex": "["
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-regex-empty",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "regex",
+            "regex": ""
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-ebnf-unsupported",
+      "protocol": "messages",
+      "family": "format",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "ebnf"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-json-object-no-hint",
+      "protocol": "messages",
+      "family": "json-hint",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hello"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_object"
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {}
+      }
+    },
+    {
+      "id": "messages-tools-True-auto",
+      "protocol": "messages",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": {
+          "type": "auto"
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": true,
+          "parsing_options.starts_in_tool_calls": false
+        }
+      }
+    },
+    {
+      "id": "messages-tools-True-required",
+      "protocol": "messages",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": {
+          "type": "any"
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": true,
+          "parsing_options.starts_in_tool_calls": false
+        }
+      }
+    },
+    {
+      "id": "messages-tools-True-named",
+      "protocol": "messages",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": {
+          "type": "tool",
+          "name": "lookup"
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call_required",
+        "facts": {
+          "tool_choice": "required",
+          "parsing_options.parse_tool_calls": true,
+          "parsing_options.starts_in_tool_calls": true,
+          "tools.0.name": "lookup"
+        }
+      }
+    },
+    {
+      "id": "messages-tools-True-none",
+      "protocol": "messages",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": {
+          "type": "none"
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "none",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "messages-tools-False-auto",
+      "protocol": "messages",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": {
+          "type": "auto"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "messages-tools-False-required",
+      "protocol": "messages",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": {
+          "type": "any"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "messages-tools-False-named",
+      "protocol": "messages",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": {
+          "type": "tool",
+          "name": "lookup"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "auto",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "messages-tools-False-none",
+      "protocol": "messages",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tool_choice": {
+          "type": "none"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tool_choice": "none",
+          "parsing_options.parse_tool_calls": false,
+          "parsing_options.starts_in_tool_calls": false,
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "messages-thinking-auto",
+      "protocol": "messages",
+      "family": "thinking-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "enabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "auto"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "messages-thinking-required",
+      "protocol": "messages",
+      "family": "thinking-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "enabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "any"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {
+          "tool_choice": "auto"
+        }
+      }
+    },
+    {
+      "id": "messages-thinking-named",
+      "protocol": "messages",
+      "family": "thinking-tools",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "enabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "tool",
+          "name": "lookup"
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Thinking mode does not support"
+      }
+    },
+    {
+      "id": "messages-bad-tool-schema-auto",
+      "protocol": "messages",
+      "family": "tool-schema",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "not-a-type"
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "not-a-type"
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "auto"
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "Invalid schema for function"
+      }
+    },
+    {
+      "id": "messages-bad-tool-schema-none",
+      "protocol": "messages",
+      "family": "tool-schema",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "not-a-type"
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "not-a-type"
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "none"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "tools": []
+        }
+      }
+    },
+    {
+      "id": "messages-named-unknown",
+      "protocol": "messages",
+      "family": "tool-choice",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "tool",
+          "name": "absent"
+        }
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "convert",
+        "error_type": "ConversionError",
+        "status_code": 400,
+        "message_contains": "no function named 'absent'"
+      }
+    },
+    {
+      "id": "messages-tools-auto-format-text",
+      "protocol": "messages",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "text"
+          }
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "auto"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "messages-tools-auto-format-json_object",
+      "protocol": "messages",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_object"
+          }
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "auto"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "messages-tools-auto-format-json_schema",
+      "protocol": "messages",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "auto"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "messages-tools-auto-format-regex",
+      "protocol": "messages",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "regex",
+            "regex": "[A-Z]+"
+          }
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "auto"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": "tool_call",
+        "facts": {}
+      }
+    },
+    {
+      "id": "messages-tools-none-format-text",
+      "protocol": "messages",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "text"
+          }
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "none"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {}
+      }
+    },
+    {
+      "id": "messages-tools-none-format-json_object",
+      "protocol": "messages",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_object"
+          }
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "none"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {}
+      }
+    },
+    {
+      "id": "messages-tools-none-format-json_schema",
+      "protocol": "messages",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "json_schema",
+            "name": "answer",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "strict": false
+          }
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "none"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {}
+      }
+    },
+    {
+      "id": "messages-tools-none-format-regex",
+      "protocol": "messages",
+      "family": "precedence",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "output_config": {
+          "format": {
+            "type": "regex",
+            "regex": "[A-Z]+"
+          }
+        },
+        "tools": [
+          {
+            "name": "lookup",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "other",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "none"
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {}
+      }
+    },
+    {
+      "id": "messages-foreign-response-format-ignored",
+      "protocol": "messages",
+      "family": "unsupported-field",
+      "input": {
+        "model": "DeepSeek-V4.1-Flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "schema": {
+              "type": "bad"
+            }
+          }
+        }
+      },
+      "expect": {
+        "outcome": "accepted",
+        "constraint_kind": null,
+        "facts": {
+          "response_format": "text"
+        }
+      }
+    },
+    {
+      "id": "messages-malformed-envelope",
+      "protocol": "messages",
+      "family": "parse-error",
+      "input": {
+        "model": 42,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return JSON for Beijing."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "max_tokens": 128
+      },
+      "expect": {
+        "outcome": "rejected",
+        "stage": "parse",
+        "error_type": "ValueError",
+        "message_contains": "expected a string"
+      }
+    }
+  ],
+  "revision_history": [
+    {
+      "from_version": 1,
+      "to_version": 2,
+      "utc": "2026-10-26T02:45:38.747826+00:00",
+      "previous_fixture_sha256": "bb0537658ea18a6b13f36e3b931c7eec9ca07efd497fd9ea7f727a2f4ad75d31",
+      "first_run": "results/exp21/cpu/probe-v1/",
+      "first_run_result": "124/126; two expectation mistakes preserved; no runtime exceptions",
+      "corrections": {
+        "responses-json-object-no-hint": "Source convert_text_format lines 960-964 also requires json hint.",
+        "responses-strict-tool-format-text": "Source convert lines 808-814 treats explicit text as has_response_format=false, unlike Chat."
+      },
+      "rejection_matchers": "Strengthened formerly empty message matchers, after source/client_tools.rs corroboration."
+    }
+  ],
+  "parser_probes": {
+    "kind": "synthetic backend text; actual recipe StreamProcessor; no model, xgrammar or schema instance validator",
+    "frozen_before_formal_run_utc": "2026-10-26T02:45:38.748321+00:00",
+    "expectation_basis": "18 exploratory parser observations stored under probe-v1; characterization, not pre-registered model behavior.",
+    "cases": [
+      {
+        "id": "chat-schema-wrong-type",
+        "conversion_id": "chat-schema-strict",
+        "raw": "{\"city\":4}",
+        "expect": {
+          "text": "{\"city\":4}",
+          "json_parseable": true,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "satisfies_declared_schema": false,
+          "basis": "Literal counterexample to the normalized object schema: city string required, no extras. This is fixture labeling, not execution of a general JSON Schema validator."
+        }
+      },
+      {
+        "id": "chat-schema-missing-required",
+        "conversion_id": "chat-schema-strict",
+        "raw": "{}",
+        "expect": {
+          "text": "{}",
+          "json_parseable": true,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "satisfies_declared_schema": false,
+          "basis": "Literal counterexample to the normalized object schema: city string required, no extras. This is fixture labeling, not execution of a general JSON Schema validator."
+        }
+      },
+      {
+        "id": "chat-schema-extra-property",
+        "conversion_id": "chat-schema-strict",
+        "raw": "{\"city\":\"北京\",\"extra\":1}",
+        "expect": {
+          "text": "{\"city\":\"北京\",\"extra\":1}",
+          "json_parseable": true,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "satisfies_declared_schema": false,
+          "basis": "Literal counterexample to the normalized object schema: city string required, no extras. This is fixture labeling, not execution of a general JSON Schema validator."
+        }
+      },
+      {
+        "id": "chat-schema-non-json",
+        "conversion_id": "chat-schema-strict",
+        "raw": "not JSON",
+        "expect": {
+          "text": "not JSON",
+          "json_parseable": false,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "satisfies_declared_schema": false,
+          "basis": "Literal counterexample to the normalized object schema: city string required, no extras. This is fixture labeling, not execution of a general JSON Schema validator."
+        }
+      },
+      {
+        "id": "chat-schema-array",
+        "conversion_id": "chat-schema-strict",
+        "raw": "[1,2]",
+        "expect": {
+          "text": "[1,2]",
+          "json_parseable": true,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "satisfies_declared_schema": false,
+          "basis": "Literal counterexample to the normalized object schema: city string required, no extras. This is fixture labeling, not execution of a general JSON Schema validator."
+        }
+      },
+      {
+        "id": "chat-object-array",
+        "conversion_id": "chat-json-object",
+        "raw": "[1,2]",
+        "expect": {
+          "text": "[1,2]",
+          "json_parseable": true,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "json_object": false
+        }
+      },
+      {
+        "id": "chat-object-invalid",
+        "conversion_id": "chat-json-object",
+        "raw": "not JSON",
+        "expect": {
+          "text": " ",
+          "json_parseable": false,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "json_object": false
+        }
+      },
+      {
+        "id": "responses-schema-wrong-type",
+        "conversion_id": "responses-schema-strict",
+        "raw": "{\"city\":4}",
+        "expect": {
+          "text": "{\"city\":4}",
+          "json_parseable": true,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "satisfies_declared_schema": false,
+          "basis": "Literal counterexample to the normalized object schema: city string required, no extras. This is fixture labeling, not execution of a general JSON Schema validator."
+        }
+      },
+      {
+        "id": "responses-schema-missing-required",
+        "conversion_id": "responses-schema-strict",
+        "raw": "{}",
+        "expect": {
+          "text": "{}",
+          "json_parseable": true,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "satisfies_declared_schema": false,
+          "basis": "Literal counterexample to the normalized object schema: city string required, no extras. This is fixture labeling, not execution of a general JSON Schema validator."
+        }
+      },
+      {
+        "id": "responses-schema-extra-property",
+        "conversion_id": "responses-schema-strict",
+        "raw": "{\"city\":\"北京\",\"extra\":1}",
+        "expect": {
+          "text": "{\"city\":\"北京\",\"extra\":1}",
+          "json_parseable": true,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "satisfies_declared_schema": false,
+          "basis": "Literal counterexample to the normalized object schema: city string required, no extras. This is fixture labeling, not execution of a general JSON Schema validator."
+        }
+      },
+      {
+        "id": "responses-schema-non-json",
+        "conversion_id": "responses-schema-strict",
+        "raw": "not JSON",
+        "expect": {
+          "text": "not JSON",
+          "json_parseable": false,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "satisfies_declared_schema": false,
+          "basis": "Literal counterexample to the normalized object schema: city string required, no extras. This is fixture labeling, not execution of a general JSON Schema validator."
+        }
+      },
+      {
+        "id": "responses-schema-array",
+        "conversion_id": "responses-schema-strict",
+        "raw": "[1,2]",
+        "expect": {
+          "text": "[1,2]",
+          "json_parseable": true,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "satisfies_declared_schema": false,
+          "basis": "Literal counterexample to the normalized object schema: city string required, no extras. This is fixture labeling, not execution of a general JSON Schema validator."
+        }
+      },
+      {
+        "id": "responses-object-array",
+        "conversion_id": "responses-json-object",
+        "raw": "[1,2]",
+        "expect": {
+          "text": "[1,2]",
+          "json_parseable": true,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "json_object": false
+        }
+      },
+      {
+        "id": "responses-object-invalid",
+        "conversion_id": "responses-json-object",
+        "raw": "not JSON",
+        "expect": {
+          "text": " ",
+          "json_parseable": false,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "json_object": false
+        }
+      },
+      {
+        "id": "chat-regex-mismatch",
+        "conversion_id": "chat-regex-valid",
+        "raw": "not JSON",
+        "expect": {
+          "text": "not JSON",
+          "json_parseable": false,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "matches_regex": false
+        }
+      },
+      {
+        "id": "messages-ignored-schema-valid",
+        "conversion_id": "messages-schema-valid",
+        "raw": "not JSON",
+        "expect": {
+          "text": "not JSON",
+          "json_parseable": false,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "constraint_present": false
+        }
+      },
+      {
+        "id": "messages-ignored-schema-invalid-type",
+        "conversion_id": "messages-schema-invalid-type",
+        "raw": "not JSON",
+        "expect": {
+          "text": "not JSON",
+          "json_parseable": false,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "constraint_present": false
+        }
+      },
+      {
+        "id": "messages-ignored-regex-valid",
+        "conversion_id": "messages-regex-valid",
+        "raw": "not JSON",
+        "expect": {
+          "text": "not JSON",
+          "json_parseable": false,
+          "error": null
+        },
+        "manual_fixture_truth": {
+          "constraint_present": false
+        }
+      }
+    ]
+  }
+}

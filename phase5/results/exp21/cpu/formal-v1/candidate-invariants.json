@@ -1,0 +1,83 @@
+[
+  {
+    "name": "CPU records never claim backend execution",
+    "applicable": 126,
+    "passed": 126,
+    "failed_ids": [],
+    "unknown_ids": [],
+    "status": "pass",
+    "scope": "candidate invariant of these frozen CPU cases only"
+  },
+  {
+    "name": "Tool constraint lists match converted tool names and required flag",
+    "applicable": 27,
+    "passed": 27,
+    "failed_ids": [],
+    "unknown_ids": [],
+    "status": "pass",
+    "scope": "candidate invariant of these frozen CPU cases only"
+  },
+  {
+    "name": "No tool-call kind is forwarded to DeepInfer compiler",
+    "applicable": 27,
+    "passed": 27,
+    "failed_ids": [],
+    "unknown_ids": [],
+    "status": "pass",
+    "scope": "candidate invariant of these frozen CPU cases only"
+  },
+  {
+    "name": "Empty any-JSON sentinel is not forwarded as a JSON Schema",
+    "applicable": 4,
+    "passed": 4,
+    "failed_ids": [],
+    "unknown_ids": [],
+    "status": "pass",
+    "scope": "candidate invariant of these frozen CPU cases only"
+  },
+  {
+    "name": "tool_choice none removes tool definitions and tool constraint",
+    "applicable": 20,
+    "passed": 20,
+    "failed_ids": [],
+    "unknown_ids": [],
+    "status": "pass",
+    "scope": "candidate invariant of these frozen CPU cases only"
+  },
+  {
+    "name": "Messages attempted format fields leave text format and no constraint",
+    "applicable": 15,
+    "passed": 15,
+    "failed_ids": [],
+    "unknown_ids": [],
+    "status": "pass",
+    "scope": "candidate invariant of these frozen CPU cases only"
+  },
+  {
+    "name": "Strict response schema normalizes constraint while preserving prompt schema",
+    "applicable": 2,
+    "passed": 2,
+    "failed_ids": [],
+    "unknown_ids": [],
+    "status": "pass",
+    "scope": "candidate invariant of these frozen CPU cases only"
+  },
+  {
+    "name": "Recognized invalid schemas reject during conversion",
+    "applicable": 8,
+    "passed": 8,
+    "failed_ids": [],
+    "unknown_ids": [],
+    "status": "pass",
+    "scope": "candidate invariant of these frozen CPU cases only"
+  },
+  {
+    "name": "Strict-schema counterexamples pass through parser without instance validation",
+    "applicable": 10,
+    "passed": 10,
+    "failed_ids": [],
+    "unknown_ids": [],
+    "status": "pass",
+    "scope": "candidate invariant of these frozen CPU cases only"
+  }
+]

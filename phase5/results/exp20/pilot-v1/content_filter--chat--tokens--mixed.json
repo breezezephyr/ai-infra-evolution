@@ -1,0 +1,240 @@
+{
+  "fixture": {
+    "id": "content_filter",
+    "raw": "已有前缀",
+    "thinking": false,
+    "action": "ContentFilter",
+    "stop": [],
+    "expect": {
+      "chat": {
+        "text": "已有前缀",
+        "reasoning": "",
+        "tools": [],
+        "finish": "content_filter",
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "已有前缀",
+        "reasoning": "",
+        "tools": [],
+        "finish": "content_filter",
+        "status": "incomplete",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "已有前缀",
+        "reasoning": "",
+        "tools": [],
+        "finish": "refusal",
+        "status": null,
+        "stop_sequence": null
+      }
+    },
+    "expect_termination": "backend_finish",
+    "expect_native_finished": true
+  },
+  "protocol": "chat",
+  "mode": "tokens",
+  "pattern": "mixed",
+  "events": [
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745584,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}"
+    },
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745584,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"content\":\"已有\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}"
+    },
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745584,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"content\":\"前缀\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}"
+    },
+    {
+      "event": null,
+      "data": "{\"id\":\"exp20\",\"object\":\"chat.completion.chunk\",\"created\":1792745584,\"model\":\"DeepSeek-V4.1-Flash\",\"system_fingerprint\":null,\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\"},\"logprobs\":null,\"finish_reason\":\"content_filter\"}],\"usage\":{\"prompt_tokens\":13,\"completion_tokens\":2,\"total_tokens\":15,\"prompt_tokens_details\":{\"cached_tokens\":3},\"prompt_cache_hit_tokens\":3,\"prompt_cache_miss_tokens\":10}}"
+    }
+  ],
+  "backend_finish_seen": true,
+  "native_finished": true,
+  "unsubmitted_units": 0,
+  "unexpected_error": null,
+  "termination_source": "backend_finish",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "请继续报站"
+      }
+    ],
+    "max_tokens": 128,
+    "thinking": {
+      "type": "disabled"
+    },
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [],
+    "thinking_initial_stage": "None"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "token IDs",
+    "processor_has_tokenizer": true
+  },
+  "input_units": [
+    24511,
+    112831
+  ],
+  "native_finished_after_data": false,
+  "response": {
+    "id": "exp20",
+    "object": "chat.completion",
+    "created": 0,
+    "model": "DeepSeek-V4.1-Flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "已有前缀"
+        },
+        "logprobs": null,
+        "finish_reason": "content_filter"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 13,
+      "completion_tokens": 2,
+      "total_tokens": 15,
+      "prompt_tokens_details": {
+        "cached_tokens": 3
+      },
+      "prompt_cache_hit_tokens": 3,
+      "prompt_cache_miss_tokens": 10
+    },
+    "system_fingerprint": null
+  },
+  "semantic": {
+    "text": "已有前缀",
+    "reasoning": "",
+    "tools": [],
+    "finish": "content_filter",
+    "status": null,
+    "stop_sequence": null
+  },
+  "id": "content_filter--chat--tokens--mixed",
+  "contract": "161853b9b78ecd2cee3e997ae6b1107efb00e2de6b4f1e02c7987e400fdd7bfd",
+  "sse": {
+    "bytes": 1131,
+    "sha256": "1394e9a4a87f12a365ebb7b98a23a45a9724237fd60ec48fb84a028e66dc78c5",
+    "done_data": "[DONE]",
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 5
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 5
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 5
+      }
+    ],
+    "expected_events": 5,
+    "incomplete_eof_count": 4,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "已有前缀",
+          "reasoning": "",
+          "tools": [],
+          "finish": "content_filter",
+          "status": null,
+          "stop_sequence": null
+        },
+        "expected": {
+          "text": "已有前缀",
+          "reasoning": "",
+          "tools": [],
+          "finish": "content_filter",
+          "status": null,
+          "stop_sequence": null
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "backend_finish"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": true
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 5
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 5
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 5
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 4
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "content_filter--chat--tokens--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

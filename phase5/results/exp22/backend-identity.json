@@ -1,0 +1,56 @@
+{
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "versions": {
+    "vllm": "0.8.5",
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "xgrammar": "0.1.18"
+  },
+  "files": {
+    "/opt/models/Qwen3-0.6B/config.json": {
+      "sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+      "bytes": 726
+    },
+    "/opt/models/Qwen3-0.6B/tokenizer.json": {
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "bytes": 11422654
+    },
+    "/opt/models/Qwen3-0.6B/tokenizer_config.json": {
+      "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "bytes": 9732
+    },
+    "/opt/models/Qwen3-0.6B/model.safetensors": {
+      "sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+      "bytes": 1503300328
+    },
+    "/root/vllm-env/lib/python3.12/site-packages/vllm/entrypoints/openai/protocol.py": {
+      "sha256": "41035c9a6fb42af1e78049511008f29ff0009bf97ca94284fe774d78a9929937",
+      "bytes": 66479
+    },
+    "/root/vllm-env/lib/python3.12/site-packages/vllm/entrypoints/openai/serving_engine.py": {
+      "sha256": "949a9f47dc572ff8643d17cca2dee118da68412b26a99549983e34ae355b8145",
+      "bytes": 22349
+    },
+    "/root/vllm-env/lib/python3.12/site-packages/vllm/engine/async_llm_engine.py": {
+      "sha256": "3558f4d4d6d8c7228ded61172665f372206170c666bce3f41f3677e74b2093ca",
+      "bytes": 51183
+    },
+    "/root/vllm-env/lib/python3.12/site-packages/vllm/core/scheduler.py": {
+      "sha256": "ad1d442f23103658dfcf0666b6e34ec0f9972185be8012d2f9ac4b73347f5a1c",
+      "bytes": 90120
+    },
+    "/root/vllm-env/lib/python3.12/site-packages/vllm/outputs.py": {
+      "sha256": "760048580d15ad0f4a5e1aeeff4fcdb40694df9bab1d370d9ea86b5e4396c52e",
+      "bytes": 20255
+    },
+    "/root/vllm-env/lib/python3.12/site-packages/vllm/sequence.py": {
+      "sha256": "ac58333febedcc110afb3b082628e1931f756d383c0d1fa7221df3fe27a4cb6f",
+      "bytes": 58721
+    }
+  },
+  "model_revision": null,
+  "relevant_env": {
+    "VLLM_USE_V1": "0 (explicit startup)"
+  },
+  "scope": "installed runtime and actual files, no full env"
+}

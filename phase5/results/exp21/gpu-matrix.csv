@@ -1,0 +1,322 @@
+id,family,arm,seed,http_status,accepted,finish_reason,json_valid,schema_valid,business_correct,complete,deliverable,content,raw_usage,elapsed_ms
+city-1--json_schema--seed17,extract,json_schema,17,200,True,stop,True,True,True,True,True,"{""city"": ""杭州"", ""tickets"": 3}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",1027.011625
+city-1--prompt_only--seed17,extract,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{""city"": ""杭州"", ""tickets"": 3}
+```","{""prompt_tokens"": 134, ""total_tokens"": 151, ""completion_tokens"": 17, ""prompt_tokens_details"": null}",686.269958
+city-1--json_object--seed17,extract,json_object,17,200,True,stop,True,True,True,True,True,"{""city"": ""杭州"", ""tickets"": 3}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",796.008708
+city-2--prompt_only--seed17,extract,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{""city"": ""南京"", ""tickets"": 7}
+```","{""prompt_tokens"": 134, ""total_tokens"": 151, ""completion_tokens"": 17, ""prompt_tokens_details"": null}",722.706667
+city-2--json_object--seed17,extract,json_object,17,200,True,stop,True,True,True,True,True,"{""city"": ""南京"", ""tickets"": 7}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",574.067833
+city-2--json_schema--seed17,extract,json_schema,17,200,True,stop,True,True,True,True,True,"{""city"": ""南京"", ""tickets"": 7}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",734.669625
+city-3--json_object--seed17,extract,json_object,17,200,True,stop,True,True,True,True,True,"{""city"": ""苏州"", ""tickets"": 1}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",814.192292
+city-3--json_schema--seed17,extract,json_schema,17,200,True,stop,True,True,True,True,True,"{""city"": ""苏州"", ""tickets"": 1}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",972.740792
+city-3--prompt_only--seed17,extract,prompt_only,17,200,True,stop,True,True,True,True,True,"{""city"": ""苏州"", ""tickets"": 1}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",582.022541
+city-4--json_schema--seed17,extract,json_schema,17,200,True,stop,True,True,True,True,True,"{""city"": ""杭州"", ""tickets"": 9}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",611.930917
+city-4--prompt_only--seed17,extract,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{""city"": ""杭州"", ""tickets"": 9}
+```","{""prompt_tokens"": 134, ""total_tokens"": 151, ""completion_tokens"": 17, ""prompt_tokens_details"": null}",639.373083
+city-4--json_object--seed17,extract,json_object,17,200,True,stop,True,True,True,True,True,"{""city"": ""杭州"", ""tickets"": 9}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",923.83475
+city-5--prompt_only--seed17,extract,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{""city"": ""南京"", ""tickets"": 2}
+```","{""prompt_tokens"": 134, ""total_tokens"": 151, ""completion_tokens"": 17, ""prompt_tokens_details"": null}",617.237208
+city-5--json_object--seed17,extract,json_object,17,200,True,stop,True,True,True,True,True,"{""city"": ""南京"", ""tickets"": 2}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",817.068375
+city-5--json_schema--seed17,extract,json_schema,17,200,True,stop,True,True,True,True,True,"{""city"": ""南京"", ""tickets"": 2}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",690.825
+intent-1--json_object--seed17,classify,json_object,17,200,True,stop,True,True,False,True,False,"{""kind"": ""查询"", ""urgent"": true}","{""prompt_tokens"": 130, ""total_tokens"": 142, ""completion_tokens"": 12, ""prompt_tokens_details"": null}",677.394083
+intent-1--json_schema--seed17,classify,json_schema,17,200,True,stop,True,True,False,True,False,"{""kind"": ""查询"", ""urgent"": true}","{""prompt_tokens"": 130, ""total_tokens"": 142, ""completion_tokens"": 12, ""prompt_tokens_details"": null}",871.654958
+intent-1--prompt_only--seed17,classify,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""kind"": ""查询"",
+  ""urgent"": true
+}
+```","{""prompt_tokens"": 130, ""total_tokens"": 150, ""completion_tokens"": 20, ""prompt_tokens_details"": null}",674.031833
+intent-2--json_schema--seed17,classify,json_schema,17,200,True,stop,True,True,True,True,True,"{""kind"": ""改签"", ""urgent"": true}","{""prompt_tokens"": 131, ""total_tokens"": 144, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",928.316541
+intent-2--prompt_only--seed17,classify,prompt_only,17,200,True,stop,True,True,True,True,True,"{""kind"": ""改签"", ""urgent"": true}","{""prompt_tokens"": 131, ""total_tokens"": 144, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",470.857458
+intent-2--json_object--seed17,classify,json_object,17,200,True,stop,True,True,True,True,True,"{""kind"": ""改签"", ""urgent"": true}","{""prompt_tokens"": 131, ""total_tokens"": 144, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",711.044459
+intent-3--prompt_only--seed17,classify,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""kind"": ""退票"",
+  ""urgent"": true
+}
+```","{""prompt_tokens"": 133, ""total_tokens"": 154, ""completion_tokens"": 21, ""prompt_tokens_details"": null}",801.347375
+intent-3--json_object--seed17,classify,json_object,17,200,True,stop,True,True,False,True,False,"{""kind"": ""退票"", ""urgent"": true}","{""prompt_tokens"": 133, ""total_tokens"": 146, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",694.244042
+intent-3--json_schema--seed17,classify,json_schema,17,200,True,stop,True,True,False,True,False,"{""kind"": ""退票"", ""urgent"": true}","{""prompt_tokens"": 133, ""total_tokens"": 146, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",921.462042
+intent-4--json_object--seed17,classify,json_object,17,200,True,stop,True,True,True,True,True,"{""kind"": ""查询"", ""urgent"": true}","{""prompt_tokens"": 128, ""total_tokens"": 140, ""completion_tokens"": 12, ""prompt_tokens_details"": null}",733.923583
+intent-4--json_schema--seed17,classify,json_schema,17,200,True,stop,True,True,True,True,True,"{""kind"": ""查询"", ""urgent"": true}","{""prompt_tokens"": 128, ""total_tokens"": 140, ""completion_tokens"": 12, ""prompt_tokens_details"": null}",806.116
+intent-4--prompt_only--seed17,classify,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""kind"": ""查询"",
+  ""urgent"": true
+}
+```","{""prompt_tokens"": 128, ""total_tokens"": 148, ""completion_tokens"": 20, ""prompt_tokens_details"": null}",614.173917
+intent-5--json_schema--seed17,classify,json_schema,17,200,True,stop,True,True,False,True,False,"{""kind"": ""查询"", ""urgent"": true}","{""prompt_tokens"": 130, ""total_tokens"": 142, ""completion_tokens"": 12, ""prompt_tokens_details"": null}",694.429542
+intent-5--prompt_only--seed17,classify,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""kind"": ""查询"",
+  ""urgent"": true
+}
+```","{""prompt_tokens"": 130, ""total_tokens"": 150, ""completion_tokens"": 20, ""prompt_tokens_details"": null}",733.548833
+intent-5--json_object--seed17,classify,json_object,17,200,True,stop,True,True,False,True,False,"{""kind"": ""查询"", ""urgent"": true}","{""prompt_tokens"": 130, ""total_tokens"": 142, ""completion_tokens"": 12, ""prompt_tokens_details"": null}",559.232417
+calc-1--prompt_only--seed17,arithmetic,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""total"": 126,
+  ""has_discount"": true
+}
+```","{""prompt_tokens"": 138, ""total_tokens"": 161, ""completion_tokens"": 23, ""prompt_tokens_details"": null}",678.714916
+calc-1--json_object--seed17,arithmetic,json_object,17,200,True,stop,True,True,False,True,False,"{""total"": 100, ""has_discount"": true}","{""prompt_tokens"": 138, ""total_tokens"": 153, ""completion_tokens"": 15, ""prompt_tokens_details"": null}",862.8835
+calc-1--json_schema--seed17,arithmetic,json_schema,17,200,True,stop,True,True,False,True,False,"{""total"": 100, ""has_discount"": true}","{""prompt_tokens"": 138, ""total_tokens"": 153, ""completion_tokens"": 15, ""prompt_tokens_details"": null}",697.979375
+calc-2--json_object--seed17,arithmetic,json_object,17,200,True,stop,True,True,False,True,False,"{""total"": 28, ""has_discount"": false}","{""prompt_tokens"": 137, ""total_tokens"": 151, ""completion_tokens"": 14, ""prompt_tokens_details"": null}",673.984125
+calc-2--json_schema--seed17,arithmetic,json_schema,17,200,True,stop,True,True,False,True,False,"{""total"": 28, ""has_discount"": false}","{""prompt_tokens"": 137, ""total_tokens"": 151, ""completion_tokens"": 14, ""prompt_tokens_details"": null}",781.309334
+calc-2--prompt_only--seed17,arithmetic,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""total"": 28 * 7 - 33,
+  ""has_discount"": true
+}
+```","{""prompt_tokens"": 137, ""total_tokens"": 166, ""completion_tokens"": 29, ""prompt_tokens_details"": null}",761.523042
+calc-3--json_schema--seed17,arithmetic,json_schema,17,200,True,stop,True,True,True,True,True,"{""total"": 126, ""has_discount"": false}","{""prompt_tokens"": 134, ""total_tokens"": 149, ""completion_tokens"": 15, ""prompt_tokens_details"": null}",832.391334
+calc-3--prompt_only--seed17,arithmetic,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""total"": 126,
+  ""has_discount"": false
+}
+```","{""prompt_tokens"": 134, ""total_tokens"": 157, ""completion_tokens"": 23, ""prompt_tokens_details"": null}",934.824375
+calc-3--json_object--seed17,arithmetic,json_object,17,200,True,stop,True,True,True,True,True,"{""total"": 126, ""has_discount"": false}","{""prompt_tokens"": 134, ""total_tokens"": 149, ""completion_tokens"": 15, ""prompt_tokens_details"": null}",796.913208
+calc-4--prompt_only--seed17,arithmetic,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""total"": 3700,
+  ""has_discount"": true
+}
+```","{""prompt_tokens"": 139, ""total_tokens"": 163, ""completion_tokens"": 24, ""prompt_tokens_details"": null}",843.978333
+calc-4--json_object--seed17,arithmetic,json_object,17,200,True,stop,True,True,False,True,False,"{""total"": 3000, ""has_discount"": false}","{""prompt_tokens"": 139, ""total_tokens"": 155, ""completion_tokens"": 16, ""prompt_tokens_details"": null}",999.389167
+calc-4--json_schema--seed17,arithmetic,json_schema,17,200,True,stop,True,True,False,True,False,"{""total"": 3000, ""has_discount"": false}","{""prompt_tokens"": 139, ""total_tokens"": 155, ""completion_tokens"": 16, ""prompt_tokens_details"": null}",1015.960916
+calc-5--json_object--seed17,arithmetic,json_object,17,200,True,stop,True,True,False,True,False,"{""total"": 230, ""has_discount"": false}","{""prompt_tokens"": 135, ""total_tokens"": 150, ""completion_tokens"": 15, ""prompt_tokens_details"": null}",880.260541
+calc-5--json_schema--seed17,arithmetic,json_schema,17,200,True,stop,True,True,False,True,False,"{""total"": 230, ""has_discount"": false}","{""prompt_tokens"": 135, ""total_tokens"": 150, ""completion_tokens"": 15, ""prompt_tokens_details"": null}",815.775458
+calc-5--prompt_only--seed17,arithmetic,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""total"": 23 * 11,
+  ""has_discount"": false
+}
+```","{""prompt_tokens"": 135, ""total_tokens"": 161, ""completion_tokens"": 26, ""prompt_tokens_details"": null}",989.491583
+order-1--json_schema--seed17,ordered_selection,json_schema,17,400,False,,,,,,,,null,279.156625
+order-1--prompt_only--seed17,ordered_selection,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""type"": ""object"",
+  ""properties"": {
+    ""stops"": [""杭州"", ""南京""],
+    ""count"": 2
+  },
+  ""required"": [""stops"", ""count""]
+}
+```","{""prompt_tokens"": 165, ""total_tokens"": 213, ""completion_tokens"": 48, ""prompt_tokens_details"": null}",1371.312041
+order-1--json_object--seed17,ordered_selection,json_object,17,200,True,stop,True,False,False,True,False,"{""type"": ""object"", ""properties"": {""stops"": [""杭州"", ""南京""], ""count"": 2} }","{""prompt_tokens"": 165, ""total_tokens"": 191, ""completion_tokens"": 26, ""prompt_tokens_details"": null}",1034.607834
+order-2--prompt_only--seed17,ordered_selection,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""type"": ""object"",
+  ""properties"": {
+    ""stops"": [""苏州""],
+    ""count"": 1
+  }
+}
+```","{""prompt_tokens"": 165, ""total_tokens"": 200, ""completion_tokens"": 35, ""prompt_tokens_details"": null}",1408.506208
+order-2--json_object--seed17,ordered_selection,json_object,17,200,True,stop,True,False,False,True,False,"{""type"": ""object"", ""properties"": {""stops"": [""苏州""], ""count"": 1}}","{""prompt_tokens"": 165, ""total_tokens"": 187, ""completion_tokens"": 22, ""prompt_tokens_details"": null}",1037.868583
+order-2--json_schema--seed17,ordered_selection,json_schema,17,400,False,,,,,,,,null,210.089459
+order-3--json_object--seed17,ordered_selection,json_object,17,200,True,stop,True,False,False,True,False,"{""type"": ""object"", ""properties"": {""stops"": [""南京"", ""苏州"", ""杭州""], ""count"": 3} }","{""prompt_tokens"": 165, ""total_tokens"": 194, ""completion_tokens"": 29, ""prompt_tokens_details"": null}",1191.077042
+order-3--json_schema--seed17,ordered_selection,json_schema,17,400,False,,,,,,,,null,521.4515
+order-3--prompt_only--seed17,ordered_selection,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""type"": ""object"",
+  ""properties"": {
+    ""stops"": [""南京"", ""苏州"", ""杭州""],
+    ""count"": 3
+  }
+}
+```","{""prompt_tokens"": 165, ""total_tokens"": 206, ""completion_tokens"": 41, ""prompt_tokens_details"": null}",1070.167542
+order-4--json_schema--seed17,ordered_selection,json_schema,17,400,False,,,,,,,,null,421.592666
+order-4--prompt_only--seed17,ordered_selection,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""type"": ""object"",
+  ""properties"": {
+    ""stops"": [""杭州""],
+    ""count"": 0
+  }
+}
+```","{""prompt_tokens"": 165, ""total_tokens"": 200, ""completion_tokens"": 35, ""prompt_tokens_details"": null}",1115.308791
+order-4--json_object--seed17,ordered_selection,json_object,17,200,True,stop,True,False,False,True,False,"{""type"": ""object"", ""properties"": {""stops"": [""杭州"", ""南京"", ""苏州""], ""count"": 0} }","{""prompt_tokens"": 165, ""total_tokens"": 194, ""completion_tokens"": 29, ""prompt_tokens_details"": null}",1259.609417
+order-5--prompt_only--seed17,ordered_selection,prompt_only,17,200,True,stop,False,False,False,True,False,"```json
+{
+  ""type"": ""object"",
+  ""properties"": {
+    ""stops"": [""杭州"", ""南京""],
+    ""count"": 2
+  },
+  ""required"": [""stops"", ""count""]
+}
+```","{""prompt_tokens"": 165, ""total_tokens"": 213, ""completion_tokens"": 48, ""prompt_tokens_details"": null}",1321.471292
+order-5--json_object--seed17,ordered_selection,json_object,17,200,True,stop,True,False,False,True,False,"{""type"": ""object"", ""properties"": {""stops"": [""杭州"", ""南京""], ""count"": 2} }","{""prompt_tokens"": 165, ""total_tokens"": 191, ""completion_tokens"": 26, ""prompt_tokens_details"": null}",1260.191666
+order-5--json_schema--seed17,ordered_selection,json_schema,17,400,False,,,,,,,,null,314.41225
+city-1--json_object--seed29,extract,json_object,29,200,True,stop,True,True,True,True,True,"{""city"": ""杭州"", ""tickets"": 3}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",1037.648792
+city-1--json_schema--seed29,extract,json_schema,29,200,True,stop,True,True,True,True,True,"{""city"": ""杭州"", ""tickets"": 3}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",754.387375
+city-1--prompt_only--seed29,extract,prompt_only,29,200,True,stop,True,True,True,True,True,"{""city"": ""杭州"", ""tickets"": 3}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",549.605833
+city-2--json_schema--seed29,extract,json_schema,29,200,True,stop,True,True,True,True,True,"{""city"": ""南京"", ""tickets"": 7}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",630.646209
+city-2--prompt_only--seed29,extract,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{""city"": ""南京"", ""tickets"": 7}
+```","{""prompt_tokens"": 134, ""total_tokens"": 151, ""completion_tokens"": 17, ""prompt_tokens_details"": null}",520.982542
+city-2--json_object--seed29,extract,json_object,29,200,True,stop,True,True,True,True,True,"{""city"": ""南京"", ""tickets"": 7}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",890.960292
+city-3--prompt_only--seed29,extract,prompt_only,29,200,True,stop,True,True,True,True,True,"{""city"": ""苏州"", ""tickets"": 1}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",632.59775
+city-3--json_object--seed29,extract,json_object,29,200,True,stop,True,True,True,True,True,"{""city"": ""苏州"", ""tickets"": 1}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",621.9695
+city-3--json_schema--seed29,extract,json_schema,29,200,True,stop,True,True,True,True,True,"{""city"": ""苏州"", ""tickets"": 1}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",853.101
+city-4--json_object--seed29,extract,json_object,29,200,True,stop,True,True,True,True,True,"{""city"": ""杭州"", ""tickets"": 9}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",693.963417
+city-4--json_schema--seed29,extract,json_schema,29,200,True,stop,True,True,True,True,True,"{""city"": ""杭州"", ""tickets"": 9}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",733.599542
+city-4--prompt_only--seed29,extract,prompt_only,29,200,True,stop,True,True,True,True,True,"{""city"": ""杭州"", ""tickets"": 9}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",705.782625
+city-5--json_schema--seed29,extract,json_schema,29,200,True,stop,True,True,True,True,True,"{""city"": ""南京"", ""tickets"": 2}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",1067.069458
+city-5--prompt_only--seed29,extract,prompt_only,29,200,True,stop,True,True,True,True,True,"{""city"": ""南京"", ""tickets"": 2}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",687.532958
+city-5--json_object--seed29,extract,json_object,29,200,True,stop,True,True,True,True,True,"{""city"": ""南京"", ""tickets"": 2}","{""prompt_tokens"": 134, ""total_tokens"": 147, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",647.2555
+intent-1--prompt_only--seed29,classify,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""kind"": ""查询"",
+  ""urgent"": true
+}
+```","{""prompt_tokens"": 130, ""total_tokens"": 150, ""completion_tokens"": 20, ""prompt_tokens_details"": null}",852.605792
+intent-1--json_object--seed29,classify,json_object,29,200,True,stop,True,True,False,True,False,"{""kind"": ""查询"", ""urgent"": true}","{""prompt_tokens"": 130, ""total_tokens"": 142, ""completion_tokens"": 12, ""prompt_tokens_details"": null}",612.895125
+intent-1--json_schema--seed29,classify,json_schema,29,200,True,stop,True,True,False,True,False,"{""kind"": ""查询"", ""urgent"": true}","{""prompt_tokens"": 130, ""total_tokens"": 142, ""completion_tokens"": 12, ""prompt_tokens_details"": null}",672.466292
+intent-2--json_object--seed29,classify,json_object,29,200,True,stop,True,True,True,True,True,"{""kind"": ""改签"", ""urgent"": true}","{""prompt_tokens"": 131, ""total_tokens"": 144, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",901.493708
+intent-2--json_schema--seed29,classify,json_schema,29,200,True,stop,True,True,True,True,True,"{""kind"": ""改签"", ""urgent"": true}","{""prompt_tokens"": 131, ""total_tokens"": 144, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",863.677333
+intent-2--prompt_only--seed29,classify,prompt_only,29,200,True,stop,True,True,True,True,True,"{""kind"": ""改签"", ""urgent"": true}","{""prompt_tokens"": 131, ""total_tokens"": 144, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",682.905917
+intent-3--json_schema--seed29,classify,json_schema,29,200,True,stop,True,True,False,True,False,"{""kind"": ""退票"", ""urgent"": true}","{""prompt_tokens"": 133, ""total_tokens"": 146, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",1132.464833
+intent-3--prompt_only--seed29,classify,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""kind"": ""退票"",
+  ""urgent"": true
+}
+```","{""prompt_tokens"": 133, ""total_tokens"": 154, ""completion_tokens"": 21, ""prompt_tokens_details"": null}",1078.920291
+intent-3--json_object--seed29,classify,json_object,29,200,True,stop,True,True,False,True,False,"{""kind"": ""退票"", ""urgent"": true}","{""prompt_tokens"": 133, ""total_tokens"": 146, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",890.85725
+intent-4--prompt_only--seed29,classify,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""kind"": ""查询"",
+  ""urgent"": true
+}
+```","{""prompt_tokens"": 128, ""total_tokens"": 148, ""completion_tokens"": 20, ""prompt_tokens_details"": null}",1183.937167
+intent-4--json_object--seed29,classify,json_object,29,200,True,stop,True,True,True,True,True,"{""kind"": ""查询"", ""urgent"": true}","{""prompt_tokens"": 128, ""total_tokens"": 140, ""completion_tokens"": 12, ""prompt_tokens_details"": null}",2298.989125
+intent-4--json_schema--seed29,classify,json_schema,29,200,True,stop,True,True,True,True,True,"{""kind"": ""查询"", ""urgent"": true}","{""prompt_tokens"": 128, ""total_tokens"": 140, ""completion_tokens"": 12, ""prompt_tokens_details"": null}",1118.204333
+intent-5--json_object--seed29,classify,json_object,29,200,True,stop,True,True,False,True,False,"{""kind"": ""改签"", ""urgent"": true}","{""prompt_tokens"": 130, ""total_tokens"": 143, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",995.235083
+intent-5--json_schema--seed29,classify,json_schema,29,200,True,stop,True,True,False,True,False,"{""kind"": ""改签"", ""urgent"": true}","{""prompt_tokens"": 130, ""total_tokens"": 143, ""completion_tokens"": 13, ""prompt_tokens_details"": null}",1155.345333
+intent-5--prompt_only--seed29,classify,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""kind"": ""查询"",
+  ""urgent"": true
+}
+```","{""prompt_tokens"": 130, ""total_tokens"": 150, ""completion_tokens"": 20, ""prompt_tokens_details"": null}",761.031083
+calc-1--json_schema--seed29,arithmetic,json_schema,29,200,True,stop,True,True,False,True,False,"{""total"": 10, ""has_discount"": true}","{""prompt_tokens"": 138, ""total_tokens"": 152, ""completion_tokens"": 14, ""prompt_tokens_details"": null}",758.436167
+calc-1--prompt_only--seed29,arithmetic,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""total"": 17,
+  ""has_discount"": true
+}
+```","{""prompt_tokens"": 138, ""total_tokens"": 160, ""completion_tokens"": 22, ""prompt_tokens_details"": null}",629.86875
+calc-1--json_object--seed29,arithmetic,json_object,29,200,True,stop,True,True,False,True,False,"{""total"": 10, ""has_discount"": true}","{""prompt_tokens"": 138, ""total_tokens"": 152, ""completion_tokens"": 14, ""prompt_tokens_details"": null}",707.740959
+calc-2--prompt_only--seed29,arithmetic,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""total"": 28,
+  ""has_discount"": true
+}
+```","{""prompt_tokens"": 137, ""total_tokens"": 159, ""completion_tokens"": 22, ""prompt_tokens_details"": null}",745.637041
+calc-2--json_object--seed29,arithmetic,json_object,29,200,True,stop,True,True,False,True,False,"{""total"": 28, ""has_discount"": true}","{""prompt_tokens"": 137, ""total_tokens"": 151, ""completion_tokens"": 14, ""prompt_tokens_details"": null}",640.932792
+calc-2--json_schema--seed29,arithmetic,json_schema,29,200,True,stop,True,True,False,True,False,"{""total"": 28, ""has_discount"": true}","{""prompt_tokens"": 137, ""total_tokens"": 151, ""completion_tokens"": 14, ""prompt_tokens_details"": null}",707.198917
+calc-3--json_object--seed29,arithmetic,json_object,29,200,True,stop,True,True,True,True,True,"{""total"": 126, ""has_discount"": false}","{""prompt_tokens"": 134, ""total_tokens"": 149, ""completion_tokens"": 15, ""prompt_tokens_details"": null}",772.617375
+calc-3--json_schema--seed29,arithmetic,json_schema,29,200,True,stop,True,True,True,True,True,"{""total"": 126, ""has_discount"": false}","{""prompt_tokens"": 134, ""total_tokens"": 149, ""completion_tokens"": 15, ""prompt_tokens_details"": null}",656.798375
+calc-3--prompt_only--seed29,arithmetic,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""total"": 126,
+  ""has_discount"": false
+}
+```","{""prompt_tokens"": 134, ""total_tokens"": 157, ""completion_tokens"": 23, ""prompt_tokens_details"": null}",638.071542
+calc-4--json_schema--seed29,arithmetic,json_schema,29,200,True,stop,True,True,False,True,False,"{""total"": 3000, ""has_discount"": true}","{""prompt_tokens"": 139, ""total_tokens"": 155, ""completion_tokens"": 16, ""prompt_tokens_details"": null}",766.631708
+calc-4--prompt_only--seed29,arithmetic,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""total"": 37 * 8 * 0.75,
+  ""has_discount"": true
+}
+```","{""prompt_tokens"": 139, ""total_tokens"": 170, ""completion_tokens"": 31, ""prompt_tokens_details"": null}",961.784583
+calc-4--json_object--seed29,arithmetic,json_object,29,200,True,stop,True,True,False,True,False,"{""total"": 3000, ""has_discount"": true}","{""prompt_tokens"": 139, ""total_tokens"": 155, ""completion_tokens"": 16, ""prompt_tokens_details"": null}",752.944291
+calc-5--prompt_only--seed29,arithmetic,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""total"": 253,
+  ""has_discount"": false
+}
+```","{""prompt_tokens"": 135, ""total_tokens"": 158, ""completion_tokens"": 23, ""prompt_tokens_details"": null}",672.075167
+calc-5--json_object--seed29,arithmetic,json_object,29,200,True,stop,True,True,True,True,True,"{""total"": 253, ""has_discount"": false}","{""prompt_tokens"": 135, ""total_tokens"": 150, ""completion_tokens"": 15, ""prompt_tokens_details"": null}",884.28775
+calc-5--json_schema--seed29,arithmetic,json_schema,29,200,True,stop,True,True,True,True,True,"{""total"": 253, ""has_discount"": false}","{""prompt_tokens"": 135, ""total_tokens"": 150, ""completion_tokens"": 15, ""prompt_tokens_details"": null}",708.996708
+order-1--json_object--seed29,ordered_selection,json_object,29,200,True,stop,True,False,False,True,False,"{""type"": ""object"", ""properties"": {""stops"": [""杭州"", ""南京""], ""count"": 2} }","{""prompt_tokens"": 165, ""total_tokens"": 191, ""completion_tokens"": 26, ""prompt_tokens_details"": null}",1031.655584
+order-1--json_schema--seed29,ordered_selection,json_schema,29,400,False,,,,,,,,null,350.079209
+order-1--prompt_only--seed29,ordered_selection,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""type"": ""object"",
+  ""properties"": {
+    ""stops"": [
+      ""杭州"",
+      ""南京""
+    ],
+    ""count"": 2
+  },
+  ""required"": [""stops"", ""count""]
+}
+```","{""prompt_tokens"": 165, ""total_tokens"": 218, ""completion_tokens"": 53, ""prompt_tokens_details"": null}",1119.611625
+order-2--json_schema--seed29,ordered_selection,json_schema,29,400,False,,,,,,,,null,293.875833
+order-2--prompt_only--seed29,ordered_selection,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""type"": ""object"",
+  ""properties"": {
+    ""stops"": [
+      ""杭州""
+    ],
+    ""count"": 1
+  },
+  ""required"": [""stops"", ""count""]
+}
+```","{""prompt_tokens"": 165, ""total_tokens"": 214, ""completion_tokens"": 49, ""prompt_tokens_details"": null}",1279.002542
+order-2--json_object--seed29,ordered_selection,json_object,29,200,True,stop,True,False,False,True,False,"{""type"": ""object"", ""properties"": {""stops"": [""苏州""], ""count"": 1}}","{""prompt_tokens"": 165, ""total_tokens"": 187, ""completion_tokens"": 22, ""prompt_tokens_details"": null}",1014.480625
+order-3--prompt_only--seed29,ordered_selection,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""type"": ""object"",
+  ""properties"": {
+    ""stops"": [
+      ""南京"",
+      ""苏州"",
+      ""杭州""
+    ],
+    ""count"": 3
+  },
+  ""required"": [""stops"", ""count""]
+}
+```","{""prompt_tokens"": 165, ""total_tokens"": 222, ""completion_tokens"": 57, ""prompt_tokens_details"": null}",1305.986334
+order-3--json_object--seed29,ordered_selection,json_object,29,200,True,stop,True,False,False,True,False,"{""type"": ""object"", ""properties"": {""stops"": [""杭州"", ""南京"", ""苏州""], ""count"": 3} }","{""prompt_tokens"": 165, ""total_tokens"": 194, ""completion_tokens"": 29, ""prompt_tokens_details"": null}",1084.620875
+order-3--json_schema--seed29,ordered_selection,json_schema,29,400,False,,,,,,,,null,381.870625
+order-4--json_object--seed29,ordered_selection,json_object,29,200,True,stop,True,False,False,True,False,"{""type"": ""object"", ""properties"": {""stops"": [""杭州"", ""南京"", ""苏州""], ""count"": 0} }","{""prompt_tokens"": 165, ""total_tokens"": 194, ""completion_tokens"": 29, ""prompt_tokens_details"": null}",1390.387042
+order-4--json_schema--seed29,ordered_selection,json_schema,29,400,False,,,,,,,,null,182.397041
+order-4--prompt_only--seed29,ordered_selection,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""type"": ""object"",
+  ""properties"": {
+    ""stops"": [
+      ""杭州""
+    ],
+    ""count"": 0
+  },
+  ""required"": [""stops"", ""count""]
+}
+```","{""prompt_tokens"": 165, ""total_tokens"": 214, ""completion_tokens"": 49, ""prompt_tokens_details"": null}",1375.833292
+order-5--json_schema--seed29,ordered_selection,json_schema,29,400,False,,,,,,,,null,296.277208
+order-5--prompt_only--seed29,ordered_selection,prompt_only,29,200,True,stop,False,False,False,True,False,"```json
+{
+  ""type"": ""object"",
+  ""properties"": {
+    ""stops"": [
+      ""杭州"",
+      ""南京""
+    ],
+    ""count"": 2
+  },
+  ""required"": [""stops"", ""count""]
+}
+```","{""prompt_tokens"": 165, ""total_tokens"": 218, ""completion_tokens"": 53, ""prompt_tokens_details"": null}",1281.0095
+order-5--json_object--seed29,ordered_selection,json_object,29,200,True,stop,True,False,False,True,False,"{""type"": ""object"", ""properties"": {""stops"": [""杭州"", ""南京""], ""count"": 2} }","{""prompt_tokens"": 165, ""total_tokens"": 191, ""completion_tokens"": 26, ""prompt_tokens_details"": null}",894.901959

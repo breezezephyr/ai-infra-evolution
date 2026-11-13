@@ -1,0 +1,61 @@
+{
+  "kind": "actual_cuda_component_smoke",
+  "component": "asr",
+  "models": {
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cudnn": 90100,
+    "asr": {
+      "device": "cuda",
+      "compute_type": "int8_float16"
+    }
+  },
+  "before_mib": 342,
+  "loaded_mib": 689,
+  "observed_peak_mib": 835,
+  "model_load_ms": 2740.6150519964285,
+  "versions": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.3",
+    "kokoro": "0.9.4",
+    "misaki": "0.9.4",
+    "silero-vad": "6.2.3"
+  },
+  "records": [
+    {
+      "repeat": 0,
+      "warmup": true,
+      "asr": {
+        "text": "你是誰?",
+        "ms": 279.65990296797827
+      }
+    },
+    {
+      "repeat": 1,
+      "warmup": false,
+      "asr": {
+        "text": "你是誰?",
+        "ms": 70.6079049850814
+      }
+    },
+    {
+      "repeat": 2,
+      "warmup": false,
+      "asr": {
+        "text": "你是誰?",
+        "ms": 69.4177060504444
+      }
+    },
+    {
+      "repeat": 3,
+      "warmup": false,
+      "asr": {
+        "text": "你是誰?",
+        "ms": 68.44011001521721
+      }
+    }
+  ]
+}

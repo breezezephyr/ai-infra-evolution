@@ -1,0 +1,247 @@
+{
+  "fixture": {
+    "id": "stop_sequence",
+    "raw": "车已到站END20这段不显示",
+    "thinking": false,
+    "action": "Stop",
+    "stop": [
+      "END20"
+    ],
+    "expect": {
+      "chat": {
+        "text": "车已到站",
+        "reasoning": "",
+        "tools": [],
+        "finish": "stop",
+        "status": null,
+        "stop_sequence": null
+      },
+      "responses": {
+        "text": "车已到站",
+        "reasoning": "",
+        "tools": [],
+        "finish": "completed",
+        "status": "completed",
+        "stop_sequence": null
+      },
+      "messages": {
+        "text": "车已到站",
+        "reasoning": "",
+        "tools": [],
+        "finish": "stop_sequence",
+        "status": null,
+        "stop_sequence": "END20"
+      }
+    },
+    "expect_termination": "parser_stop",
+    "expect_native_finished": true
+  },
+  "protocol": "messages",
+  "mode": "text",
+  "pattern": "mixed",
+  "events": [
+    {
+      "event": "message_start",
+      "data": "{\"type\":\"message_start\",\"message\":{\"id\":\"exp20\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"DeepSeek-V4.1-Flash\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":0,\"service_tier\":\"standard\"}}}"
+    },
+    {
+      "event": "content_block_start",
+      "data": "{\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}"
+    },
+    {
+      "event": "ping",
+      "data": "{\"type\":\"ping\"}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"车\"}}"
+    },
+    {
+      "event": "content_block_delta",
+      "data": "{\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"已到站\"}}"
+    },
+    {
+      "event": "content_block_stop",
+      "data": "{\"type\":\"content_block_stop\",\"index\":0}"
+    },
+    {
+      "event": "message_delta",
+      "data": "{\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"stop_sequence\",\"stop_sequence\":\"END20\"},\"usage\":{\"input_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":3,\"output_tokens\":0,\"service_tier\":\"standard\"}}"
+    },
+    {
+      "event": "message_stop",
+      "data": "{\"type\":\"message_stop\"}"
+    }
+  ],
+  "backend_finish_seen": false,
+  "native_finished": true,
+  "unsubmitted_units": 3,
+  "unexpected_error": null,
+  "termination_source": "parser_stop",
+  "request": {
+    "model": "DeepSeek-V4.1-Flash",
+    "stream": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "请继续报站"
+      }
+    ],
+    "max_tokens": 128,
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "parsing_settings": {
+    "stop_sequences": [
+      "END20"
+    ],
+    "thinking_initial_stage": "None"
+  },
+  "usage_sources": {
+    "prompt": "synthetic backend PromptUsage: 13 total, 3 cache hit",
+    "completion": "unmeasured text token_count=0",
+    "processor_has_tokenizer": false
+  },
+  "input_units": "车已到站END20这段不显示",
+  "native_finished_after_data": true,
+  "response": {
+    "id": "exp20",
+    "type": "message",
+    "role": "assistant",
+    "model": "DeepSeek-V4.1-Flash",
+    "content": [
+      {
+        "type": "text",
+        "text": "车已到站"
+      }
+    ],
+    "stop_reason": "stop_sequence",
+    "stop_sequence": "END20",
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3,
+      "output_tokens": 0,
+      "service_tier": "standard"
+    }
+  },
+  "semantic": {
+    "text": "车已到站",
+    "reasoning": "",
+    "tools": [],
+    "finish": "stop_sequence",
+    "status": null,
+    "stop_sequence": "END20"
+  },
+  "id": "stop_sequence--messages--text--mixed",
+  "contract": "c2760be7659aac24787922d0e849a3d6cea386eb8a45701dbcf8ba04a050377d",
+  "sse": {
+    "bytes": 1096,
+    "sha256": "999f0d369e3b076a3b12ca9f15f9816e80b57c6031fa8c1c0081bd0112f68c6a",
+    "done_data": null,
+    "replays": [
+      {
+        "pattern": "whole",
+        "matched": true,
+        "event_count": 8
+      },
+      {
+        "pattern": "unit",
+        "matched": true,
+        "event_count": 8
+      },
+      {
+        "pattern": "mixed",
+        "matched": true,
+        "event_count": 8
+      }
+    ],
+    "expected_events": 8,
+    "incomplete_eof_count": 7,
+    "incomplete_eof_correct": true
+  },
+  "checks": [
+    {
+      "name": "expected_semantic",
+      "status": "pass",
+      "evidence": {
+        "actual": {
+          "text": "车已到站",
+          "reasoning": "",
+          "tools": [],
+          "finish": "stop_sequence",
+          "status": null,
+          "stop_sequence": "END20"
+        },
+        "expected": {
+          "text": "车已到站",
+          "reasoning": "",
+          "tools": [],
+          "finish": "stop_sequence",
+          "status": null,
+          "stop_sequence": "END20"
+        }
+      }
+    },
+    {
+      "name": "expected_termination",
+      "status": "pass",
+      "evidence": "parser_stop"
+    },
+    {
+      "name": "expected_native_state",
+      "status": "pass",
+      "evidence": true
+    },
+    {
+      "name": "expected_probe_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "no_unexpected_error",
+      "status": "pass",
+      "evidence": null
+    },
+    {
+      "name": "tool_ids_present_unique",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "sse_byte_roundtrip",
+      "status": "pass",
+      "evidence": [
+        {
+          "pattern": "whole",
+          "matched": true,
+          "event_count": 8
+        },
+        {
+          "pattern": "unit",
+          "matched": true,
+          "event_count": 8
+        },
+        {
+          "pattern": "mixed",
+          "matched": true,
+          "event_count": 8
+        }
+      ]
+    },
+    {
+      "name": "sse_incomplete_eof",
+      "status": "pass",
+      "evidence": 7
+    },
+    {
+      "name": "chunk_semantics",
+      "status": "pass",
+      "evidence": {
+        "baseline": "stop_sequence--messages--text--whole",
+        "compared_fields": "text/reasoning/tool name+arguments/finish/status/stop; excludes usage and tool IDs"
+      }
+    }
+  ]
+}

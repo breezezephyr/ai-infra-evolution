@@ -1,0 +1,287 @@
+{
+  "id": "limit-stop-chat",
+  "protocol": "chat",
+  "family": "limit_stop",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "messages": [
+      {
+        "role": "user",
+        "content": "只输出 LIMIT_STOP_OK_19。"
+      }
+    ],
+    "thinking": {
+      "type": "disabled"
+    },
+    "max_tokens": 64,
+    "stop": [
+      "END_19",
+      "完成"
+    ]
+  },
+  "options": {},
+  "input_sha256": "a4e87521bdcdbe923aa4916933a07b977bdee935e005c1aba338af2d3075c259",
+  "contract_sha256": "faf39df3813ec24ea09f1a48d19f9b09712348aaa89ba12b4f80c3c5defdb6e2",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "pass",
+      "evidence": {
+        "prompt_tokens": 14
+      }
+    },
+    {
+      "name": "stop_sequences_preserved",
+      "status": "pass",
+      "evidence": {
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "roles": [
+            "user"
+          ],
+          "message_contents": [
+            "只输出 LIMIT_STOP_OK_19。"
+          ],
+          "assistant_reasoning_contents": [],
+          "tool_names": [],
+          "tool_parameter_schemas": [],
+          "tool_choice": "auto",
+          "max_tokens": 64,
+          "temperature": 1.0,
+          "top_p": 1.0,
+          "output_constraint_kind": null,
+          "stop_sequences": [
+            "END_19",
+            "完成"
+          ],
+          "parse_tool_calls": false,
+          "starts_in_tool_calls": false
+        },
+        "differences": {}
+      }
+    },
+    {
+      "name": "resolve_explicit_max_tokens",
+      "status": "pass",
+      "evidence": {
+        "expected": 64
+      }
+    },
+    {
+      "name": "resolve_context_requested_output_overflow",
+      "status": "pass",
+      "evidence": {
+        "prompt": 14,
+        "context": 77,
+        "error": {
+          "type": "ConversionError",
+          "message": "This model's maximum context length is 77 tokens. However, you requested 78 tokens (14 in the messages, 64 in the completion). Please reduce the length of the messages or completion.",
+          "body": "{\"error\":{\"message\":\"This model's maximum context length is 77 tokens. However, you requested 78 tokens (14 in the messages, 64 in the completion). Please reduce the length of the messages or completion.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+          "status_code": 400,
+          "stage": "resolve_max_tokens"
+        }
+      }
+    },
+    {
+      "name": "family_compare",
+      "status": "pass",
+      "evidence": {
+        "family": "limit_stop",
+        "n": 3,
+        "expected_n": 3,
+        "ids": [
+          "limit-stop-chat",
+          "limit-stop-responses",
+          "limit-stop-messages"
+        ],
+        "invariant_fields": [
+          "max_tokens",
+          "model_version",
+          "output_constraint_kind",
+          "reasoning_effort",
+          "temperature",
+          "thinking_mode",
+          "tool_choice",
+          "tool_names",
+          "top_p"
+        ],
+        "declared_protocol_differences": {
+          "stop_sequences": [
+            [
+              "END_19",
+              "完成"
+            ],
+            [],
+            [
+              "END_19",
+              "完成"
+            ]
+          ]
+        },
+        "passed": true,
+        "prompt_equality_required": false
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "只输出 LIMIT_STOP_OK_19。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": false,
+      "reasoning_effort": null,
+      "tools": [],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": null
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": false,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [
+        "END_19",
+        "完成"
+      ],
+      "thinking_initial_stage": "None"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": false,
+    "reasoning_effort": null,
+    "roles": [
+      "user"
+    ],
+    "message_contents": [
+      "只输出 LIMIT_STOP_OK_19。"
+    ],
+    "assistant_reasoning_contents": [],
+    "tool_names": [],
+    "tool_parameter_schemas": [],
+    "tool_choice": "auto",
+    "max_tokens": 64,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "output_constraint_kind": null,
+    "stop_sequences": [
+      "END_19",
+      "完成"
+    ],
+    "parse_tool_calls": false,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜User｜>只输出 LIMIT_STOP_OK_19。<｜Assistant｜></think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        29
+      ],
+      [
+        50,
+        63
+      ],
+      [
+        63,
+        71
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "</think>"
+    ]
+  },
+  "encoding": {
+    "status": "ok",
+    "token_ids": [
+      0,
+      128803,
+      1299,
+      10626,
+      56582,
+      2992,
+      32684,
+      7819,
+      110393,
+      65,
+      511,
+      320,
+      128804,
+      128822
+    ],
+    "prompt_tokens": 14,
+    "token_ids_sha256": "298b98548ad84b768673650a293a79b17e79f7ff3be2c1c2eddac0083c4fc75f"
+  },
+  "context_probes": [
+    {
+      "prompt": 14,
+      "context": 78,
+      "value": 64
+    },
+    {
+      "prompt": 14,
+      "context": 77,
+      "error": {
+        "type": "ConversionError",
+        "message": "This model's maximum context length is 77 tokens. However, you requested 78 tokens (14 in the messages, 64 in the completion). Please reduce the length of the messages or completion.",
+        "body": "{\"error\":{\"message\":\"This model's maximum context length is 77 tokens. However, you requested 78 tokens (14 in the messages, 64 in the completion). Please reduce the length of the messages or completion.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+        "status_code": 400,
+        "stage": "resolve_max_tokens"
+      }
+    }
+  ],
+  "elapsed_ms": 9.699583
+}

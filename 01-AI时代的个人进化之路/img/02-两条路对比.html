@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;background:#f8f5ee;color:#1c1a17;font-family:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:72px 76px;display:flex;flex-direction:column}
+.eyebrow{display:flex;align-items:center;gap:14px;color:#8a8378;font-size:26px;letter-spacing:.04em;font-family:Menlo,"SF Mono",monospace}
+.eyebrow::before{content:"";width:34px;height:5px;background:#2f5f8a;border-radius:3px}
+h1{font-size:74px;line-height:1.18;font-weight:800;letter-spacing:-.01em;margin-top:34px}
+.sub{color:#6f695f;font-size:32px;margin-top:22px;line-height:1.5}
+.card{background:#fff;border:2px solid #e6e0d4;border-radius:22px;padding:34px 38px;margin-top:44px}
+.callout{background:#fbf1e6;border:2px solid #f0dcc4;border-radius:18px;padding:32px 36px;font-size:32px;line-height:1.6;margin-top:40px;color:#2a2620}
+.callout b{color:#1c1a17}
+.note{color:#9a9386;font-size:24px;margin-top:auto;padding-top:36px;line-height:1.5}
+.blue{color:#2f5f8a}.orange{color:#c4763a}.green{color:#4f7a52}.gray{color:#9a9386}.red{color:#a84d3a}
+.mono{font-family:Menlo,"SF Mono",monospace}
+.row{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:2px solid #eee8dc;font-size:32px}
+.row:last-child{border-bottom:0}
+.card>div:last-child{border-bottom:0!important}
+.row .k{font-weight:600}.row .v{font-weight:700}
+.strike{text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:#a84d3a;color:#9a9386}
+.tag{display:inline-block;font-size:22px;padding:4px 14px;border-radius:8px;background:#eee8dc;color:#6f695f;margin-left:12px;vertical-align:middle;font-weight:600}
+html,body{height:1560px}</style></head><body><div class="eyebrow">进化之路 · 引导</div><h1>AI Infra 的<br>两条路</h1><div class="sub">都是 Infra，吃的能力不一样。</div>
+<div class="card" style="padding:0;overflow:hidden">
+<div style="display:grid;grid-template-columns:230px 1fr 1fr;font-size:27px">
+<div style="padding:26px 30px;background:#f3eee3"></div>
+<div style="padding:26px 30px;background:#c4763a;color:#fff;font-weight:800;font-size:30px">算子开发</div>
+<div style="padding:26px 30px;background:#2f5f8a;color:#fff;font-weight:800;font-size:30px">推理服务化</div>
+<div style="padding:26px 30px;border-top:2px solid #eee8dc;color:#6f695f;font-weight:600">解决什么</div>
+<div style="padding:26px 30px;border-top:2px solid #eee8dc;line-height:1.45" class="">一次矩阵乘法跑得更快</div>
+<div style="padding:26px 30px;border-top:2px solid #eee8dc;line-height:1.45;font-weight:400" class="">海量请求稳定、便宜地被接住</div><div style="padding:26px 30px;border-top:2px solid #eee8dc;color:#6f695f;font-weight:600">数学 / 数据天赋</div>
+<div style="padding:26px 30px;border-top:2px solid #eee8dc;line-height:1.45" class="">重：数值等价变换、roofline 直觉</div>
+<div style="padding:26px 30px;border-top:2px solid #eee8dc;line-height:1.45;font-weight:400" class="">轻：会算容量和成本账</div><div style="padding:26px 30px;border-top:2px solid #eee8dc;color:#6f695f;font-weight:600">硬件理解</div>
+<div style="padding:26px 30px;border-top:2px solid #eee8dc;line-height:1.45" class="">重：显存层级、warp、Tensor Core</div>
+<div style="padding:26px 30px;border-top:2px solid #eee8dc;line-height:1.45;font-weight:400" class="">中：prefill / decode 各卡在哪</div><div style="padding:26px 30px;border-top:2px solid #eee8dc;color:#6f695f;font-weight:600">工程能力</div>
+<div style="padding:26px 30px;border-top:2px solid #eee8dc;line-height:1.45" class="">CUDA、模板元编程、profiling</div>
+<div style="padding:26px 30px;border-top:2px solid #eee8dc;line-height:1.45;font-weight:400" class="">分布式、K8s、限流熔断、可观测</div><div style="padding:26px 30px;border-top:2px solid #eee8dc;color:#6f695f;font-weight:600">业务感知</div>
+<div style="padding:26px 30px;border-top:2px solid #eee8dc;line-height:1.45" class="">少</div>
+<div style="padding:26px 30px;border-top:2px solid #eee8dc;line-height:1.45;font-weight:400" class="">多：SLA、成本归因、灰度评测</div></div></div>
+<div class="callout">算子开发吃数学和硬件天赋，推理服务化吃分布式工程和业务感。<b>我们的存量在右边那一列。</b></div></body></html>

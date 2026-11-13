@@ -1,0 +1,24 @@
+{
+  "pid": 124721,
+  "port": 8125,
+  "backend": "http://127.0.0.1:8025",
+  "identity": {
+    "model_fingerprint": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+    "model_revision": null,
+    "tokenizer_fingerprint": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "backend": "vllm0.8.5-qwen3-0.6b-bf16-native-no-thinking"
+  },
+  "source_sha256": {
+    "serve_gateway.py": "d726ffdedbc0cf3f1189e255c4b06e493378260ba89c1c7d9947c60777479e3e",
+    "gateway.py": "fde0d97fb6516746a733b355526e170ffc6de4e4907911f879aa804068b2acce",
+    "backend_audit.py": "c0ac2d99b65119bfc4688b8f62f156c1d7e1cdef19d55930e3c1eea4ff8e796f"
+  },
+  "code_directory": "/opt/exp25-20261026-p5g",
+  "active_limit": 1,
+  "queue_limit": 1,
+  "prompt_limit": 512,
+  "full_response_gate": true,
+  "semantic_cache_enabled": false,
+  "clock_domain": "daryu-gateway-124721"
+}

@@ -1,0 +1,926 @@
+{
+  "source": {
+    "engine": "macOS say + afconvert",
+    "voice": "Tingting",
+    "language": "zh_CN",
+    "rate_wpm": 220,
+    "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+    "macos_version": "26.6.2",
+    "macos_build": "25G83",
+    "binary_sha256": {
+      "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+      "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+    },
+    "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+    "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+    "text_source": "self_authored_chinese",
+    "synthesis_command": [
+      "/usr/bin/say",
+      "-v",
+      "Tingting",
+      "-r",
+      "220",
+      "-f",
+      "{segment}.txt",
+      "-o",
+      "{segment}.aiff"
+    ],
+    "conversion_command": [
+      "/usr/bin/afconvert",
+      "-f",
+      "WAVE",
+      "-d",
+      "LEI16@16000",
+      "-c",
+      "1",
+      "{segment}.aiff",
+      "{segment}.wav"
+    ]
+  },
+  "sample_rate": 16000,
+  "cases": [
+    {
+      "id": "short_01",
+      "category": "short",
+      "reference_text": "你是谁？",
+      "wav": "short_01.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 22400,
+      "duration_seconds": 1.4,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 9440
+        }
+      ],
+      "segments": [
+        {
+          "text": "你是谁？",
+          "source_samples": 9815,
+          "trim_start": 0,
+          "trim_end": 9440,
+          "start": 0,
+          "end": 9440
+        }
+      ],
+      "inserted_pauses": [],
+      "tail_silence_samples": 12960,
+      "sha256": "a519eb3812437ef9293f4052ec6d5281588e9a68855546fc4015bf5c546fba05"
+    },
+    {
+      "id": "short_02",
+      "category": "short",
+      "reference_text": "今天适合散步吗？",
+      "wav": "short_02.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 33280,
+      "duration_seconds": 2.08,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 20480
+        }
+      ],
+      "segments": [
+        {
+          "text": "今天适合散步吗？",
+          "source_samples": 20949,
+          "trim_start": 160,
+          "trim_end": 20640,
+          "start": 0,
+          "end": 20480
+        }
+      ],
+      "inserted_pauses": [],
+      "tail_silence_samples": 12800,
+      "sha256": "c0ff904b2ff3c9aeb70ed051528bc584595566f92a5dcb9d528efe590541ec62"
+    },
+    {
+      "id": "short_03",
+      "category": "short",
+      "reference_text": "请解释一下什么是缓存。",
+      "wav": "short_03.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 42880,
+      "duration_seconds": 2.68,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 29920
+        }
+      ],
+      "segments": [
+        {
+          "text": "请解释一下什么是缓存。",
+          "source_samples": 30608,
+          "trim_start": 160,
+          "trim_end": 30080,
+          "start": 0,
+          "end": 29920
+        }
+      ],
+      "inserted_pauses": [],
+      "tail_silence_samples": 12960,
+      "sha256": "785752cd1c9e13505159fae7768db90eba2879840fc7a452874495c88d424091"
+    },
+    {
+      "id": "short_04",
+      "category": "short",
+      "reference_text": "一顿清淡又省事的晚饭可以怎么做？",
+      "wav": "short_04.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 52800,
+      "duration_seconds": 3.3,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 40000
+        }
+      ],
+      "segments": [
+        {
+          "text": "一顿清淡又省事的晚饭可以怎么做？",
+          "source_samples": 40429,
+          "trim_start": 0,
+          "trim_end": 40000,
+          "start": 0,
+          "end": 40000
+        }
+      ],
+      "inserted_pauses": [],
+      "tail_silence_samples": 12800,
+      "sha256": "d33dc49d4c0cc47cc00cde4176395b3c70ec4f9ab883980ba8e8247024f1d78b"
+    },
+    {
+      "id": "short_05",
+      "category": "short",
+      "reference_text": "怎么把手机里的照片备份到电脑上？",
+      "wav": "short_05.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 53760,
+      "duration_seconds": 3.36,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 40800
+        }
+      ],
+      "segments": [
+        {
+          "text": "怎么把手机里的照片备份到电脑上？",
+          "source_samples": 41777,
+          "trim_start": 640,
+          "trim_end": 41440,
+          "start": 0,
+          "end": 40800
+        }
+      ],
+      "inserted_pauses": [],
+      "tail_silence_samples": 12960,
+      "sha256": "e53d5f65ae6d124d7dc6daaf1233139e4b330ba6579f47e805735bc7d2da80a3"
+    },
+    {
+      "id": "short_06",
+      "category": "short",
+      "reference_text": "请用一句话说明地铁换乘时应该先确认什么。",
+      "wav": "short_06.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 68480,
+      "duration_seconds": 4.28,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 55520
+        }
+      ],
+      "segments": [
+        {
+          "text": "请用一句话说明地铁换乘时应该先确认什么。",
+          "source_samples": 56058,
+          "trim_start": 160,
+          "trim_end": 55680,
+          "start": 0,
+          "end": 55520
+        }
+      ],
+      "inserted_pauses": [],
+      "tail_silence_samples": 12960,
+      "sha256": "b0cf741118c436505831636b4cc787c0590244b14a9d34180045055af7c41ef9"
+    },
+    {
+      "id": "pause_01",
+      "category": "pause",
+      "reference_text": "我想安排周末的活动，请推荐一个适合亲子出游的地方。",
+      "wav": "pause_01.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 81600,
+      "duration_seconds": 5.1,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 25120
+        },
+        {
+          "start": 29920,
+          "end": 68640
+        }
+      ],
+      "segments": [
+        {
+          "text": "我想安排周末的活动，",
+          "source_samples": 25387,
+          "trim_start": 0,
+          "trim_end": 25120,
+          "start": 0,
+          "end": 25120
+        },
+        {
+          "text": "请推荐一个适合亲子出游的地方。",
+          "source_samples": 39339,
+          "trim_start": 160,
+          "trim_end": 38880,
+          "start": 29920,
+          "end": 68640
+        }
+      ],
+      "inserted_pauses": [
+        {
+          "start": 25120,
+          "end": 29920,
+          "duration_ms": 300
+        }
+      ],
+      "tail_silence_samples": 12960,
+      "sha256": "4f811e0e38077f808f27cbc63dd5d3d99cf85faf6e8f27ed9df5b94c6002075b"
+    },
+    {
+      "id": "pause_02",
+      "category": "pause",
+      "reference_text": "先别急着回答，我还想知道这两种方案各有什么缺点。",
+      "wav": "pause_02.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 85440,
+      "duration_seconds": 5.34,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 18080
+        },
+        {
+          "start": 27680,
+          "end": 72640
+        }
+      ],
+      "segments": [
+        {
+          "text": "先别急着回答，",
+          "source_samples": 18697,
+          "trim_start": 160,
+          "trim_end": 18240,
+          "start": 0,
+          "end": 18080
+        },
+        {
+          "text": "我还想知道这两种方案各有什么缺点。",
+          "source_samples": 45449,
+          "trim_start": 0,
+          "trim_end": 44960,
+          "start": 27680,
+          "end": 72640
+        }
+      ],
+      "inserted_pauses": [
+        {
+          "start": 18080,
+          "end": 27680,
+          "duration_ms": 600
+        }
+      ],
+      "tail_silence_samples": 12800,
+      "sha256": "30b7b2a7c694c721eb303577aaaab88f67b7c1bc6bf1d8f3e7d34a5b2c5aa462"
+    },
+    {
+      "id": "pause_03",
+      "category": "pause",
+      "reference_text": "请先比较步行和骑车，再考虑下雨的情况，最后给我一个出行建议。",
+      "wav": "pause_03.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 106560,
+      "duration_seconds": 6.66,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 29600
+        },
+        {
+          "start": 34400,
+          "end": 56640
+        },
+        {
+          "start": 66240,
+          "end": 93600
+        }
+      ],
+      "segments": [
+        {
+          "text": "请先比较步行和骑车，",
+          "source_samples": 30051,
+          "trim_start": 160,
+          "trim_end": 29760,
+          "start": 0,
+          "end": 29600
+        },
+        {
+          "text": "再考虑下雨的情况，",
+          "source_samples": 23078,
+          "trim_start": 480,
+          "trim_end": 22720,
+          "start": 34400,
+          "end": 56640
+        },
+        {
+          "text": "最后给我一个出行建议。",
+          "source_samples": 27850,
+          "trim_start": 160,
+          "trim_end": 27520,
+          "start": 66240,
+          "end": 93600
+        }
+      ],
+      "inserted_pauses": [
+        {
+          "start": 29600,
+          "end": 34400,
+          "duration_ms": 300
+        },
+        {
+          "start": 56640,
+          "end": 66240,
+          "duration_ms": 600
+        }
+      ],
+      "tail_silence_samples": 12960,
+      "sha256": "55e8f29799374d224283626b6adade280097cc4bd75debf5f464b69abd64f77d"
+    },
+    {
+      "id": "long_01",
+      "category": "long_request",
+      "reference_text": "请分步骤解释家里的无线网络为什么会变慢，并给出普通人能照着做的排查办法。",
+      "wav": "long_01.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 112640,
+      "duration_seconds": 7.04,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 99840
+        }
+      ],
+      "segments": [
+        {
+          "text": "请分步骤解释家里的无线网络为什么会变慢，并给出普通人能照着做的排查办法。",
+          "source_samples": 100268,
+          "trim_start": 160,
+          "trim_end": 100000,
+          "start": 0,
+          "end": 99840
+        }
+      ],
+      "inserted_pauses": [],
+      "tail_silence_samples": 12800,
+      "sha256": "0325a18ded5cc929c5014720deaa07183d6436c56092cec5f863ef4e4d9fb8bd"
+    },
+    {
+      "id": "long_02",
+      "category": "long_request",
+      "reference_text": "我只有一个小阳台，请帮我设计从选菜、播种到日常照料的种菜计划，并说明常见问题。",
+      "wav": "long_02.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 130240,
+      "duration_seconds": 8.14,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 117280
+        }
+      ],
+      "segments": [
+        {
+          "text": "我只有一个小阳台，请帮我设计从选菜、播种到日常照料的种菜计划，并说明常见问题。",
+          "source_samples": 117710,
+          "trim_start": 0,
+          "trim_end": 117280,
+          "start": 0,
+          "end": 117280
+        }
+      ],
+      "inserted_pauses": [],
+      "tail_silence_samples": 12960,
+      "sha256": "20733c802d33986fe5ec039a07087f94a93e724e87f2cc6af34ed255e591b1b3"
+    },
+    {
+      "id": "long_03",
+      "category": "long_request",
+      "reference_text": "请比较纸质书和电子书的阅读体验，结合通勤、学习和睡前阅读三个场景给出建议。",
+      "wav": "long_03.wav",
+      "sample_rate": 16000,
+      "source": {
+        "engine": "macOS say + afconvert",
+        "voice": "Tingting",
+        "language": "zh_CN",
+        "rate_wpm": 220,
+        "voice_inventory_entry": "Tingting            zh_CN    # 你好！我叫婷婷。",
+        "macos_version": "26.6.2",
+        "macos_build": "25G83",
+        "binary_sha256": {
+          "say": "a0c75425dfcaaf5316fe255f9d7be0748a1a24041dccaf50cfc73dbe02e18016",
+          "afconvert": "7f7e15790bf80ad2496a2a67e3208b76fddb658e9bd5abaed04b8d080b53358e"
+        },
+        "script_sha256": "1f35c7984435508ccaeef27197ba95c4d9dc9c5c5a2048753c81f97ff9c5d208",
+        "cases_sha256": "36ac644eb43a07a677212f0d088fefa2a2daf88fb2007f6cbf4c7e426313a4e0",
+        "text_source": "self_authored_chinese",
+        "synthesis_command": [
+          "/usr/bin/say",
+          "-v",
+          "Tingting",
+          "-r",
+          "220",
+          "-f",
+          "{segment}.txt",
+          "-o",
+          "{segment}.aiff"
+        ],
+        "conversion_command": [
+          "/usr/bin/afconvert",
+          "-f",
+          "WAVE",
+          "-d",
+          "LEI16@16000",
+          "-c",
+          "1",
+          "{segment}.aiff",
+          "{segment}.wav"
+        ]
+      },
+      "samples": 123520,
+      "duration_seconds": 7.72,
+      "speech_intervals": [
+        {
+          "start": 0,
+          "end": 110560
+        }
+      ],
+      "segments": [
+        {
+          "text": "请比较纸质书和电子书的阅读体验，结合通勤、学习和睡前阅读三个场景给出建议。",
+          "source_samples": 111042,
+          "trim_start": 160,
+          "trim_end": 110720,
+          "start": 0,
+          "end": 110560
+        }
+      ],
+      "inserted_pauses": [],
+      "tail_silence_samples": 12960,
+      "sha256": "76c7db25e95640e9a7ff3a0b1cae546920671b10f90ff75c5a4cf7224265ff13"
+    }
+  ],
+  "format": "mono PCM16LE WAV",
+  "frame_samples": 320,
+  "minimum_tail_silence_samples": 12800,
+  "maximum_samples": 240000,
+  "annotation": {
+    "method": "per_segment_first_last_window_rms",
+    "use": "offline_analysis_only",
+    "human_ground_truth": false,
+    "provided_to_online_vad": false,
+    "units": "samples",
+    "interval_convention": "[start,end)",
+    "window_samples": 160,
+    "window_ms": 10,
+    "rms_threshold_pcm16": 120,
+    "rms_threshold_dbfs": -48.725,
+    "comparison": ">=",
+    "window_origin": "untrimmed segment start; non-overlapping windows",
+    "partial_window": "divide energy by actual sample count",
+    "interval_scope": "one outer envelope per segment; internal silence is included"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "run_id": "exp29-kaggle-20261110-a74160a0",
+  "served_model": "qwen3-4b",
+  "backend": "transformers.generate",
+  "planned_requests": 5,
+  "planned_generation_requests": 3,
+  "output_token_reservation_limit": 65,
+  "dispatched_requests": 5,
+  "passed_requests": 5,
+  "technical_contract_pass": true,
+  "quality": "not_evaluated; one-token completion is budget compliance only",
+  "capacity": "not_evaluated",
+  "billing": "not_evaluated",
+  "kv_cache": "not_evaluated",
+  "determinism": "no general guarantee; paired serial observation in this run only",
+  "requests": [
+    {
+      "case_id": "missing-model",
+      "state": "passed",
+      "server_request_id": "d1f6f89596a0467b810715193592a330",
+      "failed_checks": []
+    },
+    {
+      "case_id": "over-limit",
+      "state": "passed",
+      "server_request_id": "c7f7a9054b4a498cbbee31b3aa8f0b0c",
+      "failed_checks": []
+    },
+    {
+      "case_id": "nonstream",
+      "state": "passed",
+      "server_request_id": "ccc520137c184fa7b8b0ef8f92dbc624",
+      "failed_checks": []
+    },
+    {
+      "case_id": "stream",
+      "state": "passed",
+      "server_request_id": "24e8fbd1a02346dd94344a9f4f65d73a",
+      "failed_checks": []
+    },
+    {
+      "case_id": "one-token",
+      "state": "passed",
+      "server_request_id": "be004462182e4afc91e2a67e5a66df37",
+      "failed_checks": []
+    }
+  ],
+  "server_pid": 155,
+  "bind_host": "127.0.0.1",
+  "port": 8765,
+  "paired_serial_observation": {
+    "scope": "two serial requests in this run; no general determinism guarantee",
+    "same_prompt": true,
+    "same_input_ids": true,
+    "same_native_output_ids": true,
+    "same_text": true
+  },
+  "budget": {
+    "max_generate_calls": 3,
+    "max_reserved_output_tokens": 65,
+    "generate_calls": 3,
+    "reserved_output_tokens": 65,
+    "completed_generations": 3,
+    "actual_output_tokens": 41,
+    "native_output_unknown": false,
+    "http_requests": 5
+  },
+  "cleanup": {
+    "owned_pid": 155,
+    "method": "graceful",
+    "process_exited": true,
+    "exitcode": 0,
+    "gpu_release": "owned process exit releases its CUDA context; no other process touched"
+  },
+  "gpu0_memory": {
+    "gpu_memory_before_load": {
+      "device": "cuda:0",
+      "allocated_bytes": 0,
+      "reserved_bytes": 0,
+      "peak_allocated_bytes": 0,
+      "peak_reserved_bytes": 0,
+      "device_free_bytes": 15419113472,
+      "device_total_bytes": 15636037632,
+      "device_free_scope": "whole GPU; may include other processes",
+      "allocator_scope": "this server process only"
+    },
+    "gpu_memory_after_load": {
+      "device": "cuda:0",
+      "allocated_bytes": 8101709312,
+      "reserved_bytes": 8103395328,
+      "peak_allocated_bytes": 8101709312,
+      "peak_reserved_bytes": 8103395328,
+      "device_free_bytes": 7315718144,
+      "device_total_bytes": 15636037632,
+      "device_free_scope": "whole GPU; may include other processes",
+      "allocator_scope": "this server process only"
+    },
+    "gpu_memory_before_process_exit": {
+      "device": "cuda:0",
+      "allocated_bytes": 8110228992,
+      "reserved_bytes": 8134852608,
+      "peak_allocated_bytes": 8119002112,
+      "peak_reserved_bytes": 8134852608,
+      "device_free_bytes": 7254900736,
+      "device_total_bytes": 15636037632,
+      "device_free_scope": "whole GPU; may include other processes",
+      "allocator_scope": "this server process only"
+    }
+  },
+  "not_sent_requests": 0
+}

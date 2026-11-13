@@ -1,0 +1,342 @@
+{
+  "run_id": "probes-pilot-v1-tts-0",
+  "kind": "tts",
+  "state": {
+    "text": "出门前先查好路线，带上相机记录风景，记得提前买好",
+    "llm": {
+      "thread_stopped": true,
+      "generated_tokens": 17,
+      "token_steps": [
+        {
+          "monotonic_ns": 410036771736864,
+          "tokens": 1,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410036874044701,
+          "tokens": 2,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410036899130609,
+          "tokens": 3,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410036923591321,
+          "tokens": 4,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410036946613506,
+          "tokens": 5,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410036972259299,
+          "tokens": 6,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410036996197517,
+          "tokens": 7,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410037025914873,
+          "tokens": 8,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410037057769957,
+          "tokens": 9,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410037084072629,
+          "tokens": 10,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410037114483999,
+          "tokens": 11,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410037139256948,
+          "tokens": 12,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410037164100660,
+          "tokens": 13,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410037189213769,
+          "tokens": 14,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410037216416175,
+          "tokens": 15,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410037243795104,
+          "tokens": 16,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410037648937940,
+          "tokens": 17,
+          "stop": true
+        }
+      ],
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "你是中文语音助手。请用自然口语回答，用六到八个完整句子，不要标题、列表、编号或思考过程。"
+        },
+        {
+          "role": "user",
+          "content": "请介绍如何安排一次周末城市散步，从出门准备一直说到回家，详细一些。"
+        }
+      ],
+      "finish_reason": "cancelled",
+      "generate_return_ns": 410037649927762
+    },
+    "computed_samples": 141600,
+    "discarded_after_stop_samples": 141600,
+    "queued_samples": 0,
+    "llm_thread_stopped": true,
+    "tts_thread_stopped": true
+  },
+  "events": [
+    {
+      "event": "generation_start",
+      "component": "generation",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036604724137,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "llm_start",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036605315510,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036771579050,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "出门"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036873887839,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "前"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036898951320,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "先"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036923474846,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "查"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036946505925,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "好"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410036972142640,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "路线"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037025780756,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "，带上"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037057649970,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "相机"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037083915039,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "记录"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037114340238,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "风景"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037163966743,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "，记得"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037189095899,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "提前"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037216315353,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "买"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037242540385,
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "好"
+    },
+    {
+      "event": "tts_call_start",
+      "component": "tts",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037242584191,
+      "turn_id": 1,
+      "generation_id": 1,
+      "segment": 0,
+      "text": "出门前先查好路线，带上相机记录风景，记得提前买好"
+    },
+    {
+      "event": "probe_detection",
+      "component": "probe",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037301205422,
+      "turn_id": 1,
+      "generation_id": 1,
+      "kind": "tts"
+    },
+    {
+      "event": "cancel_received",
+      "component": "cancel",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037301223234,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "stop_signal_set",
+      "component": "stop",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037301231320,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "server_queue_cleared",
+      "component": "server",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037301239726,
+      "turn_id": 1,
+      "generation_id": 1,
+      "discarded_samples": 0
+    },
+    {
+      "event": "llm_worker_returned",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410037650022407,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "tts_call_return",
+      "component": "tts",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410038361309854,
+      "turn_id": 1,
+      "generation_id": 1,
+      "segment": 0,
+      "samples": 0,
+      "stop": true
+    },
+    {
+      "event": "tts_worker_returned",
+      "component": "tts",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410038361312578,
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "workers_joined",
+      "component": "workers",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410038361395622,
+      "turn_id": 1,
+      "generation_id": 1,
+      "llm_stopped": true,
+      "tts_stopped": true
+    }
+  ],
+  "segments": [],
+  "source": "actual CUDA; synthetic boundary control"
+}

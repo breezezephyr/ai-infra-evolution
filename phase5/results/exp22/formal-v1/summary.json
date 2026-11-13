@@ -1,0 +1,373 @@
+{
+  "run_id": "exp22-formal-v1",
+  "planned": 144,
+  "status_counts": {
+    "200": 144
+  },
+  "verification_issues": [],
+  "evidence_verified": 144,
+  "timing_issues": [
+    {
+      "id": "exp22-formal-v1-b03-i5",
+      "issue": "wall_vs_monotonic_interval_discrepancy_gt100ms",
+      "raw_wall_total_ms": 2550.288677215576,
+      "observed_engine_span_ms": 254.05221
+    },
+    {
+      "id": "exp22-formal-v1-b10-i7",
+      "issue": "wall_vs_monotonic_interval_discrepancy_gt100ms",
+      "raw_wall_total_ms": 4339.154243469238,
+      "observed_engine_span_ms": 2059.046269
+    },
+    {
+      "id": "exp22-formal-v1-b15-i3",
+      "issue": "wall_vs_monotonic_interval_discrepancy_gt100ms",
+      "raw_wall_total_ms": 3991.119623184204,
+      "observed_engine_span_ms": 1633.645843
+    }
+  ],
+  "legacy_wall_timing_eligible": 141,
+  "monotonic_observation_eligible": 144,
+  "wall_duration_aggregate_policy": "raw total_ms and scheduled_to_finish_ms retained per row but never aggregated; queue/first-token wall aggregates exclude 3 discrepant rows, with n and altered task mixture disclosed",
+  "monotonic_labels": "observed_engine_span_ms and observed_first_schedule_to_finish_ms refer to audit events, not exact model execution or first-token boundaries",
+  "input_ids_stable": true,
+  "tasks_with_ids": 8,
+  "comparison": {
+    "planned": 144,
+    "http_accepted": 144,
+    "with_token_ids": 144,
+    "missing_token_ids": 0,
+    "compared_to_baseline": 136,
+    "equal": 88,
+    "different": 48,
+    "evidence_verified": 144,
+    "missing_baseline": 0
+  },
+  "mixed_batch_observations": 85,
+  "mixed_batch_equal_to_solo": 37,
+  "scheduler_plan_count": 5882,
+  "batch_size_histogram": {
+    "1": 4372,
+    "2": 1238,
+    "3": 114,
+    "4": 158
+  },
+  "finish_reasons": {
+    "stop": 90,
+    "length": 54
+  },
+  "groups": [
+    {
+      "mode": "direct",
+      "concurrency": 1,
+      "planned": 24,
+      "accepted": 24,
+      "batch_makespan_median_ms": 13125.894417,
+      "generated_tokens": 1323,
+      "max_observed_batch": 1,
+      "driver_wait_ms": {
+        "n": 24,
+        "median": 6117.052312,
+        "p95_nearest_rank": 11341.585375
+      },
+      "gateway_wait_ms": {
+        "n": 24,
+        "median": 0.026917,
+        "p95_nearest_rank": 0.368959
+      },
+      "client_response_ms": {
+        "n": 24,
+        "median": 1619.1396250000003,
+        "p95_nearest_rank": 2576.825083
+      },
+      "queue_ms": {
+        "n": 22,
+        "median": 0.29718875885009766,
+        "p95_nearest_rank": 0.36406517028808594
+      },
+      "first_token_ms": {
+        "n": 22,
+        "median": 41.43679141998291,
+        "p95_nearest_rank": 62.822580337524414
+      },
+      "observed_engine_span_ms": {
+        "n": 24,
+        "median": 969.07635,
+        "p95_nearest_rank": 2026.799858
+      },
+      "observed_engine_to_first_plan_ms": {
+        "n": 24,
+        "median": 0.3824485,
+        "p95_nearest_rank": 0.479067
+      },
+      "observed_first_schedule_to_finish_ms": {
+        "n": 24,
+        "median": 968.734101,
+        "p95_nearest_rank": 2026.350761
+      }
+    },
+    {
+      "mode": "direct",
+      "concurrency": 2,
+      "planned": 24,
+      "accepted": 24,
+      "batch_makespan_median_ms": 7863.724542,
+      "generated_tokens": 1294,
+      "max_observed_batch": 2,
+      "driver_wait_ms": {
+        "n": 24,
+        "median": 2853.1489375,
+        "p95_nearest_rank": 5748.909459
+      },
+      "gateway_wait_ms": {
+        "n": 24,
+        "median": 0.011958,
+        "p95_nearest_rank": 0.215292
+      },
+      "client_response_ms": {
+        "n": 24,
+        "median": 1883.8313334999998,
+        "p95_nearest_rank": 3245.831834
+      },
+      "queue_ms": {
+        "n": 24,
+        "median": 0.39374828338623047,
+        "p95_nearest_rank": 28.667211532592773
+      },
+      "first_token_ms": {
+        "n": 24,
+        "median": 48.4614372253418,
+        "p95_nearest_rank": 83.18686485290527
+      },
+      "observed_engine_span_ms": {
+        "n": 24,
+        "median": 1065.1330445,
+        "p95_nearest_rank": 2168.572987
+      },
+      "observed_engine_to_first_plan_ms": {
+        "n": 24,
+        "median": 0.4928475,
+        "p95_nearest_rank": 28.844384
+      },
+      "observed_first_schedule_to_finish_ms": {
+        "n": 24,
+        "median": 1063.0695685,
+        "p95_nearest_rank": 2168.277786
+      }
+    },
+    {
+      "mode": "direct",
+      "concurrency": 4,
+      "planned": 24,
+      "accepted": 24,
+      "batch_makespan_median_ms": 3691.257166,
+      "generated_tokens": 1300,
+      "max_observed_batch": 4,
+      "driver_wait_ms": {
+        "n": 24,
+        "median": 272.089062,
+        "p95_nearest_rank": 2526.30725
+      },
+      "gateway_wait_ms": {
+        "n": 24,
+        "median": 0.0121665,
+        "p95_nearest_rank": 0.157208
+      },
+      "client_response_ms": {
+        "n": 24,
+        "median": 1657.8940625,
+        "p95_nearest_rank": 2607.993541
+      },
+      "queue_ms": {
+        "n": 24,
+        "median": 13.84437084197998,
+        "p95_nearest_rank": 42.75846481323242
+      },
+      "first_token_ms": {
+        "n": 24,
+        "median": 47.79040813446045,
+        "p95_nearest_rank": 93.40643882751465
+      },
+      "observed_engine_span_ms": {
+        "n": 24,
+        "median": 943.7741265,
+        "p95_nearest_rank": 1714.389035
+      },
+      "observed_engine_to_first_plan_ms": {
+        "n": 24,
+        "median": 13.9932215,
+        "p95_nearest_rank": 42.857698
+      },
+      "observed_first_schedule_to_finish_ms": {
+        "n": 24,
+        "median": 922.377628,
+        "p95_nearest_rank": 1713.565041
+      }
+    },
+    {
+      "mode": "bounded",
+      "concurrency": 1,
+      "planned": 24,
+      "accepted": 24,
+      "batch_makespan_median_ms": 13648.711292,
+      "generated_tokens": 1323,
+      "max_observed_batch": 1,
+      "driver_wait_ms": {
+        "n": 24,
+        "median": 6341.483187,
+        "p95_nearest_rank": 12572.335291
+      },
+      "gateway_wait_ms": {
+        "n": 24,
+        "median": 0.0296665,
+        "p95_nearest_rank": 0.18125
+      },
+      "client_response_ms": {
+        "n": 24,
+        "median": 1845.0025839999998,
+        "p95_nearest_rank": 2973.076667
+      },
+      "queue_ms": {
+        "n": 23,
+        "median": 0.29659271240234375,
+        "p95_nearest_rank": 0.3521442413330078
+      },
+      "first_token_ms": {
+        "n": 23,
+        "median": 31.159400939941406,
+        "p95_nearest_rank": 72.83544540405273
+      },
+      "observed_engine_span_ms": {
+        "n": 24,
+        "median": 953.8175515,
+        "p95_nearest_rank": 2129.324259
+      },
+      "observed_engine_to_first_plan_ms": {
+        "n": 24,
+        "median": 0.3776235,
+        "p95_nearest_rank": 0.449766
+      },
+      "observed_first_schedule_to_finish_ms": {
+        "n": 24,
+        "median": 953.476216,
+        "p95_nearest_rank": 2129.013124
+      }
+    },
+    {
+      "mode": "bounded",
+      "concurrency": 2,
+      "planned": 24,
+      "accepted": 24,
+      "batch_makespan_median_ms": 7444.937875,
+      "generated_tokens": 1282,
+      "max_observed_batch": 2,
+      "driver_wait_ms": {
+        "n": 24,
+        "median": 3309.504562,
+        "p95_nearest_rank": 6363.212166
+      },
+      "gateway_wait_ms": {
+        "n": 24,
+        "median": 0.060395500000000005,
+        "p95_nearest_rank": 0.272
+      },
+      "client_response_ms": {
+        "n": 24,
+        "median": 2006.3344585,
+        "p95_nearest_rank": 3290.76775
+      },
+      "queue_ms": {
+        "n": 24,
+        "median": 5.48243522644043,
+        "p95_nearest_rank": 44.44408416748047
+      },
+      "first_token_ms": {
+        "n": 24,
+        "median": 41.04149341583252,
+        "p95_nearest_rank": 88.65022659301758
+      },
+      "observed_engine_span_ms": {
+        "n": 24,
+        "median": 950.349153,
+        "p95_nearest_rank": 2153.928063
+      },
+      "observed_engine_to_first_plan_ms": {
+        "n": 24,
+        "median": 5.6807815,
+        "p95_nearest_rank": 44.691665
+      },
+      "observed_first_schedule_to_finish_ms": {
+        "n": 24,
+        "median": 925.118185,
+        "p95_nearest_rank": 2153.425232
+      }
+    },
+    {
+      "mode": "bounded",
+      "concurrency": 4,
+      "planned": 24,
+      "accepted": 24,
+      "batch_makespan_median_ms": 7243.469083,
+      "generated_tokens": 1300,
+      "max_observed_batch": 2,
+      "driver_wait_ms": {
+        "n": 24,
+        "median": 242.4473335,
+        "p95_nearest_rank": 3567.09
+      },
+      "gateway_wait_ms": {
+        "n": 24,
+        "median": 1013.754771,
+        "p95_nearest_rank": 2556.351583
+      },
+      "client_response_ms": {
+        "n": 24,
+        "median": 3176.5964375000003,
+        "p95_nearest_rank": 4736.221834
+      },
+      "queue_ms": {
+        "n": 24,
+        "median": 1.7347335815429688,
+        "p95_nearest_rank": 40.158987045288086
+      },
+      "first_token_ms": {
+        "n": 24,
+        "median": 40.660977363586426,
+        "p95_nearest_rank": 80.5814266204834
+      },
+      "observed_engine_span_ms": {
+        "n": 24,
+        "median": 972.3867144999999,
+        "p95_nearest_rank": 1872.705015
+      },
+      "observed_engine_to_first_plan_ms": {
+        "n": 24,
+        "median": 1.847243,
+        "p95_nearest_rank": 40.228467
+      },
+      "observed_first_schedule_to_finish_ms": {
+        "n": 24,
+        "median": 969.6919409999999,
+        "p95_nearest_rank": 1856.340275
+      }
+    }
+  ],
+  "effective_configs": [
+    {
+      "chunked_prefill_enabled": false,
+      "dtype": "torch.bfloat16",
+      "enable_prefix_caching": null,
+      "enforce_eager": true,
+      "engine": "V0 AsyncLLMEngine",
+      "max_num_batched_tokens": 4096,
+      "max_num_seqs": 4
+    }
+  ],
+  "clock_rule": "only subtract timestamps from the same clock domain; nonstream client response time is not TTFT",
+  "scope": "Qwen3-0.6B on instrumented vLLM0.8.5 V0/eager; free greedy generation, no teacher forcing; not DeepInfer execution",
+  "data_sha256": {
+    "plan.json": "ad1bf302803e0667e7f9b4edc30257ccb9af5d331d1060b37bf33fc1de52b5fe",
+    "records.json": "ef56febb4120bdeb99b02e027071f6703cbf0bf5d7d531fa0959cfa6f9564c05",
+    "gateway.jsonl": "e648f5b7dc17df78402c482f6088c29d51c0eb26c80ed7139f55bf60ccc32c78"
+  }
+}

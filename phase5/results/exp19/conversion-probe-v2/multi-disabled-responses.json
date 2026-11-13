@@ -1,0 +1,300 @@
+{
+  "id": "multi-disabled-responses",
+  "protocol": "responses",
+  "family": "multi_disabled",
+  "input": {
+    "model": "DeepSeek-V4.1-Flash",
+    "instructions": "你是简洁的中文助手。",
+    "input": [
+      {
+        "role": "user",
+        "content": "记住暗号 MULTI_ALPHA_19。"
+      },
+      {
+        "type": "reasoning",
+        "content": [
+          {
+            "type": "reasoning_text",
+            "text": "HISTORY_REASONING_DROP_19"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "已记住 MULTI_ALPHA_19。"
+      },
+      {
+        "role": "user",
+        "content": "刚才的暗号是什么？"
+      }
+    ],
+    "reasoning": {
+      "effort": "none"
+    }
+  },
+  "options": {},
+  "input_sha256": "ec984f65d66ec69f4a78937f9da9892c32f2f1330f1d0b033ec3c25d77f7f88a",
+  "clock_domain": "local_process_perf_counter_ns",
+  "conversion": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "name": "convert",
+      "status": "pass",
+      "evidence": {
+        "accepted": true
+      }
+    },
+    {
+      "name": "assert_facts",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "name": "render",
+      "status": "pass",
+      "evidence": {
+        "missing_text": []
+      }
+    },
+    {
+      "name": "encode_with_matching_tokenizer",
+      "status": "unknown",
+      "evidence": {
+        "status": "unknown",
+        "reason": "matching tokenizer unavailable"
+      }
+    },
+    {
+      "name": "historical_reasoning_cleared",
+      "status": "pass",
+      "evidence": {
+        "facts": {
+          "model_version": "v41",
+          "thinking_mode": false,
+          "reasoning_effort": null,
+          "roles": [
+            "system",
+            "user",
+            "assistant",
+            "user"
+          ],
+          "message_contents": [
+            "你是简洁的中文助手。",
+            "记住暗号 MULTI_ALPHA_19。",
+            "已记住 MULTI_ALPHA_19。",
+            "刚才的暗号是什么？"
+          ],
+          "assistant_reasoning_contents": [
+            null
+          ],
+          "tool_names": [],
+          "tool_parameter_schemas": [],
+          "tool_choice": "auto",
+          "max_tokens": null,
+          "temperature": 1.0,
+          "top_p": 1.0,
+          "output_constraint_kind": null,
+          "stop_sequences": [],
+          "parse_tool_calls": false,
+          "starts_in_tool_calls": false
+        },
+        "differences": {}
+      }
+    },
+    {
+      "name": "family_compare",
+      "status": "pass",
+      "evidence": {
+        "family": "multi_disabled",
+        "n": 3,
+        "ids": [
+          "multi-disabled-chat",
+          "multi-disabled-responses",
+          "multi-disabled-messages"
+        ],
+        "invariant_fields": [
+          "assistant_reasoning_contents",
+          "max_tokens",
+          "message_contents",
+          "model_version",
+          "output_constraint_kind",
+          "reasoning_effort",
+          "roles",
+          "stop_sequences",
+          "temperature",
+          "thinking_mode",
+          "tool_choice",
+          "tool_names",
+          "top_p"
+        ],
+        "declared_protocol_differences": {},
+        "passed": true,
+        "prompt_equality_required": false
+      }
+    },
+    {
+      "name": "resolve_default_non_thinking_8192",
+      "status": "unknown",
+      "evidence": {
+        "reason": "prerequisite unavailable"
+      }
+    }
+  ],
+  "converted": {
+    "model_version": "v41",
+    "stream": false,
+    "conversation": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是简洁的中文助手。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        },
+        {
+          "role": "user",
+          "content": "记住暗号 MULTI_ALPHA_19。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "已记住 MULTI_ALPHA_19。",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        },
+        {
+          "role": "user",
+          "content": "刚才的暗号是什么？",
+          "reasoning_content": null,
+          "prefix": false,
+          "tool_call_id": null,
+          "tool_calls": null,
+          "image_sources": []
+        }
+      ],
+      "thinking_mode": false,
+      "reasoning_effort": null,
+      "tools": [],
+      "tool_choice": "auto",
+      "response_format": "text",
+      "response_schema": null,
+      "response_regex": null
+    },
+    "inference_options": {
+      "max_tokens": null,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "logprobs": false,
+      "top_logprobs": null,
+      "seed": null,
+      "output_constraint": null
+    },
+    "parsing_options": {
+      "parse_json_output": false,
+      "parse_tool_calls": false,
+      "starts_in_tool_calls": false,
+      "stop_sequences": [],
+      "thinking_initial_stage": "None"
+    }
+  },
+  "facts": {
+    "model_version": "v41",
+    "thinking_mode": false,
+    "reasoning_effort": null,
+    "roles": [
+      "system",
+      "user",
+      "assistant",
+      "user"
+    ],
+    "message_contents": [
+      "你是简洁的中文助手。",
+      "记住暗号 MULTI_ALPHA_19。",
+      "已记住 MULTI_ALPHA_19。",
+      "刚才的暗号是什么？"
+    ],
+    "assistant_reasoning_contents": [
+      null
+    ],
+    "tool_names": [],
+    "tool_parameter_schemas": [],
+    "tool_choice": "auto",
+    "max_tokens": null,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "output_constraint_kind": null,
+    "stop_sequences": [],
+    "parse_tool_calls": false,
+    "starts_in_tool_calls": false
+  },
+  "rendered": {
+    "prompt": "<｜begin▁of▁sentence｜><｜System｜>你是简洁的中文助手。<｜User｜>记住暗号 MULTI_ALPHA_19。<｜Assistant｜></think>已记住 MULTI_ALPHA_19。<｜end▁of▁sentence｜><｜User｜>刚才的暗号是什么？<｜Assistant｜></think>",
+    "special_ranges": [
+      [
+        0,
+        21
+      ],
+      [
+        21,
+        31
+      ],
+      [
+        41,
+        49
+      ],
+      [
+        69,
+        82
+      ],
+      [
+        82,
+        90
+      ],
+      [
+        109,
+        128
+      ],
+      [
+        128,
+        136
+      ],
+      [
+        145,
+        158
+      ],
+      [
+        158,
+        166
+      ]
+    ],
+    "range_unit": "Python Unicode code point half-open index",
+    "special_spellings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜System｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "</think>",
+      "<｜end▁of▁sentence｜>",
+      "<｜User｜>",
+      "<｜Assistant｜>",
+      "</think>"
+    ]
+  },
+  "encoding": {
+    "status": "unknown",
+    "reason": "matching tokenizer unavailable"
+  },
+  "elapsed_ms": 0.139
+}

@@ -1,0 +1,3217 @@
+{
+  "schema": 1,
+  "created_at": "2026-10-26T06:44:02.358708+00:00",
+  "scope": "real non-CUDA Mooncake single-host TCP; no model KV, GPU, RDMA or HA",
+  "package": "mooncake-transfer-engine-non-cuda",
+  "version": "0.3.13.post1",
+  "wheel_sha256": "892fd0ee77d736fc8d625981c485a43282dbdbc0926b95f05c1cadd8b0debe51",
+  "master_port": 50240,
+  "metrics_port": 9024,
+  "client_ports": [
+    50241,
+    50242
+  ],
+  "global_size": 134217728,
+  "buffer_size": 33554432,
+  "deadline_seconds": 25,
+  "sizes": [
+    1,
+    4096,
+    65536,
+    1048576
+  ],
+  "repeats": 10,
+  "cases": [
+    {
+      "id": "op-001",
+      "op": "setup",
+      "client": "A",
+      "expected_kind": "code",
+      "hostname": "127.0.0.1:50241",
+      "global_size": 134217728,
+      "buffer_size": 33554432,
+      "master": "127.0.0.1:50240",
+      "code": 0
+    },
+    {
+      "id": "op-002",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 0,
+      "key": "exp24-formal-v1/missing",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "op-003",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/missing",
+      "code": 0
+    },
+    {
+      "id": "op-004",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/missing",
+      "code": -704
+    },
+    {
+      "id": "op-005",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1,
+      "seed": "exp24:1:0",
+      "timing_group": "1:put",
+      "key": "exp24-formal-v1/data/1/0",
+      "code": 0
+    },
+    {
+      "id": "op-006",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1,
+      "seed": "exp24:1:0",
+      "timing_group": "1:get",
+      "key": "exp24-formal-v1/data/1/0",
+      "sha256": "478508483cbb05defd7dcdac355dadf06282a6f2e14342cccba99e840202f943"
+    },
+    {
+      "id": "op-007",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/0",
+      "code": 1
+    },
+    {
+      "id": "op-008",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1,
+      "seed": "exp24:1:1",
+      "timing_group": "1:put",
+      "key": "exp24-formal-v1/data/1/1",
+      "code": 0
+    },
+    {
+      "id": "op-009",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1,
+      "seed": "exp24:1:1",
+      "timing_group": "1:get",
+      "key": "exp24-formal-v1/data/1/1",
+      "sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+    },
+    {
+      "id": "op-010",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/1",
+      "code": 1
+    },
+    {
+      "id": "op-011",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1,
+      "seed": "exp24:1:2",
+      "timing_group": "1:put",
+      "key": "exp24-formal-v1/data/1/2",
+      "code": 0
+    },
+    {
+      "id": "op-012",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1,
+      "seed": "exp24:1:2",
+      "timing_group": "1:get",
+      "key": "exp24-formal-v1/data/1/2",
+      "sha256": "2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6"
+    },
+    {
+      "id": "op-013",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/2",
+      "code": 1
+    },
+    {
+      "id": "op-014",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1,
+      "seed": "exp24:1:3",
+      "timing_group": "1:put",
+      "key": "exp24-formal-v1/data/1/3",
+      "code": 0
+    },
+    {
+      "id": "op-015",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1,
+      "seed": "exp24:1:3",
+      "timing_group": "1:get",
+      "key": "exp24-formal-v1/data/1/3",
+      "sha256": "5d5c7d20a3aab9c158f23304df4bec3bd9d56c517db3caeaa519d4d05624d7a0"
+    },
+    {
+      "id": "op-016",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/3",
+      "code": 1
+    },
+    {
+      "id": "op-017",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1,
+      "seed": "exp24:1:4",
+      "timing_group": "1:put",
+      "key": "exp24-formal-v1/data/1/4",
+      "code": 0
+    },
+    {
+      "id": "op-018",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1,
+      "seed": "exp24:1:4",
+      "timing_group": "1:get",
+      "key": "exp24-formal-v1/data/1/4",
+      "sha256": "1dd8312636f6a0bf3d21fa2855e63072507453e93a5ced4301b364e91c9d87d6"
+    },
+    {
+      "id": "op-019",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/4",
+      "code": 1
+    },
+    {
+      "id": "op-020",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1,
+      "seed": "exp24:1:5",
+      "timing_group": "1:put",
+      "key": "exp24-formal-v1/data/1/5",
+      "code": 0
+    },
+    {
+      "id": "op-021",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1,
+      "seed": "exp24:1:5",
+      "timing_group": "1:get",
+      "key": "exp24-formal-v1/data/1/5",
+      "sha256": "72dfcfb0c470ac255cde83fb8fe38de8a128188e03ea5ba5b2a93adbea1062fa"
+    },
+    {
+      "id": "op-022",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/5",
+      "code": 1
+    },
+    {
+      "id": "op-023",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1,
+      "seed": "exp24:1:6",
+      "timing_group": "1:put",
+      "key": "exp24-formal-v1/data/1/6",
+      "code": 0
+    },
+    {
+      "id": "op-024",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1,
+      "seed": "exp24:1:6",
+      "timing_group": "1:get",
+      "key": "exp24-formal-v1/data/1/6",
+      "sha256": "49994461d6b46390f014c8c5275a8591ef8764760afe2739cee23f6fbe285778"
+    },
+    {
+      "id": "op-025",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/6",
+      "code": 1
+    },
+    {
+      "id": "op-026",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1,
+      "seed": "exp24:1:7",
+      "timing_group": "1:put",
+      "key": "exp24-formal-v1/data/1/7",
+      "code": 0
+    },
+    {
+      "id": "op-027",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1,
+      "seed": "exp24:1:7",
+      "timing_group": "1:get",
+      "key": "exp24-formal-v1/data/1/7",
+      "sha256": "454349e422f05297191ead13e21d3db520e5abef52055e4964b82fb213f593a1"
+    },
+    {
+      "id": "op-028",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/7",
+      "code": 1
+    },
+    {
+      "id": "op-029",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1,
+      "seed": "exp24:1:8",
+      "timing_group": "1:put",
+      "key": "exp24-formal-v1/data/1/8",
+      "code": 0
+    },
+    {
+      "id": "op-030",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1,
+      "seed": "exp24:1:8",
+      "timing_group": "1:get",
+      "key": "exp24-formal-v1/data/1/8",
+      "sha256": "ee6bb86b44339392bae631c8f61dd8f009243c635adab33c0b20923a2794bf22"
+    },
+    {
+      "id": "op-031",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/8",
+      "code": 1
+    },
+    {
+      "id": "op-032",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1,
+      "seed": "exp24:1:9",
+      "timing_group": "1:put",
+      "key": "exp24-formal-v1/data/1/9",
+      "code": 0
+    },
+    {
+      "id": "op-033",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1,
+      "seed": "exp24:1:9",
+      "timing_group": "1:get",
+      "key": "exp24-formal-v1/data/1/9",
+      "sha256": "3340883aad3038dd993b3c94d2d32c3b20e07859969aca411f7f93ab8847c746"
+    },
+    {
+      "id": "op-034",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/9",
+      "code": 1
+    },
+    {
+      "id": "op-035",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "exp24:4096:0",
+      "timing_group": "4096:put",
+      "key": "exp24-formal-v1/data/4096/0",
+      "code": 0
+    },
+    {
+      "id": "op-036",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "exp24:4096:0",
+      "timing_group": "4096:get",
+      "key": "exp24-formal-v1/data/4096/0",
+      "sha256": "fdf7e8ba9df7ebf37ab1bf2de5d13ea35dbccf88a376035586e4faa65867a604"
+    },
+    {
+      "id": "op-037",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/0",
+      "code": 1
+    },
+    {
+      "id": "op-038",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "exp24:4096:1",
+      "timing_group": "4096:put",
+      "key": "exp24-formal-v1/data/4096/1",
+      "code": 0
+    },
+    {
+      "id": "op-039",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "exp24:4096:1",
+      "timing_group": "4096:get",
+      "key": "exp24-formal-v1/data/4096/1",
+      "sha256": "945ac5f38d5c41c866864f02914cfa5cbb8cc9cf3549aa676fec0615f42e0ed3"
+    },
+    {
+      "id": "op-040",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/1",
+      "code": 1
+    },
+    {
+      "id": "op-041",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "exp24:4096:2",
+      "timing_group": "4096:put",
+      "key": "exp24-formal-v1/data/4096/2",
+      "code": 0
+    },
+    {
+      "id": "op-042",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "exp24:4096:2",
+      "timing_group": "4096:get",
+      "key": "exp24-formal-v1/data/4096/2",
+      "sha256": "ec32d214cc0694f9b7a76fdb8ee1c7d15ce427b7af67cd248dd6b094d1d86e31"
+    },
+    {
+      "id": "op-043",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/2",
+      "code": 1
+    },
+    {
+      "id": "op-044",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "exp24:4096:3",
+      "timing_group": "4096:put",
+      "key": "exp24-formal-v1/data/4096/3",
+      "code": 0
+    },
+    {
+      "id": "op-045",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "exp24:4096:3",
+      "timing_group": "4096:get",
+      "key": "exp24-formal-v1/data/4096/3",
+      "sha256": "35c26fa72f70abae8a1b89346fef7a11ea2741af38d8b5beaab19a5fac9977cf"
+    },
+    {
+      "id": "op-046",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/3",
+      "code": 1
+    },
+    {
+      "id": "op-047",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "exp24:4096:4",
+      "timing_group": "4096:put",
+      "key": "exp24-formal-v1/data/4096/4",
+      "code": 0
+    },
+    {
+      "id": "op-048",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "exp24:4096:4",
+      "timing_group": "4096:get",
+      "key": "exp24-formal-v1/data/4096/4",
+      "sha256": "9f63e59deab22b97e705a3fec14c6a04eb9a403cb501574a4170a1715d4aeb23"
+    },
+    {
+      "id": "op-049",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/4",
+      "code": 1
+    },
+    {
+      "id": "op-050",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "exp24:4096:5",
+      "timing_group": "4096:put",
+      "key": "exp24-formal-v1/data/4096/5",
+      "code": 0
+    },
+    {
+      "id": "op-051",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "exp24:4096:5",
+      "timing_group": "4096:get",
+      "key": "exp24-formal-v1/data/4096/5",
+      "sha256": "ac20c4d3b7cad9c53ca1c16825551678e9886ba81a7b8a218f835ca65345d443"
+    },
+    {
+      "id": "op-052",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/5",
+      "code": 1
+    },
+    {
+      "id": "op-053",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "exp24:4096:6",
+      "timing_group": "4096:put",
+      "key": "exp24-formal-v1/data/4096/6",
+      "code": 0
+    },
+    {
+      "id": "op-054",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "exp24:4096:6",
+      "timing_group": "4096:get",
+      "key": "exp24-formal-v1/data/4096/6",
+      "sha256": "60776640450ba1abd87ca3802c4d0e8615d834ba3c76b9ded698075148e63246"
+    },
+    {
+      "id": "op-055",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/6",
+      "code": 1
+    },
+    {
+      "id": "op-056",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "exp24:4096:7",
+      "timing_group": "4096:put",
+      "key": "exp24-formal-v1/data/4096/7",
+      "code": 0
+    },
+    {
+      "id": "op-057",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "exp24:4096:7",
+      "timing_group": "4096:get",
+      "key": "exp24-formal-v1/data/4096/7",
+      "sha256": "5462f8fb94e571d2ec0327186717743f7002d3953fe83a285b72fc911ded9216"
+    },
+    {
+      "id": "op-058",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/7",
+      "code": 1
+    },
+    {
+      "id": "op-059",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "exp24:4096:8",
+      "timing_group": "4096:put",
+      "key": "exp24-formal-v1/data/4096/8",
+      "code": 0
+    },
+    {
+      "id": "op-060",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "exp24:4096:8",
+      "timing_group": "4096:get",
+      "key": "exp24-formal-v1/data/4096/8",
+      "sha256": "23a8ea285d4dca06c3ac7b9bd241cd082a56d82ed0cf436e0fe475462d9c2c9e"
+    },
+    {
+      "id": "op-061",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/8",
+      "code": 1
+    },
+    {
+      "id": "op-062",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "exp24:4096:9",
+      "timing_group": "4096:put",
+      "key": "exp24-formal-v1/data/4096/9",
+      "code": 0
+    },
+    {
+      "id": "op-063",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "exp24:4096:9",
+      "timing_group": "4096:get",
+      "key": "exp24-formal-v1/data/4096/9",
+      "sha256": "3414212bc287d10968ea659973c9d3b31e85d4c18d43f3f48dbd17478bea1aa4"
+    },
+    {
+      "id": "op-064",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/9",
+      "code": 1
+    },
+    {
+      "id": "op-065",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 65536,
+      "seed": "exp24:65536:0",
+      "timing_group": "65536:put",
+      "key": "exp24-formal-v1/data/65536/0",
+      "code": 0
+    },
+    {
+      "id": "op-066",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 65536,
+      "seed": "exp24:65536:0",
+      "timing_group": "65536:get",
+      "key": "exp24-formal-v1/data/65536/0",
+      "sha256": "c000a903ed98440382cc68d1c79d48ce95eceab78248782d62f6b1fec72ec637"
+    },
+    {
+      "id": "op-067",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/0",
+      "code": 1
+    },
+    {
+      "id": "op-068",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 65536,
+      "seed": "exp24:65536:1",
+      "timing_group": "65536:put",
+      "key": "exp24-formal-v1/data/65536/1",
+      "code": 0
+    },
+    {
+      "id": "op-069",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 65536,
+      "seed": "exp24:65536:1",
+      "timing_group": "65536:get",
+      "key": "exp24-formal-v1/data/65536/1",
+      "sha256": "f8109f64ad4cc03f3950302558f5c94fda65156dc3b93bc8848fea0690c812c6"
+    },
+    {
+      "id": "op-070",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/1",
+      "code": 1
+    },
+    {
+      "id": "op-071",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 65536,
+      "seed": "exp24:65536:2",
+      "timing_group": "65536:put",
+      "key": "exp24-formal-v1/data/65536/2",
+      "code": 0
+    },
+    {
+      "id": "op-072",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 65536,
+      "seed": "exp24:65536:2",
+      "timing_group": "65536:get",
+      "key": "exp24-formal-v1/data/65536/2",
+      "sha256": "f375c27799e7e3545732506ca24baf54a334092affa0296a6046edbdfcf918c8"
+    },
+    {
+      "id": "op-073",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/2",
+      "code": 1
+    },
+    {
+      "id": "op-074",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 65536,
+      "seed": "exp24:65536:3",
+      "timing_group": "65536:put",
+      "key": "exp24-formal-v1/data/65536/3",
+      "code": 0
+    },
+    {
+      "id": "op-075",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 65536,
+      "seed": "exp24:65536:3",
+      "timing_group": "65536:get",
+      "key": "exp24-formal-v1/data/65536/3",
+      "sha256": "931d4a6c47ec46b7491f766213f5352c782e50a68ba4acb9037b22b038932516"
+    },
+    {
+      "id": "op-076",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/3",
+      "code": 1
+    },
+    {
+      "id": "op-077",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 65536,
+      "seed": "exp24:65536:4",
+      "timing_group": "65536:put",
+      "key": "exp24-formal-v1/data/65536/4",
+      "code": 0
+    },
+    {
+      "id": "op-078",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 65536,
+      "seed": "exp24:65536:4",
+      "timing_group": "65536:get",
+      "key": "exp24-formal-v1/data/65536/4",
+      "sha256": "710644a0c3411bf1d982b8b757b4a6f31b18e0437523f5dac602a1d03e8730a3"
+    },
+    {
+      "id": "op-079",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/4",
+      "code": 1
+    },
+    {
+      "id": "op-080",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 65536,
+      "seed": "exp24:65536:5",
+      "timing_group": "65536:put",
+      "key": "exp24-formal-v1/data/65536/5",
+      "code": 0
+    },
+    {
+      "id": "op-081",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 65536,
+      "seed": "exp24:65536:5",
+      "timing_group": "65536:get",
+      "key": "exp24-formal-v1/data/65536/5",
+      "sha256": "d4937c15c3d2280d6dc429b103acb51a7c4e09d229737727bf2b8a6d1aa255b5"
+    },
+    {
+      "id": "op-082",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/5",
+      "code": 1
+    },
+    {
+      "id": "op-083",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 65536,
+      "seed": "exp24:65536:6",
+      "timing_group": "65536:put",
+      "key": "exp24-formal-v1/data/65536/6",
+      "code": 0
+    },
+    {
+      "id": "op-084",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 65536,
+      "seed": "exp24:65536:6",
+      "timing_group": "65536:get",
+      "key": "exp24-formal-v1/data/65536/6",
+      "sha256": "021dc0e6fa244230ed257122e50858abe80f616339c103b2e636527509d80d62"
+    },
+    {
+      "id": "op-085",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/6",
+      "code": 1
+    },
+    {
+      "id": "op-086",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 65536,
+      "seed": "exp24:65536:7",
+      "timing_group": "65536:put",
+      "key": "exp24-formal-v1/data/65536/7",
+      "code": 0
+    },
+    {
+      "id": "op-087",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 65536,
+      "seed": "exp24:65536:7",
+      "timing_group": "65536:get",
+      "key": "exp24-formal-v1/data/65536/7",
+      "sha256": "40943dbaa62c6a4e12ac3ffb4c069bf68905d4fa8baf2e4cda8307809459125f"
+    },
+    {
+      "id": "op-088",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/7",
+      "code": 1
+    },
+    {
+      "id": "op-089",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 65536,
+      "seed": "exp24:65536:8",
+      "timing_group": "65536:put",
+      "key": "exp24-formal-v1/data/65536/8",
+      "code": 0
+    },
+    {
+      "id": "op-090",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 65536,
+      "seed": "exp24:65536:8",
+      "timing_group": "65536:get",
+      "key": "exp24-formal-v1/data/65536/8",
+      "sha256": "3d96d0ce9c241d4051c91c105424abaf83f04c9412ec0e2e0556076282a93c46"
+    },
+    {
+      "id": "op-091",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/8",
+      "code": 1
+    },
+    {
+      "id": "op-092",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 65536,
+      "seed": "exp24:65536:9",
+      "timing_group": "65536:put",
+      "key": "exp24-formal-v1/data/65536/9",
+      "code": 0
+    },
+    {
+      "id": "op-093",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 65536,
+      "seed": "exp24:65536:9",
+      "timing_group": "65536:get",
+      "key": "exp24-formal-v1/data/65536/9",
+      "sha256": "fd0a3b42b2d6fdbd13bf8ddd71c05a12fdfffd73f6d92a99f6dd42ececc32807"
+    },
+    {
+      "id": "op-094",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/9",
+      "code": 1
+    },
+    {
+      "id": "op-095",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1048576,
+      "seed": "exp24:1048576:0",
+      "timing_group": "1048576:put",
+      "key": "exp24-formal-v1/data/1048576/0",
+      "code": 0
+    },
+    {
+      "id": "op-096",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1048576,
+      "seed": "exp24:1048576:0",
+      "timing_group": "1048576:get",
+      "key": "exp24-formal-v1/data/1048576/0",
+      "sha256": "8e81c2429306e6449177937fb9e8871c8ec8b08045c898cf44889c246d3640c6"
+    },
+    {
+      "id": "op-097",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/0",
+      "code": 1
+    },
+    {
+      "id": "op-098",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1048576,
+      "seed": "exp24:1048576:1",
+      "timing_group": "1048576:put",
+      "key": "exp24-formal-v1/data/1048576/1",
+      "code": 0
+    },
+    {
+      "id": "op-099",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1048576,
+      "seed": "exp24:1048576:1",
+      "timing_group": "1048576:get",
+      "key": "exp24-formal-v1/data/1048576/1",
+      "sha256": "a96163e900b8003af7b957d9e2a9e0d8cf49967d6bd043d0cf0b5abbed15392b"
+    },
+    {
+      "id": "op-100",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/1",
+      "code": 1
+    },
+    {
+      "id": "op-101",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1048576,
+      "seed": "exp24:1048576:2",
+      "timing_group": "1048576:put",
+      "key": "exp24-formal-v1/data/1048576/2",
+      "code": 0
+    },
+    {
+      "id": "op-102",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1048576,
+      "seed": "exp24:1048576:2",
+      "timing_group": "1048576:get",
+      "key": "exp24-formal-v1/data/1048576/2",
+      "sha256": "f83dd22149ea3b8358094dc83918e474b714e0c705c2cabd861c1156190e1c07"
+    },
+    {
+      "id": "op-103",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/2",
+      "code": 1
+    },
+    {
+      "id": "op-104",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1048576,
+      "seed": "exp24:1048576:3",
+      "timing_group": "1048576:put",
+      "key": "exp24-formal-v1/data/1048576/3",
+      "code": 0
+    },
+    {
+      "id": "op-105",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1048576,
+      "seed": "exp24:1048576:3",
+      "timing_group": "1048576:get",
+      "key": "exp24-formal-v1/data/1048576/3",
+      "sha256": "e8b75c76b18dd902c13236242e5122fb16796cd082954ec3e301053939524127"
+    },
+    {
+      "id": "op-106",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/3",
+      "code": 1
+    },
+    {
+      "id": "op-107",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1048576,
+      "seed": "exp24:1048576:4",
+      "timing_group": "1048576:put",
+      "key": "exp24-formal-v1/data/1048576/4",
+      "code": 0
+    },
+    {
+      "id": "op-108",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1048576,
+      "seed": "exp24:1048576:4",
+      "timing_group": "1048576:get",
+      "key": "exp24-formal-v1/data/1048576/4",
+      "sha256": "faf879f516f7c82b555b8e4a83d047ddaf96691b708615c180b287b23e19895d"
+    },
+    {
+      "id": "op-109",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/4",
+      "code": 1
+    },
+    {
+      "id": "op-110",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1048576,
+      "seed": "exp24:1048576:5",
+      "timing_group": "1048576:put",
+      "key": "exp24-formal-v1/data/1048576/5",
+      "code": 0
+    },
+    {
+      "id": "op-111",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1048576,
+      "seed": "exp24:1048576:5",
+      "timing_group": "1048576:get",
+      "key": "exp24-formal-v1/data/1048576/5",
+      "sha256": "e8ca1617793f71a8299399781a8326e81332aae947f275244174f07bc31f2e90"
+    },
+    {
+      "id": "op-112",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/5",
+      "code": 1
+    },
+    {
+      "id": "op-113",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1048576,
+      "seed": "exp24:1048576:6",
+      "timing_group": "1048576:put",
+      "key": "exp24-formal-v1/data/1048576/6",
+      "code": 0
+    },
+    {
+      "id": "op-114",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1048576,
+      "seed": "exp24:1048576:6",
+      "timing_group": "1048576:get",
+      "key": "exp24-formal-v1/data/1048576/6",
+      "sha256": "b5bc1901737aa733d3e38f2d263770de0c6cb98e28962ed4b2994cfbfbf98cce"
+    },
+    {
+      "id": "op-115",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/6",
+      "code": 1
+    },
+    {
+      "id": "op-116",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1048576,
+      "seed": "exp24:1048576:7",
+      "timing_group": "1048576:put",
+      "key": "exp24-formal-v1/data/1048576/7",
+      "code": 0
+    },
+    {
+      "id": "op-117",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1048576,
+      "seed": "exp24:1048576:7",
+      "timing_group": "1048576:get",
+      "key": "exp24-formal-v1/data/1048576/7",
+      "sha256": "64eb93fb4bb68e603d91f07cd39c77b6d78b6ade3dbbc3ffab348fb4f214ceb5"
+    },
+    {
+      "id": "op-118",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/7",
+      "code": 1
+    },
+    {
+      "id": "op-119",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1048576,
+      "seed": "exp24:1048576:8",
+      "timing_group": "1048576:put",
+      "key": "exp24-formal-v1/data/1048576/8",
+      "code": 0
+    },
+    {
+      "id": "op-120",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1048576,
+      "seed": "exp24:1048576:8",
+      "timing_group": "1048576:get",
+      "key": "exp24-formal-v1/data/1048576/8",
+      "sha256": "338d15f494b9f900d7defd4a2c9155cbf61df901a161824d287e1616ec177174"
+    },
+    {
+      "id": "op-121",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/8",
+      "code": 1
+    },
+    {
+      "id": "op-122",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 1048576,
+      "seed": "exp24:1048576:9",
+      "timing_group": "1048576:put",
+      "key": "exp24-formal-v1/data/1048576/9",
+      "code": 0
+    },
+    {
+      "id": "op-123",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 1048576,
+      "seed": "exp24:1048576:9",
+      "timing_group": "1048576:get",
+      "key": "exp24-formal-v1/data/1048576/9",
+      "sha256": "4ef02bff2e488c5145992e14b16715dddfc06fa53dbd56234f6f1a4c92de6919"
+    },
+    {
+      "id": "op-124",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/9",
+      "code": 1
+    },
+    {
+      "id": "op-125",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "duplicate-original",
+      "duplicate_variant": "initial",
+      "key": "exp24-formal-v1/duplicate",
+      "code": 0
+    },
+    {
+      "id": "op-126",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "duplicate-original",
+      "duplicate_variant": "initial",
+      "key": "exp24-formal-v1/duplicate",
+      "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+    },
+    {
+      "id": "op-127",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "duplicate-original",
+      "duplicate_variant": "identical",
+      "key": "exp24-formal-v1/duplicate",
+      "code": 0
+    },
+    {
+      "id": "op-128",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "duplicate-original",
+      "duplicate_variant": "identical",
+      "key": "exp24-formal-v1/duplicate",
+      "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+    },
+    {
+      "id": "op-129",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "different-content",
+      "duplicate_variant": "same-size",
+      "key": "exp24-formal-v1/duplicate",
+      "code": 0
+    },
+    {
+      "id": "op-130",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "duplicate-original",
+      "duplicate_variant": "same-size",
+      "key": "exp24-formal-v1/duplicate",
+      "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+    },
+    {
+      "id": "op-131",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 8192,
+      "seed": "other-length",
+      "duplicate_variant": "different-size",
+      "key": "exp24-formal-v1/duplicate",
+      "code": 0
+    },
+    {
+      "id": "op-132",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "duplicate-original",
+      "duplicate_variant": "different-size",
+      "key": "exp24-formal-v1/duplicate",
+      "sha256": "f3a232da7410798742cad8b30b408d34bf75e7479adbddff0c734dca58f35b82"
+    },
+    {
+      "id": "op-133",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1:remove",
+      "key": "exp24-formal-v1/data/1/0",
+      "code": 0
+    },
+    {
+      "id": "op-134",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/0",
+      "code": 0
+    },
+    {
+      "id": "op-135",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1:remove",
+      "key": "exp24-formal-v1/data/1/1",
+      "code": 0
+    },
+    {
+      "id": "op-136",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/1",
+      "code": 0
+    },
+    {
+      "id": "op-137",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1:remove",
+      "key": "exp24-formal-v1/data/1/2",
+      "code": 0
+    },
+    {
+      "id": "op-138",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/2",
+      "code": 0
+    },
+    {
+      "id": "op-139",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1:remove",
+      "key": "exp24-formal-v1/data/1/3",
+      "code": 0
+    },
+    {
+      "id": "op-140",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/3",
+      "code": 0
+    },
+    {
+      "id": "op-141",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1:remove",
+      "key": "exp24-formal-v1/data/1/4",
+      "code": 0
+    },
+    {
+      "id": "op-142",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/4",
+      "code": 0
+    },
+    {
+      "id": "op-143",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1:remove",
+      "key": "exp24-formal-v1/data/1/5",
+      "code": 0
+    },
+    {
+      "id": "op-144",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/5",
+      "code": 0
+    },
+    {
+      "id": "op-145",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1:remove",
+      "key": "exp24-formal-v1/data/1/6",
+      "code": 0
+    },
+    {
+      "id": "op-146",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/6",
+      "code": 0
+    },
+    {
+      "id": "op-147",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1:remove",
+      "key": "exp24-formal-v1/data/1/7",
+      "code": 0
+    },
+    {
+      "id": "op-148",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/7",
+      "code": 0
+    },
+    {
+      "id": "op-149",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1:remove",
+      "key": "exp24-formal-v1/data/1/8",
+      "code": 0
+    },
+    {
+      "id": "op-150",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/8",
+      "code": 0
+    },
+    {
+      "id": "op-151",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1:remove",
+      "key": "exp24-formal-v1/data/1/9",
+      "code": 0
+    },
+    {
+      "id": "op-152",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1/9",
+      "code": 0
+    },
+    {
+      "id": "op-153",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "4096:remove",
+      "key": "exp24-formal-v1/data/4096/0",
+      "code": 0
+    },
+    {
+      "id": "op-154",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/0",
+      "code": 0
+    },
+    {
+      "id": "op-155",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "4096:remove",
+      "key": "exp24-formal-v1/data/4096/1",
+      "code": 0
+    },
+    {
+      "id": "op-156",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/1",
+      "code": 0
+    },
+    {
+      "id": "op-157",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "4096:remove",
+      "key": "exp24-formal-v1/data/4096/2",
+      "code": 0
+    },
+    {
+      "id": "op-158",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/2",
+      "code": 0
+    },
+    {
+      "id": "op-159",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "4096:remove",
+      "key": "exp24-formal-v1/data/4096/3",
+      "code": 0
+    },
+    {
+      "id": "op-160",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/3",
+      "code": 0
+    },
+    {
+      "id": "op-161",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "4096:remove",
+      "key": "exp24-formal-v1/data/4096/4",
+      "code": 0
+    },
+    {
+      "id": "op-162",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/4",
+      "code": 0
+    },
+    {
+      "id": "op-163",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "4096:remove",
+      "key": "exp24-formal-v1/data/4096/5",
+      "code": 0
+    },
+    {
+      "id": "op-164",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/5",
+      "code": 0
+    },
+    {
+      "id": "op-165",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "4096:remove",
+      "key": "exp24-formal-v1/data/4096/6",
+      "code": 0
+    },
+    {
+      "id": "op-166",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/6",
+      "code": 0
+    },
+    {
+      "id": "op-167",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "4096:remove",
+      "key": "exp24-formal-v1/data/4096/7",
+      "code": 0
+    },
+    {
+      "id": "op-168",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/7",
+      "code": 0
+    },
+    {
+      "id": "op-169",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "4096:remove",
+      "key": "exp24-formal-v1/data/4096/8",
+      "code": 0
+    },
+    {
+      "id": "op-170",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/8",
+      "code": 0
+    },
+    {
+      "id": "op-171",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "4096:remove",
+      "key": "exp24-formal-v1/data/4096/9",
+      "code": 0
+    },
+    {
+      "id": "op-172",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/4096/9",
+      "code": 0
+    },
+    {
+      "id": "op-173",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "65536:remove",
+      "key": "exp24-formal-v1/data/65536/0",
+      "code": 0
+    },
+    {
+      "id": "op-174",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/0",
+      "code": 0
+    },
+    {
+      "id": "op-175",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "65536:remove",
+      "key": "exp24-formal-v1/data/65536/1",
+      "code": 0
+    },
+    {
+      "id": "op-176",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/1",
+      "code": 0
+    },
+    {
+      "id": "op-177",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "65536:remove",
+      "key": "exp24-formal-v1/data/65536/2",
+      "code": 0
+    },
+    {
+      "id": "op-178",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/2",
+      "code": 0
+    },
+    {
+      "id": "op-179",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "65536:remove",
+      "key": "exp24-formal-v1/data/65536/3",
+      "code": 0
+    },
+    {
+      "id": "op-180",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/3",
+      "code": 0
+    },
+    {
+      "id": "op-181",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "65536:remove",
+      "key": "exp24-formal-v1/data/65536/4",
+      "code": 0
+    },
+    {
+      "id": "op-182",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/4",
+      "code": 0
+    },
+    {
+      "id": "op-183",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "65536:remove",
+      "key": "exp24-formal-v1/data/65536/5",
+      "code": 0
+    },
+    {
+      "id": "op-184",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/5",
+      "code": 0
+    },
+    {
+      "id": "op-185",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "65536:remove",
+      "key": "exp24-formal-v1/data/65536/6",
+      "code": 0
+    },
+    {
+      "id": "op-186",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/6",
+      "code": 0
+    },
+    {
+      "id": "op-187",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "65536:remove",
+      "key": "exp24-formal-v1/data/65536/7",
+      "code": 0
+    },
+    {
+      "id": "op-188",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/7",
+      "code": 0
+    },
+    {
+      "id": "op-189",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "65536:remove",
+      "key": "exp24-formal-v1/data/65536/8",
+      "code": 0
+    },
+    {
+      "id": "op-190",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/8",
+      "code": 0
+    },
+    {
+      "id": "op-191",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "65536:remove",
+      "key": "exp24-formal-v1/data/65536/9",
+      "code": 0
+    },
+    {
+      "id": "op-192",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/65536/9",
+      "code": 0
+    },
+    {
+      "id": "op-193",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1048576:remove",
+      "key": "exp24-formal-v1/data/1048576/0",
+      "code": 0
+    },
+    {
+      "id": "op-194",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/0",
+      "code": 0
+    },
+    {
+      "id": "op-195",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1048576:remove",
+      "key": "exp24-formal-v1/data/1048576/1",
+      "code": 0
+    },
+    {
+      "id": "op-196",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/1",
+      "code": 0
+    },
+    {
+      "id": "op-197",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1048576:remove",
+      "key": "exp24-formal-v1/data/1048576/2",
+      "code": 0
+    },
+    {
+      "id": "op-198",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/2",
+      "code": 0
+    },
+    {
+      "id": "op-199",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1048576:remove",
+      "key": "exp24-formal-v1/data/1048576/3",
+      "code": 0
+    },
+    {
+      "id": "op-200",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/3",
+      "code": 0
+    },
+    {
+      "id": "op-201",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1048576:remove",
+      "key": "exp24-formal-v1/data/1048576/4",
+      "code": 0
+    },
+    {
+      "id": "op-202",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/4",
+      "code": 0
+    },
+    {
+      "id": "op-203",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1048576:remove",
+      "key": "exp24-formal-v1/data/1048576/5",
+      "code": 0
+    },
+    {
+      "id": "op-204",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/5",
+      "code": 0
+    },
+    {
+      "id": "op-205",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1048576:remove",
+      "key": "exp24-formal-v1/data/1048576/6",
+      "code": 0
+    },
+    {
+      "id": "op-206",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/6",
+      "code": 0
+    },
+    {
+      "id": "op-207",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1048576:remove",
+      "key": "exp24-formal-v1/data/1048576/7",
+      "code": 0
+    },
+    {
+      "id": "op-208",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/7",
+      "code": 0
+    },
+    {
+      "id": "op-209",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1048576:remove",
+      "key": "exp24-formal-v1/data/1048576/8",
+      "code": 0
+    },
+    {
+      "id": "op-210",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/8",
+      "code": 0
+    },
+    {
+      "id": "op-211",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "timing_group": "1048576:remove",
+      "key": "exp24-formal-v1/data/1048576/9",
+      "code": 0
+    },
+    {
+      "id": "op-212",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/data/1048576/9",
+      "code": 0
+    },
+    {
+      "id": "op-213",
+      "op": "remove",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/duplicate",
+      "code": 0
+    },
+    {
+      "id": "op-214",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/duplicate",
+      "code": 0
+    },
+    {
+      "id": "op-215",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "code",
+      "size": 65536,
+      "seed": "survivor",
+      "key": "exp24-formal-v1/survivor",
+      "code": 0
+    },
+    {
+      "id": "op-216",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 65536,
+      "seed": "survivor",
+      "key": "exp24-formal-v1/survivor",
+      "sha256": "df86d38462da16a899e9e15895c760ebb2c893789b31185deb81c67b0cc1f623"
+    },
+    {
+      "id": "op-217",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "bytes",
+      "size": 0,
+      "stage": "master-down",
+      "key": "exp24-formal-v1/survivor",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "op-218",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "observation",
+      "stage": "master-down",
+      "key": "exp24-formal-v1/survivor"
+    },
+    {
+      "id": "op-219",
+      "op": "put",
+      "client": "A",
+      "expected_kind": "observation",
+      "size": 32,
+      "seed": "down",
+      "stage": "master-down",
+      "key": "exp24-formal-v1/down-write"
+    },
+    {
+      "id": "op-220",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "observation",
+      "stage": "restart-existing-client-immediate",
+      "key": "exp24-formal-v1/survivor"
+    },
+    {
+      "id": "op-221",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "observation",
+      "stage": "restart-existing-client-immediate",
+      "key": "exp24-formal-v1/survivor"
+    },
+    {
+      "id": "op-222",
+      "op": "is_exist",
+      "client": "A",
+      "expected_kind": "observation",
+      "stage": "restart-existing-client-after12s",
+      "key": "exp24-formal-v1/survivor"
+    },
+    {
+      "id": "op-223",
+      "op": "get",
+      "client": "A",
+      "expected_kind": "observation",
+      "stage": "restart-existing-client-after12s",
+      "key": "exp24-formal-v1/survivor"
+    },
+    {
+      "id": "op-224",
+      "op": "setup",
+      "client": "B",
+      "expected_kind": "code",
+      "hostname": "127.0.0.1:50242",
+      "global_size": 16777216,
+      "buffer_size": 16777216,
+      "master": "127.0.0.1:50240",
+      "code": 0
+    },
+    {
+      "id": "op-225",
+      "op": "is_exist",
+      "client": "B",
+      "expected_kind": "observation",
+      "stage": "restart-fresh-client",
+      "key": "exp24-formal-v1/survivor"
+    },
+    {
+      "id": "op-226",
+      "op": "get",
+      "client": "B",
+      "expected_kind": "observation",
+      "stage": "restart-fresh-client",
+      "key": "exp24-formal-v1/survivor"
+    },
+    {
+      "id": "op-227",
+      "op": "put",
+      "client": "B",
+      "expected_kind": "code",
+      "size": 4096,
+      "seed": "recovery",
+      "key": "exp24-formal-v1/recovery",
+      "code": 0
+    },
+    {
+      "id": "op-228",
+      "op": "get",
+      "client": "B",
+      "expected_kind": "bytes",
+      "size": 4096,
+      "seed": "recovery",
+      "key": "exp24-formal-v1/recovery",
+      "sha256": "94981420fac43e07ebfdfe2c2decadd2b2f3edd6c36da870df2fe235e48a17cd"
+    },
+    {
+      "id": "op-229",
+      "op": "remove",
+      "client": "B",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/recovery",
+      "code": 0
+    },
+    {
+      "id": "op-230",
+      "op": "is_exist",
+      "client": "B",
+      "expected_kind": "code",
+      "key": "exp24-formal-v1/recovery",
+      "code": 0
+    },
+    {
+      "id": "op-231",
+      "op": "remove",
+      "client": "B",
+      "expected_kind": "observation",
+      "stage": "cleanup",
+      "key": "exp24-formal-v1/survivor"
+    },
+    {
+      "id": "op-232",
+      "op": "is_exist",
+      "client": "B",
+      "expected_kind": "code",
+      "stage": "cleanup",
+      "key": "exp24-formal-v1/survivor",
+      "code": 0
+    },
+    {
+      "id": "op-233",
+      "op": "remove",
+      "client": "B",
+      "expected_kind": "observation",
+      "stage": "cleanup",
+      "key": "exp24-formal-v1/down-write"
+    },
+    {
+      "id": "op-234",
+      "op": "is_exist",
+      "client": "B",
+      "expected_kind": "code",
+      "stage": "cleanup",
+      "key": "exp24-formal-v1/down-write",
+      "code": 0
+    },
+    {
+      "id": "op-235",
+      "op": "close",
+      "client": "A",
+      "expected_kind": "code",
+      "code": 0
+    },
+    {
+      "id": "op-236",
+      "op": "close",
+      "client": "B",
+      "expected_kind": "code",
+      "code": 0
+    }
+  ],
+  "steps": [
+    {
+      "action": "start_master"
+    },
+    {
+      "action": "start_client",
+      "client": "A"
+    },
+    {
+      "action": "call",
+      "id": "op-001"
+    },
+    {
+      "action": "call",
+      "id": "op-002"
+    },
+    {
+      "action": "call",
+      "id": "op-003"
+    },
+    {
+      "action": "call",
+      "id": "op-004"
+    },
+    {
+      "action": "call",
+      "id": "op-005"
+    },
+    {
+      "action": "call",
+      "id": "op-006"
+    },
+    {
+      "action": "call",
+      "id": "op-007"
+    },
+    {
+      "action": "call",
+      "id": "op-008"
+    },
+    {
+      "action": "call",
+      "id": "op-009"
+    },
+    {
+      "action": "call",
+      "id": "op-010"
+    },
+    {
+      "action": "call",
+      "id": "op-011"
+    },
+    {
+      "action": "call",
+      "id": "op-012"
+    },
+    {
+      "action": "call",
+      "id": "op-013"
+    },
+    {
+      "action": "call",
+      "id": "op-014"
+    },
+    {
+      "action": "call",
+      "id": "op-015"
+    },
+    {
+      "action": "call",
+      "id": "op-016"
+    },
+    {
+      "action": "call",
+      "id": "op-017"
+    },
+    {
+      "action": "call",
+      "id": "op-018"
+    },
+    {
+      "action": "call",
+      "id": "op-019"
+    },
+    {
+      "action": "call",
+      "id": "op-020"
+    },
+    {
+      "action": "call",
+      "id": "op-021"
+    },
+    {
+      "action": "call",
+      "id": "op-022"
+    },
+    {
+      "action": "call",
+      "id": "op-023"
+    },
+    {
+      "action": "call",
+      "id": "op-024"
+    },
+    {
+      "action": "call",
+      "id": "op-025"
+    },
+    {
+      "action": "call",
+      "id": "op-026"
+    },
+    {
+      "action": "call",
+      "id": "op-027"
+    },
+    {
+      "action": "call",
+      "id": "op-028"
+    },
+    {
+      "action": "call",
+      "id": "op-029"
+    },
+    {
+      "action": "call",
+      "id": "op-030"
+    },
+    {
+      "action": "call",
+      "id": "op-031"
+    },
+    {
+      "action": "call",
+      "id": "op-032"
+    },
+    {
+      "action": "call",
+      "id": "op-033"
+    },
+    {
+      "action": "call",
+      "id": "op-034"
+    },
+    {
+      "action": "call",
+      "id": "op-035"
+    },
+    {
+      "action": "call",
+      "id": "op-036"
+    },
+    {
+      "action": "call",
+      "id": "op-037"
+    },
+    {
+      "action": "call",
+      "id": "op-038"
+    },
+    {
+      "action": "call",
+      "id": "op-039"
+    },
+    {
+      "action": "call",
+      "id": "op-040"
+    },
+    {
+      "action": "call",
+      "id": "op-041"
+    },
+    {
+      "action": "call",
+      "id": "op-042"
+    },
+    {
+      "action": "call",
+      "id": "op-043"
+    },
+    {
+      "action": "call",
+      "id": "op-044"
+    },
+    {
+      "action": "call",
+      "id": "op-045"
+    },
+    {
+      "action": "call",
+      "id": "op-046"
+    },
+    {
+      "action": "call",
+      "id": "op-047"
+    },
+    {
+      "action": "call",
+      "id": "op-048"
+    },
+    {
+      "action": "call",
+      "id": "op-049"
+    },
+    {
+      "action": "call",
+      "id": "op-050"
+    },
+    {
+      "action": "call",
+      "id": "op-051"
+    },
+    {
+      "action": "call",
+      "id": "op-052"
+    },
+    {
+      "action": "call",
+      "id": "op-053"
+    },
+    {
+      "action": "call",
+      "id": "op-054"
+    },
+    {
+      "action": "call",
+      "id": "op-055"
+    },
+    {
+      "action": "call",
+      "id": "op-056"
+    },
+    {
+      "action": "call",
+      "id": "op-057"
+    },
+    {
+      "action": "call",
+      "id": "op-058"
+    },
+    {
+      "action": "call",
+      "id": "op-059"
+    },
+    {
+      "action": "call",
+      "id": "op-060"
+    },
+    {
+      "action": "call",
+      "id": "op-061"
+    },
+    {
+      "action": "call",
+      "id": "op-062"
+    },
+    {
+      "action": "call",
+      "id": "op-063"
+    },
+    {
+      "action": "call",
+      "id": "op-064"
+    },
+    {
+      "action": "call",
+      "id": "op-065"
+    },
+    {
+      "action": "call",
+      "id": "op-066"
+    },
+    {
+      "action": "call",
+      "id": "op-067"
+    },
+    {
+      "action": "call",
+      "id": "op-068"
+    },
+    {
+      "action": "call",
+      "id": "op-069"
+    },
+    {
+      "action": "call",
+      "id": "op-070"
+    },
+    {
+      "action": "call",
+      "id": "op-071"
+    },
+    {
+      "action": "call",
+      "id": "op-072"
+    },
+    {
+      "action": "call",
+      "id": "op-073"
+    },
+    {
+      "action": "call",
+      "id": "op-074"
+    },
+    {
+      "action": "call",
+      "id": "op-075"
+    },
+    {
+      "action": "call",
+      "id": "op-076"
+    },
+    {
+      "action": "call",
+      "id": "op-077"
+    },
+    {
+      "action": "call",
+      "id": "op-078"
+    },
+    {
+      "action": "call",
+      "id": "op-079"
+    },
+    {
+      "action": "call",
+      "id": "op-080"
+    },
+    {
+      "action": "call",
+      "id": "op-081"
+    },
+    {
+      "action": "call",
+      "id": "op-082"
+    },
+    {
+      "action": "call",
+      "id": "op-083"
+    },
+    {
+      "action": "call",
+      "id": "op-084"
+    },
+    {
+      "action": "call",
+      "id": "op-085"
+    },
+    {
+      "action": "call",
+      "id": "op-086"
+    },
+    {
+      "action": "call",
+      "id": "op-087"
+    },
+    {
+      "action": "call",
+      "id": "op-088"
+    },
+    {
+      "action": "call",
+      "id": "op-089"
+    },
+    {
+      "action": "call",
+      "id": "op-090"
+    },
+    {
+      "action": "call",
+      "id": "op-091"
+    },
+    {
+      "action": "call",
+      "id": "op-092"
+    },
+    {
+      "action": "call",
+      "id": "op-093"
+    },
+    {
+      "action": "call",
+      "id": "op-094"
+    },
+    {
+      "action": "call",
+      "id": "op-095"
+    },
+    {
+      "action": "call",
+      "id": "op-096"
+    },
+    {
+      "action": "call",
+      "id": "op-097"
+    },
+    {
+      "action": "call",
+      "id": "op-098"
+    },
+    {
+      "action": "call",
+      "id": "op-099"
+    },
+    {
+      "action": "call",
+      "id": "op-100"
+    },
+    {
+      "action": "call",
+      "id": "op-101"
+    },
+    {
+      "action": "call",
+      "id": "op-102"
+    },
+    {
+      "action": "call",
+      "id": "op-103"
+    },
+    {
+      "action": "call",
+      "id": "op-104"
+    },
+    {
+      "action": "call",
+      "id": "op-105"
+    },
+    {
+      "action": "call",
+      "id": "op-106"
+    },
+    {
+      "action": "call",
+      "id": "op-107"
+    },
+    {
+      "action": "call",
+      "id": "op-108"
+    },
+    {
+      "action": "call",
+      "id": "op-109"
+    },
+    {
+      "action": "call",
+      "id": "op-110"
+    },
+    {
+      "action": "call",
+      "id": "op-111"
+    },
+    {
+      "action": "call",
+      "id": "op-112"
+    },
+    {
+      "action": "call",
+      "id": "op-113"
+    },
+    {
+      "action": "call",
+      "id": "op-114"
+    },
+    {
+      "action": "call",
+      "id": "op-115"
+    },
+    {
+      "action": "call",
+      "id": "op-116"
+    },
+    {
+      "action": "call",
+      "id": "op-117"
+    },
+    {
+      "action": "call",
+      "id": "op-118"
+    },
+    {
+      "action": "call",
+      "id": "op-119"
+    },
+    {
+      "action": "call",
+      "id": "op-120"
+    },
+    {
+      "action": "call",
+      "id": "op-121"
+    },
+    {
+      "action": "call",
+      "id": "op-122"
+    },
+    {
+      "action": "call",
+      "id": "op-123"
+    },
+    {
+      "action": "call",
+      "id": "op-124"
+    },
+    {
+      "action": "call",
+      "id": "op-125"
+    },
+    {
+      "action": "call",
+      "id": "op-126"
+    },
+    {
+      "action": "call",
+      "id": "op-127"
+    },
+    {
+      "action": "call",
+      "id": "op-128"
+    },
+    {
+      "action": "call",
+      "id": "op-129"
+    },
+    {
+      "action": "call",
+      "id": "op-130"
+    },
+    {
+      "action": "call",
+      "id": "op-131"
+    },
+    {
+      "action": "call",
+      "id": "op-132"
+    },
+    {
+      "action": "call",
+      "id": "op-133"
+    },
+    {
+      "action": "call",
+      "id": "op-134"
+    },
+    {
+      "action": "call",
+      "id": "op-135"
+    },
+    {
+      "action": "call",
+      "id": "op-136"
+    },
+    {
+      "action": "call",
+      "id": "op-137"
+    },
+    {
+      "action": "call",
+      "id": "op-138"
+    },
+    {
+      "action": "call",
+      "id": "op-139"
+    },
+    {
+      "action": "call",
+      "id": "op-140"
+    },
+    {
+      "action": "call",
+      "id": "op-141"
+    },
+    {
+      "action": "call",
+      "id": "op-142"
+    },
+    {
+      "action": "call",
+      "id": "op-143"
+    },
+    {
+      "action": "call",
+      "id": "op-144"
+    },
+    {
+      "action": "call",
+      "id": "op-145"
+    },
+    {
+      "action": "call",
+      "id": "op-146"
+    },
+    {
+      "action": "call",
+      "id": "op-147"
+    },
+    {
+      "action": "call",
+      "id": "op-148"
+    },
+    {
+      "action": "call",
+      "id": "op-149"
+    },
+    {
+      "action": "call",
+      "id": "op-150"
+    },
+    {
+      "action": "call",
+      "id": "op-151"
+    },
+    {
+      "action": "call",
+      "id": "op-152"
+    },
+    {
+      "action": "call",
+      "id": "op-153"
+    },
+    {
+      "action": "call",
+      "id": "op-154"
+    },
+    {
+      "action": "call",
+      "id": "op-155"
+    },
+    {
+      "action": "call",
+      "id": "op-156"
+    },
+    {
+      "action": "call",
+      "id": "op-157"
+    },
+    {
+      "action": "call",
+      "id": "op-158"
+    },
+    {
+      "action": "call",
+      "id": "op-159"
+    },
+    {
+      "action": "call",
+      "id": "op-160"
+    },
+    {
+      "action": "call",
+      "id": "op-161"
+    },
+    {
+      "action": "call",
+      "id": "op-162"
+    },
+    {
+      "action": "call",
+      "id": "op-163"
+    },
+    {
+      "action": "call",
+      "id": "op-164"
+    },
+    {
+      "action": "call",
+      "id": "op-165"
+    },
+    {
+      "action": "call",
+      "id": "op-166"
+    },
+    {
+      "action": "call",
+      "id": "op-167"
+    },
+    {
+      "action": "call",
+      "id": "op-168"
+    },
+    {
+      "action": "call",
+      "id": "op-169"
+    },
+    {
+      "action": "call",
+      "id": "op-170"
+    },
+    {
+      "action": "call",
+      "id": "op-171"
+    },
+    {
+      "action": "call",
+      "id": "op-172"
+    },
+    {
+      "action": "call",
+      "id": "op-173"
+    },
+    {
+      "action": "call",
+      "id": "op-174"
+    },
+    {
+      "action": "call",
+      "id": "op-175"
+    },
+    {
+      "action": "call",
+      "id": "op-176"
+    },
+    {
+      "action": "call",
+      "id": "op-177"
+    },
+    {
+      "action": "call",
+      "id": "op-178"
+    },
+    {
+      "action": "call",
+      "id": "op-179"
+    },
+    {
+      "action": "call",
+      "id": "op-180"
+    },
+    {
+      "action": "call",
+      "id": "op-181"
+    },
+    {
+      "action": "call",
+      "id": "op-182"
+    },
+    {
+      "action": "call",
+      "id": "op-183"
+    },
+    {
+      "action": "call",
+      "id": "op-184"
+    },
+    {
+      "action": "call",
+      "id": "op-185"
+    },
+    {
+      "action": "call",
+      "id": "op-186"
+    },
+    {
+      "action": "call",
+      "id": "op-187"
+    },
+    {
+      "action": "call",
+      "id": "op-188"
+    },
+    {
+      "action": "call",
+      "id": "op-189"
+    },
+    {
+      "action": "call",
+      "id": "op-190"
+    },
+    {
+      "action": "call",
+      "id": "op-191"
+    },
+    {
+      "action": "call",
+      "id": "op-192"
+    },
+    {
+      "action": "call",
+      "id": "op-193"
+    },
+    {
+      "action": "call",
+      "id": "op-194"
+    },
+    {
+      "action": "call",
+      "id": "op-195"
+    },
+    {
+      "action": "call",
+      "id": "op-196"
+    },
+    {
+      "action": "call",
+      "id": "op-197"
+    },
+    {
+      "action": "call",
+      "id": "op-198"
+    },
+    {
+      "action": "call",
+      "id": "op-199"
+    },
+    {
+      "action": "call",
+      "id": "op-200"
+    },
+    {
+      "action": "call",
+      "id": "op-201"
+    },
+    {
+      "action": "call",
+      "id": "op-202"
+    },
+    {
+      "action": "call",
+      "id": "op-203"
+    },
+    {
+      "action": "call",
+      "id": "op-204"
+    },
+    {
+      "action": "call",
+      "id": "op-205"
+    },
+    {
+      "action": "call",
+      "id": "op-206"
+    },
+    {
+      "action": "call",
+      "id": "op-207"
+    },
+    {
+      "action": "call",
+      "id": "op-208"
+    },
+    {
+      "action": "call",
+      "id": "op-209"
+    },
+    {
+      "action": "call",
+      "id": "op-210"
+    },
+    {
+      "action": "call",
+      "id": "op-211"
+    },
+    {
+      "action": "call",
+      "id": "op-212"
+    },
+    {
+      "action": "call",
+      "id": "op-213"
+    },
+    {
+      "action": "call",
+      "id": "op-214"
+    },
+    {
+      "action": "call",
+      "id": "op-215"
+    },
+    {
+      "action": "call",
+      "id": "op-216"
+    },
+    {
+      "action": "stop_master"
+    },
+    {
+      "action": "call",
+      "id": "op-217"
+    },
+    {
+      "action": "call",
+      "id": "op-218"
+    },
+    {
+      "action": "call",
+      "id": "op-219"
+    },
+    {
+      "action": "start_master"
+    },
+    {
+      "action": "sleep",
+      "seconds": 3
+    },
+    {
+      "action": "call",
+      "id": "op-220"
+    },
+    {
+      "action": "call",
+      "id": "op-221"
+    },
+    {
+      "action": "sleep",
+      "seconds": 12
+    },
+    {
+      "action": "call",
+      "id": "op-222"
+    },
+    {
+      "action": "call",
+      "id": "op-223"
+    },
+    {
+      "action": "start_client",
+      "client": "B"
+    },
+    {
+      "action": "call",
+      "id": "op-224"
+    },
+    {
+      "action": "call",
+      "id": "op-225"
+    },
+    {
+      "action": "call",
+      "id": "op-226"
+    },
+    {
+      "action": "call",
+      "id": "op-227"
+    },
+    {
+      "action": "call",
+      "id": "op-228"
+    },
+    {
+      "action": "call",
+      "id": "op-229"
+    },
+    {
+      "action": "call",
+      "id": "op-230"
+    },
+    {
+      "action": "call",
+      "id": "op-231"
+    },
+    {
+      "action": "call",
+      "id": "op-232"
+    },
+    {
+      "action": "call",
+      "id": "op-233"
+    },
+    {
+      "action": "call",
+      "id": "op-234"
+    },
+    {
+      "action": "call",
+      "id": "op-235"
+    },
+    {
+      "action": "call",
+      "id": "op-236"
+    },
+    {
+      "action": "stop_master"
+    }
+  ],
+  "code_sha256": {
+    "audit.py": "92158ee24f61e03b8dab60677e997676cfcd2e50a3bf4ba940633fcab3816656",
+    "freeze.py": "00a2231bf162ad51036f5af4af7d7f35609a257cb751036b45b5ce3f00547c38",
+    "runner.py": "f216384e97b4f72595af4c2ef18eb31ac5040bce06cf84e44fab104f89241805",
+    "worker.py": "cf4d5f01b4968857175701a15b948d52367b70c356345522af545c8cc53204d6"
+  }
+}

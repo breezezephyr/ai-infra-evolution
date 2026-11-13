@@ -1,0 +1,282 @@
+{
+  "run_id": "probes-warmup-v2-tts-0",
+  "kind": "tts",
+  "state": {
+    "text": "出门前先查好路线，带上相机",
+    "llm": {
+      "thread_stopped": true,
+      "generated_tokens": 10,
+      "token_steps": [
+        {
+          "monotonic_ns": 410526372938197,
+          "tokens": 1,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410526501441717,
+          "tokens": 2,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410526540604007,
+          "tokens": 3,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410526588105597,
+          "tokens": 4,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410526638277168,
+          "tokens": 5,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410526678480219,
+          "tokens": 6,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410526716516885,
+          "tokens": 7,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410526753113600,
+          "tokens": 8,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410526792408172,
+          "tokens": 9,
+          "stop": false
+        },
+        {
+          "monotonic_ns": 410527241940276,
+          "tokens": 10,
+          "stop": true
+        }
+      ],
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "你是中文语音助手。请用自然口语回答，用六到八个完整句子，不要标题、列表、编号或思考过程。"
+        },
+        {
+          "role": "user",
+          "content": "请介绍如何安排一次周末城市散步，从出门准备一直说到回家，详细一些。"
+        }
+      ],
+      "finish_reason": "cancelled",
+      "generate_return_ns": 410527242233298
+    },
+    "computed_samples": 92400,
+    "discarded_after_stop_samples": 92400,
+    "queued_samples": 0,
+    "llm_thread_stopped": true,
+    "tts_thread_stopped": true
+  },
+  "events": [
+    {
+      "event": "generation_start",
+      "component": "generation",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526221814308,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "llm_start",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526222251967,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526372677927,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "出门"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526501313684,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "前"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526540393779,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "先"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526587953136,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "查"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526638075066,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "好"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526678283162,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "路线"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526752902774,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "，带上"
+    },
+    {
+      "event": "llm_piece",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526792049964,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "text": "相机"
+    },
+    {
+      "event": "tts_call_start",
+      "component": "tts",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526792120825,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "segment": 0,
+      "text": "出门前先查好路线，带上相"
+    },
+    {
+      "event": "probe_detection",
+      "component": "probe",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526844236226,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "kind": "tts"
+    },
+    {
+      "event": "cancel_received",
+      "component": "cancel",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526844240483,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "stop_signal_set",
+      "component": "stop",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526844247052,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "server_queue_cleared",
+      "component": "server",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410526844253844,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "discarded_samples": 0
+    },
+    {
+      "event": "llm_worker_returned",
+      "component": "llm",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410527242359567,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "tts_call_return",
+      "component": "tts",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410527463901210,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "segment": 0,
+      "samples": 0,
+      "stop": true
+    },
+    {
+      "event": "tts_worker_returned",
+      "component": "tts",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410527463904324,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1
+    },
+    {
+      "event": "post_join_queue_cleared",
+      "component": "post",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410527463974348,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "discarded_samples": 0
+    },
+    {
+      "event": "workers_joined",
+      "component": "workers",
+      "clock_domain": "server_monotonic",
+      "monotonic_ns": 410527463977921,
+      "session_id": "probes-warmup-v2-tts-0",
+      "turn_id": 1,
+      "generation_id": 1,
+      "llm_stopped": true,
+      "tts_stopped": true
+    }
+  ],
+  "segments": [],
+  "source": "actual CUDA; synthetic boundary control"
+}
