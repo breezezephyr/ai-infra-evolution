@@ -1,6 +1,6 @@
 """Prepare a pinned Kaggle Qwen3-4B/vLLM environment, without model generation."""
 from pathlib import Path
-import json,os,subprocess,sys,time
+import json,os,shutil,subprocess,sys,time
 BASE=Path('/kaggle/temp/p5-4b');OUT=Path('/kaggle/working/p5-4b-20261113')
 BASE.mkdir(parents=True,exist_ok=True);OUT.mkdir(parents=True,exist_ok=True)
 os.environ.update(HF_HOME=str(BASE/'hf'),HF_HUB_DISABLE_TELEMETRY='1',HF_HUB_DISABLE_XET='1',CUDA_VISIBLE_DEVICES='0',TOKENIZERS_PARALLELISM='false')
@@ -11,8 +11,11 @@ try:
  (OUT/'hardware-before.txt').write_text(hardware);print(hardware,flush=True)
  if (OUT/'model-prepared.json').exists():
   print('Already prepared; no generation requested.',flush=True);sys.exit(0)
- venv=BASE/'venv'
- if not (venv/'bin/python').exists():run([sys.executable,'-m','venv',str(venv)])
+ venv=BASE/'venv311'
+ if not (venv/'bin/python').exists():
+  uv=shutil.which('uv')
+  if not uv:raise RuntimeError('uv is required to create the pinned Python 3.11 environment')
+  run([uv,'venv','--python','3.11','--seed',str(venv)])
  python=str(venv/'bin/python')
  run([python,'-m','pip','install','--disable-pip-version-check','--no-cache-dir','vllm==0.8.5','transformers==4.51.3','huggingface_hub>=0.30,<1.0','numpy<2','httpx==0.28.1','pytest==8.3.5','matplotlib','pillow'])
  downloader=r'''
