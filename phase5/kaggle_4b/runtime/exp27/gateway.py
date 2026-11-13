@@ -4,6 +4,30 @@ import asyncio,json,time,os
 from pathlib import Path
 from lifecycle import Gateway as Lifecycle,Fault,canonical,sha,valid_usage
 
+async def wait_native_release(path,attempt_id,timeout=5):
+ """Lab-only shared CPU audit acknowledgement; never a CUDA-stop claim."""
+ deadline=time.monotonic()+timeout;offset=0;pending='';terminal=None
+ while time.monotonic()<deadline:
+  if path.exists():
+   with path.open() as stream:
+    stream.seek(offset);pending+=stream.read();offset=stream.tell()
+   while '\n' in pending:
+    line,pending=pending.split('\n',1)
+    if not line:continue
+    row=json.loads(line)
+    if row.get('attempt_id')!=attempt_id:continue
+    ns=row['backend_monotonic_ns']
+    if row.get('event')=='engine_finished' or (row.get('event')=='abort_returned' and row.get('error') is None):
+     terminal=max(terminal or 0,ns)
+    tracker=row.get('tracker')
+    if (terminal is not None and ns>=terminal and row.get('event')=='state_after'
+        and row.get('snapshot_complete') is True and row.get('error') is None
+        and row.get('pending_or_unfinished') is False and row.get('engine_pending_or_unfinished') is False
+        and isinstance(tracker,dict) and set(tracker)=={'active_stream','new_pending','abort_pending'}
+        and all(v is False for v in tracker.values())):return
+  await asyncio.sleep(.005)
+ raise RuntimeError('native release acknowledgement timeout: '+attempt_id)
+
 class Admission:
  def __init__(self):self.sem=asyncio.Semaphore(1);self.reserved=0
  async def enter(self):
@@ -21,6 +45,11 @@ class Gateway:
   self.base=Lifecycle(list(self.cases.values()),backend=f'http://127.0.0.1:{plan["backend_port"]}')
   self.native_source=native_source or self.base.source;self.base.source=self.source;self.base.save=self.save
   self.clock_domain=self.base.clock_domain
+  if native_source is None:
+   async def before_retry(c,a):
+    # HTTP close only initiates native cancellation. Await tracker/scheduler acknowledgement.
+    await wait_native_release(Path(os.environ['EXP27_AUDIT_PATH']),a['attempt_id'])
+   self.base.before_retry=before_retry
  def save(self,r):
   r.update(self.meta.pop(r['case_id']))
   if r['terminal']=='completed' and r['route']=='integrated' and r['cache']=='miss':

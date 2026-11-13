@@ -151,6 +151,8 @@ class Gateway:
     if reason is not None:break
     if failure:
      if can_retry(r['committed'],c['idempotency_key'],failure['retryable'],len(r['attempts'])):
+      if getattr(self,'before_retry',None):await self.before_retry(c,a)
+      if stop.is_set():break
       event('retry_allowed',from_attempt=aid);continue
      r['terminal']=failure['reason'] if failure['reason'].startswith('review_') else 'backend_error';break
     r['terminal']='completed';break
