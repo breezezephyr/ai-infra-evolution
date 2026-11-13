@@ -1,0 +1,23 @@
+static: 35 Python files; native hooks exact copies; 17 original source hashes unchanged
+PASS test_shards_identity_detects_mutation_and_no_fake_weight
+PASS test_missing_shard_rejected
+PASS test_command_is_v0_fp16_gpu0_and_original_ports
+PASS test_suite_refuses_existing_output
+PASS test_plans_keep_denominators
+PASS test_prepared_pins_revision_and_checks_all_three_shards
+PASS test_explicit_vllm_binary_is_used
+PASS test_stop_owned_preserves_unrelated_process
+PASS test_child_failure_keeps_log_and_raises
+PASS test_backend_command_validation_rejects_wrong_dtype_and_port
+PASS test_identity_validation_fails_closed_on_non_object
+PASS test_readiness_probe_does_not_reap_child
+----------------------------------------------------------------------
+Ran 27 tests in 0.437s
+
+OK
+----------------------------------------------------------------------
+Ran 12 tests in 0.461s
+
+OK
+SKIP exp25 gateway CPU tests: fastapi is not installed
+Required static/CPU checks passed; optional dependency skips are listed above. No GPU/download/install.
