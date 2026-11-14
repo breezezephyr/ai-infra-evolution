@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,os,subprocess,sys,time,urllib.request,shutil
 BASE_URL='https://raw.githubusercontent.com/breezezephyr/ai-infra-evolution/'
-OUT=Path('/kaggle/working/p5-4b-20261113');CODE=Path('/kaggle/working/kaggle_4b')
+OUT=Path('/kaggle/working/p5-4b-final-20261114');CODE=Path('/kaggle/working/kaggle_4b_final_20261114')
 OUT.mkdir(parents=True,exist_ok=True)
 def fetch(commit,path,digest):
  data=urllib.request.urlopen(BASE_URL+commit+'/phase5/kaggle_4b/'+path,timeout=60).read()
@@ -14,7 +14,8 @@ started=time.time();rc=None
 try:
  print('Preparing pinned Python 3.11 / vLLM 0.8.5 / Qwen3-4B',flush=True)
  with (OUT/'setup-py311.log').open('w') as stream:subprocess.run([sys.executable,'-u',str(bootstrap)],stdout=stream,stderr=subprocess.STDOUT,check=True)
- data=fetch('ec1b74d7a82e2f5e0ec4abed87e854b6ef836d4d','code-bundle.json','7652debdee69ad49210f8892f80236ab1cd275906048b9658a68333d246f8d22')
+ shutil.copy2('/kaggle/working/p5-4b-20261113/model-prepared.json',OUT/'model-prepared.json')
+ data=fetch('fa07e64c4cc63a6da48851f5f06baa33a74e714c','code-bundle.json','efe5610560d646c50d5571c1cf941db27e3acad9d1986fad892aa79f5bbbd9a4')
  files=json.loads(data)['files']
  if CODE.exists():raise RuntimeError('Code extraction target already exists')
  for f in files:
@@ -29,7 +30,7 @@ try:
  if (OUT/'validation/suite-summary.json').exists():print((OUT/'validation/suite-summary.json').read_text(),flush=True)
 finally:
  (OUT/'notebook-supervisor.json').write_text(json.dumps({'started':started,'finished':time.time(),'returncode':rc}))
- archive=shutil.make_archive('/kaggle/working/p5-4b-evidence-'+str(time.time_ns()),'zip',root_dir=OUT)
+ archive=shutil.make_archive('/kaggle/working/p5-4b-final-evidence-'+str(time.time_ns()),'zip',root_dir=OUT)
  print('EVIDENCE_ARCHIVE',archive,hashlib.sha256(Path(archive).read_bytes()).hexdigest(),flush=True)
  from IPython.display import display,FileLink
  display(FileLink(archive))
